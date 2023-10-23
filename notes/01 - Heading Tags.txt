@@ -1,7 +1,10 @@
 
 Time Stamp: 23rd Oct. 2K23 - 07:50 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
 
-**HTML Heading Tags**
+HTML Heading Tags
 
 HTML provides heading tags to define the hierarchical structure of your document. Headings are essential for organizing content and making it more readable. Here's a summary of HTML heading tags:
 
@@ -15,7 +18,7 @@ HTML provides heading tags to define the hierarchical structure of your document
 
 5. `<h5>` and `<h6>`: Lower-level headings, with `<h6>` being the least significant. Use them for detailed subsections.
 
-**Key Points:**
+Key Points:
 
 - HTML heading tags range from `<h1>` to `<h6`, with `<h1>` being the most important and `<h6>` the least.
 - Use headings to create a clear hierarchy in your document.

@@ -1,21 +1,24 @@
 
 Time Stamp: 23rd Oct. 2K23 - 08:05 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
 
-**HTML Comments**
+HTML Comments
 
 HTML comments are a way to add explanatory or descriptive notes to your HTML code. These comments are not displayed on the web page but are useful for documentation and communication within development teams. Here are the key points related to HTML comments:
 
-1. **Syntax**: HTML comments are enclosed in `<!--` at the beginning and `-->` at the end. Everything between these markers is considered a comment and is not rendered in the browser.
+1. Syntax: HTML comments are enclosed in `<!--` at the beginning and `-->` at the end. Everything between these markers is considered a comment and is not rendered in the browser.
 
-2. **Purpose**: Comments are used to provide context, explanations, or reminders about the code. They can help other developers understand your code or serve as reminders for yourself.
+2. Purpose: Comments are used to provide context, explanations, or reminders about the code. They can help other developers understand your code or serve as reminders for yourself.
 
-3. **Visibility**: Comments are not visible to website visitors; they only exist in the page's source code.
+3. Visibility: Comments are not visible to website visitors; they only exist in the page's source code.
 
-4. **Placement**: You can add comments anywhere in your HTML code, whether it's within the `<head>` section, the `<body>` section, or within specific HTML elements.
+4. Placement: You can add comments anywhere in your HTML code, whether it's within the `<head>` section, the `<body>` section, or within specific HTML elements.
 
-5. **Multi-line Comments**: HTML comments can span multiple lines. Start each line with `<!--` and end with `-->`. This makes it easy to create longer comments.
+5. Multi-line Comments: HTML comments can span multiple lines. Start each line with `<!--` and end with `-->`. This makes it easy to create longer comments.
 
-**Key Points:**
+Key Points:
 
 - HTML comments are a way to annotate your code with notes that are not visible to users but can be helpful for developers and maintainers.
 - Comments can be used to explain complex code, provide instructions, or temporarily disable code without deleting it.

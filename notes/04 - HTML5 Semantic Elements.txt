@@ -1,7 +1,10 @@
 
 Time Stamp: 23rd Oct. 2K23 - 08:21 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
 
-**HTML5 Semantic Elements for Improved SEO and Accessibility**
+HTML5 Semantic Elements for Improved SEO and Accessibility
 
 HTML5 introduced a set of semantic elements that serve to structure web content more meaningfully, improving both Search Engine Optimization (SEO) and accessibility. These elements help identify and define different content areas on a web page, making the code more readable and informative. Here are the key semantic elements:
 
