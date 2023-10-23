@@ -6,6 +6,11 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 23rd Oct. 2K23 - 08:56 PM
+6th Commit - HTML Image Tag
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 23rd Oct. 2K23 - 08:46 PM
 5th Commit - Indentation in HTML
 

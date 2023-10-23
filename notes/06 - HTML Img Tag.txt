@@ -1,0 +1,35 @@
+
+Time Stamp: 23rd Oct. 2K23 - 08:54 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+HTML Image Tag
+
+The HTML `<img>` tag is used to display images on a web page. Images can enhance the visual appeal and convey information, and the `<img>` tag is a fundamental element for this purpose. Here are key points regarding the `<img>` tag:
+
+1. Syntax: The `<img>` tag is self-closing, which means it does not have a closing tag. It is written as `<img src="image-source" alt="alternative-text">`.
+
+2. `src` Attribute: The `src` (source) attribute specifies the path to the image file. It can be a relative or absolute URL. For local images, specify the path relative to the HTML document's location.
+
+3. `alt` Attribute: The `alt` (alternative) attribute is used to provide text that describes the image. It is crucial for accessibility because it is displayed when the image cannot be loaded or is read aloud by screen readers for visually impaired users.
+
+4. Width and Height Attributes: You can use the `width` and `height` attributes to set the dimensions of the image in pixels. Properly specifying these attributes can help maintain page layout while the image loads.
+
+5. `title` Attribute: The `title` attribute allows you to provide additional information about the image when the user hovers the mouse pointer over it. It is a tooltip that can offer more context.
+
+6. Responsive Images: To make images responsive (adjusting to different screen sizes), you can use CSS or the `width` attribute with percentages. For instance, `width="100%"` will make the image scale with its container.
+
+7. File Formats: Common image file formats for the web include JPEG (`.jpg`), PNG (`.png`), and GIF (`.gif`). Choose the format that best suits your image's content and quality requirements.
+
+8. Image Compression: Optimize images for the web by compressing them to reduce file size. This speeds up page loading times and improves user experience.
+
+9. Image Accessibility: Always include a meaningful `alt` attribute to ensure your web content is accessible to individuals with disabilities, in compliance with web accessibility standards (e.g., WCAG).
+
+Example:
+
+```html
+<img src="my-image.jpg" alt="A beautiful sunset over the mountains" width="800" height="600">
+```
+
+In this example, the `<img>` tag is used to display an image with a specified source file, alternative text, and dimensions. Properly used, the `<img>` tag is essential for incorporating images into your web content while maintaining accessibility and visual aesthetics.
