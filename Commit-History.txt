@@ -6,6 +6,16 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 23rd Oct. 2K23 - 10:00 PM
+9th Commit - HTML Anchor Tag (`<a>`)
+1. Anchor Tag
+
+Topics Read:
+1. Cross Origin Policy
+2. Referrer Policy
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 23rd Oct. 2K23 - 09:10 PM
 8th Commit - HTML `alt` Attribute
 
