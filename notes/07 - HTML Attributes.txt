@@ -1,0 +1,41 @@
+
+Time Stamp: 23rd Oct. 2K23 - 09:05 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+HTML Attributes
+
+HTML attributes provide additional information about HTML elements, modifying their behavior or appearance. Attributes are specified within the opening tag of an element and are structured as key-value pairs. Here are some essential HTML attributes and their purposes:
+
+1. `id`: The `id` attribute assigns a unique identifier to an HTML element. This identifier can be used for styling with CSS or for scripting with JavaScript.
+
+2. `class`: The `class` attribute allows you to define one or more class names for an element, enabling styling multiple elements with the same class using CSS.
+
+3. `style`: The `style` attribute allows you to add inline CSS styles directly to an element. It's useful for making element-specific style adjustments.
+
+4. `src`: The `src` attribute is used with elements like `<img>`, `<script>`, and `<iframe>` to specify the source file or URL. For example, in `<img src="image.jpg">`, it specifies the image file to be displayed.
+
+5. `alt`: The `alt` attribute is essential for images. It provides alternative text for the image, which is displayed if the image can't be loaded or for accessibility.
+
+6. `href`: The `href` attribute is used with anchor elements (`<a>`) to specify the URL the link points to. For example, `<a href="https://www.example.com">Example</a>`.
+
+7. `target`: The `target` attribute is used with anchor elements and specifies where the linked content should be opened. Common values include "_blank" (opens in a new tab or window) and "_self" (opens in the same tab or window).
+
+8. `width` and `height`: These attributes are used with elements like `<img>` to define the dimensions of images in pixels.
+
+9. `title`: The `title` attribute provides additional information or a tooltip when a user hovers their mouse pointer over the element.
+
+10. `disabled`: The `disabled` attribute can be used with form elements, such as `<input>` and `<button>,` to make them unselectable or unclickable.
+
+11. `readonly`: The `readonly` attribute is used with form elements to make them read-only, preventing users from editing the content.
+
+12. `placeholder`: The `placeholder` attribute is commonly used with form input elements to provide a hint or example text for the expected input.
+
+13. `required`: The `required` attribute, used with form elements, enforces that the user must fill in the field before submitting the form.
+
+14. `autocomplete`: The `autocomplete` attribute, also used with form elements, provides browser hints and suggestions for form field values.
+
+15. `data-*` attributes: Custom attributes that begin with "data-" can be added to elements to store custom data or information, often for JavaScript purposes.
+
+These are just a few HTML attributes commonly used to modify elements. HTML has a wide range of attributes to suit various element types and purposes, making it a versatile language for web development.
