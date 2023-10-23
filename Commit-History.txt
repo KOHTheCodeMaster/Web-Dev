@@ -2,6 +2,11 @@
 Commit History:
 ---------------
 
+Time Stamp: 23rd Oct. 2K23 - 08:21 PM
+4th Commit - HTML5 Semantic Elements for Improved SEO and Accessibility
+
+------------------------------------------------------------
+
 Time Stamp: 23rd Oct. 2K23 - 08:08 PM
 3rd Commit - Comments
 
