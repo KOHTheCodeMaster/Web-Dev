@@ -2,7 +2,15 @@
 Commit History:
 ---------------
 
-Init Commit - HTML Fundamentals - CatPhotoApp
 Time Stamp: 23rd Oct. 2K23 - 07:29 PM
+
+2nd Commit - Notes for HTML Fundamentals
+1. Notes for HTML Fundamentals, Heading & Paragraph Tags
+
+------------------------------------------------------------
+
+Time Stamp: 23rd Oct. 2K23 - 07:29 PM
+
+Init Commit - HTML Fundamentals - CatPhotoApp
 
 ------------------------------------------------------------
