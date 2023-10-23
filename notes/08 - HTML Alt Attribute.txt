@@ -1,0 +1,55 @@
+
+Time Stamp: 23rd Oct. 2K23 - 09:10 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+HTML `alt` Attribute
+
+The `alt` attribute is a critical attribute used with HTML elements, primarily with images (`<img>`) and image maps (`<area>`). Its primary purpose is to provide alternative text that describes the content of the image or the function of the image map area. Here are key points about the `alt` attribute:
+
+1. Definition: "Alt" stands for "alternative." The `alt` attribute allows you to provide alternative text that can be displayed when the image cannot be loaded or is read aloud by screen readers for users with visual impairments.
+
+2. Accessibility: The `alt` attribute is a fundamental part of web accessibility. It ensures that visually impaired users can understand the content and function of images on a webpage. Providing meaningful and accurate alternative text is essential.
+
+3. Importance: The `alt` text is not only beneficial for accessibility but also for SEO (Search Engine Optimization). Search engines use the alternative text to understand the content of images, which can improve your website's search rankings.
+
+4. When to Use: The `alt` attribute should be used with every `<img>` element. Even if an image is purely decorative, you should include an empty `alt` attribute (i.e., `alt=""`) to indicate that it serves no informational purpose.
+
+5. What to Include: The `alt` text should be concise and descriptive. It should convey the essential information or message of the image. Avoid using generic terms like "image" or "image of" in the `alt` text.
+
+6. Empty Alt Text: For decorative or non-content images that don't convey any meaning, you can use an empty `alt` attribute (`alt=""`) to indicate their non-significant role.
+
+7. Long Descriptions: If the image contains complex information, consider providing a more detailed description of the image within the page's content, using `<figure>` and `<figcaption>`, or through an adjacent link that leads to a separate page with a detailed description.
+
+Examples:
+
+- For a decorative image:
+
+  ```html
+  <img src="decorative.jpg" alt="">
+  ```
+
+- For an informative image:
+
+  ```html
+  <img src="product-photo.jpg" alt="Red smartphone with a high-resolution display">
+  ```
+
+- For image maps (`<area>` elements), the `alt` attribute is used similarly to describe the purpose or function of each clickable area.
+
+In summary, the `alt` attribute is essential for making web content accessible to all users and for providing search engines with valuable information about your images. It's a best practice to use the `alt` attribute effectively and responsibly in your HTML documents.
+
+
+Extra Notes:
+
+1. The HTML Image Element property `alt` provides fallback (alternate) text to display when the image specified by the <img> element is not loaded.
+
+2. This may be the case because of an error, because the user has disabled the loading of images, or because the image hasn't finished loading yet.
+
+3. Think of it like this: When choosing alt strings for your images, imagine what you would say when reading the page to someone over the phone without mentioning that there's an image on the page.
+
+4. The alt attribute is officially mandatory; it's meant to always be specified.
+
+5. Usage Notes: The fundamental guideline for the alt attribute is that every image's alternate text should be able to replace the image without altering the meaning of the page. You should never use alt for text that could be construed as a caption or title. There are separate attributes and elements designed for those purposes.
+

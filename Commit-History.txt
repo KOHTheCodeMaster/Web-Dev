@@ -6,6 +6,11 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 23rd Oct. 2K23 - 09:10 PM
+8th Commit - HTML `alt` Attribute
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 23rd Oct. 2K23 - 09:05 PM
 7th Commit - HTML Attributes
 
