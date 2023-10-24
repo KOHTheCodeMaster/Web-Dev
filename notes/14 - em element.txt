@@ -1,0 +1,41 @@
+
+Time Stamp: 24th Oct. 2K23 - 03:12 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+HTML `<em>` Element
+
+The `<em>` element is a semantic HTML element used to indicate text that should be emphasized when displayed. It typically renders as italic text and is commonly used to convey stress or importance in the content. Here are key points about the `<em>` element:
+
+1. Syntax: The `<em>` element is used to wrap text that should be emphasized. It is typically used within a paragraph or other text container.
+
+   ```html
+   <p>This is <em>important</em> information.</p>
+   ```
+
+2. Rendering: By default, the `<em>` element renders text in italics. However, the actual visual rendering can be controlled and customized using CSS.
+
+3. Semantic Meaning: The `<em>` element provides semantic meaning to the content it wraps. It indicates that the text inside it should be emphasized, but it doesn't specify how the emphasis should be achieved.
+
+4. Accessibility: Screen readers and other assistive technologies can interpret the `<em>` element to convey emphasis to users with visual impairments.
+
+5. Use Cases: The `<em>` element is commonly used for emphasizing text to highlight its importance, indicate stress, or create a distinction within the content.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Emphasis Example</title>
+  </head>
+  <body>
+    <h1>HTML Basics</h1>
+    <p>In HTML, the <em>em</em> element is used to indicate <em>emphasized</em> text.</p>
+    <p>This can be useful for drawing <em>attention</em> to important information.</p>
+  </body>
+</html>
+```
+
+In this example, the `<em>` element is used to emphasize specific words within a paragraph. The text within the `<em>` elements is rendered in italics by default, indicating emphasis. However, this visual presentation can be customized using CSS if desired.
