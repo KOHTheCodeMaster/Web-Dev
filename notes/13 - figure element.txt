@@ -1,0 +1,50 @@
+
+Time Stamp: 24th Oct. 2K23 - 03:08 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+HTML `<figure>` Element
+
+The `<figure>` element is a semantic HTML5 element used to encapsulate content that is typically referenced in the main content but can be considered as separate from it. It is often used to group images, diagrams, illustrations, videos, code snippets, and other multimedia content along with their captions. Here are key points about the `<figure>` element:
+
+1. Syntax: The `<figure>` element is used to create a container for content that needs to be referenced in the document. It is often paired with the `<figcaption>` element to provide a caption for the content.
+
+   ```html
+   <figure>
+     <img src="image.jpg" alt="A beautiful sunset">
+     <figcaption>Caption for the sunset image</figcaption>
+   </figure>
+   ```
+
+2. Semantics: The `<figure>` element adds semantic meaning to the content it encloses, indicating that it is a self-contained unit of content that should be treated as a single entity.
+
+3. `figcaption` Element: The `<figcaption>` element is commonly used within a `<figure>` to provide a caption for the content within that `<figure>`. It helps users understand the context of the content.
+
+4. Accessibility: Proper use of `<figure>` and `<figcaption>` elements is important for web accessibility. Screen readers can use these elements to provide context for users with visual impairments.
+
+5. Styling: The styling of the `<figure>` and `<figcaption>` elements can be customized using CSS to match the design of a website.
+
+6. Common Use Cases: The `<figure>` element is used for images with captions, embedded multimedia content (e.g., videos), charts, diagrams, illustrations, and other content that requires a clear context or explanation.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Figure Element Example</title>
+  </head>
+  <body>
+    <h1>Beautiful Sunset</h1>
+    <p>Here is a stunning sunset photo:</p>
+    <figure>
+      <img src="sunset.jpg" alt="A beautiful sunset">
+      <figcaption>Photo credit: John Doe</figcaption>
+    </figure>
+    <p>This was taken on a calm evening by the beach.</p>
+  </body>
+</html>
+```
+
+In this example, the `<figure>` element is used to encapsulate an image of a sunset along with a `<figcaption>` providing a caption and photo credit. This grouping makes it clear that the image and caption are closely related and should be treated as a single unit within the content.

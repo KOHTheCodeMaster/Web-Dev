@@ -6,6 +6,13 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 24th Oct. 2K23 - 03:08 PM..!!
+13th Commit - HTML `<figure>` Element
+
+1. figure & figcaption elements.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 24th Oct. 2K23 - 03:04 PM..!!
 12th Commit - HTML `<ul>` Element
 
