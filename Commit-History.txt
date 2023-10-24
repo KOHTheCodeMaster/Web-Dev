@@ -6,6 +6,11 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 24th Oct. 2K23 - 03:28 PM..!!
+17th Commit - `<strong>` vs. `<em>`: Choosing Between Strong Emphasis and Emphasis in HTML
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 24th Oct. 2K23 - 03:27 PM..!!
 16th Commit - HTML `<strong>` Element
 
