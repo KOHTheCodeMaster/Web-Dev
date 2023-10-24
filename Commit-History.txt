@@ -6,11 +6,18 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 24th Oct. 2K23 - 02:36 PM..!!
+10th Commit - HTML `target` Attribute
+
+Worth Reading:
+1. Frames & Framesets are now deprecated.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 23rd Oct. 2K23 - 10:00 PM
 9th Commit - HTML Anchor Tag (`<a>`)
-1. Anchor Tag
 
-Topics Read:
+Worth Reading:
 1. Cross Origin Policy
 2. Referrer Policy
 

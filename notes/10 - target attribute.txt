@@ -1,0 +1,48 @@
+
+Time Stamp: 24th Oct. 2K23 - 02:35 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+HTML `target` Attribute
+
+The `target` attribute is used with the HTML `<a>` (anchor) tag to specify how the linked content should be displayed when the user clicks on the link. It controls whether the linked content opens in the same browser window or in a new window or tab. Here are key points regarding the `target` attribute:
+
+1. Syntax: The `target` attribute is added to the `<a>` tag as follows: `<a href="URL" target="value">Link Text</a>`. The "value" represents the target context.
+
+2. Common Values:
+   - `_blank`: Opens the linked content in a new browser window or tab. This is commonly used for links that lead to external websites or resources.
+   - `_self`: Opens the linked content in the same browser window or tab. This is the default behavior when the `target` attribute is not specified.
+   - (Deprecated) `_parent`: Opens the linked content in the parent frame or window if the page is displayed in a frameset.
+   - (Deprecated) `_top`: Opens the linked content in the topmost frame or window if the page is displayed in a frameset.
+   - (Deprecated) A custom frame or window name: You can specify a custom name for the target, allowing you to control the behavior of linked content.
+   Note: `_parent` & `_top` are used with Frames & Framesets which are now deprecated.
+
+3. Use Cases:
+   - `_blank` is commonly used when linking to external websites or resources to keep the current page open.
+   - `_self` is the default behavior and is used when you want the linked content to replace the current page.
+   - (Deprecated) `_parent` and `_top` are used when a page is displayed in a frameset, where you want to control which frame or window displays the linked content.
+
+4. Accessibility: While opening links in new windows or tabs can provide a better user experience for some users, it's important to use this feature judiciously, as it can be disruptive to users who rely on screen readers or have browser settings that block pop-ups.
+
+Examples:
+
+- Opening a link in a new window or tab:
+
+  ```html
+  <a href="https://www.example.com" target="_blank">Visit Example Website</a>
+  ```
+
+- Opening a link in the same window:
+
+  ```html
+  <a href="page.html" target="_self">Go to Page</a>
+  ```
+
+- Using the default behavior (no `target` attribute specified, opens in the same window/tab):
+
+  ```html
+  <a href="internal.html">Internal Link</a>
+  ```
+
+In summary, the `target` attribute provides control over how linked content is displayed to the user. It can be used to open links in new windows or tabs for external resources while keeping the current page open. However, it's important to be mindful of accessibility and user experience when using the `target` attribute.
