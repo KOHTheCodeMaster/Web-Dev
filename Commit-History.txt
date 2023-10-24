@@ -6,11 +6,16 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 24th Oct. 2K23 - 02:54 PM..!!
+11th Commit - HTML `<section>` Element
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 24th Oct. 2K23 - 02:36 PM..!!
 10th Commit - HTML `target` Attribute
 
 Worth Reading:
-1. Frames & Framesets are now deprecated.
+1. Frames & Frame sets are now deprecated.
 
 ----------------------------------------------------------------------------------------------------
 
