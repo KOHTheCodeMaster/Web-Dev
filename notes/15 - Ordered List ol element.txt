@@ -1,0 +1,75 @@
+
+Time Stamp: 24th Oct. 2K23 - 03:19 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+HTML `<ol>` Element
+
+The `<ol>` element, short for "ordered list," is an HTML element used to create lists of items that are sequentially ordered, typically displayed with numerical or alphabetical labels. It's often used for creating numbered lists or lists with other ordered markers. Here are key points about the `<ol>` element:
+
+1. Syntax: The `<ol>` element is used to create an ordered list, and it contains one or more `<li>` (list item) elements. The `<li>` elements represent individual items within the list.
+
+   ```html
+   <ol>
+     <li>Item 1</li>
+     <li>Item 2</li>
+     <li>Item 3</li>
+   </ol>
+   ```
+
+2. Ordered Lists: Ordered lists are used when the order of items is significant, and they should be presented in a specific sequence. By default, the items in an `<ol>` are numbered, but the numbering style can be customized using CSS.
+
+3. `type` Attribute: The `type` attribute of the `<ol>` element can be used to specify the type of numbering or labeling used in the list, such as "1" (decimal numbers), "A" (uppercase letters), "a" (lowercase letters), "I" (uppercase Roman numerals), and "i" (lowercase Roman numerals).
+
+   ```html
+   <ol type="A">
+     <li>Item A</li>
+     <li>Item B</li>
+     <li>Item C</li>
+   </ol>
+   ```
+
+4. Nesting Lists: You can nest ordered lists within other lists to create sub-lists or multi-level lists. Place another `<ol>` or `<ul>` within an `<li>` element to achieve this.
+
+   ```html
+   <ol>
+     <li>Item 1</li>
+     <li>Item 2
+       <ol>
+         <li>Subitem 1</li>
+         <li>Subitem 2</li>
+       </ol>
+     </li>
+     <li>Item 3</li>
+   </ol>
+   ```
+
+5. Accessibility: Properly structured ordered lists are important for web accessibility, as screen readers and assistive technologies use semantic HTML to convey list structures to users.
+
+6. Styling: The appearance of ordered lists, including the numbering style, can be customized using CSS to match the design of a website.
+
+7. Common Use Cases: Ordered lists are commonly used for instructions, step-by-step guides, legal documents, recipes, and any scenario where the order of items matters.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ordered List Example</title>
+  </head>
+  <body>
+    <h2>Steps to Make a Cup of Tea:</h2>
+    <ol>
+      <li>Boil water</li>
+      <li>Place a tea bag in a cup</li>
+      <li>Pour the boiling water over the tea bag</li>
+      <li>Add sugar and milk (if desired)</li>
+      <li>Stir and enjoy!</li>
+    </ol>
+  </body>
+</html>
+```
+
+In this example, the `<ol>` element is used to create a numbered list of steps for making a cup of tea. The default numbering style is decimal numbers, but this can be customized using CSS if needed.

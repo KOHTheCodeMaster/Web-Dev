@@ -6,6 +6,11 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 24th Oct. 2K23 - 03:20 PM..!!
+15th Commit - HTML `<ol>` Element
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 24th Oct. 2K23 - 03:12 PM..!!
 14th Commit - HTML `<em>` Element
 
