@@ -1,0 +1,41 @@
+
+Time Stamp: 24th Oct. 2K23 - 03:26 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+HTML `<strong>` Element
+
+The `<strong>` element is a semantic HTML element used to indicate that the text it encloses should be displayed with strong importance, typically rendered as bold text. It is often used to highlight text that has strong emphasis or importance within the content. Here are key points about the `<strong>` element:
+
+1. Syntax: The `<strong>` element is used to wrap text that should be displayed with strong importance.
+
+   ```html
+   <p>This is <strong>very important</strong> information.</p>
+   ```
+
+2. Rendering: By default, the `<strong>` element renders text in bold. However, the actual visual rendering can be controlled and customized using CSS.
+
+3. Semantic Meaning: The `<strong>` element provides semantic meaning to the content it wraps, indicating that the text inside it has strong importance, but it doesn't specify how the importance should be conveyed visually.
+
+4. Accessibility: Screen readers and assistive technologies can interpret the `<strong>` element to convey strong emphasis to users with visual impairments.
+
+5. Use Cases: The `<strong>` element is commonly used for highlighting text that has significant importance, such as warnings, critical information, keywords, and critical phrases.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Strong Element Example</title>
+  </head>
+  <body>
+    <h1>Emergency Alert</h1>
+    <p>There is a <strong>fire</strong> in the building. Please evacuate immediately.</p>
+    <p>Follow the emergency exit signs and stay calm.</p>
+  </body>
+</html>
+```
+
+In this example, the `<strong>` element is used to emphasize the word "fire" within a paragraph, indicating strong importance. By default, the text within the `<strong>` element is rendered in bold, but this can be customized using CSS if desired.
