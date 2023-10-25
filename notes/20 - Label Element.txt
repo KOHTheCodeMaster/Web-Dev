@@ -1,0 +1,51 @@
+
+Time Stamp: 25th Oct. 2K23 - 06:54 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+HTML `<label>` Element
+
+The `<label>` element is an essential HTML element used to provide a label or description for form controls, such as input fields, radio buttons, checkboxes, and more. It helps improve the accessibility and usability of web forms. Here are key points about the `<label>` element:
+
+1. Syntax: The `<label>` element is used to create a label for a form control. It typically surrounds or precedes the form control.
+
+   ```html
+   <label for="username">Username:</label>
+   <input type="text" id="username" name="username">
+   ```
+
+2. `for` Attribute: The `for` attribute of the `<label>` element should match the `id` attribute of the associated form control. This association helps screen readers and improves accessibility.
+
+3. Content: The content of the `<label>` element is the text or description that is associated with the form control. It provides context and guidance to users.
+
+4. Accessibility: Associating a `<label>` with an input control improves accessibility by providing a text description and allowing users to click on the label to focus on the associated input field.
+
+5. Styling: The `<label>` element can be styled using CSS to match the design of your website. You can control the label's appearance and layout.
+
+6. Common Use Cases: Labels are used in all types of forms to provide descriptions for input fields, checkboxes, radio buttons, and other form controls.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Label Element Example</title>
+  </head>
+  <body>
+    <h1>Registration</h1>
+    <form action="register.php" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <input type="submit" value="Register">
+    </form>
+  </body>
+</html>
+```
+
+In this example, the `<label>` element is used to provide labels for text input fields. Each label is associated with an input field using the `for` and `id` attributes. This improves accessibility and usability by allowing users to click on the labels to focus on the associated input fields.

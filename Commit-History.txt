@@ -6,6 +6,11 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 25th Oct. 2K23 - 06:57 PM..!!
+20th Commit - HTML `<label>` Element
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 25th Oct. 2K23 - 06:26 PM..!!
 19th Commit - HTML `<input>` Element
 
