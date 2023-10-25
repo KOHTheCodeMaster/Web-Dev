@@ -1,0 +1,91 @@
+
+Time Stamp: 25th Oct. 2K23 - 07:13 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+Attributes for HTML <input> elements
+
+HTML `<input>` elements can have various attributes that modify their behavior, appearance, and functionality. Here are some of the commonly used attributes for `<input>` elements:
+
+1. `type` Attribute: Specifies the type of input control. Common values include "text," "password," "checkbox," "radio," "email," "number," "date," and more.
+
+   ```html
+   <input type="text">
+   ```
+
+2. `name` Attribute: The `name` attribute is used to identify form controls when a form is submitted. It specifies the name under which the data from the form control will be sent to the server. Each form control within the same form should have a unique `name` attribute. The `name` attribute is essential for differentiating between form controls, especially in server-side processing.
+
+    Example:
+    ```html
+    <input type="text" name="username" id="username">
+    ```
+
+3. `value` Attribute: The `value` attribute is used to set an initial or default value for form controls. It pre-fills the form control with the specified value. For text inputs, it sets the initial value displayed in the input field. For radio buttons and checkboxes, it determines the value sent to the server when the control is checked.
+
+     Example:
+     ```html
+     <input type="text" name="username" id="username" value="JohnDoe">
+     <input type="checkbox" name="subscribe" value="yes" checked> Subscribe to newsletter
+     ```
+
+4. `placeholder` Attribute: The `placeholder` attribute is used in input fields (e.g., text or email inputs) to provide a short hint or example of the expected input format. It appears as grayed-out text within the input field and disappears when the user starts typing. The placeholder text is typically used to provide context or examples of the required input.
+
+     Example:
+     ```html
+     <input type="text" name="email" id="email" placeholder="Your email address">
+     ```
+
+5. `required` Attribute: The `required` attribute is used to make a form control mandatory, meaning the user must provide a value before they can submit the form. If a required field is left empty, the browser will prevent form submission and may display an error message to the user. It ensures that essential information is collected.
+
+  Example:
+  ```html
+  <input type="text" name="name" id="name" required>
+  ```
+
+- The `required` attribute is particularly useful for fields like email addresses, passwords, or any information critical to form submission.
+- Combining the `required` attribute with the `placeholder` attribute can provide users with a clear indication of what information is needed.
+
+6. `disabled` Attribute: Disables the input control, preventing the user from interacting with it. Disabled controls are not included in form submissions.
+
+   ```html
+   <input type="text" name="disabledField" disabled>
+   ```
+
+7. `readonly` Attribute: Makes the input control read-only, allowing the user to see the value but not modify it. Read-only controls are included in form submissions.
+
+   ```html
+   <input type="text" name="readOnlyField" value="Read-only text" readonly>
+   ```
+
+8. `maxlength` Attribute: Sets the maximum number of characters or digits allowed in a text input.
+
+   ```html
+   <input type="text" name="shortText" maxlength="10">
+   ```
+
+9. `min` and `max` Attributes: Specify the minimum and maximum values for number, date, and range inputs.
+
+   ```html
+   <input type="number" name="age" min="18" max="100">
+   ```
+
+10. `pattern` Attribute: Defines a regular expression pattern that the input value must match to be considered valid.
+
+   ```html
+   <input type="text" name="zipCode" pattern="\d{5}">
+   ```
+
+11. `checked` Attribute: For checkboxes and radio buttons, the `checked` attribute is used to set the initial checked state.
+
+   ```html
+   <input type="checkbox" name="subscribe" checked>
+   ```
+
+12. `autofocus` Attribute: Automatically focuses on the input element when the page loads.
+
+   ```html
+   <input type="text" name="search" autofocus>
+   ```
+
+These are some of the most commonly used attributes for `<input>` elements. The specific attributes you use depend on the type of input and your form's requirements.

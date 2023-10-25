@@ -6,6 +6,11 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 25th Oct. 2K23 - 07:14 PM..!!
+21st Commit - Attributes for HTML <input> elements
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 25th Oct. 2K23 - 06:57 PM..!!
 20th Commit - HTML `<label>` Element
 
