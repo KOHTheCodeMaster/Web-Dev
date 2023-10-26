@@ -7,6 +7,11 @@ Commit History:
 ---------------
 
 Time Stamp: 26th Oct. 2K23 - 06:20 PM..!!
+24th Commit - Quirks Mode, Almost Standards Mode and Full Standards Mode
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp: 26th Oct. 2K23 - 06:20 PM..!!
 23rd Commit - CatPhotoApp Completed Successfully!
 
 HTML Elements - Doctype, Head, Title, Meta, Footer

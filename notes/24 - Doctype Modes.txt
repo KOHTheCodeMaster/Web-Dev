@@ -1,0 +1,77 @@
+
+Time Stamp: 25th Oct. 2K23 - 07:28 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+Quirks Mode, Almost Standards Mode and Full Standards Mode
+
+Quirks Mode, Almost Standards Mode, and Full Standards Mode are different rendering modes used by web browsers to interpret and display web pages. These modes dictate how the browser should handle HTML and CSS and ensure compatibility with older web content while promoting compliance with modern web standards. Let's explain these modes with examples:
+
+1. Quirks Mode:
+
+   - Description: Quirks Mode is a rendering mode in which the browser emulates older, non-standard behaviors from early web browsers to display web pages. It is primarily used for backward compatibility with websites created before modern web standards were established.
+
+   - When It Occurs: Quirks Mode is triggered when the web page lacks a valid `<!DOCTYPE>` declaration or contains outdated HTML constructs. Without a `<!DOCTYPE>` declaration, the browser assumes that the page was written in an older, non-standard way.
+
+   - Example:
+
+     ```html
+     <!-- No <!DOCTYPE> declaration, triggers Quirks Mode -->
+     <html>
+       <head>
+         <title>Quirks Mode Example</title>
+       </head>
+       <body>
+         <!-- Content here -->
+       </body>
+     </html>
+     ```
+
+2. Almost Standards Mode (or Limited Quirks Mode):
+
+   - Description: Almost Standards Mode is a transitional mode that seeks a balance between backward compatibility and adherence to modern web standards. It applies some modern standards but may retain certain quirks from older browsers.
+
+   - When It Occurs: Almost Standards Mode is triggered when a web page includes a valid `<!DOCTYPE>` declaration, but that declaration is not for the latest or strictest standards version. For example, specifying HTML 4.01 Transitional.
+
+   - Example:
+
+     ```html
+     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+     <html>
+       <head>
+         <title>Almost Standards Mode Example</title>
+       </head>
+       <body>
+         <!-- Content here -->
+       </body>
+     </html>
+     ```
+
+3. Full Standards Mode:
+
+   - Description: Full Standards Mode, also known as Standards Mode, is the ideal rendering mode. It enforces modern web standards and is designed for consistent rendering across browsers. It ensures the highest level of compatibility with contemporary web technologies.
+
+   - When It Occurs: Full Standards Mode is triggered when a web page includes a valid `<!DOCTYPE>` declaration for the latest or strictest standards version, such as HTML5.
+
+   - Example:
+
+     ```html
+     <!DOCTYPE html>
+     <html>
+       <head>
+         <title>Full Standards Mode Example</title>
+       </head>
+       <body>
+         <!-- Content here -->
+       </body>
+     </html>
+     ```
+
+Key Points:
+
+- Web Standards: Using Full Standards Mode (with the correct `<!DOCTYPE>` declaration) ensures that web pages are interpreted and displayed consistently across modern browsers. It promotes compliance with current web standards and best practices.
+
+- Backward Compatibility: Quirks Mode and Almost Standards Mode exist to accommodate older web content and help it render correctly. However, these modes may lead to inconsistent rendering and are generally not recommended for new web development.
+
+- DOCTYPE Declaration: Including the appropriate `<!DOCTYPE>` declaration at the beginning of an HTML document is crucial for specifying the rendering mode. Modern web development practices emphasize the use of Full Standards Mode to ensure compatibility and consistent presentation of web content.
