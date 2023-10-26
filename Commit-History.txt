@@ -6,6 +6,13 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 26th Oct. 2K23 - 06:20 PM..!!
+23rd Commit - CatPhotoApp Completed Successfully!
+
+HTML Elements - Doctype, Head, Title, Meta, Footer
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 25th Oct. 2K23 - 07:24 PM..!!
 22nd Commit - HTML `<fieldset>` & `<legend>` Element
 

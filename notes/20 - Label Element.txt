@@ -6,7 +6,10 @@ GitHub: https://www.github.com/kohthecodemaster
 
 HTML `<label>` Element
 
-The `<label>` element is an essential HTML element used to provide a label or description for form controls, such as input fields, radio buttons, checkboxes, and more. It helps improve the accessibility and usability of web forms. Here are key points about the `<label>` element:
+The `<label>` element is an essential HTML element used to provide a label or description for form controls, such as input fields, radio buttons, checkboxes, and more. It helps improve the accessibility and usability of web forms.
+To associate an input element's text with the element itself. You can nest the text within a label element and add a for attribute with the same value as the input element's id attribute.
+
+Here are key points about the `<label>` element:
 
 1. Syntax: The `<label>` element is used to create a label for a form control. It typically surrounds or precedes the form control.
 
@@ -38,8 +41,9 @@ Example:
     <form action="register.php" method="post">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <label>
+        <input type="email" id="email" name="email" required> Email:
+      </label>
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
       <input type="submit" value="Register">

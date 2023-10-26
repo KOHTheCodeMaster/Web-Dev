@@ -1,0 +1,121 @@
+
+Time Stamp: 26th Oct. 2K23 - 06:09 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster
+----------------------------------------------------------------------------------------------------
+
+Doctype, Head, Title, Meta & Footer in HTML
+
+1. `<!DOCTYPE>` Declaration: The `<!DOCTYPE>` declaration is not an HTML element, but it's a crucial part of an HTML document. It specifies the version of HTML being used and informs the browser how to render the web page. The `<!DOCTYPE>` declaration is placed at the very beginning of an HTML document.
+
+   Example:
+   ```html
+   <!DOCTYPE html>
+   ```
+
+   Compatibility Modes: The <!DOCTYPE> declaration also triggers the browser to operate in a specific rendering mode. For modern browsers, using <!DOCTYPE html triggers the "standards mode," which follows the W3C standards for rendering. Without a valid <!DOCTYPE>, browsers may operate in "quirks mode," which emulates older, less predictable behavior.
+
+   HTML Versions: Different versions of HTML have distinct <!DOCTYPE> declarations. For HTML5, the declaration is <!DOCTYPE html>. Earlier versions of HTML, such as HTML 4.01 or XHTML 1.0, had their own specific <!DOCTYPE> declarations.
+
+   Example of an HTML 4.01 <!DOCTYPE> declaration:
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+----------------------------------------------------------------------------------------------------
+
+2. `<head>` Element: The `<head>` element is part of the HTML document structure and contains metadata and other information about the web page. It's not visible on the web page itself. Common elements within the `<head>` include the `<title>` and `<meta>` elements.
+
+   ```html
+   <head>
+     <!-- Metadata, styles, and other information -->
+   </head>
+   ```
+
+    Metadata: The <head> element contains various elements and tags that provide metadata about the HTML document, such as:
+
+    <title>: Specifies the title of the web page, which appears in the browser's title bar or tab.
+    <meta>: Provides information like character encoding, author information, and viewport settings for responsive design.
+    <link>: Specifies relationships between the current document and external resources, such as stylesheets or icons.
+    <script>: Links to JavaScript files or contains inline JavaScript code.
+    <style>: Contains inline CSS styles or links to external CSS files.
+    <base>: Sets the base URL for relative URLs within the document.
+    Other metadata-related elements.
+
+----------------------------------------------------------------------------------------------------
+
+3. `<title>` Element: The `<title>` element is used within the `<head>` section of an HTML document. It defines the title of the web page, which is displayed in the browser's title bar or tab. It's also used by search engines for indexing.
+
+   ```html
+   <title>My Web Page</title>
+   ```
+
+----------------------------------------------------------------------------------------------------
+
+4. HTML `<meta>` Element
+
+The `<meta>` element is an HTML element used to provide metadata and information about the HTML document itself. It contains data that helps browsers, search engines, and other web-related services understand and interpret the web page. Here are key points about the `<meta>` element:
+
+1. Syntax: The `<meta>` element is a self-contained tag and is placed within the `<head>` section of an HTML document.
+
+   ```html
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   ```
+
+2. Attributes: The `<meta>` element can have several attributes, but two common attributes are often used:
+
+   - `name` Attribute: Specifies the name of the metadata property.
+   - `content` Attribute: Specifies the value of the metadata property.
+
+3. Common Uses:
+
+   - Character Encoding: The `<meta>` element is commonly used to declare the character encoding of the document. This is important for specifying how text characters should be interpreted and displayed by the browser.
+
+     Example for UTF-8 character encoding:
+     ```html
+     <meta charset="UTF-8">
+     ```
+
+   - Viewport Settings: The `<meta>` element can define the viewport settings, particularly for responsive web design. It sets the initial zoom level and how the page should be displayed on various devices and screen sizes.
+
+     Example for viewport settings:
+     ```html
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     ```
+
+   - Author and Description: The `<meta>` element can be used to provide information about the author of the document and a brief description of the web page.
+
+     Example for author and description:
+     ```html
+     <meta name="author" content="John Doe">
+     <meta name="description" content="A personal blog about technology and programming.">
+     ```
+
+   - Keywords: Although less commonly used today for SEO, the `<meta>` element can specify keywords relevant to the page's content.
+
+     Example for keywords:
+     ```html
+     <meta name="keywords" content="technology, programming, web development, coding">
+     ```
+
+4. Viewport Meta: The viewport meta tag is often used in mobile web development to ensure that the web page is displayed correctly on different screen sizes and devices. It specifies settings such as the initial scale and width.
+
+5. Character Encoding Meta: The character encoding meta tag declares the character encoding used in the document, ensuring that text characters are interpreted correctly by the browser.
+
+6. SEO: Providing metadata like author, description, and keywords can assist in search engine optimization (SEO) by helping search engines understand and categorize the content of the web page.
+
+7. Best Practices: It's important to use relevant and accurate information in `<meta>` elements, as this information can impact how the web page is indexed, displayed, and found by search engines.
+
+In summary, the `<meta>` element is a versatile tool for providing metadata and information about an HTML document, enhancing its display, accessibility, and search engine optimization. It's an essential part of web development and ensuring that web pages are properly understood and presented.
+
+----------------------------------------------------------------------------------------------------
+
+5. Footer: The "footer" is not a specific HTML element, but it refers to a section of the HTML document typically placed at the bottom of a web page. It often contains information like copyright notices, contact information, links to related pages, or other supplementary information.
+
+   Using the <footer> element instead of generic <div> elements with classes adds semantic meaning to the content, making it more understandable for both human readers and search engines.
+
+   ```html
+   <footer>
+     &copy; 2023 My Website. Contact us at info@example.com.
+   </footer>
+   ```
+
+In summary, the `<!DOCTYPE>` declaration is the document type declaration that specifies the HTML version. The `<head>` section contains metadata and information about the web page, including the `<title>` and `<meta>` elements. The "footer" is a content section at the bottom of the page that usually contains additional information.
