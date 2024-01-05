@@ -1,0 +1,132 @@
+
+Time Stamp: 5th Jan. 2K24 - 02:52 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster/Frontend-Web-Dev
+----------------------------------------------------------------------------------------------------
+
+CSS Selectors:
+--------------
+
+Certainly! Here are key points about CSS selectors, which are used to target and style HTML elements:
+
+1. Element Selector:
+
+- Syntax: Selects elements based on their tag name.
+  
+  ```css
+  p {
+    /* Styles applied to all <p> elements */
+  }
+  ```
+
+2. Class Selector:
+
+- Syntax: Selects elements with a specific class attribute.
+
+  ```css
+  .highlight {
+    /* Styles applied to all elements with class="highlight" */
+  }
+  ```
+
+- Usage in HTML:
+
+  ```html
+  <p class="highlight">This is a highlighted paragraph.</p>
+  ```
+
+3. ID Selector:
+
+- Syntax: Selects a single element with a specific id attribute.
+
+  ```css
+  #header {
+    /* Styles applied to the element with id="header" */
+  }
+  ```
+
+- Usage in HTML:
+
+  ```html
+  <div id="header">This is the header.</div>
+  ```
+
+4. Attribute Selector:
+
+- Syntax: Selects elements based on their attributes.
+
+  ```css
+  input[type="text"] {
+    /* Styles applied to text input elements */
+  }
+  ```
+
+5. Descendant Selector:
+
+- Syntax: Selects an element that is a descendant of another specified element.
+
+  ```css
+  article p {
+    /* Styles applied to <p> elements inside <article> elements */
+  }
+  ```
+
+6. Adjacent Sibling Selector:
+
+- Syntax: Selects an element that is immediately preceded by a specified element.
+
+  ```css
+  h2 + p {
+    /* Styles applied to <p> elements immediately following <h2> elements */
+  }
+  ```
+
+7. Pseudo-Classes:
+
+- Syntax: Selects elements based on their state or position.
+
+  ```css
+  a:hover {
+    /* Styles applied to links on hover */
+  }
+
+  li:first-child {
+    /* Styles applied to the first <li> within its parent */
+  }
+  ```
+
+8. Pseudo-Elements:
+
+- Syntax: Selects parts of an element, such as the first line or first letter.
+
+  ```css
+  p::first-line {
+    /* Styles applied to the first line of <p> elements */
+  }
+
+  p::first-letter {
+    /* Styles applied to the first letter of <p> elements */
+  }
+  ```
+
+9. Universal Selector:
+
+- Syntax: Selects all elements on a page.
+
+  ```css
+  * {
+    /* Styles applied to all elements */
+  }
+  ```
+
+10. Grouping Selectors:
+
+- Syntax: Allows you to apply the same styles to multiple selectors.
+
+  ```css
+  h1, h2, h3 {
+    /* Styles applied to <h1>, <h2>, and <h3> elements */
+  }
+  ```
+
+These are some of the fundamental CSS selectors. Understanding and mastering these selectors is essential for creating well-styled and responsive web designs. Combining and nesting selectors allows for precise targeting of HTML elements.
