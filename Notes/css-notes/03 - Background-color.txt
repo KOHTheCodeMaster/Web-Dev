@@ -1,0 +1,87 @@
+
+Time Stamp: 5th Jan. 2K24 - 02:48 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster/Frontend-Web-Dev
+----------------------------------------------------------------------------------------------------
+
+Background-Color:
+-----------------
+
+`background-color` property in CSS:
+
+1. Purpose: The `background-color` property is used to set the background color of an HTML element.
+
+   ```css
+   selector {
+     background-color: color;
+   }
+   ```
+
+2. Color Values:
+   - It accepts various color values, including predefined color names (e.g., "red", "blue"), hexadecimal values (e.g., "#ff0000" for red), RGB values, and HSL values.
+
+   ```css
+   body {
+     background-color: #f2f2f2; /* Hexadecimal value */
+   }
+
+   h1 {
+     background-color: rgb(255, 0, 0); /* RGB value */
+   }
+
+   p {
+     background-color: hsl(120, 100%, 50%); /* HSL value (green) */
+   }
+   ```
+
+3. Transparent Background:
+   - The value `transparent` can be used to make the background of an element transparent.
+
+   ```css
+   div {
+     background-color: transparent;
+   }
+   ```
+
+4. Default Value: If no background color is specified, the default is typically transparent.
+
+5. Inheritance: The `background-color` property is inherited by child elements from their parent unless overridden.
+
+6. Opacity: The background color's opacity can be adjusted using the `rgba()` or `hsla()` color values, where the "a" stands for alpha (opacity).
+
+   ```css
+   .container {
+     background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
+   }
+   ```
+
+7. Background Shorthand:
+   - The `background` shorthand property can be used to set multiple background-related properties, including `background-color`.
+
+   ```css
+   div {
+     background: #ffee00 url('background.jpg') no-repeat center center;
+   }
+   ```
+
+8. Use Cases:
+   - Setting the background color of the entire page or specific elements.
+   - Creating visual separation between elements.
+   - Enhancing the design and aesthetics of a webpage.
+
+9. Browser Support: The `background-color` property is well-supported in all modern browsers.
+
+10. Example:
+
+    ```css
+    body {
+      background-color: #f9f9f9; /* Light gray background */
+    }
+
+    .header {
+      background-color: #333; /* Dark background for the header */
+      color: #fff; /* White text for better contrast */
+    }
+    ```
+
+These key points should help in understanding the basics of using the `background-color` property in CSS. It's a fundamental aspect of web design for creating visually appealing and well-styled websites.
