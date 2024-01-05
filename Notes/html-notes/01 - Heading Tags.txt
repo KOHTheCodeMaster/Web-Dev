@@ -33,14 +33,19 @@ Example:
 ```html
 <h1>Main Title</h1>
 
-<h2>Section 1</h2>
-<p>Content of section 1 goes here.</p>
+<section>
+    <h2>Section 1</h2>
+    <p>Content of section 1 goes here.</p>
+</section>
 
-<h2>Section 2</h2>
-<p>Content of section 2 goes here.</p>
+<section>
+    <h2>Section 2</h2>
+    <p>Content of section 2 goes here.</p>
 
-<h3>Subsection 2.1</h3>
-<p>Content of subsection 2.1 goes here.</p>
+    <h3>Subsection 2.1</h3>
+    <p>Content of subsection 2.1 goes here.</p>
+</section>
+
 ```
 
 This simple structure helps both humans and search engines understand the organization of your content.

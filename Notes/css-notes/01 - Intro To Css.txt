@@ -1,0 +1,176 @@
+
+Time Stamp: 5th Jan. 2K24 - 02:08 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster/Frontend-Web-Dev
+----------------------------------------------------------------------------------------------------
+
+CSS (Cascading Style Sheets) - Introduction
+
+CSS is a powerful styling language used to control the presentation and layout of HTML documents. It allows you to define the appearance of web pages, including fonts, colors, spacing, and positioning. Let's start with the basics:
+
+CSS Basics:
+
+1. Introduction to CSS:
+   - CSS stands for Cascading Style Sheets.
+   - It is used for styling and layout of web pages.
+   - Helps in separating the structure (HTML) from the presentation (CSS) of a document.
+
+2. CSS Syntax:
+   - CSS is written in rule sets.
+   - Each rule set consists of a selector and a declaration block.
+   - The selector identifies the HTML element, and the declaration block contains style properties and values.
+
+   ```css
+   selector {
+     property: value;
+   }
+   ```
+
+Selectors:
+
+3. Element Selector:
+   - Selects HTML elements based on their tag name.
+
+   ```css
+   p {
+     color: blue;
+   }
+   ```
+
+4. Class Selector:
+   - Selects elements with a specific class attribute.
+
+   ```css
+   .highlight {
+     background-color: yellow;
+   }
+   ```
+
+5. ID Selector:
+   - Selects a single element with a specific id attribute.
+
+   ```css
+   #header {
+     font-size: 24px;
+   }
+   ```
+
+Properties and Values:
+
+6. Color Property:
+   - Defines the text color or background color.
+
+   ```css
+   h1 {
+     color: red;
+   }
+   ```
+
+7. Font Property:
+   - Sets the font family, size, and style.
+
+   ```css
+   body {
+     font-family: 'Arial', sans-serif;
+     font-size: 16px;
+     font-weight: bold;
+   }
+   ```
+
+8. Margin and Padding:
+   - Controls the spacing around elements.
+
+   ```css
+   .box {
+     margin: 10px;
+     padding: 20px;
+   }
+   ```
+
+9. Border Property:
+   - Defines the border around elements.
+
+   ```css
+   img {
+     border: 2px solid black;
+   }
+   ```
+
+Box Model:
+
+10. Box Model:
+    - Every HTML element is treated as a box with content, padding, border, and margin.
+    - Understanding the box model is crucial for layout design.
+
+    ```css
+    .box {
+      width: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin: 20px;
+    }
+    ```
+
+
+Advanced Topics:
+----------------
+
+Responsive Design:
+
+11. Media Queries:
+    - Adjust styles based on the device characteristics.
+    - Useful for creating responsive designs.
+
+    ```css
+    @media screen and (max-width: 600px) {
+      body {
+        font-size: 14px;
+      }
+    }
+    ```
+
+12. Flexbox:
+    - A layout model to design complex layouts more efficiently.
+
+    ```css
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    ```
+
+CSS Transitions and Animations:
+
+13. Transitions:
+    - Smoothly transition between property values.
+
+    ```css
+    button {
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4CAF50;
+    }
+    ```
+
+14. Animations:
+    - Create dynamic animations using keyframes.
+
+    ```css
+    @keyframes slide {
+      from {
+        margin-left: 100%;
+      }
+      to {
+        margin-left: 0;
+      }
+    }
+
+    .slide-in {
+      animation: slide 1s ease-in-out;
+    }
+    ```
+
+These are fundamental concepts in CSS that provide a solid foundation for styling web pages. Feel free to ask for more details on any specific topic!
