@@ -1,0 +1,125 @@
+
+Time Stamp: 16th Jan. 2K24 - 08:58 AM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster/Frontend-Web-Dev
+----------------------------------------------------------------------------------------------------
+
+Font-Family:
+------------
+
+The `font-family` property in CSS is used to define the preferred font for text content in an element. Here are key points and notes regarding the `font-family` property:
+
+1. Basic Usage:
+
+- The `font-family` property is applied to an element to specify the font or list of fonts to be used for rendering text.
+
+  ```css
+  selector {
+    font-family: value;
+  }
+  ```
+
+2. Font Stacks:
+
+- Font families are often specified as a "font stack," which is a prioritized list of font family names.
+
+  ```css
+  selector {
+    font-family: "Times New Roman", Times, serif;
+  }
+  ```
+
+- The browser will attempt to use the first font in the stack; if it's not available, it will try the next one, and so on.
+
+3. Generic Font Families:
+
+- In addition to specific font names, CSS provides generic font family names that can be used as fallbacks.
+
+  - `serif`: Fonts with serifs (small decorative lines at the end of characters).
+  - `sans-serif`: Fonts without serifs.
+  - `monospace`: Fixed-width fonts where each character takes up the same horizontal space.
+  - `cursive`: Fonts designed to resemble handwriting.
+  - `fantasy`: Decorative or ornamental fonts.
+
+  ```css
+  selector {
+    font-family: "Times New Roman", Times, serif;
+  }
+  ```
+
+4. Web Safe Fonts:
+
+- To maximize the chance that your chosen font will be available across various systems, you can use web-safe fonts.
+
+  ```css
+  selector {
+    font-family: Arial, sans-serif;
+  }
+  ```
+
+5. Multiple Font Families:
+
+- Multiple font families can be listed as a fallback.
+
+  ```css
+  selector {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  ```
+
+6. Custom Fonts (@font-face):
+
+- Custom fonts can be added to a webpage using the `@font-face` rule. This allows the use of non-standard fonts that are not pre-installed on users' devices.
+
+  ```css
+  @font-face {
+    font-family: 'CustomFont';
+    src: url('custom-font.woff') format('woff');
+  }
+
+  selector {
+    font-family: 'CustomFont', Arial, sans-serif;
+  }
+  ```
+
+7. Font Weight and Style:
+
+- The `font-family` property can be combined with `font-weight` and `font-style` to further customize the appearance of text.
+
+  ```css
+  selector {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+  }
+  ```
+
+8. Fallback Mechanism:
+
+- Always provide a generic font family or a web-safe font as the last item in the font stack to ensure a fallback in case the preferred fonts are not available.
+
+  ```css
+  selector {
+    font-family: 'CustomFont', Arial, sans-serif;
+  }
+  ```
+
+9. Responsive Typography:
+
+- Use media queries to adjust the font family based on the screen size or other conditions.
+
+  ```css
+  @media screen and (max-width: 600px) {
+    selector {
+      font-family: 'MobileFont', sans-serif;
+    }
+  }
+  ```
+
+10. Use Cases:
+
+- Choosing fonts that complement the design and style of the website.
+- Ensuring legibility and readability across different devices.
+- Providing fallback options for fonts that may not be universally available.
+
+Understanding how to use the `font-family` property allows you to define the visual style of text content on your web page and contributes to the overall aesthetics of your design.
