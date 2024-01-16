@@ -1,0 +1,134 @@
+
+Time Stamp: 16th Jan. 2K24 - 08:11 AM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster/Frontend-Web-Dev
+----------------------------------------------------------------------------------------------------
+
+Text Align:
+-----------
+
+The `text-align` property in CSS is used to specify the horizontal alignment of text within an element. Here are key points and notes regarding the `text-align` property:
+
+1. Basic Usage:
+
+- The `text-align` property is applied to a container element to define the horizontal alignment of its text content.
+
+  ```css
+  selector {
+    text-align: value;
+  }
+  ```
+
+2. Possible Values:
+
+- Left (`left`): Text is aligned to the left edge of the container.
+  
+  ```css
+  .left-align {
+    text-align: left;
+  }
+  ```
+
+- Right (`right`): Text is aligned to the right edge of the container.
+
+  ```css
+  .right-align {
+    text-align: right;
+  }
+  ```
+
+- Center (`center`): Text is centered within the container.
+
+  ```css
+  .center-align {
+    text-align: center;
+  }
+  ```
+
+- Justify (`justify`): Text is justified, meaning it is spread out to align with both the left and right edges of the container.
+
+  ```css
+  .justify-align {
+    text-align: justify;
+  }
+  ```
+
+3. Inheritance:
+
+- The `text-align` property is inherited, meaning it can be applied to child elements.
+
+  ```css
+  .parent {
+    text-align: center;
+  }
+
+  .child {
+    /* Inherits text-align: center from the parent */
+  }
+  ```
+
+4. Applied to Inline and Inline-Block Elements:
+
+- `text-align` can be applied to both block-level and inline-level elements.
+
+  ```css
+  p {
+    text-align: right; /* Applied to block-level element */
+  }
+
+  span {
+    text-align: center; /* Applied to inline-level element */
+  }
+  ```
+
+5. Centering Block-Level Elements:
+
+- To horizontally center block-level elements, often used in conjunction with `margin: auto;`.
+
+  ```css
+  .center-block {
+    text-align: center;
+  }
+
+  .center-block img {
+    margin: auto; /* Horizontally centers the image */
+  }
+  ```
+
+6. Responsive Text Alignment:
+
+- Media queries can be used to adjust text alignment based on the screen width.
+
+  ```css
+  @media screen and (max-width: 600px) {
+    selector {
+      text-align: center;
+    }
+  }
+  ```
+
+7. Vertical Alignment of Inline Elements:
+
+- For vertically aligning inline elements within a line of text, use `vertical-align`.
+
+  ```css
+  img {
+    vertical-align: middle; /* Vertically aligns the image with the text */
+  }
+  ```
+
+8. Use Cases:
+
+- Setting the alignment of headings, paragraphs, and other text elements.
+- Creating centered layouts.
+- Aligning text within navigation menus and buttons.
+
+9. Note on `text-align-last`:
+
+- The `text-align-last` property is used to set the alignment of the last line of text within an element. It is not widely supported in all browsers.
+
+10. Considerations:
+
+- When using `text-align: justify`, be cautious with its application, as it can sometimes lead to uneven spacing between words.
+
+Understanding how to use `text-align` effectively is essential for controlling the layout and appearance of text content on your web page. It plays a crucial role in achieving a visually balanced and well-organized design.
