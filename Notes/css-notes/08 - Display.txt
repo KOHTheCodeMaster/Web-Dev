@@ -1,0 +1,88 @@
+
+Time Stamp: 16th Jan. 2K24 - 08:14 AM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster/Frontend-Web-Dev
+----------------------------------------------------------------------------------------------------
+
+Display:
+--------
+
+The `display` property in CSS is a versatile and fundamental property that controls the layout behavior of an element. Here are key points and notes regarding the `display` property:
+
+1. Basic Usage:
+
+- The `display` property is used to define how an element should be rendered in the document.
+
+  ```css
+  selector {
+    display: value;
+  }
+  ```
+
+2. Common Values:
+
+- `block`: Makes the element a block-level container, taking up the full width available and starting on a new line.
+
+  ```css
+  div {
+    display: block;
+  }
+  ```
+
+- `inline`: Makes the element an inline-level container, allowing it to flow within the text on the same line.
+
+  ```css
+  span {
+    display: inline;
+  }
+  ```
+
+- `inline-block`: Combines aspects of both `block` and `inline`, allowing the element to be inline but also to have a specified width and height.
+
+  ```css
+  div {
+    display: inline-block;
+  }
+  ```
+
+- `none`: Hides the element, making it effectively invisible and removing it from the document flow.
+
+  ```css
+  .hidden {
+    display: none;
+  }
+  ```
+
+3. Controlling Box Model:
+
+- The `display` property influences the box model, determining how elements interact with other elements in terms of width, height, margin, padding, and border.
+
+4. Flexbox and Grid:
+
+- The `flex` and `grid` values enable the use of Flexbox and Grid layout models, providing powerful tools for creating flexible and responsive designs.
+
+  ```css
+  .flex-container {
+    display: flex;
+  }
+
+  .grid-container {
+    display: grid;
+  }
+  ```
+
+5. Use Cases:
+
+- Choosing the appropriate `display` value depends on the desired layout and how elements should interact with each other.
+
+  - Use `block` for standalone elements.
+  - Use `inline` for elements within a line of text.
+  - Use `inline-block` for elements with specific width and height.
+  - Use `none` for hiding elements.
+  - Use `flex` or `grid` for flexible and grid-based layouts.
+
+6. Note on Accessibility:
+
+- Hiding elements with `display: none;` removes them from the accessibility tree. If an element should be hidden visually but still accessible, consider using other techniques like `visibility: hidden;` or positioning off-screen.
+
+Understanding the `display` property and its various values is crucial for creating well-structured and responsive layouts in CSS. Different display values offer different layout capabilities, and choosing the right one depends on the specific design requirements.
