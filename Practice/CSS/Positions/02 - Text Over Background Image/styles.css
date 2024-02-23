@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    position: relative;
+    font-family: sans-serif;
+    width: 1080px;
+    margin: 80px auto;
+}
+
+.base-img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.main-content {
+    position: absolute;
+    bottom: 10%;
+    text-align: center;
+}
+
+.heading {
+    margin: 30px;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.description {
+    color: white;
+    margin: 0 30px;
+}
+
+.btn {
+    margin: 20px 30px;
+    padding: 10px 24px;
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}

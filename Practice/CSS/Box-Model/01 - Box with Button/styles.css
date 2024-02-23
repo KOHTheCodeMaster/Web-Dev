@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background-color: #1DE592;
+    font-family: sans-serif;
+    width: 450px;
+    border-radius: 14px;
+    padding: 80px 60px;
+    margin: 80px auto;
+}
+
+.heading {
+    font-size: 48px;
+}
+
+.content {
+    margin: 32px 0;
+    font-weight: bold;
+}
+
+.btn {
+    border: none;
+    border-radius: 32px;
+    background-color: white;
+    padding: 16px 40px;
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    font-family: sans-serif;
+    width: 550px;
+    border: 2px solid lightgray;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 80px auto;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    position: relative;
+    border-radius: 16px;
+}
+
+.header-img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.promoted {
+    background-color: grey;
+    padding: 0 10px;
+    margin: 16px;
+    border-radius: 4px;
+    color: white;
+    position: absolute;
+    top: 0;
+    opacity: 50%;
+}
+
+.delivery-time {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    background-color: whitesmoke;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 16px;
+    border-radius: 10px;
+}
+
+.offer {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #1B73E8;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 16px;
+    padding: 5px 10px;
+}
+
+.heading {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.cuisine-type {
+    font-size: 25px;
+    color: gray;
+    margin: 10px 0;
+    font-weight: lighter;
+}
+
+.footer {
+    border-top: 2px solid lightgray;
+    padding-top: 5px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.footer-text {
+    color: gray;
+    font-size: 20px;
+    margin: 5px 5px 5px 85px;
+}
+
+.delivery-logo-img {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 70px;
+}
