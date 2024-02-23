@@ -1,0 +1,48 @@
+
+Time Stamp: 23rd Feb. 2K24 - 12:49 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster/Frontend-Web-Dev
+----------------------------------------------------------------------------------------------------
+
+<hr> Tag:
+-----------
+
+The `<hr>` tag in HTML is used to create a horizontal rule or line, typically used to separate content sections on a webpage. Here are key points and notes regarding the `<hr>` tag:
+
+1. Basic Usage:
+
+- The `<hr>` tag is an empty, self-closing tag.
+
+  ```html
+  <hr>
+  ```
+
+2. Appearance: The appearance of the `<hr>` element is typically a horizontal line that spans the width of its container.
+
+3. Styling with CSS: The `<hr>` tag can be styled using CSS to customize its appearance, such as changing the color, width, and style of the line.
+
+  ```css
+  hr {
+    color: #ccc;
+    background-color: #ccc;
+    height: 2px;
+  }
+  ```
+
+4. Use Cases:
+
+- Separating different sections of content on a webpage.
+- Creating visual breaks between paragraphs or groups of content.
+- Adding a decorative line for design purposes.
+
+5. Example:
+
+- Simple use of the `<hr>` tag to create a visual break:
+
+  ```html
+  <p>This is the first paragraph of content.</p>
+  <hr>
+  <p>This is the second paragraph of content.</p>
+  ```
+
+Understanding how to use the `<hr>` tag allows us to create visually appealing and well-organized web pages by adding visual breaks between different sections of content.
