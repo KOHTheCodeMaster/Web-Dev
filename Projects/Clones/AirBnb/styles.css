@@ -9,13 +9,10 @@ body {
     height: 100vh;
 }
 
-nav {
+.nav {
     width: 100%;
     height: 20%;
     padding: 20px 90px;
-}
-
-.flex {
     display: flex;
     justify-content: space-between;
 }
@@ -51,6 +48,11 @@ nav {
     background-color: #efefef;
     border-radius: 22px;
     color: black;
+}
+
+.nav-user-section {
+    display: flex;
+
 }
 
 .border1 {
