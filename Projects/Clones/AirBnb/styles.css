@@ -36,23 +36,58 @@ body {
 }
 
 .active-home-tab {
-    color: black;
+    color: #222222;
     font-weight: bold;
 }
 
 .inactive-home-tab {
-    color: grey;
+    color: #717171;
 }
 
 .inactive-home-tab:hover {
-    background-color: #efefef;
+    background-color: #F7F7F7;
     border-radius: 22px;
     color: black;
 }
 
 .nav-user-section {
     display: flex;
+    align-items: center;
+    height: 30%;
+}
 
+.user-tab-btn {
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background-color: white;
+    border: none;
+}
+.user-tab-btn:hover {
+    background-color: #F7F7F7;
+}
+
+.language-btn-wrapper {
+    padding: 15px;
+}
+
+.language-btn-wrapper:hover {
+    background-color: #F7F7F7;
+    border-radius: 50%;
+}
+
+.user-settings-btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 20px;
+    padding: 10px 10px 10px 16px;
+    border: 1px solid #dddddd;
+    border-radius: 30px;
+}
+
+.user-settings-btn-wrapper:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
 }
 
 .border1 {
