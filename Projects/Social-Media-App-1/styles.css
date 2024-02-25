@@ -7,10 +7,11 @@
 body {
     width: 100vw;
     height: 100vh;
+    font-family: system-ui;
 }
 
 main {
-    width: 50%;
+    width: 60%;
     height: 10%;
     margin: auto;
 }
@@ -40,17 +41,19 @@ main {
 
 .story-container {
     display: flex;
-    justify-content: start;
+    /*justify-content: center;*/
+    gap: 10px;
+    overflow: auto;
 }
 
 .story {
-    width: 100px;
+    width: 80px;
+    text-align: center;
 }
 
 .story-img-wrapper {
     width: 80px;
     height: 80px;
-    margin: auto;
 }
 
 .story-img {
@@ -62,6 +65,94 @@ main {
 .story-username {
     text-align: center;
     margin-top: 5px;
+}
+
+.feeds-section {
+    width: 60%;
+    margin-top: 30px;
+}
+
+.feed-post {
+    /*width: 100%;*/
+    border: 2px solid lightgray;
+    border-radius: 14px;
+    margin: 20px 10px;
+    padding: 10px;
+}
+
+.feed-author-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feed-user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.full-name {
+    font-size: 16px;
+}
+
+.username {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.feed-content-section {
+    margin: 10px 0;
+}
+
+.feed-post-img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.feed-post-caption {
+    margin-top: 10px;
+}
+
+.feed-footer-icons-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.feed-footer-icon {
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
+
+.feeds-and-sidebar-wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 40%;
+
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.description {
+    margin: 16px 0;
+}
+
+.download-app-section {
+    display: flex;
+    gap: 10px;
+}
+
+.download-img {
+    width: 120px;
 }
 
 .border1 {
