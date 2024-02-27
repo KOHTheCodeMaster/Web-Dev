@@ -15,6 +15,7 @@ body {
     padding: 20px 90px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid lightgray;
 }
 
 .navbar-brand {
@@ -22,8 +23,17 @@ body {
     height: 25%;
 }
 
+.nav-header {
+    width: 50%;
+}
+
 .home-tabs-section {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 50%;
+    margin: auto;
 }
 
 .btn-home-tab {
@@ -63,12 +73,14 @@ body {
     background-color: white;
     border: none;
 }
+
 .user-tab-btn:hover {
     background-color: #F7F7F7;
 }
 
 .language-btn-wrapper {
-    padding: 15px;
+    padding: 13px;
+    height: 100%;
 }
 
 .language-btn-wrapper:hover {
@@ -77,17 +89,30 @@ body {
 }
 
 .user-settings-btn-wrapper {
+    height: 100%;
     display: flex;
     align-items: center;
     gap: 15px;
     margin-left: 20px;
     padding: 10px 10px 10px 16px;
-    border: 1px solid #dddddd;
+    border: 1px solid #DDDDDD;
     border-radius: 30px;
 }
 
 .user-settings-btn-wrapper:hover {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.user-settings-icon {
+    height: 100%;
+}
+
+.search-box-section {
+    /*height: 50%;*/
+    margin: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 
 .border1 {
