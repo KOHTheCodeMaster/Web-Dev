@@ -1,0 +1,94 @@
+.card-container {
+    width: 300px;
+    margin: 80px auto;
+}
+
+.card-header {
+    width: 100%;
+}
+
+.card-img-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.card-btn-guest-fav {
+    padding: 10px;
+    border: none;
+    background-color: white;
+    border-radius: 14px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.card-fav-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+/*
+.card-next-img-btn {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    background-color: white;
+    border-radius: 14px;
+    !*transform: translate(-5%, -50%);*!
+    border: none;
+}
+
+.card-prev-img-btn {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    background-color: white;
+    border-radius: 14px;
+    !*transform: translate(-5%, -50%);*!
+    border: none;
+}
+*/
+
+.card-footer {
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.place-and-rating-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.place-name {
+    font-weight: bold;
+}
+
+.rating-wrapper {
+    display: flex;
+    gap: 5px;
+}
+
+.rating-icon {
+    width: 12px;
+}
+
+.distance-away, .date-available {
+    color: #717171;
+}
+
+.price-wrapper {
+    margin-top: 6px;
+}
