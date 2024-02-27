@@ -169,6 +169,8 @@ body {
 .search-box-guest-and-search-wrapper {
     width: 30%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .search-box-guest-and-search-wrapper:hover {
@@ -182,11 +184,23 @@ body {
 }
 
 .search-box-red-btn-wrapper {
-
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: #FF385C;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.search-box-red-btn-wrapper:hover {
+    background-color: #E61E4D;
 }
 
 .search-box-search-btn {
-    height: 20px;
+    width: 35%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .border1 {
