@@ -7,6 +7,7 @@
 body {
     width: 100vw;
     height: 100vh;
+    font-family: system-ui;
 }
 
 .nav {
@@ -109,10 +110,83 @@ body {
 
 .search-box-section {
     /*height: 50%;*/
+    display: flex;
     margin: 20px;
     border: 1px solid #DDDDDD;
-    border-radius: 30px;
+    border-radius: 36px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.search-box-where-wrapper {
+    width: 30%;
+    padding: 14px 24px;
+    border-right: 1px solid lightgray;
+}
+
+.search-box-where-wrapper:hover {
+    background-color: #EBEBEB;
+    border-radius: 36px;
+    border-right: none;
+}
+
+.search-box-label-text {
+    font-weight: bold;
+    display: block;
+}
+
+.search-box-input-destination {
+    padding: 3px 0;
+    width: 100%;
+    font-size: 16px;
+    border: none;
+}
+
+.search-box-input-destination:focus {
+    outline: none;
+}
+
+.search-box-check-in-out-wrapper {
+    width: 20%;
+    padding: 16px 48px 16px 24px;
+    border-right: 1px solid lightgray;
+}
+
+.search-box-check-in-out-wrapper:hover {
+    background-color: #EBEBEB;
+    border-radius: 36px;
+    /*border-right: none;*/
+}
+
+.search-box-label-text {
+    font-size: 13px;
+}
+
+.search-box-description-text {
+    font-size: 16px;
+    color: grey;
+}
+
+.search-box-guest-and-search-wrapper {
+    width: 30%;
+    display: flex;
+}
+
+.search-box-guest-and-search-wrapper:hover {
+    background-color: #EBEBEB;
+    border-radius: 36px;
+    border-right: none;
+}
+
+.search-box-add-guests-wrapper {
+    padding: 14px 24px;
+}
+
+.search-box-red-btn-wrapper {
+
+}
+
+.search-box-search-btn {
+    height: 20px;
 }
 
 .border1 {
