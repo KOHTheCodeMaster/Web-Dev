@@ -1,6 +1,13 @@
+.cards-section {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    /* Todo: Extra Gap after last card & Remove Horizontal Scrollbar from Entire Page*/
+}
+
 .card-container {
-    width: 300px;
-    margin: 80px auto;
+    /*width: 300px;*/
+    /*margin: 80px auto;*/
 }
 
 .card-header {
@@ -38,6 +45,7 @@
 
 .card-fav-icon:hover {
     /*transition: transform 0.25s cubic-bezier(0.2,0,0,1);*/
+    /* Todo: Fix Transition Effect */
 }
 
 .card-next-img-btn {
