@@ -71,15 +71,6 @@ main {
     background-color: white;
 }
 
-.stays-btn {
-    /*width: 41px;*/
-    /*padding: 10px 16px;*/
-}
-
-.online-experiences-btn {
-    /*width: 144px;*/
-}
-
 .active-home-tab {
     color: #222222;
     font-weight: 600;
@@ -178,8 +169,8 @@ main {
 }
 
 .search-box-where-wrapper {
-    width: 30%;
-    padding: 14px 24px;
+    width: 33.33%;
+    padding: 14px 32px;
     border-right: 1px solid lightgray;
 }
 
@@ -190,14 +181,16 @@ main {
 }
 
 .search-box-label-text {
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 600;
     display: block;
 }
 
 .search-box-input-destination {
-    padding: 3px 0;
+    /*padding: 2px 0 0 0;*/
     width: 100%;
-    font-size: 16px;
+    font-size: 14px;
+    /*line-height: 18px;*/
     border: none;
 }
 
@@ -205,29 +198,31 @@ main {
     outline: none;
 }
 
-.search-box-check-in-out-wrapper {
-    width: 20%;
-    padding: 16px 48px 16px 24px;
+.search-box-check-in-out-tab-wrapper {
+    width: 33.33%;
+    display: flex;
+}
+
+.search-box-check-in-dates-wrapper, .search-box-check-out-dates-wrapper {
+    width: 50%;
+    /*margin: 14px 0;*/
+    padding: 14px 24px;
     border-right: 1px solid lightgray;
 }
 
-.search-box-check-in-out-wrapper:hover {
+.search-box-check-in-dates-wrapper:hover, .search-box-check-out-dates-wrapper:hover {
     background-color: #EBEBEB;
     border-radius: 36px;
     /*border-right: none;*/
 }
 
-.search-box-label-text {
-    font-size: 13px;
-}
-
 .search-box-description-text {
-    font-size: 16px;
+    font-size: 15px;
     color: grey;
 }
 
 .search-box-guest-and-search-wrapper {
-    width: 30%;
+    width: 33.33%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -249,7 +244,7 @@ main {
     height: 48px;
     background-color: #FF385C;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 9px;
 }
 
 .search-box-red-btn-wrapper:hover {
