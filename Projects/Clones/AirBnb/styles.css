@@ -464,6 +464,50 @@ footer {
     height: 100%;
 }
 
+/* Categories Tab Section */
+.category-tabs-section {
+    margin: 48px 80px;
+    height: 300px;
+}
+
+.category-tabs-container {
+    width: 65%;
+    margin: auto;
+}
+
+.category-tabs-heading {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    padding-bottom: 8px;
+}
+
+.category-list {
+    display: flex;
+    list-style: none;
+}
+
+.category-list > :first-child {
+    margin-left: -10px;
+}
+
+.category-tab-btn {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: #717171;
+    padding: 10px;
+    margin: 6px 6px 6px 0;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+.category-tab-btn:active, .category-tab-btn:focus {
+    /*border-bottom: 2px solid #222222;*/
+}
+
 .border1 {
     border: 1px solid red;
 }
