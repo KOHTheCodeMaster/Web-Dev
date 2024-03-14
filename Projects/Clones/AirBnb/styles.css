@@ -467,7 +467,6 @@ footer {
 /* Categories Tab Section */
 .category-tabs-section {
     margin: 48px 80px;
-    height: 300px;
 }
 
 .category-tabs-container {
@@ -503,10 +502,71 @@ footer {
     cursor: pointer;
 }
 
-
 .category-tab-btn:active, .category-tab-btn:focus {
     /*border-bottom: 2px solid #222222;*/
 }
+
+.category-items {
+    padding-top: 33px;
+    display: flex;
+    column-gap: 8px;
+    row-gap: 24px;
+    flex-wrap: wrap;
+    list-style: none;
+    border-top: 1px solid #DDD;
+}
+
+.category-item-wrapper {
+    width: 16%;
+    cursor: pointer;
+}
+
+.category-item-heading {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: #222;
+}
+
+.category-item-subheading {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #717171;
+}
+
+.show-more-categories-link {
+    text-decoration: none;
+    display: flex;
+    gap: 4px;
+}
+
+.show-more-categories-link-text:hover {
+    text-decoration: underline;
+    text-underline: #222;
+}
+
+.show-more-categories-icon {
+    width: 12px;
+    height: 12px;
+    margin-top: 3px;
+}
+
+.category-section-line-break {
+    border: none;   /* To reduce thickness by removing border from left, right, bottom */
+    border-top: 1px solid #DDD;
+}
+
+/* Bottom Sections */
+
+.bottom-sections {
+    margin: 0 80px;
+}
+
+.support-section {
+    /*margin: 0 80px;*/
+}
+
 
 .border1 {
     border: 1px solid red;
