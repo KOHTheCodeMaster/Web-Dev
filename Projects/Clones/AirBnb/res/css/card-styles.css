@@ -1,4 +1,5 @@
 .cards-section {
+    width: 100%; /* Add extra 24px for the gap after the last card */
     margin-top: 16px;
     display: flex;
     gap: 24px;
@@ -7,8 +8,8 @@
 }
 
 .card-container {
-    /*width: 300px;*/
-    /*margin: 80px auto;*/
+    flex: 1 0 auto; /* Allow cards to flex in size */
+    max-width: calc(50% - 12px); /* Half of the available space with gap */
 }
 
 .card-header {
