@@ -79,9 +79,10 @@
 
         <div class="categories-container">
 
-            <div class="category-wrapper">
+            <!--  First Element is Oddly Placed with extra width  -->
+            <div class="category-wrapper" style="min-width: 75px; margin-left: -10px">
                 <img src="res/category-icons/tropical.jpg" alt="" class="category-img">
-                <div class="category-text">Tropical</div>
+                <div class="category-text">Lake front</div>
             </div>
             <div class="category-wrapper">
                 <img src="res/category-icons/rooms.jpg" alt="" class="category-img">
@@ -146,19 +147,21 @@
         <div class="categories-right-section ">
 
             <button class="category-next-img-btn">
-                <img src="res/icons/next-icon.svg" alt="" class="card-next-and-prev-img">
+                <img src="res/icons/next-icon.svg" alt="" class="category-next-img">
             </button>
 
-            <div class="filters-and-before-taxes-wrapper">
+            <div class="filters-wrapper">
                 <img src="res/category-icons/filter-icon.svg" alt="" class="filters-icon">
                 <span class="filters-text">Filters</span>
             </div>
 
-            <div class="filters-and-before-taxes-wrapper">
-                <span class="before-taxes-text">Display total before taxes</span>
-                <div class="before-taxes-btn-wrapper">
-                    <button class="before-taxes-btn"></button>
-                    <div class="before-taxes-btn-toggled-off"></div>
+            <div class="before-taxes-container ">
+                <div class="before-taxes-wrapper ">
+                    <span class="before-taxes-text">Display total before taxes</span>
+                    <div class="before-taxes-btn-wrapper">
+                        <button class="before-taxes-btn"></button>
+                        <div class="before-taxes-btn-toggled-off"></div>
+                    </div>
                 </div>
             </div>
 
