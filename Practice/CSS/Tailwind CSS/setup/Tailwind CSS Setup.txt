@@ -1,0 +1,56 @@
+
+Time Stamp: 17th Apr. 2K24 - 01:39 PM..!!
+Author: Harshit Gupta - K.O.H..!!
+GitHub: https://www.github.com/kohthecodemaster/Frontend-Web-Dev
+----------------------------------------------------------------------------------------------------
+
+1. Install Tailwind CSS via npm in project root directory: `npm install -D tailwindcss`
+
+2. Create Tailwind Config file & configure your template paths (html & css)
+    - tailwind config file path:    ./tailwind.config.js
+    - html file path:               ./src/index.html
+    - css file path:                ./src/output.css
+    - Note: It's not mandatory to put html & css files inside ./src/ directory, but it's the best practice to follow.
+
+    E.g.: ./Practice/CSS/Tailwind CSS/fundamentals/tailwind.config.js
+    ```
+        /** @type {import('tailwindcss').Config} */
+        module.exports = {
+          content: ["./src/**/*.{html,js}"],
+          theme: {
+            extend: {},
+          },
+          plugins: [],
+        }
+    ```
+
+3. Add the @tailwind directives for each of Tailwind’s layers to your main CSS file.
+
+    File: ./src/input.css
+
+    ```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    ```
+
+4. Start the Tailwind CLI build process
+- Run the CLI tool to scan your template files for classes and build your CSS.
+- Note: This command watches the changes in html files and updates output.css file in real time.
+    Command: npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+
+5. Start using Tailwind in your HTML
+- Add your compiled CSS file (output.css) to the <head> and start using Tailwind’s utility classes to style your content.
+  <link href="./output.css" rel="stylesheet">
+
+
+File Structure Summary:
+
+    ----------------------------------------------------------------------------------------------------
+    File Name                   Path
+    ----------------------------------------------------------------------------------------------------
+    tailwind.config.js          Practice/CSS/Tailwind CSS/fundamentals/tailwind.config.js
+    index.html                  Practice/CSS/Tailwind CSS/fundamentals/src/index.html
+    input.css                   Practice/CSS/Tailwind CSS/fundamentals/src/input.css
+    output.css                  Practice/CSS/Tailwind CSS/fundamentals/src/output.css
+    ----------------------------------------------------------------------------------------------------

@@ -1,0 +1,17 @@
+{
+  "name": "frontend-web-dev",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harshit Gupta <kohthecodemaster@gmail.com> (https://github.com/KOHTheCodeMaster)",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:KOHTheCodeMaster/Frontend-Web-Dev"
+  }
+}
