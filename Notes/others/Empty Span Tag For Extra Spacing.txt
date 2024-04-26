@@ -35,9 +35,11 @@ Example Explanation:
 Consider the following HTML and CSS example:
 
 ```html
-<div class="parent">
-    <span class="extra-space"></span>
-    <p>Content inside the parent element</p>
+<div class="parent border">
+    <span class="child-for-extra-space border">
+        <!-- Empty Span Element for Extra Spacing of Parent Element -->
+    </span>
+    <p>P Tag - Child Element</p>
 </div>
 ```
 
@@ -46,14 +48,18 @@ Consider the following HTML and CSS example:
     position: relative;
 }
 
-.extra-space {
+.child-for-extra-space {
     position: absolute;
-    inset: -10px; /* Adjust as needed */
-    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    inset: -50px; /* Adjust as needed */
+    background-color: rgba(149, 222, 65, 0.25); /* Transparent background */
+}
+
+.border {
+    border: 1px solid red;
 }
 ```
 
-- In this example, an empty <span> element with the class `extra-space` is inserted before the content inside the parent <div> element.
+- In this example, an empty <span> element with the class `child-for-extra-space` is inserted before the content inside the parent <div> element.
 - CSS positioning properties are applied to the <span> element to position it absolutely within its parent and create extra spacing.
 - Additional styling like background color and transparency are applied to achieve the desired visual effect.
 

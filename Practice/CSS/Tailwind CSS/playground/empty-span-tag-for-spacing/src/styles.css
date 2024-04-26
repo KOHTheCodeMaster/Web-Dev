@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+main {
+  max-width: 720px;
+  margin: 100px auto;
+}
+
+.parent {
+  position: relative;
+}
+
+.child-for-extra-space {
+  position: absolute;
+  inset: -50px; /* Adjust as needed */
+  background-color: rgba(149, 222, 65, 0.25); /* Transparent background */
+}
+
+.border {
+  border: 1px solid red;
+}
