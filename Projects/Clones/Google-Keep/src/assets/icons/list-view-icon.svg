@@ -1,0 +1,14 @@
+<svg fill="#ffffffde" viewBox="-5.2 -5.2 62.40 45.40" data-name="Layer 1" id="Layer_1"
+     xmlns="http://www.w3.org/2000/svg" stroke="#ffffffde">
+    <g id="SVGRepo_bgCarrier" stroke-width="0">
+    </g>
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+       stroke-width="0.312">
+    </g>
+    <g id="SVGRepo_iconCarrier">
+        <path d="M50,15.52H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H50a2,2,0,0,1,2,2V13.52A2,2,0,0,1,50,15.52Zm-46-4H48V4H4Z">
+        </path>
+        <path d="M50,33.76H2a2,2,0,0,1-2-2V20.24a2,2,0,0,1,2-2H50a2,2,0,0,1,2,2V31.76A2,2,0,0,1,50,33.76Zm-46-4H48V22.24H4Z">
+        </path>
+    </g>
+</svg>
