@@ -11,9 +11,9 @@
 
 <body class="bg-black">
 
-<nav class="bg-gray-800 h-16 p-2">
+<nav class="bg-gray-800 h-16 p-2 flex gap-[30px]">
 
-    <div class="h-full flex gap-1 items-center">
+    <div class="h-full mr-12 flex gap-1 items-center">
 
         <!--  Sidebar - Hamburger Icon  -->
         <button class="p-3 ml-1 rounded-full hover:rounded-full hover:bg-gray-600 ">
@@ -24,14 +24,39 @@
 
         <a class="flex items-center" href="#">
             <!--  Logo  -->
-            <img class="h-10 w-10" src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+            <img class="h-10 w-10 mr-1" src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
                  srcset="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x,
                     https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x"
                  alt="Sidebar Icon">
 
             <!--  Title  -->
-            <span class="pl-2 text-white text-[22px] leading-6">Keep</span>
+            <span class="pl-1 min-w-[54px] text-white text-[22px] leading-6">Keep</span>
         </a>
+
+    </div>
+
+    <div class="flex items-center ml-2.5 rounded-lg bg-[#525355]">
+
+        <!--  Search Icon  -->
+        <button class="px-[5px] rounded-full hover:rounded-full hover:bg-gray-600 ">
+            <div class="p-[3px]">
+                <img class="m-2 w-6 h-6" src="./assets/icons/search-icon.svg" alt="Sidebar Icon">
+            </div>
+        </button>
+
+        <!--  Search Box  -->
+        <div class="flex w-[615px]">
+            <label for="search-box"></label>
+            <input id="search-box" type="text" placeholder="Search"
+                   class="w-full h-6 text-[16px] bg-[#525355] text-white placeholder-[#FFFFFFDE]">
+        </div>
+
+        <!--  Clear Search Icon  -->
+        <button class="px-[5px] rounded-full hover:rounded-full hover:bg-gray-600 ">
+            <div class="p-[3px]">
+                <img class="m-2 w-6 h-6" src="./assets/icons/clear-search-icon.svg" alt="Sidebar Icon">
+            </div>
+        </button>
 
     </div>
 
