@@ -35,6 +35,7 @@
 
     </div>
 
+    <!--  Search Bar  -->
     <div class="flex items-center ml-2.5 rounded-lg bg-[#525355]">
 
         <!--  Search Icon  -->
@@ -52,7 +53,7 @@
         </div>
 
         <!--  Clear Search Icon  -->
-        <button class="px-[5px] rounded-full hover:rounded-full hover:bg-gray-600 ">
+        <button class="px-[2.5px] rounded-full hover:rounded-full hover:bg-gray-600 ">
             <div class="p-[3px]">
                 <img class="m-2 w-6 h-6" src="./assets/icons/clear-search-icon.svg" alt="Sidebar Icon">
             </div>
@@ -62,7 +63,7 @@
 
     <div class="flex ml-auto">
 
-        <div class="flex">
+        <div class="flex mr-[30px]">
             <!--  Refresh Icon  -->
             <div class="w-12 h-12 flex items-center justify-center rounded-full hover:rounded-full hover:bg-gray-600 ">
                 <img class="m-2 w-6 h-6" src="./assets/icons/refresh-icon.svg" alt="Sidebar Icon">
@@ -70,26 +71,30 @@
 
             <!--  List View Icon  -->
             <div class="w-12 h-12 flex items-center justify-center rounded-full hover:rounded-full hover:bg-gray-600 ">
-                <img class="m-2 w-6 h-6" src="./assets/icons/refresh-icon.svg" alt="Sidebar Icon">
+                <img class="m-2 w-6 h-6" src="./assets/icons/list-view-icon.svg" alt="Sidebar Icon">
             </div>
 
             <!--  Settings Icon  -->
             <div class="w-12 h-12 flex items-center justify-center rounded-full hover:rounded-full hover:bg-gray-600 ">
-                <img class="m-2 w-6 h-6" src="./assets/icons/refresh-icon.svg" alt="Sidebar Icon">
+                <img class="m-2 w-6 h-6" src="./assets/icons/settings-icon.svg" alt="Sidebar Icon">
             </div>
         </div>
 
 
-        <div class="flex">
+        <div class="mr-1.5 flex items-center gap-2">
             <!--  Apps Icon  -->
-            <div class="w-12 h-12 flex items-center justify-center rounded-full hover:rounded-full hover:bg-gray-600 ">
-                <img class="m-2 w-6 h-6" src="./assets/icons/refresh-icon.svg" alt="Sidebar Icon">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full hover:rounded-full hover:bg-gray-600 ">
+                <img class="m-2 w-6 h-6" src="./assets/icons/apps-icon.svg" alt="Sidebar Icon">
             </div>
 
             <!--  User Icon  -->
-            <div class="w-12 h-12 flex items-center justify-center rounded-full hover:rounded-full hover:bg-gray-600 ">
-                <img class="m-2 w-6 h-6" src="./assets/icons/refresh-icon.svg" alt="Sidebar Icon">
-            </div>
+            <a class="w-10 h-10 flex items-center justify-center rounded-[50%] hover:rounded-[50%] hover:bg-gray-600 " href="#">
+                <img class="rounded-full"
+                     src="./assets/icons/profile-pic-icon.png"
+                     srcset="./assets/icons/profile-pic-icon.png 1x,
+                        ./assets/icons/profile-pic-icon-2x.png 2x,"
+                     alt="User Profile Icon">
+            </a>
         </div>
 
     </div>
