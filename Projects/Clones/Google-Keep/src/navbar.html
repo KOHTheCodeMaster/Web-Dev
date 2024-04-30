@@ -209,19 +209,20 @@
 
     </div>
 
-    <div class="flex w-full">
+    <div class="w-full">
 
         <!--  Take New Note Box -->
-        <div class="h-[46px] mx-auto mt-8 px-4 py-3 border border-gray-500 rounded-md flex items-center bg-[#202124]">
+        <div class="w-fit h-[46px] mx-auto mt-8 pl-4 pr-[11px] py-3 rounded-md flex items-center
+                    border border-gray-500  bg-[#202124]">
             <!--  Input - Take a note  -->
-            <div class="flex items-center ">
+            <div class="flex items-center">
                 <label for="idTakeNewNoteInput"></label>
                 <input id="idTakeNewNoteInput" type="text" placeholder="Take a note..."
                        class="w-[415px] h-[22px] tracking-wider bg-[#202124] text-sm text-[#E8EAED] placeholder-[#E8EAED]">
             </div>
 
             <!--  New Note Buttons  -->
-            <div class="flex gap-1.5">
+            <div class="h-12 flex gap-1.5">
                 <!--  New List Icon  -->
                 <button class="p-3 rounded-full hover:rounded-full hover:bg-gray-600 ">
                     <div class="w-6 h-6 flex justify-center items-center">
@@ -243,6 +244,36 @@
                     </div>
                 </button>
             </div>
+        </div>
+
+        <!--  Edit Note - Dialog Box  -->
+        <div class="w-fit h-[182px] mx-auto mt-[97px] border border-gray-400 rounded-md bg-[#202124]">
+            <!--  Input - Title  -->
+            <div class="flex items-center pt-4 pb-3 px-[15px] ">
+                <label for="idEditNoteTitleInput"></label>
+                <input id="idEditNoteTitleInput" type="text" placeholder="Title"
+                       class="w-[534px] bg-[#202124] text-[22px] leading-7 text-[#E8EAED] placeholder-[#E8EAED]">
+
+                <!--  New List Icon  -->
+                <button class="p-[1px] rounded-full hover:rounded-full hover:bg-gray-600 ">
+                    <div class="w-8 h-8 flex justify-center items-center">
+                        <img class="w-5 h-5" src="./assets/icons/check-box-icon.svg" alt="Sidebar Icon">
+                    </div>
+                </button>
+            </div>
+
+            <!--  Input - Note Description  -->
+            <div class="flex items-center py-3 px-4 ">
+                <label for="idEditNoteNoteInput"></label>
+                <textarea id="idEditNoteNoteInput" type="text" placeholder="Note"
+                          class="w-[566px] bg-[#202124] text-base tracking-[0.1px]
+                          text-[#E8EAED] placeholder-[#E8EAED]"></textarea>
+
+            </div>
+
+            <!--  Edited Timestamp  -->
+            <div class="flex justify-end items-center py-[5px] px-2.5 text-white">Edited 06:04 PM</div>
+
         </div>
 
     </div>
