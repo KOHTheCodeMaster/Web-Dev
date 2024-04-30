@@ -1,0 +1,29 @@
+
+Date: 30th Apr 2K24 - 04:26 PM..!!
+
+Concept: Flexbox Behavior with `display: flex`
+
+Keywords: HTML, CSS, Width, Display, Flexbox, Flex
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Flexbox Behavior with `display: flex` on Parent and Default Behavior of Child Elements:
+---------------------------------------------------------------------------------------
+
+1. Introduction:
+   - When a parent container has `display: flex` applied to it, it becomes a flex container, and its child elements inherit certain default behaviors.
+
+2. Default Behavior of Child Elements:
+   - Flexible Sizing: Child elements within a flex container adjust their widths based on their content, resembling the behavior of `width: fit`, although the rule itself isn't explicitly applied.
+   - Equal Distribution: Child elements are distributed evenly along the main axis of the flex container by default.
+   - Alignment: Child elements are aligned along the cross axis of the flex container by default.
+   - Flexible Shrink: Child elements have a default `flex-shrink` value of `1`, allowing them to shrink in size if necessary to prevent overflow within the flex container.
+   - No Wrapping: Child elements do not wrap onto new lines by default, staying on a single line along the main axis of the flex container.
+
+3. Conclusion: The default behavior of child elements within a flex container is flexible and adaptive, resembling the behavior of `width: fit` without explicitly applying the rule.
+
+----------------------------------------------------------------------------------------------------
