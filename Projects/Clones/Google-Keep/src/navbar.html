@@ -247,7 +247,7 @@
         </div>
 
         <!--  Edit Note - Dialog Box  -->
-        <div class="w-fit h-[182px] mx-auto mt-[97px] border border-gray-400 rounded-md bg-[#202124]">
+        <div class="w-fit h-fit mx-auto mt-[97px] border border-gray-400 rounded-md bg-[#202124]">
             <!--  Input - Title  -->
             <div class="flex items-center pt-4 pb-3 px-[15px] ">
                 <label for="idEditNoteTitleInput"></label>
@@ -268,12 +268,61 @@
                 <textarea id="idEditNoteNoteInput" type="text" placeholder="Note"
                           class="w-[566px] bg-[#202124] text-base tracking-[0.1px]
                           text-[#E8EAED] placeholder-[#E8EAED]"></textarea>
-
             </div>
 
             <!--  Edited Timestamp  -->
             <div class="h-8 flex justify-end items-end py-[5px] px-2.5 font-[Arial] text-xs text-[#ffffffcc] tracking-[0.3px]">
                 <span>Edited yesterday, 6:04 PM</span>
+            </div>
+
+            <!--  Edit Note Tool Bar  -->
+            <div class="my-1 flex items-center ">
+
+                <div class="flex">
+
+                    <!--  Remind Me  -->
+                    <button class="w-8 h-8 flex justify-center items-center mx-2">
+                        <img class="w-4 h-4" src="./assets/icons/remind-me-icon.svg" alt="Remind Me Icon">
+                    </button>
+
+                    <!--  Collaborator  -->
+                    <button class="w-8 h-8 flex justify-center items-center mx-2">
+                        <img class="w-4 h-4" src="./assets/icons/profile-add-collaborator-icon.svg" alt="Remind Me Icon">
+                    </button>
+
+                    <!--  Background Options  -->
+                    <button class="w-8 h-8 flex justify-center items-center mx-2">
+                        <img class="w-4 h-4" src="./assets/icons/palette-icon.svg" alt="Remind Me Icon">
+                    </button>
+
+                    <!--  Add Image  -->
+                    <button class="w-8 h-8 flex justify-center items-center mx-2">
+                        <img class="w-4 h-4" src="./assets/icons/add-image-icon.svg" alt="Remind Me Icon">
+                    </button>
+
+                    <!--  Archive  -->
+                    <button class="w-8 h-8 flex justify-center items-center mx-2">
+                        <img class="w-5 h-5" src="./assets/icons/archive-icon.svg" alt="Remind Me Icon">
+                    </button>
+
+                    <!--  More  -->
+                    <button class="w-8 h-8 flex justify-center items-center mx-2">
+                        <img class="w-5 h-5" src="./assets/icons/more-three-dots-vertical.svg" alt="Remind Me Icon">
+                    </button>
+
+                    <!--  Undo  -->
+                    <button class="w-8 h-8 flex justify-center items-center mx-2">
+                        <img class="w-5 h-5" src="./assets/icons/undo-icon.svg" alt="Remind Me Icon">
+                    </button>
+
+                    <!--  Redo  -->
+                    <button class="w-8 h-8 flex justify-center items-center mx-2">
+                        <img class="w-5 h-5" src="./assets/icons/redo-icon.svg" alt="Remind Me Icon">
+                    </button>
+
+                </div>
+
+                <button class="w-[86px] ml-auto mr-[15px] px-6 py-2 text-sm tracking-[0.25px] text-[#dadce0]">Close</button>
             </div>
 
         </div>
