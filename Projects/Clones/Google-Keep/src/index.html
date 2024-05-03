@@ -114,7 +114,7 @@
             </div>
 
             <div class="w-12 h-5 mb-[3px] flex items-center ">
-                <span class="text-sm text-[#e8eaed] font-medium">Notes</span>
+                <span class="text-sm text-[#e8eaed] tracking-[0.25px] font-medium">Notes</span>
             </div>
         </div>
 
@@ -125,7 +125,7 @@
             </div>
 
             <div class="w-12 h-5 mb-[3px] flex items-center ">
-                <span class="text-sm text-[#e8eaed] font-medium">Reminders</span>
+                <span class="text-sm text-[#e8eaed] tracking-[0.25px] font-medium">Reminders</span>
             </div>
         </div>
 
@@ -137,8 +137,8 @@
             </div>
 
             <div class="min-w-12 max-w-[198px] h-5 mb-[3px] flex items-center ">
-                <span class="text-ellipsis overflow-hidden whitespace-nowrap text-sm text-[#e8eaed] font-medium">
-                    Big Label - 01234567890123456789012345678901
+                <span class="text-ellipsis overflow-hidden whitespace-nowrap text-sm text-[#e8eaed] tracking-[0.25px] font-medium">
+                    Custom Label - 1
                 </span>
             </div>
         </div>
@@ -151,7 +151,7 @@
             </div>
 
             <div class="min-w-12 max-w-[198px] mb-[3px] flex items-center ">
-                <span class="text-ellipsis overflow-hidden whitespace-nowrap text-sm text-[#e8eaed] font-medium">
+                <span class="text-ellipsis overflow-hidden whitespace-nowrap text-sm text-[#e8eaed] tracking-[0.25px] font-medium">
                     Custom Label - 2
                 </span>
             </div>
@@ -165,7 +165,7 @@
             </div>
 
             <div class="min-w-12 max-w-[198px] mb-[3px] flex items-center ">
-                <span class="text-ellipsis overflow-hidden whitespace-nowrap text-sm text-[#e8eaed] font-medium">
+                <span class="text-ellipsis overflow-hidden whitespace-nowrap text-sm text-[#e8eaed] tracking-[0.25px] font-medium">
                     Custom Label - 3
                 </span>
             </div>
@@ -179,7 +179,7 @@
             </div>
 
             <div class="min-w-12 max-w-[198px] mb-[3px] flex items-center ">
-                <span class="text-sm text-[#e8eaed] font-medium">Edit labels</span>
+                <span class="text-sm text-[#e8eaed] tracking-[0.25px] font-medium">Edit labels</span>
             </div>
         </div>
 
@@ -191,7 +191,7 @@
             </div>
 
             <div class="w-12 h-5 mb-[3px] flex items-center ">
-                <span class="text-sm text-[#e8eaed] font-medium">Archive</span>
+                <span class="text-sm text-[#e8eaed] tracking-[0.25px] font-medium">Archive</span>
             </div>
         </div>
 
@@ -203,7 +203,7 @@
             </div>
 
             <div class="w-12 h-5 mb-[3px] flex items-center ">
-                <span class="text-sm text-[#e8eaed] font-medium">Trash</span>
+                <span class="text-sm text-[#e8eaed] tracking-[0.25px] font-medium">Trash</span>
             </div>
         </div>
 
@@ -213,7 +213,7 @@
 
         <!--  Take New Note Box -->
         <div class="w-fit h-[46px] mx-auto mt-8 pl-4 pr-[11px] py-3 rounded-md flex items-center
-                    border border-gray-500  bg-[#202124]">
+                    border border-[#5F6368]  bg-[#202124]">
             <!--  Input - Take a note  -->
             <div class="flex items-center">
                 <label for="idTakeNewNoteInput"></label>
@@ -246,99 +246,14 @@
             </div>
         </div>
 
-        <!--  Edit Note - Dialog Box  -->
-        <div class="w-fit h-fit mx-auto mt-[97px] border border-gray-400 rounded-md bg-[#202124]">
-            <!--  Input - Title  -->
-            <div class="flex items-center pt-4 pb-3 px-[15px] ">
-                <label for="idEditNoteTitleInput"></label>
-                <input id="idEditNoteTitleInput" type="text" placeholder="Title"
-                       class="w-[534px] bg-[#202124] text-[22px] leading-7 text-[#E8EAED] placeholder-[#E8EAED]">
-
-                <!--  Pin Note  -->
-                <button class="p-[1px] rounded-full hover:bg-[#313236] hover:rounded-full transition duration-200 ease-in">
-                    <div class="w-8 h-8 flex justify-center items-center">
-                        <img class="w-5 h-5" src="./assets/icons/pin-icon.svg" alt="Pin Icon">
-                    </div>
-                </button>
-            </div>
-
-            <!--  Input - Note Description  -->
-            <div class="flex items-center py-3 px-4 ">
-                <label for="idEditNoteNoteInput"></label>
-                <textarea id="idEditNoteNoteInput" type="text" placeholder="Note"
-                          class="w-[566px] bg-[#202124] text-base tracking-[0.1px]
-                          text-[#E8EAED] placeholder-[#E8EAED]"></textarea>
-            </div>
-
-            <!--  Edited Timestamp  -->
-            <div class="h-8 flex justify-end items-end py-[5px] px-2.5 font-[Arial] text-xs text-[#ffffffcc] tracking-[0.3px]">
-                <span>Edited yesterday, 6:04 PM</span>
-            </div>
-
-            <!--  Edit Note Tool Bar  -->
-            <div class="my-1 flex items-center ">
-
-                <div class="flex">
-
-                    <!--  Remind Me  -->
-                    <button class="w-8 h-8 flex justify-center items-center mx-2 hover:bg-[#313236] hover:rounded-full">
-                        <img class="w-4 h-4" src="./assets/icons/remind-me-icon.svg" alt="Remind Me Icon">
-                    </button>
-
-                    <!--  Collaborator  -->
-                    <button class="w-8 h-8 flex justify-center items-center mx-2 hover:bg-[#313236] hover:rounded-full">
-                        <img class="w-4 h-4" src="./assets/icons/profile-add-collaborator-icon.svg"
-                             alt="Collaborator Icon">
-                    </button>
-
-                    <!--  Background Options  -->
-                    <button class="w-8 h-8 flex justify-center items-center mx-2 hover:bg-[#313236] hover:rounded-full">
-                        <img class="w-4 h-4" src="./assets/icons/palette-icon.svg" alt="Background Options Icon">
-                    </button>
-
-                    <!--  Add Image  -->
-                    <button class="w-8 h-8 flex justify-center items-center mx-2 hover:bg-[#313236] hover:rounded-full">
-                        <img class="w-4 h-4" src="./assets/icons/add-image-icon.svg" alt="Add Image Icon">
-                    </button>
-
-                    <!--  Archive  -->
-                    <button class="w-8 h-8 flex justify-center items-center mx-2 hover:bg-[#313236] hover:rounded-full">
-                        <img class="w-5 h-5" src="./assets/icons/archive-icon.svg" alt="Archive Icon">
-                    </button>
-
-                    <!--  More  -->
-                    <button class="w-8 h-8 flex justify-center items-center mx-2 hover:bg-[#313236] hover:rounded-full">
-                        <img class="w-5 h-5" src="./assets/icons/more-three-dots-vertical.svg" alt="Remind Me Icon">
-                    </button>
-
-                    <!--  Undo  -->
-                    <button class="w-8 h-8 flex justify-center items-center mx-2">
-                        <img class="w-5 h-5" src="./assets/icons/undo-icon.svg" alt="Remind Me Icon">
-                    </button>
-
-                    <!--  Redo  -->
-                    <button class="w-8 h-8 flex justify-center items-center mx-2">
-                        <img class="w-5 h-5" src="./assets/icons/redo-icon.svg" alt="Remind Me Icon">
-                    </button>
-
-                </div>
-
-                <button class="w-[86px] ml-auto mr-[15px] px-6 py-2 text-sm tracking-[0.25px]
-                               text-[#dadce0] hover:bg-[#25262A] hover:rounded-md">Close
-                </button>
-            </div>
-
-        </div>
-
-
         <!--  Home Page - View Only - Note Box -->
-        <div class="w-[1296px] mx-auto mt-8 flex gap-4 flex-wrap">
+        <div class="w-[1552px] mx-auto mt-4 p-2 flex gap-4 flex-wrap">
             <!--  Sample Note 1  -->
-            <div class="text-white border border-gray-400 rounded-md">
+            <div class="m-2 text-white border border-[#5F6368] rounded-md">
 
-                <div class="w-[206px] h-[26px] mt-3 mx-4 flex items-center">
+                <div class="w-[206px] h-[26px] mt-3 mx-4 flex items-start">
                     <!--  Title  -->
-                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Title</span>
+                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Sample Title 1</span>
                     <!--  Pin Note  -->
                     <button class="ml-auto p-[1px] rounded-full hover:bg-[#313236] hover:rounded-full transition duration-200 ease-in">
                         <div class="w-[34px] h-[34px] -mr-[5px] mb-1 flex justify-center items-center">
@@ -388,11 +303,11 @@
             </div>
 
             <!--  Sample Note 2  -->
-            <div class="text-white border border-gray-400 rounded-md">
+            <div class="m-2 text-white border border-[#5F6368] rounded-md">
 
                 <div class="w-[206px] h-[26px] mt-3 mx-4 flex items-center">
                     <!--  Title  -->
-                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Title</span>
+                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Sample Title 2</span>
                     <!--  Pin Note  -->
                     <button class="ml-auto p-[1px] rounded-full hover:bg-[#313236] hover:rounded-full transition duration-200 ease-in">
                         <div class="w-[34px] h-[34px] -mr-[5px] mb-1 flex justify-center items-center">
@@ -442,11 +357,11 @@
             </div>
 
             <!--  Sample Note 3  -->
-            <div class="text-white border border-gray-400 rounded-md">
+            <div class="m-2 text-white border border-[#5F6368] rounded-md">
 
                 <div class="w-[206px] h-[26px] mt-3 mx-4 flex items-center">
                     <!--  Title  -->
-                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Title</span>
+                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Sample Title 3</span>
                     <!--  Pin Note  -->
                     <button class="ml-auto p-[1px] rounded-full hover:bg-[#313236] hover:rounded-full transition duration-200 ease-in">
                         <div class="w-[34px] h-[34px] -mr-[5px] mb-1 flex justify-center items-center">
@@ -496,11 +411,11 @@
             </div>
 
             <!--  Sample Note 4  -->
-            <div class="text-white border border-gray-400 rounded-md">
+            <div class="m-2 text-white border border-[#5F6368] rounded-md">
 
-                <div class="w-[206px] h-[26px] mt-3 mx-4 flex items-center">
-                    <!--  Title  -->
-                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Title</span>
+            <div class="w-[206px] h-[26px] mt-3 mx-4 flex items-center">
+                <!--  Title  -->
+                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Sample Title 4</span>
                     <!--  Pin Note  -->
                     <button class="ml-auto p-[1px] rounded-full hover:bg-[#313236] hover:rounded-full transition duration-200 ease-in">
                         <div class="w-[34px] h-[34px] -mr-[5px] mb-1 flex justify-center items-center">
@@ -550,11 +465,65 @@
             </div>
 
             <!--  Sample Note 5  -->
-            <div class="text-white border border-gray-400 rounded-md">
+            <div class="m-2 text-white border border-[#5F6368] rounded-md">
 
                 <div class="w-[206px] h-[26px] mt-3 mx-4 flex items-center">
                     <!--  Title  -->
-                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Title</span>
+                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Sample Title 5</span>
+                    <!--  Pin Note  -->
+                    <button class="ml-auto p-[1px] rounded-full hover:bg-[#313236] hover:rounded-full transition duration-200 ease-in">
+                        <div class="w-[34px] h-[34px] -mr-[5px] mb-1 flex justify-center items-center">
+                            <img class="w-5 h-5" src="./assets/icons/pin-icon.svg" alt="Pin Icon">
+                        </div>
+                    </button>
+                </div>
+
+                <div class="w-[206px] h-6 mx-4 my-3 flex items-center">
+                    <span class="text-[18x] leading-6 text-wrap">Content...</span>
+                </div>
+
+                <!--  Toolbar  -->
+                <div class="my-1 flex items-center">
+                    <!--  Remind Me  -->
+                    <button class="w-[34px] h-[34px] mx-[3px] flex justify-center items-center hover:bg-[#313236] hover:rounded-full">
+                        <img class="w-4 h-4" src="./assets/icons/remind-me-icon.svg" alt="Remind Me Icon">
+                    </button>
+
+                    <!--  Collaborator  -->
+                    <button class="w-[34px] h-[34px] mx-[3px] flex justify-center items-center hover:bg-[#313236] hover:rounded-full">
+                        <img class="w-4 h-4" src="./assets/icons/profile-add-collaborator-icon.svg"
+                             alt="Collaborator Icon">
+                    </button>
+
+                    <!--  Background Options  -->
+                    <button class="w-[34px] h-[34px] mx-[3px] flex justify-center items-center hover:bg-[#313236] hover:rounded-full">
+                        <img class="w-4 h-4" src="./assets/icons/palette-icon.svg" alt="Background Options Icon">
+                    </button>
+
+                    <!--  Add Image  -->
+                    <button class="w-[34px] h-[34px] mx-[3px] flex justify-center items-center hover:bg-[#313236] hover:rounded-full">
+                        <img class="w-4 h-4" src="./assets/icons/add-image-icon.svg" alt="Add Image Icon">
+                    </button>
+
+                    <!--  Archive  -->
+                    <button class="w-[34px] h-[34px] mx-[3px] flex justify-center items-center hover:bg-[#313236] hover:rounded-full">
+                        <img class="w-5 h-5" src="./assets/icons/archive-icon.svg" alt="Archive Icon">
+                    </button>
+
+                    <!--  More  -->
+                    <button class="w-[34px] h-[34px] mx-[3px] flex justify-center items-center hover:bg-[#313236] hover:rounded-full">
+                        <img class="w-5 h-5" src="./assets/icons/more-three-dots-vertical.svg" alt="Remind Me Icon">
+                    </button>
+                </div>
+
+            </div>
+
+            <!--  Sample Note 6  -->
+            <div class="m-2 text-white border border-[#5F6368] rounded-md">
+
+                <div class="w-[206px] h-[26px] mt-3 mx-4 flex items-center">
+                    <!--  Title  -->
+                    <span class="text-base font-medium tracking-[0.1px] text-wrap">Sample Title 6</span>
                     <!--  Pin Note  -->
                     <button class="ml-auto p-[1px] rounded-full hover:bg-[#313236] hover:rounded-full transition duration-200 ease-in">
                         <div class="w-[34px] h-[34px] -mr-[5px] mb-1 flex justify-center items-center">
