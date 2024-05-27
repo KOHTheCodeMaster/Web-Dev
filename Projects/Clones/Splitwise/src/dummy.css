@@ -1,0 +1,30 @@
+#dummy {
+    color: rgb(232, 234, 237);      /* #E8EAED */
+    color: #202124;      /* #E8EAED */
+    color: #308875;      /* Nav Bar BG */
+    color: #2E826B;      /* Nav Bar Border */
+    color: #e8e6e3;      /* Nav Bar User Profile Text */
+
+    /*  Left Side Bar   */
+    color: rgb(44, 125, 102);       /* #2C7D66 - Active Tab Text Color */
+    color: rgb(103, 201, 173);      /* #67C9AD - Active Tab Text Color */
+    color: rgb(168, 160, 149);      /* #A8A095 - Inactive Tab Text Color */
+    color: rgb(48, 52, 54);         /* #303436 - Left Border Color */
+    color: rgb(200, 195, 188);      /* #C8C3BC - Groups Title Text Color */
+    color: rgb(29, 32, 33);         /* #1D2021 - Groups Background Color */
+    color: rgb(51, 56, 58);         /* #33383A - Groups Border Top Color */
+    color: rgb(53, 57, 59);         /* #35393B - Groups Border Bottom Color */
+    color: rgb(200, 195, 188);      /* #C8C3BC - Hiding Acc. Text Color */
+    color: rgb(49, 140, 114);       /* #318C72 - Invite Friends Box Border Color */
+    color: rgb(48, 136, 117);       /* #308875 - Invite Friends Box Background Color */
+    color: rgb(232, 230, 227);      /* #E8E6E3 - Invite Friends Text Color */
+    color: rgb(62, 68, 70);         /* #3E4446 - Invite Friends Below Box Border Color */
+    color: rgb(24, 26, 27);         /* #181A1B - Invite Friends Email Input BG Color */
+    color: rgb(178, 172, 162);      /* #B2ACA2 - Invite Friends Email Input Text Color */
+    color: rgb(62, 68, 70);         /* #3E4446 - Invite Friends Email Input Border Color */
+    color: rgb(200, 195, 188);      /* #C8C3BC - Send Invite Btn Text Color */
+    color: rgb(34, 36, 38);         /* #222426 - Send Invite Btn BG Color */
+    color: rgba(140, 130, 115, 0.1);/* #8C827319 - Send Invite Btn Border Color */
+    color: rgba(140, 130, 115, 0.25);/* #8C82733F - Send Invite Btn Bottom Border Color */
+    color: rgb(200, 195, 188);      /* #C8C3BC - Send Invite Btn Outline Border Color */
+}

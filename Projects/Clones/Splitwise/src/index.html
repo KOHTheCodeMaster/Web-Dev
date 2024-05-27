@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="output.css">
 </head>
 
-<body class="bg-[#202124]">
+<body class="bg-[#181a1b]">
 
 <nav class="w-full h-[33.8px] border-b-[0.8px] border-b-[#2E826B] bg-[#308875]">
 
     <div class="max-w-[980px] h-full px-2.5 mx-auto flex justify-between">
         <!--  Brand Logo  -->
         <div class="w-[108px] h-[22px] ml-2.5 mt-[5.8px] mr-[67px] mb-0.5 flex justify-center items-center">
-            <img class="" src="./assets/icons/splitwise-logo.svg" alt="Sidebar Icon">
+            <img class="" src="./assets/icons/splitwise-logo-with-title.svg" alt="Sidebar Icon">
         </div>
 
         <!--  User Drop Down  -->
@@ -30,6 +30,129 @@
 
 </nav>
 
+<div class="w-[960px] flex justify-between mx-auto">
+
+    <!--  Left Side Bar  -->
+    <section class="w-[180px] mr-5 pl-0.5 pr-1.5">
+
+        <!--  Dashboard  -->
+        <div class="w-[172px] h-[27px] mt-[10px] flex border-l-[#2C7D66] border-l-[6px]">
+            <div class="flex mt-[3px] mr-2 ml-[5px]">
+                <img class="w-4 h-4 mt-0.5" src="assets/icons/splitwise-logo.png" alt="Logo">
+                <span class="text-[16px] leading-[21px] font-bold text-[#67C9AD]">&nbsp;Dashboard</span>
+            </div>
+        </div>
+
+        <!--  Recent Activity  -->
+        <div class="w-[172px] h-[27px] mb-[10px] flex border-l-[#303436] border-l-[6px]">
+            <div class="flex mt-[3px] mr-2 ml-[5px]">
+                <img class="w-4 h-4 mt-[3px] px-[1px]" src="assets/icons/flag-icon.svg" alt="Logo">
+                <span class="text-[16px] leading-[21px] text-[#A8A095]">&nbsp;Recent activity</span>
+            </div>
+        </div>
+
+        <!--  All expenses  -->
+        <div class="w-[172px] h-6 flex border-l-[#303436] border-l-[6px]">
+            <div class="flex mt-[3px] mx-0.5 mb-0.5">
+                <img class="w-[13px] h-[18px] ml-[6px] mr-[3px]" src="assets/icons/list-icon.svg" alt="Logo">
+                <span class="text-[14px] leading-[18px] text-[#A8A095]">All expenses</span>
+            </div>
+        </div>
+
+        <!--  Groups  -->
+        <div class="w-[172px] h-5 mt-[5px] flex">
+            <div class="w-full h-5 flex justify-between items-center ml-[5px] px-[5px] bg-[#1D2021]
+                    border-t-[1px] border-b-[1px] border-t-[#33383A] border-b-[#35393B]">
+                <span class="text-[11px] leading-[18px] text-[#C8C3BC]">GROUPS</span>
+                <div class="h-5 text-[11px] leading-[18px] text-[#C8C3BC] flex items-center">
+                    <!--                    <span class="font-bold text-[16px] text-[#C8C3BC]">+</span>-->
+                    <span class="text-[16px] mb-[3px] mr-[1px] font-extrabold">+</span>
+                    <span class="">add</span>
+                </div>
+            </div>
+        </div>
+
+        <!--  Note: Hiding accounts  -->
+        <div class="w-[172px] h-[38px] mt-[5px] px-2 py-1 flex text-center border-l-[#303436] border-l-[6px]
+                    text-wrap text-[11px] leading-[15px] text-[#C8C3BC]">Hiding accounts settled for more than 30 days.
+            Show »
+        </div>
+
+        <!--  Friends  -->
+        <div class="w-[172px] h-5 mt-[5px] flex">
+            <div class="w-full h-5 flex justify-between items-center ml-[5px] px-[5px] bg-[#1D2021]
+                    border-t-[1px] border-b-[1px] border-t-[#33383A] border-b-[#35393B]">
+                <span class="text-[11px] leading-[18px] text-[#C8C3BC]">FRIENDS</span>
+                <div class="h-5 text-[11px] leading-[18px] text-[#C8C3BC] flex items-center">
+                    <!--                    <span class="font-bold text-[16px] text-[#C8C3BC]">+</span>-->
+                    <span class="text-[16px] mb-[3px] mr-[1px] font-extrabold">+</span>
+                    <span class="">add</span>
+                </div>
+            </div>
+        </div>
+
+        <!--  Note: Hiding accounts  -->
+        <div class="w-[172px] h-[38px] mt-[5px] px-2 py-1 flex text-center border-l-[#303436] border-l-[6px]
+                    text-wrap text-[11px] leading-[15px] text-[#C8C3BC]">Hiding accounts settled for more than 30 days.
+            Show »
+        </div>
+
+        <!--  Invite Box  -->
+        <div class="w-[167px] h-[25.6px] flex items-center mt-[15px] ml-[5px] px-[5px] py-[3px] border-[0.8px] border-[#318C72] bg-[#308875]">
+            <span class="w-full h-full text-[14px] leading-[18px] font-bold text-[#E8E6E3] ">Invite friends</span>
+        </div>
+        <div class="w-[167px] h-[67px] ml-[5px] pt-1 pb-[5px] px-[5px] border-[0.8px] border-[#3E4446] ">
+            <div>
+                <label for="idEmailInviteFriend"></label>
+                <input id="idEmailInviteFriend"
+                       type="email"
+                       placeholder="Enter an email address"
+                       class="w-[155px] h-[27px] mb-[5px] p-1 text-[13px] leading-[18px] rounded
+                        bg-[#202124] text-[#B2ACA2] placeholder-[#65635E] border-[0.8px] border-[#3E4446]">
+            </div>
+            <button class="w-fit h-6 flex flex-wrap text-center px-1.5 py-0.5 text-[12px] leading-[18px] rounded
+                        bg-[#222426] text-[#C8C3BC] border-[0.8px] border-[#8C827319] border-b-[#8C82733F] outline-[#C8C3BC]">
+                Send invite
+            </button>
+        </div>
+
+        <!--  Facebook Link  -->
+        <div class="w-[172px] h-10 flex gap-[3px] pl-[5px] pb-[5px]">
+            <div class="flex items-center mt-[5px] ml-[5px] pt-0.5 pr-2.5 pb-0.5 pl-[2px] text-[#e8e6e3] bg-[#2f477a] rounded
+                        border-[0.8px] border-[#8c82731a] border-t-[#8c82731a] border-r-[#8c82731a]
+                        border-b-[#8c827340] border-l-[#8c82731a]">
+                <img class="w-6 h-6" src="assets/icons/facebook-icon.png" alt="Facebook-Icon">
+                <span class="ml-[3px] text-[14px] leading-[18px] text-[#e8e6e3]">Share</span>
+            </div>
+            <!--  Twitter Link  -->
+            <div class="w-[78px] flex items-center mt-[5px] pt-0.5 pr-2.5 pb-0.5 pl-[3px] text-[#e8e6e3] bg-[#004da6] rounded
+                        border-[0.8px] border-l-0 border-[#8c82731a] border-t-[#8c82731a] border-r-[#8c82731a]
+                        border-b-[#8c827340] border-l-[#8c82731a]">
+                <img class="w-6 h-6" src="assets/icons/twitter-icon.png" alt="Facebook-Icon">
+                <span class="ml-[3px] text-[14px] leading-[18px] text-[#e8e6e3]">Tweet</span>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="w-full border-x border-x-[#3a3e41]"></section>
+
+    <!--  Right Side Bar  -->
+    <section class="w-[200px] h-[700px] min-w-[200px] pl-[23px] flex flex-col text-[#c8c3bc]">
+        <span class="mt-[10px] ml-[2px] text-[13px] leading-6 font-medium text-[#a8a095]">GET SPLITWISE PRO!</span>
+        <div class="w-32 h-32 mt-[6px]">
+            <img class="w-32 h-32" src="assets/icons/splitwise-pro-purple-logo-icon.svg"
+                 alt="splitwise-pro-purple-logo-icon">
+        </div>
+        <span class="mt-[5px] text-[13px] leading-[18px]">Subscribe to <strong>Splitwise Pro</strong> for no ads, currency conversion, charts, search, and more.</span>
+        <button class="w-[105px] h-[38px] mt-2 px-[14px] py-[9px] flex rounded
+                       bg-[#b02e00] border-[0.8px] border-[#8c82731a] text-[15px] text-[#e8e6e3]">
+            Learn more
+        </button>
+    </section>
+
+
+</div>
 
 </body>
 </html>
