@@ -1,0 +1,84 @@
+
+Time Stamp: 28th May 2K24 - 09:04 PM..!!
+
+Concept: Inline Annotations
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Inline Annotations:
+- In TypeScript these are used to explicitly specify the type of a variable or a function parameter directly in the code.
+- This helps TypeScript understand and enforce types without relying on type inference.
+
+1. Inline Annotations for Variables:
+------------------------------------
+
+```typescript
+    // Inline annotation for variable declaration
+    let num: number = 10;
+    let message: string = "Hello, TypeScript!";
+    let isValid: boolean = true;
+```
+
+In the above example: `num` is annotated as a number, `message` is annotated as a string, `isValid` is annotated as a boolean.
+
+2. Inline Annotations for Function Parameters:
+----------------------------------------------
+
+```typescript
+    // Inline annotation for function parameters
+    function greet(name: string): void {
+        console.log(`Hello, ${name}!`);
+    }
+
+    // Call the function with a valid argument
+    greet("John Doe");
+
+    // Uncommenting the following line will cause a type error
+    // greet(123); // Error: Argument of type 'number' is not assignable to parameter of type 'string'
+```
+
+In the `greet` function:
+- The `name` parameter is annotated as a `string`.
+- The return type `void` indicates that the function doesn't return any value.
+
+
+3. Inline Annotations for Function Return Types:
+------------------------------------------------
+
+```typescript
+    // Inline annotation for function return type
+    function add(x: number, y: number): number {
+        return x + y;
+    }
+
+    // Call the function and assign the result to a variable with the correct type
+    let sum: number = add(5, 3);
+
+    // Uncommenting the following line will cause a type error
+    // let invalidResult: string = add(5, 3); // Error: Type 'number' is not assignable to type 'string'
+```
+
+In the `add` function:
+- The return type `number` indicates that the function returns a number.
+
+4. When to Use Inline Annotations:
+----------------------------------
+
+- Explicit Type Declaration:
+    Use inline annotations when you want to explicitly declare the type of a variable, parameter, or function return type.
+- Improved Readability:
+    Inline annotations can enhance code readability, especially in complex scenarios or when type inference might not work as expected.
+- Type Enforcement: Inline annotations help TypeScript enforce correct types, reducing the chances of type-related errors.
+
+Summary:
+--------
+
+- Inline annotations provide a way to explicitly specify types within the code for variables, function parameters, and return types.
+
+- They enhance code readability and help TypeScript enforce correct types, leading to more robust and type-safe code.
+
+----------------------------------------------------------------------------------------------------
