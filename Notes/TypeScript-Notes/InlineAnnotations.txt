@@ -21,49 +21,67 @@ Inline Annotations:
     let num: number = 10;
     let message: string = "Hello, TypeScript!";
     let isValid: boolean = true;
-```
 
-In the above example: `num` is annotated as a number, `message` is annotated as a string, `isValid` is annotated as a boolean.
-
-2. Inline Annotations for Function Parameters:
-----------------------------------------------
-
-```typescript
     // Inline annotation for function parameters
     function greet(name: string): void {
         console.log(`Hello, ${name}!`);
     }
-
-    // Call the function with a valid argument
-    greet("John Doe");
-
-    // Uncommenting the following line will cause a type error
-    // greet(123); // Error: Argument of type 'number' is not assignable to parameter of type 'string'
 ```
+
+In the above example: `num` is annotated as a number, `message` as a string, `isValid` as a boolean.
 
 In the `greet` function:
 - The `name` parameter is annotated as a `string`.
 - The return type `void` indicates that the function doesn't return any value.
 
 
-3. Inline Annotations for Function Return Types:
-------------------------------------------------
+2. Inline Annotations for Object Type Parameters:
+-------------------------------------------------
+
+When using inline annotations, you directly specify the structure of the object within the function signature.
+This approach is straightforward but can become cumbersome with complex objects.
 
 ```typescript
-    // Inline annotation for function return type
-    function add(x: number, y: number): number {
-        return x + y;
-    }
+    // Arrow function with inline object type annotation
+    const greet = (person: { name: string; age: number }): string => `Greetings ${person.name}! You are ${person.age} years old.`;
 
-    // Call the function and assign the result to a variable with the correct type
-    let sum: number = add(5, 3);
-
-    // Uncommenting the following line will cause a type error
-    // let invalidResult: string = add(5, 3); // Error: Type 'number' is not assignable to type 'string'
+    // Call the function with an object
+    console.log(greet({ name: "Alice", age: 25 })); // Output: Hello, Alice! You are 25 years old.
+    console.log(greet({ zip: '123' })); // Compile Time Error due to invalid object passed
 ```
 
-In the `add` function:
-- The return type `number` indicates that the function returns a number.
+Advantages
+- Quick and easy for simple objects.
+- No need to define a separate interface.
+
+Disadvantages
+- Repetitive and error-prone for complex or multiple objects with the same structure.
+- Reduces readability when the object structure is complex.
+
+
+3. Interface Usage for Object Type Parameters:
+----------------------------------------------
+
+```typescript
+    // Define an interface for the object structure
+    interface Person {
+        name: string;
+        age: number;
+    }
+
+    const greet = (person: Person): string => `Greetings ${person.name}! You are ${person.age} years old.`;
+
+    console.log(greet({ name: "John Doe", age: 26 })); // Output: Greetings John Doe! You are 26 years old.
+```
+
+Advantages:
+- Promotes re-usability and consistency.
+- Enhances code readability and maintainability.
+- Easier to manage changes to the object structure.
+
+Disadvantages:
+- Slightly more initial setup required.
+
 
 4. When to Use Inline Annotations:
 ----------------------------------
@@ -73,6 +91,7 @@ In the `add` function:
 - Improved Readability:
     Inline annotations can enhance code readability, especially in complex scenarios or when type inference might not work as expected.
 - Type Enforcement: Inline annotations help TypeScript enforce correct types, reducing the chances of type-related errors.
+
 
 Summary:
 --------

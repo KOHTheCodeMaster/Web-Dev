@@ -1,0 +1,64 @@
+
+Time Stamp: 29th May 2K24 - 07:48 PM..!!
+
+Concept: Interface
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. What is an Interface?
+------------------------
+
+An interface in TypeScript is a way to define the shape or structure of an object.
+It is a contract that ensures any object adhering to the interface must implement the specified properties and types.
+Interfaces allow you to define the structure of an object once and reuse it across your codebase, enhancing maintainability and readability.
+
+
+2. Why Use Interfaces?
+----------------------
+
+1. Type Safety: Interfaces enforce type checking at compile time, reducing runtime errors.
+2. Code Readability: They provide a clear structure, making the code more understandable.
+3. Re-usability: Interfaces can be reused across different parts of the application, ensuring consistency.
+4. Flexibility: Interfaces can be extended, allowing for the creation of complex types from simpler ones.
+
+
+3. General Usage of Interfaces:
+-------------------------------
+
+```typescript
+    // Define an interface for the object structure
+    interface Person {
+        name: string;
+        age: number;
+        greet(): string; // Method in the interface
+    }
+
+    const greet = (person: Person): string => `Greetings ${person.name}! You are ${person.age} years old.`;
+
+    console.log(greet({ name: "John Doe", age: 26 })); // Output: Greetings John Doe! You are 26 years old.
+```
+
+
+4. Extending Interfaces:
+------------------------
+
+Interfaces can be extended to create new interfaces with additional properties.
+
+```typescript
+    interface Employee extends Person {
+        employeeId: number;
+    }
+```
+
+5. Summary:
+-----------
+
+- Define the structure once and reuse it.
+- Provide type safety, readability, re-usability, and flexibility.
+- Can be extended to create more complex types.
+
+----------------------------------------------------------------------------------------------------
