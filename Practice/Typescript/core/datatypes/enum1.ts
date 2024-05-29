@@ -37,10 +37,13 @@ function enumGradeExample() {
     console.log('\nAssigning currentGrade with 2 numeric value i.e. in range of 0-5 A-F | ' +
         'currentGrade: ' + currentGrade);   //  currentGrade: 2
 
-    currentGrade = 10;
-    console.log('\nAssigning currentGrade with 10 numeric value i.e. outside of range 0-5 A-F.');
-    console.log('Compile Time Error: Type \'10\' is not assignable to type \'Grade\'');
-    console.log('\nBut still we get output as 10 in JS Code.' + 'currentGrade: ' + currentGrade);   //  currentGrade: 10
+    //  Uncommenting the following line will cause a type error
+    //  currentGrade = 10;
+    /*
+        Assigning currentGrade with 10 numeric value i.e. outside of range 0-5 A-F.
+        Compile Time Error: Type '10' is not assignable to type 'Grade'
+        But still we get output as 10 in JS Code.
+    */
 
     console.log("\nMethod: enumGradeExample Ends.\n");
 

@@ -30,7 +30,7 @@ function demoFunctionParameters() {
     // Call the function with a valid argument
     greet("John Doe");
     // Uncommenting the following line will cause a type error
-    // greet(123); // Error: Argument of type 'number' is not assignable to parameter of type 'string'
+    greet(123); // Error: Argument of type 'number' is not assignable to parameter of type 'string'
 }
 function demoFunctionReturnTypes() {
     // Inline annotation for function return type

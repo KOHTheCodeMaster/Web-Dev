@@ -84,9 +84,10 @@ function unknownDataType() {
     let str: unknown = "ABC";
     console.log(str);
 
+    // Uncommenting the following line will cause a type error
     //  When we attempt to perform any operation directly on unknown type variable, we will get compile time error.
-    let strLen1: number = str.length;    //  TS2339: Property 'length' does not exist on type 'unknown'.
-    console.log('strLen1: ' + strLen1);
+//     let strLen1: number = str.length;    //  TS2339: Property 'length' does not exist on type 'unknown'.
+//     console.log('strLen1: ' + strLen1);
 
     console.log("\nMethod: unknownDataType Ends.\n");
 
@@ -130,8 +131,10 @@ function tupleDataType() {
     tuple3.push(3, 4, 5, 6, 7); //  This is also valid, not sure why... Suspicious Doubt Unresolved!
     console.log('Tuple3: ' + tuple3);
 
+
+    //  Uncommenting the following line will cause a type error
     //  When trying to add invalid data type to tuple, we get compile time error.
-    tuple3.push(true);  //  TS2345: Argument of type 'boolean' is not assignable to parameter of type 'string | number'.
+    //  tuple3.push(true);  //  TS2345: Argument of type 'boolean' is not assignable to parameter of type 'string | number'.
 
     console.log("\nMethod: tupleDataType Ends.\n");
 
@@ -144,18 +147,20 @@ function compileTimeErrorOnChangingDataType() {
     let count: number;  //  Declaring variable num1 of data type number.
     count = 3;  //  Initializing count with number value.
 
-    console.log('When we try to assign string value to count, we get compile time error.' +
-        'TS2322: Type \'string\' is not assignable to type \'number\'.');
-    count = 'ABC';
+    //  Uncommenting the following line will cause a type error
+    //  When we try to assign string value to count, we get compile time error. 'TS2322: Type 'string' is not assignable to type 'number'.
+    //  count = 'ABC';
 
-    console.log('\nWe are using count variable and trying to perform numeric add operation.' +
-        'Since we assigned count with string value, it\'ll concatenate instead of adding 100 value. ' +
-        'In JS, we will get to know about this logical error during runtime, ' +
-        'But Data Types in TypeScript allows us to see these errors during compile time itself.');
+    /*
+        We are using count variable and trying to perform numeric add operation.
+        Since we assigned count with string value, it'll concatenate instead of adding 100 value.
+        In JS, we will get to know about this logical error during runtime,
+        But Data Types in TypeScript allows us to see these errors during compile time itself.
+     */
 
-    console.log('\nCount + 100: ' + (count + 100));
+    console.log('Count + 100: ' + (count + 100));
 
-    console.log("\nMethod: availableDataTypes Ends.\n");
+    console.log("Method: availableDataTypes Ends.\n");
 
 }
 

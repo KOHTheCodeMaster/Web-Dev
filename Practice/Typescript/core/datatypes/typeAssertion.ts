@@ -43,9 +43,10 @@ function typeAssertionExample() {
     let str: unknown = "ABC";
     console.log(str);
 
+    //  Uncommenting the following line will cause a type error
     //  When we attempt to perform any operation directly on unknown type variable, we will get compile time error.
-    let strLen1: number = str.length;    //  TS2339: Property 'length' does not exist on type 'unknown'.
-    console.log('strLen1: ' + strLen1);
+    //  let strLen1: number = str.length;    //  TS2339: Property 'length' does not exist on type 'unknown'.
+    //  console.log('strLen1: ' + strLen1);
 
     //  Hence, we need to narrow down to precise data type by performing Type Assertion when dealing with unknown data type variable.
     let strLen2: number = (<string> str).length;
