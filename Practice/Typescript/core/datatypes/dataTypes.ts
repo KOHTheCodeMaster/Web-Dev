@@ -26,7 +26,7 @@ function main() {
 
 function availableDataTypes() {
 
-    // console.log("Method: availableDataTypes Begins.");
+    console.log("Method: availableDataTypes Begins.");
 
     let num1: number = 123;
     let str1: string = 'ABC';
@@ -36,7 +36,20 @@ function availableDataTypes() {
     let numArr: number[] = [1, 2, 3];
     let anyArr: any[] = [1, true, 'XYZ'];
 
-    // console.log("Method: availableDataTypes Ends.\n");
+    let employee: [number, string] = [12345, "John Doe"];  // Tuple - First element: number, Second element: string
+
+    enum Color { Red, Green, Blue };
+    let myColor: Color = Color.Green;
+
+    function printMessage(): void {
+      console.log("Hola..!! ^-^");
+    }
+
+    function neverReturns(): never {
+      throw new Error("This function never returns.");
+    }
+
+    console.log("Method: availableDataTypes Ends.\n");
 
 }
 

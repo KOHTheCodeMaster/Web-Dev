@@ -17,14 +17,29 @@ function main() {
     compileTimeErrorOnChangingDataType();
 }
 function availableDataTypes() {
-    // console.log("Method: availableDataTypes Begins.");
+    console.log("Method: availableDataTypes Begins.");
     var num1 = 123;
     var str1 = 'ABC';
     var flag = true;
     var anyVar;
     var numArr = [1, 2, 3];
     var anyArr = [1, true, 'XYZ'];
-    // console.log("Method: availableDataTypes Ends.\n");
+    var employee = [12345, "John Doe"]; // Tuple - First element: number, Second element: string
+    var Color;
+    (function (Color) {
+        Color[Color["Red"] = 0] = "Red";
+        Color[Color["Green"] = 1] = "Green";
+        Color[Color["Blue"] = 2] = "Blue";
+    })(Color || (Color = {}));
+    ;
+    var myColor = Color.Green;
+    function printMessage() {
+        console.log("Hola..!! ^-^");
+    }
+    function neverReturns() {
+        throw new Error("This function never returns.");
+    }
+    console.log("Method: availableDataTypes Ends.\n");
 }
 function unknownDataType() {
     /*

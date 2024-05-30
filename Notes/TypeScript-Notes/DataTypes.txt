@@ -1,0 +1,87 @@
+
+Time Stamp: 30th May 2K24 - 08:04 PM..!!
+
+Concept: Data Types
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Variables and Data Types in TypeScript:
+------------------------------------------
+
+- Variables store data in your TypeScript program.
+- Data types define the kind of data a variable can hold (e.g., numbers, strings, booleans, etc.).
+- TypeScript enforces type safety, which helps prevent errors and improves code reliability.
+
+2. Primitive Data Types:
+------------------------
+
+- number: numerical values (e.g., integers, decimals)               Example: `let age: number = 30;`
+- string: textual data enclosed in quotes (single or double)        Example: `let name: string = "Alice";`
+- boolean: `true` or `false` values                                 Example: `let isLoggedIn: boolean = true;`
+- undefined: a variable that has not been assigned a value yet.     Example: `let uninitializedVar: undefined;`
+- null: the intentional absence of a value.                         Example: `let nothing: null = null;`
+
+3. Other Data Types:
+--------------------
+
+object: Represents a collection of key-value pairs used to store complex data structures.
+Example:
+```typescript
+    let person: object = {
+      name: "John Doe",
+      age: 26,
+      hobbies: ["Coding", "Gaming"]
+    };
+```
+
+array: An ordered collection of items, all the same data type. Declared using square brackets `[]` with the element type specified within.
+Example:
+```typescript
+    let colors: string[] = ["red", "green", "blue"];    // Array of strings
+    let numbers: number[] = [1, 2, 3];                  // Array of numbers
+```
+
+tuple: A fixed-length array with specific element types at each index.
+Example: let employee: [number, string] = [12345, "John Doe"];  // First element: number, Second element: string
+
+enum: A user-defined type that restricts a variable to a set of named constants.
+Example:
+```typescript
+    enum Color { Red, Green, Blue };
+    let myColor: Color = Color.Green;
+```
+
+void: Represents the absence of a return type in a function.
+Example:
+```typescript
+    function printMessage(): void {
+      console.log("Hello World!");
+}
+```
+
+any: While generally discouraged due to potential type safety issues, it allows assigning any data type to a variable. Use it cautiously in specific scenarios where type safety is relaxed.
+Example: let userInput: any = prompt("Enter a value:");  // User input can be any type
+
+never:
+- Represents a value that never occurs. Often used with functions that throw an error or never return a value.
+- A function returning 'never' cannot have a reachable end point. It must throw Exception.
+Example:
+```typescript
+    function neverReturns(): never {
+      throw new Error("This function never returns");
+    }
+```
+
+
+4. Key Points:
+--------------
+- Use data types to ensure variables hold the expected kind of data.
+- Primitive types represent basic data values.
+- Reference types store complex data structures.
+- Type annotations enhance code clarity and maintainability.
+
+----------------------------------------------------------------------------------------------------
