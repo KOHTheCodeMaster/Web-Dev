@@ -1,0 +1,98 @@
+
+Time Stamp: 30th May 2K24 - 05:34 PM..!!
+
+Concept: Access Modifiers
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Access Modifiers:
+-----------------
+
+- Control the visibility and accessibility of class members (properties and methods).
+- Three main types: `public`, `private`, and `protected`.
+- In TypeScript, when no access modifier is specified, members are `public` by default.
+- Using Access Modifiers effectively promotes code maintainability, re-usability and data protection in TypeScript applications.
+
+1. Public:
+----------
+
+- Members are accessible from anywhere in the program, including outside the class itself.
+- Use case: Defining properties or methods that should be used by other parts of the code.
+
+Example:
+
+```typescript
+    class Food {
+      public name: string;  // Public field, accessible anywhere
+
+      public constructor(name: string) {
+        this.name = name;
+      }
+
+      public taste() {
+        console.log("This " + this.name + " tastes delicious!"); // Public method, callable anywhere
+      }
+    }
+
+    let myPizza = new Food("Pizza");
+    console.log(myPizza.name);  // Accessing public field
+    myPizza.taste();            // Calling public method
+```
+
+2. Private:
+-----------
+
+- Members are only accessible within the class itself.
+- Use case: Encapsulation (internal implementation details) to prevent unintended modification.
+
+Example:
+```typescript
+    class Recipe {
+      private cookingTime: number = 30; // Private property, only accessible within Recipe class
+
+      public prepare() {
+        console.log("Preparing the Pizza.");
+        this.cook(this.cookingTime); // Private method call from public method
+      }
+
+      private cook(minutes: number) {
+        console.log("Cooking for " + minutes + " minutes.");
+      }
+    }
+
+    let myCake = new Recipe();  // Can't access cookingTime directly
+    myCake.prepare();           // Public method can access private fields and methods internally
+```
+
+
+3. Protected:
+-------------
+
+- Members are accessible within the class itself and its subclasses (derived classes).
+- Use case: Defining shared functionality for a class hierarchy while restricting access from outside.
+
+Example:
+```typescript
+    class FoodItem {
+      protected calorieCount: number;   // Protected property, accessible in FoodItem and its subclasses
+
+      public constructor(calorieCount: number) {
+        this.calorieCount = calorieCount;
+      }
+    }
+
+    class Fruit extends FoodItem {
+      caloriesCount() {
+        return this.calorieCount * 0.5; // Access protected property from subclass and potentially adjust
+      }
+    }
+
+    let myApple = new Fruit(100);
+    console.log(myApple.caloriesCount()); // Calling method from subclass that accesses protected property
+```
+
+----------------------------------------------------------------------------------------------------
