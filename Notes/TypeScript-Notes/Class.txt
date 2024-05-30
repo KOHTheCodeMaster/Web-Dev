@@ -1,0 +1,109 @@
+
+Time Stamp: 30th May 2K24 - 03:52 PM..!!
+
+Concept: Class
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Classes in TypeScript:
+-------------------------
+
+Definition:
+- A class is a blueprint for creating objects with predefined properties and methods.
+- It encapsulates data and behavior, allowing for clear and structured code.
+
+Purpose:
+- Classes are used to model real-world entities and their interactions.
+- They define the structure and behavior of objects, allowing for code organization, reuse and abstraction.
+
+Structure:
+
+class ClassName {
+    // Properties
+    propertyName: Type;
+
+    // Constructor
+    constructor(parameters) {
+        // Initialization
+    }
+
+    // Methods
+    methodName() {
+        // Implementation
+    }
+}
+
+Example: Modeling a User System:
+
+```typescript
+    // Class representing a User
+    class User {
+        username: string;
+        email: string;
+        password: string;
+
+        constructor(username: string, email: string, password: string) {
+            this.username = username;
+            this.email = email;
+            this.password = password;
+        }
+
+        // Method to display user information
+        displayInfo(): string {
+            return `User: ${this.username}, Email: ${this.email}`;
+        }
+    }
+
+    // Creating an instance of User
+    let user1 = new User("john_doe", "john@example.com", "securepassword");
+    console.log(user1.displayInfo()); // Output: User: john_doe, Email: john@example.com
+```
+
+
+2. Inheritance: Extending the User Class:
+-----------------------------------------
+
+```typescript
+    // Class representing an Admin, which is a type of User
+    class Admin extends User {
+        adminLevel: number;
+
+        constructor(username: string, email: string, password: string, adminLevel: number) {
+            super(username, email, password);
+            this.adminLevel = adminLevel;
+        }
+
+        // Method to display admin information
+        displayAdminInfo(): string {
+            return `${this.displayInfo()}, Admin Level: ${this.adminLevel}`;
+        }
+    }
+
+    let admin1 = new Admin("admin_jane", "jane@example.com", "securepassword", 1);
+    console.log(admin1.displayAdminInfo()); // Output: User: admin_jane, Email: jane@example.com, Admin Level: 1
+```
+
+
+3. Practical Note on Implementation:
+------------------------------------
+
+- When a class implements an interface, it must define not only the methods but also the properties declared in the interface.
+- Failing to do so will result in a compile-time error because the class won't fully adhere to the interface contract.
+
+
+4. Why Use Classes When We Have Interfaces?
+-------------------------------------------
+
+Use interfaces to define the structure and classes to implement it.
+
+Difference:
+- Classes define both structure & behavior, providing concrete implementations.
+- Interfaces define only the structure without implementation.
+
+Use Cases:
+- Classes: Used to encapsulate data and behavior, support inheritance, and create object instances.
+- Interfaces: Used for type checking, ensuring consistency, promoting code flexibility, and multiple implementations.
