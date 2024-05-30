@@ -1,0 +1,134 @@
+
+Time Stamp: 30th May 2K24 - 05:34 PM..!!
+
+Concept: Constructors & Objects in TypeScript
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Objects in TypeScript:
+-------------------------
+
+Definition:
+- An object in TypeScript is an instance of a class.
+- It contains properties and methods that define its state and behavior.
+- Each property has a name (key) and a value. The value can be a primitive type, another object, or a function.
+- Properties: Objects can have properties which are variables that hold data specific to the object.
+- Methods: Objects can also have methods, which are functions defined within the class that can operate on the object's properties.
+
+Purpose:
+- Objects are used to store related data and functionality.
+- They are fundamental to object-oriented programming, where they model real-world entities with attributes and behaviors.
+
+Example:
+```typescript
+    let person = {
+        name: "John",
+        age: 26,
+        greet: function() {
+            console.log(`Greetings! ${this.name} here.`);
+        }
+    };
+
+    person.greet(); // Output: Greetings! John here.
+```
+
+
+2. Constructors:
+----------------
+
+Definition:
+- A constructor is a special method in a class that is called when an instance of the class is created.
+- It is used to initialize the object’s properties.
+- Use the `constructor` keyword to define constructors in a class.
+- Use `this` to refer to the current instance of the class.
+
+Purpose: Constructors are used to set up initial values for an object's properties and perform any setup required when an object is created.
+
+Instantiation: Create new instances of the class using the `new` keyword. E.g.: let john = new Person("John", 26);
+
+Example:
+```typescript
+    class Person {
+        name: string;
+        age: number;
+
+        constructor(name: string, age: number) {
+            this.name = name;
+            this.age = age;
+        }
+
+        greet(): void {
+            console.log(`Greetings! ${this.name} here.`);
+        }
+    }
+
+    let john = new Person("John", 26);
+    john.greet(); // Output: Greetings! John here.
+```
+
+
+3. Creating an object:
+----------------------
+
+- It can be done using literal notation or by creating an instance of a class.
+
+Literal Notation Example:
+
+```typescript
+    let ciaz = {
+        make: "Maruti Suzuki",
+        model: "Ciaz",
+        year: 2020,
+        start: function() {
+            console.log(`${this.make} - ${this.model} started.`);
+        }
+    };
+
+    ciaz.start(); // Output: Maruti Suzuki - Ciaz started
+
+    // Adding a new property
+    ciaz.color = "blue";
+    console.log(ciaz.color); // Output: blue
+
+    // Modifying an existing property
+    ciaz.year = 2021;
+    console.log(ciaz.year); // Output: 2021
+```
+
+Class Example with Constructor:
+
+```typescript
+
+    class Car {
+        make: string;
+        model: string;
+        year: number;
+
+        constructor(make: string, model: string, year: number) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+        }
+
+        start(): void {
+            console.log(`${this.make} - ${this.model} started.`);
+        }
+    }
+
+    let ciaz = new Car("Maruti Suzuki", "Ciaz", 2020);
+    ciaz.start(); // Output: Maruti Suzuki - Ciaz started.
+```
+
+
+4. Summary:
+-----------
+
+- Objects represent instances of classes with properties and methods.
+- Constructors initialize object properties and perform setup when creating an object.
+- Use classes and constructors to create well-structured, modular and reusable code.
+
+----------------------------------------------------------------------------------------------------
