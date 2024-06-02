@@ -1,0 +1,85 @@
+
+Time Stamp: 30th May 2K24 - 07:33 PM..!!
+
+Concept: Shorthand Field Initialization
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Properties in TypeScript:
+----------------------------
+
+- Represent fields or attributes or characteristics of an object within a class.
+
+Can be:
+- Data Member Properties: Simple attributes or fields for data storage.
+- Accessor Properties (Using `get` and `set` keyword): Provide controlled access and modification of data.
+
+
+2. Using `get` and `set` Keywords (Setter Properties):
+------------------------------------------------------
+
+- Syntax:
+    Getter -> `public get propertyName(): returnType { ... }`
+    Setter -> `public set propertyName(newValue: parameterType) { ... }`
+- Convention: Preferred and more concise way to define getters and setters in TypeScript.
+- Readability: Clearly indicates the purpose (getting or setting the `propertyName`).
+- Disadvantage: Naming conflicts. Using the same name for the property and the setter method can lead to conflicts.
+    To avoid this, properties using setters are often prefixed with an underscore (`_`),
+    which can be visually unappealing and break camelCase naming conventions.
+
+
+3. Using Getter and Setter Methods (Regular Methods):
+------------------------------------------------------
+
+- Syntax:
+    Getter: `public getPropertyName(): returnType { ... }`
+    Setter: `public setPropertyName(newValue: parameterType) { ... }`
+- Convention: Less common for setters, but functionally equivalent.
+
+Example (both achieve the same outcome):
+
+```typescript
+    class Person {
+      // Data member property (no getter/setter needed)
+      private _age: number; // Renamed with underscore due to setter
+
+      // Setter property
+      public set age(newAge: number) {
+        if (newAge < 0) {
+          throw new Error("Age cannot be negative");
+        }
+        this._age = newAge;
+      }
+
+      // Regular method used for getting (functionally equivalent)
+      public setAge() {
+        return this._age;
+      }
+    }
+```
+
+
+4. Choosing Between Them:
+-------------------------
+
+Both approaches achieve the same core functionality of setting and potentially validating/processing a property's value.
+The key difference lies in syntax and convention, not inherent capability.
+
+- Readability: Setter properties can improve code clarity by explicitly stating their purpose.
+- Community Standard: Using setter properties with `get` and `set` keywords is generally preferred for better readability and consistency.
+    However, consider the trade-off with naming conventions.
+- Naming Conventions: If maintaining camelCase naming for properties is important,
+    consider using regular getter/setter methods to avoid the underscore prefix.
+
+5. Summary:
+-----------
+
+- Both approaches offer the same core functionality.
+- Use setter properties for better convention and readability, but be aware of potential naming conflicts.
+- Regular getter/setter methods can be used to preserve camelCase naming conventions.
+
+----------------------------------------------------------------------------------------------------

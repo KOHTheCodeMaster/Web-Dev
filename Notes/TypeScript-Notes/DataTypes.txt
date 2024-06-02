@@ -63,7 +63,8 @@ Example:
 }
 ```
 
-any: While generally discouraged due to potential type safety issues, it allows assigning any data type to a variable. Use it cautiously in specific scenarios where type safety is relaxed.
+any: While generally discouraged due to potential type safety issues, it allows assigning any data type to a variable.
+    Use it cautiously in specific scenarios where type safety is relaxed.
 Example: let userInput: any = prompt("Enter a value:");  // User input can be any type
 
 never:
