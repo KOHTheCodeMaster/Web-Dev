@@ -1,7 +1,7 @@
 
 Time Stamp: 30th May 2K24 - 07:33 PM..!!
 
-Concept: Shorthand Field Initialization
+Concept: Properties in TypeScript
 
 Dev: K.O.H..!! (Harshit Gupta)
 
@@ -12,74 +12,149 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 1. Properties in TypeScript:
 ----------------------------
 
-- Represent fields or attributes or characteristics of an object within a class.
+- Properties in TypeScript are Special class members accessed through `get` and `set` methods.
+- Direct Access: Properties are accessed like regular fields using the `=` operator.
+- Internal Logic: Invokes getter/setter methods internally, allowing additional logic (e.g., validation, logging)
+    while maintaining clean and readable syntax for the user.
 
-Can be:
-- Data Member Properties: Simple attributes or fields for data storage.
-- Accessor Properties (Using `get` and `set` keyword): Provide controlled access and modification of data.
+- Controlled Access: Unlike regular fields (attributes), properties provide a way to include additional logic when
+    getting or setting values, ensuring validation or other operations.
+- Properties often use private fields (prefixed with an underscore) to store data internally.
+- Underscore prefix (_) for setter properties avoids conflicts but breaks camelCase.
 
 
-2. Using `get` and `set` Keywords (Setter Properties):
-------------------------------------------------------
-
-- Syntax:
+Syntax:
     Getter -> `public get propertyName(): returnType { ... }`
     Setter -> `public set propertyName(newValue: parameterType) { ... }`
-- Convention: Preferred and more concise way to define getters and setters in TypeScript.
-- Readability: Clearly indicates the purpose (getting or setting the `propertyName`).
-- Disadvantage: Naming conflicts. Using the same name for the property and the setter method can lead to conflicts.
-    To avoid this, properties using setters are often prefixed with an underscore (`_`),
-    which can be visually unappealing and break camelCase naming conventions.
+
+    class ClassName {
+        private _property: type;
+
+        get propertyName(): type {
+            // getter logic
+        }
+
+        set propertyName(value: type) {
+            // setter logic
+        }
+    }
+
+Example:
+
+```typescript
+    class Person {
+        private _age: number = 0;
+
+        get age(): number {
+            return this._age;
+        }
+
+        set age(newAge: number) {
+            if (newAge > 0) this._age = newAge;
+            else {
+                console.log("Age must be positive. Resetting to Default Age of 18.");
+                this._age = 18;
+            }
+        }
+    }
+
+    let person1 = new Person();
+    person1.age = 26;           // Calls the setter property & performs validation
+    console.log("Person1 -> Age: " + person1.age);   // Calls the getter property | Output: 26
+
+    let person2 = new Person();
+    person2.age = -1;          // Calls the setter property & performs validation
+    console.log("Person2 -> Age: " + person2.age);   // Calls the getter property | Output: 18
+```
+
+2. Properties vs. Fields:
+-------------------------
+
+Fields (Attributes):
+- Regular variables declared in a class which can be private, public, or protected.
+- It doesn't provide any built-in mechanism for validation or additional logic when accessing/modifying the field via `=` operator.
+- This can lead to potential issues like accidental data modification or unintended side effects.
+
+Properties:
+- Accessed like fields but provide more control over the access and modification.
+- Encapsulate private fields and allow for additional logic in getter and setter methods.
 
 
-3. Using Getter and Setter Methods (Regular Methods):
-------------------------------------------------------
+
+3. Using Regular Getter and Setter Methods:
+-------------------------------------------
 
 - Syntax:
     Getter: `public getPropertyName(): returnType { ... }`
     Setter: `public setPropertyName(newValue: parameterType) { ... }`
 - Convention: Less common for setters, but functionally equivalent.
 
-Example (both achieve the same outcome):
+
+Example:
 
 ```typescript
     class Person {
-      // Data member property (no getter/setter needed)
-      private _age: number; // Renamed with underscore due to setter
+        private age: number = 0;
 
-      // Setter property
-      public set age(newAge: number) {
-        if (newAge < 0) {
-          throw new Error("Age cannot be negative");
+        getAge(): number {
+            return this.age;
         }
-        this._age = newAge;
-      }
 
-      // Regular method used for getting (functionally equivalent)
-      public setAge() {
-        return this._age;
-      }
+        setAge(newAge: number) {
+            if (newAge > 0) this.age = newAge;
+            else {
+                console.log("Age must be positive. Resetting to Default Age of 18.");
+                this.age = 18;
+            }
+        }
     }
+
+    let person1 = new Person();
+    person1.setAge(26);           // Calls the setter method & performs validation
+    console.log("Person1 -> Age: " + person1.getAge());   // Calls the getter method | Output: 26
 ```
 
 
-4. Choosing Between Them:
--------------------------
+4. Choosing Between Properties vs Methods:
+------------------------------------------
 
-Both approaches achieve the same core functionality of setting and potentially validating/processing a property's value.
-The key difference lies in syntax and convention, not inherent capability.
+- Use properties for readability and consistency when possible.
+- Regular methods are an alternative if naming conventions, complex validation or multiple parameters dictate their use.
 
-- Readability: Setter properties can improve code clarity by explicitly stating their purpose.
-- Community Standard: Using setter properties with `get` and `set` keywords is generally preferred for better readability and consistency.
-    However, consider the trade-off with naming conventions.
-- Naming Conventions: If maintaining camelCase naming for properties is important,
-    consider using regular getter/setter methods to avoid the underscore prefix.
+Properties:
+
+- Use Properties for direct access like regular fields, providing better code readability and consistency when possible.
+- Limitation: Set Property can only have single parameter, otherwise it throws error TS1049: A 'set' accessor must have exactly one parameter.
+- Used when you need simple validation or computation.
+- Ideal for encapsulating private fields with controlled access.
+
+Regular Getter/Setter Methods:
+
+- Use when the logic for getting or setting a value is more complex or involves additional parameters since properties allows only single parameter.
+- Explicitly show that a function call is happening, which can be clearer for complex logic or operations.
+- Avoid underscore prefix: Use setPropertyName() for setters to maintain camelCase naming and avoid conflicts.
+
 
 5. Summary:
 -----------
 
-- Both approaches offer the same core functionality.
-- Use setter properties for better convention and readability, but be aware of potential naming conflicts.
-- Regular getter/setter methods can be used to preserve camelCase naming conventions.
+Properties in TypeScript:
+    - Accessed like regular fields using the `=` operator, but internally invoke getter/setter methods to include
+    additional logic such as validation or logging.
+
+Controlled Access:
+    - Properties provide controlled access to an object's internal state, allowing for encapsulation and ensuring that any
+    modifications adhere to specified rules.
+
+Private Fields:
+    - Often use private fields (prefixed with an underscore) to store data, enabling encapsulation and preventing direct modification of the internal state.
+
+Properties vs. Fields:
+    - Fields are simple class variables without built-in mechanisms for validation, while properties offer more control
+    over access and modification, making code more robust and secure.
+
+5. Choosing Properties vs. Methods:
+    - Use properties for straightforward validation and better code readability. Use regular getter/setter methods for
+    complex logic, multiple parameters, or when function call clarity is needed.
 
 ----------------------------------------------------------------------------------------------------
