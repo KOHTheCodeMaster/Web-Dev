@@ -1,0 +1,71 @@
+
+Time Stamp: 5th Jun 2K24 - 11:32 PM..!!
+
+Concept: Only Setter Properties in TypeScript
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Concept Overview:
+--------------------
+
+- In TypeScript, you can define properties using either a setter or a getter, or both.
+- When only a setter is defined for a property, TypeScript does not enforce the existence of a getter for the same property name.
+- This allows you to assign values to the property using the setter,
+    but attempting to retrieve the value will result in `undefined` because there is no getter to return the value.
+
+2. Accessing the Property:
+--------------------------
+
+- Accessing the property for which only a setter is defined will not produce a compile-time error.
+- However, attempting to retrieve the value will result in `undefined` because no getter is defined.
+
+
+3. Behavior:
+------------
+
+- Compile-Time Behavior: TypeScript does not enforce the presence of a getter when a setter is defined, thus no compile-time error occurs.
+                         This can be used to avoid compile-time errors when a getter is not necessary or intended to be used.
+
+- Runtime Behavior:      Since there is no getter, the value cannot be retrieved and will always be `undefined`.
+
+Example:
+```typescript
+    function demoOnlySetterProperty() {
+
+        class Person {
+          public _name: string;  // Property
+          set name(name: string) { this._name = name; }
+        }
+
+        let person = new Person();
+        person.name = 'John';
+
+        //  TypeScript does not enforce the presence of a getter when a setter is defined, thus no compile-time error occurs.
+        console.log("name: " + person.name);    // Outputs: undefined
+
+    }
+}
+```
+
+4. Practical Implications:
+--------------------------
+
+- Use Case: This setup might be used when you need to set values internally within the class but don't want to expose them publicly.
+            FYI - There aren't any common use cases for a property with only a setter (no getter) in TypeScript.
+
+- Best Practice: Typically, if you need to both get and set a value, you should define both getter and setter methods.
+    This ensures that the property can be accessed and modified as intended.
+
+5. Summary:
+-----------
+
+- Setter Only: Defining only a setter allows value assignment without a getter.
+- No Compile-Time Error: TypeScript doesn't enforce the presence of a getter if a setter exists.
+- Runtime Behavior: Without a getter, attempting to retrieve the value results in `undefined`.
+- Best Practice: Use both getter and setter for properties that need to be accessed and modified, ensuring clear and expected behavior.
+
+----------------------------------------------------------------------------------------------------
