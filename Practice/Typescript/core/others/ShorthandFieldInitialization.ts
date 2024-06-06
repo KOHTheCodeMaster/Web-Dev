@@ -22,11 +22,12 @@ function main() {
 function demoShortHandFieldInitialization() {
 
     class Person {
-      constructor(name: string, age: number) {  // No access modifier specified
+      constructor(public name: string, age: number) {
       }
     }
 
     let john = new Person("John Doe", 26);
-    console.log(john.name);  // Compile-time error: Property 'name' does not exist on type 'Person'
+    console.log(john.name);     // John Doe
+//     console.log(john.age);      // No access modifier specified, Compile-time error: Property 'name' does not exist on type 'Person'
 
 }
