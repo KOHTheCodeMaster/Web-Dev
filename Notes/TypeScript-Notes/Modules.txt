@@ -1,0 +1,187 @@
+
+Time Stamp: 6th Jun 2K24 - 11:56 AM..!!
+
+Concept: Modules
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Modules in TypeScript:
+-------------------------
+
+Definition:
+    - A way to organize code into separate files and namespaces, facilitating code re-usability, maintainability, and encapsulation.
+    - Modules are files that contain related code and export it for use in other modules.
+    - It's a way to organize code into reusable blocks, promoting modularity and reducing namespace conflicts.
+Purpose: Break down complex applications into smaller, manageable pieces.
+Encapsulation: They encapsulate functionality (functions, classes, variables) within a single unit.
+Re-usability: Modules can be re-used across different parts of your codebase.
+Namespace Management: Prevents naming conflicts between different parts of your application.
+
+
+2. Basic Module Syntax:
+-----------------------
+
+Exporting: Mark functions, classes, or variables as `export` to make them available outside the module.
+
+```typescript
+    // mathUtils.ts
+    export function add(a: number, b: number): number {
+        return a + b;
+    }
+
+    export function subtract(a: number, b: number): number {
+        return a - b;
+    }
+```
+
+Importing: Use `import` to bring in exported members from other modules.
+
+```typescript
+    // app.ts
+    import { add, subtract } from './mathUtils';
+
+    console.log(add(5, 3));        // Output: 8
+    console.log(subtract(5, 3));   // Output: 2
+```
+
+
+3. Default Exports:
+-------------------
+
+Single Default Export:
+- Allows a module to export one value as the default export.
+- Only one default export is allowed per module. Imported without `{ }`.
+
+```typescript
+    // user.ts
+    export default class User {
+        constructor(public name: string) {}
+    }
+```
+
+Importing Default Export:
+```typescript
+    // app.ts
+    import User from './user';
+
+    const user = new User('Alice');
+    console.log(user.name); // Output: Alice
+```
+
+
+4. Named Exports:
+-----------------
+
+Named Exports: Multiple named exports per module. Imported using `{ }`.
+  
+```typescript
+    // mathUtils.ts
+    export const PI = 3.14;
+    export function multiply(a: number, b: number): number {
+        return a * b;
+    }
+```
+
+```typescript
+    // app.ts
+    import { PI, multiply } from './mathUtils';
+    console.log(PI);             // Output: 3.14
+    console.log(multiply(4, 5)); // Output: 20
+```
+
+
+5. Re-exporting:
+----------------
+
+Definition: Re-exporting allows you to export functionality from another module within your current module.
+Purpose: Create a centralized module that re-exports members from multiple modules.
+Advantages:
+- Reduces number of import statements.
+- Centralizes access to related modules.
+- Improves readability and maintainability in larger projects.
+
+Example: Demonstrates how re-exporting can simplify import statements and improve code organization in TypeScript projects.
+
+```typescript
+    // Re-exporting example in food modules
+
+    // fruits.ts
+    export const apple = "Apple";
+    export function getFruitNames() {
+        return ["Apple", "Banana", "Mango"];
+    }
+
+    // vegetables.ts
+    export const carrot = "Carrot";
+    export function getVegetableNames() {
+        return ["Carrot", "Broccoli", "Spinach"];
+    }
+
+    // index.ts (Re-exporting)
+    export * from './fruits';
+    export * from './vegetables';
+
+    // app.ts (Consuming re-exports)
+    import { apple, carrot, getFruitNames, getVegetableNames } from './food/index'; //  simplify import statements
+    console.log(apple);     // Output: Apple
+    console.log(carrot);    // Output: Carrot
+    console.log(getFruitNames());       // Output: [ 'Apple', 'Banana', 'Mango' ]
+    console.log(getVegetableNames());   // Output: [ 'Carrot', 'Broccoli', 'Spinach' ]
+
+```
+
+
+6. Practical Example:
+---------------------
+
+Project Structure:
+```
+/src
+  |-- /utils
+      |-- mathUtils.ts
+  |-- /models
+      |-- user.ts
+  |-- app.ts
+```
+
+/src/utils/mathUtils.ts:
+```typescript
+    export function add(a: number, b: number): number { return a + b; }
+    
+    export function subtract(a: number, b: number): number { return a - b; }
+    
+    export const PI = 3.14;
+```
+
+/src/models/user.ts:
+```typescript
+    export default class User { constructor(public name: string) {} }
+```
+
+/src/app.ts:
+```typescript
+    import { add, subtract, PI } from './utils/mathUtils';
+    import User from './models/user';
+    
+    console.log(add(5, 3));         // Output: 8
+    console.log(subtract(5, 3));    // Output: 2
+    console.log(PI);                // Output: 3.14
+    
+    const user = new User('John Doe');
+    console.log(user.name);         // Output: John Doe
+```
+
+
+7. Summary:
+-----------
+
+- Definition: Modules organize code into separate files, enhancing re-usability and maintainability.
+- Basic Syntax: Using `export` & `import` keywords. `default` exports allow a single export per module, named exports allow multiple.
+- Named vs. Default Exports: Named exports are imported using `{ }`, whereas `default` ones without braces.
+- Re-exporting: Centralize exports from multiple modules for easier import management.
+
+----------------------------------------------------------------------------------------------------
