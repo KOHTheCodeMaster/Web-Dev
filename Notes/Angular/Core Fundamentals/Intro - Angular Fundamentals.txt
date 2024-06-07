@@ -1,0 +1,201 @@
+
+Time Stamp: 7th Jun 2K24 - 01:01 PM..!!
+
+Title: Angular Fundamentals - Introduction and Core Basics
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. What is Angular?
+-------------------
+
+- Framework: Angular is a platform and framework for building client-side applications using HTML, CSS, and TypeScript.
+- Single Page Applications (SPA): Angular is primarily used for creating SPAs, where only part of the page updates with user interaction.
+- Angular is a popular framework for building dynamic web applications.
+- It provides a robust structure for developing applications with TypeScript,
+  offering various tools and libraries to make development efficient and scalable.
+
+----------------------------------------------------------------------------------------------------
+
+2. Key Features of Angular:
+---------------------------
+
+- TypeScript: Angular is built using TypeScript, a superset of JavaScript that adds static typing and other features.
+- Component-Based Architecture: Applications are built using reusable components, each encapsulating its HTML, CSS, and logic.
+- Dependency Injection (DI): Angular's DI system makes it easy to manage services and dependencies.
+- Directives: Special markers in the DOM that extend HTML's capabilities by adding behavior to elements.
+- Services and Dependency Injection: Services are used to share data and logic across components; DI makes it easy to inject these services where needed.
+- RxJS: Angular uses RxJS (Reactive Extensions for JavaScript) for handling asynchronous operations and events.
+
+----------------------------------------------------------------------------------------------------
+
+3. Angular Project Structure:
+-----------------------------
+
+A typical Angular project has the following structure:
+
+```
+/my-angular-app
+  |-- /e2e                    # End-to-End tests
+  |-- /node_modules           # Dependencies
+  |-- /src                    # Source files
+      |-- /app                # Application code
+          |-- /components     # Reusable components
+          |-- /services       # Services for business logic
+          |-- app.component.ts# Root component
+          |-- app.module.ts   # Root module
+      |-- /assets             # Static assets (images, styles)
+      |-- environments        # Environment-specific settings
+  |-- angular.json            # Angular CLI configuration
+  |-- package.json            # NPM dependencies and scripts
+  |-- tsconfig.json           # TypeScript configuration
+```
+
+----------------------------------------------------------------------------------------------------
+
+4. Angular CLI:
+---------------
+
+- The Angular Command Line Interface (CLI) is a powerful tool that helps to initialize, develop, scaffold, and maintain Angular applications.
+
+Common Commands:
+
+- ng new <project-name>: Creates a new Angular project.
+- ng serve: Serves the application locally and watches for changes.
+- ng generate <schematic>: Generates new components, services, modules, etc.
+- ng build: Compiles the application into an output directory.
+- ng test: Runs unit tests.
+
+----------------------------------------------------------------------------------------------------
+
+5. Angular Modules:
+-------------------
+
+Modules in Angular help organize an application into cohesive blocks of functionality.
+
+Root Module:
+```typescript
+    // app.module.ts
+    import { NgModule } from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+    import { AppComponent } from './app.component';
+
+    @NgModule({
+      declarations: [
+        AppComponent
+      ],
+      imports: [
+        BrowserModule
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+```
+
+----------------------------------------------------------------------------------------------------
+
+6. Components:
+--------------
+
+Components are the building blocks of Angular applications. Each component encapsulates its template, styles, and logic.
+
+Example Component:
+```typescript
+    // app.component.ts
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-root',
+      templateUrl: './app.component.html',
+      styleUrls: ['./app.component.css']
+    })
+    export class AppComponent {
+      title = 'angular-app';
+    }
+```
+
+Template (HTML):
+```html
+    <!-- app.component.html -->
+    <h1>{{ title }}</h1>
+```
+
+----------------------------------------------------------------------------------------------------
+
+7. Data Binding:
+----------------
+
+Angular provides several ways to bind data between the template and the component.
+
+Types of Data Binding:
+
+- Interpolation: `{{ }}` syntax to display data.
+- Property Binding: `[property]="expression"` syntax to bind component properties to DOM properties.
+- Event Binding: `(event)="handler"` syntax to listen for events.
+- Two-way Binding: `[(ngModel)]="property"` syntax to bind both ways.
+
+Example:
+```html
+    <!-- app.component.html -->
+    <input [(ngModel)]="title">
+    <button (click)="onClick()">Click me</button>
+    <p>{{ title }}</p>
+    ```
+
+    ```typescript
+    // app.component.ts
+    export class AppComponent {
+      title = 'Hello Angular';
+
+      onClick() {
+        this.title = 'Button Clicked!';
+      }
+    }
+```
+
+----------------------------------------------------------------------------------------------------
+
+8. Directives:
+--------------
+
+Directives are special markers on a DOM element that tell Angular to do something to that element or its children.
+
+Types of Directives:
+- Structural Directives: Change the DOM layout by adding and removing elements (`*ngIf`, `*ngFor`).
+- Attribute Directives: Change the appearance or behavior of an element (`[ngClass]`, `[ngStyle]`).
+
+Example:
+```html
+    <!-- app.component.html -->
+    <div *ngIf="showElement">Conditionally shown element</div>
+    <ul>
+      <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
+```
+
+```typescript
+    // app.component.ts
+    export class AppComponent {
+      showElement = true;
+      items = ['Item 1', 'Item 2', 'Item 3'];
+    }
+```
+
+----------------------------------------------------------------------------------------------------
+
+9. Summary:
+-----------
+
+1. Angular is a framework for building SPAs with TypeScript.
+2. Component-Based Architecture helps in creating modular and reusable components.
+3. Angular CLI aids in project initialization, development, and maintenance.
+4. Modules organize the application into cohesive blocks.
+5. Components are the building blocks, encapsulating template, style, and logic.
+6. Data Binding connects the template and component in various ways.
+7. Directives add behavior to the DOM elements.
+
+----------------------------------------------------------------------------------------------------
