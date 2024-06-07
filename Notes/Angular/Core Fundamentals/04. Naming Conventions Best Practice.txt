@@ -1,0 +1,125 @@
+
+Time Stamp: 8th Jun 2K24 - 08:38 PM..!!
+
+Title: Naming Conventions & Best Practices in Angular
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Definition:
+- Consistent naming conventions & folder structures are crucial for maintaining readable & maintainable Angular applications.
+
+1. Component Naming Conventions:
+--------------------------------
+
+Component Class Names:
+  - Use PascalCase.
+  - End with "Component".
+  - Example: `CustomComponent`.
+
+Component Selector:
+  - Use kebab-case.
+  - Prefix with a unique identifier.
+  - Example: ` selector: 'app-custom-component' `.
+
+File Names:
+  - Use kebab-case.
+  - Append `.component`.
+  - Example: `custom-component.component.ts`.
+
+----------------------------------------------------------------------------------------------------
+
+2. Folder Structure and Naming:
+-------------------------------
+
+Root Folder:
+  - Example: `src/app/`.
+
+Feature Modules:
+  - Separate folders for each module.
+  - Use kebab-case.
+  - Example: `src/app/user-management/`.
+
+Component Folders:
+  - Place each component in its own folder.
+  - Example: `src/app/user-management/user-list/`.
+
+Shared Components:
+  - Folder for reusable components.
+  - Example: `src/app/shared/`.
+
+Core Module:
+  - Folder for singleton services and core functionalities.
+  - Example: `src/app/core/`.
+
+----------------------------------------------------------------------------------------------------
+
+3. Examples
+
+User Management Module:
+
+```
+src/
+|-- app/
+    |-- user-management/
+        |-- user-management.module.ts
+        |-- user-list/
+            |-- user-list.component.ts
+            |-- user-list.component.html
+            |-- user-list.component.css
+        |-- user-detail/
+            |-- user-detail.component.ts
+            |-- user-detail.component.html
+            |-- user-detail.component.css
+```
+
+Shared Module:
+
+```
+src/
+|-- app/
+    |-- shared/
+        |-- shared.module.ts
+        |-- components/
+            |-- header/
+                |-- header.component.ts
+                |-- header.component.html
+                |-- header.component.css
+            |-- footer/
+                |-- footer.component.ts
+                |-- footer.component.html
+                |-- footer.component.css
+        |-- directives/
+            |-- highlight.directive.ts
+        |-- pipes/
+            |-- date-format.pipe.ts
+```
+
+----------------------------------------------------------------------------------------------------
+
+4. Other Angular Entities:
+--------------------------
+
+Other Angular Entities includes: Services, Directives, Pipes & Modules
+Similar to Components, these follow the same naming convention.
+    - PascalCase for class names.
+    - Class name ends with "Service", "Directive", "Pipe" or "Module" respectively.
+    - File names in kebab-case.
+    - Class Example: `CustomService`, `CustomDirective`, `CustomPipe`, `CustomModule`
+    - File Example: `custom.service.ts`, `custom.directive.ts`, `custom.pipe.ts`, `custom.module.ts`
+
+----------------------------------------------------------------------------------------------------
+
+5. Summary:
+-----------
+
+- Component & Other Entity Naming: PascalCase for class names, kebab-case for file names and selectors.
+
+- Folder Structure: Use kebab-case for folder names & Organize by feature modules &
+
+- Consistency: Ensures readability and maintainability.
+
+----------------------------------------------------------------------------------------------------
