@@ -13,9 +13,29 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 ---------------------------
 
 Created Time Stamp:   7th Jun 2K24 - 08:34 PM
-Finished Time Stamp:  DUE...
+Finished Time Stamp:  7th Jun 2K24 - 10:46 PM
+
+Issue Description:
+------------------
 
 - Attribute & Class Selectors are not working!
 - Complete working example with use-case for both Attribute & Class Selector Components.
+
+Resolution:
+-----------
+- Initially comp-attribute-selector & comp-class-selector not created via Angular CLI but rather manually cloned
+  by copy-pasting the existing comp-element-selector and later refactored to class & attribute respectively.
+
+- This led to typo error which made selectors for both attribute & class components to use same as element selector.
+
+- Fixed by updating the selectors with correct syntax.
+
+- Attribute Selector was defined as element selector before which is now fixed to its correct syntax.
+  Before: selector: 'comp-attribute-selector',
+  Fix:    selector: '[comp-attribute-selector]',
+
+- Class Selector was defined as element selector before which is now fixed to its correct syntax.
+  Before: ` selector: 'comp-attribute-selector', `
+  Fix:    ` selector: '.comp-attribute-selector]', `
 
 ----------------------------------------------------------------------------------------------------

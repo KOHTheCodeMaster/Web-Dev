@@ -5,12 +5,12 @@ import { InlineTemplateComponent } from './components/inline-template/inline-tem
 import { CompSelectorDemoComponent } from './components/comp-selector/comp-selector-demo/comp-selector-demo.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    standalone: true,
+    imports: [RouterOutlet, Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'hello-world';
+    title = 'hello-world';
 }

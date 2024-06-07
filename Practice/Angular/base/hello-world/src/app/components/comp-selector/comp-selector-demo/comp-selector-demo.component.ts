@@ -13,6 +13,5 @@ import { CompClassSelectorComponent } from '../comp-class-selector/comp-class-se
 export class CompSelectorDemoComponent {
 
   constructor() {
-    console.log('Constructor - CompSelectorDemoComponent Invoked.');
   }
 }
