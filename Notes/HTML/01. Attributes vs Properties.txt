@@ -1,0 +1,174 @@
+
+Time Stamp: 8th Jun 2K24 - 12:46 AM..!!
+
+Title: HTML Attributes vs Properties (DOM)
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. What is the DOM?:
+--------------------
+
+- The DOM (Document Object Model) is a programming interface for web documents.
+- It represents the structure of a document as a tree of objects.
+- DOM encompasses elements, attributes, text and properties for each element, reflecting their current state within the document.
+
+DOM Element: Specifically refers to the HTML elements in the DOM tree.
+DOM Object: Encompasses all nodes in the DOM tree, including elements, attributes, text nodes & their properties.
+
+Browser Display:
+  - The displayed content in the browser is controlled by the properties of DOM elements, not their attributes.
+  - When an attribute is changed, it updates both the attribute and the property, reflecting in the browser display.
+  - However, once the property is manually changed, subsequent changes to the attribute do not update the property or
+    the displayed value in the browser.
+
+----------------------------------------------------------------------------------------------------
+
+2. HTML Attributes:
+-------------------
+
+- Attributes are defined in the HTML markup. They provide initial values for elements.
+- They are part of the HTML element and are static unless explicitly changed.
+- They describe initial configurations of elements and are not typically updated once the document is loaded.
+
+For example:
+    ```html <img src="image.jpg" alt="Description"> ```
+    ```javascript
+        let img = document.querySelector('img');
+        img.setAttribute('src', 'new-image.jpg');
+        img.setAttribute('alt', 'New Image');
+    ```
+    - Here, `src` and `alt` are attributes of the `<img>` element.
+
+----------------------------------------------------------------------------------------------------
+
+3. DOM Properties:
+------------------
+
+- Properties are part of the DOM objects. They represent the current state of an element and can change dynamically.
+- When the browser parses the HTML, it creates corresponding DOM properties for most attributes.
+- Properties can be read and modified using JavaScript, reflecting the live state of the element.
+- Initially, attributes and properties are synchronized, but direct property changes break this synchronization.
+
+Example:
+
+    ```html <img src="image.jpg" alt="Description"> ```
+    ```javascript
+        let img = document.querySelector('img');
+        img.src = 'new-image.jpg';
+        img.alt = 'New Description';
+    ```
+    - Here, `src` and `alt` are properties of the `img` DOM object.
+
+----------------------------------------------------------------------------------------------------
+
+4. Key Differences:
+-------------------
+
+Initialization vs. State:
+   - Attributes: Provide initial setup/configuration (e.g., `src="image.jpg"` sets the initial image source).
+   - Properties: Represent the current state (e.g., `img.src` can be changed dynamically to update the image).
+
+Behavior:
+   - Attributes: Once set in HTML, they usually do not change unless the DOM is manipulated directly.
+   - Properties: Reflect the current state and are meant to be changed dynamically.
+
+Relationship:
+   - Many attributes have corresponding properties, but not all do.
+   - `<input>` has an `attribute` called `value`, and its corresponding `property` also called `value` reflects the
+     current text in the input field.
+
+----------------------------------------------------------------------------------------------------
+
+5. Detailed Example Demonstration:
+----------------------------------
+
+Consider an `<input>` element: ` <input id="input1" type="text" value="Initial Value - 0"> `
+
+```javascript
+    let input1 = document.querySelector('#input1');
+
+    console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "Initial Value - 0"
+    console.log('Property - value:' + input1.value + '\n');                 // Property  - value: "Initial Value - 0"
+
+    input1.setAttribute('value', 'New Value - 1');
+    console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "New Value - 1"
+    console.log('Property  - value:' + input1.value + '\n');                // Property  - value: "New Value - 1"
+
+    input1.setAttribute('value', 'New Value - 2');
+    console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "New Value - 2"
+    console.log('Property  - value:' + input1.value + '\n');                // Property  - value: "New Value - 2"
+
+    // Breaks Synchronization with attribute, subsequent attribute changes do not affect the property.
+    input1.value = 'Changed Value - 3';
+    console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "New Value - 2"
+    console.log('Property  - value:' + input1.value + '\n');                // Property  - value: "Changed Value - 3"
+    
+    // Browser still displays `Changed Value - 3` since the displayed content in the browser is controlled by 
+    // the properties of DOM elements, not their attributes.
+    input1.setAttribute('value', 'New Value - 4');  
+    console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "New Value - 4"
+    console.log('Property  - value:' + input1.value + '\n');                // Property  - value: "Changed Value - 3"
+```
+
+JavaScript Behavior Analysis (Above Example):
+
+    1. Initial State:
+       - Attribute: `value="Initial Value - 0"`
+       - Property: `input1.value` is `"Initial Value - 0"`
+       - Output:
+             ` Attribute - value: "Initial Value - 0" `
+             ` Property  - value: "Initial Value - 0" `
+
+    2. First Attribute Change:
+       - Action: `input1.setAttribute('value', 'New Value - 1');`
+       - Effect: Updates both the attribute and the property, hence updates the displayed value.
+       - Output:
+             ` Attribute - value: "New Value - 1" `
+             ` Property  - value: "New Value - 1" `
+
+    3. Second Attribute Change:
+       - Action: `input1.setAttribute('value', 'New Value - 2');`
+       - Effect: Again, updates both the attribute and the property, hence updates the displayed value.
+       - Output:
+             ` Attribute - value: "New Value - 2" `
+             ` Property  - value: "New Value - 2" `
+
+    4. Property Change:
+       - Action: `input1.value = 'Changed Value - 3';`
+       - Effect: Updates only the property and the displayed value, not the attribute.
+       - Note: Breaks Synchronization with attribute, subsequent attribute changes do not affect the property.
+       - Output:
+             ` Attribute - value: "New Value - 2" `
+             ` Property  - value: "Changed Value - 3" `
+
+    5. Third Attribute Change:
+       - Action: `input1.setAttribute('value', 'New Value - 4');`
+       - Effect: Updates only the attribute. The property (and thus the displayed value) remains unchanged because the property had been directly modified.
+       - Output:
+             ` Attribute - value: "New Value - 4" `
+             ` Property  - value: "Changed Value - 3" `
+
+Conclusion:
+
+- Use attributes for setting initial values in HTML.
+- Use properties for dynamic changes in the DOM.
+
+----------------------------------------------------------------------------------------------------
+
+6. Summary:
+-----------
+
+- Attributes: useful for initial configuration and specifying static information in HTML.
+- Properties: Represent current states and can diverge from attributes after direct modifications.
+              These are necessary for interacting with elements dynamically, reflecting real-time changes and states.
+- Synchronization: Initially, the property and attribute are synchronized, but direct property changes break this synchronization.
+- Subsequent Attribute Changes: Only change the attribute, not the property or displayed value.
+- Browser Display: The displayed content in the browser is controlled by the properties of DOM elements, not their attributes.
+
+Understanding this behavior is crucial for effectively managing dynamic updates in web applications.
+
+----------------------------------------------------------------------------------------------------

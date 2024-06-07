@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width">
+    <title>Attributes vs Properties (DOM)</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+        #input1 {
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+    <label for="input1"></label>
+    <input id="input1" type="text" value="Initial Value - 0" disabled>
+
+    <script>
+
+        let input1 = document.querySelector('#input1');
+
+        console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "Initial Value - 0"
+        console.log('Property - value:' + input1.value + '\n');                 // Property  - value: "Initial Value - 0"
+
+        input1.setAttribute('value', 'New Value - 1');
+        console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "New Value - 1"
+        console.log('Property  - value:' + input1.value + '\n');                // Property  - value: "New Value - 1"
+
+        input1.setAttribute('value', 'New Value - 2');
+        console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "New Value - 2"
+        console.log('Property  - value:' + input1.value + '\n');                // Property  - value: "New Value - 2"
+
+        // Breaks Synchronization with attribute, subsequent attribute changes do not affect the property.
+        input1.value = 'Changed Value - 3';
+        console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "New Value - 2"
+        console.log('Property  - value:' + input1.value + '\n');                // Property  - value: "Changed Value - 3"
+
+        // Browser still displays `Changed Value - 3` since the displayed content in the browser is controlled by
+        // the properties of DOM elements, not their attributes.
+        input1.setAttribute('value', 'New Value - 4');
+        console.log('Attribute - value: ' + input1.getAttribute('value'));      // Attribute - value: "New Value - 4"
+        console.log('Property  - value:' + input1.value + '\n');                // Property  - value: "Changed Value - 3"
+
+    </script>
+
+</main>
+
+</body>
+</html>
