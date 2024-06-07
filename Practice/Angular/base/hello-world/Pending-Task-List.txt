@@ -1,0 +1,21 @@
+
+Time Stamp: 7th Jun 2K24 - 08:33 PM..!!
+
+Title: Pending Task List
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. [PENDING / DUE / TO-DO]:
+---------------------------
+
+Created Time Stamp:   7th Jun 2K24 - 08:34 PM
+Finished Time Stamp:  DUE...
+
+- Attribute & Class Selectors are not working!
+- Complete working example with use-case for both Attribute & Class Selector Components.
+
+----------------------------------------------------------------------------------------------------

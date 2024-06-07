@@ -1,0 +1,61 @@
+
+Time Stamp: 7th Jun 2K24 - 02:32 PM..!!
+
+Title: Angular Component Selectors
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Definition:
+--------------
+
+- Component selectors are used to identify and instantiate a component in an Angular application.
+
+2. Types of Selectors:
+----------------------
+
+- Element Selector: Standard HTML-like element.             |   ` selector: 'app-my-component' `
+- Attribute Selector: Used as an attribute in an HTML tag.  |   ` selector: '[app-my-component]' `
+- Class Selector: Used as a class in an HTML tag.           |   ` selector: '.app-my-component' `
+
+3. Usage:
+---------
+
+- Element Selector: ` <app-my-component></app-my-component> `
+- Attribute Selector: ` <div app-my-component></div> `
+- Class Selector: ` <div class="app-my-component"></div> `
+
+4. Best Practices:
+------------------
+
+- Use Element Selectors for standalone components to improve readability and maintainability.
+- Use Attribute or Class Selectors for directives or components that add behavior or style to existing elements.
+
+5. Example:
+-----------
+
+```typescript
+   @Component({
+     selector: 'app-element-comp',  // Element Selector
+     standalone: true,
+     template: '<p>Element Component works!</p>'
+   })
+   export class ElementComponent {}
+```
+
+```html
+    <!-- app.component.html -->
+    <h1>This is the `app-root` component.</h1>
+    <app-element-comp></app-element-comp>
+```
+
+6. [PENDING / DUE / TO-DO]:
+---------------------------
+
+- Attribute & Class Selectors are not working!
+- Complete working example with use-case for both Attribute & Class Selector Components.
+
+----------------------------------------------------------------------------------------------------
