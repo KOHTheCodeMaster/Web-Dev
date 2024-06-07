@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Comp1Component } from './comp1/comp1.component';
+import { Comp1Component } from './components/comp1/comp1.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
