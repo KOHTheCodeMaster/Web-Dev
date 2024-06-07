@@ -1,0 +1,198 @@
+
+Time Stamp: 7th Jun 2K24 - 01:50 PM..!!
+
+Title: Angular Components
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. What are Components?
+-----------------------
+
+- Definition: 
+    - Angular components are the core building blocks of an Angular application.
+    - Components in Angular are classes that interact with the HTML file, defining the view and behavior of the application.
+    - Each component encapsulates its HTML, CSS, and TypeScript, making the application modular and reusable.
+
+- Structure: Each component consists of:
+  - TypeScript Class: Contains the logic and data.
+  - HTML Template: Defines the view.
+  - CSS Styles: Contains the styling.
+
+----------------------------------------------------------------------------------------------------
+
+2. Creating a Component:
+------------------------
+
+Components can be created using the Angular CLI or manually. Since Angular v17, the recommended approach is to use standalone components.
+
+Using Angular CLI:
+- ` ng generate component comp1 --standalone `
+- ` ng g c comp1 --standalone `
+
+Manually:
+1. Create the component files:
+   - `comp1.component.ts`
+   - `comp1.component.html`
+   - `comp1.component.css`
+
+2. Define the component in `comp1.component.ts`:
+```typescript
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-comp1',
+      standalone: true,
+      templateUrl: './comp1.component.html',
+      styleUrls: ['./comp1.component.css']
+    })
+    export class MyComponent {
+      // Component logic
+    }
+```
+
+----------------------------------------------------------------------------------------------------
+
+3. Component Template (HTML & CSS):
+-----------------------------------
+
+The HTML & CSS template defines the view for the component. There are different ways to define templates in Angular.
+
+Inline Template:
+```typescript
+    @Component({
+      selector: 'inline-template-component',
+      standalone: true,
+      template: `
+        <div>
+          <h1>{{ title }}</h1>
+          <p>{{ description }}</p>
+        </div>
+      `,
+      styles: [`
+        h1 {
+          color: blue;
+        }
+        p {
+          font-size: 14px;
+        }
+      `]
+    })
+    export class MyComponent {
+      title = 'Inline Template Component';
+      description = 'This is an inline template component.';
+    }
+```
+
+External Template:
+```typescript
+    @Component({
+      selector: 'external-template-component',
+      standalone: true,
+      templateUrl: './external-template.component.html',
+      styleUrls: ['./external-template.component.css']
+    })
+    export class MyComponent {
+      title = 'External Template Component';
+      description = 'This is an external template component.';
+    }
+    ```
+
+    External Templates (HTML & CSS):
+    ```
+        <!-- comp1.component.html -->
+        <div>
+          <h1>{{ title }}</h1>
+          <p>{{ description }}</p>
+        </div>
+
+        /* comp1.component.css */
+        h1  { color: blue; }
+        p   { font-size: 14px; }
+    ```
+
+----------------------------------------------------------------------------------------------------
+
+4. Lifecycle Hooks:
+-------------------
+
+Angular components have lifecycle hooks that allow you to run custom logic at specific stages of the component's lifecycle.
+
+Common Lifecycle Hooks:
+- ngOnInit: Called once, after the first ngOnChanges.
+- ngOnDestroy: Called just before Angular destroys the component.
+
+Example:
+```typescript
+    import { Component, OnInit, OnDestroy } from '@angular/core';
+
+    @Component({
+      selector: 'lifecycle-hooks-component',
+      standalone: true,
+      templateUrl: './comp1.component.html',
+      styleUrls: ['./comp1.component.css']
+    })
+    export class MyComponent implements OnInit, OnDestroy {
+      title = 'Component's Lifecycle Hooks';
+
+      ngOnInit() { console.log('Component initialized'); }
+
+      ngOnDestroy() { console.log('Component destroyed'); }
+    }
+```
+
+----------------------------------------------------------------------------------------------------
+
+5. Data Binding:
+----------------
+
+Types of Data Binding:
+- Interpolation: `{{ }}` syntax to display data.
+- Property Binding: `[property]="expression"` syntax to bind component properties to DOM properties.
+- Event Binding: `(event)="handler"` syntax to listen for events.
+- Two-way Binding: `[(ngModel)]="property"` syntax to bind both ways.
+
+Example:
+```html
+    <!-- data-binding.component.html -->
+    <input [(ngModel)]="title">
+    <button (click)="changeTitle()">Change Title</button>
+    <p>{{ title }}</p>
+```
+
+```typescript
+    import { Component } from '@angular/core';
+    import { FormsModule } from '@angular/forms';
+
+    @Component({
+      selector: 'app-data-binding',
+      templateUrl: './data-binding.component.html',
+      styleUrls: ['./data-binding.component.css'],
+      standalone: true,
+      imports: [FormsModule]
+    })
+    export class DataBindingComponent {
+      title = 'Data Binding';
+
+      changeTitle() {
+        this.title = 'Title Changed';
+      }
+    }
+```
+
+----------------------------------------------------------------------------------------------------
+
+6. Summary:
+-----------
+
+1. Components are the fundamental building blocks of Angular applications, encapsulating templates, styles, and logic.
+2. Creating Components can be done using Angular CLI or manually, with a focus on standalone components in Angular v17 and later.
+3. Templates can be inline or external, providing flexibility in defining the component's view.
+4. Styles can be inline or external, with Angular providing options for style encapsulation.
+5. Lifecycle Hooks allow running custom logic at specific stages of a component's lifecycle.
+6. Data Binding connects the component class and template, providing various ways to interact with the view.
+
+----------------------------------------------------------------------------------------------------
