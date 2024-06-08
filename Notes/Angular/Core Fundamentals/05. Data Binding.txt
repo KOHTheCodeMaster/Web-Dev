@@ -1,0 +1,123 @@
+
+Time Stamp: 8th Jun 2K24 - 12:28 PM..!!
+
+Title: Data Binding in Angular
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Data Binding in Angular:
+---------------------------
+
+- Data binding in Angular is a powerful mechanism that enables the synchronization between the model (component) and the view (template).
+- It ensures that changes in the model automatically reflect in the view and vice versa, providing a dynamic and interactive user experience.
+
+----------------------------------------------------------------------------------------------------
+
+2. Types of Data Binding in Angular:
+------------------------------------
+
+1. Interpolation
+   - Purpose: Display component properties in the view.
+   - Syntax: `{{ expression }}`
+   - Example: ```html <p>{{ title }}</p> ```
+   - Description: Interpolation binds the data from the component to the view, updating the HTML content with the value of the component property.
+
+2. Property Binding
+   - Purpose: Bind component properties to HTML element properties.
+   - Syntax: `[property]="expression"`
+   - Example: ```html <img [src]="imageUrl"> ```
+   - Description: Property binding allows setting the property of an HTML element or directive to the value of a component property.
+
+3. Attribute Binding
+   - Purpose: Bind component properties to HTML element attributes.
+   - Syntax: `[attr.attribute-name]="expression"`
+   - Example: ```html <button [attr.aria-label]="label"> ```
+   - Description: Attribute binding is used for attributes that don't have corresponding DOM properties.
+
+4. Class and Style Binding
+   - Purpose: Dynamically bind classes and styles to elements.
+   - Syntax: 
+     - Class: `[class.class-name]="expression"`
+     - Style: `[style.style-property]="expression"`
+   - Example:
+         ```html
+             <div [class.active]="isActive"></div>
+             <div [style.color]="color"></div>
+         ```
+   - Description: Class and style bindings allow dynamic assignment of classes and styles to elements based on component properties.
+
+5. Event Binding
+   - Purpose: Bind events from the view to methods in the component.
+   - Syntax: `(event)="handler"`
+   - Example:
+             ```html
+                <button (click)="onClick()">Click me</button>
+             ```
+   - Description: Event binding enables the view to respond to user actions by invoking methods defined in the component.
+
+6. Two-way Binding
+   - Purpose: Combine property and event binding to create a two-way data flow.
+   - Syntax: `[(ngModel)]="property"`
+   - Example: ```html <input [(ngModel)]="username"> ```
+   - Description: Two-way binding allows changes in the view to update the model and vice versa. It is commonly used with forms.
+
+----------------------------------------------------------------------------------------------------
+
+3. Understanding Binding Syntax:
+--------------------------------
+
+- Expression Context: The context in which a template expression is evaluated is typically the component instance.
+- Template Expressions: Angular template expressions can include variables, methods, and literals from the component context.
+- Preventing Name Collisions: Ensure unique identifiers to avoid conflicts within template expressions.
+
+Example:
+
+Component (TypeScript)
+```typescript
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-root',
+      templateUrl: './app.component.html',
+      styleUrls: ['./app.component.css']
+    })
+    export class AppComponent {
+      title = 'Data Binding Example';
+      imageUrl = 'https://example.com/image.png';
+      isActive = true;
+      color = 'red';
+      username = '';
+
+      onClick() {
+        console.log('Button clicked!');
+      }
+    }
+```
+
+Template (HTML)
+```html
+    <h1>{{ title }}</h1>
+    <img [src]="imageUrl" alt="Example Image">
+    <div [class.active]="isActive"></div>
+    <div [style.color]="color">Styled Text</div>
+    <button (click)="onClick()">Click me</button>
+    <input [(ngModel)]="username">
+    <p>Username: {{ username }}</p>
+```
+
+----------------------------------------------------------------------------------------------------
+
+4. Summary:
+-----------
+
+- Interpolation: Display data from the component in the view using `{{ expression }}`.
+- Property Binding: Bind component properties to HTML element properties using `[property]="expression"`.
+- Event Binding: Bind events from the view to component methods using `(event)="handler"`.
+- Two-way Binding: Combine property and event binding for a two-way data flow using `[(ngModel)]="property"`.
+- Class and Style Binding: Dynamically apply classes and styles using `[class.class-name]` and `[style.style-property]`.
+
+----------------------------------------------------------------------------------------------------

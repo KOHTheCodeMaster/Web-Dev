@@ -1,7 +1,7 @@
 
 Time Stamp: 7th Jun 2K24 - 08:33 PM..!!
 
-Title: Pending Task List
+Title: Bugs Log - [PENDING / DUE / TO-DO]
 
 Dev: K.O.H..!! (Harshit Gupta)
 
@@ -13,7 +13,7 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 ---------------------------
 
 Created Time Stamp:   7th Jun 2K24 - 08:34 PM
-Finished Time Stamp:  7th Jun 2K24 - 10:46 PM
+Resolved Time Stamp:  7th Jun 2K24 - 10:46 PM
 
 Issue Description:
 ------------------
@@ -23,6 +23,7 @@ Issue Description:
 
 Resolution:
 -----------
+
 - Initially comp-attribute-selector & comp-class-selector not created via Angular CLI but rather manually cloned
   by copy-pasting the existing comp-element-selector and later refactored to class & attribute respectively.
 
@@ -37,5 +38,14 @@ Resolution:
 - Class Selector was defined as element selector before which is now fixed to its correct syntax.
   Before: ` selector: 'comp-attribute-selector', `
   Fix:    ` selector: '.comp-attribute-selector]', `
+
+----------------------------------------------------------------------------------------------------
+
+Created Time Stamp:   8th Jun 2K24 - 01:01 PM
+
+Issue Description:
+------------------
+
+- Two-way Data Binding Not Working!
 
 ----------------------------------------------------------------------------------------------------
