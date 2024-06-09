@@ -33,6 +33,10 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 - Use Element Selectors for standalone components to improve readability and maintainability.
 - Use Attribute or Class Selectors for directives or components that add behavior or style to existing elements.
+- Attribute & Class Selectors:
+    - No Errors for Unknown Attributes: Angular doesn't throw errors for custom attributes that don't match components.
+    - Import Awareness: For attribute selectors to work, ensure you import the component and its NgModule in the consumer module.
+    - Missing Imports = No Rendering: If imports are missing, the component won't render, leading to silent errors. 
 
 5. Example:
 -----------
