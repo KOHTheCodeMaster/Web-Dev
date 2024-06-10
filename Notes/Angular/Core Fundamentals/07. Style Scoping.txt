@@ -1,0 +1,161 @@
+
+Time Stamp: 10th Jun 2K24 - 05:26 PM..!!
+
+Title: Style Scoping in Angular
+
+Category: Web Development -> Angular -> Style Scoping
+
+Keywords: Angular, Style, Scope, Encapsulation, Emulated, Shadow DOM
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Overview of Component Styles:
+--------------------------------
+
+- Inline Styles:
+  ```typescript
+      @Component({
+        selector: 'profile-photo',
+        template: `<img src="profile-photo.jpg" alt="profile photo">`,
+        styles: [`img { border-radius: 50%; }`],
+      })
+      export class ProfilePhoto { }
+  ```
+
+- External Styles:
+  ```typescript
+      @Component({
+        selector: 'profile-photo',
+        templateUrl: 'profile-photo.html',
+        styleUrls: ['profile-photo.css'],
+      })
+      export class ProfilePhoto { }
+  ```
+
+- CSS Tool Compatibility: Angular supports any CSS preprocessor (Sass, Less, Stylus).
+
+----------------------------------------------------------------------------------------------------
+
+2. ViewEncapsulation.Emulated (Default):
+----------------------------------------
+
+Mechanism:
+  - Angular generates a unique attribute for each component instance.
+  - This attribute is added to the component's elements and CSS selectors.
+
+Benefits:
+  - Ensures component styles are encapsulated and do not affect other components.
+  - Global styles can still affect elements within the component.
+
+Pseudo-classes Supported:
+  - `:host`: Styles the host element of the component.
+  - `:host-context()`: Styles based on the host element's ancestor context.
+
+Custom Pseudo-class: `::ng-deep`: Disables encapsulation for a CSS rule, making it global. (Discouraged for new use)
+
+----------------------------------------------------------------------------------------------------
+
+3. ViewEncapsulation.ShadowDom:
+-------------------------------
+
+Mechanism:
+  - Utilizes the Shadow DOM API to attach a shadow root to the component's host element.
+  - Styles are scoped within the shadow tree.
+
+Benefits:
+  - Strict encapsulation: styles cannot leak in or out.
+  - Global styles cannot affect elements within the component.
+
+Impact:
+  - Affects event propagation and interaction with the `<slot>` API.
+  - Changes how elements appear in browser developer tools.
+
+Considerations: Understand full implications before using due to broader effects on application behavior.
+
+----------------------------------------------------------------------------------------------------
+
+4. ViewEncapsulation.None:
+--------------------------
+
+Mechanism: Disables all style encapsulation. Styles are treated as global.
+
+Benefits: Easier for styles to affect multiple components.
+
+----------------------------------------------------------------------------------------------------
+
+5. Defining Styles in Templates:
+--------------------------------
+
+Using `<style>` Element:
+  - You can include additional styles directly within a component's template using the `<style>` element.
+  - The view encapsulation mode specified for the component will apply to these styles.
+  - Example:
+    ```html
+        <style>
+          p { color: red; }
+        </style>
+        <p>This is a {{ color }} paragraph.</p>
+    ```
+
+Limitations: Angular does not support data bindings inside `<style>` elements.
+
+----------------------------------------------------------------------------------------------------
+
+6. Referencing External Style Files:
+------------------------------------
+
+Using `<link>` Element:
+  - Component templates can use the `<link>` element to reference external CSS files.
+  - External styles are not affected by emulated view encapsulation.
+  - Example: ` <link rel="stylesheet" href="styles.css"> `
+
+Using the `@import` Rule:
+  - Your CSS can use the `@import` rule to include other CSS files.
+  - Example: `@import url('path/to/style.css');`
+
+Using the `@import` Rule:
+  - Your CSS can use the `@import` rule to include other CSS files.
+  - Example: ` @import url('path/to/style.css'); `
+
+Behavior of External Styles:
+  - Angular treats styles referenced via `<link>` or `@import` as external styles.
+  - External styles are not affected by Angular's emulated view encapsulation.
+
+----------------------------------------------------------------------------------------------------
+
+7. Summarized Report of Short & Crisp Pointers:
+-----------------------------------------------
+
+Inline and External Styles:
+  - Inline: Defined within the `styles` property.
+  - External: Referenced via `styleUrls` property.
+
+ViewEncapsulation.Emulated:
+  - Default mode.
+  - Styles scoped using unique attributes.
+  - Supports `:host` and `:host-context()` pseudo-classes.
+  - `::ng-deep` disables encapsulation for specific rules.
+
+ViewEncapsulation.ShadowDom:
+  - Uses Shadow DOM API for strict encapsulation.
+  - Styles contained within the shadow tree.
+  - Affects event propagation and developer tools.
+
+ViewEncapsulation.None:
+  - Disables style encapsulation.
+  - Styles are global.
+
+Defining Styles in Templates:
+  - Use `<style>` within component templates for additional styles.
+  - Same View Encapsulation mode of component applies to these styles.
+  - No support for bindings within `<style>` elements.
+
+Referencing External Style Files:
+  - Use `<link>` element or `@import` to reference external CSS in component templates.
+  - External styles are unaffected by emulated encapsulation.
+
+----------------------------------------------------------------------------------------------------
