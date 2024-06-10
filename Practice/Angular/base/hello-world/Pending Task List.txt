@@ -1,7 +1,7 @@
 
 Time Stamp: 7th Jun 2K24 - 08:33 PM..!!
 
-Title: Bugs Log - [PENDING / DUE / TO-DO]
+Title: PENDING / DUE / TO-DO Task List
 
 Dev: K.O.H..!! (Harshit Gupta)
 
@@ -9,8 +9,8 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 ----------------------------------------------------------------------------------------------------
 
-1. [PENDING / DUE / TO-DO]:
----------------------------
+1. Attribute & Class Selectors Not Working:
+-------------------------------------------
 
 Created Time Stamp:   7th Jun 2K24 - 08:34 PM
 Resolved Time Stamp:  7th Jun 2K24 - 10:46 PM
@@ -41,11 +41,26 @@ Resolution:
 
 ----------------------------------------------------------------------------------------------------
 
+2. Two-way Data Binding Not Working:
+------------------------------------
+
 Created Time Stamp:   8th Jun 2K24 - 01:01 PM
 
-Issue Description:
-------------------
+Description:
+------------
 
 - Two-way Data Binding Not Working!
+
+----------------------------------------------------------------------------------------------------
+
+3. Shadow DOM Example Usage:
+----------------------------
+
+Created Time Stamp:   10th Jun 2K24 - 01:15 PM
+
+Description:
+------------
+
+- Practical Example of using Shadow DOM with custom elements.
 
 ----------------------------------------------------------------------------------------------------

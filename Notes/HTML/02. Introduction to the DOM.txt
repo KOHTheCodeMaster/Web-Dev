@@ -16,10 +16,41 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 1. What is the Document Object Model (DOM)?
 -------------------------------------------
 
-- The Document Object Model (DOM) is a programming interface for web documents.
-- It represents the structure of documents as a tree, allowing scripts to dynamically access and update the content,
- structure, and style of HTML documents.
+Definition:
+  - The Document Object Model (DOM) is a programming interface for web documents.
+  - It represents the structure of documents as a tree, allowing scripts to dynamically access and update the content,
+    structure, and style of HTML documents.
 
+Functionality:
+  - Transforms static HTML into a dynamic, live document.
+  - Represents the document structure as a tree of objects/nodes.
+  - Maintains the hierarchy of HTML elements.
+ 
+Browser Operations:
+  - Parses HTML to create a data model.
+  - Converts HTML strings into a tree of nodes (the DOM tree).
+ 
+Dynamic Interaction:
+  - Nodes in the DOM tree contain properties and methods.
+  - JavaScript can be used to manipulate these nodes.
+  - Example:
+    ```javascript
+         const header = document.createElement('header');
+         const h1 = document.createElement('h1');
+         h1.textContent = 'Hello DOM';
+         header.appendChild(h1);
+         document.body.appendChild(header);
+    ```
+ 
+    Resulting HTML:
+    ```html
+        <body>
+           <header>
+           <h1>Hello DOM</h1>
+           </header>
+        </body>
+    ```
+ 
 ----------------------------------------------------------------------------------------------------
 
 2. Core Concepts:
@@ -125,4 +156,8 @@ Adding and Removing Elements:
 - Event Handling: Adding event listeners for common events.
 - Example: Basic example demonstrating DOM manipulation and event handling.
 
+- Converts HTML into a live document.
+- Represents the page structure as a tree of nodes.
+- Allows dynamic manipulation using JavaScript.
+    
 ----------------------------------------------------------------------------------------------------

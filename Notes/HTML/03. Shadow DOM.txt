@@ -1,0 +1,166 @@
+
+Time Stamp: 10th Jun 2K24 - 01:10 PM..!!
+
+Title: Shadow DOM
+
+Category: Learning Resources -> Web Development -> Shadow DOM
+
+Keywords: Shadow DOM, HTML, encapsulation, web components, DOM
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. What is Shadow DOM?
+----------------------
+
+Definition: Shadow DOM is an extension of the normal DOM.
+
+Differences from Normal DOM:
+  - Creation and Usage: Creates a scoped DOM tree separate from the rest of the page.
+  - Behavior: This scoped tree is attached to a host element but remains isolated from its children.
+
+Scoped DOM Tree:
+  - Known as the shadow tree, Attached to a host element called the shadow host.
+  - Localizes all additions including styles.
+
+Encapsulation:
+  - Prevents style and behavior conflicts with the main document.
+  - Ensures styles within shadow DOM are scoped to the shadow tree only.
+
+Creating Shadow DOM:
+  - Use the `attachShadow` method on an element.
+  - Example:
+    ```javascript
+        const header = document.createElement('header');
+        const shadowRoot = header.attachShadow({mode: 'open'});
+        shadowRoot.innerHTML = '<h1>Hello Shadow DOM</h1>'; // Can also use appendChild().
+    ```
+
+Rendering Issues:
+  - Shadow DOM renders in place of the element's children.
+  - Use `<slot>` to display children within the shadow DOM.
+
+----------------------------------------------------------------------------------------------------
+
+2. Key Features of Shadow DOM:
+------------------------------
+
+Encapsulation:
+  - Shadow DOM creates a separate, isolated DOM tree within a web component.
+  - This isolated tree is called a shadow tree and is attached to a shadow host element.
+
+Scoped Styles:
+  - Styles defined within a shadow DOM are scoped to that shadow tree.
+  - Styles do not leak out to the main document, nor do external styles affect the shadow DOM.
+
+Composition:
+  - Shadow DOM allows for the composition of multiple elements into a single, reusable web component.
+  - This improves maintainability and re-usability of code.
+
+----------------------------------------------------------------------------------------------------
+
+3. How to Use Shadow DOM:
+-------------------------
+
+- Creating a Shadow Root: To create a shadow root, use the `attachShadow` method on an element.
+    ```javascript
+        const shadowHost = document.createElement('div');
+        const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+    ```
+
+- Adding Content to Shadow DOM: Once the shadow root is created, you can append elements to it.
+    ```javascript
+        const shadowHost = document.createElement('div');
+        const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+        const paragraph = document.createElement('p');
+        paragraph.textContent = 'This is inside the shadow DOM.';
+        shadowRoot.appendChild(paragraph);
+    ```
+
+- Styles in Shadow DOM: Styles can be included directly within the shadow DOM, ensuring they apply only to elements within that shadow tree.
+    ```javascript
+        const style = document.createElement('style');
+        style.textContent = `
+          p {
+            color: blue;
+          }
+        `;
+        shadowRoot.appendChild(style);
+    ```
+
+----------------------------------------------------------------------------------------------------
+
+4. Practical Example:
+---------------------
+
+```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Shadow DOM Example</title>
+    </head>
+    <body>
+        <div id="shadowHost"></div>
+
+        <script>
+            // Create the shadow root
+            const shadowHost = document.getElementById('shadowHost');
+            const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+            // Create and append elements to shadow DOM
+            const style = document.createElement('style');
+            style.textContent = `
+              p {
+                color: blue;
+              }
+            `;
+            shadowRoot.appendChild(style);
+
+            const paragraph = document.createElement('p');
+            paragraph.textContent = 'This text is inside the shadow DOM and styled in blue.';
+            shadowRoot.appendChild(paragraph);
+        </script>
+    </body>
+    </html>
+```
+
+In this example:
+- A `div` element with the ID `shadowHost` is used as the shadow host.
+- A shadow root is created and attached to this host.
+- A `style` element is added to the shadow root to style a `p` element within the shadow DOM.
+
+----------------------------------------------------------------------------------------------------
+
+5. Benefits of Using Shadow DOM:
+--------------------------------
+
+- Isolation: Prevents style and behavior conflicts with other parts of the document.
+- Modularity: Enables the creation of self-contained components that are easy to reuse and maintain.
+- Scoped Styling: Ensures styles defined within the shadow DOM do not affect other parts of the document and vice versa.
+
+----------------------------------------------------------------------------------------------------
+
+6. Learning Resources:
+----------------------
+
+1. MDN Web Docs - Shadow DOM: [Shadow DOM Guide](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)
+2. Google Developers - Shadow DOM: [Introduction to Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom)
+3. Web Components - Shadow DOM Explained: [Shadow DOM Explained](https://www.webcomponents.org/introduction#shadow-dom)
+
+- These resources provide detailed explanations, examples, and further insights into the usage and benefits of Shadow DOM.
+
+----------------------------------------------------------------------------------------------------
+
+7. Summary:
+-----------
+
+- Shadow DOM: Allows encapsulation and isolation of part of the DOM and its styling.
+- Encapsulation: Creates a separate scoped, isolated DOM tree within a web component.
+- Scoped Styles: Styles within a shadow DOM do not affect or get affected by external styles.
+- Composition: Facilitates the creation of reusable, maintainable web components.
+
+----------------------------------------------------------------------------------------------------
