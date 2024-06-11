@@ -70,6 +70,9 @@ Benefits:
   - Strict encapsulation: styles cannot leak in or out.
   - Global styles cannot affect elements within the component.
 
+Exception:
+  - styles from components with ViewEncapsulation.None act as high precedence global styles and can affect Shadow DOM components.
+
 Impact:
   - Affects event propagation and interaction with the `<slot>` API.
   - Changes how elements appear in browser developer tools.
@@ -84,6 +87,9 @@ Considerations: Understand full implications before using due to broader effects
 Mechanism: Disables all style encapsulation. Styles are treated as global.
 
 Benefits: Easier for styles to affect multiple components.
+
+Global Style: `ViewEncapsulation.None` bypasses style encapsulation, turning styles into global styles,
+              impacting not only the component but also Shadow DOM components.
 
 ----------------------------------------------------------------------------------------------------
 

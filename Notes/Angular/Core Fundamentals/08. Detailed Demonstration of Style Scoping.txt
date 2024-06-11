@@ -1,0 +1,190 @@
+
+Time Stamp: 11th Jun 2K24 - 11:31 PM..!!
+
+Title: Style Scoping in Angular
+
+Category: Web Development -> Angular -> Example Demonstration
+
+Keywords: Angular, Style, Scope, Encapsulation, Emulated, Shadow DOM, Example, Demonstration
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Directory Structure:
+-----------------------
+
+```
+src/
+|-- style-scoping/
+|   |-- emulated/
+|   |   |-- emulated.component.ts
+|   |   |-- emulated.component.html
+|   |   |-- emulated.component.css
+|   |-- shadowdom/
+|   |   |-- shadowdom.component.ts
+|   |   |-- shadowdom.component.html
+|   |   |-- shadowdom.component.css
+|   |-- none/
+|   |   |-- none.component.ts
+|   |   |-- none.component.html
+|   |   |-- none.component.css
+|   |-- style-scoping-demo.component.css
+|   |-- style-scoping-demo.component.html
+|   |-- style-scoping-demo.component.ts
+|-- styles.css
+```
+
+----------------------------------------------------------------------------------------------------
+
+2. Global Styles (styles.css):
+------------------------------
+
+```css
+/* Global styles */
+
+body {
+  background-color: #000001;
+  color: #FFF;
+}
+
+.global-style-button-1 {
+  padding: 10px;
+  background-color: lightblue;
+  color: blueviolet;
+  font-size: 24px;
+  border-radius: 16px;
+}
+```
+
+3. StyleScopingDemoComponent Component:
+---------------------------------------
+
+```typescript - (style-scoping-demo.component.ts)
+import { Component, ViewEncapsulation } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './style-scoping-demo.component.html',
+  styleUrls: ['./style-scoping-demo.component.css'],
+  encapsulation: ViewEncapsulation.None    // This makes .global-style-button-2 a global style
+})
+export class AppComponent {}
+```
+
+```html - (style-scoping-demo.component.html)
+    <h3>Angular Style Scoping Examples</h3>
+
+    <app-emulated></app-emulated>
+
+    <app-shadow-dom></app-shadow-dom>
+
+    <app-none></app-none>
+```
+
+```css - (style-scoping-demo.component.css)
+/* Component styles */
+
+.global-style-button-2 {
+  padding: 10px;
+  background-color: yellow;
+  color: red;
+  font-size: 24px;
+  border-radius: 16px;
+}
+```
+
+5. Shadow DOM Component:
+------------------------
+
+```typescript - (shadowdom.component.ts)
+import { Component, ViewEncapsulation } from '@angular/core';
+
+@Component({
+  selector: 'app-shadowdom',
+  templateUrl: './shadowdom.component.html',
+  styleUrls: ['./shadowdom.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
+})
+export class ShadowDomComponent {}
+```
+
+```css - (shadowdom.component.css)
+/* Shadow DOM component styles */
+
+.shadowdom {
+  color: green;
+}
+
+:host {
+  display: block;
+  padding: 10px;
+  border: 1px solid green;
+}
+```
+
+```html - (shadowdom.component.html)
+<!-- Shadow DOM component template -->
+
+<div class="shadowdom global-style">Shadow DOM Component Content</div>
+<br>
+<button class="global-style-button-1">Shadow Dom Button</button>
+<button class="global-style-button-2">Shadow Dom Button</button>
+```
+
+8. Emulated Component Template:
+-------------------------------
+
+```html - (emulated.component.html)
+<!-- Emulated component template -->
+
+<div class="emulated">Emulated Component Content</div>
+<br>
+<button class="global-style-button-1">Emulated Button</button>
+<button class="global-style-button-2">Emulated Button</button>
+```
+
+```emulated.css
+/* Emulated component styles */
+
+.emulated {
+  color: cyan;
+}
+
+:host {
+  display: block;
+  padding: 10px;
+  border: 1px solid cyan;
+}
+```
+
+```typescript - (emulated.component.ts)
+import {Component, ViewEncapsulation} from '@angular/core';
+
+@Component({
+    selector: 'app-emulated',
+    standalone: true,
+    imports: [],
+    templateUrl: './emulated.component.html',
+    styleUrl: './emulated.component.css',
+    encapsulation: ViewEncapsulation.Emulated    //  Default, can be omitted
+})
+export class EmulatedComponent {
+
+}
+```
+
+----------------------------------------------------------------------------------------------------
+
+9. Summary:
+-----------
+
+- The example demonstrates the usage of different encapsulation modes in Angular: `ViewEncapsulation.Emulated`, `ViewEncapsulation.ShadowDom`, and `ViewEncapsulation.None`.
+
+- Each component (`emulated`, `shadowdom`, and `none`) showcases a different encapsulation mode, illustrating how styles are scoped and encapsulated within each component.
+
+- The directory structure and file organization adhere to Angular best practices, ensuring modularity and maintainability of the application.
+
+----------------------------------------------------------------------------------------------------

@@ -1,0 +1,10 @@
+
+.emulated {
+  color: cyan;
+}
+
+:host {
+  display: block;
+  padding: 10px;
+  border: 1px solid cyan;
+}

@@ -1,0 +1,8 @@
+
+.global-style-button-2 {
+  padding: 10px;
+  background-color: yellow;
+  color: red;
+  font-size: 24px;
+  border-radius: 16px;
+}
