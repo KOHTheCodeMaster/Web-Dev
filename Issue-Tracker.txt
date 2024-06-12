@@ -1,0 +1,105 @@
+
+Time Stamp: 7th Jun 2K24 - 08:33 PM..!!
+
+Title: Issue Tracker
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+4. TypeScript Non-null Assertion Operator (Postfix !) Type Compile-time Error Scenario:
+---------------------------------------------------------------------------------------
+
+Status: OPEN
+
+Created Time Stamp:  13th Jun 2K24 - 01:04 AM
+
+Issue: Need a valid example for demonstrating the precise use case of Non-null Assertion Operator (!).
+
+- So far there is no such incident observed for Potential Error Prevention by asserting it's not nullish.
+- No difference observed with (!) or without (!) operator.
+
+----------------------------------------------------------------------------------------------------
+
+3. Two-Way Data Binding Issue (Incorrect Syntax):
+-------------------------------------------------
+
+Status: CLOSED
+
+Created Time Stamp:   8th Jun 2K24 - 01:01 PM
+Resolved Time Stamp: 12th Jun 2K24 - 12:45 PM
+
+Issue: Two-way data binding not working for `<input id="#input1" type="text" [(value)]="name">`.
+
+Cause: Incorrect use of `[(value)]` syntax for two-way data binding.
+
+Correct Usage:
+    - For two-way data binding in Angular, use the `[(ngModel)]` directive.
+    - The correct syntax is: ` <input type="text" [(ngModel)]="name"> `
+
+Resolution: Replace `[(value)]` with `[(ngModel)]` in the template.
+
+----------------------------------------------------------------------------------------------------
+
+2. Fixed ViewEncapsulation.ShadowDom Issue:
+-------------------------------------------
+
+Status: CLOSED
+
+Created Time Stamp:   10th Jun 2K24 - 01:15 PM
+Resolved Time Stamp:  11th Jun 2K24 - 11:43 PM
+
+Issue:
+- The initial implementation of `ViewEncapsulation.ShadowDom` in the example was not achieving true style isolation.
+- Styles defined with `ViewEncapsulation.None` were leaking into the Shadow DOM component, causing unexpected behavior.
+
+Description:
+- `ViewEncapsulation.ShadowDom` aims to isolate component styles within the shadow DOM tree.
+- However, styles defined with `ViewEncapsulation.None` act as global styles and have higher precedence.
+- These global styles were unintentionally affecting the Shadow DOM component, overriding its intended styles.
+
+Resolution:
+- The issue was resolved by ensuring that styles for the Shadow DOM component are defined within its own stylesheet or component template.
+- This prevents styles from other components with `ViewEncapsulation.None` from interfering with the Shadow DOM component's style encapsulation.
+
+Additional Notes:
+- While `ViewEncapsulation.None` can be useful in specific scenarios, it's generally recommended to avoid it due to potential style conflicts.
+- Prefer using component-specific styles or `ViewEncapsulation.Emulated` for most cases to maintain better style isolation and prevent unintended side effects.
+
+----------------------------------------------------------------------------------------------------
+
+1. Attribute & Class Selectors Not Working:
+-------------------------------------------
+
+Status: CLOSED
+
+Created Time Stamp:   7th Jun 2K24 - 08:34 PM
+Resolved Time Stamp:  7th Jun 2K24 - 10:46 PM
+
+Issue Description:
+------------------
+
+- Attribute & Class Selectors are not working!
+- Complete working example with use-case for both Attribute & Class Selector Components.
+
+Resolution:
+-----------
+
+- Initially comp-attribute-selector & comp-class-selector not created via Angular CLI but rather manually cloned
+  by copy-pasting the existing comp-element-selector and later refactored to class & attribute respectively.
+
+- This led to typo error which made selectors for both attribute & class components to use same as element selector.
+
+- Fixed by updating the selectors with correct syntax.
+
+- Attribute Selector was defined as element selector before which is now fixed to its correct syntax.
+  Before: selector: 'comp-attribute-selector',
+  Fix:    selector: '[comp-attribute-selector]',
+
+- Class Selector was defined as element selector before which is now fixed to its correct syntax.
+  Before: ` selector: 'comp-attribute-selector', `
+  Fix:    ` selector: '.comp-attribute-selector]', `
+
+----------------------------------------------------------------------------------------------------

@@ -96,8 +96,10 @@ Custom Elements:
 -----------
 
 - NgModel simplifies two-way data binding for common form elements.
-- The `FormsModule` import is required for NgModel to work.
+- Two-way Data Binding: Use [(ngModel)] for binding data from the component to the view and vice versa.
+- FormsModule: The `FormsModule` is imported in your module to use ngModel.
 - You can customize input behavior by handling the `(ngModelChange)` event.
 - For more advanced scenarios with custom elements, consider implementing a `ControlValueAccessor`.
+- Supported Elements: Use ngModel with form elements like <input>, <select>, and <textarea>.
 
 ----------------------------------------------------------------------------------------------------

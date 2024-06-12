@@ -1,0 +1,76 @@
+
+Time Stamp: 13th Jun 2K24 - 12:01 AM..!!
+
+Title: Non-null Assertion Operator (!)
+
+Category: Web Development -> TypeScript -> Language Features -> Non-Null Assertion Operator
+
+Keywords: TypeScript, Non-Null Assertion Operator, Nullish Coalescing Operator, Type Safety
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Why Use `!` When Declaring a Field in Class?
+-----------------------------------------------
+
+Definition:
+  - In TypeScript, the `!` operator, also known as the non-null assertion operator,
+  - It is used to tell the compiler that a variable or property is guaranteed to have a value and won't be `null` or `undefined` at runtime.
+
+Understanding the Context:
+    `name!: string;`
+    - Here, `name!: string;` declares a property named `name` in a TypeScript class.
+    - The `!` is applied after the type annotation (`string`).
+    - This asserts to the compiler that `name` will always be of type `string` and will never be nullish.
+
+2. Benefits of Using `!`:
+-------------------------
+
+- Improved Code Readability: It clarifies your intent that `name` is always expected to have a value.
+
+- Potential Error Prevention: By asserting it's not nullish, you can avoid errors that might occur if you try to access properties or methods on a null or undefined `name`.
+
+- Early Detection of Issues: The compiler might raise warnings or errors if it can't guarantee `name` is initialized, helping you catch issues early in development.
+
+3. Important Considerations:
+----------------------------
+
+- Use `!` cautiously. If `name` can genuinely be null or undefined at some point, using `!` might mask potential runtime errors.
+- Ensure proper initialization logic to guarantee `name` gets a value before it's used.
+- In some cases, explicit nullish checks using conditionals (if statements) might be better for code clarity and handling potential nullish values.
+
+4. Using Non-Null Assertion:
+----------------------------
+
+```TypeScript
+    let username!: string; // Declares username as string and asserts it's not nullish
+
+    function greetUser() {
+      console.log("Hello, " + username.toUpperCase()); // (No Compile-time Error)
+    }
+
+    username = "John Doe";  // Before calling greetUser, ensure username is properly initialized with a string value
+    greetUser();
+```
+
+- By adding !, you tell the compiler that username will always have a value, allowing the code to compile without errors.
+- However, it's crucial to ensure username is indeed initialized before using it.
+
+5. Non-Null Assertion vs. Nullish Coalescing Operator:
+------------------------------------------------------
+
+The non-null assertion operator (`!`) differs from the nullish coalescing operator (`??`). While `!` asserts a variable is not nullish, `??` provides a default value if the variable is null or undefined.
+
+6. Summary:
+-----------
+
+- Non-null Assertion (`!`): Informs TypeScript a variable is guaranteed to have a value (not nullish).
+- Syntax: `variableName!: type`.
+- Benefits: Improves readability, prevents nullish access errors, aids early error detection.
+- Cautions: Use cautiously, ensure proper initialization, consider explicit nullish checks when needed.
+- Differs from Nullish Coalescing (`??`): `!` asserts not nullish, `??` provides a default value if nullish.
+
+----------------------------------------------------------------------------------------------------
