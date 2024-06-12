@@ -1,0 +1,21 @@
+<div class="ng-class-section">
+
+  <div [ngClass]="{'active': isActive, 'inactive': !isActive}">
+    This div's class is dynamically bound using NgClass.
+  </div>
+  <button (click)="toggleClass()">Toggle Class</button>
+
+</div>
+
+<br><br>
+
+<div class="ng-style-section">
+
+  <div
+    [ngStyle]="{'background-color': isHighlighted ? 'yellow' : 'lightblue',  'color': 'black', 'font-size': fontSize + 'px'}">
+    This div's styles are dynamically bound using NgStyle.
+  </div>
+  <button (click)="toggleHighlight()">Toggle Highlight</button>
+  <button (click)="increaseFontSize()">Increase Font Size</button>
+
+</div>

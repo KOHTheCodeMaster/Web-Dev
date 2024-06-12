@@ -1,0 +1,171 @@
+
+Time Stamp: 12th Jun 2K24 - 10:36 PM..!!
+
+Title: Built-in Attribute Directives in Angular
+
+Category: Web Development -> Angular -> Built-in Attribute Directives
+
+Keywords: Angular, Attribute Directives, NgClass, NgStyle
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Built-in Attribute Directives in Angular:
+--------------------------------------------
+
+- Attribute directives listen to and modify the behavior of other HTML elements, attributes, properties, and components.
+- They are used to apply dynamic styles and classes to elements based on certain conditions.
+
+2. NgClass Directive:
+---------------------
+
+Purpose: To dynamically add or remove a set of CSS classes to an element based on certain conditions.
+
+Usage: `NgClass` directive allows you to dynamically add or remove CSS classes to an element based on a condition or expression.
+
+Example:
+
+- ng-class-and-style.component.html
+   ```html
+       <div class="ng-class-section">
+
+         <div [ngClass]="{'active': isActive, 'inactive': !isActive}">
+           This div's class is dynamically bound using NgClass.
+         </div>
+         <button (click)="toggleClass()">Toggle Class</button>
+
+       </div>
+
+       <br><br>
+
+       <div class="ng-style-section">
+
+         <div
+           [ngStyle]="{'background-color': isHighlighted ? 'yellow' : 'lightblue',  'color': 'black', 'font-size': fontSize + 'px'}">
+           This div's styles are dynamically bound using NgStyle.
+         </div>
+         <button (click)="toggleHighlight()">Toggle Highlight</button>
+         <button (click)="increaseFontSize()">Increase Font Size</button>
+
+       </div>
+   ```
+
+- ng-class-and-style.component.ts
+   ```typescript
+       import {Component} from '@angular/core';
+       import {NgClass, NgStyle} from '@angular/common';
+
+       @Component({
+           selector: 'app-ng-class-and-style',
+           standalone: true,
+           imports: [NgClass, NgStyle],
+           templateUrl: './ng-class-and-style.component.html',
+           styleUrl: './ng-class-and-style.component.css'
+       })
+       export class NgClassAndStyleComponent {
+
+           isActive: boolean = true;
+           isHighlighted: boolean = false;
+           fontSize: number = 14;
+
+           toggleClass() {
+               this.isActive = !this.isActive;
+           }
+
+           toggleHighlight() {
+               this.isHighlighted = !this.isHighlighted;
+           }
+
+           increaseFontSize() {
+               this.fontSize += 2;
+           }
+       }
+   ```
+
+- ng-class-and-style.component.css
+   ```css
+        .active {
+          color: green;
+          font-weight: bold;
+        }
+
+        .inactive {
+          color: red;
+          font-weight: normal;
+        }
+
+        .ng-class-section, .ng-style-section {
+          margin: 20px;
+        }
+   ```
+
+Explanation:
+  - `NgClass` binds to the `class` attribute of the `div` element.
+  - The `div` will have the `active` class when `isActive` is true and the `inactive` class when `isActive` is false.
+  - Clicking the button toggles the `isActive` variable, which dynamically changes the class of the `div`.
+
+
+3. NgStyle Directive:
+---------------------
+
+Purpose: To dynamically add or remove a set of HTML styles to an element based on certain conditions.
+
+Usage: `NgStyle` directive allows you to dynamically set inline styles on an element based on a condition or expression.
+
+Example:
+
+- app.component.html
+   ```html
+       <div [ngStyle]="{'background-color': isHighlighted ? 'yellow' : 'white', 'font-size': fontSize + 'px'}">
+         This div's styles are dynamically bound using NgStyle.
+       </div>
+       <button (click)="toggleHighlight()">Toggle Highlight</button>
+       <button (click)="increaseFontSize()">Increase Font Size</button>
+   ```
+
+- app.component.ts
+   ```typescript
+       import { Component } from '@angular/core';
+
+       @Component({
+         selector: 'app-root',
+         templateUrl: './app.component.html'
+       })
+       export class AppComponent {
+         isHighlighted: boolean = false;
+         fontSize: number = 14;
+
+         toggleHighlight() {
+           this.isHighlighted = !this.isHighlighted;
+         }
+
+         increaseFontSize() {
+           this.fontSize += 2;
+         }
+       }
+   ```
+
+Explanation:
+  - `NgStyle` binds to the `style` attribute of the `div` element.
+  - The `div` will have a yellow background if `isHighlighted` is true, otherwise, it will have a white background.
+  - The font size of the `div` will be dynamically set based on the `fontSize` variable.
+  - Clicking the "Toggle Highlight" button toggles the background color of the `div`.
+  - Clicking the "Increase Font Size" button increases the font size of the `div` by 2 pixels.
+
+4. Summary:
+-----------
+
+- NgClass: Dynamically add/remove classes.
+    - Useful for changing the appearance of elements based on user interactions or application state.
+    - Example: `div [ngClass]="{'active': isActive, 'inactive': !isActive}"`
+
+- NgStyle: Dynamically set inline styles.
+    - Useful for applying styles directly to elements without using CSS classes.
+    - Example: `div [ngStyle]="{'background-color': isHighlighted ? 'yellow' : 'white'}"`
+
+- Both directives are powerful tools for conditionally applying styles in Angular applications.
+
+----------------------------------------------------------------------------------------------------

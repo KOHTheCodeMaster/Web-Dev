@@ -1,0 +1,16 @@
+
+.active {
+  font-size: 24px;
+  color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  font-size: 24px;
+  color: red;
+  font-weight: normal;
+}
+
+.ng-class-section, .ng-style-section {
+  margin: 20px;
+}
