@@ -67,7 +67,46 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 ----------------------------------------------------------------------------------------------------
 
-3. Understanding Binding Syntax:
+4. Binding to CSS Classes and Styles:
+-------------------------------------
+
+Binding to a Single CSS Class
+    - Syntax: `[class.className]="expression"`
+    - Example: `[class.sale]="onSale"`
+    - Behavior: Adds the class if `onSale` is truthy, removes if falsy (except for undefined).
+    - Usage: Useful for conditional class binding.
+
+Binding to Multiple CSS Classes
+    - Syntax: `[class]="classExpression"`
+    - Class Expression Types:
+      - String: Space-delimited class names.
+      - Object: Class names as keys, truthy/falsy expressions as values.
+      - Array: List of class names.
+    - Behavior: Adds class if the associated value in the object is truthy.
+
+Binding to a Single Style
+    - Syntax: `[style.styleName]="expression"`
+    - Example: `[style.width]="width"`
+    - Units: Can append units like `em` or `%` to numeric expressions.
+    - Dash-Case Example: `[style.background-color]="expression"`
+    - CamelCase Example: `[style.backgroundColor]="expression"`
+
+Binding to Multiple Styles
+    - Syntax: `[style]="styleExpression"`
+    - Style Expression Types:
+      - String: List of styles in CSS format.
+      - Object: Style names as keys, style values as values.
+    - Note: Binding an array to `[style]` is not supported.
+
+Key Points
+    - Use `[class.className]` for single class binding and `[class]="classExpression"` for multiple classes.
+    - For single styles, use `[style.styleName]` with optional unit extensions.
+    - Bind multiple styles using `[style]="styleExpression"` with either a string list or an object.
+    - `ViewEncapsulation.None` styles act as global styles affecting other components.
+
+----------------------------------------------------------------------------------------------------
+
+4. Understanding Binding Syntax:
 --------------------------------
 
 - Expression Context: The context in which a template expression is evaluated is typically the component instance.
@@ -111,7 +150,7 @@ Template (HTML)
 
 ----------------------------------------------------------------------------------------------------
 
-4. Summary:
+5. Summary:
 -----------
 
 - Interpolation: Display data from the component in the view using `{{ expression }}`.
