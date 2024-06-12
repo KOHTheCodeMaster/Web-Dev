@@ -1,5 +1,5 @@
 
-Time Stamp: 12th Jun 2K24 - 10:36 PM..!!
+Time Stamp: 12th Jun 2K24 - 10:36 AM..!!
 
 Title: Built-in Attribute Directives in Angular
 

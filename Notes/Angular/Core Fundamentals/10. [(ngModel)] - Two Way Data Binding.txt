@@ -1,0 +1,103 @@
+
+Time Stamp: 12th Jun 2K24 - 11:57 AM..!!
+
+Title: [(ngModel)] - Two Way Data Binding
+
+Category: Web Development -> Angular -> Two-Way Data Binding
+
+Keywords: Angular, Two-Way Data Binding, NgModel, FormsModule, Data Binding
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Two-Way Data Binding with NgModel:
+-------------------------------------
+
+- NgModel is a directive used to achieve two-way data binding between a component's property and an HTML form element.
+- This means changes made in the UI element (like an input field) are automatically reflected in the component's property, and vice versa.
+
+2. Setting Up Two-Way Data Binding:
+-----------------------------------
+
+Import FormsModule: In your component's TypeScript file, import `FormsModule` from `@angular/forms`.
+
+  ```typescript - (demo-ng-model.component.ts)
+       import { Component } from '@angular/core';
+
+       @Component({
+         selector: 'app-demo-ng-model',
+         standalone: true,
+         imports: [],
+         templateUrl: './demo-ng-model.component.html',
+         styleUrl: './demo-ng-model.component.css'
+       })
+       export class DemoNgModelComponent {
+            name: string = 'John Doe';
+       }
+  ```
+
+3. Use the `[(ngModel)]` Syntax:
+--------------------------------
+
+- In your component's HTML template,
+- use the `[(ngModel)]` syntax on an HTML form element (like `<input>`) to bind it to a component property.
+    ```html - (demo-ng-model.component.html)
+       <label for="example-ngModel">Name:</label>
+       <input [(ngModel)]="name" id="example-ngModel">
+    ```
+- Here, `name` is the component property that will be bound to the input field's value.
+Changes made in the input field will update `name`, and vice versa.
+
+4. Alternative Syntax and Customization:
+----------------------------------------
+
+  - While `[(ngModel)]` is convenient, it's actually shorthand for separate property and event bindings.
+  - You can achieve the same functionality with:
+    ` <input [ngModel]="name" (ngModelChange)="setName($event)" id="example-ngModel"> `
+  - `[ngModel]` sets the initial value of the input field from `name`.
+  - `(ngModelChange)` listens for changes in the input field and calls the `setName` method in the component with the new value (`$event`).
+
+5. Understanding ngModel:
+-------------------------
+
+  - To achieve two-way data binding in Angular, use the `[(ngModel)]` directive, not `[(value)]`.
+  - The correct syntax for two-way data binding is:
+  - The `ngModel` directive creates a two-way data binding between the view (HTML) and the model (component class).
+  - It works on form elements like `<input>`, `<select>`, and `<textarea>`.
+
+Binding to Form Elements: `<input>`, `<select>`, `<textarea>`: Use `[(ngModel)]`.
+
+   ```html
+       <input type="text" [(ngModel)]="name">
+       <select [(ngModel)]="selectedOption">
+         <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+       </select>
+       <textarea [(ngModel)]="description"></textarea>
+   ```
+
+Custom Elements:
+   - For custom elements, use `ngModel` with `ControlValueAccessor`.
+   - Custom elements (web components) are user-defined HTML elements.
+   - Use Angular's `@Component` decorator to create custom elements.
+   - Register custom elements using `createCustomElement` from `@angular/elements`.
+
+5. NgModel and Value Accessors:
+-------------------------------
+
+- NgModel works with elements that have built-in support for data binding, like standard form elements (`input`, `select`, etc.).
+- For custom components or non-standard elements, you might need to implement a `ControlValueAccessor` to enable two-way data binding.
+- Custom elements can be created using Angular components and registered with `createCustomElement`.
+- Implement `ControlValueAccessor` to use `ngModel` with custom elements.
+
+6. Summary:
+-----------
+
+- NgModel simplifies two-way data binding for common form elements.
+- The `FormsModule` import is required for NgModel to work.
+- You can customize input behavior by handling the `(ngModelChange)` event.
+- For more advanced scenarios with custom elements, consider implementing a `ControlValueAccessor`.
+
+----------------------------------------------------------------------------------------------------
