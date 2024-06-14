@@ -9,12 +9,13 @@ import {
     NgClassAndStyleComponent
 } from './directives/attribute-directives/ng-class-and-style/ng-class-and-style.component';
 import {DemoNgModelComponent} from './directives/attribute-directives/demo-ng-model/demo-ng-model.component';
+import {DemoStructuralDirectivesComponent} from './directives/structural/demo-structural-directives/demo-structural-directives.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     imports: [RouterOutlet, Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent, DataBindingComponent,
-        StyleScopingDemoComponent, NgClassAndStyleComponent, DemoNgModelComponent
+        StyleScopingDemoComponent, NgClassAndStyleComponent, DemoNgModelComponent, DemoStructuralDirectivesComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

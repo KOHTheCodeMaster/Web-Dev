@@ -1,0 +1,135 @@
+
+Time Stamp: 14th Jun 2K24 - 04:50 PM..!!
+
+Title: Built-in Structural Directives in Angular
+
+Category: Web Development -> Angular -> Structural Directives
+
+Keywords: Angular, Structural Directives, NgIf, NgFor, NgSwitch, NgContainer
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Built-in Structural Directives in Angular:
+---------------------------------------------
+
+- Structural directives are responsible for manipulating the DOM's structure by adding, removing, or updating elements.
+- They offer a powerful way to control what gets displayed in your templates dynamically.
+
+2. NgIf Directive:
+------------------
+
+Definition:
+  - ngIf directive conditionally adds or removes an element from the DOM based on a boolean expression.
+  - ngElseIf provides additional conditional checks within an ngIf directive.
+  - ngElse serves as a fallback element displayed when the ngIf condition is false.
+
+Import Necessary Modules: Import NgIf from @angular/common.
+
+Template Setup:
+  - Use *ngIf to conditionally display elements.
+  - Use template variables (like #elseBlock) with an ng-template to handle the else if and else cases.
+
+Behavior:
+  - When `true`: Renders the element and its content
+  - When `false` or `null`: Omits the entire element & Renders the template provided in the optional else block (E.g. #elseBlock)
+
+Shorthand Syntax (*ngIf):
+    Usage: Conditionally includes elements in the DOM.
+    Limitation: Only one structural directive per element.
+    Example: ` <div *ngIf="condition">Content to render when true</div> `
+
+Expanded Syntax (<ng-template [ngIf]>):
+    Usage: Provides explicit control and allows combining multiple structural directives, suitable for complex templates
+    Example:
+        - Basic Syntax: ` <ng-template [ngIf]="condition"><div>Content to render when true</div></ng-template> `
+
+        - With else block:
+            `<div *ngIf="condition; else elseBlock">Content to render when true</div>`
+            `<ng-template #elseBlock>Content to render when false</ng-template>`
+
+        - Shorthand with then/else:
+            `<div *ngIf="condition; then thenBlock else elseBlock"></div>`
+            `<ng-template #thenBlock>Content to render when true</ng-template>`
+            `<ng-template #elseBlock>Content to render when false</ng-template>`
+
+3. Example:
+-----------
+    ```demo-structural-directives.component.ts
+        import {Component} from '@angular/core';
+        import {NgIf} from '@angular/common';
+
+        @Component({
+            selector: 'app-demo-structural-directives',
+            standalone: true,
+            imports: [NgIf],
+            templateUrl: './demo-structural-directives.component.html',
+            styleUrl: './demo-structural-directives.component.css'
+        })
+        export class DemoStructuralDirectivesComponent {
+            pizza = {
+                name: 'Pizza',
+                isAvailable: true,
+                isComingSoon: false
+            };
+        }
+    ```
+
+    ```demo-structural-directives.component.html
+        <h3>Structural Directives.</h3>
+
+        <div *ngIf="pizza.isAvailable; else elseIfBlock">
+          <p>{{ pizza.name }} is available!</p>
+        </div>
+
+        <ng-template #elseIfBlock>
+          <div *ngIf="pizza.isComingSoon; else elseBlock">
+            <p>{{ pizza.name }} is coming soon!</p>
+          </div>
+          <ng-template #elseBlock>
+            <p>{{ pizza.name }} is not available.</p>
+          </ng-template>
+        </ng-template>
+    ```
+
+Explanation:
+
+- Importing NgIf: Import `NgIf` from `@angular/common` to use in the component.
+
+- Using NgIf: The primary `*ngIf` checks if `pizza.isAvailable` is true. If it is, it displays the message that the food is available.
+
+- Using else with ng-template: If `pizza.isAvailable` is false, the `else` clause refers to an `ng-template` labeled `#elseBlock`.
+
+- Nested NgIf for else if behavior:
+   - Inside `#elseBlock`, another `*ngIf` checks if `pizza.isComingSoon` is true. If it is, it displays the "coming soon" message.
+   - If `pizza.isComingSoon` is false, it refers to another `ng-template` labeled `#noFoodBlock`.
+
+- Handling the final else case: `#elseBlock` is the final else case, displaying that the food is not available.
+
+----------------------------------------------------------------------------------------------------
+
+4. Summary:
+-----------
+
+- NgIf: - Conditionally adds or removes elements from the DOM.
+        - else with ng-template: Handle the else case by referring to an `ng-template`.
+        - Nested NgIf for else if: Achieve else if behavior by nesting `*ngIf` inside an `ng-template`.
+  Usage: `<div *ngIf="condition">Content</div>`
+  Guards against null values automatically.
+  Shorthand (*ngIf): Simple, concise, limited to one structural directive.
+  Expanded (<ng-template [ngIf]>): Flexible, allows multiple directives, better for complex scenarios.
+
+- NgFor: Iterates over a list and renders elements for each item.
+  Usage: `<div *ngFor="let item of items">{{ item.name }}</div>`
+  Supports `trackBy` for optimized re-rendering.
+
+- NgSwitch: Displays one element from several possible elements based on a switch condition.
+  Usage: `<div [ngSwitch]="expression"><div *ngSwitchCase="'value'">Content</div></div>`
+
+- NgContainer: Groups elements without affecting the DOM structure.
+  Usage: `<ng-container *ngIf="condition">Content</ng-container>`
+
+----------------------------------------------------------------------------------------------------

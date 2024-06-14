@@ -1,0 +1,17 @@
+<h3>Structural Directives.</h3>
+
+<div>
+  <!--  If ElseIf Else Block  -->
+  <div *ngIf="pizza.isAvailable; else elseIfBlock">
+    <p>{{ pizza.name }} is available!</p>
+  </div>
+  <ng-template #elseIfBlock>
+    <div *ngIf="pizza.isComingSoon; else elseBlock">
+      <p>{{ pizza.name }} is coming soon!</p>
+    </div>
+    <ng-template #elseBlock>
+      <p>{{ pizza.name }} is not available.</p>
+    </ng-template>
+  </ng-template>
+
+</div>
