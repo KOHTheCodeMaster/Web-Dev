@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {NgIf} from '@angular/common';
+import {NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
 
 @Component({
     selector: 'app-demo-structural-directives',
     standalone: true,
-    imports: [NgIf],
+    imports: [NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault],
     templateUrl: './demo-structural-directives.component.html',
     styleUrl: './demo-structural-directives.component.css'
 })

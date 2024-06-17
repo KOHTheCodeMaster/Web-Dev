@@ -1,7 +1,8 @@
-<h3>Structural Directives.</h3>
+<h3>Structural Directive - ngIf</h3>
 
 <div>
-  <!--  If ElseIf Else Block  -->
+
+  <!--  If ElseIf Else Block - using Short-hand Syntax -->
   <div *ngIf="pizza.isAvailable; else elseIfBlock">
     <p>{{ pizza.name }} is available!</p>
   </div>
@@ -13,5 +14,42 @@
       <p>{{ pizza.name }} is not available.</p>
     </ng-template>
   </ng-template>
+
+  <!--  If ElseIf Else Block - using Expanded Syntax  -->
+  <ng-template [ngIf]="pizza.isAvailable">
+    <p>{{ pizza.name }} is available!</p>
+  </ng-template>
+  <ng-template [ngIf]="!pizza.isAvailable">
+    <ng-template [ngIf]="pizza.isComingSoon">
+      <p>{{ pizza.name }} is coming soon!</p>
+    </ng-template>
+    <ng-template [ngIf]="!pizza.isComingSoon">
+      <p>{{ pizza.name }} is not available.</p>
+    </ng-template>
+  </ng-template>
+
+  <!--  *ngIf with *ngFor  -->
+  <ul *ngIf="pizza.isAvailable">
+    <li *ngFor="let itemName of itemList">{{ itemName }}.</li>
+  </ul>
+
+  <!--  [ngIf] with *ngFor  -->
+  <ng-template [ngIf]="pizza.isAvailable">
+    <ul>
+      <li *ngFor="let itemName of itemList">{{ itemName }}.</li>
+    </ul>
+  </ng-template>
+
+  <!--  Combining Multiple Directives - using Expanded Syntax  -->
+  <ng-template [ngIf]="itemName !== 'Pizza'" *ngFor="let itemName of itemList">
+    <p>{{ itemName }} is available!</p>
+  </ng-template>
+
+  <!--
+    &lt;!&ndash; This will cause an error because multiple structural directives cannot be applied directly to short-hand syntax &ndash;&gt;
+    <div *ngIf="pizza.isAvailable" *ngFor="let itemName of itemList">
+      {{ itemName }}
+    </div>
+  -->
 
 </div>
