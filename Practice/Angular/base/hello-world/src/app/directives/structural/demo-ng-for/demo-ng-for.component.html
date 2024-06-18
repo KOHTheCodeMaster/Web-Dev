@@ -1,0 +1,34 @@
+<h3>Structural Directive - ngFor</h3>
+<div>
+
+  <!--  ngFor -->
+  <div class="transaction-list" *ngFor="let transaction of transactions; let i = index; trackBy trackByTransactionId">
+    <span class="transaction-item">[{{ transaction.id }}] - {{ transaction.date }} - {{ transaction.description }}</span>
+  </div>
+
+
+  <!--  Without trackBy: Full DOM Re-rendering  -->
+  <div class="transaction-list">
+    <h2>Transaction List - without trackBy</h2>
+    <div *ngFor="let transaction of transactions; let i = index"
+         class="transaction-item">
+      {{ transaction.id }} - {{ transaction.description }} - ${{ transaction.amount }}
+      <button (click)="removeTransaction(i)">-</button>
+    </div>
+    <button (click)="refreshTransactions()">Refresh</button>
+  </div>
+
+
+  <!--  With trackBy: Optimized DOM Rendering - Inspect & Check DOM Changes After Clicking "Refresh" Button  -->
+  <div class="transaction-list">
+    <h2>Transaction List - with trackBy</h2>
+    <div *ngFor="let transaction of transactions; let i = index; trackBy: trackByTransactionId"
+         class="transaction-item">
+      {{ transaction.id }} - {{ transaction.description }} - ${{ transaction.amount }}
+      <button (click)="removeTransaction(i)">-</button>
+    </div>
+    <button (click)="refreshTransactions()">Refresh</button>
+  </div>
+
+
+</div>

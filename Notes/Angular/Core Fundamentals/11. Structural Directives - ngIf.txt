@@ -61,7 +61,9 @@ Example: If-ElseIf-Else Block:
         </ng-template>
     ```
 
-Limitations:    Does not allow applying multiple structural directives directly to the same element, leading to errors.
+Limitations:
+        - Combines the condition and content within the same element, which can lead to less explicit control over the template structure
+        - Does not allow applying multiple structural directives directly to the same element, leading to errors.
         ```html
             <!-- This will cause an error because multiple structural directives cannot be applied directly -->
             <div *ngIf="pizza.isAvailable" *ngFor="let itemName of itemList">
@@ -73,9 +75,8 @@ Limitations:    Does not allow applying multiple structural directives directly 
 ------------------------------------------
 
 Usage:                  Provides explicit control and allows combining multiple structural directives, suitable for complex templates
-Limitations:            Cannot combine multiple structural directives directly on the same element.
 No Else Block Support:  The [ngIf] syntax does not support the else block with a template reference variable.
-Explicit Control:       Provides more explicit control over the template, suitable for complex conditions.
+Explicit Control:       Offers explicit control over the template structure by separating the condition and content into distinct elements.
 
 Syntax:
     - Basic Syntax: ` <ng-template [ngIf]="condition"><div>Content to render when true</div></ng-template> `
@@ -106,6 +107,7 @@ Example:
     ```
 
 Combining Multiple Directives:
+    - Provides flexibility to combine multiple structural directives by wrapping them in <ng-template> elements.
     - Allows combining multiple directives within a single <ng-template> element, providing more flexibility and control.
     - Example:
         ```html
@@ -116,7 +118,7 @@ Combining Multiple Directives:
 
 5. Example:
 -----------
-    ```demo-structural-directives.component.ts
+    ```demo-ng-if.component.ts
         import {Component} from '@angular/core';
         import {NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
         @Component({
@@ -126,7 +128,7 @@ Combining Multiple Directives:
             templateUrl: './demo-structural-directives.component.html',
             styleUrl: './demo-structural-directives.component.css'
         })
-        export class DemoStructuralDirectivesComponent {
+        export class DemoNgIfComponent {
             pizza = {
                 name: 'Pizza',
                 isAvailable: true,
@@ -212,12 +214,17 @@ Explanation:
 4. Summary:
 -----------
 
-- NgIf: - Conditionally adds or removes elements from the DOM.
-        - else with ng-template: Handle the else case by referring to an `ng-template`.
-        - Nested NgIf for else if: Achieve else if behavior by nesting `*ngIf` inside an `ng-template`.
-  Usage: `<div *ngIf="condition">Content</div>`
-  Guards against null values automatically.
-  Shorthand (*ngIf): Simple, concise, limited to one structural directive.
-  Expanded (<ng-template [ngIf]>): Flexible, allows multiple directives, provides clearer, more explicit templates for complex logic.
+- Conditionally adds or removes elements from the DOM based on a boolean expression.
+
+- Shorthand Syntax (ngIf):
+        - Allows Else Block: Combines with an else block using a template reference variable.
+        - Limitation: Cannot apply multiple structural directives directly to the same element.
+        - Combines the condition and content within the same element, which can lead to less explicit control over the template structure.
+
+- Expanded Syntax (<ng-template [ngIf]>):
+        - Usage: Provides explicit control and allows combining multiple directives.
+        - Offers explicit control over the template structure by separating the condition and content into distinct elements.
+        - Combining Multiple Directives: Allows combining multiple directives within a single <ng-template> element.
+        - No Else Block Support: Doesn't support else block with a template reference variable.
 
 ----------------------------------------------------------------------------------------------------

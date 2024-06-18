@@ -1,0 +1,11 @@
+.transaction-list {
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-width: 400px;
+}
+
+.transaction-item {
+  border-bottom: 1px solid #ddd;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
