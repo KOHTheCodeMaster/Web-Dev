@@ -1,0 +1,11 @@
+
+<div>
+  <h2>Payments</h2>
+  <button (click)="addTransaction()">Add Transaction</button>
+  <button (click)="resetTransactions()">Reset</button>
+  <ul>
+    <li *ngFor="let transaction of transactionService.getTransactions(); trackBy trackByTransactionId">
+      {{ transaction.description }}: {{ transaction.amount }} on {{ transaction.date }}
+    </li>
+  </ul>
+</div>

@@ -12,13 +12,17 @@ import {DemoNgModelComponent} from './directives/attribute-directives/demo-ng-mo
 import {DemoNgIfComponent} from './directives/structural/demo-ng-if/demo-ng-if.component';
 import {DemoNgForComponent} from './directives/structural/demo-ng-for/demo-ng-for.component';
 import {DemoNgSwitchComponent} from './directives/structural/demo-ng-switch/demo-ng-switch.component';
+import {
+    DemoTransactionComponent
+} from './components/demo-injectable-service/demo-transaction/demo-transaction.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     imports: [RouterOutlet, Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent, DataBindingComponent,
         StyleScopingDemoComponent, NgClassAndStyleComponent, DemoNgModelComponent,
-        DemoNgIfComponent, DemoNgForComponent, DemoNgSwitchComponent
+        DemoNgIfComponent, DemoNgForComponent, DemoNgSwitchComponent,
+        DemoTransactionComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

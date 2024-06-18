@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NgFor, NgStyle} from '@angular/common';
+import {Transaction} from '../../../interfaces/Transaction';
 
 @Component({
     selector: 'app-demo-ng-for',
@@ -34,11 +35,4 @@ export class DemoNgForComponent {
     removeTransaction(index: number) {
         this.transactions.splice(index, 1);
     }
-}
-
-interface Transaction {
-    id: number;
-    date: string;
-    amount: number;
-    description: string;
 }

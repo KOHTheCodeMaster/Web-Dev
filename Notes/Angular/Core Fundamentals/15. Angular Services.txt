@@ -1,0 +1,240 @@
+
+Time Stamp: 18th Jun 2K24 - 05:58 PM..!!
+
+Title: Angular Services
+
+Category: Web Development -> Angular -> Services and Dependency Injection
+
+Keywords: Angular, Services, Dependency Injection, DI, Injectable
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Understanding Angular Services:
+----------------------------------
+
+- Services are classes with a narrow, well-defined purpose, distinct from components.
+- Components handle user experience; services handle tasks like data fetching, validation, logging.
+- Services increase modularity and re-usability in Angular applications.
+- Services can be made available to components via Dependency Injection (DI).
+
+----------------------------------------------------------------------------------------------------
+
+2. Creating an Injectable Service:
+----------------------------------
+
+- Use the Angular CLI: ng generate service <service-name> (e.g., payment).
+- The @Injectable decorator marks the class for dependency injection.
+- Set providedIn: 'root' to provide a single instance throughout the app.
+
+Example: Logger Service
+```typescript
+    @Injectable({
+      providedIn: 'root',
+    })
+    export class Logger {
+      log(msg: string) { console.log(msg); }
+      error(msg: string) { console.error(msg); }
+      warn(msg: string) { console.warn(msg); }
+    }
+```
+
+----------------------------------------------------------------------------------------------------
+
+3. Generating a New Service:
+----------------------------
+
+Command to Generate Service: ` ng g s services/injectable-service/demo-transaction `
+
+CLI-Generated Service:
+```typescript
+    import { Injectable } from '@angular/core';
+
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class DemoTransactionService {
+      constructor() { }
+    }
+```
+
+----------------------------------------------------------------------------------------------------
+
+4. Injecting Services:
+----------------------
+
+Injecting Service into Component
+```typescript
+    @Component({ ... })
+    export class TransactionListComponent {
+      constructor(private transactionService: TransactionService) {}
+    }
+```
+
+Injecting Service into Another Service: TransactionService that depends on Logger
+```typescript
+    import {Injectable} from '@angular/core';
+    import {Transaction} from "../../interfaces/Transaction";
+    import {LoggerService} from "./demo-logger.service";
+
+    @Injectable({
+        providedIn: 'root'
+    })
+    export class DemoTransactionService {
+        constructor(private logger: LoggerService) {
+        }
+        getTransactionsDummyData(): Transaction[] {
+            let transactionList: Transaction[] = [
+                {id: 1, date: '2024-06-11', description: 'Payment 1', amount: 100},
+                {id: 2, date: '2024-06-12', description: 'Payment 2', amount: 150},
+                {id: 3, date: '2024-06-13', description: 'Payment 3', amount: 200}
+            ];
+            this.logger.log('transactionList.length: ' + transactionList.length);
+            return transactionList;
+        }
+    }
+```
+
+----------------------------------------------------------------------------------------------------
+
+5. Detailed Example: Transaction Service
+----------------------------------------
+
+Creating TransactionService:    ` ng g s services/injectable-service/demo-transaction `
+```typescript
+    // Practice/Angular/base/hello-world/src/app/services/demo-injectable-service/demo-transaction.service.ts
+    import {Injectable} from '@angular/core';
+    import {Transaction} from "../../interfaces/Transaction";
+    import {LoggerService} from "./logger.service";
+
+    @Injectable({
+        providedIn: 'root'
+    })
+    export class DemoTransactionService {
+
+        private transactions: Transaction[];
+
+        constructor(private logger: LoggerService) {
+            this.transactions = this.stubTransactionsWithDummyData();
+        }
+
+        stubTransactionsWithDummyData(): Transaction[] {
+            let transactionList: Transaction[] = [
+                {id: 1, date: '2024-06-11', description: 'Payment 1', amount: 100},
+                {id: 2, date: '2024-06-12', description: 'Payment 2', amount: 150},
+                {id: 3, date: '2024-06-13', description: 'Payment 3', amount: 200}
+            ];
+
+            this.logger.log('stubTransactionsWithDummyData(): transactionList.length: ' + transactionList.length);
+            return transactionList;
+        }
+
+        addTransaction(newTransaction: Transaction): void {
+            this.transactions.push(newTransaction);
+            this.logger.log(`Transaction Added: ${newTransaction.amount} on ${newTransaction.date}`);
+        }
+
+        resetTransactions(): void {
+            this.transactions = this.stubTransactionsWithDummyData();
+        }
+
+        getTransactions(): Transaction[] {
+            return this.transactions;
+        }
+
+    }
+```
+
+Injecting TransactionService into DemoTransactionComponent: ` ng g c components/demo-injectable-service/demo-transaction `
+```typescript
+    // Practice/Angular/base/hello-world/src/app/components/demo-injectable-service/demo-transaction/demo-transaction.component.ts
+    import {Component} from '@angular/core';
+    import {NgFor} from '@angular/common';
+    import {DemoTransactionService} from '../../../services/demo-injectable-service/demo-transaction.service';
+    import {Transaction} from "../../../interfaces/Transaction";
+
+    @Component({
+        selector: 'app-demo-transaction',
+        standalone: true,
+        imports: [NgFor],
+        templateUrl: './demo-transaction.component.html',
+        styleUrl: './demo-transaction.component.css'
+    })
+    export class DemoTransactionComponent {
+
+        constructor(public transactionService: DemoTransactionService) {
+        }
+
+        trackByTransactionId(index: number, transaction: Transaction): number {
+            return transaction.id;
+        }
+
+        addTransaction(): void {
+            let newId: number = this.transactionService.getTransactions().length + 1;
+            const newTransaction: Transaction = {
+                id: newId,
+                date: new Date().toISOString().split('T')[0],
+                amount: Math.floor(Math.random() * 1000),
+                description: 'Payment ' + newId,
+            };
+
+            this.transactionService.addTransaction(newTransaction);
+        }
+
+        resetTransactions() {
+            this.transactionService.resetTransactions();
+        }
+    }
+```
+
+```demo-transaction.component.html
+
+    <div>
+      <h2>Payments</h2>
+      <button (click)="addTransaction()">Add Transaction</button>
+      <button (click)="resetTransactions()">Reset</button>
+      <ul>
+        <li *ngFor="let transaction of transactionService.getTransactions(); trackBy trackByTransactionId">
+          {{ transaction.description }}: {{ transaction.amount }} on {{ transaction.date }}
+        </li>
+      </ul>
+    </div>
+```
+
+Explanation: Here's a breakdown of the provided code example highlighting services in Angular
+
+`DemoTransactionService`:
+    - Injectable service (`@Injectable`).
+    - Manages transaction data (`transactions` array).
+    - Provides methods for:
+        - Creating dummy transactions (`stubTransactionsWithDummyData`).
+        - Adding new transactions (`addTransaction`).
+        - Resetting transactions (`resetTransactions`).
+        - Retrieving all transactions (`getTransactions`).
+
+`DemoTransactionComponent`:
+    - Injects `DemoTransactionService` via constructor.
+    - Displays a list of transactions using `*ngFor`.
+    - Interacts with the service to:
+        - Add new transactions (`addTransaction`).
+        - Reset transactions (`resetTransactions`).
+
+Key Takeaways:
+- Services encapsulate functionalities and data shared across components.
+- The example demonstrates dependency injection for service access in components.
+- Services can manage data (like transactions) and provide methods to manipulate it.
+
+----------------------------------------------------------------------------------------------------
+
+6. Summary:
+-----------
+
+- Services in Angular provide modular, reusable functionality separate from components.
+- DI allows services to be injected into components and other services.
+- Use `@Injectable` decorator to make a class available for DI.
+- Generate services using Angular CLI and provide them at the root level for global access.
+
+----------------------------------------------------------------------------------------------------
