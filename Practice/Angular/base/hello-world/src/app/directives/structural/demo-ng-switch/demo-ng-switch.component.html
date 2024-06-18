@@ -1,0 +1,15 @@
+<div>
+  <h3>Structural Directive - ngSwitch</h3>
+
+  <button (click)="changeView('map')">Map View</button>
+  <button (click)="changeView('list')">List View</button>
+  <button (click)="changeView('gallery')">Gallery View</button>
+
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Displaying Map View</div>
+    <div *ngSwitchCase="'list'">Displaying List View</div>
+    <div *ngSwitchCase="'gallery'">Displaying Gallery View</div>
+    <div *ngSwitchDefault>Select a view mode</div>
+  </div>
+
+</div>

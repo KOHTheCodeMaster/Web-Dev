@@ -11,12 +11,14 @@ import {
 import {DemoNgModelComponent} from './directives/attribute-directives/demo-ng-model/demo-ng-model.component';
 import {DemoNgIfComponent} from './directives/structural/demo-ng-if/demo-ng-if.component';
 import {DemoNgForComponent} from './directives/structural/demo-ng-for/demo-ng-for.component';
+import {DemoNgSwitchComponent} from './directives/structural/demo-ng-switch/demo-ng-switch.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     imports: [RouterOutlet, Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent, DataBindingComponent,
-        StyleScopingDemoComponent, NgClassAndStyleComponent, DemoNgModelComponent, DemoNgIfComponent, DemoNgForComponent
+        StyleScopingDemoComponent, NgClassAndStyleComponent, DemoNgModelComponent,
+        DemoNgIfComponent, DemoNgForComponent, DemoNgSwitchComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

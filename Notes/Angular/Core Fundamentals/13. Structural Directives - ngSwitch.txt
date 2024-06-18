@@ -1,0 +1,161 @@
+
+Time Stamp: 18th Jun 2K24 - 11:59 AM..!!
+
+Title: Structural Directives - ngSwitch
+
+Category: Web Development -> Angular -> Structural Directives
+
+Keywords: Angular, Structural Directives, NgSwitch, Case, Default
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. NgSwitch Structural Directive:
+---------------------------------
+
+Definition:
+    - Conditionally renders content based on a switch expression's value.
+    - Useful for displaying different UI elements depending on specific conditions.
+    - Import `NgSwitch`, `NgSwitchCase`, and `NgSwitchDefault` from `@angular/common` in your component module.
+
+Basic Syntax:
+    ```html
+        <div [ngSwitch]="expression">
+          <ng-container *ngSwitchCase="value1">Content for value1</ng-container>
+          <ng-container *ngSwitchCase="value2">Content for value2</ng-container>
+          <ng-container *ngSwitchDefault>Default content (optional)</ng-container>
+        </div>
+    ```
+    - Switches the displayed content based on the value of `expression`.
+    - [ngSwitch] directive binds the switch expression (typically a component property).
+    - *ngSwitchCase directives define cases to match the ngSwitch expression's value.
+    - The content within the matching ngSwitchCase is displayed.
+    - *ngSwitchDefault is an optional case for any unmatched value to render the Default content.
+
+----------------------------------------------------------------------------------------------------
+
+2. Use Cases:
+-------------
+
+Role-based UI: Display different UI elements based on user roles.
+    ```html
+        <div [ngSwitch]="userRole">
+            <admin-dashboard *ngSwitchCase="'admin'"></admin-dashboard>
+            <user-dashboard *ngSwitchCase="'user'"></user-dashboard>
+            <guest-dashboard *ngSwitchDefault></guest-dashboard>
+        </div>
+    ```
+
+Feature Flags: Enable or disable features dynamically.
+    ```html
+        <div [ngSwitch]="featureFlag">
+            <feature-a *ngSwitchCase="'enabled'"></feature-a>
+            <disabled-message *ngSwitchDefault></disabled-message>
+        </div>
+    ```
+
+----------------------------------------------------------------------------------------------------
+
+3. Detailed Example:
+--------------------
+
+```demo-ng-switch.component.ts
+    import { Component } from '@angular/core';
+    import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+
+    @Component({
+      selector: 'app-demo-ng-switch',
+      standalone: true,
+      imports: [NgSwitch, NgSwitchCase, NgSwitchDefault],
+      templateUrl: './demo-ng-switch.component.html',
+      styleUrl: './demo-ng-switch.component.css'
+    })
+    export class DemoNgSwitchComponent {
+      viewMode: string = null;
+
+      changeView(mode: string) {
+        this.viewMode = mode;
+      }
+    }
+```
+
+```demo-ng-switch.component.html
+    <h3>Structural Directive - ngSwitch</h3>
+    <div>
+
+      <button (click)="changeView('map')">Map View</button>
+      <button (click)="changeView('list')">List View</button>
+      <button (click)="changeView('gallery')">Gallery View</button>
+
+      <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase="'map'">Displaying Map View</div>
+        <div *ngSwitchCase="'list'">Displaying List View</div>
+        <div *ngSwitchCase="'gallery'">Displaying Gallery View</div>
+        <div *ngSwitchDefault>Select a view mode</div>
+      </div>
+
+    </div>
+```
+
+```demo-ng-switch.component.css
+    button {
+      margin-right: 5px;
+    }
+
+    div[ngSwitch] {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+```
+
+Explanation of `ngSwitch` Demonstration:
+    - This code demonstrates the `ngSwitch` structural directive in Angular for conditionally rendering different views.
+    - It showcases how `ngSwitch` can switch between multiple view modes based on user interaction.
+
+The template (`demo-ng-switch.component.html`) showcases:
+    - Structural Directive - ngSwitch: This section serves as an introduction to `ngSwitch`.
+    - Buttons to change the view mode: Clicking these buttons updates the `viewMode`.
+    - Conditional content rendering based on `viewMode`: The content displayed changes based on the value of `viewMode`.
+
+----------------------------------------------------------------------------------------------------
+
+4. Why Use `ngSwitch` in Angular?
+----------------------------------------
+
+Conditional Rendering:
+  - Simplifies the logic for displaying different templates based on a condition.
+  - Helps in maintaining clean and readable templates by segregating conditional content.
+
+Enhances User Experience:
+  - Enables dynamic and responsive UIs that adapt to user interactions.
+  - Reduces the complexity of handling multiple `ngIf` conditions.
+
+Improves Maintainability:
+  - Organizes code by grouping related content together under a common condition.
+  - Makes the template easier to understand and maintain.
+
+Reduces Code Duplication:
+  - Eliminates the need for multiple `ngIf` statements that check the same condition.
+  - Centralizes the conditional logic, reducing the chances of errors and code duplication.
+
+Best Practices:
+  - Use `ngSwitch` for clear and concise conditional rendering when there are multiple conditions.
+  - Avoid overusing `ngSwitch` for simple conditions; use `ngIf` for straightforward conditional rendering.
+  - Combine `ngSwitch` with modular and reusable components for better maintainability.
+
+----------------------------------------------------------------------------------------------------
+
+5. Summary:
+-----------
+
+- `ngSwitch` is a powerful directive for conditionally displaying content in Angular templates.
+- Use `[ngSwitch]="expression"` to define the condition.
+- Use `*ngSwitchCase="'value'"` to specify cases and `*ngSwitchDefault` for the default case.
+- Ideal for role-based UI, feature flags, and dynamic view switching.
+- Enhances readability, maintainability, and user experience by organizing conditional rendering logic.
+
+----------------------------------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+button {
+  margin-right: 5px;
+}
+
+div[ngSwitch] {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
