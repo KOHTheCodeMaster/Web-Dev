@@ -1,0 +1,98 @@
+
+Time Stamp: 18th Jun 2K24 - 05:58 PM..!!
+
+Title: Dependency Injection in Angular
+
+Category: Web Development -> Angular -> Services and Dependency Injection
+
+Keywords: Angular, Dependency Injection, Services, Injectors, Providers
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Understanding Dependency Injection (DI) in Angular:
+------------------------------------------------------
+
+- DI allows Angular classes (Components, Directives, Pipes, Injectables) to define dependencies they need.
+- Two main roles in DI: Dependency Consumer and Dependency Provider.
+- An application-wide injector (root injector) is created during the application bootstrap process.
+- An Injector abstraction facilitates interaction between consumers and providers,
+  checking its registry for instances and creating new ones if needed.
+
+----------------------------------------------------------------------------------------------------
+
+2. Providing a Dependency:
+--------------------------
+
+Preferred: At the application root level using `providedIn`
+    - Allows injecting the service into all other classes and supports tree-shaking.
+    ```typescript
+        @Injectable({ providedIn: 'root' })
+        class HeroService {}
+    ```
+
+At the Component level:
+    - Provides services at the component level using the `providers` field.
+    - Using providedIn enables Angular and JavaScript code optimizers to effectively remove services that are unused (known as tree-shaking).
+
+    ```typescript
+        @Component({
+          standalone: true,
+          selector: 'hero-list',
+          template: '...',
+          providers: [HeroService]
+        })
+        class HeroListComponent {}
+    ```
+
+At the application root level using `ApplicationConfig`:
+    - Use the `providers` field of `ApplicationConfig` and `bootstrapApplication` function.
+    ```typescript
+        export const appConfig: ApplicationConfig = {
+            providers: [ { provide: HeroService } ],
+        };
+        bootstrapApplication(AppComponent, appConfig);
+    ```
+
+NgModule based applications:
+    - Use the `providers` field of the `@NgModule` decorator to provide a service at the application level.
+
+
+Note: Declaring a service at Component level, at application root level using `ApplicationConfig`, at @NgModule causes HeroService to always be included in your application— even if the service is unused.
+
+----------------------------------------------------------------------------------------------------
+
+3. Injecting/Consuming a Dependency:
+------------------------------------
+
+Constructor Injection: Declare the dependency in the class constructor.
+    ```typescript
+        @Component({ … })
+        class HeroListComponent {
+          constructor(private service: HeroService) {}
+        }
+    ```
+
+Using the `inject` Method:
+    ```typescript
+        @Component({ … })
+        class HeroListComponent {
+          private service = inject(HeroService);
+        }
+    ```
+
+----------------------------------------------------------------------------------------------------
+
+4. Summary:
+-----------
+
+- DI is fundamental in Angular for managing dependencies.
+- Dependencies can be provided at different levels: root, component, `ApplicationConfig`, and `NgModule`.
+- Preferred method: Using `providedIn: 'root'` in the `@Injectable` decorator for global injection and tree-shaking benefits.
+- Dependencies are injected into classes via constructor injection or the `inject` method.
+- Injectors ensure that a single instance of a dependency is used whenever possible, improving efficiency.
+
+----------------------------------------------------------------------------------------------------
