@@ -1,0 +1,105 @@
+
+Time Stamp: 19th Jun 2024 - 01:14 PM..!!
+
+Title: Service Instantiation with Standalone Components
+
+Category: Web Development -> Angular -> Dependency Injection -> Standalone Components
+
+Keywords: Dependency Injection, Angular, Standalone Components, Providers, Root Injector
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Root Injector Behavior with Standalone Components
+----------------------------------------------------
+
+Scenario Description:
+- You have multiple standalone components that inject a service directly via their constructors without specifying any providers in the component metadata.
+- The question is whether the root injector will instantiate the service multiple times for each standalone component.
+
+Root Injector and Service Instantiation:
+- When a service is provided at the root level (using `@Injectable({ providedIn: 'root' })`), Angular's root injector will create a single instance of that service.
+- This singleton instance is shared across the entire application, including all components that inject the service, whether they are standalone or part of a module.
+
+2. Example: Consider the following service and standalone components:
+---------------------------------------------------------------------
+
+Service Definition:
+```typescript
+    import { Injectable } from '@angular/core';
+
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class DemoTransactionService {
+      constructor() {
+        console.log('DemoTransactionService instantiated');
+      }
+    }
+```
+
+Standalone Component 1:
+```typescript
+    import { Component } from '@angular/core';
+    import { DemoTransactionService } from './demo-transaction.service';
+
+    @Component({
+      selector: 'app-demo-transaction1',
+      standalone: true,
+      template: `<p>Demo Transaction 1</p>`,
+      styles: []
+    })
+    export class DemoTransactionComponent1 {
+      constructor(private transactionService: DemoTransactionService) {}
+    }
+```
+
+Standalone Component 2:
+```typescript
+    import { Component } from '@angular/core';
+    import { DemoTransactionService } from './demo-transaction.service';
+
+    @Component({
+      selector: 'app-demo-transaction2',
+      standalone: true,
+      template: `<p>Demo Transaction 2</p>`,
+      styles: []
+    })
+    export class DemoTransactionComponent2 {
+      constructor(private transactionService: DemoTransactionService) {}
+    }
+```
+
+3. Service Instantiation Behavior:
+----------------------------------
+
+Singleton Pattern:
+    - Because `DemoTransactionService` is provided at the root level, Angular's DI system will create a single instance of `DemoTransactionService` when it is first requested.
+
+Shared Instance:
+    - This single instance is shared among all the components that inject `DemoTransactionService`.
+    - Whether you have one standalone component or multiple standalone components, they will all receive the same instance of `DemoTransactionService`.
+
+4. Verification:
+----------------
+
+- To verify, you can run the application and observe the console output.
+- You should see "DemoTransactionService instantiated" only once, confirming that the service is instantiated just once and shared among all components.
+
+5. Conclusion:
+--------------
+
+- When no providers are explicitly defined and the service is provided at the root level, the root injector will not instantiate the service multiple times for each standalone component.
+- Instead, it will create a single shared instance used by all the components that inject the service.
+
+6. Summary Report:
+------------------
+
+- Root Injector: Creates a single instance of the service when provided at the root level (`providedIn: 'root'`).
+- Shared Instance: All components, whether standalone or part of a module, share this single instance.
+- Verification: Service instantiation occurs only once, as confirmed by console logging.
+
+----------------------------------------------------------------------------------------------------

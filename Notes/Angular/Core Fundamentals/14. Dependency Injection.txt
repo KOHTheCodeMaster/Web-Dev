@@ -29,6 +29,7 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 Preferred: At the application root level using `providedIn`
     - Allows injecting the service into all other classes and supports tree-shaking.
+    - Using providedIn enables Angular and JavaScript code optimizers to effectively remove services that are unused (known as tree-shaking).
     ```typescript
         @Injectable({ providedIn: 'root' })
         class HeroService {}
@@ -36,8 +37,6 @@ Preferred: At the application root level using `providedIn`
 
 At the Component level:
     - Provides services at the component level using the `providers` field.
-    - Using providedIn enables Angular and JavaScript code optimizers to effectively remove services that are unused (known as tree-shaking).
-
     ```typescript
         @Component({
           standalone: true,
