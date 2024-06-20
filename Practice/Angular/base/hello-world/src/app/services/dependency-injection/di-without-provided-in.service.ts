@@ -9,8 +9,4 @@ export class DiWithoutProvidedInService {
         console.log('DiWithoutProvidedInService Constructor Invoked.');
     }
 
-    getName(): string {
-        return 'John Doe';
-    }
-
 }

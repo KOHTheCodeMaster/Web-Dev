@@ -9,11 +9,10 @@ import {DIWithoutInjectableService} from "../../../services/dependency-injection
 })
 export class Di1Component {
 
-    name: string = 'ABC';
+    name: string = 'John Doe';
 
     constructor(private diWithoutInjectableService: DIWithoutInjectableService) {
         console.log('Di1Component Constructor Invoked.');
-        this.name = diWithoutInjectableService.getName();
     }
 
 }

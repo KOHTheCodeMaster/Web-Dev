@@ -9,11 +9,10 @@ import {DiWithoutProvidedInService} from "../../../services/dependency-injection
 })
 export class Di2Component {
 
-    name: string = 'ABC';
+    name: string = 'John Doe';
 
     constructor(public diWithoutProvidedInService: DiWithoutProvidedInService) {
         console.log('Di2Component Constructor Invoked.');
-        this.name = diWithoutProvidedInService.getName();
     }
 
 }

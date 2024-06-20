@@ -8,7 +8,4 @@ import {Injectable} from "@angular/core";
         console.log('DiWithInjectableService Constructor Invoked.');
     }
 
-    getName(): string {
-        return 'John Doe';
-    }
 }

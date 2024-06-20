@@ -4,8 +4,4 @@ export class DIWithoutInjectableService {
         console.log('DiWithoutInjectableService Constructor Invoked.');
     }
 
-    getName(): string {
-        return 'John Doe';
-    }
-
 }

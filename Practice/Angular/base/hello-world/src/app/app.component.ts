@@ -18,6 +18,7 @@ import {
 import {Di1Component} from './components/dependency-injection/di-1/di-1.component';
 import {Di2Component} from './components/dependency-injection/di-2/di-2.component';
 import {Di3Component} from './components/dependency-injection/di-3/di-3.component';
+import {Di4Component} from './components/dependency-injection/di-4/di-4.component';
 
 @Component({
     selector: 'app-root',
@@ -25,7 +26,7 @@ import {Di3Component} from './components/dependency-injection/di-3/di-3.componen
     imports: [RouterOutlet, Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent, DataBindingComponent,
         StyleScopingDemoComponent, NgClassAndStyleComponent, DemoNgModelComponent,
         DemoNgIfComponent, DemoNgForComponent, DemoNgSwitchComponent,
-        DemoTransactionComponent, Di1Component, Di2Component, Di3Component
+        DemoTransactionComponent, Di1Component, Di2Component, Di3Component, Di4Component
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
