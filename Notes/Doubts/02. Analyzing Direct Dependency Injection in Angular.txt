@@ -1,0 +1,249 @@
+
+Time Stamp: 20th Jun 2024 - 10:10 PM..!!
+
+Title: Analyzing Direct Dependency Injection in Angular
+
+Category: Web Development -> Angular -> Dependency Injection -> Direct Injection
+
+Keywords: Dependency Injection, Providers, Angular, Component, Service
+
+Purpose: To analyze the behavior of Angular's dependency injection when providers are not explicitly mentioned.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Analyzing Direct Dependency Injection in Angular
+------------------------------------------------
+
+Overview: This demonstration explores the behavior of Angular services with different Dependency Injection configurations,
+  using scenarios involving `@Injectable`, `providedIn`, and service providers.
+
+Scenario 1: Service without @Injectable
+---------------------------------------
+
+File References:
+----------------
+
+- `di-1.component.ts`
+    ```
+    import {Component} from '@angular/core';
+    import {DIWithoutInjectableService} from "../../../services/dependency-injection/di-without-injectable.service";
+
+    @Component({
+       selector: 'app-di-1',
+       standalone: true,
+       imports: [],
+       template: `<p>di-1 - diWithoutInjectableService - {{ this.name }}</p>`
+    })
+    export class Di1Component {
+
+       name: string = 'ABC';
+
+       constructor(private diWithoutInjectableService: DIWithoutInjectableService) {
+           console.log('Di1Component Constructor Invoked.');
+           this.name = diWithoutInjectableService.getName();
+       }
+
+    }
+    ```
+- `di-without-injectable.service.ts`
+    ```
+    export class DIWithoutInjectableService {
+
+        constructor() {
+            console.log('DiWithoutInjectableService Constructor Invoked.');
+        }
+
+        getName(): string {
+            return 'John Doe';
+        }
+
+    }
+    ```
+
+Behavior Analysis:
+------------------
+
+- Error Encountered: `NullInjectorError: No provider for DIWithoutInjectableService!`
+- Description:
+    - The `Di1Component` attempts to inject `DIWithoutInjectableService` without the `@Injectable` decorator.
+    - Angular's DI system fails to recognize `DIWithoutInjectableService` as a service eligible for dependency injection.
+    - This results in a runtime error where Angular cannot find a provider for `DIWithoutInjectableService`.
+- Impact:
+    - Stuck Execution: The component's constructor is invoked, but Angular fails to instantiate `DIWithoutInjectableService`, causing the component initialization to halt.
+    - No UI Interaction: Since the service instance is not available, any attempt to use it in the template (`{{ this.data }}`) results in no data being displayed.
+Root Cause: Missing `@Injectable` decorator prevents Angular from recognizing the service as injectable.
+
+Key Takeaways:
+--------------
+
+- Always decorate services intended for dependency injection with `@Injectable`.
+- Failure to do so results in a `NullInjectorError`, halting component initialization.
+
+
+----------------------------------------------------------------------------------------------------
+
+
+Scenario 2: Service with @Injectable but without providedIn
+-----------------------------------------------------------
+
+File References:
+----------------
+
+- `di-2.component.ts`
+    ```
+    import {Component} from '@angular/core';
+    import {DiWithoutProvidedInService} from "../../../services/dependency-injection/di-without-provided-in.service";
+
+    @Component({
+        selector: 'app-di-2',
+        standalone: true,
+        imports: [],
+        template: `<p>di-2 - diWithoutProvidedInService - {{ this.name }}</p>`,
+    })
+    export class Di2Component {
+
+        name: string = 'ABC';
+
+        constructor(public diWithoutProvidedInService: DiWithoutProvidedInService) {
+            console.log('Di2Component Constructor Invoked.');
+            this.name = diWithoutProvidedInService.getName();
+        }
+
+    }
+    ```
+
+- `di-without-provided-in.service.ts`
+    ```
+    import {Injectable} from "@angular/core";
+
+    @Injectable(/*{
+        providedIn: 'root'
+    }*/)
+    export class DiWithoutProvidedInService {
+
+        constructor() {
+            console.log('DiWithoutProvidedInService Constructor Invoked.');
+        }
+
+        getName(): string {
+            return 'John Doe';
+        }
+
+    }
+    ```
+
+Behavior Analysis:
+------------------
+
+- Error Encountered: `NullInjectorError: No provider for DiWithoutProvidedInService!`
+- Description:
+    - The `Di2Component` attempts to inject `DiWithoutProvidedInService` which has the `@Injectable` decorator but lacks the `providedIn: 'root'` property.
+    - Angular's DI system recognizes the service due to `@Injectable` but fails to find a provider configuration (`providedIn` or explicit provider).
+    - This leads to a runtime error where Angular cannot resolve `DiWithoutProvidedInService` during dependency injection.
+
+- Impact:
+    - Stuck Execution: Similar to Scenario 1, the component's constructor is invoked but Angular fails to provide `DiWithoutProvidedInService`, causing the initialization to halt.
+    - No UI Interaction: Lack of service instance results in no data displayed in the template.
+
+Root Cause: Lack of `providedIn: 'root'` or an explicit provider configuration causes Angular to fail in providing the service.
+
+Key Takeaways:
+--------------
+
+- Always specify `providedIn: 'root'` for services intended to be application-wide singletons.
+- Alternatively, provide the service explicitly in a module to avoid `NullInjectorError`.
+
+
+----------------------------------------------------------------------------------------------------
+
+
+Scenario 3: Service with @Injectable and providedIn: 'root'
+-----------------------------------------------------------
+
+File References:
+----------------
+
+- `di-3.component.ts`
+    ```
+    import {Component} from '@angular/core';
+    import {DiWithInjectableService} from "../../../services/dependency-injection/di-with-injectable.service";
+
+    @Component({
+        selector: 'app-di-3',
+        standalone: true,
+        imports: [],
+        template: `<p>di-3 - diWithInjectableService - {{ this.name }}</p>`
+    })
+    export class Di3Component {
+
+        name: string = 'ABC';
+
+        constructor(public diWithInjectableService: DiWithInjectableService) {
+            console.log('Di3Component Constructor Invoked.');
+            this.name = diWithInjectableService.getName();
+        }
+
+    }
+    ```
+- `di-with-injectable.service.ts`
+    ```
+    import {Injectable} from "@angular/core";
+
+    @Injectable({
+        providedIn: 'root'
+    })export class DiWithInjectableService {
+
+        constructor() {
+            console.log('DiWithInjectableService Constructor Invoked.');
+        }
+
+        getName(): string {
+            return 'John Doe';
+        }
+    }
+    ```
+
+Behavior Analysis:
+------------------
+
+- Successful Execution: The `Di3Component` injects `DiWithInjectableService` which has both `@Injectable` and `providedIn: 'root'`.
+- Description:
+    - Angular successfully creates and injects `DiWithInjectableService` because it is properly configured with `@Injectable` and `providedIn: 'root'`.
+    - The component's constructor is invoked, and the service is available for use.
+    - This results in logs being printed and data being displayed in the UI template.
+Root Cause: `@Injectable` and `providedIn: 'root'` ensure Angular recognizes and provides the service as an application-wide singleton.
+
+Key Takeaways:
+--------------
+
+- Use `@Injectable` and `providedIn: 'root'` for services that should be single instances across the application.
+- Ensures proper dependency injection and component initialization.
+
+
+----------------------------------------------------------------------------------------------------
+
+
+Conclusion:
+-----------
+
+- This demonstration illustrates the critical importance of correctly configuring Angular services with `@Injectable` and `providedIn` for seamless dependency injection.
+- Understanding these principles ensures robust application development, avoiding common pitfalls such as `NullInjectorError` and ensuring reliable component initialization and UI interaction.
+
+Summary:
+--------
+
+- Scenarios Covered: Examined scenarios with and without `@Injectable` and `providedIn` for Angular services.
+- Error Analysis: Highlighted runtime error (`NullInjectorError`) and it's cause due to misconfigurations.
+- Best Practices: the necessity of `@Injectable` and proper `providedIn` configuration for effective Angular development.
+
+- Direct injection in Angular without specifying providers relies on Angular's hierarchical DI system.
+- If the service is provided at the root level (`providedIn: 'root'`), a singleton instance is created application-wide.
+- If provided in an NgModule, the service is shared among components within that module.
+- Without specifying the `providers` array in the component, Angular does not automatically create a new instance using `new` operator logic.
+- Best practice is to use `providedIn: 'root'` for services that need to be globally available.
+
+----------------------------------------------------------------------------------------------------

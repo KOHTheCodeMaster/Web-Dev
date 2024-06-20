@@ -5,7 +5,7 @@
   <button (click)="resetTransactions()">Reset</button>
   <ul>
     <li *ngFor="let transaction of transactionService.getTransactions(); trackBy trackByTransactionId">
-      {{ transaction.description }}: {{ transaction.amount }} on {{ transaction.date }}
+      {{ transaction.description }}: ${{ transaction.amount }} on {{ transaction.date }}
     </li>
   </ul>
 </div>

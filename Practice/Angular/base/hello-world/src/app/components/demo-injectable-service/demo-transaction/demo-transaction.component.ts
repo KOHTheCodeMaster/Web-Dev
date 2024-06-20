@@ -2,17 +2,21 @@ import {Component} from '@angular/core';
 import {NgFor} from '@angular/common';
 import {DemoTransactionService} from '../../../services/demo-injectable-service/demo-transaction.service';
 import {Transaction} from "../../../interfaces/Transaction";
+import {LoggerService} from '../../../services/demo-injectable-service/logger.service';
 
 @Component({
     selector: 'app-demo-transaction',
     standalone: true,
     imports: [NgFor],
+    // providers: [{provide: DemoTransactionService, useClass: DemoTransactionService}],
+    providers: [DemoTransactionService],
     templateUrl: './demo-transaction.component.html',
     styleUrl: './demo-transaction.component.css'
 })
 export class DemoTransactionComponent {
 
     constructor(public transactionService: DemoTransactionService) {
+        console.log('DemoTransactionComponent Constructor Invoked.');
     }
 
     trackByTransactionId(index: number, transaction: Transaction): number {

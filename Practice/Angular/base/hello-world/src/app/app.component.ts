@@ -15,6 +15,9 @@ import {DemoNgSwitchComponent} from './directives/structural/demo-ng-switch/demo
 import {
     DemoTransactionComponent
 } from './components/demo-injectable-service/demo-transaction/demo-transaction.component';
+import {Di1Component} from './components/dependency-injection/di-1/di-1.component';
+import {Di2Component} from './components/dependency-injection/di-2/di-2.component';
+import {Di3Component} from './components/dependency-injection/di-3/di-3.component';
 
 @Component({
     selector: 'app-root',
@@ -22,7 +25,7 @@ import {
     imports: [RouterOutlet, Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent, DataBindingComponent,
         StyleScopingDemoComponent, NgClassAndStyleComponent, DemoNgModelComponent,
         DemoNgIfComponent, DemoNgForComponent, DemoNgSwitchComponent,
-        DemoTransactionComponent
+        DemoTransactionComponent, Di1Component, Di2Component, Di3Component
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

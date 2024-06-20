@@ -9,7 +9,8 @@ export class DemoTransactionService {
 
     private transactions: Transaction[];
 
-    constructor(private logger: LoggerService) {
+    constructor(public logger: LoggerService) {
+        logger.log('DemoTransactionService Constructor Invoked.');
         this.transactions = this.stubTransactionsWithDummyData();
     }
 
