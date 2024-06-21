@@ -4,18 +4,18 @@ import {DIWithoutInjectableService} from "../../../../services/dependency-inject
 import {DIWithoutProvidedInService} from "../../../../services/dependency-injection/di-without-provided-in.service";
 
 @Component({
-    selector: 'app-di-providers-5',
+    selector: 'app-di-providers-3',
     standalone: true,
     imports: [],
     providers: [DIWithDependency2Service, DIWithoutInjectableService, DIWithoutProvidedInService],
-    template: `<p>di-providers-5 - DIWithDependency2Service - {{ this.name }}</p>`
+    template: `<p>di-providers-3 - DIWithDependency2Service - {{ this.name }}</p>`
 })
-export class DiProviders5Component {
+export class DiProviders3Component {
 
     name: string = 'John Doe';
 
     constructor(public diWithDependency2Service: DIWithDependency2Service) {
-        console.log('DiProviders5Component Constructor Invoked.');
+        console.log('DiProviders3Component Constructor Invoked.');
     }
 
 }

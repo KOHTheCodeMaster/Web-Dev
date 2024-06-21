@@ -23,11 +23,14 @@ import {
     DiProviders1Component
 } from "./components/dependency-injection/di-providers/di-providers/di-providers-1.component";
 import {
-    DiProviders5Component
-} from "./components/dependency-injection/di-providers/di-providers/di-providers-5.component";
-import {
     DiProviders2Component
 } from "./components/dependency-injection/di-providers/di-providers/di-providers-2.component";
+import {
+    DiProviders3Component
+} from "./components/dependency-injection/di-providers/di-providers/di-providers-3.component";
+import {
+    AttributesVsPropertiesComponent
+} from "./components/data-binding/attributes-vs-properties/attributes-vs-properties.component";
 
 @Component({
     selector: 'app-root',
@@ -38,7 +41,8 @@ import {
         DemoTransactionComponent, DI1Component, DI2Component, DI3Component, DI4Component,
         DiProviders1Component,
         DiProviders2Component,
-        DiProviders5Component
+        DiProviders3Component,
+        AttributesVsPropertiesComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

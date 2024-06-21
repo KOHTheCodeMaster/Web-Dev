@@ -29,9 +29,45 @@ Scenario 1: DIWithoutInjectableService without @Injectable
 
 File References
 - `di-providers-1.component.ts`
+```
+    import {Component} from '@angular/core';
+    import {DIWithoutInjectableService} from "../../../../services/dependency-injection/di-without-injectable.service";
+
+    @Component({
+        selector: 'app-di-providers-1',
+        standalone: true,
+        imports: [],
+        providers: [DIWithoutInjectableService],
+        template: `<p>di-providers-1 - DIWithoutInjectableService - {{ this.name }}</p>`
+    })
+    export class DiProviders1Component {
+        name: string = 'John Doe';
+        constructor(public diWithoutInjectableService: DIWithoutInjectableService) {
+            console.log('DiProviders1Component Constructor Invoked.');
+        }
+    }
+```
+
 - `di-without-injectable.service.ts`
+```
+    export class DIWithoutInjectableService {
+        constructor() {
+            console.log('DIWithoutInjectableService Constructor Invoked.');
+        }
+    }
+```
 
 Case 1: Without providers in the Component
+Configuration:
+    ```typescript
+    @Component({
+        selector: 'app-di-providers-1',
+        standalone: true,
+        template: `<p>di-providers-1 - DIWithoutInjectableService - {{ this.name }}</p>`
+    })
+    export class DiProviders1Component { ... }
+    ```
+
 Error Encountered: ` NullInjectorError: No provider for DIWithoutInjectableService! `
 
 Observations:
@@ -52,6 +88,7 @@ Configuration:
         providers: [DIWithoutInjectableService],
         template: `<p>di-providers-1 - DIWithoutInjectableService - {{ this.name }}</p>`
     })
+    export class DiProviders1Component { ... }
     ```
 
 Observations:

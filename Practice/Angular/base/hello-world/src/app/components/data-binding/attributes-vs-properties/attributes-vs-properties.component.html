@@ -1,0 +1,20 @@
+<div>
+  <button [attr.disabled]="isDisabled ? true : null">Button (Attribute)</button>
+  <button [disabled]="isDisabled">Button (Property)</button>
+  <button (click)="toggleDisabled()">Toggle Disabled</button>
+  <br><br>
+</div>
+
+<div>
+  <input [attr.value]="initialValue"/>
+  <input [value]="initialValue"/>
+  <button (click)="updateValue()">Update Value</button>
+  <br><br>
+</div>
+
+<div>
+  <div [attr.class]="dynamicClass">Div (Attribute)</div>
+  <div [className]="dynamicClass">Div (Property)</div>
+  <button (click)="toggleClass()">Toggle Class</button>
+  <br><br>
+</div>

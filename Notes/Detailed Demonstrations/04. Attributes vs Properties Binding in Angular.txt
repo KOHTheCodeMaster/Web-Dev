@@ -1,0 +1,207 @@
+
+Time Stamp: 21st Jun 2K24 - 09:17 PM..!!
+
+Title: Attributes vs Properties Binding in Angular
+
+Category: Learning -> Web Development -> Angular -> Data Binding
+
+Keywords: Angular, Attributes, Properties, Data Binding, Examples
+
+Purpose: To understand the differences between attribute and property binding in Angular
+         with comprehensive demonstrations and examples.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Attributes vs Properties Binding in Angular
+-------------------------------------------
+
+Introduction:
+-------------
+
+- In Angular, understanding the distinction between attribute binding and property binding is crucial for manipulating the DOM efficiently.
+
+- This document provides an in-depth comparison, complete with examples and explanations to illustrate the differences.
+
+Attributes vs Properties: The Basics
+------------------------------------
+
+- Attributes: Attributes are defined by HTML and represent static values declared in the markup. They initialize the state of an element and are not updated once the element is created.
+
+- Properties: Properties are defined by the DOM and represent the current state of an element. They can be dynamic and are influenced by JavaScript.
+
+Key Differences:
+----------------
+
+Initialization vs State:
+    - Attributes initialize elements with a value, but do not change the element's state.
+    - Properties reflect the current state of elements and can change dynamically.
+
+Static vs Dynamic:
+    - Attributes are static and set initially when the element is created.
+    - Properties can change dynamically after the element is created.
+
+Source of Truth:
+    - For most cases, properties are the source of truth for the current state of an element.
+    - Attributes provide initial values which may not reflect the current state after the element is manipulated.
+
+----------------------------------------------------------------------------------------------------
+
+Demonstration with Examples:
+----------------------------
+
+Example 1: The `disabled` Attribute vs Property
+-----------------------------------------------
+
+HTML:
+```html
+<button [attr.disabled]="isDisabled">Button (Attribute)</button>
+<button [disabled]="isDisabled">Button (Property)</button>
+```
+
+TypeScript:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <button [attr.disabled]="isDisabled ? true : null">Button (Attribute)</button>
+    <button [disabled]="isDisabled">Button (Property)</button>
+    <button (click)="toggleDisabled()">Toggle Disabled</button>
+  `,
+})
+export class AppComponent {
+  isDisabled = true;
+
+  toggleDisabled() {
+    this.isDisabled = !this.isDisabled;
+  }
+}
+```
+
+Explanation:
+- The first button uses attribute binding (`[attr.disabled]`), which sets the `disabled` attribute to `"true"` or removes it based on the condition.
+- The second button uses property binding (`[disabled]`), which sets the `disabled` property to `true` or `false`.
+- Clicking the "Toggle Disabled" button dynamically changes the `isDisabled` state, affecting the second button (property binding) but not the first one (attribute binding).
+
+----------------------------------------------------------------------------------------------------
+
+Example 2: The `value` Attribute vs Property
+--------------------------------------------
+
+HTML:
+```html
+<input [attr.value]="initialValue" />
+<input [value]="initialValue" />
+```
+
+TypeScript:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <input [attr.value]="initialValue" />
+    <input [value]="initialValue" />
+    <button (click)="updateValue()">Update Value</button>
+  `,
+})
+export class AppComponent {
+  initialValue = 'Initial Value';
+
+  updateValue() {
+    this.initialValue = 'Updated Value';
+  }
+}
+```
+
+Explanation:
+- The first input uses attribute binding (`[attr.value]`), setting the initial value of the input field.
+- The second input uses property binding (`[value]`), setting the value property of the input field.
+- Changing the `initialValue` in the component updates the second input (property binding) but not the first one (attribute binding).
+
+----------------------------------------------------------------------------------------------------
+
+Example 3: List of Properties Different from Attribute Names
+------------------------------------------------------------
+
+Here are some common attributes and their corresponding properties in HTML elements:
+
+| Attribute         | Property          |
+|-------------------|-------------------|
+| `class`           | `className`       |
+| `for`             | `htmlFor`         |
+| `maxlength`       | `maxLength`       |
+| `cellspacing`     | `cellSpacing`     |
+| `cellpadding`     | `cellPadding`     |
+| `rowspan`         | `rowSpan`         |
+| `colspan`         | `colSpan`         |
+| `tabindex`        | `tabIndex`        |
+| `readonly`        | `readOnly`        |
+| `contenteditable` | `contentEditable` |
+|-------------------|-------------------|
+
+----------------------------------------------------------------------------------------------------
+
+Example 4: `class` Attribute vs `className` Property
+----------------------------------------------------
+
+HTML:
+```html
+<div [attr.class]="dynamicClass">Div (Attribute)</div>
+<div [className]="dynamicClass">Div (Property)</div>
+```
+
+TypeScript:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div [attr.class]="dynamicClass">Div (Attribute)</div>
+    <div [className]="dynamicClass">Div (Property)</div>
+    <button (click)="toggleClass()">Toggle Class</button>
+  `,
+})
+export class AppComponent {
+  dynamicClass = 'class1';
+
+  toggleClass() {
+    this.dynamicClass = this.dynamicClass === 'class1' ? 'class2' : 'class1';
+  }
+}
+```
+
+Explanation:
+- The first `div` uses attribute binding (`[attr.class]`), setting the class attribute statically.
+- The second `div` uses property binding (`[className]`), dynamically updating the class name based on the component's state.
+
+Conclusion:
+-----------
+
+- Understanding the distinction between attribute and property binding in Angular is crucial for effective DOM manipulation.
+- Attributes provide initial values and are static, while properties represent the current state and are dynamic.
+- Knowing when to use each can lead to more efficient and predictable Angular applications.
+
+Summary:
+--------
+
+- Attribute Binding: Use when you need to set the initial static value of an attribute.
+    - Syntax: `[attr.attributeName]="expression"`
+    - Example: `<button [attr.disabled]="isDisabled">Button (Attribute)</button>`
+
+- Property Binding: Use when you need to bind to a DOM property, especially for dynamic values.
+    - Syntax: `[propertyName]="expression"`
+    - Example: `<button [disabled]="isDisabled">Button (Property)</button>`
+
+- Certain attributes have different property names, such as:
+    - Attribute: `class`        |   Property: `className`
+    - Attribute: `maxlength`    |   Property: `maxLength`
+
+----------------------------------------------------------------------------------------------------

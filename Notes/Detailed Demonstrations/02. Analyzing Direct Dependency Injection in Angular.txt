@@ -322,3 +322,21 @@ Summary:
 - Best practice is to use `providedIn: 'root'` for services that need to be globally available.
 
 ----------------------------------------------------------------------------------------------------
+
+Completion Summary: Scenarios Analyzed
+--------------------------------------
+
+- Scenario 1: Service without `@Injectable` leading to `NullInjectorError`.
+- Scenario 2: Service with `@Injectable` but without `providedIn` causing `NullInjectorError`.
+- Scenario 3: Service with `@Injectable` and `providedIn: 'root'` functioning correctly.
+- Scenario 4: Service with internal dependencies highlighting the importance of proper `@Injectable` and `providedIn` configurations.
+
+Key Takeaways:
+--------------
+
+- Service Recognition: Always use the `@Injectable` decorator for services to be recognized by Angular's DI system.
+- Singleton Services: Specify `providedIn: 'root'` for application-wide singleton services to prevent `NullInjectorError`.
+
+Purpose Achievement: Successfully explored and documented the behavior of Angular services with various DI configurations, emphasizing the importance of proper service setup for error-free application development.
+
+----------------------------------------------------------------------------------------------------
