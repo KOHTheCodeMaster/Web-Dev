@@ -15,10 +15,19 @@ import {DemoNgSwitchComponent} from './directives/structural/demo-ng-switch/demo
 import {
     DemoTransactionComponent
 } from './components/demo-injectable-service/demo-transaction/demo-transaction.component';
-import {Di1Component} from './components/dependency-injection/di-1/di-1.component';
-import {Di2Component} from './components/dependency-injection/di-2/di-2.component';
-import {Di3Component} from './components/dependency-injection/di-3/di-3.component';
-import {Di4Component} from './components/dependency-injection/di-4/di-4.component';
+import {DI1Component} from "./components/dependency-injection/providedIn/di-1/di-1.component";
+import {DI2Component} from "./components/dependency-injection/providedIn/di-2/di-2.component";
+import {DI3Component} from "./components/dependency-injection/providedIn/di-3/di-3.component";
+import {DI4Component} from "./components/dependency-injection/providedIn/di-4/di-4.component";
+import {
+    DiProviders1Component
+} from "./components/dependency-injection/di-providers/di-providers/di-providers-1.component";
+import {
+    DiProviders5Component
+} from "./components/dependency-injection/di-providers/di-providers/di-providers-5.component";
+import {
+    DiProviders2Component
+} from "./components/dependency-injection/di-providers/di-providers/di-providers-2.component";
 
 @Component({
     selector: 'app-root',
@@ -26,7 +35,10 @@ import {Di4Component} from './components/dependency-injection/di-4/di-4.componen
     imports: [RouterOutlet, Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent, DataBindingComponent,
         StyleScopingDemoComponent, NgClassAndStyleComponent, DemoNgModelComponent,
         DemoNgIfComponent, DemoNgForComponent, DemoNgSwitchComponent,
-        DemoTransactionComponent, Di1Component, Di2Component, Di3Component, Di4Component
+        DemoTransactionComponent, DI1Component, DI2Component, DI3Component, DI4Component,
+        DiProviders1Component,
+        DiProviders2Component,
+        DiProviders5Component
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

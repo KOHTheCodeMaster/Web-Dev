@@ -52,7 +52,7 @@ File References:
     ```
     export class DIWithoutInjectableService {
         constructor() {
-            console.log('DiWithoutInjectableService Constructor Invoked.');
+            console.log('DIWithoutInjectableService Constructor Invoked.');
         }
     }
     ```
@@ -89,7 +89,7 @@ File References:
 - `di-2.component.ts`
     ```
     import {Component} from '@angular/core';
-    import {DiWithoutProvidedInService} from "../../../services/dependency-injection/di-without-provided-in.service";
+    import {DIWithoutProvidedInService} from "../../../services/dependency-injection/di-without-provided-in.service";
     @Component({
         selector: 'app-di-2',
         standalone: true,
@@ -98,7 +98,7 @@ File References:
     })
     export class Di2Component {
         name: string = 'John Doe';
-        constructor(public diWithoutProvidedInService: DiWithoutProvidedInService) {
+        constructor(public diWithoutProvidedInService: DIWithoutProvidedInService) {
             console.log('Di2Component Constructor Invoked.');
         }
     }
@@ -110,9 +110,9 @@ File References:
     @Injectable(/*{
         providedIn: 'root'
     }*/)
-    export class DiWithoutProvidedInService {
+    export class DIWithoutProvidedInService {
         constructor() {
-            console.log('DiWithoutProvidedInService Constructor Invoked.');
+            console.log('DIWithoutProvidedInService Constructor Invoked.');
         }
 
     }
@@ -121,14 +121,14 @@ File References:
 Behavior Analysis:
 ------------------
 
-- Error Encountered: `NullInjectorError: No provider for DiWithoutProvidedInService!`
+- Error Encountered: `NullInjectorError: No provider for DIWithoutProvidedInService!`
 - Description:
-    - The `Di2Component` attempts to inject `DiWithoutProvidedInService` which has the `@Injectable` decorator but lacks the `providedIn: 'root'` property.
+    - The `Di2Component` attempts to inject `DIWithoutProvidedInService` which has the `@Injectable` decorator but lacks the `providedIn: 'root'` property.
     - Angular's DI system recognizes the service due to `@Injectable` but fails to find a provider configuration (`providedIn` or explicit provider).
-    - This leads to a runtime error where Angular cannot resolve `DiWithoutProvidedInService` during dependency injection.
+    - This leads to a runtime error where Angular cannot resolve `DIWithoutProvidedInService` during dependency injection.
 
 - Impact:
-    - Stuck Execution: Similar to Scenario 1, the component's constructor is invoked but Angular fails to provide `DiWithoutProvidedInService`, causing the initialization to halt.
+    - Stuck Execution: Similar to Scenario 1, the component's constructor is invoked but Angular fails to provide `DIWithoutProvidedInService`, causing the initialization to halt.
     - No UI Interaction: Lack of service instance results in no data displayed in the template.
 
 Root Cause: Lack of `providedIn: 'root'` or an explicit provider configuration causes Angular to fail in providing the service.
@@ -152,7 +152,7 @@ File References:
 - `di-3.component.ts`
     ```
     import {Component} from '@angular/core';
-    import {DiWithInjectableService} from "../../../services/dependency-injection/di-with-injectable.service";
+    import {DIWithInjectableService} from "../../../services/dependency-injection/di-with-injectable.service";
     @Component({
         selector: 'app-di-3',
         standalone: true,
@@ -161,7 +161,7 @@ File References:
     })
     export class Di3Component {
         name: string = 'John Doe';
-        constructor(public diWithInjectableService: DiWithInjectableService) {
+        constructor(public diWithInjectableService: DIWithInjectableService) {
             console.log('Di3Component Constructor Invoked.');
         }
 
@@ -172,9 +172,9 @@ File References:
     import {Injectable} from "@angular/core";
     @Injectable({
         providedIn: 'root'
-    })export class DiWithInjectableService {
+    })export class DIWithInjectableService {
         constructor() {
-            console.log('DiWithInjectableService Constructor Invoked.');
+            console.log('DIWithInjectableService Constructor Invoked.');
         }
     }
     ```
@@ -182,9 +182,9 @@ File References:
 Behavior Analysis:
 ------------------
 
-- Successful Execution: The `Di3Component` injects `DiWithInjectableService` which has both `@Injectable` and `providedIn: 'root'`.
+- Successful Execution: The `Di3Component` injects `DIWithInjectableService` which has both `@Injectable` and `providedIn: 'root'`.
 - Description:
-    - Angular successfully creates and injects `DiWithInjectableService` because it is properly configured with `@Injectable` and `providedIn: 'root'`.
+    - Angular successfully creates and injects `DIWithInjectableService` because it is properly configured with `@Injectable` and `providedIn: 'root'`.
     - The component's constructor is invoked, and the service is available for use.
     - This results in logs being printed and data being displayed in the UI template.
 Root Cause: `@Injectable` and `providedIn: 'root'` ensure Angular recognizes and provides the service as an application-wide singleton.
@@ -202,8 +202,8 @@ Scenario 4: Angular Service Dependency with @Injectable Usage
 -------------------------------------------------------------
 
 Description:
-- In this scenario, the Angular service `DiServiceWithDependencyService` is designed to utilize another service `DiWithInjectableService` internally.
-- The `DiWithInjectableService` is properly configured with `@Injectable({ providedIn: 'root' })`,
+- In this scenario, the Angular service `DiServiceWithDependencyService` is designed to utilize another service `DIWithInjectableService` internally.
+- The `DIWithInjectableService` is properly configured with `@Injectable({ providedIn: 'root' })`,
   allowing it to be injected into `DiServiceWithDependencyService`.
 
 File References:
@@ -212,7 +212,7 @@ File References:
 - Component: `di-4.component.ts`
     ```
     import {Component} from '@angular/core';
-    import {DiWithInjectableService} from "../../../services/dependency-injection/di-with-injectable.service";
+    import {DIWithInjectableService} from "../../../services/dependency-injection/di-with-injectable.service";
     import { DiServiceWithDependencyService } from "../../../services/dependency-injection/di-service-with-dependency.service";
     @Component({
         selector: 'app-di-4',
@@ -233,25 +233,25 @@ File References:
     ```
     import {Injectable} from "@angular/core";
     import {DIWithoutInjectableService} from "./di-without-injectable.service";
-    import {DiWithoutProvidedInService} from "./di-without-provided-in.service";
-    import {DiWithInjectableService} from "./di-with-injectable.service";
+    import {DIWithoutProvidedInService} from "./di-without-provided-in.service";
+    import {DIWithInjectableService} from "./di-with-injectable.service";
     @Injectable({
         providedIn: 'root'
     })
     export class DiServiceWithDependencyService {
         /*
-            constructor(public dIWithoutInjectableService: DIWithoutInjectableService) {
+            constructor(public diWithoutInjectableService: DIWithoutInjectableService) {
                 console.log('DiServiceWithDependencyService Constructor Invoked.');
             }
         */
 
         /*
-            constructor(public diWithoutProvidedInService: DiWithoutProvidedInService) {
+            constructor(public diWithoutProvidedInService: DIWithoutProvidedInService) {
                 console.log('DiServiceWithDependencyService Constructor Invoked.');
             }
         */
 
-        constructor(public diWithInjectableService: DiWithInjectableService) {
+        constructor(public diWithInjectableService: DIWithInjectableService) {
             console.log('DiServiceWithDependencyService Constructor Invoked.');
         }
     }
@@ -261,7 +261,7 @@ Constructor Attempts and Error Analysis:
 ----------------------------------------
 
 First Constructor Attempt:
-   ```typescript // constructor(public dIWithoutInjectableService: DIWithoutInjectableService) {} ```
+   ```typescript // constructor(public diWithoutInjectableService: DIWithoutInjectableService) {} ```
 
    Error Encountered: `NullInjectorError: No provider for DIWithoutInjectableService!`
 
@@ -271,26 +271,26 @@ First Constructor Attempt:
     - Justification: Without `@Injectable`, the service is not recognized by Angular's DI system, leading to a `NullInjectorError`.
 
 Second Constructor Attempt:
-   ```typescript // constructor(public diWithoutProvidedInService: DiWithoutProvidedInService) {} ```
+   ```typescript // constructor(public diWithoutProvidedInService: DIWithoutProvidedInService) {} ```
 
-   Error Encountered: `NullInjectorError: No provider for DiWithoutProvidedInService!`
+   Error Encountered: `NullInjectorError: No provider for DIWithoutProvidedInService!`
 
    Explanation:
-    - Issue: `DiWithoutProvidedInService` has `@Injectable` but lacks `providedIn: 'root'`.
+    - Issue: `DIWithoutProvidedInService` has `@Injectable` but lacks `providedIn: 'root'`.
     - Impact: Causes `NullInjectorError` as Angular cannot find a provider configuration for the service.
     - Justification: Angular requires `providedIn: 'root'` or an explicit provider to inject services.
                      Without it, a `NullInjectorError` occurs.
 
 Third Constructor Attempt:
    ```typescript
-   constructor(public diWithInjectableService: DiWithInjectableService) {
+   constructor(public diWithInjectableService: DIWithInjectableService) {
        console.log('DiServiceWithDependencyService Constructor Invoked.');
    }
    ```
 
    Successful Execution:
-    - `DiWithInjectableService` is properly configured with `@Injectable({ providedIn: 'root' })`.
-    - Angular successfully injects `DiWithInjectableService` into `DiServiceWithDependencyService`, allowing the constructor to execute without errors.
+    - `DIWithInjectableService` is properly configured with `@Injectable({ providedIn: 'root' })`.
+    - Angular successfully injects `DIWithInjectableService` into `DiServiceWithDependencyService`, allowing the constructor to execute without errors.
 
 Key Takeaways:
 --------------

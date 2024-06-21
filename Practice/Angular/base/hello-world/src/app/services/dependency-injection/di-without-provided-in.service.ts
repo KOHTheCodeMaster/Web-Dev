@@ -3,10 +3,10 @@ import {Injectable} from "@angular/core";
 @Injectable(/*{
     providedIn: 'root'
 }*/)
-export class DiWithoutProvidedInService {
+export class DIWithoutProvidedInService {
 
     constructor() {
-        console.log('DiWithoutProvidedInService Constructor Invoked.');
+        console.log('DIWithoutProvidedInService Constructor Invoked.');
     }
 
 }

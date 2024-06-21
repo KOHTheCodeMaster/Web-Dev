@@ -1,7 +1,7 @@
 export class DIWithoutInjectableService {
 
     constructor() {
-        console.log('DiWithoutInjectableService Constructor Invoked.');
+        console.log('DIWithoutInjectableService Constructor Invoked.');
     }
 
 }

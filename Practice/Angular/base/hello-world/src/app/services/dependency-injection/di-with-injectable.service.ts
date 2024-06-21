@@ -2,10 +2,11 @@ import {Injectable} from "@angular/core";
 
 @Injectable({
     providedIn: 'root'
-})export class DiWithInjectableService {
+})
+export class DIWithInjectableService {
 
     constructor() {
-        console.log('DiWithInjectableService Constructor Invoked.');
+        console.log('DIWithInjectableService Constructor Invoked.');
     }
 
 }

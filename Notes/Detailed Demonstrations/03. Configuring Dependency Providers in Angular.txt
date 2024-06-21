@@ -1,0 +1,139 @@
+
+Time Stamp: 21st Jun 2024 - 12:13 PM..!!
+
+Title: Configuring Dependency Providers in Angular
+
+Category: Web Development -> Angular -> Dependency Injection
+
+Keywords: Angular, Dependency Injection, providers, @Injectable, service configuration
+
+Purpose: Configuring Dependency Providers in Angular, focusing on the behavior of services with and without the @Injectable decorator and providedIn property.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Configuring Dependency Providers in Angular
+-------------------------------------------
+
+Introduction:
+-------------
+
+- This demonstration explores how Angular handles dependency injection (DI) for services with different configurations, focusing on the `providers` array in component metadata.
+- We examine the behavior of services without the `@Injectable` decorator, with `@Injectable` but without `providedIn`, and with `@Injectable` and `providedIn: 'root'`.
+
+Scenario 1: DIWithoutInjectableService without @Injectable
+----------------------------------------------------------
+
+File References
+- `di-providers-1.component.ts`
+- `di-without-injectable.service.ts`
+
+Case 1: Without providers in the Component
+Error Encountered: ` NullInjectorError: No provider for DIWithoutInjectableService! `
+
+Observations:
+- The `DIWithoutInjectableService` is not marked with `@Injectable`, and no providers are found for it.
+- Angular's DI system does not recognize it as a service, leading to a runtime error when the service is attempted to be injected directly into the component's constructor.
+
+Explanation:
+- Without the `@Injectable` decorator, Angular does not know how to create an instance of `DIWithoutInjectableService`.
+- The DI system throws a `NullInjectorError` because it cannot find a provider for the service.
+
+Case 2: With providers in the Component
+Configuration:
+    ```typescript
+    @Component({
+        selector: 'app-di-providers-1',
+        standalone: true,
+        imports: [],
+        providers: [DIWithoutInjectableService],
+        template: `<p>di-providers-1 - DIWithoutInjectableService - {{ this.name }}</p>`
+    })
+    ```
+
+Observations:
+- Even though `DIWithoutInjectableService` is not marked with `@Injectable`, it is recognized as a service by Angular's DI system when explicitly added to the `providers` array.
+- The service is successfully injected into the component's constructor without any errors.
+
+Explanation:
+- Angular's DI system uses the `providers` array to know how to create instances of services. When `DIWithoutInjectableService` is included in `providers`, Angular treats it as a service and can instantiate it.
+- The absence of the `@Injectable` decorator does not prevent the service from being injected if it is explicitly provided.
+
+Questions & Answers:
+1. How does Angular know this needs to be instantiated and could be provided as a service via providers despite missing @Injectable decorator?
+   - Angular uses the `providers` array to create and provide the service instance. The `providers` array acts as an instruction to Angular on how to instantiate the service.
+
+2. How does Angular allow this plain TypeScript class to be added in providers and pick it up for injection directly in the constructor without any errors despite knowing that @Injectable decorator is missing?
+   - The `providers` array explicitly tells Angular to treat the class as a service. This bypasses the need for the `@Injectable` decorator.
+
+3. Why is there no compile-time error?
+   - Angular's DI system checks for providers at runtime, not compile-time. The absence of `@Injectable` does not cause a compile-time error because the `providers` array resolves it at runtime.
+
+4. How does automatic dependency injection work smoothly in this case?
+   - The `providers` array instructs Angular to instantiate the class and provide it as a service, ensuring smooth DI despite the lack of `@Injectable`.
+
+5. Why exactly do we need to define @Injectable if providers allow DI injection directly?
+   - `@Injectable` provides metadata for the service, indicating how Angular should instantiate it. It also enables tree-shakable providers using `providedIn`, making the service available application-wide without explicit providers.
+
+----------------------------------------------------------------------------------------------------
+
+Scenario 2: DIWithoutProvidedInService with @Injectable but without providedIn
+------------------------------------------------------------------------------
+
+File References
+- `di-providers-2.component.ts`
+- `di-without-provided-in.service.ts`
+
+Configuration:
+    ```typescript
+    @Component({
+        selector: 'app-di-providers-2',
+        standalone: true,
+        imports: [],
+        providers: [DIWithoutProvidedInService],
+        template: `<p>di-providers-2 - DIWithoutProvidedInService - {{ this.name }}</p>`
+    })
+    ```
+
+Observations:
+- `DIWithoutProvidedInService` is marked with `@Injectable`, but without `providedIn: 'root'`.
+- The service is successfully injected into the component's constructor when added to the `providers` array, without any errors.
+
+Explanation:
+- The `@Injectable` decorator marks the class as a service that can be injected. However, without `providedIn`, Angular does not automatically provide it.
+- The `providers` array in the component metadata explicitly instructs Angular to instantiate and provide the service, ensuring successful DI.
+
+In-depth Comparison:
+--------------------
+
+Plain TypeScript Class:
+    - Without @Injectable: Not recognized as a service unless explicitly provided.
+    - With providers: Angular instantiates and injects the class based on the `providers` array.
+
+Class with @Injectable but without providedIn:
+    - @Injectable: Marks the class as a service for DI.
+    - Without providedIn: Angular does not automatically provide the service unless explicitly specified in the `providers` array.
+
+Class with @Injectable and providedIn:
+    - @Injectable with providedIn: Makes the service available application-wide (singleton).
+    - No need for explicit providers: Angular automatically provides the service based on the `providedIn` configuration.
+
+Conclusion:
+-----------
+
+- Scenario 1: Demonstrates the necessity of `@Injectable` or explicit providers for service recognition.
+- Scenario 2: Highlights the role of `providedIn` for automatic service provision.
+- @Injectable: Essential for Angular to recognize a class as a service.
+- providedIn: Simplifies service provision, making the service available application-wide without explicit providers.
+
+Summary:
+--------
+
+- Service Configuration: Explained the behavior of services with and without `@Injectable` and `providedIn`.
+- Providers Array: Highlighted the importance of the `providers` array in component metadata.
+- Angular DI Insights: Detailed the differences between plain TypeScript classes, classes with `@Injectable` without `providedIn`, and classes with `@Injectable` and `providedIn`.
+
+----------------------------------------------------------------------------------------------------

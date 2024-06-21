@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DiWithInjectableService} from "../../../services/dependency-injection/di-with-injectable.service";
+import {DIWithInjectableService} from "../../../../services/dependency-injection/di-with-injectable.service";
 
 @Component({
     selector: 'app-di-3',
@@ -7,11 +7,11 @@ import {DiWithInjectableService} from "../../../services/dependency-injection/di
     imports: [],
     template: `<p>di-3 - diWithInjectableService - {{ this.name }}</p>`
 })
-export class Di3Component {
+export class DI3Component {
 
     name: string = 'John Doe';
 
-    constructor(public diWithInjectableService: DiWithInjectableService) {
+    constructor(public diWithInjectableService: DIWithInjectableService) {
         console.log('Di3Component Constructor Invoked.');
     }
 
