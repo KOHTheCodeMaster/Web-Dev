@@ -5,9 +5,9 @@ Title: Events in Angular
 
 Category: Web Development -> Angular -> Event Handling
 
-Keywords: Angular, events, event binding, event handling, commonly used events
+Keywords: Angular, $event, event object, event handling, event filtering, event bubbling
 
-Purpose: Understanding events in Angular with demonstrations.
+Purpose: To understand `$event` and `event` DOM objects, event handling, focusing on the `$event` object, event filtering in Angular, and event bubbling.
 
 Dev: K.O.H..!! (Harshit Gupta)
 
@@ -15,23 +15,75 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 ----------------------------------------------------------------------------------------------------
 
-Events in Angular
------------------
+1. Introduction:
+----------------
 
-Introduction:
 - Events are integral to web development as they enable user interaction with web applications.
 - In Angular, event binding is used to listen to and respond to user actions.
 - This document provides a complete guide to understanding and handling events in Angular, suitable for beginners.
 
-Understanding Events:
+The Significance of `$event` in JavaScript and Angular:
+- Event handling is a core concept in JavaScript and Angular, allowing developers to create interactive web applications.
+- The `$event` object in JavaScript and Angular is a powerful tool used to handle and interact with events.
+- Understanding the `$event` and `event` DOM objects is crucial for building interactive web applications.
+- This document will provide an in-depth look at the `$event` object, its significance, usage, and differences from the generic `event` object.
+
+----------------------------------------------------------------------------------------------------
+
+2. Understanding Events:
+------------------------
+
 - Events are actions or occurrences that happen in the browser, such as clicks, key presses, or mouse movements.
 - Event handling involves capturing these events and defining responses to them.
+- Event Binding in Angular: uses parentheses `()` to bind methods in your component class to events in your template.
+- Basic Syntax: ` <element (event)="eventHandler()"></element> `
 
-Event Binding in Angular: uses parentheses `()` to bind methods in your component class to events in your template.
+What is `$event`?
+- In JavaScript and Angular, `$event` is a reference to the event object that is passed to event handler functions.
+- This object contains information about the event that occurred, such as the event type, the target element, and additional event-specific data.
 
-Basic Syntax: ` <element (event)="eventHandler()"></element> `
+The Event Object:
+- The event object (`$event` in Angular) is an instance of the `Event` interface.
+- It provides properties and methods to interact with the event and perform actions based on the event data.
+- The `$event` object is commonly used as an argument in event handler functions to access event details and manipulate the event's behavior.
 
-Commonly Used Events:
+Common Properties:
+- `type`: The type of event (e.g., 'click', 'keydown').
+- `target`: The element that triggered the event.
+- `currentTarget`: The element to which the event handler is attached.
+- `timeStamp`: The time at which the event was created.
+- `keyCode` and `code`: The code of the key that was pressed (for keyboard events).
+- `clientX` and `clientY`: The X and Y coordinates of the mouse event relative to the viewport.
+- `defaultPrevented`: A boolean indicating if the event's default action has been prevented.
+
+Common Methods:
+- `preventDefault()`: Prevents the default action associated with the event.
+- `stopPropagation()`: Stops the event from propagating to parent elements.
+- `stopImmediatePropagation()`: Stops the event from propagating and prevents other event handlers from being called.
+
+Differences Between `$event` and `event`:
+- Context: `$event` is a reference to the event object passed to event handlers in Angular templates.
+- `event` is a generic term used to refer to the event object in JavaScript.
+- Usage: `$event` is used in Angular to provide a more readable and consistent way to access the event object. `event` is used in plain JavaScript and other contexts outside Angular.
+
+Example:
+```html
+    <form (submit)="handleSubmit($event)">
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault(); // Prevents the form from submitting
+        console.log('Form submission prevented.');
+      }
+    </script>
+```
+
+----------------------------------------------------------------------------------------------------
+
+3. Commonly Used Events:
+------------------------
+
 - Click Event:      Triggered when an element is clicked.
 - Input Event:      Triggered when the value of an input element changes.
 - Change Event:     Triggered when an element loses focus and its value has changed.
@@ -40,210 +92,288 @@ Commonly Used Events:
 
 Demonstration with Example:
 
-Example 1: Click Event
-
 HTML:
-```html
-<div>
-  <button (click)="onClick()">Click Me</button>
-  <input (input)="onInput($event)" placeholder="Type something..." />
-  <select (change)="onChange($event)">
-    <option value="Option 1">Option 1</option>
-    <option value="Option 2">Option 2</option>
-    <option value="Option 3">Option 3</option>
-  </select>
-  <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
-    Hover over me!
-  </div>
-  <input (keydown)="onKeyDown($event)" placeholder="Press any key..." />
-</div>
-<p>{{ clickMessage }}</p>
-<p>{{ inputText }}</p>
-<p>Selected: {{ selectedOption }}</p>
-<p>{{ hoverMessage }}</p>
-<p>{{ keyMessage }}</p>
-```
+```demo-events-1.component.html
+    <div>
 
-TypeScript:
-```typescript
-import { Component } from '@angular/core';
+      <div>
+        <button (click)="onClick()">Click Me</button>
+        <p>{{ clickMessage }}</p>
+      </div>
 
-@Component({
-  selector: 'app-root',
-  template: `
-    <button (click)="onClick()">Click Me</button>
-    <p>{{ message }}</p>
-  `,
-})
-export class AppComponent {
-  message: string = '';
+      <div>
+        <input (input)="onInput($event)" placeholder="Type something..."/>
+        <p>{{ inputText }}</p>
+      </div>
 
-  onClick() {
-    this.message = 'Button was clicked!';
-  }
-}
-```
+      <div>
+        <select (change)="onChange($event)">
+          <option value="Option 1">Option 1</option>
+          <option value="Option 2">Option 2</option>
+          <option value="Option 3">Option 3</option>
+        </select>
+        <p>Selected: {{ selectedOption }}</p>
+      </div>
 
-Explanation:
-- `(click)="onClick()"` binds the `click` event of the button to the `onClick` method in the component.
-- When the button is clicked, the `onClick` method is executed, updating the `message` property.
+      <div>
+        <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+          Hover over me!
+        </div>
+        <p>{{ hoverMessage }}</p>
+      </div>
 
-Example 2: Input Event
+      <div>
+        <input (keydown)="onKeyDown($event)" placeholder="Press any key..."/>
+        <p>{{ keyMessage }}</p>
+      </div>
 
-HTML:
-```html
-<input (input)="onInput($event)" placeholder="Type something..." />
-<p>{{ inputText }}</p>
-```
-
-TypeScript:
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <input (input)="onInput($event)" placeholder="Type something..." />
-    <p>{{ inputText }}</p>
-  `,
-})
-export class AppComponent {
-  inputText: string = '';
-
-  onInput(event: Event) {
-    const inputElement = event.target as HTMLInputElement;
-    this.inputText = inputElement.value;
-  }
-}
-```
-
-Explanation:
-- `(input)="onInput($event)"` binds the `input` event of the input element to the `onInput` method, passing the event object as an argument.
-- The `onInput` method extracts the value from the event object and updates the `inputText` property.
-
-Example 3: Change Event
-
-HTML:
-```html
-<select (change)="onChange($event)">
-  <option value="Option 1">Option 1</option>
-  <option value="Option 2">Option 2</option>
-  <option value="Option 3">Option 3</option>
-</select>
-<p>Selected: {{ selectedOption }}</p>
-```
-
-TypeScript:
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <select (change)="onChange($event)">
-      <option value="Option 1">Option 1</option>
-      <option value="Option 2">Option 2</option>
-      <option value="Option 3">Option 3</option>
-    </select>
-    <p>Selected: {{ selectedOption }}</p>
-  `,
-})
-export class AppComponent {
-  selectedOption: string = '';
-
-  onChange(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    this.selectedOption = selectElement.value;
-  }
-}
-```
-
-Explanation:
-- `(change)="onChange($event)"` binds the `change` event of the select element to the `onChange` method, passing the event object.
-- The `onChange` method extracts the selected value from the event object and updates the `selectedOption` property.
-
-Example 4: Mouse Events
-
-HTML:
-```html
-<div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
-  Hover over me!
-</div>
-<p>{{ hoverMessage }}</p>
-```
-
-TypeScript:
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
-      Hover over me!
     </div>
-    <p>{{ hoverMessage }}</p>
-  `,
-})
-export class AppComponent {
-  hoverMessage: string = '';
-
-  onMouseOver() {
-    this.hoverMessage = 'Mouse is over the div!';
-  }
-
-  onMouseOut() {
-    this.hoverMessage = 'Mouse left the div!';
-  }
-}
-```
-
-Explanation:
-- `(mouseover)="onMouseOver()"` and `(mouseout)="onMouseOut()"` bind the mouseover and mouseout events to their respective methods.
-- The `onMouseOver` and `onMouseOut` methods update the `hoverMessage` property based on mouse interaction.
-
-Example 5: Keyboard Events
-
-HTML:
-```html
-<input (keydown)="onKeyDown($event)" placeholder="Press any key..." />
-<p>{{ keyMessage }}</p>
 ```
 
 TypeScript:
-```typescript
-import { Component } from '@angular/core';
+```demo-events-1.component.ts
+    import {Component} from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  template: `
-    <input (keydown)="onKeyDown($event)" placeholder="Press any key..." />
-    <p>{{ keyMessage }}</p>
-  `,
-})
-export class AppComponent {
-  keyMessage: string = '';
+    @Component({
+        selector: 'app-demo-events-1',
+        standalone: true,
+        templateUrl: './demo-events-1.component.html',
+    })
+    export class DemoEvents1Component {
 
-  onKeyDown(event: KeyboardEvent) {
-    this.keyMessage = `Key pressed: ${event.key}`;
-  }
-}
+        clickMessage: string = '';
+        inputText: string = '';
+        selectedOption: string = '';
+        hoverMessage: string = '';
+        keyMessage: string = '';
+
+        onClick() { this.clickMessage = 'Button was clicked!'; }
+
+        onInput(event: Event) {
+            const inputElement = event.target as HTMLInputElement;
+            this.inputText = inputElement.value;
+        }
+
+        onChange(event: Event) {
+            const selectElement = event.target as HTMLSelectElement;
+            this.selectedOption = selectElement.value;
+        }
+
+        onMouseOver() { this.hoverMessage = 'Mouse is over the div!'; }
+        onMouseOut() { this.hoverMessage = 'Mouse left the div!'; }
+        onKeyDown(event: KeyboardEvent) { this.keyMessage = `Key pressed: ${event.key}`; }
+    }
 ```
 
 Explanation:
-- `(keydown)="onKeyDown($event)"` binds the `keydown` event to the `onKeyDown` method, passing the event object.
-- The `onKeyDown` method updates the `keyMessage` property with the key pressed.
 
-Summary
-- Event Binding: Use parentheses `()` to bind events to methods in your component.
-  - Syntax: `<element (event)="eventHandler()"></element>`
-- Common Events: Click, input, change, mouse events, keyboard events.
-- Examples: Provided detailed examples for various events, demonstrating how to bind and handle them in Angular.
+- Click Event:
+    - `(click)="onClick()"` binds the click event to the `onClick` method.
+    - When the button is clicked, the `onClick` method sets `clickMessage` to "Button was clicked!".
 
----
+- Input Event:
+    - `(input)="onInput($event)"` binds the input event to the `onInput` method, passing the event object.
+    - The `onInput` method updates `inputText` with the value from the input element.
 
-Conclusion
+- Change Event:
+    - `(change)="onChange($event)"` binds the change event to the `onChange` method, passing the event object.
+    - The `onChange` method updates `selectedOption` with the selected value from the select element.
 
-Events are crucial for making web applications interactive. Understanding how to bind and handle events in Angular is fundamental for any web developer. This study material provides a comprehensive guide to event handling in Angular, with clear examples and explanations suitable for beginners.
+- Mouse Events:
+    - `(mouseover)="onMouseOver()"` and `(mouseout)="onMouseOut()"` bind mouseover and mouseout events to their respective methods.
+    - The `onMouseOver` method sets `hoverMessage` to "Mouse is over the div!", while the `onMouseOut` method sets it to "Mouse left the div!".
 
----
+- Keyboard Event:
+    - `(keydown)="onKeyDown($event)"` binds the keydown event to the `onKeyDown` method, passing the event object.
+    - The `onKeyDown` method updates `keyMessage` with the key pressed.
+
+----------------------------------------------------------------------------------------------------
+
+4. Event Handling in Angular with `$event`:
+-------------------------------------------
+
+- In Angular, the `$event` object is used in the same way as in plain JavaScript but with additional features like event filtering.
+
+Basic Event Handling:
+```html
+    <button (click)="handleClick($event)">Click Me</button>
+    <script>
+      function handleClick(event) {
+        console.log(event.type); // Logs 'click'
+      }
+    </script>
+```
+
+----------------------------------------------------------------------------------------------------
+
+5. Event Filtering in Angular:
+------------------------------
+
+- Event filtering allows you to bind to specific events or event conditions directly in the template.
+
+Example:
+```
+    <!-- Without Event Filtering -->
+    <input (keyup)="onKeyUp($event)">
+    <script>
+      function onKeyUp(event) {
+        if (event.keyCode === 13) {
+          console.log("Enter key was pressed.");
+        }
+      }
+    </script>
+
+    <!-- With Event Filtering -->
+    <input (keyup.enter)="onEnterKeyUp()">
+    <script>
+      function onEnterKeyUp() {
+        console.log("Enter key was pressed.");
+      }
+    </script>
+```
+
+----------------------------------------------------------------------------------------------------
+
+6. Event Bubbling:
+------------------
+
+- Event Bubbling the process by which an event propagates from the target element up through the DOM hierarchy to the root element.
+
+Example:
+    ```html
+    <div id="parent">
+      <button id="child">Click Me</button>
+    </div>
+
+    <script>
+      document.getElementById('parent').addEventListener('click', () => {
+        console.log('Parent clicked!');
+      });
+      document.getElementById('child').addEventListener('click', (event) => {
+        console.log('Child clicked!');
+        event.stopPropagation(); // Prevents the event from bubbling up to the parent
+      });
+    </script>
+    ```
+
+Explanation:
+- Event Propagation: When the child button is clicked, both the child and parent click events are triggered due to event bubbling.
+- Stopping Propagation: `event.stopPropagation()` prevents the event from propagating to parent elements.
+
+----------------------------------------------------------------------------------------------------
+
+7. Comprehensive Example:
+-------------------------
+
+Event Handling and Filtering in Angular
+
+```demo-event-filtering.component.ts
+    import {Component} from '@angular/core';
+
+    @Component({
+        selector: 'app-demo-event-filtering',
+        standalone: true,
+        template: `
+            <div>
+                <div id="parent" (click)="onParentDivClick($event)">
+                    <button (click)="onButtonClick($event)">Click</button>
+                    <p>{{ strBtnClicked }}</p>
+                    <p>{{ strParentDivClicked }}</p>
+                </div>
+                <div>
+                    <input [value]="strKeyPressed" (keydown)="onKeyDown($event)" (keyup.enter)="onEnterKey()"
+                           placeholder="Press any key..."/>
+                    <p>{{ strKeyMsg }}</p>
+                    <span>{{ strEnterKeyPressed }}</span>
+                </div>
+                <div>
+                    <br>
+                    <button (click)="onResetButtonClick($event)">Reset</button>
+                </div>
+            </div>
+        `
+    })
+    export class DemoEventFilteringComponent {
+
+        strBtnClicked: string = '-';
+        strEnterKeyPressed: string = '-';
+        strParentDivClicked: string = '-';
+        strKeyMsg: string = '-';
+        strKeyPressed: string = '-';
+
+        onButtonClick(event: Event) {
+            this.strBtnClicked = 'Reset Button clicked.';
+            console.log(this.strBtnClicked + ' -> ' + event);
+
+            event.stopPropagation();    // Prevents the event from bubbling up to the parent
+        }
+
+        onResetButtonClick(event: Event) {
+            this.strBtnClicked = 'Reset Button clicked.';
+            console.log(this.strBtnClicked + ' -> ' + event);
+
+            this.strBtnClicked = '-';
+            this.strEnterKeyPressed = '-';
+            this.strParentDivClicked = '-';
+            this.strKeyMsg = '-';
+            this.strEnterKeyPressed = '-';
+            this.strKeyPressed = '-';
+        }
+
+        onEnterKey() {
+            this.strEnterKeyPressed = 'Enter key was pressed.';
+            console.log(this.strEnterKeyPressed);
+        }
+
+        onParentDivClick(event: MouseEvent) {
+            this.strParentDivClicked = 'Parent Div clicked.';
+            console.log(this.strParentDivClicked + ' -> ' + event);
+        }
+
+        onKeyDown(event: KeyboardEvent) {
+            this.strKeyPressed = event.key;
+            this.strKeyMsg = 'Key pressed: ' + event.key;
+            console.log(this.strKeyMsg);
+        }
+
+    }
+```
+
+Explanation:
+------------
+
+Handling Button Clicks:
+    - The `onButtonClick` method demonstrates how to handle click events on buttons.
+    - Use `event.stopPropagation()` to control event propagation.
+    - onButtonClick(event: Event): Handles the click event on the button. It updates `strBtnClicked` with a message and logs the event to the console. The `event.stopPropagation()` method is used to prevent the event from bubbling up to the parent `<div>`.
+    - onParentDivClick(event: MouseEvent): Handles the click event on the parent `<div>`. It updates `strParentDivClicked` with a message and logs the event.
+
+Handling Key Presses:
+    - The `onKeyDown` method captures the key press and updates the component state with the pressed key.
+    - The `onEnterKey` method uses event filtering to only react to the Enter key press.
+    - onEnterKey(): Handles the `keyup.enter` event on the input field. It updates `strEnterKeyPressed` with a message and logs it to the console.
+    - onKeyDown(event: KeyboardEvent): Handles the `keydown` event on the input field. It updates `strKeyPressed` and `strKeyMsg` with the pressed key and logs the event.
+
+Event Filtering:
+    - Simplifies event handling by reducing the need for conditional checks within the handler functions.
+    - Example: `(keyup.enter)` is used to filter for the Enter key press event.
+
+Event Propagation:
+    - Prevents an event from bubbling up to parent elements using `event.stopPropagation()`.
+
+Reset Functionality:
+    - The `onResetButtonClick` method demonstrates resetting the component state, making it easier to manage state in complex components.
+    - onResetButtonClick(event: Event): Handles the click event on the reset button. It resets all component state properties and logs the event.
+
+----------------------------------------------------------------------------------------------------
+
+Summary:
+--------
+
+- $event Object: A reference to the event object in Angular, providing information about the event and methods to interact with it.
+- Event Object: The standard event object in JavaScript, containing properties and methods to handle events.
+- Event Handling: Associating events with functions to execute upon occurrence.
+- Event Filtering: Simplifies event handling by filtering for specific events directly in the template.
+- Event Bubbling: Event propagation from the target element up the DOM hierarchy.
+
+----------------------------------------------------------------------------------------------------
