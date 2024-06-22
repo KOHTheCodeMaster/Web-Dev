@@ -1,0 +1,34 @@
+<div>
+
+  <div>
+    <button (click)="onClick()">Click Me</button>
+    <p>{{ clickMessage }}</p>
+  </div>
+
+  <div>
+    <input (input)="onInput($event)" placeholder="Type something..."/>
+    <p>{{ inputText }}</p>
+  </div>
+
+  <div>
+    <select (change)="onChange($event)">
+      <option value="Option 1">Option 1</option>
+      <option value="Option 2">Option 2</option>
+      <option value="Option 3">Option 3</option>
+    </select>
+    <p>Selected: {{ selectedOption }}</p>
+  </div>
+
+  <div>
+    <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+      Hover over me!
+    </div>
+    <p>{{ hoverMessage }}</p>
+  </div>
+
+  <div>
+    <input (keydown)="onKeyDown($event)" placeholder="Press any key..."/>
+    <p>{{ keyMessage }}</p>
+  </div>
+
+</div>

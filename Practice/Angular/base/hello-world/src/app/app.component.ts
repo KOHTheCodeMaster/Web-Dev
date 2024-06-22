@@ -31,6 +31,7 @@ import {
 import {
     AttributesVsPropertiesComponent
 } from "./components/data-binding/attributes-vs-properties/attributes-vs-properties.component";
+import {DemoEvents1Component} from "./components/events/demo-events-1/demo-events-1.component";
 
 @Component({
     selector: 'app-root',
@@ -42,7 +43,8 @@ import {
         DiProviders1Component,
         DiProviders2Component,
         DiProviders3Component,
-        AttributesVsPropertiesComponent
+        AttributesVsPropertiesComponent,
+        DemoEvents1Component,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

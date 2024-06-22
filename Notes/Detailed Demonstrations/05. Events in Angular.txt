@@ -1,0 +1,249 @@
+
+Time Stamp: 22nd Jun. 2K24 - 09:22 AM..!!
+
+Title: Events in Angular
+
+Category: Web Development -> Angular -> Event Handling
+
+Keywords: Angular, events, event binding, event handling, commonly used events
+
+Purpose: Understanding events in Angular with demonstrations.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Events in Angular
+-----------------
+
+Introduction:
+- Events are integral to web development as they enable user interaction with web applications.
+- In Angular, event binding is used to listen to and respond to user actions.
+- This document provides a complete guide to understanding and handling events in Angular, suitable for beginners.
+
+Understanding Events:
+- Events are actions or occurrences that happen in the browser, such as clicks, key presses, or mouse movements.
+- Event handling involves capturing these events and defining responses to them.
+
+Event Binding in Angular: uses parentheses `()` to bind methods in your component class to events in your template.
+
+Basic Syntax: ` <element (event)="eventHandler()"></element> `
+
+Commonly Used Events:
+- Click Event:      Triggered when an element is clicked.
+- Input Event:      Triggered when the value of an input element changes.
+- Change Event:     Triggered when an element loses focus and its value has changed.
+- Mouse Events:     Such as `mouseover`, `mouseout`, `mousedown`, `mouseup`.
+- Keyboard Events:  Such as `keydown`, `keyup`, `keypress`.
+
+Demonstration with Example:
+
+Example 1: Click Event
+
+HTML:
+```html
+<div>
+  <button (click)="onClick()">Click Me</button>
+  <input (input)="onInput($event)" placeholder="Type something..." />
+  <select (change)="onChange($event)">
+    <option value="Option 1">Option 1</option>
+    <option value="Option 2">Option 2</option>
+    <option value="Option 3">Option 3</option>
+  </select>
+  <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+    Hover over me!
+  </div>
+  <input (keydown)="onKeyDown($event)" placeholder="Press any key..." />
+</div>
+<p>{{ clickMessage }}</p>
+<p>{{ inputText }}</p>
+<p>Selected: {{ selectedOption }}</p>
+<p>{{ hoverMessage }}</p>
+<p>{{ keyMessage }}</p>
+```
+
+TypeScript:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <button (click)="onClick()">Click Me</button>
+    <p>{{ message }}</p>
+  `,
+})
+export class AppComponent {
+  message: string = '';
+
+  onClick() {
+    this.message = 'Button was clicked!';
+  }
+}
+```
+
+Explanation:
+- `(click)="onClick()"` binds the `click` event of the button to the `onClick` method in the component.
+- When the button is clicked, the `onClick` method is executed, updating the `message` property.
+
+Example 2: Input Event
+
+HTML:
+```html
+<input (input)="onInput($event)" placeholder="Type something..." />
+<p>{{ inputText }}</p>
+```
+
+TypeScript:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <input (input)="onInput($event)" placeholder="Type something..." />
+    <p>{{ inputText }}</p>
+  `,
+})
+export class AppComponent {
+  inputText: string = '';
+
+  onInput(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.inputText = inputElement.value;
+  }
+}
+```
+
+Explanation:
+- `(input)="onInput($event)"` binds the `input` event of the input element to the `onInput` method, passing the event object as an argument.
+- The `onInput` method extracts the value from the event object and updates the `inputText` property.
+
+Example 3: Change Event
+
+HTML:
+```html
+<select (change)="onChange($event)">
+  <option value="Option 1">Option 1</option>
+  <option value="Option 2">Option 2</option>
+  <option value="Option 3">Option 3</option>
+</select>
+<p>Selected: {{ selectedOption }}</p>
+```
+
+TypeScript:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <select (change)="onChange($event)">
+      <option value="Option 1">Option 1</option>
+      <option value="Option 2">Option 2</option>
+      <option value="Option 3">Option 3</option>
+    </select>
+    <p>Selected: {{ selectedOption }}</p>
+  `,
+})
+export class AppComponent {
+  selectedOption: string = '';
+
+  onChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.selectedOption = selectElement.value;
+  }
+}
+```
+
+Explanation:
+- `(change)="onChange($event)"` binds the `change` event of the select element to the `onChange` method, passing the event object.
+- The `onChange` method extracts the selected value from the event object and updates the `selectedOption` property.
+
+Example 4: Mouse Events
+
+HTML:
+```html
+<div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+  Hover over me!
+</div>
+<p>{{ hoverMessage }}</p>
+```
+
+TypeScript:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+      Hover over me!
+    </div>
+    <p>{{ hoverMessage }}</p>
+  `,
+})
+export class AppComponent {
+  hoverMessage: string = '';
+
+  onMouseOver() {
+    this.hoverMessage = 'Mouse is over the div!';
+  }
+
+  onMouseOut() {
+    this.hoverMessage = 'Mouse left the div!';
+  }
+}
+```
+
+Explanation:
+- `(mouseover)="onMouseOver()"` and `(mouseout)="onMouseOut()"` bind the mouseover and mouseout events to their respective methods.
+- The `onMouseOver` and `onMouseOut` methods update the `hoverMessage` property based on mouse interaction.
+
+Example 5: Keyboard Events
+
+HTML:
+```html
+<input (keydown)="onKeyDown($event)" placeholder="Press any key..." />
+<p>{{ keyMessage }}</p>
+```
+
+TypeScript:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <input (keydown)="onKeyDown($event)" placeholder="Press any key..." />
+    <p>{{ keyMessage }}</p>
+  `,
+})
+export class AppComponent {
+  keyMessage: string = '';
+
+  onKeyDown(event: KeyboardEvent) {
+    this.keyMessage = `Key pressed: ${event.key}`;
+  }
+}
+```
+
+Explanation:
+- `(keydown)="onKeyDown($event)"` binds the `keydown` event to the `onKeyDown` method, passing the event object.
+- The `onKeyDown` method updates the `keyMessage` property with the key pressed.
+
+Summary
+- Event Binding: Use parentheses `()` to bind events to methods in your component.
+  - Syntax: `<element (event)="eventHandler()"></element>`
+- Common Events: Click, input, change, mouse events, keyboard events.
+- Examples: Provided detailed examples for various events, demonstrating how to bind and handle them in Angular.
+
+---
+
+Conclusion
+
+Events are crucial for making web applications interactive. Understanding how to bind and handle events in Angular is fundamental for any web developer. This study material provides a comprehensive guide to event handling in Angular, with clear examples and explanations suitable for beginners.
+
+---
