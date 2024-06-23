@@ -1,6 +1,24 @@
+<!--  Two-way Data Binding - ngModel & ngModelChange -->
+<div>
 
-<!--  Two-way Data Binding - ngModel -->
+  <p [innerText]="'Two-way Data Binding - ngModel'"></p>
 
-<p [innerText]="'Two-way Data Binding - ngModel - ' + name"></p>
-<label for="#input1"></label>
-<input id="#input1" type="text" [(ngModel)]="name">
+  <div>
+    <!--  Two-Way Data Binding with [(ngModel)]  -->
+    <input id="#input1" type="text" [(ngModel)]="name1">
+    <label for="#input1"> Name 1: </label>
+    <span>{{ name1 }}</span>
+    <br><br>
+  </div>
+
+  <div>
+    <!--  One-Way Data Binding with Custom Change Handling  -->
+    <input id="#input2" type="text" [ngModel]="name2" (ngModelChange)="updateName2($event)">
+    <label for="#input2">Name 2: </label>
+    <span>{{ name2 }}</span>
+    <br><br>
+  </div>
+
+  <input type="number" [(ngModel)]="age1" (ngModelChange)="updateName2ToABC()">
+
+</div>

@@ -26,13 +26,13 @@ Import FormsModule: In your component's TypeScript file, import `FormsModule` fr
 
   ```typescript - (demo-ng-model.component.ts)
        import { Component } from '@angular/core';
-
+       import { FormsModule } from '@angular/forms';   // Import FormsModule
        @Component({
-         selector: 'app-demo-ng-model',
-         standalone: true,
-         imports: [],
-         templateUrl: './demo-ng-model.component.html',
-         styleUrl: './demo-ng-model.component.css'
+            selector: 'app-demo-ng-model',
+            standalone: true,
+            imports: [FormsModule],
+            templateUrl: './demo-ng-model.component.html',
+            styleUrl: './demo-ng-model.component.css'
        })
        export class DemoNgModelComponent {
             name: string = 'John Doe';
@@ -56,7 +56,7 @@ Changes made in the input field will update `name`, and vice versa.
 
   - While `[(ngModel)]` is convenient, it's actually shorthand for separate property and event bindings.
   - You can achieve the same functionality with:
-    ` <input [ngModel]="name" (ngModelChange)="setName($event)" id="example-ngModel"> `
+    ` <input [ngModel]="name" (ngModelChange)="setName($event)"> `
   - `[ngModel]` sets the initial value of the input field from `name`.
   - `(ngModelChange)` listens for changes in the input field and calls the `setName` method in the component with the new value (`$event`).
 
