@@ -4,21 +4,45 @@
   <p [innerText]="'Two-way Data Binding - ngModel'"></p>
 
   <div>
-    <!--  Two-Way Data Binding with [(ngModel)]  -->
+    <!--  Two-way Data Binding with [(ngModel)]  -->
     <input id="#input1" type="text" [(ngModel)]="name1">
-    <label for="#input1"> Name 1: </label>
+    <label for="#input1"> 1. Name: </label>
     <span>{{ name1 }}</span>
     <br><br>
   </div>
 
   <div>
-    <!--  One-Way Data Binding with Custom Change Handling  -->
-    <input id="#input2" type="text" [ngModel]="name2" (ngModelChange)="updateName2($event)">
-    <label for="#input2">Name 2: </label>
+    <!--  Two-way Data Binding with [ngModel] & Change Listener via (ngModelChange) for Logs -->
+    <input id="#input2" type="text" [(ngModel)]="name2" (ngModelChange)="onChangeName2($event)">
+    <label for="#input2"> 2. Name: </label>
     <span>{{ name2 }}</span>
     <br><br>
   </div>
 
-  <input type="number" [(ngModel)]="age1" (ngModelChange)="updateName2ToABC()">
+  <div>
+    <!--  One-way Data Binding with [ngModel] & Change Listener via (ngModelChange) for Logs  -->
+    <input id="#input3" type="text" [ngModel]="name3" (ngModelChange)="onChangeName3($event)">
+    <label for="#input3"> 3. Name: </label>
+    <span>{{ name3 }}</span>
+    <br><br>
+  </div>
+
+  <div>
+
+    <!-- One-way Data Binding with [ngModel] & manually simulating two-way binding via Change Listener (ngModelChange) -->
+    <input id="#input4" type="text" [ngModel]="name4" (ngModelChange)="updateName4($event)">
+    <label for="#input4"> 4. Name: </label>
+    <span>{{ name4 }}</span>
+    <br><br>
+  </div>
+
+  <div>
+    <!--  One-Way Data Binding with [ngModel] for `lastName5` & Change Listener via (ngModelChange) for `firstName5`  -->
+    <input id="#input5" type="text" [ngModel]="lastName5" (ngModelChange)="updateFirstName5($event)">
+    <label for="#input5">
+      <span> 5. First Name: {{ firstName5 }} - Last Name: {{ lastName5 }}</span>
+    </label>
+    <br><br>
+  </div>
 
 </div>

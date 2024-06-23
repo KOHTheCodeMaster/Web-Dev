@@ -1,0 +1,170 @@
+
+Time Stamp: 23rd Jun 2K24 - 07:38 PM..!!
+
+Title: Data Binding, Event Handling (ngModel & ngModelChange) in Angular
+
+Category: Web Development -> Angular -> Data Binding
+
+Keywords: one-way & two-way data binding, component-view binding, interpolation, ngModelChange, ngModel, Event Handling
+
+Purpose: Understanding one-way data binding, component-view binding, and the usage of `ngModel` and `ngModelChange` in Angular.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Data Binding in Angular:
+------------------------
+
+- Data binding in Angular is a powerful mechanism that enables the synchronization between the model (component) and the view (template).
+- It ensures that changes in the model automatically reflect in the view and vice versa, providing a dynamic and interactive user experience.
+- It encompasses several techniques, including property binding, event binding, interpolation, and two-way binding.
+- Each serving distinct purposes to enhance the development of dynamic and responsive web applications.
+
+One-Way Data Binding:
+---------------------
+
+- One-way data binding is a way to bind data from the component to the view or from the view to the component.
+- It allows data to flow in a single direction.
+
+Component to View (Property Binding):
+    - Property binding binds component properties to DOM element properties.
+    - Syntax:   ` [property]="expression" `
+    - Example:  ` <p [innerText]="strText"> `
+    - The `innerText` property of the `p` element is bound to the `strText` property in the component.
+
+View to Component (Event Binding):
+    - Event binding binds DOM events to component methods.
+    - Syntax:   `(event)="handler"`
+    - Example:  ` <button (click)="onClick()">Click me</button> `
+    - The `click` event of the `button` element is bound to the `onClick` method in the component.
+
+Interpolation:
+    - Interpolation binds component data to the inner text of an HTML element.
+    - Syntax: `{{ expression }}`
+    - Example: ` <p>{{ message }}</p> `
+    - The `message` property in the component is bound to the inner text of the `p` element.
+
+
+Component-View Binding:
+-----------------------
+
+- It involves connecting the component's properties and methods to the DOM elements within the component's template.
+- This is done through property binding, event binding, and interpolation.
+
+Differences b/w Component-View Binding and Other Data Bindings:
+- Property Binding vs. Interpolation:
+    - Property binding is used to bind values to DOM properties, attributes, and even styles.
+    - Interpolation is simpler and is primarily used for embedding values within text nodes.
+
+- Property Binding vs. Event Binding:
+    - Property binding allows you to set values on the DOM properties.
+    - Event binding allows you to respond to user interactions like clicks or key presses.
+
+
+Two-Way Data Binding with `ngModel` and `ngModelChange`:
+--------------------------------------------------------
+
+- Two-way data binding allows data to flow both from the component to the view and from the view to the component.
+- This is essential for form elements where user input needs to be reflected in the component's state and vice versa.
+
+- Syntax:
+    - `[(ngModel)]="property"`: Combines property binding and event binding.
+    - Example: ` <input [(ngModel)]="username"> `
+    - This binds the input element to the `username` property in the component.
+
+- With Custom Event Handling:
+    - `[(ngModel)]` can be combined with `(ngModelChange)` to perform additional actions when the model changes.
+    - Example: ` <input [(ngModel)]="username" (ngModelChange)="onUsernameChange($event)"> `
+
+
+Elements and Properties for `ngModel` Two-Way Binding:
+------------------------------------------------------
+
+- `ngModel` can be used with various form elements and their properties, including:
+
+Input Elements:
+    - Text: `<input type="text" [(ngModel)]="property">`
+    - Number: `<input type="number" [(ngModel)]="property">`
+    - Checkbox: `<input type="checkbox" [(ngModel)]="property">`
+    - Radio: `<input type="radio" [(ngModel)]="property">`
+    - Date: `<input type="date" [(ngModel)]="property">`
+    - Range: `<input type="range" [(ngModel)]="property">`
+
+Select Elements: `<select [(ngModel)]="property">`
+
+Textarea Elements: `<textarea [(ngModel)]="property"></textarea>`
+
+
+Understanding ngModel and ngModelChange:
+----------------------------------------
+
+- ngModel:
+    - ngModel is a directive in Angular that allows for two-way data binding.
+    - This means that it binds an input, select, or textarea element to a property on your component and keeps both in sync.
+
+- ngModelChange:
+    - ngModelChange is an event that is emitted whenever the value bound to ngModel changes.
+    - This allows you to respond to these changes with a custom function.
+
+
+Difference Between (ngModelChange) vs (change):
+-----------------------------------------------
+
+- (ngModelChange): This is specific to Angular and is triggered whenever the value of the `ngModel` directive changes. It is used for two-way data binding.
+
+- (change): This is a standard DOM event that is triggered when the element loses focus and its value has changed.
+
+
+[(ngModel)] vs [ngModel]:
+-------------------------
+
+- [(ngModel)]: This is used for two-way data binding. It binds the input element to a property on the component and keeps both in sync.
+- ` <input [(ngModel)]="propertyName"> `
+
+- [ngModel]: This is used for one-way data binding. It binds the input element to a property on the component but does not update the property if the input value changes.
+- ` <input [ngModel]="propertyName"> `
+
+
+Case Scenarios:
+---------------
+
+Case 1: `[(ngModel)]` without `(ngModelChange)` - Standard Two-Way Binding
+
+- Example: ` <input type="text" [(ngModel)]="name"> `
+- Explanation: This binds the input element to the `name` property in the component, ensuring that changes in the input update the component property and vice versa.
+
+Case 2: `[(ngModel)]` with `(ngModelChange)` - Two-Way Binding with Custom Event Handling
+
+- Example: ` <input type="text" [(ngModel)]="name" (ngModelChange)="onNameChange($event)"> `
+- Explanation: This not only binds the input element to the `name` property but also allows custom handling of the change event, providing greater control over the data flow.
+
+Case 3: `[ngModel]` with `(ngModelChange)` - One-Way Data Binding with Custom Change Handling
+
+- Example: ` <input type="text" [ngModel]="name" (ngModelChange)="onNameChange($event)"> `
+- Explanation: This binds the input element to the `name` property for display purposes and uses `onNameChange` to handle changes, providing one-way data binding with custom event handling.
+
+Case 4: `(ngModelChange)` without `[ngModel]` or `[(ngModel)]` - Invalid & Not Allowed
+
+- Example: ` <input type="text" (ngModelChange)="onNameChange($event)"> `
+- Explanation: This is invalid because `ngModelChange` requires a binding to `ngModel` to function. Without `[ngModel]` or `[(ngModel)]`, Angular will throw an error.
+
+
+Summary:
+--------
+
+- One-Way Data Binding: Data flows in one direction, either from component to view (property binding, interpolation) or from view to component (event binding).
+
+- Component-View Binding: Connects the component properties and methods to the DOM elements using property binding, event binding, and interpolation.
+
+- Two-Way Data Binding: Achieved with `ngModel` and optionally `ngModelChange` for explicit control.
+    - ngModel: Used for two-way data binding.
+    - ngModelChange: Event emitted when the value of the `ngModel` directive changes.
+
+- Element Compatibility: `ngModel` can be used with various form elements like inputs, select, textarea, etc.
+
+- Case Scenarios: Demonstrated standard two-way binding, two-way binding with custom event handling, one-way data binding with custom change handling, and the invalid scenario.
+
+----------------------------------------------------------------------------------------------------
