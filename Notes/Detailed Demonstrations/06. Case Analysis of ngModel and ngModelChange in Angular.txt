@@ -1,0 +1,256 @@
+
+Time Stamp: 23rd Jun. 2K24 - 09:46 PM..!!
+
+Title: Case Analysis of ngModel and ngModelChange in Angular
+
+Category: Angular > Data Binding > Detailed Case Analysis
+
+Keywords: ngModel, ngModelChange, Two-way Binding, One-way Binding
+
+Purpose: To analyze & explore the detailed behavior and applications of ngModel and ngModelChange in Angular
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Detailed Case Analysis of `ngModel` and `ngModelChange`
+-------------------------------------------------------
+
+- In Angular, data binding is a powerful feature that allows you to synchronize data between the model and the view.
+- Understanding the different types of data binding and their use cases is crucial for developing robust Angular applications.
+- This detailed case analysis focuses on the significance of the (ngModelChange) event, exploring various scenarios to demonstrate its behavior and use cases.
+
+File References:
+1. Practice/Angular/base/hello-world/src/app/directives/attribute-directives/demo-ng-model/demo-ng-model.component.ts
+2. Practice/Angular/base/hello-world/src/app/directives/attribute-directives/demo-ng-model/demo-ng-model.component.html
+
+Case 1: Standard Two-Way Data Binding
+-------------------------------------
+
+Scenario: Two-Way Binding with `[(ngModel)]`
+
+Description:
+- This case demonstrates the standard two-way data binding using `[(ngModel)]`.
+- The input field is bound to a property in the component, and changes in the input field automatically update the property and vice versa.
+
+HTML Code:
+```html
+    <div>
+        <p>1. Two-Way Binding with `[(ngModel)]`</p>
+        <input id="input1" type="text" [(ngModel)]="name1">
+        <label for="input1"> Name: </label>
+        <span>{{ name1 }}</span>
+        <br><br>
+    </div>
+```
+
+TypeScript Code: ` name1: string = 'John Doe'; `
+
+Explanation:
+- The `[(ngModel)]` directive binds the `name1` property to the input field,
+- ensuring that any changes in either the input or the property are reflected in the other.
+
+----------------------------------------------------------------------------------------------------
+
+Case 2: Two-Way Binding with Custom Change Handling
+---------------------------------------------------
+
+Scenario: Two-Way Binding with `[(ngModel)]` and `(ngModelChange)`
+
+Description: This case highlights the use of `[(ngModel)]` for two-way data binding along with `(ngModelChange)` for executing custom logic on changes.
+
+HTML Code:
+```html
+    <div>
+        <p>2. Two-Way Binding with `[(ngModel)]` and `(ngModelChange)`</p>
+        <input id="input2" type="text" [(ngModel)]="name2" (ngModelChange)="onChangeName2($event)">
+        <label for="input2"> Name: </label>
+        <span>{{ name2 }}</span>
+        <br><br>
+    </div>
+```
+
+TypeScript Code:
+```typescript
+    name2: string = 'John Doe';
+
+    onChangeName2(name: string) {
+        console.log('onChangeName2() invoked - name: ' + name + ' | ' + 'this.name2: ' + this.name2);
+    }
+```
+
+Explanation:
+- The `[(ngModel)]` directive manages two-way data binding.
+- The `(ngModelChange)` event handler logs changes but does not alter `name2`.
+- If the event handler modifies the bound property, it overrides the default two-way binding behavior.
+
+----------------------------------------------------------------------------------------------------
+
+Case 3: One-Way Data Binding with Custom Change Handling
+--------------------------------------------------------
+
+Scenario: One-Way Binding with `[ngModel]` and `(ngModelChange)`
+
+Description: This case demonstrates one-way data binding using `[ngModel]` and custom change handling via `(ngModelChange)`.
+
+HTML Code:
+```html
+    <div>
+        <p>3. One-Way Binding with `[ngModel]` and `(ngModelChange)`</p>
+        <input id="input3" type="text" [ngModel]="name3" (ngModelChange)="onChangeName3($event)">
+        <label for="input3"> Name: </label>
+        <span>{{ name3 }}</span>
+        <br><br>
+    </div>
+```
+
+TypeScript Code:
+```typescript
+    name3: string = 'John Doe';
+
+    onChangeName3(name: string) {
+        console.log('onChangeName3() invoked - name: ' + name + ' | ' + 'this.name3: ' + this.name3);
+    }
+```
+
+Explanation:
+- The `[ngModel]` directive binds `name3` to the input field for one-way data binding.
+- The `(ngModelChange)` event handler logs changes without updating the property, resulting in one-way binding.
+
+----------------------------------------------------------------------------------------------------
+
+Case 4: Simulating Two-Way Binding with Custom Change Handling
+--------------------------------------------------------------
+
+Scenario: One-Way Binding with `[ngModel]` and Custom Logic via `(ngModelChange)`
+
+Description:
+- This case illustrates how `[ngModel]` can be used for one-way binding,
+- with `(ngModelChange)` to manually update the bound property, simulating two-way binding.
+
+HTML Code:
+```html
+    <div>
+        <p>4. One-Way Binding with `[ngModel]` and Custom Logic via `(ngModelChange)`</p>
+        <input id="input4" type="text" [ngModel]="name4" (ngModelChange)="updateName4($event)">
+        <label for="input4"> Name: </label>
+        <span>{{ name4 }}</span>
+        <br><br>
+    </div>
+```
+
+TypeScript Code:
+```typescript
+    name4: string = 'John Doe';
+
+    updateName4(name: string) {
+        console.log('updateName4() invoked - name: ' + name + ' | ' + 'this.name4: ' + this.name4);
+        this.name4 = name;
+    }
+```
+
+Explanation:
+- The `[ngModel]` directive provides one-way binding.
+- The `(ngModelChange)` handler manually updates `name4`, simulating two-way binding with additional custom logic.
+
+----------------------------------------------------------------------------------------------------
+
+Case 5: One-Way Binding with Custom Change Handling for Another Field
+---------------------------------------------------------------------
+
+Scenario: One-Way Binding with `[ngModel]` and `(ngModelChange)` Modifying Another Field
+
+Description: This case shows `[ngModel]` for one-way binding and `(ngModelChange)` for updating a different property.
+
+HTML Code:
+```html
+    <div>
+        <p>5. One-Way Binding with `[ngModel]` and `(ngModelChange)` for Another Field</p>
+        <input id="input5" type="text" [ngModel]="lastName5" (ngModelChange)="updateFirstName5($event)">
+        <label for="input5">
+            <span> First Name: {{ firstName5 }} | Last Name: {{ lastName5 }}</span>
+        </label>
+        <br><br>
+    </div>
+```
+
+TypeScript Code:
+```typescript
+    lastName5: string = 'Doe';
+    firstName5: string = 'John';
+
+    updateFirstName5(name: string) {
+        console.log('updateFirstName5() invoked - name: ' + name + ' | ' + 'this.firstName5: ' + this.firstName5);
+        this.firstName5 = name;
+    }
+```
+
+Explanation:
+- `[ngModel]` binds `lastName5` for one-way binding.
+- `(ngModelChange)` updates `firstName5`, demonstrating the ability to modify a different property.
+
+----------------------------------------------------------------------------------------------------
+
+Case 6: Invalid Usage of `(ngModelChange)`
+------------------------------------------
+
+Scenario: Invalid Usage of `(ngModelChange)` Without `[ngModel]` or `[(ngModel)]`
+
+Description: This case is invalid as `(ngModelChange)` must be used with either `[ngModel]` or `[(ngModel)]`.
+
+HTML Code:
+```html
+    <div>
+        <p>6. Invalid Usage of `(ngModelChange)`</p>
+        <input id="input6" type="text" (ngModelChange)="updateName6($event)">
+        <label for="input6"> Name: </label>
+        <span>{{ name6 }}</span>
+        <br><br>
+    </div>
+```
+
+TypeScript Code:
+```typescript
+    name6: string = 'John Doe';
+
+    updateName6(name: string) {
+        console.log('updateName6() method will never be invoked.\n' +
+            '`(ngModelChange)` without `[ngModel]` or `[(ngModel)]` - Invalid & not allowed')
+        this.name6 = name;
+    }
+```
+
+Explanation: This configuration is invalid and does not work as `(ngModelChange)` requires either `[ngModel]` or `[(ngModel)]`.
+
+----------------------------------------------------------------------------------------------------
+
+Summary:
+--------
+
+1. Standard Two-Way Data Binding
+   - Case: `[(ngModel)]`
+   - Description: Simple two-way data binding, automatically synchronizes input and property.
+
+2. Two-Way Binding with Custom Change Handling
+   - Case: `[(ngModel)]` with `(ngModelChange)`
+   - Description: Two-way binding with custom logic in `(ngModelChange)`. Event handler can override default binding behavior.
+
+3. One-Way Binding with Custom Change Handling
+   - Case: `[ngModel]` with `(ngModelChange)`
+   - Description: One-way binding with custom logic. Changes logged but property not updated.
+
+4. Simulating Two-Way Binding with Custom Logic
+   - Case: `[ngModel]` with `(ngModelChange)`
+   - Description: One-way binding with manual updates in `(ngModelChange)`, simulating two-way binding.
+
+5. One-Way Binding with Change Handling for Another Field
+   - Case: `[ngModel]` with `(ngModelChange)` modifying another field
+   - Description: One-way binding with `(ngModelChange)` updating a different property.
+
+6. Invalid Usage of `(ngModelChange)`
+   - Case: `(ngModelChange)` without `[ngModel]` or `[(ngModel)]`
+   - Description: Invalid setup. `(ngModelChange)` requires `[ngModel]` or `[(ngModel)]`.
+
+----------------------------------------------------------------------------------------------------

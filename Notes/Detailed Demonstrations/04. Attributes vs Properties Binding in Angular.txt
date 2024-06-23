@@ -3,7 +3,7 @@ Time Stamp: 21st Jun 2K24 - 09:17 PM..!!
 
 Title: Attributes vs Properties Binding in Angular
 
-Category: Learning -> Web Development -> Angular -> Data Binding
+Category: Web Development -> Angular -> Data Binding
 
 Keywords: Angular, Attributes, Properties, Data Binding, Examples
 

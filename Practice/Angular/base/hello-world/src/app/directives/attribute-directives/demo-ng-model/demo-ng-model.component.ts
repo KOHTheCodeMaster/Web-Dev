@@ -14,30 +14,32 @@ export class DemoNgModelComponent {
     name2: string = 'John Doe';
     name3: string = 'John Doe';
     name4: string = 'John Doe';
-    firstName5: string = 'John Doe';
-    lastName5: string = 'John Doe';
-    age1: number = 1;
+    firstName5: string = 'John';
+    lastName5: string = 'Doe';
+    name6: string = 'John Doe';
 
     onChangeName2(name: string) {
-        console.log('name: ' + name + ' | ' + 'this.name2: ' + this.name2);
-        //  This method has higher precedence than automatic data change binding of [(ngModel)],
-        //  If data is not changed here, by default [(ngModel)] will automatically update the field via two-way binding behavior
-        //  If data (which is bound by ngModel, name2 in this case) is changed in this method,
-        //      the default two-way binding behavior of [(ngModel)] would be overridden by this method changes,
-        //      logic to update the field manually with the input value needs to be handled carefully
-        // this.name2 = name + ' ! ';  //  Added ' ! ' text to visually see the difference.
+        console.log('onChangeName2() invoked - name: ' + name + ' | ' + 'this.name2: ' + this.name2);
     }
 
     onChangeName3(name: string) {
-        console.log('onChangeName3 invoked - name: ' + name + ' | ' + 'this.name3: ' + this.name3);
-        // this.name3 = name;
+        console.log('onChangeName3() invoked - name: ' + name + ' | ' + 'this.name3: ' + this.name3);
     }
 
     updateName4(name: string) {
+        console.log('updateName4() invoked - name: ' + name + ' | ' + 'this.name4: ' + this.name4);
         this.name4 = name;
     }
 
     updateFirstName5(name: string) {
+        console.log('updateFirstName5() invoked - name: ' + name + ' | ' + 'this.firstName5: ' + this.firstName5);
         this.firstName5 = name;
     }
+
+    updateName6(name: any) {
+        console.log('updateName6() method will never be invoked.\n' +
+            '`(ngModelChange)` without `[ngModel]` or `[(ngModel)]` - Invalid & not allowed')
+        this.name6 = name;
+    }
+
 }

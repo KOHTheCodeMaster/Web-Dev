@@ -152,6 +152,16 @@ Case 4: `(ngModelChange)` without `[ngModel]` or `[(ngModel)]` - Invalid & Not A
 - Explanation: This is invalid because `ngModelChange` requires a binding to `ngModel` to function. Without `[ngModel]` or `[(ngModel)]`, Angular will throw an error.
 
 
+Additional Points:
+------------------
+
+- Binding Precedence: When using both [(ngModel)] and (ngModelChange), the (ngModelChange) method will override the automatic update by [(ngModel)] if it modifies the value.
+
+- Form Control: ngModel works with Angular forms to provide validation and form control features.
+
+- Custom Events: Use (ngModelChange) to execute additional logic when the model changes, such as logging, additional validations, or modifying other component properties.
+
+
 Summary:
 --------
 

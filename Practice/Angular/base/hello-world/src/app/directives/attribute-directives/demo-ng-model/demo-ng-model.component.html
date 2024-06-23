@@ -1,10 +1,10 @@
 <!--  Two-way Data Binding - ngModel & ngModelChange -->
 <div>
 
-  <p [innerText]="'Two-way Data Binding - ngModel'"></p>
+  <p [innerText]="'Two-way Data Binding..!!'"></p>
 
   <div>
-    <!--  Two-way Data Binding with [(ngModel)]  -->
+    <p>1. Two-way Data Binding with [(ngModel)]</p>
     <input id="#input1" type="text" [(ngModel)]="name1">
     <label for="#input1"> 1. Name: </label>
     <span>{{ name1 }}</span>
@@ -12,36 +12,43 @@
   </div>
 
   <div>
-    <!--  Two-way Data Binding with [ngModel] & Change Listener via (ngModelChange) for Logs -->
+    <p>2. Two-way Data Binding with [ngModel] & Change Listener via (ngModelChange) for Logs</p>
     <input id="#input2" type="text" [(ngModel)]="name2" (ngModelChange)="onChangeName2($event)">
-    <label for="#input2"> 2. Name: </label>
+    <label for="#input2"> Name: </label>
     <span>{{ name2 }}</span>
     <br><br>
   </div>
 
   <div>
-    <!--  One-way Data Binding with [ngModel] & Change Listener via (ngModelChange) for Logs  -->
+    <p>3. One-way Data Binding with [ngModel] & Change Listener via (ngModelChange) for Logs</p>
     <input id="#input3" type="text" [ngModel]="name3" (ngModelChange)="onChangeName3($event)">
-    <label for="#input3"> 3. Name: </label>
+    <label for="#input3"> Name: </label>
     <span>{{ name3 }}</span>
     <br><br>
   </div>
 
   <div>
-
-    <!-- One-way Data Binding with [ngModel] & manually simulating two-way binding via Change Listener (ngModelChange) -->
+    <p>4. One-way Data Binding with [ngModel] & manually simulating two-way binding via Change Listener (ngModelChange)</p>
     <input id="#input4" type="text" [ngModel]="name4" (ngModelChange)="updateName4($event)">
-    <label for="#input4"> 4. Name: </label>
+    <label for="#input4"> Name: </label>
     <span>{{ name4 }}</span>
     <br><br>
   </div>
 
   <div>
-    <!--  One-Way Data Binding with [ngModel] for `lastName5` & Change Listener via (ngModelChange) for `firstName5`  -->
+    <p>5. One-Way Data Binding with [ngModel] for `lastName5` & Change Listener via (ngModelChange) for `firstName5`</p>
     <input id="#input5" type="text" [ngModel]="lastName5" (ngModelChange)="updateFirstName5($event)">
     <label for="#input5">
-      <span> 5. First Name: {{ firstName5 }} - Last Name: {{ lastName5 }}</span>
+      <span> First Name: {{ firstName5 }} | Last Name: {{ lastName5 }}</span>
     </label>
+    <br><br>
+  </div>
+
+  <div>
+    <p>6. `(ngModelChange)` without `[ngModel]` or `[(ngModel)]` - Invalid & does not works</p>
+    <input id="#input6" type="text" (ngModelChange)="updateName6($event)">
+    <label for="#input6"> 6. Name: </label>
+    <span>{{ name6 }}</span>
     <br><br>
   </div>
 
