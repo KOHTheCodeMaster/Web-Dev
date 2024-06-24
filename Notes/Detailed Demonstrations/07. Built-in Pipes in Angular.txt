@@ -1,0 +1,149 @@
+
+Time Stamp: 24th Jun. 2K24 - 11:14 PM..!!
+
+Title: Built-in Pipes in Angular - Detailed Demonstration
+
+Category: Web Development -> Angular -> Pipes
+
+Keywords: Angular Built-in Pipes, Pipe Parameters, Data Transformation, Detailed Demonstration
+
+Purpose: To analyze on built-in pipes in Angular, including usage, parameters, and all possible cases and scenarios
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Detailed Demonstration of Built-in Pipes in Angular:
+----------------------------------------------------
+
+DatePipe:
+
+    Purpose: Formats date values according to locale rules.
+
+    Case 1: Default Format
+        ```html <p>Default date format: {{ today | date }}</p> ```
+        - Explanation: Displays the date using the default locale format.
+
+    Case 2: Custom Format 'fullDate'
+        ` <p>Full date format: {{ today | date:'fullDate' }}</p> `
+        - Explanation: Displays the date in the full date format (e.g., "Monday, June 24, 2024").
+
+    Case 3: Custom Format 'shortDate'
+        ` <p>Short date format: {{ today | date:'shortDate' }}</p> `
+        - Explanation: Displays the date in a short format (e.g., "6/24/24").
+
+    Case 4: Custom Format 'dd/MM/yyyy'
+        ` <p>Custom date format: {{ today | date:'dd/MM/yyyy' }}</p> `
+        - Explanation: Displays the date in "day/month/year" format.
+
+    Case 5: Custom Time Format 'hh:mm a'
+        ` <p>Time format: {{ today | date:'hh:mm a' }}</p> `
+        - Explanation: Displays the time in "hour:minute am/pm" format.
+
+    Case 6: With Timezone 'UTC'
+        ` <p>Time with timezone: {{ today | date:'hh:mm a':'UTC' }}</p> `
+        - Explanation: Displays the time in UTC timezone.
+
+UpperCasePipe and LowerCasePipe:
+
+    Purpose: Converts text to uppercase or lowercase.
+
+    Case 1: Uppercase
+        ` <p>Uppercase: {{ 'hello' | uppercase }}</p> `
+        - Explanation: Transforms "hello" to "HELLO".
+
+    Case 2: Lowercase
+        ` <p>Lowercase: {{ 'HELLO' | lowercase }}</p> `
+        - Explanation: Transforms "HELLO" to "hello".
+
+CurrencyPipe:
+
+    Purpose: Formats numbers as currency.
+
+    Case 1: Default Currency
+        ` <p>Default currency: {{ amount | currency }}</p> `
+        - Explanation: Formats the number using the default currency format.
+
+    Case 2: Specific Currency Code 'USD'
+        ` <p>Specific currency (USD): {{ amount | currency:'USD' }}</p> `
+        - Explanation: Formats the number as USD currency.
+
+    Case 3: Custom Display Symbol 'USD'
+        ` <p>Custom display symbol (USD): {{ amount | currency:'USD':'symbol' }}</p> `
+        - Explanation: Displays the currency using the symbol (e.g., "$").
+
+    Case 4: Custom Display Code 'USD'
+        ` <p>Custom display code (USD): {{ amount | currency:'USD':'code' }}</p> `
+        - Explanation: Displays the currency using the code (e.g., "USD").
+
+    Case 5: Custom Format with Digits 'USD'
+        ` <p>Custom format (USD): {{ amount | currency:'USD':'symbol':'1.2-2' }}</p> `
+        - Explanation: Formats the currency with 1 digit before the decimal and 2 digits after.
+
+DecimalPipe:
+
+    Purpose: Formats numbers as decimals.
+
+    Case 1: Default Decimal
+        ` <p>Default decimal: {{ value | number }}</p> `
+        - Explanation: Formats the number using the default decimal format.
+
+    Case 2: Custom Decimal '1.0-0'
+        ` <p>Custom decimal (1.0-0): {{ value | number:'1.0-0' }}</p> `
+        - Explanation: Formats the number with 1 digit before the decimal and no digits after.
+
+    Case 3: Custom Decimal '1.1-1'
+        ` <p>Custom decimal (1.1-1): {{ value | number:'1.1-1' }}</p> `
+        - Explanation: Formats the number with 1 digit before the decimal and 1 digit after.
+
+    Case 4: Custom Decimal '1.2-2'
+        ` <p>Custom decimal (1.2-2): {{ value | number:'1.2-2' }}</p> `
+        - Explanation: Formats the number with 1 digit before the decimal and 2 digits after.
+
+    Case 5: Custom Decimal '2.2-2'
+        ` <p>Custom decimal (2.2-2): {{ value | number:'2.2-2' }}</p> `
+        - Explanation: Formats the number with 2 digits before the decimal and 2 digits after.
+
+PercentPipe:
+
+    Purpose: Formats numbers as percentages.
+
+    Case 1: Default Percent
+        ` <p>Default percent: {{ decimalValue | percent }}</p> `
+        - Explanation: Formats the number using the default percent format.
+
+    Case 2: Custom Percent '1.0-0'
+        ` <p>Custom percent (1.0-0): {{ decimalValue | percent:'1.0-0' }}</p> `
+        - Explanation: Formats the number with 1 digit before the decimal and no digits after.
+
+    Case 3: Custom Percent '1.1-1'
+        ` <p>Custom percent (1.1-1): {{ decimalValue | percent:'1.1-1' }}</p> `
+        - Explanation: Formats the number with 1 digit before the decimal and 1 digit after.
+
+    Case 4: Custom Percent '1.2-2'
+        ` <p>Custom percent (1.2-2): {{ decimalValue | percent:'1.2-2' }}</p> `
+        - Explanation: Formats the number with 1 digit before the decimal and 2 digits after.
+
+    Case 5: Custom Percent '2.2-2'
+        ` <p>Custom percent (2.2-2): {{ decimalValue | percent:'2.2-2' }}</p> `
+        - Explanation: Formats the number with 2 digits before the decimal and 2 digits after.
+
+JsonPipe:
+
+    Purpose: Converts objects to JSON strings.
+
+    Case 1: Default JSON
+        ` <pre>{{ data | json }}</pre> `
+        - Explanation: Converts the object to a JSON string for display.
+
+
+Summary:
+--------
+
+- This captures the detailed usage, cases, and explanations for each built-in pipe in Angular, demonstrating their purpose and various parameter configurations.
+
+- These examples showcase how to apply each pipe effectively to achieve desired data transformations in Angular templates.
+
+----------------------------------------------------------------------------------------------------
