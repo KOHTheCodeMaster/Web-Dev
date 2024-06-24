@@ -1,0 +1,131 @@
+
+Time Stamp: 24th Jun. 2K24 - 08:45 AM..!!
+
+Title: Built-in Pipes in Angular
+
+Category: Web Development -> Angular -> Pipes
+
+Keywords: Angular Built-in Pipes, Pipe Usage, Parameters, Chaining Pipes
+
+Purpose: Understanding built-in pipes in Angular, usage in templates, handling multiple parameters, and chaining for data transformation.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Introduction to Pipes:
+-------------------------
+
+- Pipes in Angular are used to transform data in the template before displaying it.
+- They provide a convenient way to format, manipulate, and filter data right within the HTML template.
+
+Built-in Pipes in Angular:
+
+- Angular provides several built-in pipes for common transformations.
+- These pipes are efficient for common tasks like formatting numbers, dates, and strings, as well as performing basic transformations.
+- Built-in pipes are applied directly in Angular templates using the `|` symbol followed by the pipe name and optional parameters.
+
+List of Common Built-in Pipes:
+
+1. DatePipe
+    - Usage: Formats dates according to locale rules.
+    - <p>Today is {{ today | date }}</p>
+    - Options: Allows customization with format strings ('short', 'medium', 'long', 'full', custom formats).
+
+2. UpperCasePipe and LowerCasePipe
+    - Usage: Converts text to uppercase or lowercase.
+    - Example: ` <p>{{ 'Hello World' | uppercase }}</p> `
+
+3. CurrencyPipe
+    - Usage: Formats a number as currency.
+    - Example: ` <p>Price: {{ product.price | currency }}</p> `
+    - Options: Supports specifying currency code, display format, and locale.
+
+4. DecimalPipe
+    - Usage: Formats numbers as decimal numbers.
+    - Example: ` <p>{{ pi | number:'1.2-2' }}</p> `
+    - Options: Allows specifying minimum and maximum digits.
+
+5. PercentPipe
+    - Usage: Formats numbers as percentages.
+    - Example: ` <p>Discount: {{ discountPercentage | percent }}</p> `
+    - Options: Customizes display format.
+
+6. JsonPipe
+    - Usage: Converts JavaScript objects into JSON strings.
+    - Example: ` <pre>{{ object | json }}</pre> `
+
+----------------------------------------------------------------------------------------------------
+
+2. Handling Parameters in Built-in Pipes:
+-----------------------------------------
+
+Additional Parameters for Pipes in Angular:
+- Usage: Follow the pipe name with a colon (:) and the parameter value.
+
+Single Parameter:
+  - Date Pipe: Controls the display format of the date.
+  - Template: ` <p>The hero's birthday is in {{ birthday | date:'yyyy' }}</p> `
+  - Output: Displays current year (e.g., 2024).
+
+Multiple Parameters:
+  - Date Pipe: Accepts a second optional parameter for timezone.
+  - Template: ` <p>The current time is: {{ currentTime | date:'hh:mm':'UTC' }}</p> `
+  - Output: Displays current time in the UTC timezone (e.g., 10:53).
+
+Static Parameters:
+    - Parameters for built-in pipes are defined directly in the template.
+    ```html
+       <!-- Example: Using currency pipe with parameters -->
+       <p>{{ priceValue | currency:'USD':'symbol':'1.2-2' }}</p>
+    ```
+
+Dynamic Parameters:
+    - Parameters can be dynamically bound from component properties.
+    ```typescript
+       // Component class
+       export class AppComponent {
+         currencyCode: string = 'USD';
+         currencySymbol: boolean = true;
+         decimalFormat: string = '1.2-2';
+       }
+    ```
+
+    ```html
+       <!-- Example: Using dynamic parameters -->
+       <p>{{ priceValue | currency:currencyCode:currencySymbol:decimalFormat }}</p>
+    ```
+
+----------------------------------------------------------------------------------------------------
+
+3. Chaining Built-in Pipes:
+---------------------------
+
+- Chaining allows applying multiple pipes in sequence to format or transform data.
+- We can connect multiple pipes so that the output of one pipe becomes the input to the next.
+
+Example of Chaining Built-in Pipes
+
+```html
+    <!-- Example: Chaining date and uppercase pipes -->
+    <p>{{ currentDate | date:'fullDate' | uppercase }}</p>
+```
+
+```html
+    <!-- Example: Chaining slice and lowercase pipes -->
+    <p>{{ 'Hello World' | slice:0:5 | lowercase }}</p>
+```
+
+
+4. Summary:
+-----------
+
+- Built-in pipes in Angular provide efficient data transformation capabilities.
+- Usage in templates involves applying pipes with parameters using the `|` symbol.
+- Additional Parameters: follow the pipe name with a colon (:) and the parameter value.
+- Parameters can be static or dynamically bound from component properties.
+- Chaining pipes allows sequential application of transformations to format or manipulate data effectively.
+
+----------------------------------------------------------------------------------------------------
