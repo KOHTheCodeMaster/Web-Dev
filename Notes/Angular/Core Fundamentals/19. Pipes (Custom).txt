@@ -1,0 +1,231 @@
+
+Time Stamp: 24th Jun. 2K24 - 10:47 PM..!!
+
+Title: Built-in Pipes in Angular
+
+Category: Web Development -> Angular -> Custom Pipes
+
+Keywords: Angular, Custom Pipes, Pipe Transformation, Angular CLI, Pipe Decorator
+
+Purpose: Understanding creating and using custom pipes in Angular
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Introduction:
+----------------
+
+- Pipes in Angular allow data transformation within templates.
+- While Angular provides a range of built-in pipes, you can create custom pipes to handle specific transformation logic that suits your application's needs.
+
+Creating a Custom Pipe:
+
+Step-by-Step Guide
+
+1. Generate a Pipe using Angular CLI -> ` ng generate pipe customPipe `
+
+2. Pipe Class Definition:
+    - Import `Pipe` and `PipeTransform` from `@angular/core`.
+    - Use the `@Pipe` decorator to define metadata for the pipe.
+    - Implement the `PipeTransform` interface to define the `transform` method.
+
+    ```typescript
+        import { Pipe, PipeTransform } from '@angular/core';
+
+        @Pipe({
+          name: 'customPipe'
+        })
+        export class CustomPipe implements PipeTransform {
+          transform(value: any, ...args: any[]): any {
+            // Transformation logic here
+            return value;
+          }
+        }
+    ```
+
+Example: Reverse String Pipe
+
+1. Generate the Pipe -> ` ng generate pipe reverseString `
+
+2. Implement the Pipe
+    ```typescript
+        import { Pipe, PipeTransform } from '@angular/core';
+
+        @Pipe({
+          name: 'reverseString'
+        })
+        export class ReverseStringPipe implements PipeTransform {
+          transform(value: string): string {
+            return value.split('').reverse().join('');
+          }
+        }
+    ```
+
+3. Use the Pipe in a Template
+    ` <p>{{ 'Hola..!! ^-^' | reverseString }}</p> `
+    - Output: `^-^ !!..olaH`
+
+
+2. Using Parameters in Custom Pipes:
+------------------------------------
+
+Custom pipes can accept additional parameters to control their behavior.
+
+Example: Exponential Pipe
+
+1. Generate the Pipe -> ` ng generate pipe exponential `
+
+2. Implement the Pipe
+    ```typescript
+        import { Pipe, PipeTransform } from '@angular/core';
+
+        @Pipe({
+          name: 'exponential'
+        })
+        export class ExponentialPipe implements PipeTransform {
+          transform(value: number, exponent: number = 1): number {
+            return Math.pow(value, exponent);
+          }
+        }
+    ```
+
+3. Use the Pipe with Parameters in a Template
+    ` <p>{{ 2 | exponential:3 }}</p> `
+    - Output: `8` (2 raised to the power of 3)
+
+
+3. Custom Pipe with Multiple Parameters:
+----------------------------------------
+
+Example: Append Text Pipe
+
+1. Generate the Pipe -> ` ng generate pipe appendText `
+
+2. Implement the Pipe
+    ```typescript
+        import { Pipe, PipeTransform } from '@angular/core';
+
+        @Pipe({
+          name: 'appendText'
+        })
+        export class AppendTextPipe implements PipeTransform {
+          transform(value: string, text: string, position: 'start' | 'end' = 'end'): string {
+            return position === 'start' ? text + value : value + text;
+          }
+        }
+    ```
+
+3. Use the Pipe with Multiple Parameters in a Template
+    ` <p>{{ 'Angular' | appendText:' is awesome':'start' }}</p> `
+    - Output: ` is awesomeAngular`
+
+
+Including the Custom Pipe in a Standalone Component:
+----------------------------------------------------
+
+Example
+
+1. Component Definition
+    ```typescript
+        import { Component } from '@angular/core';
+        import { CommonModule } from '@angular/common';
+        import { ReverseStringPipe } from './reverse-string.pipe';
+        import { AppendTextPipe } from './append-text.pipe';
+
+        @Component({
+          selector: 'app-demo-custom-pipes',
+          standalone: true,
+          imports: [CommonModule, ReverseStringPipe, AppendTextPipe],
+          templateUrl: './demo-custom-pipes.component.html',
+          styleUrls: ['./demo-custom-pipes.component.css']
+        })
+        export class DemoCustomPipesComponent {
+          text: string = 'Hello Angular';
+        }
+    ```
+
+2. Template Usage
+    ```html
+        <div>
+          <!-- ReverseStringPipe Example -->
+          <h2>ReverseStringPipe Example</h2>
+          <p>{{ text | reverseString }}</p>
+
+          <!-- AppendTextPipe Example -->
+          <h2>AppendTextPipe Example</h2>
+          <p>{{ text | appendText:' - Angular':'end' }}</p>
+        </div>
+    ```
+
+Advanced Custom Pipes
+
+Example: Filter Pipe
+
+1. Generate the Pipe
+    ```bash
+    ng generate pipe filter
+    ```
+
+2. Implement the Pipe
+    ```typescript
+    import { Pipe, PipeTransform } from '@angular/core';
+
+    @Pipe({
+      name: 'filter'
+    })
+    export class FilterPipe implements PipeTransform {
+      transform(items: any[], searchText: string): any[] {
+        if (!items) return [];
+        if (!searchText) return items;
+        searchText = searchText.toLowerCase();
+        return items.filter(it => {
+          return it.toLowerCase().includes(searchText);
+        });
+      }
+    }
+    ```
+
+3. Use the Pipe in a Template
+    ```html
+    <ul>
+      <li *ngFor="let item of items | filter:searchText">{{ item }}</li>
+    </ul>
+    ```
+
+4. Component Definition
+    ```typescript
+    import { Component } from '@angular/core';
+    import { CommonModule } from '@angular/common';
+    import { FilterPipe } from './filter.pipe';
+
+    @Component({
+      selector: 'app-demo-filter-pipe',
+      standalone: true,
+      imports: [CommonModule, FilterPipe],
+      templateUrl: './demo-filter-pipe.component.html',
+      styleUrls: ['./demo-filter-pipe.component.css']
+    })
+    export class DemoFilterPipeComponent {
+      items = ['Angular', 'React', 'Vue'];
+      searchText = '';
+    }
+    ```
+
+5. Template Usage
+    ```html
+    <div>
+      <input [(ngModel)]="searchText" placeholder="Search items">
+      <ul>
+        <li *ngFor="let item of items | filter:searchText">{{ item }}</li>
+      </ul>
+    </div>
+    ```
+
+Conclusion
+
+Custom pipes in Angular allow you to encapsulate reusable transformation logic, making your templates cleaner and more readable. By following the steps outlined in this documentation, you can create and use custom pipes tailored to your application's requirements.
+
+----------------------------------------------------------------------------------------------------

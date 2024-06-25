@@ -6,7 +6,7 @@ Title: Var & Let Scoping.
 
 Dev: K.O.H..!! (Harshit Gupta)
 
-GitHub: https://github.com/KOHTheCodeMaster/TypeScript-Fundamentals
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev
 
 */
 main();
@@ -23,7 +23,7 @@ function letScopingCompileTimeError() {
     }
     console.log('Compile Time Error - error TS2304: Cannot find name \'x\'.\n' +
         'But still it is compiled and converted to JS code, which contains var keyword and produces output as per JS var scoping.');
-    console.log('x: ' + x);
+    // console.log('x: ' + x);
     console.log("Method: letScopingCompileTimeError Ends.\n");
 }
 function varScoping() {
