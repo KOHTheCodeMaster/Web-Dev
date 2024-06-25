@@ -1,0 +1,39 @@
+<div>
+  <!-- DatePipe Examples -->
+  <h2>DatePipe Examples</h2>
+  <p>Default date format: {{ today | date }}</p>
+  <p>Full date format: {{ today | date:'fullDate' }}</p>
+  <p>Short date format: {{ today | date:'shortDate' }}</p>
+  <p>Custom date ('dd/MM/yyyy') format : {{ today | date:'dd/MM/yyyy' }}</p>
+  <p>Time format: {{ today | date:'hh:mm a' }}</p>
+  <p>Time with timezone: {{ today | date:'hh:mm a':'UTC' }}</p>
+
+  <!-- UpperCasePipe and LowerCasePipe Examples -->
+  <h2>UpperCasePipe and LowerCasePipe Examples</h2>
+  <p>Uppercase: {{ textValue | uppercase }}</p>
+  <p>Lowercase: {{ textValue | lowercase }}</p>
+
+  <!-- CurrencyPipe Examples -->
+  <h2>CurrencyPipe Examples</h2>
+  <p>Default currency: {{ amount | currency }}</p>
+  <p>Specific currency (AUD): {{ amount | currency:'AUD' }}</p>
+  <p>Custom display symbol (INR): {{ amount | currency:'INR':'symbol' }}</p>
+  <p>Custom display code (USD): {{ amount | currency:'USD':'code' }}</p>
+  <p>Custom format (USD): {{ amount | currency:'USD':'symbol':'1.2-2' }}</p>
+
+  <!-- DecimalPipe Examples -->
+  <h2>DecimalPipe Examples</h2>
+  <p>Default decimal: {{ decimalValue1 | number }}</p>
+  <p>Custom decimal (1.0-0): {{ decimalValue1 | number:'1.0-0' }}</p>
+  <p>Custom decimal (1.2-2): {{ decimalValue1 | number:'1.2-2' }}</p>
+
+  <!-- PercentPipe Examples -->
+  <h2>PercentPipe Examples</h2>
+  <p>Default percent: {{ decimalValue2 | percent }}</p>
+  <p>Custom percent (1.0-0): {{ decimalValue2 | percent:'1.0-0' }}</p>
+  <p>Custom percent (1.2-2): {{ decimalValue2 | percent:'1.2-2' }}</p>
+
+  <!-- JsonPipe Example -->
+  <h2>JsonPipe Example</h2>
+  <p>{{ data | json }}</p>
+</div>

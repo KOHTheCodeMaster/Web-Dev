@@ -18,13 +18,26 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 Detailed Demonstration of Built-in Pipes in Angular:
 ----------------------------------------------------
 
+- Angular provides several built-in pipes that can be used to transform data within templates.
+- Pipes are powerful tools for formatting data, making it more readable and user-friendly.
+- This document provides a detailed demonstration of each built-in pipe, including all possible parameters and their usage.
+
+
 DatePipe:
 
     Purpose: Formats date values according to locale rules.
 
+    Parameters:
+            - format: The format in which the date should be displayed (e.g., 'shortDate', 'medium', 'fullDate', or custom format like 'dd/MM/yyyy').
+            - timezone: The timezone to be used for displaying the date (e.g., 'UTC').
+            - locale: The locale to be used for formatting the date.
+
+    Usage: ` {{ dateValue | date:'format':'timezone':'locale' }} `
+
+
     Case 1: Default Format
         ```html <p>Default date format: {{ today | date }}</p> ```
-        - Explanation: Displays the date using the default locale format.
+        - Explanation: Displays the date using the default locale format (e.g., "Jun 24, 2024")
 
     Case 2: Custom Format 'fullDate'
         ` <p>Full date format: {{ today | date:'fullDate' }}</p> `
@@ -49,6 +62,10 @@ DatePipe:
 UpperCasePipe and LowerCasePipe:
 
     Purpose: Converts text to uppercase or lowercase.
+
+    Usage:
+        - ` {{ textValue | uppercase }} `
+        - ` {{ textValue | lowercase }} `
 
     Case 1: Uppercase
         ` <p>Uppercase: {{ 'hello' | uppercase }}</p> `
@@ -86,25 +103,24 @@ DecimalPipe:
 
     Purpose: Formats numbers as decimals.
 
+    - Usage: ` {{ value | number:'minIntegerDigits.minFractionDigits-maxFractionDigits' }} `
+
+    Parameters:
+        - minIntegerDigits: The minimum number of integer digits before the decimal point.
+        - minFractionDigits: The minimum number of digits after the decimal point.
+        - maxFractionDigits: The maximum number of digits after the decimal point.
+
     Case 1: Default Decimal
         ` <p>Default decimal: {{ value | number }}</p> `
-        - Explanation: Formats the number using the default decimal format.
+        - Explanation: Formats the number using the default decimal format (e.g., "1,234.56").
 
     Case 2: Custom Decimal '1.0-0'
         ` <p>Custom decimal (1.0-0): {{ value | number:'1.0-0' }}</p> `
-        - Explanation: Formats the number with 1 digit before the decimal and no digits after.
+        - Explanation: Formats the number with at least 1 digit before the decimal point and no digits after (e.g., "1235").
 
-    Case 3: Custom Decimal '1.1-1'
-        ` <p>Custom decimal (1.1-1): {{ value | number:'1.1-1' }}</p> `
-        - Explanation: Formats the number with 1 digit before the decimal and 1 digit after.
-
-    Case 4: Custom Decimal '1.2-2'
+    Case 3: Custom Decimal '1.2-2'
         ` <p>Custom decimal (1.2-2): {{ value | number:'1.2-2' }}</p> `
-        - Explanation: Formats the number with 1 digit before the decimal and 2 digits after.
-
-    Case 5: Custom Decimal '2.2-2'
-        ` <p>Custom decimal (2.2-2): {{ value | number:'2.2-2' }}</p> `
-        - Explanation: Formats the number with 2 digits before the decimal and 2 digits after.
+        - Explanation: Formats the number with at least 1 digit before the decimal point and exactly 2 digits after (e.g., "1,234.56").
 
 PercentPipe:
 
@@ -112,30 +128,24 @@ PercentPipe:
 
     Case 1: Default Percent
         ` <p>Default percent: {{ decimalValue | percent }}</p> `
-        - Explanation: Formats the number using the default percent format.
+        - Explanation: Formats the number using the default percent format (e.g., "50%").
 
     Case 2: Custom Percent '1.0-0'
         ` <p>Custom percent (1.0-0): {{ decimalValue | percent:'1.0-0' }}</p> `
-        - Explanation: Formats the number with 1 digit before the decimal and no digits after.
+        - Explanation: Formats the number with 1 digit before the decimal and no digits after (e.g., "50%").
 
-    Case 3: Custom Percent '1.1-1'
-        ` <p>Custom percent (1.1-1): {{ decimalValue | percent:'1.1-1' }}</p> `
-        - Explanation: Formats the number with 1 digit before the decimal and 1 digit after.
-
-    Case 4: Custom Percent '1.2-2'
+    Case 3: Custom Percent '1.2-2'
         ` <p>Custom percent (1.2-2): {{ decimalValue | percent:'1.2-2' }}</p> `
-        - Explanation: Formats the number with 1 digit before the decimal and 2 digits after.
-
-    Case 5: Custom Percent '2.2-2'
-        ` <p>Custom percent (2.2-2): {{ decimalValue | percent:'2.2-2' }}</p> `
-        - Explanation: Formats the number with 2 digits before the decimal and 2 digits after.
+        - Explanation: Formats the number with 1 digit before the decimal and 2 digits after (e.g., "50.00%").
 
 JsonPipe:
 
     Purpose: Converts objects to JSON strings.
 
+    Usage: ` {{ data | json }} `
+
     Case 1: Default JSON
-        ` <pre>{{ data | json }}</pre> `
+        ` <p>{{ data | json }}</p> `
         - Explanation: Converts the object to a JSON string for display.
 
 

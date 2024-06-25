@@ -33,6 +33,7 @@ import {
 } from "./components/data-binding/attributes-vs-properties/attributes-vs-properties.component";
 import {DemoEvents1Component} from "./components/events/demo-events-1/demo-events-1.component";
 import {DemoEventFilteringComponent} from "./components/events/demo-event-filtering/demo-event-filtering.component";
+import {DemoBuiltInPipesComponent} from "./components/pipes/demo-built-in-pipes/demo-built-in-pipes.component";
 
 @Component({
     selector: 'app-root',
@@ -47,6 +48,7 @@ import {DemoEventFilteringComponent} from "./components/events/demo-event-filter
         AttributesVsPropertiesComponent,
         DemoEvents1Component,
         DemoEventFilteringComponent,
+        DemoBuiltInPipesComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

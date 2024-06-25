@@ -33,8 +33,7 @@ function letScopingCompileTimeError() {
 
     console.log('Compile Time Error - error TS2304: Cannot find name \'x\'.\n' +
         'But still it is compiled and converted to JS code, which contains var keyword and produces output as per JS var scoping.');
-
-    console.log('x: ' + x);
+    // console.log('x: ' + x);
 
     console.log("Method: letScopingCompileTimeError Ends.\n");
 
