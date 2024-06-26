@@ -1,18 +1,22 @@
 import {Component} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {NgFor} from '@angular/common';
 import {AppendTextPipe} from "./append-text.pipe";
 import {ReverseStringPipe} from "./reverse-string.pipe";
-
-// import { CommonModule } from '@angular/common';
+import {ExponentialPipe} from "./exponential.pipe";
+import {FilterPipe} from "./filter.pipe";
 
 @Component({
     selector: 'app-demo-custom-pipes',
     standalone: true,
-    imports: [ReverseStringPipe, AppendTextPipe],
+    imports: [FormsModule, NgFor, ReverseStringPipe, AppendTextPipe, ExponentialPipe, FilterPipe],
     // imports: [CommonModule],
     templateUrl: './demo-custom-pipes.component.html',
 })
 export class DemoCustomPipesComponent {
 
-    text: string = 'John Doe';
+    name: string = 'John Doe';
+    searchText: string = '';
+    items: string[] = ['Mobile', 'Laptop', 'PC'];
 
 }

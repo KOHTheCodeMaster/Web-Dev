@@ -68,6 +68,7 @@ Example: Reverse String Pipe
     ` <p>{{ 'Hola..!! ^-^' | reverseString }}</p> `
     - Output: `^-^ !!..olaH`
 
+----------------------------------------------------------------------------------------------------
 
 2. Using Parameters in Custom Pipes:
 ------------------------------------
@@ -96,6 +97,7 @@ Example: Exponential Pipe
     ` <p>{{ 2 | exponential:3 }}</p> `
     - Output: `8` (2 raised to the power of 3)
 
+----------------------------------------------------------------------------------------------------
 
 3. Custom Pipe with Multiple Parameters:
 ----------------------------------------
@@ -122,9 +124,10 @@ Example: Append Text Pipe
     ` <p>{{ 'Angular' | appendText:' is awesome':'start' }}</p> `
     - Output: ` is awesomeAngular`
 
+----------------------------------------------------------------------------------------------------
 
-Including the Custom Pipe in a Standalone Component:
-----------------------------------------------------
+4. Including the Custom Pipe in a Standalone Component:
+-------------------------------------------------------
 
 Example
 
@@ -160,72 +163,184 @@ Example
         </div>
     ```
 
-Advanced Custom Pipes
+----------------------------------------------------------------------------------------------------
 
-Example: Filter Pipe
+5. Complete Comprehensive Example:
+----------------------------------
 
-1. Generate the Pipe
-    ```bash
-    ng generate pipe filter
-    ```
+Code Snippet:
 
-2. Implement the Pipe
-    ```typescript
+demo-custom-pipes.component.ts
+```typescript
+    import { Component } from '@angular/core';
+    import { FormsModule } from '@angular/forms';
+    import { NgFor } from '@angular/common';
+    import { AppendTextPipe } from "./append-text.pipe";
+    import { ReverseStringPipe } from "./reverse-string.pipe";
+    import { ExponentialPipe } from "./exponential.pipe";
+    import { FilterPipe } from "./filter.pipe";
+
+    @Component({
+        selector: 'app-demo-custom-pipes',
+        standalone: true,
+        imports: [FormsModule, NgFor, ReverseStringPipe, AppendTextPipe, ExponentialPipe, FilterPipe],
+        templateUrl: './demo-custom-pipes.component.html',
+    })
+    export class DemoCustomPipesComponent {
+        name: string = 'John Doe';
+        searchText: string = '';
+        items: string[] = ['Mobile', 'Laptop', 'PC'];
+    }
+```
+
+demo-custom-pipes.component.html
+```html
+    <div>
+      <h2>Custom Pipe Examples:</h2>
+
+      <!-- ReverseStringPipe -->
+      <h2>Reverse String Pipe</h2>
+      <p>{{ name | reverseString }}</p>
+
+      <!-- ExponentialPipe -->
+      <h2>Exponential Pipe</h2>
+      <p>{{ 2 | exponential:3 }}</p>
+
+      <!-- AppendTextPipe -->
+      <h2>Append Text Pipe</h2>
+      <p>{{ name | appendText:'Greetings ':'start' }}</p>
+      <p>{{ 'Mr. ' | appendText:name | appendText:' is here!':'end' }}</p>
+
+      <!-- FilterPipe -->
+      <div>
+        <h2>Search Filter Pipe</h2>
+        <input [(ngModel)]="searchText" placeholder="Search Items">
+        <ul>
+          <li *ngFor="let item of items | filter:searchText">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+```
+
+reverse-string.pipe.ts
+```typescript
     import { Pipe, PipeTransform } from '@angular/core';
 
     @Pipe({
-      name: 'filter'
+        name: 'reverseString',
+        standalone: true
+    })
+    export class ReverseStringPipe implements PipeTransform {
+        transform(value: string): string {
+            return value.split('').reverse().join('');
+        }
+    }
+```
+
+exponential.pipe.ts
+```typescript
+    import { Pipe, PipeTransform } from '@angular/core';
+
+    @Pipe({
+        name: 'exponential',
+        standalone: true
+    })
+    export class ExponentialPipe implements PipeTransform {
+        transform(value: number, exponent: number = 1): number {
+            return Math.pow(value, exponent);
+        }
+    }
+```
+
+append-text.pipe.ts
+```typescript
+    import { Pipe, PipeTransform } from '@angular/core';
+
+    @Pipe({
+        name: 'appendText',
+        standalone: true
+    })
+    export class AppendTextPipe implements PipeTransform {
+        transform(value: string, text: string, position: 'start' | 'end' = 'end'): string {
+            return position === 'start' ? text + value : value + text;
+        }
+    }
+```
+
+filter.pipe.ts
+```typescript
+    import { Pipe, PipeTransform } from '@angular/core';
+
+    @Pipe({
+        name: 'filter',
+        standalone: true
     })
     export class FilterPipe implements PipeTransform {
-      transform(items: any[], searchText: string): any[] {
-        if (!items) return [];
-        if (!searchText) return items;
-        searchText = searchText.toLowerCase();
-        return items.filter(it => {
-          return it.toLowerCase().includes(searchText);
-        });
-      }
+        transform(items: any[], searchText: string): any[] {
+            if (!items || !searchText) return items;
+            searchText = searchText.toLowerCase();
+            return items.filter(item => item.toLowerCase().includes(searchText));
+        }
     }
-    ```
+```
 
-3. Use the Pipe in a Template
-    ```html
-    <ul>
-      <li *ngFor="let item of items | filter:searchText">{{ item }}</li>
-    </ul>
-    ```
+Explanation:
 
-4. Component Definition
-    ```typescript
-    import { Component } from '@angular/core';
-    import { CommonModule } from '@angular/common';
-    import { FilterPipe } from './filter.pipe';
+1. ReverseStringPipe (`reverse-string.pipe.ts`):
+   - Purpose: Reverses the input string.
+   - Pipe Definition:
+     - Decorator: `@Pipe({ name: 'reverseString', standalone: true })` defines the name and standalone nature of the pipe.
+     - Transform Method: `transform(value: string): string` takes a string, splits it into an array of characters, reverses the array, and joins it back into a string.
+   - Usage in Template:
+     - `{{ name | reverseString }}` reverses the string `name`.
 
-    @Component({
-      selector: 'app-demo-filter-pipe',
-      standalone: true,
-      imports: [CommonModule, FilterPipe],
-      templateUrl: './demo-filter-pipe.component.html',
-      styleUrls: ['./demo-filter-pipe.component.css']
-    })
-    export class DemoFilterPipeComponent {
-      items = ['Angular', 'React', 'Vue'];
-      searchText = '';
-    }
-    ```
+2. ExponentialPipe (`exponential.pipe.ts`):
+   - Purpose: Computes the exponential value.
+   - Pipe Definition:
+     - Decorator: `@Pipe({ name: 'exponential', standalone: true })` defines the name and standalone nature of the pipe.
+     - Transform Method: `transform(value: number, exponent: number = 1): number` calculates the value raised to the power of the exponent.
+   - Usage in Template:
+     - `{{ 2 | exponential:3 }}` computes `2` to the power of `3`.
 
-5. Template Usage
-    ```html
-    <div>
-      <input [(ngModel)]="searchText" placeholder="Search items">
-      <ul>
-        <li *ngFor="let item of items | filter:searchText">{{ item }}</li>
-      </ul>
-    </div>
-    ```
+3. AppendTextPipe (`append-text.pipe.ts`):
+   - Purpose: Appends text to the input string.
+   - Pipe Definition:
+     - Decorator: `@Pipe({ name: 'appendText', standalone: true })` defines the name and standalone nature of the pipe.
+     - Transform Method: `transform(value: string, text: string, position: 'start' | 'end' = 'end'): string`
+        - appends text to the start or end of the string based on the position.
+   - Usage in Template:
+     - `{{ name | appendText:'Greetings ':'start' }}` appends "Greetings " at the start of `name`.
+     - `{{ 'Mr. ' | appendText:name | appendText:' is here!':'end' }}` appends `name` after "Mr. " and " is here!" after `name`.
 
-Conclusion
+4. FilterPipe (`filter.pipe.ts`):
+   - Purpose: Filters an array based on a search term.
+   - Importing Pipe and PipeTransform: `import { Pipe, PipeTransform } from '@angular/core';`
+      - `Pipe` decorator is used to define the pipe.
+      - `PipeTransform` interface is implemented by the pipe class to create a custom transformation.
+   - Pipe Definition:
+     - Decorator: `@Pipe({ name: 'filter', standalone: true })` Defines the name of the pipe which will be used in the templates (`filter`)
+                  and standalone nature of the pipe.
+     - Transform Method: `transform(items: any[], searchText: string): any[]` filters the array `items` based on `searchText`.
+   - Usage in Template:
+     - Binds the input field to `searchText` using `[(ngModel)]="searchText"`.
+     - Filters the `items` array based on `searchText` in `*ngFor="let item of items | filter:searchText"`.
 
-Custom pipes in Angular allow you to encapsulate reusable transformation logic, making your templates cleaner and more readable. By following the steps outlined in this documentation, you can create and use custom pipes tailored to your application's requirements.
+----------------------------------------------------------------------------------------------------
+
+6. Summary:
+-----------
+
+- Custom pipes in Angular are utilized to transform data dynamically within Angular templates, providing tailored data display and manipulation.
+
+- Pipe Setup:
+  - Pipe Imports: Import necessary Angular core modules.    //  import {Pipe, PipeTransform} from '@angular/core';
+  - Pipe Definition: Define the pipe using `@Pipe` and implement the `PipeTransform` interface to handle transformation logic.
+  - Integrate the pipe in components and templates using Angular's data binding and directives.
+
+- Component Setup:
+  - Custom Pipe Imports: Import custom pipes created for specific functionality.
+  - Template Integration: Apply the custom pipe to dynamically filter items in the component's template.
+
+- Complete Comprehensive Example: Demonstrates how to create and use custom pipes.
 
 ----------------------------------------------------------------------------------------------------

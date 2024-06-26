@@ -1,12 +1,27 @@
-
 <div>
+  <h2>Custom Pipe Examples:</h2>
 
-  <!-- ReverseStringPipe Example -->
-  <h2>ReverseStringPipe Example</h2>
-  <p>{{ text | reverseString }}</p>
+  <!-- ReverseStringPipe -->
+  <h2>Reverse String Pipe</h2>
+  <p>{{ name | reverseString }}</p>
 
-  <!-- AppendTextPipe Example -->
-  <h2>AppendTextPipe Example</h2>
-  <p>{{ text | appendText:' - Angular':'end' }}</p>
+  <!-- ReverseStringPipe -->
+  <h2>Exponential Pipe</h2>
+  <p>{{ 2 | exponential:3 }}</p>
+
+  <!-- AppendTextPipe -->
+  <h2>Append Text Pipe</h2>
+  <p>{{ name | appendText:'Greetings ':'start' }}</p>
+  <p>{{ 'Mr. ' | appendText:name | appendText:' is here!':'end' }}</p>
+
+
+  <!-- AppendTextPipe -->
+  <div>
+    <h2>Search Filter Pipe</h2>
+    <input [(ngModel)]="searchText" placeholder="Search Items">
+    <ul>
+      <li *ngFor="let item of items | filter:searchText">{{ item }}</li>
+    </ul>
+  </div>
 
 </div>
