@@ -127,6 +127,160 @@ Inputs with Getters and Setters:
     ```
 
 
+Type Checking:
+--------------
+
+Explanation: When you specify an input transform, the type of the transform function's parameter determines the types of values that can be set to the input in a template.
+
+Example:
+
+```typescript
+    @Component({
+      selector: 'custom-slider',
+      template: `<div>{{ widthPx }}</div>`,
+      standalone: true,
+    })
+    export class CustomSlider {
+      @Input({transform: appendPx}) widthPx: string = '';
+    }
+
+    function appendPx(value: number): string {
+      return `${value}px`;
+    }
+```
+
+Analysis:
+
+- The appendPx function takes a number as its parameter and returns a string with 'px' appended.
+- The widthPx input in the CustomSlider component is a string.
+- This means that in the template, you can pass a number to the widthPx input, and Angular will use the appendPx function to transform it into a string.
+- Example usage in a template:
+    ` <custom-slider [widthPx]="100"></custom-slider> `
+    - Here, 100 is a number, and the appendPx function will transform it to "100px".
+
+
+Built-in Transformations:
+-------------------------
+
+- Angular includes two built-in transform functions for the most common scenarios: coercing values to boolean and numbers.
+
+Example:
+
+    ```typescript
+        import {Component, Input, booleanAttribute, numberAttribute} from '@angular/core';
+
+        @Component({
+          selector: 'custom-slider',
+          template: `
+            <div>Disabled: {{ disabled }}</div>
+            <div>Number: {{ number }}</div>
+          `,
+        })
+        export class CustomSlider {
+          @Input({transform: booleanAttribute}) disabled = false;
+          @Input({transform: numberAttribute}) number = 0;
+        }
+    ```
+
+Analysis:
+
+- booleanAttribute:
+    - Treats the presence of the attribute as true, and the literal string "false" as false.
+    - Example usage in a template:
+        ```html
+            <custom-slider disabled="true"></custom-slider> <!-- `disabled` is true -->
+            <custom-slider disabled="false"></custom-slider> <!-- `disabled` is false -->
+        ```
+
+- numberAttribute:
+    - Attempts to parse the given value to a number, producing NaN if parsing fails.
+    - Example usage in a template:
+        ```html
+            <custom-slider [number]="123"></custom-slider> <!-- `number` is 123 -->
+            <custom-slider [number]="'456'"></custom-slider> <!-- `number` is 456 -->
+        ```
+
+
+Specify Inputs in the @Component Decorator:
+-------------------------------------------
+
+- In addition to the @Input decorator, you can also specify a component's inputs with the inputs property in the @Component decorator.
+- This can be useful when a component inherits a property from a base class.
+
+Example:
+
+    ```typescript
+        // BaseSlider class
+        export class BaseSlider {
+          @Input() disabled: boolean = false;
+        }
+
+        // CustomSlider inherits from BaseSlider
+        @Component({
+          selector: 'custom-slider',
+          template: `<div>Disabled: {{ disabled }}</div>`,
+          inputs: ['disabled'],
+        })
+        export class CustomSlider extends BaseSlider { }
+    ```
+
+Analysis:
+
+- The BaseSlider class has an @Input property called disabled.
+- The CustomSlider class inherits from BaseSlider and thus also has the disabled property.
+- The inputs property in the @Component decorator explicitly specifies that disabled is an input for CustomSlider.
+- Example usage in a template: ` <custom-slider [disabled]="true"></custom-slider> `
+
+Alias Specification:
+
+- You can specify an alias for an input property by adding it after a colon in the inputs array.
+- Example:
+    ```typescript
+        // `CustomSlider` inherits the `disabled` property from `BaseSlider`.
+        @Component({
+          selector: 'custom-slider',
+          template: `<div>Disabled: {{ disabled }}</div>`,
+          inputs: ['disabled: sliderDisabled'],
+        })
+        export class CustomSlider extends BaseSlider { }
+    ```
+- Here, the input property disabled is accessible as sliderDisabled in the template:
+    ` <custom-slider [sliderDisabled]="true"></custom-slider> `
+
+
+Limitations of Input Transform Functions:
+-----------------------------------------
+
+- Input transform function must be statically analyzable at build-time.
+- You cannot set transform functions conditionally or as the result of an expression evaluation.
+- Relying on state outside the transform function can lead to unpredictable behavior.
+
+- Input transform functions should always be pure functions.
+
+Pure Functions Requirement:
+
+- Input transform functions should always be pure functions.
+- Relying on state outside the transform function can lead to unpredictable behavior.
+- Example:
+```typescript
+    // Pure function
+    function appendPx(value: number): string {
+      return `${value}px`;
+    }
+
+    // Impure function
+    let counter = 0;
+    function impureTransform(value: number): string {
+      counter++;
+      return `${value + counter}px`;
+    }
+
+    @Component({ ... })
+    export class DemoInput1Component {
+        @Input({transform: impureTransform}) width: string = '';
+    }
+```
+
 Using @Input in a Comprehensive Example:
 ----------------------------------------
 
@@ -187,5 +341,8 @@ Summary:
 - Advanced Usage: Implement getters and setters for inputs to add complex logic.
 - Best Practices: Ensure input properties are well-defined, avoiding name collisions with native DOM properties,
                   prefer simple, pure functions for transforms.
+- Type Checking: The type of the transform function's parameter determines the types of values that can be set to the input.
+- Built-in Transformations: Angular provides built-in transform functions for boolean and number coercion.
+- Specify Inputs in the @Component Decorator: Useful for specifying inputs in inherited components and setting aliases.
 
 ----------------------------------------------------------------------------------------------------

@@ -23,6 +23,7 @@ Let's analyze the provided `trimString` function in detail:
 ```typescript
     function trimString(value: string | undefined) {
       return value?.trim() ?? '';
+      // return value != undefined && value != null ? trim() : '';
     }
 ```
 
