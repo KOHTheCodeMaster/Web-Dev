@@ -1,0 +1,191 @@
+
+Time Stamp: 27th Jun. 2K24 - 07:23 PM..!!
+
+Title: @Input Decorator in Angular
+
+Category: Web Development -> Angular -> Component Interaction
+
+Keywords: Angular, input properties, @Input decorator, data binding, component communication
+
+Purpose: Understanding how to accept data with input properties in Angular.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Accepting Data with Input Properties in Angular:
+------------------------------------------------
+
+Overview:
+
+- In Angular, the `@Input` decorator is used to define properties that can receive data from a parent component.
+- These properties are referred to as "inputs." Inputs allow components to be dynamic and flexible by receiving values from their parent components.
+- When using a component, you pass data to it by setting its inputs.
+- Angular records inputs statically at compile-time. Inputs cannot be added or removed at run-time.
+- When extending a component class, inputs are inherited by the child class.
+
+Basic Usage of @Input:
+
+- When creating a component, you can mark specific class properties as bindable by adding the @Input decorator on the property
+- To declare an input property, use the `@Input` decorator in your component class:
+    ```typescript
+        import { Component, Input } from '@angular/core';
+
+        @Component({ ... })
+        export class CustomSlider {
+          @Input() value: number = 0;
+        }
+    ```
+
+- In the parent component's template, you can bind to this input property:
+    ```html
+    <custom-slider [value]="50"></custom-slider>
+    ```
+
+
+Customizing Inputs:
+-------------------
+
+- You can customize the behavior of input properties by passing a configuration object to the `@Input` decorator.
+- This can include setting default values, making inputs required, or transforming input values.
+
+Required Inputs:
+    - To enforce that an input must always have a value, use the `required` option.
+    - If you do not provide a value for this input, Angular will throw an error at build-time.
+    - Example:
+    ```typescript
+        @Component({...})
+        export class CustomSlider {
+          @Input({required: true}) value = 0;
+        }
+    ```
+
+Input Transforms:
+    - You can use the `transform` option to modify the input value before it is set on the component:
+    - Whenever the value of `label` is set, Angular runs `trimString` to process the value.
+    - Example:
+    ```typescript
+        import { Component, Input } from '@angular/core';
+
+        @Component({
+          selector: 'custom-slider',
+          template: `<p>Slider label: {{ label }}</p>`,
+          standalone: true,
+        })
+        export class CustomSlider {
+          @Input({ transform: trimString }) label: string = '';
+        }
+
+        function trimString(value: string | undefined): string {
+          return value?.trim() ?? '';
+        }
+    ```
+
+Input Aliases:
+    - You can specify an alias for an input property to change its name in the template:
+    - Example:
+    ```typescript
+        import { Component, Input } from '@angular/core';
+
+        @Component({
+          selector: 'custom-slider',
+          template: `<p>Slider value: {{ value }}</p>`,
+        })
+        export class CustomSlider {
+          @Input({ alias: 'sliderValue' }) value: number = 0;
+        }
+    ```
+    - In the template, use the alias: ` <custom-slider [sliderValue]="50"></custom-slider> `
+
+
+Inputs with Getters and Setters:
+    - You can create inputs with custom getters and setters:
+    - This allows for more complex logic when getting or setting the input value.
+    - Example:
+    ```typescript
+        import { Component, Input } from '@angular/core';
+
+        @Component({
+          selector: 'custom-slider',
+          template: `<p>Slider value: {{ value }}</p>`,
+          standalone: true
+        })
+        export class CustomSlider {
+          private internalValue: number = 0;
+
+          @Input()
+          get value(): number {
+            return this.internalValue;
+          }
+
+          set value(newValue: number) {
+            this.internalValue = newValue;
+          }
+        }
+    ```
+
+
+Using @Input in a Comprehensive Example:
+----------------------------------------
+
+Here is a detailed demonstration using multiple custom input properties with various configurations:
+
+```typescript
+    import {booleanAttribute, Component, Input} from '@angular/core';
+
+    @Component({
+        selector: 'app-demo-input-1',
+        standalone: true,
+        imports: [],
+        template: `
+            <h2>{{ '@Input Decorator Examples:' }}</h2>
+            <p>Label: {{ label }}</p>
+            <p>Value: {{ value }}</p>
+            <p>Disabled: {{ disabled }}</p>
+            <p>Width: {{ widthPx }}</p>
+        `,
+        styleUrl: './demo-input-1.component.css'
+    })
+    export class DemoInput1Component {
+        @Input({transform: trimString}) label: string = '';
+        @Input({alias: 'sliderValue', required: true}) value: number = 0;
+        // @Input({required: true}) value: number = 0;
+        @Input({transform: booleanAttribute}) disabled: boolean = false;
+        @Input({transform: appendPx}) widthPx: string = '';
+    }
+
+    // Helper function for trimming strings
+    function trimString(value: string | undefined): string {
+        return value?.trim() ?? '';
+    }
+
+    // Helper function for appending 'px' to a number
+    function appendPx(value: number): string {
+        return `${value}px`;
+    }
+```
+
+In the parent component template, you can bind to these inputs:
+
+```html
+    <app-demo-input-1 [label]="'  John Doe!  '"
+                      [sliderValue]="10"
+                      [value2]="50"
+                      [disabled]="true"
+                      [widthPx]="150">
+    </app-demo-input-1>
+```
+
+
+Summary:
+--------
+
+- Basic Usage: The `@Input` decorator allows you to define input properties that can receive data from parent components.
+- Customization: Use options like `required`, `transform`, and `alias` to customize input behavior.
+- Advanced Usage: Implement getters and setters for inputs to add complex logic.
+- Best Practices: Ensure input properties are well-defined, avoiding name collisions with native DOM properties,
+                  prefer simple, pure functions for transforms.
+
+----------------------------------------------------------------------------------------------------
