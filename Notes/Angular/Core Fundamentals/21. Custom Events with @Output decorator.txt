@@ -46,12 +46,30 @@ Defining Custom Events:
         <app-expandable-panel (panelClosed)="savePanelState()"></app-expandable-panel>
     ```
 
+----------------------------------------------------------------------------------------------------
+
 2. Emitting Event Data:
 -----------------------
     - Primitive Values: Emit simple data types.         E.g.: ` this.valueChanged.emit(7); `
     - Custom Objects: Emit complex data structures.     E.g.: ` this.thumbDropped.emit({ pointerX: 123, pointerY: 456 }); `
     - Template Binding: Access emitted data using the `$event` variable.
         E.g.: ` <custom-slider (valueChanged)="logValue($event)"></custom-slider> `
+    - Example for Template Binding: Accessing Emitted Data Using $event
+        Parent Component Template
+        ```html
+            <app-expandable-panel (panelResized)="handlePanelResized($event)"></app-expandable-panel>
+        ```
+        Parent Component Class
+        ```typescript
+            handlePanelResized(event: { width: number, height: number }) {
+              console.log(`Panel resized to Width: ${event.width}, Height: ${event.height}`);
+            }
+        ```
+        Explanation: The $event variable in the template represents the data emitted by the panelResized event,
+                     which is an object with width and height properties in this example.
+
+
+----------------------------------------------------------------------------------------------------
 
 3. Customizing Output Names:
 ----------------------------
@@ -75,6 +93,8 @@ Defining Custom Events:
         <app-custom-slider (valueChanged)="saveVolume($event)"></app-custom-slider>
     ```
 
+----------------------------------------------------------------------------------------------------
+
 4. Specify Outputs in @Component Decorator:
 -------------------------------------------
     - Inheriting Outputs: Useful for inheriting outputs from a base class.
@@ -95,12 +115,16 @@ Defining Custom Events:
         export class CustomSlider extends BaseSlider {}
     ```
 
+----------------------------------------------------------------------------------------------------
+
 5. Choosing Event Names:
 ------------------------
 
 - Avoid Collisions: Do not use names that collide with DOM events.
 - No Prefixes: Avoid prefixing output names.
 - CamelCase: Use camelCase for output names. Avoid using "on" as a prefix.
+
+----------------------------------------------------------------------------------------------------
 
 6. Best Practices:
 ------------------
@@ -109,71 +133,9 @@ Defining Custom Events:
 - Pure Functions: Ensure that event handlers are pure and do not cause side effects.
 - Documentation: Clearly document custom events and their data structures.
 
-7. Comprehensive Example:
--------------------------
+----------------------------------------------------------------------------------------------------
 
-ToDO: [PENDING] DETAILED DEMONSTRATION for Comprehensive Example..!!
-
-Child Component (`expandable-panel.component.ts`)
-```typescript
-import { Component, EventEmitter, Output } from '@angular/core';
-
-@Component({
-  selector: 'app-expandable-panel',
-  template: `
-    <div>
-      <button (click)="closePanel()">Close</button>
-    </div>
-  `
-})
-export class ExpandablePanel {
-  @Output() panelClosed = new EventEmitter<void>();
-  @Output() sizeChanged = new EventEmitter<{ width: number, height: number }>();
-
-  closePanel() {
-    this.panelClosed.emit();
-  }
-
-  changeSize(width: number, height: number) {
-    this.sizeChanged.emit({ width, height });
-  }
-}
-```
-
-Parent Component (`app.component.ts`)
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <app-expandable-panel 
-      (panelClosed)="handlePanelClosed()" 
-      (sizeChanged)="handleSizeChanged($event)">
-    </app-expandable-panel>
-  `
-})
-export class AppComponent {
-  handlePanelClosed() {
-    console.log('Panel closed');
-  }
-
-  handleSizeChanged(event: { width: number, height: number }) {
-    console.log(`New size - Width: ${event.width}, Height: ${event.height}`);
-  }
-}
-```
-
-Parent Component Template (`app.component.html`)
-```html
-<app-expandable-panel 
-  (panelClosed)="handlePanelClosed()" 
-  (sizeChanged)="handleSizeChanged($event)">
-</app-expandable-panel>
-```
-
-
-8. Summary:
+7. Summary:
 -----------
 
 - Custom Event Definition: Use `@Output` and `EventEmitter`.

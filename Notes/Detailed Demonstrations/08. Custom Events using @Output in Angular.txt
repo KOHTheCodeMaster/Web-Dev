@@ -1,0 +1,289 @@
+
+Time Stamp: 28th Jun. 2K24 - 07:31 PM..!!
+
+Title: Custom Events with @Output decorator in Angular (Comprehensive Example)
+
+Category: Web Development -> Angular -> Custom Events
+
+Keywords: Angular, custom events, @Output decorator, EventEmitter, data binding
+
+Purpose: To understand the custom events with @Output in Angular.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Comprehensive Example of Custom Events with Outputs in Angular:
+---------------------------------------------------------------
+
+Introduction:
+- Angular components can define custom events using the `@Output` decorator and `EventEmitter`.
+- Outputs allow child components to communicate with parent components by emitting events and passing data.
+- This document provides a detailed demonstration of creating and handling custom events in Angular, covering all aspects of the `@Output` decorator.
+
+
+Comprehensive Example:
+----------------------
+
+Step 1: Define the Child Component with Custom Events
+
+Practice/Angular/base/hello-world/src/app/components/custom-events-using-output/demo-output-1/expandable-panel.component.ts
+```typescript
+    import {Component, EventEmitter, Output} from '@angular/core';
+
+    @Component({
+        selector: 'app-expandable-panel',
+        standalone: true,
+        template: `
+            <div>
+                <button (click)="closePanel()">Close</button>
+                <button (click)="resizePanel(200, 100)">Resize</button>
+                <button (click)="emitAliasEvent()">Emit Alias Event</button>
+            </div>
+        `
+    })
+    export class ExpandablePanelComponent {
+
+        @Output() panelClosed = new EventEmitter<void>();
+        @Output() panelResized = new EventEmitter<{ width: number, height: number }>();
+        @Output('aliasEvent') eventWithAlias = new EventEmitter<string>();
+
+        closePanel() {
+            this.panelClosed.emit();
+        }
+
+        resizePanel(width: number, height: number) {
+            this.panelResized.emit({ width, height });
+        }
+
+        emitAliasEvent() {
+            this.eventWithAlias.emit('This is an aliased event');
+        }
+
+    }
+```
+
+Step 2: Bind and Handle Events in the Parent Component
+
+Practice/Angular/base/hello-world/src/app/components/custom-events-using-output/demo-output-1/demo-output-1.component.ts
+```typescript
+    import {Component} from '@angular/core';
+    import {ExpandablePanelComponent} from "./expandable-panel.component";
+    import {CustomSliderComponent} from "./custom-slider.component";
+
+    @Component({
+        selector: 'app-demo-output-1',
+        imports: [ExpandablePanelComponent, CustomSliderComponent],
+        standalone: true,
+        template: `
+            <app-expandable-panel
+                (panelClosed)="handlePanelClosed()"
+                (panelResized)="handlePanelResized($event)"
+                (aliasEvent)="handleAliasEvent($event)">
+            </app-expandable-panel>
+
+            <app-custom-slider (volumeChanged)="handleVolumeChange($event)"></app-custom-slider>
+        `
+    })
+    export class DemoOutput1Component {
+
+        handlePanelClosed() {
+            console.log('Panel has been closed');
+        }
+
+        handlePanelResized(event: { width: number, height: number }) {
+            console.log(`Panel resized to Width: ${event.width}, Height: ${event.height}`);
+        }
+
+        handleAliasEvent(event: string) {
+            console.log(`Received alias event: ${event}`);
+        }
+
+        handleVolumeChange(volume: number) {
+            console.log(`Volume changed to: ${volume}`);
+        }
+
+    }
+```
+
+Step 3: Extending Components and Specifying Outputs in @Component Decorator
+
+
+Practice/Angular/base/hello-world/src/app/components/custom-events-using-output/demo-output-1/base-slider.ts
+```typescript
+    import { EventEmitter, Output, Directive } from '@angular/core';
+
+    @Directive()
+    export class BaseSlider {
+        @Output() valueChanged = new EventEmitter<number>();
+    }
+```
+
+Step 4: Define the Child Component and Use Outputs
+
+Practice/Angular/base/hello-world/src/app/components/custom-events-using-output/demo-output-1/custom-slider.component.ts
+```typescript
+    import {Component} from '@angular/core';
+    import {BaseSlider} from "./base-slider";
+
+    @Component({
+        selector: 'app-custom-slider',
+        standalone: true,
+        template: `<input (input)="onValueChange($event)">`,
+        outputs: ['valueChanged: volumeChanged']
+    })
+    export class CustomSliderComponent extends BaseSlider {
+
+        onValueChange(event: Event) {
+            const inputElement = event.target as HTMLInputElement;
+            const value = +inputElement.value || 0;
+            this.valueChanged.emit(value);
+        }
+
+    }
+```
+
+Step 5: Bind to Aliased Output in Parent Component - (Already included in Step 2)
+
+Practice/Angular/base/hello-world/src/app/components/custom-events-using-output/demo-output-1/demo-output-1.component.ts
+```typescript
+    import ...
+    import {CustomSliderComponent} from "./custom-slider.component";
+
+    @Component({
+        selector: 'app-demo-output-1',
+        imports: [ExpandablePanelComponent, CustomSliderComponent],
+        standalone: true,
+        template: `
+            ...
+            ...
+            <app-custom-slider (volumeChanged)="handleVolumeChange($event)"></app-custom-slider>
+        `
+    })
+    export class DemoOutput1Component {
+
+        ...
+
+        handleVolumeChange(volume: number) {
+            console.log(`Volume changed to: ${volume}`);
+        }
+    }
+```
+
+Detailed Explanation, Analysis and Observations:
+-------------------------------------------------
+
+1. Event Definition: In `ExpandablePanel`, multiple custom events are defined using `@Output` and `EventEmitter`.
+    - `panelClosed`: Emits a void event when the panel is closed.
+    - `panelResized`: Emits an object with `width` and `height` when the panel is resized.
+    - `eventWithAlias`: Emits a string with an alias `aliasEvent`.
+
+2. Event Emission: 
+    - `closePanel` method emits the `panelClosed` event.
+    - `resizePanel` method emits the `panelResized` event with new dimensions.
+    - `emitAliasEvent` method emits the `eventWithAlias` with a string message.
+
+3. Event Binding and Handling:
+    - In `DemoOutput1Component`, the template binds to the custom events using event binding syntax `()`.
+    - Methods `handlePanelClosed`, `handlePanelResized`, `handleAliasEvent` and `handleVolumeChange` handle these events and process the emitted data.
+
+4. Aliasing Outputs:
+    - In `CustomSlider`, the `@Output` decorator's parameter specifies an alias (`volumeChanged`). The parent component binds to this alias to handle the event.
+
+5. Inheritance and `@Component` Decorator:
+    - `BaseSlider` defines a custom event `valueChanged`.
+    - `CustomSlider` extends `BaseSlider` and specifies the `outputs` property in the `@Component` decorator, making the `valueChanged` event available as `volumeChanged`.
+
+
+Template Binding: Accessing Emitted Data Using `$event`:
+--------------------------------------------------------
+
+Example in Parent Component Template
+```html
+    <app-expandable-panel (panelResized)="handlePanelResized($event)"></app-expandable-panel>
+```
+
+Example in Parent Component Class
+```typescript
+    handlePanelResized(event: { width: number, height: number }) {
+      console.log(`Panel resized to Width: ${event.width}, Height: ${event.height}`);
+    }
+```
+
+- Explanation: The `$event` variable in the template represents the data emitted by the `panelResized` event, which is an object with `width` and `height` properties in this example.
+
+
+Flow Analysis:
+--------------
+
+1. User Interaction: 
+    - Clicking the "Close" button triggers closePanel() method, emitting panelClosed custom event.
+    - Clicking the "Resize" button triggers resizePanel() method, emitting panelResized with dimensions custom event.
+    - Clicking the "Emit Alias Event" button triggers emitAliasEvent() method, emitting eventWithAlias custom event.
+
+2. Event Emission: 
+    - `closePanel` method calls `panelClosed.emit()`.
+    - `resizePanel` method calls `panelResized.emit({ width: 200, height: 100 })`.
+    - `emitAliasEvent` method calls `eventWithAlias.emit('This is an aliased event')`.
+
+3. Template Binding: 
+    - Parent component template binds to the events `(panelClosed)`, `(panelResized)`, and `(aliasEvent)`.
+    - When the event is emitted, the corresponding handler method in the parent component is called.
+
+4. Event Handling: 
+    - `handlePanelClosed` logs a message when the panel is closed.
+    - `handlePanelResized` logs the new dimensions when the panel is resized.
+    - `handleAliasEvent` logs the received alias event message.
+
+Behavior & Limitations:
+
+- Behavior: Custom events allow for flexible communication between child and parent components. By using aliases, we can avoid name collisions and clarify event names.
+
+- Limitations: Custom events in Angular do not bubble up the DOM, and output names are case-sensitive. Careful naming conventions are needed to avoid conflicts with native DOM events.
+
+
+Verifications:
+--------------
+
+To verify the correctness of the comprehensive example, we perform the following dry run and analyze each step:
+
+- Panel Close Event Verification:
+    - Action: Click the "Close" button.
+    - Expected Result: handlePanelClosed logs "Panel has been closed".
+    - Verification: Open the browser console, click the "Close" button, and observe the console output.
+                    The message "Panel has been closed" should appear.
+
+- Panel Resize Event Verification:
+    - Action: Click the "Resize" button.
+    - Expected Result: handlePanelResized logs the new dimensions.
+    - Verification: Open the browser console, click the "Resize" button, and observe the console output.
+                    The message "Panel resized to Width: 200, Height: 100" should appear.
+
+- Aliased Event Verification:
+    - Action: Click the "Emit Alias Event" button.
+    - Expected Result: handleAliasEvent logs "Received alias event: This is an aliased event".
+    - Verification: Open the browser console, click the "Emit Alias Event" button, and observe the console output.
+                    The message "Received alias event: This is an aliased event" should appear.
+
+- Inherited Outputs Verification:
+    - Action: Enter a value in the input field of CustomSlider.
+    - Expected Result: handleVolumeChange logs the new volume.
+    - Verification: Open the browser console, enter a value in the input field, and observe the console output.
+                    The message "New volume: [entered value]" should appear.
+
+
+Summary:
+--------
+
+- Use `@Output` and `EventEmitter` to create custom events.
+- Emit data using `emit()` method and access it using `$event` in the template.
+- Use aliases to avoid name conflicts and clarify event names.
+- Inherit and specify outputs using the `@Component` decorator.
+- Additional Points:
+    - Avoid name collisions with native DOM events.
+    - Document custom events for maintainability.
+    - Ensure event handler methods are pure and side-effect-free.
+
+----------------------------------------------------------------------------------------------------
