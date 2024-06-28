@@ -8,7 +8,7 @@ import {FormsModule} from '@angular/forms';
     template: `
         <h2>{{ '@Input Decorator Examples:' }}</h2>
         <p>Label: {{ "'" + label + "'" }}</p>
-        <p>sliderValue (alias): {{ value }}</p>
+        <p>First Name (alias): {{ name }}</p>
         <p>Str Value: {{ strValue }}</p>
         <p>Disabled: {{ disabled }}</p>
         <p>Width: {{ widthPx }}</p>
@@ -17,7 +17,7 @@ import {FormsModule} from '@angular/forms';
 })
 export class DemoInput1Component {
     @Input({transform: trimString}) label: string = '';
-    @Input({alias: 'sliderValue', required: true}) value: number = 0;
+    @Input({alias: 'firstName'}) name: string = '';
     @Input({required: true}) strValue: string = '';
     @Input({transform: booleanAttribute}) disabled: boolean = false;
     @Input({transform: appendPx}) widthPx: string = '';

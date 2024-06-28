@@ -84,20 +84,51 @@ Input Transforms:
     ```
 
 Input Aliases:
-    - You can specify an alias for an input property to change its name in the template:
-    - Example:
+
+Definition: Input aliases allow you to rename the property used in the parent component template for binding.
+Behavior:
+    - When an alias is specified, it replaces the original property name for template binding purposes.
+    - The original property name cannot be used in the parent component template.
+
+Key Points:
+    - Aliased Property Only:
+        - When an alias is provided, the property must be referenced using the alias, not the original property name, in the parent template for data binding.
+        - This ensures that the input property `name` can only be set via the `firstName` alias, making the binding clear and explicit.
+    - Original Name Unusable: The original property name (`name` in this case) cannot be used in the parent template.
+
+Example Analysis:
+
+    Child Component (`demo-input-1.component.ts`)
     ```typescript
-        import { Component, Input } from '@angular/core';
+        import {Component, Input} from '@angular/core';
 
         @Component({
-          selector: 'custom-slider',
-          template: `<p>Slider value: {{ value }}</p>`,
+            selector: 'app-demo-input-1',
+            standalone: true,
+            template: `
+                <h2>{{ '@Input Decorator - Input Alias Example:' }}</h2>
+                <p>First Name (alias): {{ name }}</p>
+            `
         })
-        export class CustomSlider {
-          @Input({ alias: 'sliderValue' }) value: number = 0;
+        export class DemoInput1Component {
+            @Input({alias: 'firstName'}) name: string = '';
         }
     ```
-    - In the template, use the alias: ` <custom-slider [sliderValue]="50"></custom-slider> `
+    - Explanation:
+      - `@Input({alias: 'firstName'}) name: string = '';`
+      - The input property `name` is aliased as `firstName`.
+      - Inside the component, `name` is used normally.
+
+    Parent Component HTML Template
+    ```html
+        <app-demo-input-1 [firstName]="'John'"></app-demo-input-1>  <!-- Valid -->
+
+        <!-- Invalid - Compile-time Error: X [ERROR] NG8002: Can't bind to 'name' since it isn't a known property of 'app-demo-input-1'. -->
+        <app-demo-input-1 [name]="'John'"></app-demo-input-1>
+    ```
+    - Explanation:
+      - `[firstName]="'John'"`: This is valid. The input property `name` is set using the alias `firstName`.
+      - `[name]="'John'"`: This is invalid. The original property name `name` cannot be used for binding.
 
 
 Inputs with Getters and Setters:
