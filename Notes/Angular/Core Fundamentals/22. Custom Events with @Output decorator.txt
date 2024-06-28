@@ -1,0 +1,186 @@
+
+Time Stamp: 28th Jun. 2K24 - 12:05 PM..!!
+
+Title: Custom Events with @Output decorator in Angular
+
+Category: Web Development -> Angular -> Custom Events
+
+Keywords: Angular, custom events, @Output decorator, EventEmitter, data binding
+
+Purpose: Understanding how to create and use custom events with outputs in Angular.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Custom Events with Outputs in Angular:
+-----------------------------------------
+
+Introduction:
+- Custom Events: Angular components can define custom events using the `@Output` decorator and `EventEmitter`.
+- Purpose: Outputs are used to pass data from child components to parent components, similar to native DOM events.
+
+Defining Custom Events:
+    - Decorator and EventEmitter: Use `@Output` decorator and `EventEmitter` to define custom events.
+
+    ```typescript
+        import { Component, EventEmitter, Output } from '@angular/core';
+
+        @Component({
+          selector: 'app-expandable-panel',
+          template: `<button (click)="closePanel()">Close Panel</button>`
+        })
+        export class ExpandablePanel {
+          @Output() panelClosed = new EventEmitter<void>();
+
+          closePanel() {
+            this.panelClosed.emit();
+          }
+        }
+    ```
+
+    - Usage: Bind to the custom event in the parent component's template.
+    ```html
+        <app-expandable-panel (panelClosed)="savePanelState()"></app-expandable-panel>
+    ```
+
+2. Emitting Event Data:
+-----------------------
+    - Primitive Values: Emit simple data types.         E.g.: ` this.valueChanged.emit(7); `
+    - Custom Objects: Emit complex data structures.     E.g.: ` this.thumbDropped.emit({ pointerX: 123, pointerY: 456 }); `
+    - Template Binding: Access emitted data using the `$event` variable.
+        E.g.: ` <custom-slider (valueChanged)="logValue($event)"></custom-slider> `
+
+3. Customizing Output Names:
+----------------------------
+    - Alias: The `@Output` decorator can accept an alias for the event name.
+    ```typescript
+        @Component({
+          selector: 'app-custom-slider',
+          template: `<input (input)="onInputChange($event.target.value)">`
+        })
+        export class CustomSlider {
+          @Output('valueChanged') changed = new EventEmitter<number>();
+
+          onInputChange(value: number) {
+            this.changed.emit(value);
+          }
+        }
+    ```
+
+    - Usage: Use the alias in the parent component's template.
+    ```html
+        <app-custom-slider (valueChanged)="saveVolume($event)"></app-custom-slider>
+    ```
+
+4. Specify Outputs in @Component Decorator:
+-------------------------------------------
+    - Inheriting Outputs: Useful for inheriting outputs from a base class.
+    ```typescript
+        @Component({
+          selector: 'app-custom-slider',
+          outputs: ['valueChanged']
+        })
+        export class CustomSlider extends BaseSlider {}
+    ```
+
+    - Alias in Outputs List: Specify an alias directly in the `outputs` list.
+    ```typescript
+        @Component({
+          selector: 'app-custom-slider',
+          outputs: ['valueChanged: volumeChanged']
+        })
+        export class CustomSlider extends BaseSlider {}
+    ```
+
+5. Choosing Event Names:
+------------------------
+
+- Avoid Collisions: Do not use names that collide with DOM events.
+- No Prefixes: Avoid prefixing output names.
+- CamelCase: Use camelCase for output names. Avoid using "on" as a prefix.
+
+6. Best Practices:
+------------------
+
+- Avoid Unnecessary Aliases: Use aliases only when necessary.
+- Pure Functions: Ensure that event handlers are pure and do not cause side effects.
+- Documentation: Clearly document custom events and their data structures.
+
+7. Comprehensive Example:
+-------------------------
+
+ToDO: [PENDING] DETAILED DEMONSTRATION for Comprehensive Example..!!
+
+Child Component (`expandable-panel.component.ts`)
+```typescript
+import { Component, EventEmitter, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-expandable-panel',
+  template: `
+    <div>
+      <button (click)="closePanel()">Close</button>
+    </div>
+  `
+})
+export class ExpandablePanel {
+  @Output() panelClosed = new EventEmitter<void>();
+  @Output() sizeChanged = new EventEmitter<{ width: number, height: number }>();
+
+  closePanel() {
+    this.panelClosed.emit();
+  }
+
+  changeSize(width: number, height: number) {
+    this.sizeChanged.emit({ width, height });
+  }
+}
+```
+
+Parent Component (`app.component.ts`)
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <app-expandable-panel 
+      (panelClosed)="handlePanelClosed()" 
+      (sizeChanged)="handleSizeChanged($event)">
+    </app-expandable-panel>
+  `
+})
+export class AppComponent {
+  handlePanelClosed() {
+    console.log('Panel closed');
+  }
+
+  handleSizeChanged(event: { width: number, height: number }) {
+    console.log(`New size - Width: ${event.width}, Height: ${event.height}`);
+  }
+}
+```
+
+Parent Component Template (`app.component.html`)
+```html
+<app-expandable-panel 
+  (panelClosed)="handlePanelClosed()" 
+  (sizeChanged)="handleSizeChanged($event)">
+</app-expandable-panel>
+```
+
+
+8. Summary:
+-----------
+
+- Custom Event Definition: Use `@Output` and `EventEmitter`.
+- Emitting Data: Emit primitive values or custom objects.
+- Event Binding: Access event data with `$event`.
+- Alias Usage: Define aliases when necessary to avoid naming conflicts.
+- Inheritance: Outputs can be inherited and specified in the `@Component` decorator.
+- Event Naming: Use camelCase and avoid prefixes.
+
+----------------------------------------------------------------------------------------------------

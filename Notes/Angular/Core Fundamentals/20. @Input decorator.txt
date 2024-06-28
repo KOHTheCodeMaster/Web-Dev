@@ -89,12 +89,17 @@ Definition: Input aliases allow you to rename the property used in the parent co
 Behavior:
     - When an alias is specified, it replaces the original property name for template binding purposes.
     - The original property name cannot be used in the parent component template.
+    - This alias does not affect usage of the property in TypeScript code.
 
 Key Points:
     - Aliased Property Only:
         - When an alias is provided, the property must be referenced using the alias, not the original property name, in the parent template for data binding.
         - This ensures that the input property `name` can only be set via the `firstName` alias, making the binding clear and explicit.
     - Original Name Unusable: The original property name (`name` in this case) cannot be used in the parent template.
+    - The @Input decorator also accepts the alias as its first parameter in place of the config object. E.g.: ` @Input('firstName') name = ''; `
+    - While you should generally avoid aliasing inputs for components,
+      this feature can be useful for renaming properties while preserving an alias for the original name
+      or for avoiding collisions with the name of native DOM element properties.
 
 Example Analysis:
 
