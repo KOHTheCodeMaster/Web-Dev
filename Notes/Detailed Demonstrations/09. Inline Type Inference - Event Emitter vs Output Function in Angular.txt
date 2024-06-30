@@ -1,0 +1,313 @@
+
+Time Stamp: 30th Jun. 2K24 - 08:30 PM..!!
+
+Title: Inline Type Inference - Event Emitter vs Output Function in Angular
+
+Category: Web Development -> Angular -> Custom Events
+
+Keywords: Angular, @Output decorator, output function, EventEmitter, type safety
+
+Purpose: Understanding the differences in type usage with @Output decorator and output function, and providing a comprehensive example.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Inline Type Inference - Event Emitter vs Output Function in Angular:
+--------------------------------------------------------------------
+
+This study material document provides an in-depth comparison and a comprehensive example of declaring custom events in Angular using the `@Output` decorator and the `output` function, highlighting the importance of type safety and the implications of different type annotations.
+
+Introduction:
+-------------
+
+- Angular allows the creation of custom events using two primary methods: the `@Output` decorator with `EventEmitter` and the `output` function.
+- Proper type annotations improve code safety and readability.
+- This document explores the use of different types, the default data types when not using type arguments, and the implications of each approach.
+
+
+Comprehensive Example:
+----------------------
+
+Component File: `event-emitter-vs-output-function-component.ts`
+Path: Practice/Angular/base/hello-world/src/app/components/custom-events-using-output/demo-output-2/event-emitter-vs-output-function-component/event-emitter-vs-output-function-component.ts
+
+```typescript
+    import { Component, Output, EventEmitter } from '@angular/core';
+    import { output, OutputEmitterRef } from '@angular/core';
+
+    @Component({
+      selector: 'app-custom-events',
+      template: `
+        <button (click)="emitEvent1()">Emit Event 1</button>
+        <button (click)="emitEvent2()">Emit Event 2</button>
+        // <button (click)="emitEvent3()">Emit Event 3</button>
+        <button (click)="emitEvent4()">Emit Event 4</button>
+        <button (click)="emitEvent5()">Emit Event 5</button>
+        <button (click)="emitEvent6()">Emit Event 6</button>
+        <button (click)="emitEvent7()">Emit Event 7</button>
+        //  <button (click)="emitEvent8()">Emit Event 8</button>
+        <button (click)="emitEvent9()">Emit Event 9</button>
+        <button (click)="emitEvent10()">Emit Event 10</button>
+      `
+    })
+    export class CustomEventsComponent {
+      @Output() customEvent1 = new EventEmitter();
+      @Output() customEvent2 = new EventEmitter<void>();
+    //  @Output customEvent3 = new EventEmitter<>();
+      @Output customEvent4: EventEmitter<any> = new EventEmitter();
+      @Output() customEvent5: EventEmitter<number> = new EventEmitter();
+
+      customEvent6 = output();
+      customEvent7 = output<void>();
+    //  customEvent8 = output<>();
+      customEvent9: OutputEmitterRef<void> = new OutputEmitterRef();
+      customEvent10: OutputEmitterRef<number> = new OutputEmitterRef();
+
+      emitEvent1() {
+        this.customEvent1.emit({ message: 'Event 1 emitted' });
+      }
+
+      emitEvent2() {
+        this.customEvent2.emit();
+      }
+
+      emitEvent4() {
+        this.customEvent4.emit('Any payload');
+      }
+
+      emitEvent5() {
+        this.customEvent5.emit(123);
+      }
+
+      emitEvent6() {
+        this.customEvent6.emit({ message: 'Event 6 emitted' });
+      }
+
+      emitEvent7() {
+        this.customEvent7.emit();
+      }
+
+      emitEvent9() {
+        this.customEvent9.emit();
+      }
+
+      emitEvent10() {
+        this.customEvent10.emit(456);
+      }
+    }
+```
+
+Parent Component File: `demo-output-2.component.ts`
+Path: `Practice/Angular/base/hello-world/src/app/components/custom-events-using-output/demo-output-2/demo-output-2.component.ts`
+
+```typescript
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-root',
+      template: `
+        <app-custom-events
+          (customEvent1)="handleEvent1($event)"
+          (customEvent2)="handleEvent2()"
+          //    (customEvent3)="handleEvent3($event)"
+          (customEvent4)="handleEvent4($event)"
+          (customEvent5)="handleEvent5($event)"
+          (customEvent6)="handleEvent6($event)"
+          (customEvent7)="handleEvent7()"
+          //    (customEvent8)="handleEvent8()"
+          (customEvent9)="handleEvent9()"
+          (customEvent10)="handleEvent10($event)"
+        ></app-custom-events>
+      `
+    })
+    export class AppComponent {
+      handleEvent1(event: any) {
+        console.log('Handled Event 1:', event);
+      }
+
+      handleEvent2() {
+        console.log('Handled Event 2');
+      }
+
+      handleEvent4(event: any) {
+        console.log('Handled Event 4:', event);
+      }
+
+      handleEvent5(event: number) {
+        console.log('Handled Event 5:', event);
+      }
+
+      handleEvent6(event: unknown) {
+        console.log('Handled Event 6:', event);
+      }
+
+      handleEvent7() {
+        console.log('Handled Event 7');
+      }
+
+      handleEvent9() {
+        console.log('Handled Event 9');
+      }
+
+      handleEvent10(event: number) {
+        console.log('Handled Event 10:', event);
+      }
+    }
+```
+
+
+Detailed Explanation, Analysis and Observations:
+------------------------------------------------
+
+Case 1: new EventEmitter(); :
+-----------------------------
+
+- Declaration: ` @Output() customEvent1 = new EventEmitter(); `
+
+- Explanation:
+  - Creates a custom event with `EventEmitter`.
+  - Default Data Type: EventEmitter<any> type is assigned.
+  - TypeScript infers the type as EventEmitter<any>.
+  - This means the event can emit any type of data (string, number, object, etc.).
+
+- Usage Example: ` <button (click)="customEvent1.emit({ message: 'Button clicked' })">Click Me</button> `
+
+
+Case 2: @Output() customEvent2 = new EventEmitter<void>(); :
+------------------------------------------------------------
+
+- Declaration: ` @Output() customEvent2 = new EventEmitter<void>(); `
+
+- Explanation:
+    - Creates a custom event with `EventEmitter<void>` type.
+    - No payload: This event doesn't carry any data when emitted.
+    - Alternative (Equivalent but verbose): customEvent2: OutputEmitterRef<void> = output().
+        This achieves the same result but is less common in Angular due to verbosity.
+
+- Usage Example: ` <button (click)="customEvent2.emit()">Click Me</button> `
+
+
+Case 3: @Output() customEvent3 = new EventEmitter<>(); [INVALID] :
+------------------------------------------------------------------
+
+- Invalid Declaration: ` @Output() customEvent3 = new EventEmitter<>(); `
+
+- Explanation:
+  - This is invalid because TypeScript requires a type argument in the diamond brackets `<>`.
+  - Compile-time Error: TS1099: Type argument list cannot be empty.
+
+
+Case 4: @Output() customEvent4: EventEmitter<any> = new EventEmitter(); :
+-------------------------------------------------------------------------
+
+- Declaration: ` @Output() customEvent4: EventEmitter<any> = new EventEmitter(); `
+
+- Explanation:
+    - Similar to Case 1, but explicitly specifies the type as EventEmitter<any>.
+    - While seemingly redundant, it can provide clarity in specific situations.
+    - This approach is functionally identical to Case 1 as both end up with an EventEmitter<any> type.
+    - Explicitly stating the type can be considered optional but may be useful for:
+        - Improving code readability by making the event's expected payload type clear.
+        - Potentially aiding some IDEs with code completion and analysis.
+
+- Usage Example: ` <button (click)="customEvent4.emit('Any payload')">Click Me</button> `
+
+
+Case 5: @Output() customEvent5: EventEmitter<number> = new EventEmitter(); :
+----------------------------------------------------------------------------
+
+- Declaration: ` @Output() customEvent5: EventEmitter<number> = new EventEmitter(); `
+
+- Explanation: Overrides the default type by explicitly specifying the type as `EventEmitter<number>`.
+
+- Usage Example: ` <button (click)="customEvent5.emit(123)">Click Me</button> `
+
+
+Case 6: customEvent6 = output<>(); :
+------------------------------------
+
+- Declaration: ` customEvent6 = output<>(); `
+
+- Explanation:
+  - Creates a custom event using the `output` function
+  - Default Data Type: OutputEmitterRef<void> type is assigned.
+  - TypeScript infers the type as OutputEmitterRef<void>, indicating no payload.
+
+- Usage Example: ` <button (click)="customEvent6.emit({ message: 'Button clicked' })">Click Me</button> `
+
+
+Case 7: customEvent7 = output<void>(); :
+----------------------------------------
+
+- Declaration: ` customEvent7 = output<void>(); `
+
+- Explanation: Creates a custom event with `OutputEmitterRef<void>` type.
+
+- Usage Example: ` <button (click)="customEvent7.emit()">Click Me</button> `
+
+
+Case 8: customEvent8 = new OutputEmitterRef<>(); :
+----------------------------------------------
+
+- Invalid Declaration: ` customEvent8 = new OutputEmitterRef<>(); `
+
+- Explanation:
+  - Similar to Case 3, This is invalid because TypeScript requires a type argument in the diamond brackets `<>`.
+  - Compile-time Error: TS1099: Type argument list cannot be empty.
+
+
+Case 9: customEvent9: OutputEmitterRef<void> = new OutputEmitterRef(); :
+--------------------------------------------------------------------
+
+- Declaration: ` customEvent9: OutputEmitterRef<void> = new OutputEmitterRef(); `
+
+- Explanation:
+    - Similar to Case 6, but explicitly specifies the type as OutputEmitterRef<void>.
+    - While seemingly redundant, it can provide clarity in specific situations.
+    - This approach is functionally identical to Case 6 as both end up with an OutputEmitterRef<void> type.
+    - Explicitly stating the type can be considered optional but may be useful for:
+        - Improving code readability by making the event's expected payload type clear.
+        - Potentially aiding some IDEs with code completion and analysis.
+
+- Usage Example: ` <button (click)="customEvent9.emit()">Click Me</button> `
+
+
+Case 10: customEvent10: OutputEmitterRef<number> = new OutputEmitterRef(); :
+------------------------------------------------------------------------
+
+- Declaration: ` customEvent10: OutputEmitterRef<number> = new OutputEmitterRef(); `
+
+- Explanation: Overrides the default type by explicitly specifying the type as `OutputEmitterRef<number>`.
+
+- Usage Example: ` <button (click)="customEvent10.emit(123)">Click Me</button> `
+
+
+Summary:
+--------
+
+- @Output Decorator:
+  - `@Output() customEvent1 = new EventEmitter();`                          -       Data Type: `any`
+  - `@Output() customEvent2 = new EventEmitter<void>();`                    -       Data Type: `void`
+  - `@Output() customEvent3 = new EventEmitter<>();`                        -       Invalid: TS1099: Type argument list cannot be empty.
+  - `@Output() customEvent4: EventEmitter<any> = new EventEmitter();`       -       Data Type: `any`
+  - `@Output() customEvent5: EventEmitter<number> = new EventEmitter();`    -       Data Type: `number`
+
+- output Function:
+  - `customEvent6 = output<>();`                                            -       Data Type: `unknown`
+  - `customEvent7 = output<void>();`                                        -       Data Type: `void`
+  - `customEvent8 = new EventEmitter<>();`                                  -       Invalid: TS1099: Type argument list cannot be empty.
+  - `customEvent9: OutputEmitterRef<void> = new EventEmitter();`            -       Data Type: `void`
+  - `customEvent10: OutputEmitterRef<number> = new EventEmitter();`         -       Data Type: `number`
+
+- Key Points:
+  - Using `<>` without a type argument is invalid and results in a compile-time error.
+  - The default data type for `EventEmitter` without a specified type is `any`.
+  - Specifying `void` ensures that the event does not carry any payload, enhancing type safety.
+  - Custom events using the `output` function have a default type of `unknown`, promoting stricter type checking.
+  - Proper type annotations improve code readability and maintainability, preventing runtime errors.
+
+
+----------------------------------------------------------------------------------------------------

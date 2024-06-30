@@ -37,6 +37,7 @@ import {DemoBuiltInPipesComponent} from "./components/pipes/demo-built-in-pipes/
 import {DemoCustomPipesComponent} from "./components/pipes/demo-custom-pipes/demo-custom-pipes.component";
 import {DemoInput1Component} from "./components/input/demo-input-1/demo-input-1.component";
 import {DemoOutput1Component} from "./components/custom-events-using-output/demo-output-1/demo-output-1.component";
+import {DemoOutput2Component} from "./components/custom-events-using-output/demo-output-2/demo-output-2.component";
 
 @Component({
     selector: 'app-root',
@@ -55,6 +56,7 @@ import {DemoOutput1Component} from "./components/custom-events-using-output/demo
         DemoCustomPipesComponent,
         DemoInput1Component,
         DemoOutput1Component,
+        DemoOutput2Component,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

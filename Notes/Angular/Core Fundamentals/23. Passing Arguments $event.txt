@@ -88,19 +88,23 @@ Understanding Angular Output Events: $event & Arguments
     ```html
         <app-custom-button (customClick)="handleCustomClick($event)"></app-custom-button>
     ```
+    Explanation for $event as the Bridge:
+    - $event captures the entire event object (including payload) from the child component in the parent's event handler.
+    - Provides access to the custom payload data within that object.
+    - Acts as a bridge between child's emission and parent's handling.
 
     - Handling the Custom Event:
-
     Code:
     ```typescript
-        handleCustomClick(event: string) {
-          console.log(event);   // Logs 'Custom event payload'
+        handleCustomClick(strEvent: string) {
+          console.log(strEvent);   // Logs 'Custom event payload'
         }
     ```
 
     Explanation:
-    - The custom event payload ('Custom event payload') is passed as `$event` to the parent component's event handler.
+    - The custom event payload 'Custom event payload' is passed via `$event` as strEvent to the parent component's event handler.
     - This allows customizing the event payload.
+    - Parent extracts the data from $event based on the payload type.
 
 ----------------------------------------------------------------------------------------------------
 
