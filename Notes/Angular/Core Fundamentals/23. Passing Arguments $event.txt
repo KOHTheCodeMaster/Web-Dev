@@ -1,0 +1,223 @@
+
+Time Stamp: 30th Jun. 2K24 - 12:46 PM..!!
+
+Title: Understanding Angular Output Events: $event & Arguments
+
+Category: Web Development -> Angular -> Event Handling
+
+Keywords: Angular, $event, custom events, @Output decorator, output functions
+
+Purpose: TO understand passing arguments in output functions and the significance of $event in default and custom events.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Understanding Angular Output Events: $event & Arguments
+-------------------------------------------------------
+
+1. Introduction:
+----------------
+
+- In Angular, `$event` is a built-in object used in event listeners.
+- It represents the event object when handling default DOM events and custom events.
+- Understanding `$event` and how to customize it is crucial for effective event handling in Angular.
+
+----------------------------------------------------------------------------------------------------
+
+2. Understanding `$event` in Default DOM Events:
+------------------------------------------------
+
+- Default Button Click Event
+
+    Code:
+    ` <button (click)="handleClick($event)">Click Me</button> `
+
+    Explanation:
+    - When a button is clicked, the `click` event is triggered.
+    - `$event` represents the standard DOM event object.
+    - This object contains properties like `target`, `type`, `timeStamp`, etc.
+
+- Handling the Click Event:
+
+    Code:
+    ```typescript
+        handleClick(event: Event) {
+          console.log(event.target);    // Logs the button element
+          console.log(event.type);      // Logs 'click'
+        }
+    ```
+
+    Explanation:
+    - `event.target` refers to the DOM element that triggered the event.
+    - `event.type` provides the type of the event (`click` in this case).
+
+----------------------------------------------------------------------------------------------------
+
+3. Custom Events and Customizing `$event`:
+------------------------------------------
+
+- Custom Component with Custom Event:
+
+    Code:
+    ```typescript
+        import { Component, Output, EventEmitter } from '@angular/core';
+
+        @Component({
+          selector: 'app-custom-button',
+          template: `<button (click)="emitCustomEvent()">Click Me</button>`
+        })
+        export class CustomButtonComponent {
+          @Output() customClick = new EventEmitter<string>();
+
+          emitCustomEvent() {
+            this.customClick.emit('Custom event payload');
+          }
+        }
+    ```
+
+    Explanation:
+    - `CustomButtonComponent` emits a custom event `customClick` with a string payload.
+    - The parent component can handle this custom event.
+
+- Parent Component Binding:
+
+    Code:
+    ```html
+        <app-custom-button (customClick)="handleCustomClick($event)"></app-custom-button>
+    ```
+
+    - Handling the Custom Event:
+
+    Code:
+    ```typescript
+        handleCustomClick(event: string) {
+          console.log(event);   // Logs 'Custom event payload'
+        }
+    ```
+
+    Explanation:
+    - The custom event payload ('Custom event payload') is passed as `$event` to the parent component's event handler.
+    - This allows customizing the event payload.
+
+----------------------------------------------------------------------------------------------------
+
+4. Inline Annotations for Object Type Parameters for Custom Events:
+-------------------------------------------------------------------
+
+- Without Interface for Custom Event Args
+    
+    Code:
+    ```typescript
+        @Component({
+          selector: 'app-custom-button',
+          template: `<button (click)="emitCustomEvent()">Click Me</button>`
+        })
+        export class CustomButtonComponent {
+          @Output() customClick = new EventEmitter<{ message: string; timestamp: number }>();
+        
+          emitCustomEvent() {
+            this.customClick.emit({ message: 'Hola', timestamp: Date.now() });
+          }
+        }
+    ```
+    
+    Explanation:
+    - Instead of defining a separate interface, we directly specify the object type inline within the `EventEmitter` declaration.
+    - The `customClick` event emits an object with two properties: `message` (string) and `timestamp` (number). This provides type information without an explicit interface.
+    
+- Parent Component Binding:
+    
+    Code:
+    ```html
+        <app-custom-button (customClick)="handleCustomClick($event)"></app-custom-button>
+    ```
+    
+    - Handling the Custom Event with Type Annotations:
+    
+    Code:
+    ```typescript
+        handleCustomClick(event: { message: string; timestamp: number }) {
+          console.log(event.message);       // Logs 'Hola'
+          console.log(event.timestamp);     // Logs the timestamp
+        }
+    ```
+    
+    Explanation:
+    - Similar to the previous example, we use type annotations within the event handler parameter (`event`).
+    - This allows for compile-time checking and IntelliSense support even without a separate interface definition.
+    
+    Key Points:
+    - Inline type annotations provide an alternative way to define custom event payload types without creating dedicated interfaces.
+    - They offer type safety and developer experience benefits similar to using interfaces.
+    
+    Choice Between Interfaces and Inline Annotations:
+    - If you have a reusable event type across multiple components, an interface might be more maintainable.
+    - For simpler cases with a single event type, inline annotations can be more concise.
+
+----------------------------------------------------------------------------------------------------
+
+5. Inline Type Annotations Using Interface for Custom Events:
+-------------------------------------------------------------
+
+- Using Interface for Custom Event Args
+
+    Code:
+    ```typescript
+        interface CustomEventArgs {
+          message: string;
+          timestamp: number;
+        }
+
+        @Component({
+          selector: 'app-custom-button',
+          template: `<button (click)="emitCustomEvent()">Click Me</button>`
+        })
+        export class CustomButtonComponent {
+          @Output() customClick = new EventEmitter<CustomEventArgs>();
+
+          emitCustomEvent() {
+            this.customClick.emit({ message: 'Hola', timestamp: Date.now() });
+          }
+        }
+    ```
+
+    Explanation:
+    - An interface `CustomEventArgs` is defined to specify the type of arguments for the custom event.
+    - The `customClick` event emits an object conforming to this interface.
+
+    - Parent Component Binding:
+
+    Code:
+    ```html
+        <app-custom-button (customClick)="handleCustomClick($event)"></app-custom-button>
+    ```
+
+    - Handling the Custom Event with Type Annotations:
+    Code:
+    ```typescript
+        handleCustomClick(event: CustomEventArgs) {
+          console.log(event.message);       // Logs 'Hola'
+          console.log(event.timestamp);     // Logs the timestamp
+        }
+    ```
+
+    Explanation:
+    - The custom event payload is strongly typed using the `CustomEventArgs` interface.
+    - This provides compile-time checking and IntelliSense support.
+
+----------------------------------------------------------------------------------------------------
+
+6. Summary:
+-----------
+
+- `$event` is a built-in object in Angular used in event listeners to represent the event object.
+- For default DOM events, `$event` represents the standard DOM event object with properties like `target`, `type`, etc.
+- For custom events, `$event` can be customized to pass any payload.
+- Using interfaces for custom event arguments ensures type safety and improves code readability.
+- Exporting interfaces from components allows for reusable and maintainable code.
+
+
+----------------------------------------------------------------------------------------------------

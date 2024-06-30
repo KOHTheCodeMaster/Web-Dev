@@ -129,22 +129,12 @@ Explanation:
 - Type Safety: The `output()` function uses TypeScript generics, ensuring type safety and better developer experience.
 - Flexibility: It offers more flexibility in configuring outputs, such as aliasing, which can be beneficial in larger projects.
 - Future Proofing: As Angular evolves, adopting new patterns and features early can make codebases easier to maintain and upgrade.
-
-----------------------------------------------------------------------------------------------------
-
-6. Benefits of Function-Based Outputs:
---------------------------------------
-
-- Flexibility: Allows for flexible event handling between components.
 - Ease of Use: Simplifies the declaration of outputs with a single function.
-- Consistency: Provides a consistent way to declare outputs across different components.
 - Integration: Integrates seamlessly with Angular's event binding syntax.
-- Aliasing: Supports aliasing, allowing for more readable and maintainable code.
-- Type Safety: Ensures type safety with TypeScript generics.
 
 ----------------------------------------------------------------------------------------------------
 
-7. Use Cases for Function-Based Outputs:
+6. Use Cases for Function-Based Outputs:
 ----------------------------------------
 
 - Component Communication: Facilitates communication between parent and child components.
@@ -154,7 +144,7 @@ Explanation:
 
 ----------------------------------------------------------------------------------------------------
 
-8. Limitations of Function-Based Outputs:
+7. Limitations of Function-Based Outputs:
 -----------------------------------------
 
 - Developer Preview: Currently in developer preview, which may mean limited stability and support.
@@ -164,7 +154,7 @@ Explanation:
 
 ----------------------------------------------------------------------------------------------------
 
-9. Important Points to Note:
+8. Important Points to Note:
 ----------------------------
 
 - Output Recognition: Angular automatically recognizes an output when the `output()` function is used as an initializer of a class member.
@@ -176,12 +166,10 @@ Explanation:
 
 ----------------------------------------------------------------------------------------------------
 
-10. Summary:
-------------
+9. Summary:
+-----------
 
-- The `output()` function is used to declare outputs in Angular components.
-- It allows components to emit values to parent components.
-- It is currently in developer preview.
+- The `output()` function is used to declare outputs in Angular components & allows components to emit values to parent components.
 - Provides benefits like flexibility, type safety, and consistency.
 - Supports aliasing to change the public name of outputs.
 - Offers better clarity and separation of concerns compared to `@Output()`.
