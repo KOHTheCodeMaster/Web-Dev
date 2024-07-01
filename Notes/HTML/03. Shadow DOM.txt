@@ -82,6 +82,7 @@ Composition:
     ```
 
 - Styles in Shadow DOM: Styles can be included directly within the shadow DOM, ensuring they apply only to elements within that shadow tree.
+    ToDo: Verify This Code.
     ```javascript
         const style = document.createElement('style');
         style.textContent = `

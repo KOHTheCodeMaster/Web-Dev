@@ -116,16 +116,11 @@ Limitations: Angular does not support data bindings inside `<style>` elements.
 
 Using `<link>` Element:
   - Component templates can use the `<link>` element to reference external CSS files.
-  - External styles are not affected by emulated view encapsulation.
   - Example: ` <link rel="stylesheet" href="styles.css"> `
 
 Using the `@import` Rule:
   - Your CSS can use the `@import` rule to include other CSS files.
   - Example: `@import url('path/to/style.css');`
-
-Using the `@import` Rule:
-  - Your CSS can use the `@import` rule to include other CSS files.
-  - Example: ` @import url('path/to/style.css'); `
 
 Behavior of External Styles:
   - Angular treats styles referenced via `<link>` or `@import` as external styles.

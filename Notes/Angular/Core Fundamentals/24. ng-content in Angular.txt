@@ -1,0 +1,323 @@
+
+Time Stamp: 1st Jul. 2K24 - 09:22 AM..!!
+
+Title: Understanding ng-content in Angular
+
+Category: Web Development -> Angular -> Content Projection
+
+Keywords: Angular, ng-content, content projection, custom components, DOM rendering
+
+Purpose: To understand `ng-content` in Angular, focusing on usage, use-cases, limitations, and detailed explanation.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Understanding ng-content in Angular
+-----------------------------------
+
+1. Overview:
+------------
+
+- ng-content is a special element in Angular used for content projection.
+- It acts as a placeholder to render content passed from the parent component.
+- Similar to the native `<slot>` element but with Angular-specific functionalities.
+
+- ng-content marks where content should be rendered in the component's template.
+- Projected content refers to any children of the component passed this way, distinct from the component's view.
+- Limitations:
+  - Cannot conditionally include `ng-content` with `ngIf`, `ngFor`, or `ngSwitch`.
+  - Cannot insert, remove, or modify `ng-content` at runtime.
+  - Cannot add directives, styles, or arbitrary attributes to `ng-content`.
+
+Basic Usage
+- Component Definition:
+    ```typescript
+        @Component({
+         selector: 'custom-card',
+         template: '<div class="card-shadow"> <ng-content></ng-content> </div>',
+        })
+        export class CustomCard {/* ... */}
+    ```
+    - We define a component CustomCard with a template that includes the ng-content element.
+    - This element serves as a placeholder where content from the parent component will be rendered.
+
+- Using the Component:
+    ```html
+        <custom-card>
+         <p>This is the projected content</p>
+        </custom-card>
+    ```
+    - In the parent component, we use the custom-card element and place a paragraph <p> inside it.
+
+- Rendered DOM:
+    ```html
+        <custom-card>
+         <div class="card-shadow">
+           <p>This is the projected content</p>
+         </div>
+        </custom-card>
+    ```
+    - When the application runs, Angular projects the content inside the custom-card element into the ng-content placeholder, rendering it within the <div class="card-shadow">.
+
+----------------------------------------------------------------------------------------------------
+
+2. Multiple Content Placeholders:
+---------------------------------
+
+Example with `select` Attribute:
+
+- Component Definition:
+    ```typescript
+        @Component({
+        selector: 'custom-card',
+        template: `
+          <div class="card-shadow">
+            <ng-content select="card-title"></ng-content>
+            <div class="card-divider"></div>
+            <ng-content select="card-body"></ng-content>
+          </div>
+        `,
+        })
+        export class CustomCard {/* ... */}
+    ```
+    - We extend the `custom-card` component to include two `ng-content` placeholders with `select` attributes.
+    - The `select` attribute allows us to target specific content for projection.
+
+- Using the Component:
+    ```html
+        <custom-card>
+        <card-title>Hello</card-title>
+        <card-body>Welcome to the example</card-body>
+        </custom-card>
+    ```
+    - We use the `custom-card` component, this time including two elements: `card-title` and `card-body`.
+
+- Rendered DOM:
+    ```html
+        <custom-card>
+        <div class="card-shadow">
+          <card-title>Hello</card-title>
+          <div class="card-divider"></div>
+          <card-body>Welcome to the example</card-body>
+        </div>
+        </custom-card>
+    ```
+    - Angular projects the content based on the `select` attribute.
+    - The `card-title` and `card-body` elements are rendered in their respective placeholders, separated by a `card-divider`.
+----------------------------------------------------------------------------------------------------
+
+3. Capturing Non-matching Elements:
+-----------------------------------
+
+- Component Template:
+    ```html
+        <div class="card-shadow">
+        <ng-content select="card-title"></ng-content>
+        <div class="card-divider"></div>
+        <ng-content></ng-content>
+        </div>
+    ```
+    - In this example, we include an additional `ng-content` without a `select` attribute. This acts as a catch-all placeholder for any content that does not match the other `ng-content` placeholders.
+
+- Using the Component:
+    ```html
+        <custom-card>
+        <card-title>Hello</card-title>
+        <img src="..." />
+        <p>Welcome to the example</p>
+        </custom-card>
+    ```
+    - We use the `custom-card` component and include `card-title`, an image, and a paragraph.
+
+- Rendered DOM:
+    ```html
+        <custom-card>
+        <div class="card-shadow">
+          <card-title>Hello</card-title>
+          <div class="card-divider"></div>
+          <img src="..." />
+          <p>Welcome to the example</p>
+        </div>
+        </custom-card>
+    ```
+    - The `card-title` element is projected into its designated `ng-content` placeholder. The image and paragraph, which do not match any `select` attribute, are projected into the catch-all `ng-content` placeholder.
+
+Important to Note:
+- If a component includes only `ng-content` placeholders with `select` attributes, elements that don't match any placeholder are not rendered into the DOM.
+- Always include a catch-all `ng-content` placeholder without a `select` attribute if you want to render unmatched content.
+
+----------------------------------------------------------------------------------------------------
+
+4. Aliasing Content for Projection:
+-----------------------------------
+
+- Using `ngProjectAs` Attribute:
+    ```typescript
+        @Component({
+        selector: 'custom-card',
+        template: `
+          <div class="card-shadow">
+            <ng-content select="card-title"></ng-content>
+            <div class="card-divider"></div>
+            <ng-content></ng-content>
+          </div>
+        `,
+        })
+        export class CustomCard {/* ... */}
+    ```
+    - This is the same as the previous example, with `ng-content` placeholders.
+
+- Using the Component:
+    ```html
+        <custom-card>
+        <h3 ngProjectAs="card-title">Hello</h3>
+        <p>Welcome to the example</p>
+        </custom-card>
+    ```
+    - We use the `custom-card` component but add the `ngProjectAs` attribute to the `<h3>` element, allowing it to match the `card-title` selector.
+
+- Rendered DOM:
+    ```html
+        <custom-card>
+        <div class="card-shadow">
+          <h3>Hello</h3>
+          <div class="card-divider"></div>
+          <p>Welcome to the example</p>
+        </div>
+        </custom-card>
+    ```
+    - The `<h3>` element, despite not being a `card-title`, is projected into the `card-title` placeholder due to the `ngProjectAs` attribute.
+
+----------------------------------------------------------------------------------------------------
+
+5. Key Point: Non-rendered Content Without Catch-all ng-content:
+----------------------------------------------------------------
+
+"If a component does not include an `<ng-content>` placeholder without a `select` attribute, any elements that don't match one of the component's placeholders do not render into the DOM."
+
+- Detailed Explanation:
+  - Angular matches content to `ng-content` placeholders based on CSS selectors.
+  - If you have multiple `ng-content` placeholders with `select` attributes, only matching content is projected.
+  - Non-matching content requires a catch-all `ng-content` without a `select` attribute to be rendered.
+  - Example:
+    - Component Template:
+      ```html
+      <div class="card-shadow">
+        <ng-content select="card-title"></ng-content>
+        <div class="card-divider"></div>
+        <ng-content></ng-content>
+      </div>
+      ```
+
+    - Using the Component:
+      ```html
+      <custom-card>
+        <card-title>Hello</card-title>
+        <img src="..." />
+        <p>Welcome to the example</p>
+      </custom-card>
+      ```
+
+    - Rendered DOM:
+      ```html
+      <custom-card>
+        <div class="card-shadow">
+          <card-title>Hello</card-title>
+          <div class="card-divider"></div>
+          <img src="..." />
+          <p>Welcome to the example</p>
+        </div>
+      </custom-card>
+      ```
+
+    - Explanation: If the catch-all `ng-content` was missing, `<img>` and `<p>` elements would not render.
+
+----------------------------------------------------------------------------------------------------
+
+6. Comprehensive Example: Food Card Component:
+----------------------------------------------
+
+Component Template:
+    - The `food-card` component has three `ng-content` placeholders for `food-title`, `food-image`, and `food-description`.
+
+    ```typescript
+        @Component({
+            selector: 'food-card',
+            template: `
+                <div class="food-card">
+                  <ng-content select="food-title"></ng-content>
+                  <div class="food-divider"></div>
+                  <ng-content select="food-image"></ng-content>
+                  <div class="food-divider"></div>
+                  <ng-content select="food-description"></ng-content>
+                </div>
+            `,
+        })
+        export class FoodCard {/* ... */}
+    ```
+
+Using the Component:
+    - We use the food-card component and pass three custom elements matching the selectors.
+
+    ```html
+        <food-card>
+          <food-title>Delicious Pizza</food-title>
+          <food-image><img src="pizza.jpg" alt="Pizza"></food-image>
+          <food-description>This pizza is topped with fresh mozzarella, basil, and tomato sauce.</food-description>
+        </food-card>
+    ```
+
+Rendered DOM:
+    - Angular projects each custom element into its respective placeholder, maintaining the structure and styling defined in the food-card component.
+
+    ```html
+        <food-card>
+          <div class="food-card">
+            <food-title>Delicious Pizza</food-title>
+            <div class="food-divider"></div>
+            <food-image><img src="pizza.jpg" alt="Pizza"></food-image>
+            <div class="food-divider"></div>
+            <food-description>This pizza is topped with fresh mozzarella, basil, and tomato sauce.</food-description>
+          </div>
+        </food-card>
+    ```
+
+7. Benefits, Limitations & Best Practices of ng-content:
+--------------------------------------------------------
+
+Benefits:
+---------
+
+- Re-usability: Enables the creation of reusable components that can accept dynamic content.
+- Separation of Concerns: Allows content to be passed from the parent component, keeping the child component focused on structure and styling.
+- Flexibility: Multiple `ng-content` placeholders with `select` attributes enable complex content projection scenarios.
+
+Limitations:
+------------
+
+- Static Content: `ng-content` cannot be modified at runtime.
+- No Conditional Rendering: Should not be used with directives like `ngIf`, `ngFor`, or `ngSwitch`.
+
+Best Practices:
+---------------
+
+- Use `ng-content` for creating flexible and reusable components.
+- Always include a default `ng-content` placeholder if there is any content that might not match the specified selectors.
+- Utilize `ngProjectAs` for aliasing content when necessary.
+
+----------------------------------------------------------------------------------------------------
+
+8. Summary:
+-----------
+
+- ng-content is essential for content projection in Angular, enabling the creation of dynamic and reusable components.
+- Acts as a placeholder to render passed content from the parent component.
+- Multiple `ng-content` placeholders can be used with the `select` attribute for targeted content projection.
+- If a component includes only `ng-content` placeholders with `select` attributes, non-matching elements are not rendered.
+- The `ngProjectAs` attribute allows aliasing content for projection.
+- A default `ng-content` placeholder (without `select` attributes) should be included to render unmatched content.
+
+----------------------------------------------------------------------------------------------------
