@@ -31,7 +31,7 @@ Import Necessary Modules: Import NgIf from @angular/common.
 
 Template Setup:
   - Use *ngIf to conditionally display elements.
-  - Use template variables (like #elseBlock) with an ng-template to handle the else if and else cases.
+  - Use template variables (like #elseBlock) with a ng-template to handle the else if and else cases.
 
 Behavior:
   - When `true`: Renders the element and its content
