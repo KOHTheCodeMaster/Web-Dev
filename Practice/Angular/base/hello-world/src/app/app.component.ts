@@ -38,6 +38,8 @@ import {DemoCustomPipesComponent} from "./components/pipes/demo-custom-pipes/dem
 import {DemoInput1Component} from "./components/input/demo-input-1/demo-input-1.component";
 import {DemoOutput1Component} from "./components/custom-events-using-output/demo-output-1/demo-output-1.component";
 import {DemoOutput2Component} from "./components/custom-events-using-output/demo-output-2/demo-output-2.component";
+import {DemoLikeCounterComponent} from "./components/demo-practice/demo-like-counter/demo-like-counter.component";
+import {LikeCounterCompComponent} from "./components/demo-practice/demo-like-counter/like-counter-comp.component";
 
 @Component({
     selector: 'app-root',
@@ -57,6 +59,8 @@ import {DemoOutput2Component} from "./components/custom-events-using-output/demo
         DemoInput1Component,
         DemoOutput1Component,
         DemoOutput2Component,
+        DemoLikeCounterComponent,
+        LikeCounterCompComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

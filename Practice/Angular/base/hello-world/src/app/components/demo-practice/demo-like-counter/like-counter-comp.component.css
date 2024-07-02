@@ -1,0 +1,25 @@
+
+div {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 24px;
+}
+
+.active {
+  background-color: deeppink;
+  color: white;
+}
+
+.inactive {
+  background-color: grey;
+  color: black;
+}
