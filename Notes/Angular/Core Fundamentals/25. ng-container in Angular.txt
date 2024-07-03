@@ -37,10 +37,10 @@ Example: With else
     - In the second example, an `ng-template` is used to handle the `else` case, providing a flexible way to manage conditional content.
     ```html
         <ng-container *ngIf="condition; else templateA">
-        <p>Condition is true</p>
+            <p>Condition is true</p>
         </ng-container>
         <ng-template #templateA>
-        <p>Condition is false</p>
+            <p>Condition is false</p>
         </ng-template>
     ```
 

@@ -56,24 +56,70 @@ Structural Directives:
 
 ----------------------------------------------------------------------------------------------------
 
-2. TemplateRef and ViewContainerRef:
+2. @ViewChild for Querying Templates:
+-------------------------------------
+
+Definition:
+- @ViewChild is a decorator in Angular used to query and get a reference to a child element, directive, or component within the parent component's template.
+
+Usage:
+- @ViewChild can be used to query DOM elements, Angular components, and template references, which can then be rendered programmatically.
+
+Example:
+    ```typescript
+        @Component({
+          selector: 'app-root',
+          template: `
+            <input #inputElement type="text" />
+            <button (click)="focusInput()">Focus Input</button>
+          `
+        })
+        export class AppComponent {
+          @ViewChild('inputElement') inputElement!: ElementRef;
+
+          focusInput() {
+            this.inputElement.nativeElement.focus();
+          }
+        }
+    ```
+
+Explanation:
+
+- @ViewChild('inputElement') inputElement!: ElementRef: This line queries the input element and stores a reference to it.
+- this.inputElement.nativeElement.focus(): This method focuses the input element when the button is clicked.
+
+----------------------------------------------------------------------------------------------------
+
+3. TemplateRef and ViewContainerRef:
 ------------------------------------
 
-- TemplateRef:
-  - Represents the embedded template.
-  - Can be queried and manipulated programmatically.
+TemplateRef:
+    - TemplateRef represents an embedded template within Angular.
+    - Can be queried and manipulated programmatically.
+    - It can be thought of as a blueprint for creating views, but it does not create or insert any DOM elements by itself.
+    - We get a reference to a template using Angular's querying mechanism, such as @ViewChild.
+    - It is often used with structural directives and ngTemplateOutlet to dynamically create and insert content into the DOM.
 
-- ViewContainerRef: Used to create embedded views from a template reference.
+ViewContainerRef:
+    - Used to create embedded views from a template reference.
+    - ViewContainerRef represents a container where one or more views can be attached.
+    - It provides methods for creating, inserting, and managing views dynamically at runtime.
+    - `createEmbeddedView(templateRef: TemplateRef<any>, context?: any): ViewRef`
+      This method creates and inserts an embedded view based on the given TemplateRef.
 
-- Example:
-  ```typescript
+Querying:
+    - Querying allows you to get a reference to TemplateRef instances within a component.
+    - A Query (such as ViewChild) can find the TemplateRef associated to an <ng-template> element so that it can be used programmatically; for instance, to pass it to the ViewContainerRef method createEmbeddedView().
+
+Example:
+    ```typescript
       @Component({
         selector: 'app-root',
         template: `
           <ng-template #myTemplate>
             <p>This is a dynamic template!</p>
           </ng-template>
-          <button (click)="insertTemplate()">Insert Template</button>
+          <button (click)="addContent()">Add Content</button>
         `
       })
       export class AppComponent {
@@ -81,89 +127,53 @@ Structural Directives:
 
         constructor(private viewContainerRef: ViewContainerRef) {}
 
-        insertTemplate() {
+        addContent() {
           this.viewContainerRef.createEmbeddedView(this.myTemplate);
         }
       }
-  ```
+    ```
 
-- Explanation:
-    - The `insertTemplate` method inserts the content of `myTemplate` into the view container when the button is clicked.
+Explanation:
+    - The `addContent` method adds the content of `myTemplate` into the view container when the button is clicked.
     - The @ViewChild decorator is used to query and get a reference to the ng-template in the component's template.
-    - { read: TemplateRef } specifies that the reference should be read as a TemplateRef instance.
+    - `this.viewContainerRef.createEmbeddedView(this.templateRef)`: Creates an embedded view from the templateRef and inserts it into the view container when the button is clicked.
 
-- Breakdown:
+Breakdown:
     - 'myTemplate': The local template reference variable defined in the template using #myTemplate.
-    - { read: TemplateRef }: This tells Angular to read the reference as a TemplateRef.
+    - { read: TemplateRef } specifies that the reference should be read as a TemplateRef instance.
     - myTemplate!: TemplateRef<any>: Declares a class property to store the reference.
 
 ----------------------------------------------------------------------------------------------------
 
-3. Template Variables:
-----------------------
+4. Template Variables, ngTemplateOutlet and Context:
+----------------------------------------------------
 
-- Usage: Template variables can be used in conjunction with `ngTemplateOutlet` to render the content defined inside `<ng-template>` tags.
+Definition:
+    - Template variables can be used in conjunction with `ngTemplateOutlet` to render the content defined inside `<ng-template>` tags.
+    - ngTemplateOutlet is a directive that inserts an embedded view from a TemplateRef.
+    - Context allows passing data into the `<ng-template>` elements.
+    - Variables can be accessed using `let` and `as` declarations.
 
-- Example:
-  ```html
-      <ng-template #templateRef let-name>
-        <p>Hello, {{ name }}!</p>
-      </ng-template>
+Usage: Template variables can be used in conjunction with ngTemplateOutlet to render the content defined inside ng-template tags.
 
-      <ng-container *ngTemplateOutlet="templateRef; context: { $implicit: 'Angular' }"></ng-container>
-  ```
+Example:
+    ```html
+        <ng-template #templateRef let-name let-age="age">
+            <p>Name: {{ name }}, Age: {{ age }}</p>
+        </ng-template>
 
-- Explanation: The `ngTemplateOutlet` directive renders the content of `templateRef` with the provided context, making `name` available inside the template.
+        <ng-container *ngTemplateOutlet="templateRef; context: { $implicit: 'John', age: 30 }"></ng-container>
+    ```
 
-----------------------------------------------------------------------------------------------------
-
-4. Querying Templates:
-----------------------
-
-- Example:
-  ```typescript
-      @Component({
-        selector: 'app-root',
-        template: `
-          <ng-template #templateRef>
-            <p>This is a template reference</p>
-          </ng-template>
-        `
-      })
-      export class AppComponent {
-        @ViewChild('templateRef', { read: TemplateRef }) templateRef!: TemplateRef<any>;
-
-        constructor(private viewContainerRef: ViewContainerRef) {}
-
-        renderTemplate() {
-          this.viewContainerRef.createEmbeddedView(this.templateRef);
-        }
-      }
-  ```
-
-- Explanation: The `ViewChild` decorator is used to query the `TemplateRef`, which can then be rendered programmatically.
-
-----------------------------------------------------------------------------------------------------
-
-5. Context and Template Variables:
-----------------------------------
-
-- Definition:
-  - Context allows passing data into the `<ng-template>` elements.
-  - Variables can be accessed using `let` and `as` declarations.
-
-- Example:
-  ```html
-      <ng-template #templateRef let-name let-age="age">
-        <p>Name: {{ name }}, Age: {{ age }}</p>
-      </ng-template>
-
-      <ng-container *ngTemplateOutlet="templateRef; context: { $implicit: 'John', age: 30 }"></ng-container>
-  ```
-
-- Explanation:
-  - `$implicit` is a default placeholder for the first variable.
-  - Additional variables are declared with `let`.
+Explanation:
+    - #templateRef: Declares a template variable for the ng-template.
+    - let-name: Declares a template variable name that will be available within the ng-template.
+    - `$implicit` is a default placeholder for the first variable.
+    - Additional variables are declared with `let`.
+    - `*ngTemplateOutlet="templateRef; context: { $implicit: 'John', age: 30 }"`:
+        - It renders the content of `templateRef` with the provided context, making `name` & `age` available inside the template.
+        - This directive instantiates an embedded view from templateRef with a context object.
+        - The $implicit context variable is set to 'John', making it available as name within the template.
 
 ----------------------------------------------------------------------------------------------------
 
@@ -222,3 +232,6 @@ Explanation:
 - Proper usage ensures cleaner, more maintainable, and performant Angular applications.
 
 ----------------------------------------------------------------------------------------------------
+
+
+    - `$implicit` is a default placeholder for the first variable, additional variables are declared with `let`.
