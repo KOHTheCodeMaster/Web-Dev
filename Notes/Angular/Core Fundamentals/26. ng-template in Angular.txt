@@ -167,7 +167,7 @@ Example:
 
 Explanation:
     - #templateRef: Declares a template variable for the ng-template.
-    - let-name: Declares a template variable name that will be available within the ng-template.
+    - let-name: Declares a variable name that will be available within the ng-template.
     - `$implicit` is a default placeholder for the first variable.
     - Additional variables are declared with `let`.
     - `*ngTemplateOutlet="templateRef; context: { $implicit: 'John', age: 30 }"`:
@@ -180,58 +180,84 @@ Explanation:
 6. Comprehensive Example: Dynamic Food Menu
 -------------------------------------------
 
+Example: Basic Usage of ng-template, ng-container, ngTemplateOutlet, and Template Variables
+
 - Component Template:
 
 ```typescript
-    @Component({
-      selector: 'app-menu',
-      template: `
-        <ng-template #foodTemplate let-food="food">
-          <div class="food-item">
-            <h2>{{ food.name }}</h2>
-            <p>{{ food.description }}</p>
-          </div>
-        </ng-template>
+import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-        <button (click)="addFood()">Add Food Item</button>
-        <div #container></div>
-      `
-    })
-    export class MenuComponent {
-      @ViewChild('foodTemplate', { read: TemplateRef }) foodTemplate!: TemplateRef<any>;
-      @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
+@Component({
+  selector: 'app-basic-example',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <ng-template #greetingTemplate let-name let-location="location">
+      <div>
+        <h1>Hello, {{ name }}!</h1>
+        <p>Welcome to {{ location }}.</p>
+      </div>
+    </ng-template>
 
-      foods = [
-        { name: 'Pizza', description: 'Cheesy and delicious' },
-        { name: 'Pasta', description: 'Rich and creamy' }
-      ];
-
-      addFood() {
-        const food = this.foods.pop();
-        if (food) {
-          this.container.createEmbeddedView(this.foodTemplate, { food });
-        }
-      }
-    }
+    <ng-container *ngTemplateOutlet="greetingTemplate; context: { $implicit: 'Alice', location: 'Wonderland' }"></ng-container>
+  `
+})
+export class BasicExampleComponent {
+  @ViewChild('greetingTemplate', { read: TemplateRef }) greetingTemplate!: TemplateRef<any>;
+}
 ```
 
-Explanation:
+Basic Explanation
 
-- foodTemplate: Defines the template for each food item.
-- container: A `ViewContainerRef` where the food items will be inserted.
-- addFood: Method to dynamically add food items to the view container.
+- ng-template: 
+  - Defines a template that is not rendered by default.
+  - In this example, `greetingTemplate` is defined to display a personalized greeting message.
+
+- ng-container: 
+  - Acts as a placeholder without adding extra elements to the DOM.
+  - Used here to dynamically render the content of `greetingTemplate`.
+
+- ngTemplateOutlet: 
+  - Directive used to render the content of an `ng-template`.
+  - The `context` property is used to pass dynamic data into the template.
+
+- Template Variables: 
+  - `let-name` and `let-location` are template variables used to inject data into the template.
+  - `$implicit` is a special variable that allows passing a single default value.
+
+Detailed Explanation
+
+1. Template Definition:
+   - `ng-template` with a reference variable `#greetingTemplate` is defined.
+   - Template variables `let-name` and `let-location` are used to receive dynamic data.
+   - The template content includes an `<h1>` for the name and a `<p>` for the location.
+
+2. Dynamic Rendering:
+   - `ng-container` is used with the `ngTemplateOutlet` directive.
+   - The `context` object provides data to the template variables:
+     - `$implicit` is set to `'Alice'`, corresponding to `let-name`.
+     - `location` is set to `'Wonderland'`.
+
+3. Template Variables Usage:
+   - `let-name` directly receives the `$implicit` value (`'Alice'`).
+   - `let-location="location"` receives the `location` value from the context object.
+
+Conclusion
+
+
+
 
 ----------------------------------------------------------------------------------------------------
 
 7. Summary:
 -----------
 
-- ng-template is used for defining content that is conditionally or programmatically rendered.
-- It provides flexibility in template handling, allowing for dynamic and reusable content.
+- ng-template is used for defining reusable templates that are conditionally or programmatically rendered.
+- ng-container: Acts as a placeholder without adding extra elements to the DOM.
+- ngTemplateOutlet: Dynamically renders the content of an ng-template based on the provided context.
+- Template Variables: Pass dynamic data into templates using let and context bindings.
 - Combining `ng-template` with `ngTemplateOutlet` and `TemplateRef` offers powerful template manipulation capabilities.
-- Proper usage ensures cleaner, more maintainable, and performant Angular applications.
+- `$implicit` is a default placeholder for the first variable, additional variables are declared with `let`.
 
 ----------------------------------------------------------------------------------------------------
-
-
-    - `$implicit` is a default placeholder for the first variable, additional variables are declared with `let`.

@@ -43,6 +43,7 @@ import {LikeCounterCompComponent} from "./components/demo-practice/demo-like-cou
 import {
     DemoNgContentContainerAndTemplateComponent
 } from "./components/demo-ng-content-container-and-template/demo-ng-content-container-and-template.component";
+import {DemoGreetingsExample1} from "./components/demo-ng-content-container-and-template/demo-greetings-example-1";
 
 @Component({
     selector: 'app-root',
@@ -65,6 +66,7 @@ import {
         DemoLikeCounterComponent,
         LikeCounterCompComponent,
         DemoNgContentContainerAndTemplateComponent,
+        DemoGreetingsExample1,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
