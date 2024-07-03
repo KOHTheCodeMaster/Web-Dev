@@ -40,6 +40,9 @@ import {DemoOutput1Component} from "./components/custom-events-using-output/demo
 import {DemoOutput2Component} from "./components/custom-events-using-output/demo-output-2/demo-output-2.component";
 import {DemoLikeCounterComponent} from "./components/demo-practice/demo-like-counter/demo-like-counter.component";
 import {LikeCounterCompComponent} from "./components/demo-practice/demo-like-counter/like-counter-comp.component";
+import {
+    DemoNgContentContainerAndTemplateComponent
+} from "./components/demo-ng-content-container-and-template/demo-ng-content-container-and-template.component";
 
 @Component({
     selector: 'app-root',
@@ -61,6 +64,7 @@ import {LikeCounterCompComponent} from "./components/demo-practice/demo-like-cou
         DemoOutput2Component,
         DemoLikeCounterComponent,
         LikeCounterCompComponent,
+        DemoNgContentContainerAndTemplateComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
