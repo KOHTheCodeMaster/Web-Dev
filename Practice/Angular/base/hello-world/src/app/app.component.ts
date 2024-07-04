@@ -44,11 +44,13 @@ import {
     DemoNgContentContainerAndTemplateComponent
 } from "./components/demo-ng-content-container-and-template/demo-ng-content-container-and-template.component";
 import {DemoGreetingsExample1} from "./components/demo-ng-content-container-and-template/demo-greetings-example-1";
+import {DemoRouting1Component} from "./components/routing/demo-routing-1/demo-routing-1.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent, DataBindingComponent,
+    imports: [RouterOutlet,
+        Comp1Component, InlineTemplateComponent, CompSelectorDemoComponent, DataBindingComponent,
         StyleScopingDemoComponent, NgClassAndStyleComponent, DemoNgModelComponent,
         DemoNgIfComponent, DemoNgForComponent, DemoNgSwitchComponent,
         DemoTransactionComponent, DI1Component, DI2Component, DI3Component, DI4Component,
@@ -67,6 +69,7 @@ import {DemoGreetingsExample1} from "./components/demo-ng-content-container-and-
         LikeCounterCompComponent,
         DemoNgContentContainerAndTemplateComponent,
         DemoGreetingsExample1,
+        DemoRouting1Component,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

@@ -1,0 +1,232 @@
+
+Time Stamp: 4th Jul. 2K24 - 07:15 PM..!!
+
+Title: Understanding Routing in Standalone Components in Angular
+
+Category: Angular -> Routing -> Standalone Components
+
+Keywords: Angular, Routing, Standalone Components, SPA, provideRouter
+
+Purpose: To understand routing in standalone components in Angular
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Routes in Angular
+-----------------
+
+1. Introduction:
+----------------
+
+- Routing is an essential aspect of Single Page Applications (SPA) in Angular
+- It allows navigation between different views without refreshing the entire page.
+- Understanding routing in standalone components involves setting up routes, linking components, and handling navigation dynamically.
+
+Fundamental Principles:
+
+- Single Page Application (SPA):
+    - An SPA loads a single HTML page and dynamically updates the content as the user interacts with the app.
+    - Improves user experience by avoiding full page reloads.
+
+- Routes:
+    - Defines navigation paths and associated components within the application.
+    - Each route maps a URL path to a specific component.
+    - Creating Routes:
+        - Routes are defined as an array of JavaScript objects.
+        - Each route object contains a `path` and a `component` property.
+
+- Standalone Components:
+    - Angular components that are not part of any NgModule.
+    - Simplifies the component architecture and promotes re-usability.
+
+
+2. Key Concepts:
+----------------
+
+- `provideRouter` - Configuring Routes:
+    - Definition: `provideRouter` from `@angular/router` is a function to configure router providers.
+    - Purpose: Registers routes in Angular's dependency injection system.
+    - Significance: Essential for setting up routing in standalone components.
+    - Usage: Defined in app.config.ts
+    - Use-case: Add routes to the application configuration.
+
+- Navigating with RouterLink:
+   - `routerLink`
+        - `routerLink` directive is used to create navigation links.
+        - It's a directive to link routes & Navigates to specified route.
+        - Can be used with <a> or <button>.
+        - Example: ` <a routerLink="/first-comp">First Component</a> `
+
+   - `routerLinkActive`:
+        - A directive that helps in styling by applying CSS classes to the active link.
+        - Purpose: Visually distinguishes the currently active route in your Angular application.
+        - Usage: Applies one or more CSS classes to the element (usually an anchor tag) associated with the routerLink directive for the active route. Simultaneously removes the specified CSS classes from any inactive router links.
+        - Example: ` <a routerLink="/first-comp" routerLinkActive="active">First Component</a> `
+
+        - routerLinkActiveOptions:
+            - By default, routerLinkActive considers a route active if the URL starts with the route path.
+            - Adding [routerLinkActiveOptions]="{ exact: true }" ensures the link is highlighted only when the URL precisely matches the route path (excluding child routes).
+            - Example: ` <a routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Products</a> `
+            - This link will only be styled as active when the URL is exactly "/products" and not "/products/category/electronics".
+
+- `<router-outlet>` - Dynamic Component Loading:
+   - Use `<router-outlet>` in the template to render the component based on the active route.
+   - Definition: It's a directive to render routed components.
+   - Purpose: Acts as a placeholder for routed components.
+   - Usage: Placed in template where routed views should appear.
+   - Example: ` <router-outlet></router-outlet> `
+
+
+3. Comprehensive Example:
+-------------------------
+
+Standalone Component Routing - Step-by-Step Flow Analysis:
+
+- Setup Routes:
+   - Define routes in a separate file, e.g., `app.routes.ts`.
+     ```typescript
+         import { Routes } from '@angular/router';
+         import { FirstCompComponent } from './components/first-comp.component';
+         import { SecondCompComponent } from './components/second-comp.component';
+         import { ThirdCompComponent } from './components/third-comp.component';
+
+         export const routes: Routes = [
+           { path: 'first-comp', component: FirstCompComponent },
+           { path: 'second-comp', component: SecondCompComponent },
+           { path: 'third-comp', component: ThirdCompComponent }
+         ];
+     ```
+
+- Provide Routes:
+   - Import and provide routes in the application configuration, e.g., `app.config.ts`.
+     ```typescript
+         import { ApplicationConfig } from '@angular/core';
+         import { provideRouter } from '@angular/router';
+         import { routes } from './app.routes';
+
+         export const appConfig: ApplicationConfig = {
+           providers: [provideRouter(routes)]
+         };
+     ```
+
+- Bootstrap Application:
+   - Bootstrap the application with the main component and configuration, e.g., `main.ts`.
+     ```typescript
+         import { bootstrapApplication } from '@angular/platform-browser';
+         import { appConfig } from './app/app.config';
+         import { DemoRouting1Component } from './app/components/demo-routing-1.component';
+
+         bootstrapApplication(DemoRouting1Component, appConfig)
+           .catch((err) => console.error(err));
+     ```
+
+- Component Declarations:
+    - Demo Routing Component
+    ```typescript
+        import {Component} from '@angular/core';
+        import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+
+        @Component({
+            selector: 'app-demo-routing-1',
+            standalone: true,
+            imports: [RouterLink, RouterLinkActive, RouterOutlet],
+            templateUrl: './demo-routing-1.component.html',
+            styleUrl: './demo-routing-1.component.css'
+        })
+        export class DemoRouting1Component {
+        }
+    ```
+
+    - First, Second & Third Component are similar
+    ```
+        import {Component} from '@angular/core';
+
+        @Component({
+            selector: 'app-route-first-comp',
+            standalone: true,
+            imports: [],
+            template: `
+                <h1>Route 1 - First-Comp</h1>
+                <p>This is First Component for Route: '/first-comp'</p>
+            `
+        })
+        export class FirstCompComponent {
+
+        }
+    ```
+
+
+- Setup Component Template:
+   - Use `<router-outlet>` and `routerLink` directives in the main component template.
+     ```html
+         <h1>Demo Router</h1>
+         <ul>
+           <li><a class="routing-btn" routerLink="first-comp" routerLinkActive="active-routing-btn">First Component</a></li>
+           <li><a class="routing-btn" routerLink="second-comp" routerLinkActive="active-routing-btn">Second Component</a></li>
+           <li><a class="routing-btn" routerLink="third-comp" routerLinkActive="active-routing-btn">Third Component</a></li>
+         </ul>
+         <router-outlet></router-outlet>
+     ```
+
+- Component Styles:
+   - Add styles to highlight active links.
+     ```css
+         .routing-btn {
+           width: 150px;
+           background: #ffffff;
+           border-radius: 6px;
+           display: inline-block;
+           cursor: pointer;
+           color: #666666;
+           font-weight: bold;
+           padding: 6px 24px;
+           text-decoration: none;
+         }
+         .active-routing-btn {
+           background: #bddbfa;
+           color: #ffffff;
+         }
+     ```
+
+
+4. Best Practices:
+------------------
+
+- Route Order: Specific routes should precede more generic ones. Always place wildcard routes last.
+- Lazy Loading: Improve performance by lazy loading feature modules.
+- Route Guards: Use guards to protect routes from unauthorized access.
+- Parameter Passing: Pass parameters to routes for dynamic content.
+- Accessibility: Use `ariaCurrentWhenActive` for better accessibility.
+
+
+5. Conclusion:
+--------------
+
+- Understanding routing in Angular standalone components involves:
+    - breaking down the process into defining routes,
+    - configuring the router,
+    - and setting up navigation within the application.
+
+
+6. Summary:
+-----------
+
+- SPA: improves user experience by avoiding full page reloads.
+- Routes:
+    - Essential for navigation.
+    - Routes map URL paths to components.
+    - Defined using Routes array.
+    - Registered via provideRouter.
+- provideRouter:
+    - Configures routing providers.
+    - Necessary for routing functionality.
+- bootstrapApplication:
+    - Initializes Angular app.
+    - Replaces traditional bootstrapModule.
+- Router Directives:
+    - RouterLink: Navigates to routes.
+    - RouterLinkActive: Highlights active route.
+    - RouterOutlet: Dynamically renders routed components.
