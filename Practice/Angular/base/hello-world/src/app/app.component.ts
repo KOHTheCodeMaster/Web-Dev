@@ -45,6 +45,7 @@ import {
 } from "./components/demo-ng-content-container-and-template/demo-ng-content-container-and-template.component";
 import {DemoGreetingsExample1} from "./components/demo-ng-content-container-and-template/demo-greetings-example-1";
 import {DemoRouting1Component} from "./components/routing/demo-routing-1/demo-routing-1.component";
+import {OptionsMenu1Component} from "./components/demo-practice/options-menu-1/options-menu-1.component";
 
 @Component({
     selector: 'app-root',
@@ -70,6 +71,7 @@ import {DemoRouting1Component} from "./components/routing/demo-routing-1/demo-ro
         DemoNgContentContainerAndTemplateComponent,
         DemoGreetingsExample1,
         DemoRouting1Component,
+        OptionsMenu1Component,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
