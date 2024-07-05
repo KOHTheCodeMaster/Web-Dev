@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-
-body {
-  background-color: #000001;
-  color: #FFF;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .global-style-button-1 {
   padding: 10px;

@@ -5,7 +5,6 @@ import {ThirdCompComponent} from "./components/routing/demo-routing-1/third-comp
 
 export const routes: Routes = [
     {path: 'first-comp', component: FirstCompComponent},
-    {path: 'first-comp/abc/123', component: SecondCompComponent},
     {path: 'second-comp', component: SecondCompComponent},
     {path: 'third-comp', component: ThirdCompComponent}
 ];
