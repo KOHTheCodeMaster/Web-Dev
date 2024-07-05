@@ -45,7 +45,12 @@ import {
 } from "./components/demo-ng-content-container-and-template/demo-ng-content-container-and-template.component";
 import {DemoGreetingsExample1} from "./components/demo-ng-content-container-and-template/demo-greetings-example-1";
 import {DemoRouting1Component} from "./components/routing/demo-routing-1/demo-routing-1.component";
-import {OptionsMenu1Component} from "./components/demo-practice/options-menu-1/options-menu-1.component";
+import {
+    OptionsMenu1Component
+} from "./components/demo-practice/options-drop-down-menu/options-menu-1/options-menu-1.component";
+import {
+    SelectDropDownMenu1Component
+} from "./components/demo-practice/options-drop-down-menu/select-drop-down-menu-1/select-drop-down-menu-1.component";
 
 @Component({
     selector: 'app-root',
@@ -72,6 +77,7 @@ import {OptionsMenu1Component} from "./components/demo-practice/options-menu-1/o
         DemoGreetingsExample1,
         DemoRouting1Component,
         OptionsMenu1Component,
+        SelectDropDownMenu1Component,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
