@@ -1,7 +1,9 @@
 <section>
   <form>
-    <input #inputSearchCity placeholder="Search City" type="text">
-    <button (click)="filterHousingLocation(inputSearchCity.value)" class="p-2.5 border border-[#605DC8] rounded-[8px] bg-[#605DC8] text-red-500"
+    <input #inputSearchCity placeholder="Search City" type="text"
+           class="w-[30%] p-2.5 border border-[#605DC8] rounded-[8px] mr-1 inline-block">
+    <button (click)="filterHousingLocation(inputSearchCity.value)"
+            class="p-2.5 border border-[#605DC8] rounded-[8px] bg-[#605DC8] text-white"
             type="button">Search
     </button>
   </form>
