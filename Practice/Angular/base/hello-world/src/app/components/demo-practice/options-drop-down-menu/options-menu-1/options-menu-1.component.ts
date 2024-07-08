@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-options-menu-1',
-  standalone: true,
-  imports: [],
-  templateUrl: './options-menu-1.component.html',
+    selector: 'app-options-menu-1',
+    standalone: true,
+    imports: [],
+    templateUrl: './options-menu-1.component.html',
 })
 export class OptionsMenu1Component {
 
@@ -25,7 +25,7 @@ export class OptionsMenu1Component {
     }
 
     // Options Btn Click Handler to toggle the dropdown visibility
-    toggleMenu(event: MouseEvent) {
+    toggleMenu() {
 
         this.optionsBtn = document.getElementById('options-button');
         this.optionsMenu = document.getElementById('options-menu'); // Targets the dropdown menu element;

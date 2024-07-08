@@ -2,12 +2,12 @@
 
   <h3 class="p-2 text-xl text-black bg-green-200">Select Drop-down Menu - 1</h3>
 
-  <form [formGroup]="dropdownForm" (ngSubmit)="onSubmit()" class="text-white">
+  <form (ngSubmit)="onSubmit()" [formGroup]="dropdownForm" class="text-white">
     <label for="options">Choose an option:</label>
-    <select id="options" formControlName="selectedOption" class="mx-2 text-black">
+    <select class="mx-2 text-black" formControlName="selectedOption" id="options">
       <option *ngFor="let option of options" [value]="option">{{ option }}</option>
     </select>
-    <button type="submit" class="px-3 py-2 bg-gray-600">Submit</button>
+    <button class="px-3 py-2 bg-gray-600" type="submit">Submit</button>
   </form>
 
 </div>
