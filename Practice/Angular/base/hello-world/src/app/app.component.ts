@@ -52,6 +52,9 @@ import {
     SelectDropDownMenu1Component
 } from "./components/demo-practice/options-drop-down-menu/select-drop-down-menu-1/select-drop-down-menu-1.component";
 import {HomesComponent} from "./components/demo-practice/homes/homes.component";
+import {
+    OptionsMenu2Component
+} from "./components/demo-practice/options-drop-down-menu/options-menu-2/options-menu-2.component";
 
 @Component({
     selector: 'app-root',
@@ -78,6 +81,7 @@ import {HomesComponent} from "./components/demo-practice/homes/homes.component";
         DemoGreetingsExample1,
         DemoRouting1Component,
         OptionsMenu1Component,
+        OptionsMenu2Component,
         SelectDropDownMenu1Component,
         HomesComponent,
     ],
