@@ -13,5 +13,8 @@
   "repository": {
     "type": "git",
     "url": "github:KOHTheCodeMaster/Frontend-Web-Dev"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.1"
   }
 }

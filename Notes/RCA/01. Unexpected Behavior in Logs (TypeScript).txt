@@ -1,0 +1,146 @@
+
+Time Stamp: 14th Jul. 2K24 - 07:45 PM..!!
+
+Title: Unexpected Behavior in Logs due to Asynchronous Observable
+
+Category: Software Development -> Debugging -> Observable Issues -> Logging
+
+Keywords: Observable, logs, debugging, JavaScript, asynchronous
+
+Purpose: Root Cause Analysis (RCA) document for the unexpected behavior in logs caused by observables, and to identify the root cause and solution for the issue.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Documentation for Issue: Unexpected Behavior in Logs due to Asynchronous Observable
+
+Issue Description:
+The logs are not printing as expected. The issue seems to be due to existing `'\n'` logs in an observable, causing conflicts with the synchronous execution of other logs.
+We need to understand the root cause of this unexpected behavior.
+
+Expected Output:
+```
+    Value:  1
+    Observable1 next 1 invoked.
+    Error:  undefined
+    Observable1 error invoked.
+    Observable1 next 2 invoked.
+    Observable1 complete invoked.
+    Observable1 ends.
+
+    Line Break Not Working...
+
+     - 1
+    Line Break Not Working...
+
+     - 2
+    Line Break Not Working...
+
+     - 3
+```
+
+Current Output:
+```
+    Value:  1
+    Observable1 next 1 invoked.
+    Error:  undefined
+    Observable1 error invoked.
+    Observable1 next 2 invoked.
+    Observable1 complete invoked.
+    Observable1 ends.
+
+    Line Break Not Working...
+
+     - 1
+     - 2 Break Not Working...
+     - 3 Break Not Working...
+```
+
+Code Sample:
+```typescript
+    demoSynchronousObservable1();
+
+    function demoSynchronousObservable1() {
+
+        // Define an observer
+        const observer1 = {
+            next: (value) => console.log('Value: ', value),
+            error: (err) => console.error('Error: ', err),
+            complete: () => console.log('Observer 1 Completed successfully!')
+        };
+
+        const observable1 = new Observable((subscriber) => {
+            console.log('\nObservable1 starts.');
+
+            subscriber.next(1);
+            console.log('Observable1 next 1 invoked.');
+
+            subscriber.error();
+            console.log('Observable1 error invoked.');
+
+            subscriber.next(2);
+            console.log('Observable1 next 2 invoked.');
+
+            subscriber.complete();
+            console.log('Observable1 complete invoked.');
+
+            console.log('Observable1 ends.\n\n');
+        });
+
+        const observable2 = new Observable((subscriber) => {
+            subscriber.next(1);
+            subscriber.error();
+            subscriber.next(2);
+            subscriber.complete();
+        });
+
+        const observable3 = new Observable((subscriber) => {
+            subscriber.next(1);
+            subscriber.error();
+            subscriber.next(2);
+            subscriber.complete();
+        });
+
+        let subscription = observable1.subscribe(observer1);
+        // console.log('subscription: ' + subscription);
+
+        console.log('Line Break Not Working...\n\n - 1')
+        observable2.subscribe(observer1);
+        console.log('Line Break Not Working...\n\n - 2')
+        observable3.subscribe(observer1);
+        console.log('Line Break Not Working...\n\n - 3')
+
+    }
+```
+
+----------------------------------------------------------------------------------------------------
+
+Analysis:
+- The issue arises due to the handling of line breaks (`'\n'`) in the console logs when observables are being processed.
+- The synchronous execution of the logs is being disrupted by the asynchronous nature of observables, causing the logs to not print as expected.
+
+----------------------------------------------------------------------------------------------------
+
+To-Do:
+1. Investigate the Root Cause: Understand how the `'\n'` line breaks in the logs are interfering with the synchronous log execution.
+2. Identify Solutions: Determine potential fixes or workarounds to ensure that the logs print correctly, even when using observables.
+3. Implement and Test: Apply the identified solutions and test to verify that the logs now print as expected.
+
+----------------------------------------------------------------------------------------------------
+
+Conclusion:
+- This documentation provides a clear and professional overview of the issue, including all necessary details to understand, analyze, and address the problem effectively.
+
+----------------------------------------------------------------------------------------------------
+
+Summary:
+- Issue: Logs are not printing as expected due to conflicts with `'\n'` in observables.
+- Expected vs. Current Output: Documented the expected output versus the current problematic output.
+- Code Sample: Provided the relevant code that demonstrates the issue.
+- Analysis: Identified that the issue is related to the handling of line breaks in synchronous and asynchronous log executions.
+- To-Do: Investigate the root cause, identify solutions, and implement fixes to ensure proper log output.
+
+----------------------------------------------------------------------------------------------------
