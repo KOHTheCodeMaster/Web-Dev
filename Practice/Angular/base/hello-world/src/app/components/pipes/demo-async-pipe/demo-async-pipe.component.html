@@ -1,0 +1,16 @@
+<div class="m-4 border-2">
+
+  <h3 class="p-2 text-xl text-black bg-green-200">Async Pipe</h3>
+
+  <div *ngIf="users$ | async as users; else loading" class="m-5">
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user.name }} ({{ user.username }}) - {{ user.email }}
+      </li>
+    </ul>
+  </div>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+
+</div>

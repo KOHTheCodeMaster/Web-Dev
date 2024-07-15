@@ -55,6 +55,7 @@ import {HomesComponent} from "./components/demo-practice/homes/homes.component";
 import {
     OptionsMenu2Component
 } from "./components/demo-practice/options-drop-down-menu/options-menu-2/options-menu-2.component";
+import {DemoAsyncPipeComponent} from "./components/pipes/demo-async-pipe/demo-async-pipe.component";
 
 @Component({
     selector: 'app-root',
@@ -84,6 +85,7 @@ import {
         OptionsMenu2Component,
         SelectDropDownMenu1Component,
         HomesComponent,
+        DemoAsyncPipeComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
