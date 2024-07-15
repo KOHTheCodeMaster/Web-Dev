@@ -135,10 +135,10 @@ function demoSameOutCome() {
     }());
     var circle1 = new Circle();
     circle1.radius = 10; // Calls the setter property
-    console.log("Circle1 -> Area: " + circle1.area); // Calls the getter property
+    console.log("Circle1 -> Area: " + circle1.area); // Calls the getter property like a regular field
     var circle2 = new Circle();
     circle2.setRadius(1); // Calls the setter property
-    console.log("Circle2 -> Area: " + circle2.getArea()); // Calls the getter property
+    console.log("Circle2 -> Area: " + circle2.getArea()); // Calls the regular method
     console.log("demoSameOutCome end.\n");
 }
 function demoUnderscoreConfusionCleared() {

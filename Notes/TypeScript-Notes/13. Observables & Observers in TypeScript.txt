@@ -21,33 +21,179 @@ Observables and Observers (RxJS) in TypeScript
 Introduction:
 -------------
 
+- This document covers the basics of Observables, including their creation, usage, best practices, and a complete step-by-step analysis with examples.
+
+- Observables, a key part of the RxJS library, are crucial for handling asynchronous operations and event streams in Angular.
+- They provide a way to emit multiple values over time, manage asynchronous data streams, and handle complex data transformations with ease.
+
 - In Angular, Observables and Observers, powered by the RxJS library, provide a powerful mechanism for handling asynchronous data streams.
 - They form the backbone of reactive programming in Angular, allowing developers to handle data that arrives at unpredictable intervals effectively.
 
-Core Concepts:
-
-Observable:
-- Definition:
-    - An `Observable` represents a stream of values (events or data) emitted over time.
-    - It can handle asynchronous operations such as HTTP requests, user inputs, and more.
-- Creation: Observables can be created using various methods provided by RxJS:
-  - `Observable.create()`
-  - `of()`
-  - `from()`
-  - `interval()`
-  - `timer()`
+----------------------------------------------------------------------------------------------------
 
 Observer:
-- Definition: An `Observer` is an object that defines how an Observable's values, errors, and completion notifications are handled.
-- Structure: An Observer typically consists of three methods:
-  - `next(value)`
-  - `error(error)`
-  - `complete()`
+---------
+
+- The Observer is an object that defines the handlers for the three types of notifications that an Observable can emit: next, error, and complete.
+- Defining the Observer separately allows for a clearer and more organized subscription process.
+- All the handler properties are optional. If we omit a handler for one of these properties, the observer ignores notifications of that type.
+
+Observer Handlers:
+
+- next(value):
+    - A handler for each delivered value. Called zero or more times after execution starts.
+    - callback function that gets called by the producer during the subscription when the producer "has" the value.
+    - Limitations: It won't be called if error or complete callback functions have been called, nor after the consumer has unsubscribed.
+
+- error(err):
+    - A handler for an error notification. An error halts execution of the observable instance and unsubscribes.
+    - callback function that gets called by the producer if and when it encountered a problem of any kind. The errored value will be provided through the err parameter.
+    - Automatically unsubscribes.
+    - Limitations: This callback can't be called more than one time, if the complete callback function have been called previously, or if the consumer has unsubscribed.
+
+- complete():
+    - A handler for the execution-complete notification. Do not expect next or error to be called again.
+    - callback function that gets called by the producer if and when it has no more values to provide (by calling next callback function). This means that no error has happened.
+    - Automatically unsubscribes.
+    - Limitations: can't be called more than one time, if the error callback function have been called previously, or if the consumer has unsubscribed.
+
+- Here is an example of defining an observer object separately:
+```
+    const observer: Observer<number> = {
+      next: value => { console.log('Next value:', value); },
+      error: err => { console.error('Error:', err); },
+      complete: () => { console.log('Sequence complete'); }
+    };
+```
+
+- Alternatively, we can create the Observer object with functions named next(), error() and complete().
+- This works because JavaScript turns the function names into the property names.
+```
+    const observer: Observer<number> = {
+      next(value) { console.log('Next value:', value); },
+      error(err) { console.error('Error:', err); },
+      complete() { console.log('Sequence complete'); }
+    };
+```
+
+----------------------------------------------------------------------------------------------------
+
+Defining the Subscriber Function:
+---------------------------------
+
+- The subscriber function handles the subscription logic.
+- This function takes an Observer as an argument and uses its methods (next, error, complete) to emit values and handle the completion or error of the Observable stream.
+
+- Here is an example of defining a sequenceSubscriber function:
+```
+    function sequenceSubscriber(observer: Observer<number>) {
+      // Synchronously deliver 1, 2, 3 and then complete
+      observer.next(1);
+      observer.next(2);
+      observer.next(3);
+      observer.complete();
+    }
+```
+
+Benefits of Using a Separate Function for Subscription:
+
+- Modularity: The subscription logic is encapsulated in a separate function, making the code more modular.
+- Readability: It enhances readability by clearly separating the Observable definition and subscription logic.
+- Re-usability: The same subscription logic can be reused with different Observables if needed.
+- Maintainability: It simplifies maintenance by allowing changes to the subscription logic without affecting the Observable creation code.
+
+----------------------------------------------------------------------------------------------------
+
+Observable:
+-----------
+
+Definition:
+- An Observable is an object that represents a stream of values (events or data) that can emit multiple values over time.
+- It is the foundation of reactive programming, allowing you to handle asynchronous data streams seamlessly.
+- It can handle asynchronous operations such as HTTP requests, user inputs, and more.
+
+Observable Lifecycle: An Observable can emit three types of notifications
+    - Next: Delivers a value to the subscriber.
+    - Error: Delivers an error and stops the Observable.
+    - Complete: Indicates that the Observable has finished emitting values.
+
+Naming Conventions:
+- By convention, observable variables often have a $ suffix to indicate that they are streams of values.
+- Example: ` const numbers$ = of(1, 2, 3); `
+
+----------------------------------------------------------------------------------------------------
+
+Creating Observables:
+---------------------
+
+RxJS Methods: RxJS provides various methods to create Observables.
+
+Here are some common ones:
+
+of(): Emits the provided values synchronously.
+    - Example: ` const numbers$ = of(1, 2, 3); `
+
+from(): Converts an array or promise into an Observable.
+    - Example: ` const array$ = from([1, 2, 3]); `
+
+interval(): Emits values at specified intervals.
+    - Example: ` const interval$ = interval(1000); // Emits every second `
+
+timer(): Emits values after a delay and then at specified intervals.
+    - Example: ` const timer$ = timer(3000, 1000); // Emits after 3 seconds, then every second `
+
+
+Observable Constructor:
+
+- You can create custom Observables using the constructor:
+- Example:
+```
+    const customObservable$ = new Observable<number>(observer => {
+      observer.next(1);
+      observer.next(2);
+      observer.next(3);
+      observer.complete();
+    });
+```
+
+----------------------------------------------------------------------------------------------------
 
 Subscription:
+-------------
+
 - Definition:
     - A `Subscription` object represents the connection between an Observable and an Observer.
     - It allows you to manage the data flow and unsubscribe when no longer needed.
+
+- Subscribing to the Observable:
+    -  We can subscribe to the observable by invoking the subscribe() method which takes in Observer as an Arg.
+        - Example:
+            ```
+                //  Declare an observable named sequence$
+                const sequence$ = new Observable<number>(observer => {
+                  observer.next(1);
+                  observer.next(2);
+                  observer.next(3);
+                  observer.complete();
+                });
+
+                const observer: Observer<number> = {
+                  next: value => { console.log('Next value:', value); },
+                  error: err => { console.error('Error:', err); },
+                  complete: () => { console.log('Sequence complete'); }
+                };
+
+                // Execute the Observable sequence$ and print the result of each notification
+                sequence$.subscribe(observer);
+            ```
+
+- Unsubscribing the observable to avoid data leaks:
+    - When the consumer unsubscribes, stop listening to the changes.
+    - Example:
+        ```
+            let subscription: Subscription = sequence$.subscribe(observer);
+            subscription.unsubscribe();
+        ```
 
 Operators:
 - Definition: Operators are functions that modify Observables. They can transform, filter, and combine Observables to create complex data flows.
@@ -286,7 +432,8 @@ Summary:
 --------
 
 - Observables represent a stream of values emitted over time.
-- Observers define how to handle emitted values, errors, and completion notifications.
+- Observers define how to handle emitted values with handlers for next, error, and complete notifications.
+- Subscriber Function: Define a separate function for the subscriber logic.
 - Subscriptions manage the connection between Observables and Observers.
 - Operators provide powerful mechanisms to transform and manage data flows.
 - Use AsyncPipe for automatic subscription and unsubscription in templates.
