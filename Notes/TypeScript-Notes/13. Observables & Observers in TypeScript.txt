@@ -397,7 +397,7 @@ Code-Flow Analysis:
 
 ----------------------------------------------------------------------------------------------------
 
-AsyncPipe in Angular:
+Async Pipe in Angular:
 ---------------------
 
 - The `AsyncPipe` is a built-in Angular pipe that automatically subscribes to an Observable and returns the latest value it has emitted.
