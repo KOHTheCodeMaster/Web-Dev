@@ -1,0 +1,172 @@
+
+Time Stamp: 16th Jul. 2K24 - 12:53 AM..!!
+
+Title: Introduction to RxJS Operators
+
+Category: TypeScript -> Observables -> Core Concepts and Operators
+
+Keywords: RxJS, operators, observables, basics, introduction
+
+Purpose: To provide a step-by-step foundational understanding of RxJS operators, starting from the basics.
+
+Doc-type: Study Material Document (SMD)
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Introduction to RxJS Operators
+------------------------------
+
+Table of Contents:
+------------------
+
+1. Understanding the Basics of Streams
+   - Introduction
+   - Real-World Analogy
+2. Introduction to Observables and Operators
+   - What are Operators?
+   - How do Operators Work?
+3. Types of Operators
+   - Overview of Core Types
+4. Detailed Explanation and Basic Examples
+   - Creation Operators - `of`
+   - Transformation Operators - `map`
+   - Filtering Operators - `filter`
+5. Summary
+
+----------------------------------------------------------------------------------------------------
+
+1. Understanding the Basics of Streams:
+---------------------------------------
+
+Introduction:
+- Before diving into transformation operators, it's essential to understand the core concept of streams of data.
+- Think of a stream as a sequence of ongoing events ordered in time.
+- For example, a stream could represent user clicks, API responses, or even real-time sensor data.
+
+Real-World Analogy: To make these concepts clearer, we'll use a real-world analogy: imagine a conveyor belt in a factory.
+- Conveyor Belt: Represents the observable stream.
+- Items on the Conveyor Belt: Represents the data emitted by the observable.
+- Workers at Different Stations: Represents different operators that process or transform the items.
+
+----------------------------------------------------------------------------------------------------
+
+2. Introduction to RxJs Operators:
+----------------------------------
+
+What are Observables?
+- Observables are a core concept in RxJS (Reactive Extensions for JavaScript) and are used to represent asynchronous data streams.
+- Think of an observable as a collection of data over time.
+- Observables can emit data items, which can be processed using operators.
+
+What are Operators?
+- Operators are pure functions that allow you to work with observables.
+- They take an observable as input and return another observable.
+- They let you manipulate the data emitted by observables in various ways, such as transforming, filtering, combining, and more.
+- They enable you to create, transform, filter, combine, handle errors, and perform utility tasks on streams of data.
+
+How do Operators Work?
+- Operators work by taking each emitted value from the source observable, applying a function to it, and then returning a new observable with the transformed values.
+
+----------------------------------------------------------------------------------------------------
+
+3. Types of Operators:
+----------------------
+
+Overview of Core Types:
+- There are several types of operators in RxJS, each serving a different purpose.
+
+Here are some core types:
+- Creation Operators: Create new observables.
+- Transformation Operators: Transform the data emitted by observables.
+- Filtering Operators: Filter the data emitted by observables.
+
+----------------------------------------------------------------------------------------------------
+
+4. Detailed Explanation and Basic Examples:
+-------------------------------------------
+
+Creation Operators:
+-------------------
+
+`of`: The `of` operator creates an observable that emits a sequence of values.
+
+Example:
+```typescript
+    import { of } from 'rxjs';
+
+    const numbers$ = of(1, 2, 3);
+    numbers$.subscribe(console.log);  // Output: 1, 2, 3
+```
+
+Explanation:
+- The `of` operator creates an observable that emits the values 1, 2, and 3 in sequence.
+- The `subscribe` method is used to listen to the emitted values and print them to the console.
+
+
+Transformation Operators:
+-------------------------
+
+`map`: The `map` operator transforms each value emitted by the source observable using a provided function.
+
+Example:
+```typescript
+    import { of } from 'rxjs';
+    import { map } from 'rxjs/operators';
+
+    const numbers$ = of(1, 2, 3);
+    const squaredNumbers$ = numbers$.pipe(
+      map(n => n * n)
+    );
+
+    squaredNumbers$.subscribe(console.log);  // Output: 1, 4, 9
+```
+
+Explanation:
+- The `of` operator creates an observable that emits the values 1, 2, and 3.
+- The `map` operator transforms each emitted value by squaring it.
+- The `pipe` method is used to chain the `map` operator to the observable.
+- The transformed values are emitted by the new observable and printed to the console.
+
+
+Filtering Operators:
+--------------------
+
+`filter`: The `filter` operator filters the values emitted by the source observable based on a provided predicate function.
+
+Example:
+```typescript
+    import { of } from 'rxjs';
+    import { filter } from 'rxjs/operators';
+
+    const numbers$ = of(1, 2, 3, 4, 5);
+    const evenNumbers$ = numbers$.pipe(
+      filter(n => n % 2 === 0)
+    );
+
+    evenNumbers$.subscribe(console.log);  // Output: 2, 4
+```
+
+Explanation:
+- The `of` operator creates an observable that emits the values 1, 2, 3, 4, and 5.
+- The `filter` operator filters the values, allowing only even numbers to pass through.
+- The `pipe` method is used to chain the `filter` operator to the observable.
+- The filtered values are emitted by the new observable and printed to the console.
+
+----------------------------------------------------------------------------------------------------
+
+5. Summary:
+-----------
+
+- Observables represent asynchronous data streams.
+- Operators are functions that allow you to manipulate these data streams.
+- The `of` operator creates an observable that emits a sequence of values.
+- The `map` operator transforms each value emitted by an observable.
+- The `filter` operator filters values based on a predicate function.
+
+This document introduces the core concepts of RxJS operators and provides basic examples to illustrate how they work.
+
+----------------------------------------------------------------------------------------------------
