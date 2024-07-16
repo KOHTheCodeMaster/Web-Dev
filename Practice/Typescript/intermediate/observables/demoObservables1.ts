@@ -18,9 +18,7 @@ function main() {
 
     // demoSynchronousObservable1();
 
-    // demoSynchronousObservable2();
-
-    demoSynchronousObservable3();
+    demoSynchronousObservable2();
 
 }
 
@@ -33,94 +31,59 @@ function demoSynchronousObservable1() {
         complete: () => console.log('observer1 Completed Successfully!')
     };
 
-    const observable1: Observable<number> = new Observable<number>((subscriber: Subscriber<number>) => {
-        console.log('\nObservable1 starts.');
+    const sequenceSubscriberFunction = (observer: Observer<number>) => {
+        console.log('\nobservable1 begins.');
 
-        subscriber.next(1);
-        console.log('Observable1 next 1 invoked.');
+        observer.next(1); //  observable1 next 1 invoked.
+        observer.next(2); //  observable1 next 2 invoked.
 
-        subscriber.error();
-        console.log('Observable1 error invoked.');
+        //  error halts execution of the observable instance and unsubscribes.
+        observer.error('observable1 error invoked.');
 
-        subscriber.next(2);
-        console.log('Observable1 next 2 invoked.');
+        //  observer next(3) won't be invoked since error halted the execution flow.
+        observer.next(3);
 
-        subscriber.complete();
-        console.log('Observable1 complete invoked.');
+        //  observer complete() won't be invoked since error halted the execution flow.
+        observer.complete();
 
-        console.log('Observable1 ends.\n\n');
-    });
+        console.log('observable1 ends.\n');
+    };
 
+    const observable1: Observable<number> = new Observable<number>(sequenceSubscriberFunction);
+
+
+    //  Using Anonymous sequence subscriber function
     const observable2: Observable<number> = new Observable<number>((subscriber: Subscriber<number>) => {
-        subscriber.next(1);
-        subscriber.error();
-        subscriber.next(2);
-        subscriber.complete();
-    });
+        console.log('observable2 begins.');
 
-    const observable3: Observable<number> = new Observable<number>((subscriber: Subscriber<number>) => {
-        subscriber.next(3);
-        subscriber.error();
+        // Synchronously deliver 4, 5, 6 and then complete
         subscriber.next(4);
+        subscriber.next(5);
+        subscriber.next(6);
         subscriber.complete();
+
+        //  Once complete() is invoked, Do not expect next or error or complete to be called again.
+        subscriber.next(7);
+        subscriber.error();
+        subscriber.complete();
+        console.log('observable2 ends.\n');
+
     });
 
-    // let subscription: Subscription = observable1.subscribe(observer1);
-    // console.log('subscription: ' + subscription);
     observable1.subscribe(observer1);
-
-    console.log('Line Break Not Working...\n\n - 1')
     observable2.subscribe(observer1);
-    console.log('Line Break Not Working...\n\n - 2')
-    observable3.subscribe(observer1);
-    console.log('Line Break Not Working...\n\n - 3')
 
 }
 
 function demoSynchronousObservable2() {
 
-    // Define an observer
-    const sequenceObserver: Observer<number> = {
-        next: (value: number) => console.log('Value: ', value),
-        error: (err: any) => console.error('Error: ', err),
-        complete: () => console.log('sequenceObserver Completed Successfully!')
-    };
-
-    const sequenceSubscriberFunction = (observer: Observer<number>) => {
-        // Synchronously deliver 1, 2, 3 and then complete
-        observer.next(1);
-        observer.next(2);
-        observer.next(3);
-        observer.complete();
-    };
-
-    const observable1: Observable<number> = new Observable<number>(sequenceSubscriberFunction);
-
-    const observable2: Observable<number> = new Observable<number>((subscriber: Subscriber<number>) => {
-        // Synchronously deliver 4, 5, 6 and then complete
-        subscriber.next(10);
-        subscriber.next(20);
-        subscriber.next(30);
-        subscriber.complete();
-    });
-
-    // let subscription: Subscription = observable1.subscribe(sequenceObserver);
-    // console.log('subscription: ' + subscription);
-    console.log('observable1 starts.');
-    observable1.subscribe(sequenceObserver);
-
-    console.log('observable2 starts.');
-    observable2.subscribe(sequenceObserver);
-
-}
-
-function demoSynchronousObservable3() {
+    //  ToDo: Need to understand the difference between the 4 scenarios mentioned below
 
     // Define an observer
-    const sequenceObserver: Observer<number> = {
+    const observer: Observer<number> = {
         next: (value: number) => console.log('Value: ', value),
         error: (err: any) => console.error('Error: ', err),
-        complete: () => console.log('sequenceObserver Completed Successfully!')
+        complete: () => console.log('observer Completed Successfully!')
     };
 
     /*
@@ -132,7 +95,7 @@ function demoSynchronousObservable3() {
         };
     */
 
-    const sequenceSubscriber = (observer: Observer<number>) => {
+    const sequenceSubscriberFunction1 = (observer: Observer<number>) => {
         // Synchronously deliver 1, 2, 3 and then complete
         observer.next(1);
         observer.next(2);
@@ -140,7 +103,7 @@ function demoSynchronousObservable3() {
         observer.complete();
     };
 
-    const sequenceSubscriber2 = (subscriber: Subscriber<number>) => {
+    const sequenceSubscriberFunction2 = (subscriber: Subscriber<number>) => {
         // Synchronously deliver 1, 2, 3 and then complete.
         subscriber.next(4);
         subscriber.next(5);
@@ -148,9 +111,10 @@ function demoSynchronousObservable3() {
         subscriber.complete();
     };
 
-    const observable1: Observable<number> = new Observable<number>(sequenceSubscriber);
-    const observable2: Observable<number> = new Observable<number>(sequenceSubscriber2);
+    const observable1: Observable<number> = new Observable<number>(sequenceSubscriberFunction1);
+    const observable2: Observable<number> = new Observable<number>(sequenceSubscriberFunction2);
 
+    //  Using Anonymous sequence subscriber function with `Observer` as args
     const observable3: Observable<number> = new Observable<number>((observer: Observer<number>) => {
         observer.next(10);
         observer.next(20);
@@ -158,6 +122,7 @@ function demoSynchronousObservable3() {
         observer.complete();
     });
 
+    //  Using Anonymous sequence subscriber function with `Subscriber` as args
     const observable4: Observable<number> = new Observable<number>((subscriber: Subscriber<number>) => {
         subscriber.next(101);
         subscriber.next(201);
@@ -165,16 +130,16 @@ function demoSynchronousObservable3() {
         subscriber.complete();
     });
 
-    console.log('observable1 starts.');
-    observable1.subscribe(sequenceObserver);
+    console.log('observable1 begins.');
+    observable1.subscribe(observer);
 
-    console.log('observable2 starts.');
-    observable2.subscribe(sequenceObserver);
+    console.log('observable2 begins.');
+    observable2.subscribe(observer);
 
-    console.log('observable3 starts.');
-    observable3.subscribe(sequenceObserver);
+    console.log('observable3 begins.');
+    observable3.subscribe(observer);
 
-    console.log('observable4 starts.');
-    observable4.subscribe(sequenceObserver);
+    console.log('observable4 begins.');
+    observable4.subscribe(observer);
 
 }

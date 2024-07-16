@@ -148,12 +148,24 @@ Observable Constructor:
 - You can create custom Observables using the constructor:
 - Example:
 ```
-    const customObservable$ = new Observable<number>(observer => {
+    const observable1$ = new Observable<number>(observer => {
       observer.next(1);
       observer.next(2);
       observer.next(3);
       observer.complete();
     });
+```
+
+- Example using Subscriber Function separately:
+```
+    const sequenceSubscriberFunction = (observer: Observer<number>) => {
+      observer.next(1);
+      observer.next(2);
+      observer.next(3);
+      observer.complete();
+    };
+
+    const observable1$: Observable<number> = new Observable<number>(sequenceSubscriberFunction);
 ```
 
 ----------------------------------------------------------------------------------------------------

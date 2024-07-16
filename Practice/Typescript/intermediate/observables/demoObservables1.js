@@ -15,8 +15,7 @@ var rxjs_1 = require("rxjs");
 main();
 function main() {
     // demoSynchronousObservable1();
-    // demoSynchronousObservable2();
-    demoSynchronousObservable3();
+    demoSynchronousObservable2();
 }
 function demoSynchronousObservable1() {
     // Define an observer
@@ -25,74 +24,43 @@ function demoSynchronousObservable1() {
         error: function (err) { return console.error('Error: ', err); },
         complete: function () { return console.log('observer1 Completed Successfully!'); }
     };
-    var observable1 = new rxjs_1.Observable(function (subscriber) {
-        console.log('\nObservable1 starts.');
-        subscriber.next(1);
-        console.log('Observable1 next 1 invoked.');
-        subscriber.error();
-        console.log('Observable1 error invoked.');
-        subscriber.next(2);
-        console.log('Observable1 next 2 invoked.');
-        subscriber.complete();
-        console.log('Observable1 complete invoked.');
-        console.log('Observable1 ends.\n\n');
-    });
-    var observable2 = new rxjs_1.Observable(function (subscriber) {
-        subscriber.next(1);
-        subscriber.error();
-        subscriber.next(2);
-        subscriber.complete();
-    });
-    var observable3 = new rxjs_1.Observable(function (subscriber) {
-        subscriber.next(3);
-        subscriber.error();
-        subscriber.next(4);
-        subscriber.complete();
-    });
-    // let subscription: Subscription = observable1.subscribe(observer1);
-    // console.log('subscription: ' + subscription);
-    observable1.subscribe(observer1);
-    console.log('Line Break Not Working...\n\n - 1');
-    observable2.subscribe(observer1);
-    console.log('Line Break Not Working...\n\n - 2');
-    observable3.subscribe(observer1);
-    console.log('Line Break Not Working...\n\n - 3');
-}
-function demoSynchronousObservable2() {
-    // Define an observer
-    var sequenceObserver = {
-        next: function (value) { return console.log('Value: ', value); },
-        error: function (err) { return console.error('Error: ', err); },
-        complete: function () { return console.log('sequenceObserver Completed Successfully!'); }
-    };
     var sequenceSubscriberFunction = function (observer) {
-        // Synchronously deliver 1, 2, 3 and then complete
-        observer.next(1);
-        observer.next(2);
+        console.log('\nobservable1 begins.');
+        observer.next(1); //  observable1 next 1 invoked.
+        observer.next(2); //  observable1 next 2 invoked.
+        //  error halts execution of the observable instance and unsubscribes.
+        observer.error('observable1 error invoked.');
+        //  observer next(3) won't be invoked since error halted the execution flow.
         observer.next(3);
+        //  observer complete() won't be invoked since error halted the execution flow.
         observer.complete();
+        console.log('observable1 ends.\n');
     };
     var observable1 = new rxjs_1.Observable(sequenceSubscriberFunction);
+    //  Using Anonymous sequence subscriber function
     var observable2 = new rxjs_1.Observable(function (subscriber) {
+        console.log('observable2 begins.');
         // Synchronously deliver 4, 5, 6 and then complete
-        subscriber.next(10);
-        subscriber.next(20);
-        subscriber.next(30);
+        subscriber.next(4);
+        subscriber.next(5);
+        subscriber.next(6);
         subscriber.complete();
+        //  Once complete() is invoked, Do not expect next or error or complete to be called again.
+        subscriber.next(7);
+        subscriber.error();
+        subscriber.complete();
+        console.log('observable2 ends.\n');
     });
-    // let subscription: Subscription = observable1.subscribe(sequenceObserver);
-    // console.log('subscription: ' + subscription);
-    console.log('observable1 starts.');
-    observable1.subscribe(sequenceObserver);
-    console.log('observable2 starts.');
-    observable2.subscribe(sequenceObserver);
+    observable1.subscribe(observer1);
+    observable2.subscribe(observer1);
 }
-function demoSynchronousObservable3() {
+function demoSynchronousObservable2() {
+    //  ToDo: Need to understand the difference between the 4 scenarios mentioned below
     // Define an observer
-    var sequenceObserver = {
+    var observer = {
         next: function (value) { return console.log('Value: ', value); },
         error: function (err) { return console.error('Error: ', err); },
-        complete: function () { return console.log('sequenceObserver Completed Successfully!'); }
+        complete: function () { return console.log('observer Completed Successfully!'); }
     };
     /*
         // Define a subscriber
@@ -102,40 +70,42 @@ function demoSynchronousObservable3() {
             complete: () => console.log('Observer 1 Completed Successfully!')
         };
     */
-    var sequenceSubscriber = function (observer) {
+    var sequenceSubscriberFunction1 = function (observer) {
         // Synchronously deliver 1, 2, 3 and then complete
         observer.next(1);
         observer.next(2);
         observer.next(3);
         observer.complete();
     };
-    var sequenceSubscriber2 = function (subscriber) {
+    var sequenceSubscriberFunction2 = function (subscriber) {
         // Synchronously deliver 1, 2, 3 and then complete.
         subscriber.next(4);
         subscriber.next(5);
         subscriber.next(6);
         subscriber.complete();
     };
-    var observable1 = new rxjs_1.Observable(sequenceSubscriber);
-    var observable2 = new rxjs_1.Observable(sequenceSubscriber2);
+    var observable1 = new rxjs_1.Observable(sequenceSubscriberFunction1);
+    var observable2 = new rxjs_1.Observable(sequenceSubscriberFunction2);
+    //  Using Anonymous sequence subscriber function with `Observer` as args
     var observable3 = new rxjs_1.Observable(function (observer) {
         observer.next(10);
         observer.next(20);
         observer.next(30);
         observer.complete();
     });
+    //  Using Anonymous sequence subscriber function with `Subscriber` as args
     var observable4 = new rxjs_1.Observable(function (subscriber) {
         subscriber.next(101);
         subscriber.next(201);
         subscriber.next(301);
         subscriber.complete();
     });
-    console.log('observable1 starts.');
-    observable1.subscribe(sequenceObserver);
-    console.log('observable2 starts.');
-    observable2.subscribe(sequenceObserver);
-    console.log('observable3 starts.');
-    observable3.subscribe(sequenceObserver);
-    console.log('observable4 starts.');
-    observable4.subscribe(sequenceObserver);
+    console.log('observable1 begins.');
+    observable1.subscribe(observer);
+    console.log('observable2 begins.');
+    observable2.subscribe(observer);
+    console.log('observable3 begins.');
+    observable3.subscribe(observer);
+    console.log('observable4 begins.');
+    observable4.subscribe(observer);
 }
