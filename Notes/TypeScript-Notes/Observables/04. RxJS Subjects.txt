@@ -1,0 +1,211 @@
+
+Time Stamp: 18th Jul. 2K24 - 08:56 PM..!!
+
+Title: Introduction to RxJS Subjects
+
+Category: RxJS -> Observables -> Subjects -> BehaviorSubject
+
+Keywords: RxJS, Subject, BehaviorSubject, Observables, SMD
+
+Purpose: To understand and differentiate between Subject and BehaviorSubject in RxJS
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Introduction to RxJS Subjects
+-----------------------------
+
+What is a Subject?
+- A Subject is a special type of Observable that allows values to be multicasted to multiple Observers. 
+- Subjects are both Observers and Observables, meaning they can both emit values and be subscribed to.
+
+What is a BehaviorSubject?
+- A BehaviorSubject is a type of Subject that requires an initial value and emits its current value to new subscribers.
+- It maintains a current value and emits it immediately to any new subscriber.
+
+Detailed Explanation:
+
+Subject:
+--------
+
+- Subject is an RxJS type that acts as both an Observable and an Observer.
+- Unlike an ordinary Observable, a Subject can act as a bridge or proxy, enabling the source Observable to multicast its values to multiple Observers.
+
+Key Characteristics:
+
+1. Multicasting: A Subject allows multiple Observers to share the same Observable execution.
+2. Hot Observable: Subjects are considered hot Observables because they are already producing values when they are subscribed to.
+
+Example Usage:
+
+```typescript
+    import { Subject } from 'rxjs';
+
+    const subject = new Subject<number>();
+
+    subject.subscribe({
+      next: (v) => console.log(`observerA: ${v}`)
+    });
+
+    subject.subscribe({
+      next: (v) => console.log(`observerB: ${v}`)
+    });
+
+    subject.next(1);
+    subject.next(2);
+
+    // Output:
+    // observerA: 1
+    // observerB: 1
+    // observerA: 2
+    // observerB: 2
+```
+
+In this example:
+- `subject.next(1)` emits the value `1` to both `observerA` and `observerB`.
+- `subject.next(2)` emits the value `2` to both `observerA` and `observerB`.
+
+----------------------------------------------------------------------------------------------------
+
+BehaviorSubject:
+----------------
+
+- BehaviorSubject is a variant of Subject that requires an initial value and emits its current value whenever it is subscribed to.
+
+Key Characteristics:
+
+1. Initial Value: Requires an initial value which is emitted immediately upon subscription.
+2. Current Value: Always holds the latest value emitted.
+3. State Management: Often used in scenarios where we need to manage state or cache the last emitted value.
+
+Example Usage:
+
+```typescript
+    import { BehaviorSubject } from 'rxjs';
+
+    const behaviorSubject = new BehaviorSubject<number>(0);
+
+    behaviorSubject.subscribe({
+      next: (v) => console.log(`observerA: ${v}`)
+    });
+
+    behaviorSubject.next(1);
+    behaviorSubject.next(2);
+
+    behaviorSubject.subscribe({
+      next: (v) => console.log(`observerB: ${v}`)
+    });
+
+    behaviorSubject.next(3);
+
+    // Output:
+    // observerA: 0
+    // observerA: 1
+    // observerA: 2
+    // observerB: 2
+    // observerA: 3
+    // observerB: 3
+```
+
+In this example:
+- `behaviorSubject` starts with an initial value of `0`.
+- `observerA` immediately receives the initial value `0` and subsequent values.
+- `observerB` subscribes later but immediately receives the latest value `2` before receiving the new value `3`.
+
+Differences Between Subject and BehaviorSubject:
+- Initial Value:
+  - `Subject`: Does not hold or emit an initial value.
+  - `BehaviorSubject`: Requires an initial value and emits it immediately upon subscription.
+- Current Value:
+  - `Subject`: Does not keep track of the current value.
+  - `BehaviorSubject`: Keeps track of the latest value and emits it to new subscribers.
+- Use Case:
+  - `Subject`: Suitable for scenarios where you don't need to keep track of or emit the current value to new subscribers.
+  - `BehaviorSubject`: Ideal for state management or scenarios where the latest value is required by new subscribers.
+
+----------------------------------------------------------------------------------------------------
+
+Real-world Analogies:
+---------------------
+
+Subject Analogy: Radio Broadcast
+- Think of a Subject like a live radio broadcast. 
+- When you tune in, you start receiving the broadcast from that moment onward.
+- If you tune in late, you miss the previous broadcasts.
+
+BehaviorSubject Analogy: Latest News Headline
+- Think of a BehaviorSubject like a website showing the latest news headline.
+- When you visit the website, you immediately see the latest headline (the initial value).
+- Every time the news updates, the website shows the most recent headline (the current value).
+
+----------------------------------------------------------------------------------------------------
+
+Example with API Call:
+----------------------
+
+Using `https://jsonplaceholder.typicode.com/` for demonstration:
+
+Subject Example
+```typescript
+    import { Subject } from 'rxjs';
+    import { ajax } from 'rxjs/ajax';
+
+    const apiDataSubject = new Subject<any>();
+
+    apiDataSubject.subscribe({
+      next: (data) => console.log('ObserverA received:', data)
+    });
+
+    apiDataSubject.subscribe({
+      next: (data) => console.log('ObserverB received:', data)
+    });
+
+    ajax.getJSON('https://jsonplaceholder.typicode.com/posts/1')
+      .subscribe(response => apiDataSubject.next(response));
+```
+
+BehaviorSubject Example
+```typescript
+    import { BehaviorSubject } from 'rxjs';
+    import { ajax } from 'rxjs/ajax';
+
+    const apiDataBehaviorSubject = new BehaviorSubject<any>(null);
+
+    apiDataBehaviorSubject.subscribe({
+      next: (data) => console.log('ObserverA received:', data)
+    });
+
+    ajax.getJSON('https://jsonplaceholder.typicode.com/posts/1')
+      .subscribe(response => apiDataBehaviorSubject.next(response));
+
+    apiDataBehaviorSubject.subscribe({
+      next: (data) => console.log('ObserverB received:', data)
+    });
+```
+
+In these examples:
+- Subject: Both `ObserverA` and `ObserverB` receive the API response when `apiDataSubject.next(response)` is called.
+- BehaviorSubject: `ObserverA` receives the initial `null` value, the API response, and then `ObserverB` receives the latest API response when it subscribes.
+
+----------------------------------------------------------------------------------------------------
+
+Conclusion:
+-----------
+
+- Subject and BehaviorSubject are powerful tools in RxJS for handling multicasting and state management.
+- Subject is ideal for multicasting values without needing to hold the current state.
+- BehaviorSubject is perfect for scenarios where the latest value needs to be emitted immediately to new subscribers.
+
+----------------------------------------------------------------------------------------------------
+
+Summary:
+--------
+
+- Subject: Multicasts values to multiple observers, does not hold the current state, hot Observable.
+- BehaviorSubject: Requires an initial value, emits the latest value to new subscribers, holds the current state, hot Observable.
+- Usage: Use Subject for multicasting values. Use BehaviorSubject for state management and emitting the latest value.
+
+----------------------------------------------------------------------------------------------------
