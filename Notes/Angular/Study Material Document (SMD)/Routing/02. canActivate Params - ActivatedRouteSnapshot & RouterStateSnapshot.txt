@@ -1,0 +1,170 @@
+
+Time Stamp: 19th Jul. 2K24 - 01:33 PM..!!
+
+Title: ActivatedRouteSnapshot & RouterStateSnapshot in Angular
+
+Category: Angular -> Angular Routing -> ActivatedRouteSnapshot & RouterStateSnapshot
+
+Keywords: Angular, ActivatedRouteSnapshot, RouterStateSnapshot, Routing, State Management
+
+Purpose: To understand `ActivatedRouteSnapshot` and `RouterStateSnapshot` in Angular, including detailed examples and explanations.
+
+Doc-type: Study Material Document (SMD)
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+ActivatedRouteSnapshot & RouterStateSnapshot in Angular
+-------------------------------------------------------
+
+Introduction:
+- Understanding `ActivatedRouteSnapshot` and `RouterStateSnapshot` is essential for managing navigation and state in Angular applications.
+- This guide provides an in-depth look at these concepts, their usage, and practical examples to help you achieve mastery.
+
+ActivatedRouteSnapshot:
+- `ActivatedRouteSnapshot` represents the state of a route at a particular moment in time.
+- It provides access to the route's parameters, data, and other important properties.
+
+Key Properties:
+- params: A map of the route's parameters.
+- queryParams: A map of the query parameters.
+- data: Any static data associated with the route.
+- url: An array of URL segments.
+- fragment: The URL fragment (if any).
+
+Example Usage:
+```typescript
+    canActivate(route: ActivatedRouteSnapshot): boolean {
+      const id = route.paramMap.get('id');
+      const returnUrl = route.queryParamMap.get('returnUrl');
+      const data = route.data;
+      console.log(`Route ID: ${id}, Return URL: ${returnUrl}, Data:`, data);
+      return true;
+    }
+```
+
+Detailed Example: Consider a scenario where you need to guard a route that requires a specific parameter to be present.
+
+1. Route Configuration:
+   ```typescript
+   const routes: Routes = [
+     { path: 'user/:id', component: UserComponent, canActivate: [UserGuard] }
+   ];
+   ```
+
+2. UserGuard Implementation:
+   ```typescript
+   import { Injectable } from '@angular/core';
+   import { CanActivate, ActivatedRouteSnapshot, Router } from '@angular/router';
+
+   @Injectable({
+     providedIn: 'root'
+   })
+   export class UserGuard implements CanActivate {
+     constructor(private router: Router) {}
+
+     canActivate(route: ActivatedRouteSnapshot): boolean {
+       const userId = route.paramMap.get('id');
+       if (userId) {
+         console.log(`User ID: ${userId}`);
+         return true;
+       } else {
+         this.router.navigate(['/not-found']);
+         return false;
+       }
+     }
+   }
+   ```
+
+3. Component Usage:
+   ```typescript
+   import { Component, OnInit } from '@angular/core';
+   import { ActivatedRoute } from '@angular/router';
+
+   @Component({
+     selector: 'app-user',
+     template: `<h1>User ID: {{ userId }}</h1>`
+   })
+   export class UserComponent implements OnInit {
+     userId: string;
+
+     constructor(private route: ActivatedRoute) {}
+
+     ngOnInit() {
+       this.userId = this.route.snapshot.paramMap.get('id');
+     }
+   }
+   ```
+
+----------------------------------------------------------------------------------------------------
+
+RouterStateSnapshot:
+--------------------
+
+- `RouterStateSnapshot` represents the state of the router at a specific moment in time. It includes information about the entire router state tree.
+
+Key Properties:
+- url: The current URL.
+- root: The root route snapshot.
+
+Example Usage
+```typescript
+canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  const currentUrl = state.url;
+  console.log(`Current URL: ${currentUrl}`);
+  return true;
+}
+```
+
+Detailed Example: Consider a scenario where you need to log the current URL before allowing navigation.
+
+1. Route Configuration:
+   ```typescript
+   const routes: Routes = [
+     { path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard] }
+   ];
+   ```
+
+2. ProfileGuard Implementation:
+   ```typescript
+   import { Injectable } from '@angular/core';
+   import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+
+   @Injectable({
+     providedIn: 'root'
+   })
+   export class ProfileGuard implements CanActivate {
+     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+       const currentUrl = state.url;
+       console.log(`Current URL: ${currentUrl}`);
+       return true;
+     }
+   }
+   ```
+
+3. Component Usage:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-profile',
+     template: `<h1>Profile Page</h1>`
+   })
+   export class ProfileComponent {}
+   ```
+
+----------------------------------------------------------------------------------------------------
+
+Summary:
+--------
+
+- ActivatedRouteSnapshot provides route-specific information such as parameters, query parameters, static data, and the URL.
+- RouterStateSnapshot provides the state of the entire router at a specific moment, including the current URL and the root route snapshot.
+- Use `ActivatedRouteSnapshot` to access and use route-specific data, and `RouterStateSnapshot` to get the overall state of the router.
+- Implement guards to control access to routes based on route parameters, query parameters, and the current URL.
+- Practical examples demonstrate the use of `ActivatedRouteSnapshot` and `RouterStateSnapshot` in various scenarios.
+
+----------------------------------------------------------------------------------------------------
