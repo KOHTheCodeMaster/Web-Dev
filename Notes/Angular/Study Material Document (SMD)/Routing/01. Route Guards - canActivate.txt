@@ -1,0 +1,320 @@
+
+Time Stamp: 16th Jul. 2K24 - 12:53 AM..!!
+
+Title: `canActivate` Route Guard in Angular
+
+Category: Angular -> Angular Routing -> canActivate Route Guard
+
+Keywords: Angular Routing, canActivate, Authorization, Route Guards
+
+Purpose: To provide a step-by-step foundational understanding of Preventing Unauthorized Access with canActivate Guard.
+
+Doc-type: Study Material Document (SMD)
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+`canActivate` Route Guard in Angular
+------------------------------------
+
+Introduction:
+
+The `canActivate` route guard in Angular is a critical tool for securing routes and managing access control.
+- This guide provides a comprehensive, in-depth explanation of the `canActivate` route guard, covering its structure, parameters, usage, and practical examples.
+
+Foundational Knowledge:
+
+- The `canActivate` guard allows you to intercept navigation attempts and determine if a user is authorized to access a specific route.
+- It acts as a gatekeeper, ensuring only authorized users can proceed to protected routes.
+
+How `canActivate` Works:
+1. Navigation Attempt: When a user navigates to a route with a `canActivate` guard attached, the guard's logic is executed.
+2. Guard Function: The guard function receives `ActivatedRouteSnapshot` and `RouterStateSnapshot` objects as arguments.
+3. Decision-Making: Based on the implemented logic, the guard returns either `true` (to allow navigation) or `false` (to block navigation).
+4. Redirection: If navigation is blocked, you can optionally redirect the user to a login page or display an error message.
+
+Basic Structure of `canActivate`:
+Route Configuration:
+    ```typescript
+        const routes: Routes = [
+          { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
+        ];
+    ```
+
+----------------------------------------------------------------------------------------------------
+
+Guard Implementation:
+---------------------
+
+1. Generate the Guard:
+    ```bash
+    ng generate guard auth
+    ```
+
+2. Implement the Guard:
+   ```typescript
+       import { Injectable } from '@angular/core';
+       import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+       import { AuthService } from './auth.service';
+
+       @Injectable({
+         providedIn: 'root'
+       })
+       export class AuthGuard implements CanActivate {
+         constructor(private authService: AuthService, private router: Router) {}
+
+         canActivate(
+           route: ActivatedRouteSnapshot,
+           state: RouterStateSnapshot): boolean {
+           if (this.authService.isLoggedIn()) {
+             return true;
+           } else {
+             this.router.navigate(['/login']);
+             return false;
+           }
+         }
+       }
+   ```
+
+Detailed Explanation of Parameters:
+-----------------------------------
+
+ActivatedRouteSnapshot:
+-----------------------
+
+- `ActivatedRouteSnapshot` represents the current route information at a specific point in time.
+- It provides access to:
+    - Route Parameters: Dynamic segments of the URL.
+      ```typescript
+      const id = route.paramMap.get('id');
+      ```
+    - Query Parameters: Parameters passed in the URL query string.
+      ```typescript
+      const returnUrl = route.queryParamMap.get('returnUrl');
+      ```
+    - Data: Static data associated with the route.
+      ```typescript
+      const data = route.data;
+      ```
+
+Example:
+Consider a route that displays user details:
+```typescript
+    const routes: Routes = [
+      { path: 'user/:id', component: UserComponent, canActivate: [AuthGuard] }
+    ];
+```
+- Usage in Guard:
+  ```typescript
+      canActivate(route: ActivatedRouteSnapshot): boolean {
+        const userId = route.paramMap.get('id');
+        // Add logic based on userId
+        return this.authService.isUserAllowed(userId);
+      }
+  ```
+
+----------------------------------------------------------------------------------------------------
+
+RouterStateSnapshot:
+--------------------
+
+- `RouterStateSnapshot` represents the state of the router at a specific point in time.
+- It provides access to:
+    - URL: The current URL.
+      ```typescript
+      const currentUrl = state.url;
+      ```
+    - Root: The root route snapshot.
+      ```typescript
+      const root = state.root;
+      ```
+
+Example:
+Consider a scenario where you need to redirect based on the current URL:
+```typescript
+canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  const currentUrl = state.url;
+  if (this.authService.isAllowedUrl(currentUrl)) {
+    return true;
+  } else {
+    this.router.navigate(['/not-allowed']);
+    return false;
+  }
+}
+```
+
+----------------------------------------------------------------------------------------------------
+
+Router Dependency:
+------------------
+
+- The `Router` service provides methods for navigation and URL manipulation.
+- It allows you to navigate to different routes programmatically and perform various routing tasks.
+
+Commonly Used Methods:
+- navigate: Navigate to a route by specifying the route array.
+    ` this.router.navigate(['/dashboard']); `
+
+- navigateByUrl: Navigate to a route by specifying the URL.
+    ` this.router.navigateByUrl('/login'); `
+
+- createUrlTree: Create a `UrlTree` from a route array.
+    ` const urlTree = this.router.createUrlTree(['/user', { id: 1 }]); `
+
+- parseUrl: Parse a URL string into a `UrlTree`.
+    ` const urlTree = this.router.parseUrl('/admin/settings'); `
+
+----------------------------------------------------------------------------------------------------
+
+Comprehensive Example: AuthGuard with Router
+--------------------------------------------
+
+1. AuthService:
+   ```typescript
+       import { Injectable } from '@angular/core';
+
+       @Injectable({
+         providedIn: 'root'
+       })
+       export class AuthService {
+         private loggedIn = false;
+
+         isLoggedIn(): boolean {
+           return this.loggedIn;
+         }
+
+         login() {
+           this.loggedIn = true;
+         }
+
+         logout() {
+           this.loggedIn = false;
+         }
+       }
+   ```
+
+2. AuthGuard:
+   ```typescript
+       import { Injectable } from '@angular/core';
+       import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+       import { AuthService } from './auth.service';
+
+       @Injectable({
+         providedIn: 'root'
+       })
+       export class AuthGuard implements CanActivate {
+         constructor(private authService: AuthService, private router: Router) {}
+
+         canActivate(
+           route: ActivatedRouteSnapshot,
+           state: RouterStateSnapshot): boolean {
+           if (this.authService.isLoggedIn()) {
+             return true;
+           } else {
+             this.router.navigate(['/login']);
+             return false;
+           }
+         }
+       }
+   ```
+
+Step-by-Step Flow Analysis:
+---------------------------
+
+- User Navigates to `/dashboard`:
+   - The `AuthGuard`'s `canActivate` method is invoked.
+   - `ActivatedRouteSnapshot` and `RouterStateSnapshot` are passed as arguments.
+
+- Guard Logic Execution:
+   - `AuthGuard` checks if the user is logged in using `authService.isLoggedIn()`.
+   - If `true`, navigation proceeds to `DashboardComponent`.
+   - If `false`, the user is redirected to the `/login` route using `router.navigate(['/login'])`.
+
+- Redirection:
+   - If the user is not logged in, they are redirected to the login page.
+   - After logging in, the user can be redirected back to the originally requested route.
+
+----------------------------------------------------------------------------------------------------
+
+Multiple Real-World Examples:
+-----------------------------
+
+Example 1: E-commerce Application
+
+1. Guard for Checkout Page:
+   ```typescript
+       const routes: Routes = [
+         { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] }
+       ];
+   ```
+
+2. AuthGuard Implementation:
+   ```typescript
+       canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+         if (this.authService.isLoggedIn()) {
+           return true;
+         } else {
+           this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+           return false;
+         }
+       }
+   ```
+
+3. Login Component Handling Redirect:
+   ```typescript
+       login() {
+         this.authService.login();
+         const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+         this.router.navigate([returnUrl]);
+       }
+   ```
+
+Example 2: Admin Panel
+
+1. Guard for Admin Routes:
+   ```typescript
+       const routes: Routes = [
+         { path: 'admin', component: AdminComponent, canActivate: [AdminGuard] }
+       ];
+   ```
+
+2. AdminGuard Implementation:
+   ```typescript
+       canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+         if (this.authService.isAdmin()) {
+           return true;
+         } else {
+           this.router.navigate(['/access-denied']);
+           return false;
+         }
+       }
+   ```
+
+3. Access Denied Component:
+   ```typescript
+       import { Component } from '@angular/core';
+
+       @Component({
+         selector: 'app-access-denied',
+         template: '<h1>Access Denied</h1>'
+       })
+       export class AccessDeniedComponent { }
+   ```
+
+----------------------------------------------------------------------------------------------------
+
+5. Summary:
+-----------
+
+- The `canActivate` route guard is used to control access to routes based on specific conditions.
+- It uses `ActivatedRouteSnapshot` and `RouterStateSnapshot` to provide route and state information.
+- `ActivatedRouteSnapshot` gives access to route parameters, query parameters, and static data.
+- `RouterStateSnapshot` provides the current URL and root route snapshot.
+- The `Router` service enables navigation and URL manipulation with methods like `navigate`, `navigateByUrl`, `createUrlTree`, and `parseUrl`.
+- Implementing `canActivate` involves creating a guard, defining the guard logic, and configuring routes with the guard.
+- Real-world examples demonstrate the use of `canActivate` in scenarios like protecting checkout pages and admin panels.
+
+----------------------------------------------------------------------------------------------------
