@@ -1,0 +1,471 @@
+
+Time Stamp: 22nd Jul 2K24 - 11:05 PM..!!
+
+Title: Redirecting to a 404 Page in Angular
+
+Category: Angular -> Routing -> Error Handling
+
+Keywords: Angular, 404 Page, Error Handling, Routing, Standalone Components
+
+Purpose: Comprehensive guide to redirecting to a 404 page in Angular using standalone components, including detailed usage, implementation, and best practices.
+
+Doc-type: Study Material Document (SMD)
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: [https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/](https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/)
+
+----------------------------------------------------------------------------------------------------
+
+Redirecting to a 404 Page in Angular
+------------------------------------
+
+Table of Contents:
+
+1. Introduction
+2. Understanding 404 Page Implementation
+3. Creating a Standalone 404 Component
+4. Configuring Routes for 404 Handling
+5. Testing the 404 Page
+6. Enhancements and Best Practices
+7. Comprehensive Example
+8. Step-by-Step Flow Analysis
+9. Real-world Application Example
+10. Detailed Step-by-Step Demonstration
+11. Conclusion
+12. Summary
+
+----------------------------------------------------------------------------------------------------
+
+1. Introduction
+---------------
+
+Redirecting to a 404 page in Angular is essential for handling undefined routes gracefully. This guide provides a comprehensive overview of creating and configuring a 404 page using standalone components in Angular, along with best practices and a detailed example.
+
+----------------------------------------------------------------------------------------------------
+
+2. Understanding 404 Page Implementation
+----------------------------------------
+
+- A 404 page is displayed when a user tries to access a route that does not exist in the application.
+- Using standalone components in Angular allows for modular and reusable components without relying on NgModules.
+
+----------------------------------------------------------------------------------------------------
+
+3. Creating a Standalone 404 Component
+--------------------------------------
+
+Technical Topics:
+
+- Angular CLI for component creation
+- Standalone components
+
+Complexity: Low
+
+Practice:
+
+1. Use the Angular CLI to generate a standalone 404 component.
+
+    ```bash
+    ng generate component not-found --standalone
+    ```
+
+2. Modify the generated component's template to display a user-friendly 404 message.
+
+    `not-found.component.html`
+
+    ```html
+    <div class="not-found-container">
+      <h1>404</h1>
+      <p>Page Not Found</p>
+      <a routerLink="/">Go to Homepage</a>
+    </div>
+    ```
+
+3. Add styles to the component for better presentation.
+
+    `not-found.component.css`
+
+    ```css
+    .not-found-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .not-found-container h1 {
+      font-size: 100px;
+    }
+
+    .not-found-container p {
+      font-size: 24px;
+    }
+
+    .not-found-container a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    ```
+
+Milestone: Standalone 404 component created and styled.
+
+----------------------------------------------------------------------------------------------------
+
+4. Configuring Routes for 404 Handling
+--------------------------------------
+
+Technical Topics:
+
+- Angular routing module
+- Wildcard routes
+
+Complexity: Medium
+
+Practice:
+
+1. Open the main routing module and add a route for the 404 component. The wildcard route (``) should be used to catch all undefined routes.
+
+    `app-routing.module.ts`
+
+    ```typescript
+    import { NgModule } from '@angular/core';
+    import { RouterModule, Routes } from '@angular/router';
+    import { NotFoundComponent } from './not-found/not-found.component';
+
+    const routes: Routes = [
+      // ... other routes
+      { path: '', component: NotFoundComponent }
+    ];
+
+    @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
+    ```
+
+2. Ensure that the `AppRoutingModule` is imported in the main module of the application.
+
+    `app.module.ts`
+
+    ```typescript
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
+    import { AppRoutingModule } from './app-routing.module';
+    import { AppComponent } from './app.component';
+    import { NotFoundComponent } from './not-found/not-found.component';
+
+    @NgModule({
+      declarations: [
+        AppComponent,
+        NotFoundComponent
+      ],
+      imports: [
+        BrowserModule,
+        AppRoutingModule
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+    ```
+
+Milestone: Routing configured to display the 404 component for undefined routes.
+
+----------------------------------------------------------------------------------------------------
+
+5. Testing the 404 Page
+-----------------------
+
+Technical Topics:
+
+- Manual testing
+- Basic unit testing (optional)
+
+Complexity: Low
+
+Practice:
+
+1. Run the Angular application using the CLI.
+
+    ```bash
+    ng serve
+    ```
+
+2. Open a browser and navigate to a non-existent route (e.g., `http://localhost:4200/non-existent-route`).
+3. Verify that the 404 component is displayed correctly.
+
+Milestone: 404 page tested and verified.
+
+----------------------------------------------------------------------------------------------------
+
+6. Enhancements and Best Practices
+----------------------------------
+
+Technical Topics:
+
+- Advanced styling using Angular Material or Bootstrap
+- Custom animations for the 404 page
+
+Complexity: Medium
+
+Practice:
+
+1. Enhance the 404 component with additional styles or libraries like Angular Material.
+
+    `not-found.component.html` with Angular Material
+
+    ```html
+    <div class="not-found-container" fxLayout="column" fxLayoutAlign="center center">
+      <h1 mat-header-1>404</h1>
+      <p mat-body-1>Page Not Found</p>
+      <a mat-button routerLink="/">Go to Homepage</a>
+    </div>
+    ```
+
+    `app.module.ts`
+
+    ```typescript
+    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+    import { MatButtonModule } from '@angular/material/button';
+    import { FlexLayoutModule } from '@angular/flex-layout';
+
+    @NgModule({
+      imports: [
+        BrowserAnimationsModule,
+        MatButtonModule,
+        FlexLayoutModule,
+        // ... other imports
+      ],
+      // ... declarations, providers, bootstrap
+    })
+    ```
+
+2. Implement custom animations to enhance the user experience.
+
+    `not-found.component.css`
+
+    ```css
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .not-found-container {
+      animation: fadeIn 2s ease-in;
+    }
+    ```
+
+Milestone: 404 page enhanced with better styling and animations.
+
+----------------------------------------------------------------------------------------------------
+
+7. Comprehensive Example
+------------------------
+
+Scenario: Displaying a 404 Page with Standalone Components
+
+Step 1: Create 404 Component
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-not-found',
+  standalone: true,
+  templateUrl: './not-found.component.html',
+  styleUrls: ['./not-found.component.css']
+})
+export class NotFoundComponent { }
+```
+
+Step 2: Configure Routing
+
+```typescript
+import { Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const routes: Routes = [
+  // ... other routes
+  { path: '', component: NotFoundComponent }
+];
+```
+
+Step 3: Apply Styles
+
+```css
+.not-found-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.not-found-container h1 {
+  font-size: 100px;
+}
+
+.not-found-container p {
+  font-size: 24px;
+}
+
+.not-found-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+```
+
+Step 4: Test the 404 Page
+
+1. Navigate to an undefined route and verify the 404 page is displayed.
+
+Milestone: Comprehensive example created and tested.
+
+----------------------------------------------------------------------------------------------------
+
+8. Step-by-Step Flow Analysis
+-----------------------------
+
+- Component Creation: Created a standalone 404 component using the Angular CLI.
+- Routing Configuration: Configured the routing module to use the 404 component for undefined routes.
+- Styling: Applied styles to the 404 component for better presentation.
+- Testing: Verified the 404 page through manual testing.
+
+----------------------------------------------------------------------------------------------------
+
+9. Real-world Application Example
+---------------------------------
+
+Consider an e-commerce application where a 404 page is required for handling undefined routes.
+
+Step 1: Create 404 Component
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-not-found',
+  standalone: true,
+  templateUrl: './not-found.component.html',
+  styleUrls: ['./not-found.component.css']
+})
+export class NotFoundComponent { }
+```
+
+Step 2: Configure Routing
+
+```typescript
+import { Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const routes: Routes = [
+  // ... other routes
+  { path: '', component: NotFoundComponent }
+];
+```
+
+Step 3: Apply Styles
+
+```css
+.not-found-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.not-found-container h1 {
+  font-size: 100px;
+}
+
+.not-found-container p {
+  font-size: 24px;
+}
+
+.not-found-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+```
+
+Step 4: Test the 404 Page
+
+1. Run the Angular application using the CLI.
+
+    ```bash
+        ng serve
+    ```
+
+2. Open a browser and navigate to a non-existent route (e.g., `http://localhost:4200/non-existent-route`).
+3. Verify that the 404 component is displayed correctly.
+
+Step 5: Enhance the 404 Component (Optional)
+
+1. Add Angular Material for improved design and user experience.
+
+    `not-found.component.html` with Angular Material
+
+    ```html
+    <div class="not-found-container" fxLayout="column" fxLayoutAlign="center center">
+      <h1 mat-header-1>404</h1>
+      <p mat-body-1>Page Not Found</p>
+      <a mat-button routerLink="/">Go to Homepage</a>
+    </div>
+    ```
+
+2. Update the module imports to include Angular Material modules.
+
+    `app.module.ts`
+
+    ```typescript
+    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+    import { MatButtonModule } from '@angular/material/button';
+    import { FlexLayoutModule } from '@angular/flex-layout';
+
+    @NgModule({
+      imports: [
+        BrowserAnimationsModule,
+        MatButtonModule,
+        FlexLayoutModule,
+        // ... other imports
+      ],
+      // ... declarations, providers, bootstrap
+    })
+    ```
+
+Milestone: 404 page tested and verified with optional enhancements for better user experience.
+
+----------------------------------------------------------------------------------------------------
+
+10. Detailed Step-by-Step Demonstration
+---------------------------------------
+
+- Component Initialization: The `NotFoundComponent` is initialized with a simple template and styles to display a 404 message.
+- Routing Configuration: The routing module is configured to redirect any undefined route to the `NotFoundComponent`.
+- Manual Testing: The 404 page is verified through manual testing by navigating to non-existent routes.
+- Optional Enhancements: The 404 page is optionally enhanced with Angular Material for better design and user experience.
+
+Milestone: Detailed step-by-step demonstration completed.
+
+----------------------------------------------------------------------------------------------------
+
+11. Conclusion
+--------------
+
+Implementing a 404 page in Angular using standalone components ensures a clean, modular, and maintainable approach to handling undefined routes. By following the comprehensive guide, developers can create user-friendly 404 pages, enhance them with additional styles and libraries, and ensure a seamless user experience.
+
+----------------------------------------------------------------------------------------------------
+
+12. Summary
+-----------
+
+- Overview: Creating a 404 page using standalone components in Angular.
+- Usage: Redirects users to a friendly 404 page when they navigate to undefined routes.
+- Use-Cases: Ideal for handling undefined routes in any Angular application.
+- Limitations: Ensure all potential routes are properly defined to minimize user encounters with the 404 page.
+- Best Practices: Use Angular CLI for component creation, apply appropriate styles, and enhance the user experience with libraries like Angular Material.
+- Comprehensive Example: Detailed example with step-by-step instructions for creating and testing a 404 page.
+- Real-world Application: Implemented a 404 page for an e-commerce application, including optional enhancements for better design.
+
+By mastering the implementation of a 404 page in Angular, developers can ensure their applications handle undefined routes gracefully, providing a better overall user experience.
+
+----------------------------------------------------------------------------------------------------
