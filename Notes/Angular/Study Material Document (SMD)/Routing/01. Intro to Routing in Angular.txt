@@ -1,0 +1,275 @@
+
+Time Stamp: 16th Jul. 2K24 - 12:53 AM..!!
+
+Title: Introduction to Angular Routing
+
+Category: Angular -> Routing -> Introduction
+
+Keywords: Angular, Routing, SPA, Navigation, Basics
+
+Purpose: Provide the SMD (Study Material Document) to introduce the concept of routing in Angular, including key terms, benefits, and foundational setup using standalone components.
+
+Doc-type: Study Material Document (SMD)
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+SMD: 'Introduction to Angular Routing'
+--------------------------------------
+
+Table of Contents:
+------------------
+
+1. Overview of Angular Routing
+2. Purpose and Benefits
+3. Key Terminology
+4. Initial Setup for Angular Routing
+5. Basic Route Definitions
+6. Summary
+7. References
+
+----------------------------------------------------------------------------------------------------
+
+1. Overview of Angular Routing
+------------------------------
+
+- Angular routing is a mechanism that allows developers to create Single Page Applications (SPAs) where different views or components can be displayed based on the URL.
+- It provides a way to navigate between different parts of the application, improving user experience by avoiding full page reloads.
+
+----------------------------------------------------------------------------------------------------
+
+2. Purpose and Benefits
+-----------------------
+
+- Purpose: To enable smooth navigation within an application without reloading the page, enhancing the user experience.
+- Benefits:
+  - Seamless Navigation: Users can navigate between views without full page reloads.
+  - Improved Performance: Only necessary parts of the page are updated, reducing load times.
+  - State Management: Routing helps in managing the application state and URL synchronization.
+
+----------------------------------------------------------------------------------------------------
+
+3. Key Terminology
+------------------
+
+- Route: A route defines a mapping between a URL path and a component to be displayed.
+            Example: { path: 'home', component: HomeComponent }
+- Router: The Router is an Angular service that provides navigation and URL manipulation capabilities.
+            Example: this.router.navigate(['/home']);
+- Navigation: The process of moving between different routes or views within an application.
+            Example: Using routerLink directive: <a routerLink="/home">Home</a>
+- RouterLink: A directive to link to routes within the application.
+            Example: <a routerLink="/about">About</a>
+
+----------------------------------------------------------------------------------------------------
+
+4. Initial Setup for Angular Routing
+------------------------------------
+
+Detailed Explanations with Step-by-step Flow Analysis for Initial Setup of Angular Routing:
+
+- Step 1: Create a new Angular project using standalone components.
+- Step 2: Define standalone `HomeComponent` and `AboutComponent`.
+- Step 3: Configure routes in a separate file.
+- Step 4: Configure the application using `app.config.ts`.
+- Step 5: Bootstrap the application with the configured routes.
+- Step 6: Update the `HomeComponent` template to include navigation and a router outlet.
+
+
+Step 1: Create a New Angular Project
+
+Command: ` ng new angular-routing-example --standalone `
+
+Explanation:
+
+- This command initializes a new Angular project named `angular-routing-example`.
+- The `--standalone` flag configures the project to use standalone components, a modern approach that simplifies the structure by eliminating the need for traditional Angular modules.
+
+---
+
+Step 2: Setting Up Standalone Components for Routing
+
+Home Component:
+
+```typescript
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-home',
+      standalone: true,
+      template: `<h2>Home Page</h2><p>Welcome to the Home Page!</p>`,
+    })
+    export class HomeComponent {}
+```
+
+About Component:
+
+```typescript
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-about',
+      standalone: true,
+      template: `<h2>About Page</h2><p>Learn more about us on this page.</p>`,
+    })
+    export class AboutComponent {}
+```
+
+Explanation:
+
+- We define two standalone components: `HomeComponent` and `AboutComponent`.
+- The `standalone: true` property indicates that these components are not part of any module, adhering to the standalone component approach.
+- Each component has a simple template displaying some static content.
+
+---
+
+Step 3: Configuring the Routes
+
+Routes Configuration:
+
+```typescript
+    import { Routes } from "@angular/router";
+    import { HomeComponent } from './home.component';
+    import { AboutComponent } from './about.component';
+
+    const routes: Routes = [
+      { path: '', component: HomeComponent },
+      { path: 'about', component: AboutComponent },
+    ];
+```
+
+Explanation:
+
+- We import the necessary classes and the components.
+- We define an array of routes using the `Routes` type.
+- Each route specifies a `path` and the corresponding `component` to be displayed.
+- An empty path (`''`) represents the default route, while `/about` maps to the `AboutComponent`.
+
+---
+
+Step 4: Configure the application using `app.config.ts`.
+
+App Configuration:
+
+```typescript
+    import { ApplicationConfig } from '@angular/core';
+    import { provideRouter } from '@angular/router';
+
+    import { routes } from './routes';
+
+    export const appConfig: ApplicationConfig = {
+      providers: [provideRouter(routes)]
+    };
+```
+
+Explanation:
+
+- We import `ApplicationConfig` and `provideRouter` from Angular.
+- We import the previously defined `routes`.
+- We create an `ApplicationConfig` object, specifying the router configuration with the `provideRouter` function.
+
+---
+
+Step 5: Bootstrapping the Application in `main.ts` using the configured routes.
+
+Main Bootstrap File:
+
+```typescript
+    import { bootstrapApplication } from '@angular/platform-browser';
+    import { appConfig } from './app.config';
+    import { HomeComponent } from './home.component';
+
+    bootstrapApplication(HomeComponent, appConfig)
+      .catch((err) => console.error(err));
+```
+
+Explanation:
+
+- We import `bootstrapApplication` for bootstrapping the Angular application.
+- We import `appConfig` for the application's configuration and the `HomeComponent` as the root component.
+- The `bootstrapApplication` function initializes the application with the specified root component and configuration.
+
+---
+
+Step 6: Updating the HomeComponent Template
+
+Home Component Template:
+
+```typescript
+    @Component({
+      selector: 'app-home',
+      standalone: true,
+      template: `
+        <nav>
+          <a routerLink="/">Home</a>
+          <a routerLink="/about">About</a>
+        </nav>
+        <router-outlet></router-outlet>
+      `,
+    })
+    export class HomeComponent {}
+```
+
+Explanation:
+
+- We update the `HomeComponent` template to include navigation links.
+- The `routerLink` directive is used to define the paths for navigation.
+- The `<router-outlet>` directive acts as a placeholder for rendering the routed components.
+
+----------------------------------------------------------------------------------------------------
+
+5. Basic Route Definitions:
+---------------------------
+
+- Path: Specifies the URL path for the route.
+- Component: The component to be displayed when the route is activated.
+- RouterLink: Binds the URL path to a navigation link in the template.
+
+Example Route Definitions:
+
+```typescript
+    const routes: Route[] = [
+      { path: '', component: HomeComponent },
+      { path: 'about', component: AboutComponent },
+    ];
+```
+
+Navigation Links:
+
+```html
+    <nav>
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+    </nav>
+```
+
+Router Outlet: Placeholder in the template where the routed component will be displayed.
+
+```html
+    <router-outlet></router-outlet>
+```
+
+----------------------------------------------------------------------------------------------------
+
+6. Summary
+----------
+
+- Angular routing enables navigation within SPAs without reloading the page.
+- It involves defining routes, setting up navigation links, and configuring the router to manage these routes.
+- Using standalone components streamlines the setup process, making it easier to manage and maintain the application.
+
+----------------------------------------------------------------------------------------------------
+
+7. Conclusion:
+--------------
+
+- Angular routing is a powerful feature that enhances the user experience by enabling seamless navigation within an application.
+- Purpose and Benefits: Understand the role and advantages of Angular routing.
+- Key Terminology: Familiarize with essential routing terms.
+- Initial Setup: Guide to setting up routing using standalone components.
+- Basic Route Definitions: Learn to define and navigate routes.
+
+----------------------------------------------------------------------------------------------------
