@@ -56,6 +56,7 @@ import {
     OptionsMenu2Component
 } from "./components/demo-practice/options-drop-down-menu/options-menu-2/options-menu-2.component";
 import {DemoAsyncPipeComponent} from "./components/pipes/demo-async-pipe/demo-async-pipe.component";
+import {DemoIntroToRoutingComponent} from "./components/routing/demo-intro-to-routing/demo-intro-to-routing.component";
 
 @Component({
     selector: 'app-root',
@@ -86,6 +87,7 @@ import {DemoAsyncPipeComponent} from "./components/pipes/demo-async-pipe/demo-as
         SelectDropDownMenu1Component,
         HomesComponent,
         DemoAsyncPipeComponent,
+        DemoIntroToRoutingComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

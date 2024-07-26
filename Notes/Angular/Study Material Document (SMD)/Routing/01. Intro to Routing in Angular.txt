@@ -86,58 +86,102 @@ Command: ` ng new angular-routing-example --standalone `
 Explanation:
 
 - This command initializes a new Angular project named `angular-routing-example`.
-- The `--standalone` flag configures the project to use standalone components, a modern approach that simplifies the structure by eliminating the need for traditional Angular modules.
+- The `--standalone` flag configures the project to use standalone components, adhering to the modern standalone component approach, that simplifies the structure by eliminating the need for traditional Angular modules.
 
 ---
 
 Step 2: Setting Up Standalone Components for Routing
 
-Home Component:
+Create a standalone component: 'demo-intro-to-routing'
+
+Command: ` ng g c components/routing/demo-intro-to-routing --standalone --inline-template --inline-style --skip-tests `
+
+Explanation:
+
+- This command generates a standalone components using `--standalone` flag indicating that the component is not part of any module.
+- Standalone components are self-contained and do not require module imports as they are bootstrapped directly.
+- For simplicity, we are using inline template & styles and skipping the test files.
+- It generates the Component class file (`demo-intro-to-routing.component.ts`),
+- `components/routing/` is the directory where the component 'demo-intro-to-routing' is created.
+
+File: `demo-intro-to-routing.component.ts`
 
 ```typescript
-    import { Component } from '@angular/core';
+    import {Component} from '@angular/core';
 
     @Component({
-      selector: 'app-home',
-      standalone: true,
-      template: `<h2>Home Page</h2><p>Welcome to the Home Page!</p>`,
+        selector: 'app-demo-intro-to-routing',
+        standalone: true,
+        imports: [],
+        template: `
+            <h1>Introduction to Angular Routing</h1>
+            <p>This is a demo component to introduce Angular routing.</p>
+        `
     })
-    export class HomeComponent {}
+    export class DemoIntroToRoutingComponent {
+
+    }
 ```
 
-About Component:
+Create Sample Components: 'first-comp', 'second-comp', 'third-comp'
 
+Command:
+    ` ng generate component components/routing/sample-components/first-comp --standalone --inline-template --inline-style --skip-tests `
+    ` ng g c components/routing/sample-components/second-comp --standalone --inline-template --inline-style --skip-tests `
+    ` ng g c components/routing/sample-components/third-comp --standalone --inline-template --inline-style --skip-tests `
+
+Explanation:
+- We create these 3 sample components in the specified directory (`components/routing/sample-components/`).
+- These components will be used to demonstrate routing in the application.
+- Each component is standalone and contains an inline template & styles for simplicity.
+- It generates the Component class files for each component.
+
+File: `first-comp.component.ts`
 ```typescript
-    import { Component } from '@angular/core';
+    import {Component} from '@angular/core';
 
     @Component({
-      selector: 'app-about',
-      standalone: true,
-      template: `<h2>About Page</h2><p>Learn more about us on this page.</p>`,
+        selector: 'app-route-first-comp',
+        standalone: true,
+        imports: [],
+        template: `
+            <h1>Route 1 - First-Comp</h1>
+            <p>This is First Component for Route: '/first-comp'</p>
+        `
     })
-    export class AboutComponent {}
+    export class FirstCompComponent {
+
+    }
 ```
 
 Explanation:
 
-- We define two standalone components: `HomeComponent` and `AboutComponent`.
-- The `standalone: true` property indicates that these components are not part of any module, adhering to the standalone component approach.
-- Each component has a simple template displaying some static content.
+- We define the `FirstCompComponent` with a selector, standalone configuration, and template.
+- The `standalone: true` property indicates that the component is not part of any module.
+- The template contains a heading and a paragraph to display information about the component.
+
+
+Similarly, we create the `second-comp` and `third-comp` components with similar configurations.
 
 ---
 
 Step 3: Configuring the Routes
 
-Routes Configuration:
+Routes Configuration: Create `app.routes.ts` file for defining routes.
 
+File: `app.routes.ts`
 ```typescript
-    import { Routes } from "@angular/router";
-    import { HomeComponent } from './home.component';
-    import { AboutComponent } from './about.component';
+    import {Routes} from "@angular/router";
+    import {DemoIntroToRoutingComponent} from "./components/routing/demo-intro-to-routing/demo-intro-to-routing.component";
+    import {FirstCompComponent} from "./components/routing/sample-components/first-comp.component";
+    import {SecondCompComponent} from "./components/routing/sample-components/second-comp.component";
+    import {ThirdCompComponent} from "./components/routing/sample-components/third-comp.component";
 
-    const routes: Routes = [
-      { path: '', component: HomeComponent },
-      { path: 'about', component: AboutComponent },
+    export const routes: Routes = [
+        {path: '', component: DemoIntroToRoutingComponent},
+        {path: 'first-comp', component: FirstCompComponent},
+        {path: 'second-comp', component: SecondCompComponent},
+        {path: 'third-comp', component: ThirdCompComponent}
     ];
 ```
 
@@ -146,7 +190,7 @@ Explanation:
 - We import the necessary classes and the components.
 - We define an array of routes using the `Routes` type.
 - Each route specifies a `path` and the corresponding `component` to be displayed.
-- An empty path (`''`) represents the default route, while `/about` maps to the `AboutComponent`.
+- An empty path `''` represents the default route, while `first-comp` maps to the `FirstCompComponent`.
 
 ---
 

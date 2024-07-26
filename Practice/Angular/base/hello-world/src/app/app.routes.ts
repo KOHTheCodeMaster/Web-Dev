@@ -1,15 +1,12 @@
 import {Routes} from "@angular/router";
-import {SecondCompComponent} from "./components/routing/demo-routing-1/second-comp.component";
-import {FirstCompComponent} from "./components/routing/demo-routing-1/first-comp.component";
-import {ThirdCompComponent} from "./components/routing/demo-routing-1/third-comp.component";
-import {HomeComponent} from "./components/demo-practice/homes/components/home/home.component";
-import {DetailsComponent} from "./components/demo-practice/homes/components/details/details.component";
+import {FirstCompComponent} from "./components/routing/sample-components/first-comp.component";
+import {SecondCompComponent} from "./components/routing/sample-components/second-comp.component";
+import {ThirdCompComponent} from "./components/routing/sample-components/third-comp.component";
+import {DemoIntroToRoutingComponent} from "./components/routing/demo-intro-to-routing/demo-intro-to-routing.component";
 
 export const routes: Routes = [
     {path: 'first-comp', component: FirstCompComponent},
     {path: 'second-comp', component: SecondCompComponent},
     {path: 'third-comp', component: ThirdCompComponent},
-    {path: '', component: HomeComponent},
-    {path: 'homes', component: HomeComponent},
-    {path: 'homes/details/:id', component: DetailsComponent}
+    {path: '', component: DemoIntroToRoutingComponent},
 ];
