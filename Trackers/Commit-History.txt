@@ -6,6 +6,21 @@ GitHub: https://www.github.com/kohthecodemaster
 Commit History:
 ---------------
 
+Time Stamp: 27th Jul 2K24 - 06:19 PM
+#193 - Routing In Angular - Updated '[SMD] Intro to Routing in Angular', Refactored Sample Route Components
+
+[SMD] Intro to Routing in Angular:
+- Updated the DemoIntroToRoutingComponent with External HTML & CSS Files and explanatory comments.
+
+Refactoring:
+- Refactored Sample Route Components:
+    - FirstCompComponent to SampleRouteFirstComponent
+    - SecondCompComponent to SampleRouteSecondComponent
+    - ThirdCompComponent to SampleRouteThirdComponent
+    - Directory: sample-components to sample-route-components
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 26th Oct. 2K23 - 06:20 PM..!!
 24th Commit - Quirks Mode, Almost Standards Mode and Full Standards Mode
 

@@ -26,8 +26,8 @@ Table of Contents:
 1. Overview of Angular Routing
 2. Purpose and Benefits
 3. Key Terminology
-4. Initial Setup for Angular Routing
-5. Basic Route Definitions
+4. Basic Route Definitions
+5. Quick Demo Setup for Angular Routing
 6. Summary
 7. References
 
@@ -66,252 +66,7 @@ Table of Contents:
 
 ----------------------------------------------------------------------------------------------------
 
-4. Initial Setup for Angular Routing
-------------------------------------
-
-Detailed Explanations with Step-by-step Flow Analysis for Initial Setup of Angular Routing:
-
-- Step 1: Create a new Angular project using standalone components.
-- Step 2: Generate standalone components for routing and sample components.
-- Step 3: Configure routes in a separate file.
-- Step 4: Configure the application using `app.config.ts`.
-- Step 5: Bootstrap the application with the configured routes.
-- Step 6: Update the `HomeComponent` template to include navigation and a router outlet.
-
-
-Step 1: Create a New Angular Project
-
-Command: ` ng new angular-routing-example --standalone `
-
-Explanation:
-
-- This command initializes a new Angular project named `angular-routing-example`.
-- The `--standalone` flag configures the project to use standalone components, adhering to the modern standalone component approach, that simplifies the structure by eliminating the need for traditional Angular modules.
-
----
-
-Step 2: Setting Up Standalone Components for Routing
-
-Create a standalone component: 'demo-intro-to-routing'
-
-Command: ` ng g c components/routing/demo-intro-to-routing --standalone --inline-template --inline-style --skip-tests `
-
-Explanation:
-
-- This command generates a standalone components using `--standalone` flag indicating that the component is not part of any module.
-- Standalone components are self-contained and do not require module imports as they are bootstrapped directly.
-- For simplicity, we are using inline template & styles and skipping the test files.
-- It generates the Component class file (`demo-intro-to-routing.component.ts`),
-- `components/routing/` is the directory where the component 'demo-intro-to-routing' is created.
-
-File: `demo-intro-to-routing.component.ts`
-
-```typescript
-    import {Component} from '@angular/core';
-
-    @Component({
-        selector: 'app-demo-intro-to-routing',
-        standalone: true,
-        imports: [],
-        template: `
-            <h1>Introduction to Angular Routing</h1>
-            <p>This is a demo component to introduce Angular routing.</p>
-        `
-    })
-    export class DemoIntroToRoutingComponent {
-
-    }
-```
-
-Create Sample Components: 'first-comp', 'second-comp', 'third-comp'
-
-Command:
-    ` ng generate component components/routing/sample-components/first-comp --standalone --inline-template --inline-style --skip-tests `
-    ` ng g c components/routing/sample-components/second-comp --standalone --inline-template --inline-style --skip-tests `
-    ` ng g c components/routing/sample-components/third-comp --standalone --inline-template --inline-style --skip-tests `
-
-Explanation:
-- We create these 3 sample components in the specified directory (`components/routing/sample-components/`).
-- These components will be used to demonstrate routing in the application.
-- Each component is standalone and contains an inline template & styles for simplicity.
-- It generates the Component class files for each component.
-
-File: `first-comp.component.ts`
-```typescript
-    import {Component} from '@angular/core';
-
-    @Component({
-        selector: 'app-route-first-comp',
-        standalone: true,
-        imports: [],
-        template: `
-            <h1>Route 1 - First-Comp</h1>
-            <p>This is First Component for Route: '/first-comp'</p>
-        `
-    })
-    export class FirstCompComponent {
-
-    }
-```
-
-Explanation:
-
-- We define the `FirstCompComponent` with a selector, standalone configuration, and template.
-- The `standalone: true` property indicates that the component is not part of any module.
-- The template contains a heading and a paragraph to display information about the component.
-
-
-Similarly, we create the `second-comp` and `third-comp` components with similar configurations.
-
----
-
-Step 3: Configuring the Routes
-
-Routes Configuration: Create `app.routes.ts` file for defining routes.
-
-File: `app.routes.ts`
-```typescript
-    import {Routes} from "@angular/router";
-    import {DemoIntroToRoutingComponent} from "./components/routing/demo-intro-to-routing/demo-intro-to-routing.component";
-    import {FirstCompComponent} from "./components/routing/sample-components/first-comp.component";
-    import {SecondCompComponent} from "./components/routing/sample-components/second-comp.component";
-    import {ThirdCompComponent} from "./components/routing/sample-components/third-comp.component";
-
-    export const routes: Routes = [
-        {path: '', component: DemoIntroToRoutingComponent},
-        {path: 'first-comp', component: FirstCompComponent},
-        {path: 'second-comp', component: SecondCompComponent},
-        {path: 'third-comp', component: ThirdCompComponent}
-    ];
-```
-
-Explanation:
-
-- We import the necessary classes and the components.
-- We define an array of routes using the `Routes` type.
-- Each route specifies a `path` and the corresponding `component` to be displayed.
-- An empty path `''` represents the default route, while `first-comp` maps to the `FirstCompComponent`.
-
----
-
-Step 4: Configure the application using `app.config.ts`.
-
-App Configuration:
-
-```typescript
-    import { ApplicationConfig } from '@angular/core';
-    import { provideRouter } from '@angular/router';
-
-    import { routes } from './routes';
-
-    export const appConfig: ApplicationConfig = {
-      providers: [provideRouter(routes)]
-    };
-```
-
-Explanation:
-
-- We import `ApplicationConfig` and `provideRouter` from Angular.
-- We import the previously defined `routes`.
-- We create an `ApplicationConfig` object, specifying the router configuration with the `provideRouter` function.
-
----
-
-Step 5: Bootstrapping the Application in `main.ts` using the configured routes.
-
-Main Bootstrap File:
-
-```typescript
-    import { bootstrapApplication } from '@angular/platform-browser';
-    import { appConfig } from './app.config';
-    import { AppComponent } from './home.component';
-
-    bootstrapApplication(AppComponent, appConfig)
-      .catch((err) => console.error(err));
-```
-
-Explanation:
-
-- We import `bootstrapApplication` for bootstrapping the Angular application.
-- We import `appConfig` for the application's configuration and the `HomeComponent` as the root component.
-- The `bootstrapApplication` function initializes the application with the specified root component and configuration.
-
----
-
-Step 6: Updating the AppComponent & DemoIntroToRoutingComponent Templates
-
-AppComponent:
-
-File: `app.component.html`
-` <app-demo-intro-to-routing></app-demo-intro-to-routing> `
-
-Explanation:
-- We update the `AppComponent` template to include the `DemoIntroToRoutingComponent`.
-- This component will be displayed as the default route when the application is loaded.
-
-File: `app.component.ts`
-```
-    import {Component} from '@angular/core';
-    import {DemoIntroToRoutingComponent} from "./components/routing/demo-intro-to-routing/demo-intro-to-routing.component";
-
-    @Component({
-        selector: 'app-root',
-        standalone: true,
-        imports: [DemoIntroToRoutingComponent],
-        templateUrl: './app.component.html',
-        styleUrl: './app.component.css'
-    })
-    export class AppComponent {
-        title = 'intro-to-routing';
-    }
-```
-
-DemoIntroToRoutingComponent:
-
-File: `demo-intro-to-routing.component.ts`
-
-```typescript
-    import {Component} from '@angular/core';
-
-    @Component({
-        selector: 'app-demo-intro-to-routing',
-        standalone: true,
-        imports: [],
-        template: `
-            <br><hr><br>
-            <h1>Introduction to Angular Routing</h1>
-            <p>This is a demo component to introduce Angular routing.</p>
-            <br><hr><br>
-
-            <p>Below are the links to the components:</p>
-            <ul>
-              <li><a routerLink="first-comp">First Component</a></li>
-              <li><a routerLink="second-comp">Second Component</a></li>
-              <li><a routerLink="third-comp">Third Component</a></li>
-            </ul>
-            <br><hr><br>
-
-            <div>
-              <p>This place will be filled with the component content.</p>
-              <router-outlet></router-outlet>
-            </div>
-            <br><hr><br>
-        `
-    })
-    export class DemoIntroToRoutingComponent {
-
-    }
-```
-
-Explanation:
-
-- We update the `DemoIntroToRoutingComponent` template to include navigation links.
-- The `routerLink` directive is used to define the paths for navigation.
-- The `<router-outlet>` directive acts as a placeholder for rendering the routed components.
-
-----------------------------------------------------------------------------------------------------
-
-5. Basic Route Definitions:
+4. Basic Route Definitions:
 ---------------------------
 
 - Path: Specifies the URL path for the route.
@@ -340,6 +95,292 @@ Router Outlet: Placeholder in the template where the routed component will be di
 
 ```html
     <router-outlet></router-outlet>
+```
+
+----------------------------------------------------------------------------------------------------
+
+4. Quick Demo Setup for Angular Routing
+---------------------------------------
+
+Detailed Explanations with Step-by-step Flow Analysis for Quick Demo Setup of Angular Routing:
+
+- Step 1: Create a new Angular project using standalone components.
+- Step 2: Generate standalone components for routing and sample components.
+- Step 3: Configure routes in a separate file.
+- Step 4: Configure the application using `app.config.ts`.
+- Step 5: Bootstrap the application with the configured routes.
+- Step 6: Update the AppComponent to include the routing component 'DemoIntroToRoutingComponent'.
+
+
+Step 1: Create a New Angular Project
+
+Command: ` ng new angular-routing-example --standalone `
+
+Explanation:
+
+- This command initializes a new Angular project named `angular-routing-example`.
+- The `--standalone` flag configures the project to use standalone components, adhering to the modern standalone component approach, that simplifies the structure by eliminating the need for traditional Angular modules.
+
+---
+
+Step 2: Setting Up Standalone Components for Routing
+
+Create a standalone component: 'demo-intro-to-routing'
+
+Command: ` ng g c components/routing/demo-intro-to-routing --standalone --inline-template --inline-style --skip-tests `
+
+Explanation:
+
+- This command generates a standalone components using `--standalone` flag indicating that the component is not part of any module.
+- Standalone components are self-contained and do not require module imports as they are bootstrapped directly.
+- For simplicity, we are using inline template & styles and skipping the test files.
+- It generates the Component class file (`demo-intro-to-routing.component.ts`),
+- `components/routing/` is the directory where the component 'demo-intro-to-routing' is created.
+- Add the necessary imports for Router directives in the component file.
+
+---
+
+File: `demo-intro-to-routing.component.ts`
+
+```typescript
+    import {Component} from '@angular/core';
+    import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+
+    @Component({
+        selector: 'app-demo-intro-to-routing',
+        standalone: true,
+        imports: [RouterLink, RouterLinkActive, RouterOutlet],  //  Importing Router directives
+        templateUrl: './demo-intro-to-routing.component.html',
+        styleUrl: './demo-intro-to-routing.component.css'
+    })
+    export class DemoIntroToRoutingComponent {
+
+    }
+```
+
+Explanation:
+- We define the `DemoIntroToRoutingComponent` with a selector, standalone configuration, and imports for Router directives.
+- The `standalone: true` property indicates that the component is not part of any module.
+- We import the necessary Router directives (`RouterLink`, `RouterLinkActive`, `RouterOutlet`) for routing functionality.
+- The template and styles are defined in separate files for better organization.
+- The component will be used to demonstrate routing in the application.
+
+---
+
+File: `demo-intro-to-routing.component.html`
+
+```html
+    <div class="m-4 border-2">
+
+      <h1 class="p-2 text-xl text-black bg-green-200">Demo Router</h1>
+
+      <ul class="m-1 flex flex-col gap-2">
+        <li><a class="routing-btn" routerLink="sample-route-first" routerLinkActive="active-routing-btn">First Component</a></li>
+        <li><a class="routing-btn" routerLink="/sample-route-second" routerLinkActive="active-routing-btn">Second Component</a></li>
+        <li><a class="routing-btn" routerLink="sample-route-third" routerLinkActive="active-routing-btn">Third Component</a></li>
+      </ul>
+
+      <!-- The routed views render in the <router-outlet>-->
+      <div class="p-4 border-t">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+```
+
+Explanation:
+- The component will display the navigation links and render the routed components.
+- The template contains three navigation links to different routes: `first-route`, `second-route`, and `third-route`.
+- Navigation links are created using the `routerLink` directive with the corresponding route paths.
+- `routerLink` directive binds the URL path to the navigation link.
+- `routerLinkActive` directive is used to apply a CSS class when the link is active.
+- `<router-outlet>` directive acts as a placeholder for rendering the routed components.
+- Tailwind CSS classes are used for styling the components.
+- 'routing-btn' and 'active-routing-btn' classes (defined in the `demo-intro-to-routing.component.css` file) are used for styling the navigation links.
+
+---
+
+File: `demo-intro-to-routing.component.css`
+
+```css
+    .routing-btn {
+      width: 150px;
+      box-shadow: inset 0 1px 0 0 #ffffff;
+      background: #ffffff linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+      border-radius: 6px;
+      border: 1px solid #dcdcdc;
+      display: inline-block;
+      cursor: pointer;
+      color: #666666;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 6px 24px;
+      text-decoration: none;
+      text-shadow: 0 1px 0 #ffffff;
+      outline: 0;
+    }
+
+    .active-routing-btn {
+      box-shadow: inset 0 1px 0 0 #dcecfb;
+      background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+      border: 1px solid #84bbf3;
+      color: #ffffff;
+      text-shadow: 0 1px 0 #528ecc;
+    }
+```
+
+Explanation:
+- The CSS file contains styles for the navigation links and the active link state.
+- The styles define the appearance of the navigation buttons and the active state.
+- The `routing-btn` class styles the navigation links, while the `active-routing-btn` class styles the active link.
+- Tailwind CSS classes are used for styling the other elements in the component.
+
+---
+
+Create Sample Components: `sample-route-first`, `sample-route-second`, `sample-route-third`
+
+Command:
+    ` ng generate component components/routing/sample-route-components/first-route --standalone --inline-template --inline-style --skip-tests `
+    ` ng g c components/routing/sample-route-components/second-route --standalone --inline-template --inline-style --skip-tests `
+    ` ng g c components/routing/sample-route-components/third-route --standalone --inline-template --inline-style --skip-tests `
+
+Explanation:
+- We create these 3 sample components in the specified directory (`components/routing/sample-route-components/`).
+- These components will be used to demonstrate routing in the application.
+- Each component is standalone and contains an inline template & styles for simplicity.
+- It generates the Component class files for each component.
+- Note: ng g c is a shorthand for ng generate component.
+
+---
+
+File: `sample-route-first.component.ts`
+
+```typescript
+    import {Component} from '@angular/core';
+
+    @Component({
+        selector: 'app-sample-route-first',
+        standalone: true,
+        imports: [],
+        template: `
+            <h1>Route 1 - /sample-route-first</h1>
+            <p>This is Sample Route First Component: '/sample-route-first'</p>
+        `
+    })
+    export class SampleRouteFirstComponent {
+
+    }
+```
+
+Explanation:
+
+- We define the `SampleRouteFirstComponent` with a selector, standalone configuration, and template.
+- The `standalone: true` property indicates that the component is not part of any module.
+- The template contains a heading and a paragraph to display information about the component.
+
+
+Similarly, we create the `sample-route-second` and `sample-route-third` components with similar configurations.
+
+---
+
+Step 3: Configuring the Routes
+
+Routes Configuration: Create `app.routes.ts` file for defining routes.
+
+File: `app.routes.ts`
+```typescript
+    import {Routes} from "@angular/router";
+    import {SampleRouteFirstComponent} from "./components/routing/sample-route-components/first-route.component";
+    import {SampleRouteSecondComponent} from "./components/routing/sample-route-components/second-route.component";
+    import {SampleRouteThirdComponent} from "./components/routing/sample-route-components/third-route.component";
+
+    export const routes: Routes = [
+        {path: `sample-route-first`, component: SampleRouteFirstComponent},
+        {path: `sample-route-second`, component: SampleRouteSecondComponent},
+        {path: `sample-route-third`, component: SampleRouteThirdComponent}
+    ];
+```
+
+Explanation:
+
+- We import the necessary classes and the components.
+- We define an array of routes using the `Routes` type.
+- Each route specifies a `path` and the corresponding `component` to be displayed.
+- An empty path `''` represents the default route, while `first-route` maps to the `SampleRouteFirstComponent`.
+
+---
+
+Step 4: Configure the application using `app.config.ts`.
+
+App Configuration:
+
+```typescript
+    import {ApplicationConfig} from '@angular/core';
+    import {provideRouter} from '@angular/router';
+
+    import {routes} from './app.routes';
+
+    export const appConfig: ApplicationConfig = {
+        providers: [provideRouter(routes)]
+    };
+```
+
+Explanation:
+
+- We import `ApplicationConfig` and `provideRouter` from Angular.
+- We import the previously defined `routes`.
+- We create an `ApplicationConfig` object, specifying the router configuration with the `provideRouter` function.
+
+---
+
+Step 5: Bootstrapping the Application in `main.ts` using the configured routes.
+
+Main Bootstrap File:
+
+```typescript
+    import {bootstrapApplication} from '@angular/platform-browser';
+    import {appConfig} from './app/app.config';
+    import {AppComponent} from './app/app.component';
+
+    bootstrapApplication(AppComponent, appConfig)
+        .catch((err) => console.error(err));
+```
+
+Explanation:
+
+- We import `bootstrapApplication` for bootstrapping the Angular application.
+- We import `appConfig` for the application's configuration and the `HomeComponent` as the root component.
+- The `bootstrapApplication` function initializes the application with the specified root component and configuration.
+
+---
+
+Step 6: Updating the AppComponent to include the `DemoIntroToRoutingComponent`.
+
+AppComponent:
+
+File: `app.component.html`
+` <app-demo-intro-to-routing></app-demo-intro-to-routing> `
+
+Explanation:
+- We update the `AppComponent` template to include the `DemoIntroToRoutingComponent`.
+- This component will be displayed as the default route when the application is loaded.
+
+File: `app.component.ts`
+```
+    import {Component} from '@angular/core';
+    import {DemoIntroToRoutingComponent} from "./components/routing/demo-intro-to-routing/demo-intro-to-routing.component";
+
+    @Component({
+        selector: 'app-root',
+        standalone: true,
+        imports: [DemoIntroToRoutingComponent],
+        templateUrl: './app.component.html',
+        styleUrl: './app.component.css'
+    })
+    export class AppComponent {
+        title = 'intro-to-routing';
+    }
 ```
 
 ----------------------------------------------------------------------------------------------------

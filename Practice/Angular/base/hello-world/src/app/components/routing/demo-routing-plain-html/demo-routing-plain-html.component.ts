@@ -14,9 +14,9 @@ import {RouterLink, RouterOutlet} from '@angular/router';
         <p>Below are the links to the components:</p>
         <ul>
             <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="first-comp">First Component</a></li>
-            <li><a routerLink="second-comp">Second Component</a></li>
-            <li><a routerLink="third-comp">Third Component</a></li>
+            <li><a routerLink="sample-route-first">First Component</a></li>
+            <li><a routerLink="sample-route-second">Second Component</a></li>
+            <li><a routerLink="sample-route-third">Third Component</a></li>
         </ul>
         <br><hr><br>
 

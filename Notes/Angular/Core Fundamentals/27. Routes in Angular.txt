@@ -58,13 +58,13 @@ Fundamental Principles:
         - `routerLink` directive is used to create navigation links.
         - It's a directive to link routes & Navigates to specified route.
         - Can be used with <a> or <button>.
-        - Example: ` <a routerLink="/first-comp">First Component</a> `
+        - Example: ` <a routerLink="/first-route">First Component</a> `
 
    - `routerLinkActive`:
         - A directive that helps in styling by applying CSS classes to the active link.
         - Purpose: Visually distinguishes the currently active route in your Angular application.
         - Usage: Applies one or more CSS classes to the element (usually an anchor tag) associated with the routerLink directive for the active route. Simultaneously removes the specified CSS classes from any inactive router links.
-        - Example: ` <a routerLink="/first-comp" routerLinkActive="active">First Component</a> `
+        - Example: ` <a routerLink="/first-route" routerLinkActive="active">First Component</a> `
 
         - routerLinkActiveOptions:
             - By default, routerLinkActive considers a route active if the URL starts with the route path.
@@ -89,14 +89,14 @@ Standalone Component Routing - Step-by-Step Flow Analysis:
    - Define routes in a separate file, e.g., `app.routes.ts`.
      ```typescript
          import { Routes } from '@angular/router';
-         import { FirstCompComponent } from './components/first-comp.component';
-         import { SecondCompComponent } from './components/second-comp.component';
-         import { ThirdCompComponent } from './components/third-comp.component';
+         import { SampleRouteFirstComponent } from './components/first-route.component';
+         import { SampleRouteSecondComponent } from './components/second-route.component';
+         import { SampleRouteThirdComponent } from './components/third-route.component';
 
          export const routes: Routes = [
-           { path: 'first-comp', component: FirstCompComponent },
-           { path: 'second-comp', component: SecondCompComponent },
-           { path: 'third-comp', component: ThirdCompComponent }
+           { path: `sample-route-first`, component: SampleRouteFirstComponent },
+           { path: `sample-route-second`, component: SampleRouteSecondComponent },
+           { path: `sample-route-third`, component: SampleRouteThirdComponent }
          ];
      ```
 
@@ -145,15 +145,15 @@ Standalone Component Routing - Step-by-Step Flow Analysis:
         import {Component} from '@angular/core';
 
         @Component({
-            selector: 'app-route-first-comp',
+            selector: 'app-sample-route-first',
             standalone: true,
             imports: [],
             template: `
-                <h1>Route 1 - First-Comp</h1>
-                <p>This is First Component for Route: '/first-comp'</p>
+                <h1>Route 1 - /sample-route-first</h1>
+                <p>This is Sample Route First Component: '/sample-route-first'</p>
             `
         })
-        export class FirstCompComponent {
+        export class SampleRouteFirstComponent {
 
         }
     ```
@@ -164,9 +164,9 @@ Standalone Component Routing - Step-by-Step Flow Analysis:
      ```html
          <h1>Demo Router</h1>
          <ul>
-           <li><a class="routing-btn" routerLink="first-comp" routerLinkActive="active-routing-btn">First Component</a></li>
+           <li><a class="routing-btn" routerLink="sample-route-first" routerLinkActive="active-routing-btn">First Component</a></li>
            <li><a class="routing-btn" routerLink="second-comp" routerLinkActive="active-routing-btn">Second Component</a></li>
-           <li><a class="routing-btn" routerLink="third-comp" routerLinkActive="active-routing-btn">Third Component</a></li>
+           <li><a class="routing-btn" routerLink="sample-route-third" routerLinkActive="active-routing-btn">Third Component</a></li>
          </ul>
          <router-outlet></router-outlet>
      ```
