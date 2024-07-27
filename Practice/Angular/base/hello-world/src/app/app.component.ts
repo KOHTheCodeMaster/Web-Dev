@@ -44,7 +44,6 @@ import {
     DemoNgContentContainerAndTemplateComponent
 } from "./components/demo-ng-content-container-and-template/demo-ng-content-container-and-template.component";
 import {DemoGreetingsExample1} from "./components/demo-ng-content-container-and-template/demo-greetings-example-1";
-import {DemoRouting1Component} from "./components/routing/demo-routing-1/demo-routing-1.component";
 import {
     OptionsMenu1Component
 } from "./components/demo-practice/options-drop-down-menu/options-menu-1/options-menu-1.component";
@@ -57,6 +56,9 @@ import {
 } from "./components/demo-practice/options-drop-down-menu/options-menu-2/options-menu-2.component";
 import {DemoAsyncPipeComponent} from "./components/pipes/demo-async-pipe/demo-async-pipe.component";
 import {DemoIntroToRoutingComponent} from "./components/routing/demo-intro-to-routing/demo-intro-to-routing.component";
+import {
+    DemoRoutingPlainHtmlComponent
+} from "./components/routing/demo-routing-plain-html/demo-routing-plain-html.component";
 
 @Component({
     selector: 'app-root',
@@ -81,17 +83,17 @@ import {DemoIntroToRoutingComponent} from "./components/routing/demo-intro-to-ro
         LikeCounterCompComponent,
         DemoNgContentContainerAndTemplateComponent,
         DemoGreetingsExample1,
-        DemoRouting1Component,
         OptionsMenu1Component,
         OptionsMenu2Component,
         SelectDropDownMenu1Component,
         HomesComponent,
         DemoAsyncPipeComponent,
         DemoIntroToRoutingComponent,
+        DemoRoutingPlainHtmlComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
 export class AppComponent {
-    title = 'hello-world';
+    title: string = 'Frontend-Web-Dev';
 }
