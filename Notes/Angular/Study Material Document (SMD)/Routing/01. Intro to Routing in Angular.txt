@@ -99,7 +99,7 @@ Router Outlet: Placeholder in the template where the routed component will be di
 
 ----------------------------------------------------------------------------------------------------
 
-4. Quick Demo Setup for Angular Routing
+5. Quick Demo Setup for Angular Routing
 ---------------------------------------
 
 Detailed Explanations with Step-by-step Flow Analysis for Quick Demo Setup of Angular Routing:
