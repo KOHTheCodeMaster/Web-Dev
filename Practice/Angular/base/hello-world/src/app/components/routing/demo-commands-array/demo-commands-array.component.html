@@ -1,0 +1,43 @@
+<div class="m-4 border-2">
+
+  <h1 class="p-2 text-xl text-black bg-green-200">Demo Commands Array</h1>
+
+  <div class="flex flex-col gap-2.5">
+    <button (click)="navigateToProduct('fruits', '1')">Go to Product</button>
+    <button (click)="navigateToProductReview('fruits', '1', '101')">Go to Product Review</button>
+    <button (click)="navigateToRelatedProducts('vegetables', '2', '202')">Go to Related Products</button>
+    <button (click)="navigateToProductComment('dairy', '3', '102', '5')">Go to Product Comment</button>
+  </div>
+
+</div>
+
+
+<div class="m-4 border-2 dark:border-gray-700 dark:bg-gray-900">
+
+  <h1 class="p-2 text-xl text-black bg-green-200">Demo Commands Array</h1>
+
+  <div class="flex flex-col gap-2.5 p-4">
+    <button
+      (click)="navigateToProduct('fruits', '1')"
+      class="py-2 px-4 text-white bg-blue-600 rounded hover:bg-blue-700"
+      (mouseover)="showExplanation('product')">Go to Product</button>
+    <button
+      (click)="navigateToProductReview('fruits', '1', '101')"
+      class="py-2 px-4 text-white bg-blue-600 rounded hover:bg-blue-700"
+      (mouseover)="showExplanation('productReview')">Go to Product Review</button>
+    <button
+      (click)="navigateToRelatedProducts('vegetables', '2', '202')"
+      class="py-2 px-4 text-white bg-blue-600 rounded hover:bg-blue-700"
+      (mouseover)="showExplanation('relatedProducts')">Go to Related Products</button>
+    <button
+      (click)="navigateToProductComment('dairy', '3', '102', '5')"
+      class="py-2 px-4 text-white bg-blue-600 rounded hover:bg-blue-700"
+      (mouseover)="showExplanation('productComment')">Go to Product Comment</button>
+  </div>
+
+  <div class="p-4 mt-4 border-t-2 dark:border-gray-700">
+    <h2 class="text-lg text-white">Explanation</h2>
+    <p class="text-white" id="explanation"></p>
+  </div>
+
+</div>

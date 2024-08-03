@@ -59,6 +59,7 @@ import {DemoIntroToRoutingComponent} from "./components/routing/demo-intro-to-ro
 import {
     DemoRoutingPlainHtmlComponent
 } from "./components/routing/demo-routing-plain-html/demo-routing-plain-html.component";
+import {DemoCommandsArrayComponent} from "./components/routing/demo-commands-array/demo-commands-array.component";
 
 @Component({
     selector: 'app-root',
@@ -90,6 +91,7 @@ import {
         DemoAsyncPipeComponent,
         DemoIntroToRoutingComponent,
         DemoRoutingPlainHtmlComponent,
+        DemoCommandsArrayComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
