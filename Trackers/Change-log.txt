@@ -20,32 +20,31 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
-Time Stamp: 22nd Aug 2K24 - 03:12 PM
-Commit: #212 - Tailwind CSS - Practice - The Forest Kitchen & Bar - Refactor Layout - 5th Section - Microbrewery
+Time Stamp: 22nd Aug 2K24 - 03:38 PM
+Commit: #213 - Tailwind CSS - Practice - The Forest Kitchen & Bar - Refactor Layout - 6th Section (Gallery) & 7th Section (We are here)
 
 Changes:
 - File: `demo-the-forest-kitchen-and-bar.component.html`
 
 Refactored Layout and Styling:
 
-Emphasis on Section 5: Microbrewery
-- Introduced a new wrapper container:
-  - Added a consistent internal wrapper container class `"w-fit h-fit mx-auto my-8 p-0.5 flex items-end gap-0.5 border-2"` to centralize and align content.
+Emphasis on Section 6: Gallery
+- Introduced a new internal wrapper container:
+  - Added a `div` with class `"m-16 border-2"` to centralize section content.
 
-- Microbrewery Text Container Adjustments:
-  - Updated the main text container class to `"w-[600px] h-fit space-y-6 p-0.5 bg-[#181A1B] border-2 border-green-500"`.
-  - Ensured structured layout:
-    - Added a `div` with class `"w-[525px] h-fit border-2 border-cyan-500"` to wrap the image of "Wine Glasses".
-    - Applied padding and margin adjustments for improved spacing.
+- Gallery Title Adjustments:
+  - Updated the title's container to `"w-fit h-fit mx-auto my-8 text-[#A8A196] text-4xl font-bold text-center border-2 border-red-500"` for better alignment and visualization.
 
-- Brewery Image Container Adjustments:
-  - Changed image container class to `"w-[600px] h-full p-0.5 border-2 border-cyan-500"` for a standardized structure.
-  - Ensured consistent yellow borders for the Brewery image with class `"w-full h-full border-2 border-yellow-500"`.
+- Gallery Images Container Adjustments:
+  - Wrapped the gallery images in a parent `div` with class `"space-y-1 p-0.5 border-2 border-orange-500"` for consistent styling.
+
+- Updates on Section 7: We are here
+  - Applied consistent styling and structure.
 
 ---
 
 Summary:
-- Reorganized Section 5 with new wrapper containers and adjusting the layout strategies for a more consistent design pattern.
+- Reorganized Section 6 & 7 with new wrapper containers and adjusting the layout strategies for a more consistent design pattern.
 
 ---
 
