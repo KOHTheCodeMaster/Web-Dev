@@ -1,0 +1,71 @@
+
+Time Stamp: 22nd Aug 2K24 - 01:02 PM..!!
+
+Title: Change Log for Commit History
+
+Category: Development -> Commit History -> Change Log
+
+Keywords: Change Log, Commit History, Updates, Refactoring, Changes
+
+Purpose: To maintain a detailed change log for the commit history of the project, including updates, refactoring, and other changes.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+Change Log:
+-----------
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp: 22nd Aug 2K24 - 01:02 PM
+Commit: #210 - Tailwind CSS - Practice - The Forest Kitchen & Bar - Refactor Layout - 3rd section - Kitchen Text (Left) & Food Image (Right)
+
+Changes:
+- File: `demo-the-forest-kitchen-and-bar.component.html`
+
+Refactored Layout and Styling:
+
+Major Emphasis on Section 3: Kitchen Text (Left) & Food Image (Right)
+- Introduced a new wrapper container with a white border:
+  - Added a `div` with class `"w-fit h-fit mx-auto pb-16 flex flex-col border-2"` to act as the main wrapper and centralize section content.
+- Separated kitchen text and food image:
+  - Ensured flexbox layout by adding a `div` class `"flex justify-between border-2 border-green-500"` to wrap the text and image containers.
+
+- Kitchen Text Container Adjustments:
+  - Wrapped kitchen text within another `div` with class `"max-w-2xl border-2 border-red-500"` to ensure proper structure.
+  - Updated the "View Menu" and "Dining Options" buttons:
+    - Added `div` flex container with `border-2 border-green-500` wrapping buttons for alignment.
+    - Each button styled with class `"border-2 border-pink-500 px-4 py-2 mt-6"` for consistent padding and border.
+
+- Food Image Container Adjustments:
+  - Wrapped the image within a `div` class `"flex justify-center lg:mr-0 border-2 border-cyan-500"` to ensure proper flex alignment.
+  - Applied `border-2 border-yellow-500` directly to the `<img>` tag for clear image placement.
+
+---
+
+General Updates Across Sections:
+- Wrapper Container Implementation:
+  - Added a `div` with class `"w-fit h-fit mx-auto pb-16 flex flex-col border-2"` around each section to centralize content and apply styles.
+
+- Standardized Margin and Padding:
+  - Refactored hardcoded `px-[60px]` to `px-32` across all sections for consistent padding and responsiveness.
+
+- Border Color Coding for Development Visualization:
+  - Applied green borders for containers with multiple elements by adding `border-2 border-green-500`.
+  - Applied red borders for text containers using `border-2 border-red-500`.
+  - Defined cyan borders for image containers with `border-2 border-cyan-500`.
+  - Added yellow borders directly to images using `border-2 border-yellow-500`.
+  - Styled buttons with pink borders using `border-2 border-pink-500`.
+
+---
+
+Summary:
+- By organizing each section with specific wrapper containers and adjusting the layout and styling strategies, the project now adheres to a more maintainable and consistent design pattern throughout.
+- The border color coding helps with development and debugging, ensuring clear separations and alignments of various elements.
+
+---
+
+----------------------------------------------------------------------------------------------------
