@@ -20,6 +20,69 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 22nd Aug 2K24 - 03:12 PM
+Commit: #212 - Tailwind CSS - Practice - The Forest Kitchen & Bar - Refactor Layout - 5th Section - Microbrewery
+
+Changes:
+- File: `demo-the-forest-kitchen-and-bar.component.html`
+
+Refactored Layout and Styling:
+
+Emphasis on Section 5: Microbrewery
+- Introduced a new wrapper container:
+  - Added a consistent internal wrapper container class `"w-fit h-fit mx-auto my-8 p-0.5 flex items-end gap-0.5 border-2"` to centralize and align content.
+
+- Microbrewery Text Container Adjustments:
+  - Updated the main text container class to `"w-[600px] h-fit space-y-6 p-0.5 bg-[#181A1B] border-2 border-green-500"`.
+  - Ensured structured layout:
+    - Added a `div` with class `"w-[525px] h-fit border-2 border-cyan-500"` to wrap the image of "Wine Glasses".
+    - Applied padding and margin adjustments for improved spacing.
+
+- Brewery Image Container Adjustments:
+  - Changed image container class to `"w-[600px] h-full p-0.5 border-2 border-cyan-500"` for a standardized structure.
+  - Ensured consistent yellow borders for the Brewery image with class `"w-full h-full border-2 border-yellow-500"`.
+
+---
+
+Summary:
+- Reorganized Section 5 with new wrapper containers and adjusting the layout strategies for a more consistent design pattern.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp: 22nd Aug 2K24 - 02:48 PM
+Commit: #211 - Tailwind CSS - Practice - The Forest Kitchen & Bar - Refactor Layout - 4th Section - Image (Left) & Bar Text (Right)
+
+Changes:
+- File: `demo-the-forest-kitchen-and-bar.component.html`
+
+Refactored Layout and Styling:
+
+Emphasis on Section 4: Image (Left) & Bar Text (Right)
+- Introduced a new internal wrapper container:
+  - Added a `div` with class `"w-full h-fit my-8 mx-16 flex items-center border-2"` to centralize content within Section 4.
+
+- Image Container Adjustments:
+  - Reduced padding by changing class from `py-20` to `py-10` for the image container.
+  - Ensured consistent cyan borders with class `"w-[60%] h-full py-10 border-2 border-cyan-500"`.
+
+- Text Content Container Adjustments:
+  - Added a main wrapper `div` for the text content with class `"w-[40%] h-fit bg-[#181A1B] border-2 border-orange-500"`.
+  - Nested text content in a `div` with class `"w-[400px] h-fit mx-auto space-y-6 bg-[#181A1B] border-2 border-green-500"`:
+    - Ensured structured and vertically spaced layout.
+    - Removed redundant `mt-6` from paragraphs for consistent spacing using `space-y-6`.
+
+---
+
+Summary:
+- By reorganizing Section 4 with specific wrapper containers and adjusting layout strategies, the project now follows a more maintainable and consistent design pattern.
+- The use of varied border colors aids in development and debugging, ensuring clear separation and alignment of various elements.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 22nd Aug 2K24 - 01:02 PM
 Commit: #210 - Tailwind CSS - Practice - The Forest Kitchen & Bar - Refactor Layout - 3rd section - Kitchen Text (Left) & Food Image (Right)
 
