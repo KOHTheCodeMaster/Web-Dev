@@ -20,6 +20,32 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 24th Aug 2K24 - 09:39 PM
+Commit: #214 - Tailwind CSS - Practice - Handling Images - Added Demo Handling Images & Containers Component
+
+Changes:
+- File: `demo-handling-images-and-containers.component.html`
+
+Added New Component for Practicing CSS Properties:
+
+Emphasis on Learning Image Handling:
+- Structured Layout: Introduced a layout with flexible containers to practice image alignment and spacing.
+
+- Image Containers:
+  - Added various image containers to demonstrate different CSS properties.
+  - Wrapped images with borders to highlight container boundaries.
+
+- Applied consistent styling across the component to enhance visual clarity and practice styling techniques.
+
+---
+
+Summary:
+- Introduced a new component focusing on practicing CSS properties for handling images, with structured layout and consistent styling for enhanced learning.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 22nd Aug 2K24 - 03:38 PM
 Commit: #213 - Tailwind CSS - Practice - The Forest Kitchen & Bar - Refactor Layout - 6th Section (Gallery) & 7th Section (We are here)
 

@@ -63,6 +63,9 @@ import {DemoCommandsArrayComponent} from "./components/routing/demo-commands-arr
 import {
     DemoTheForestKitchenAndBarComponent
 } from "./components/demo-practice/demo-the-forest-kitchen-and-bar/demo-the-forest-kitchen-and-bar.component";
+import {
+    DemoHandlingImagesAndContainersComponent
+} from "./components/demo-practice/demo-handling-images-and-containers/demo-handling-images-and-containers.component";
 
 @Component({
     selector: 'app-root',
@@ -96,6 +99,7 @@ import {
         DemoRoutingPlainHtmlComponent,
         DemoCommandsArrayComponent,
         DemoTheForestKitchenAndBarComponent,
+        DemoHandlingImagesAndContainersComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
