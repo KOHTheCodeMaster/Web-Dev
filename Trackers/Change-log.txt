@@ -20,6 +20,33 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 25th Aug 2K24 - 11:12 PM
+Commit: #215 - Tailwind CSS - Practice - Handling Images - Added new components `DemoBoxModelComponent` and `DemoPlayWithWidthAndHeightComponent`
+
+Changes:
+
+Added New Components for Practicing CSS Properties:
+
+Emphasis on Learning Box Model:
+- Structured Layout: Introduced a layout with flexible containers to practice box model properties.
+
+- Box Model Visualization:
+  - Created a new component `DemoBoxModelComponent` to demonstrate the box model properties.
+  - Added div elements with borders to visualize the box model properties.
+
+- Play with Width and Height:
+  - Introduced a new component `DemoPlayWithWidthAndHeightComponent` to practice width and height properties.
+  - Included div elements with varying width and height values for experimentation.
+
+---
+
+Summary:
+- Introduced new components focusing on practicing CSS properties for the box model emphasizing width and height.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 24th Aug 2K24 - 09:39 PM
 Commit: #214 - Tailwind CSS - Practice - Handling Images - Added Demo Handling Images & Containers Component
 

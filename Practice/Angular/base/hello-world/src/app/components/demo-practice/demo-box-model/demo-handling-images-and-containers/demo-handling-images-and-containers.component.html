@@ -1,5 +1,139 @@
 <div class="w-full h-[5000px]">
 
+  <!--  Section 1 - Width & Height Behavior Examples  -->
+  <section class="w-full h-fit bg-[#181A1B] border-2 border-gray-400">
+
+    <h2 class="w-fit h-fit mx-auto my-4 text-2xl text-center border-2 border-red-500">Section 1</h2>
+
+    <!--  Row 1 - Equal Container & Image Dimensions (400x400)  -->
+    <div class="w-fit h-fit mx-auto my-4 p-4 space-x-4 flex justify-center border-2 border-green-500">
+      <div class="w-[400px] h-[400px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - 400x400 Container"
+             class="p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 400x400 | Image: 300x300</p>
+      </div>
+      <div class="w-[200px] h-[220px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - 200x200 Container"
+             class="p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 200x200 | Image: 300x300</p>
+      </div>
+      <div class="w-[400px] h-[200px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - 400x200 Container"
+             class="p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 400x200 | Image: 300x300</p>
+      </div>
+      <div class="w-[200px] h-[400px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - 200x400 Container"
+             class="p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 200x400 | Image: 300x300</p>
+      </div>
+    </div>
+    <hr class="border-2 border-white my-4" />
+
+    <!--  Row 2 - Full Width & Full Height for Images  -->
+    <div class="w-fit h-fit mx-auto my-4 p-4 space-x-4 flex justify-center border-2 border-green-500">
+      <div class="w-[400px] h-[400px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Full Width & Height"
+             class="w-full h-full p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 400x400 | Image: Full Width & Height</p>
+      </div>
+      <div class="w-[200px] h-[200px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Full Width & Height"
+             class="w-full h-full p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 200x200 | Image: Full Width & Height</p>
+      </div>
+      <div class="w-[400px] h-[200px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Full Width & Height"
+             class="w-full h-full p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 400x200 | Image: Full Width & Height</p>
+      </div>
+      <div class="w-[200px] h-[400px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Full Width & Height"
+             class="w-full h-full p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 200x400 | Image: Full Width & Height</p>
+      </div>
+    </div>
+    <hr class="border-2 border-white my-4" />
+
+    <!--  Row 3 - Wider Containers with Full Width Images  -->
+    <div class="w-fit h-fit mx-auto my-4 p-4 space-x-4 flex justify-center border-2 border-green-500">
+      <div class="w-[500px] h-[300px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Wider Container"
+             class="w-full h-auto p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 500x300 | Image: Full Width</p>
+      </div>
+      <div class="w-[300px] h-[150px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Wider Container"
+             class="w-full h-auto p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 300x150 | Image: Full Width</p>
+      </div>
+      <div class="w-[400px] h-[200px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Wider Container"
+             class="w-full h-auto p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 400x200 | Image: Full Width</p>
+      </div>
+      <div class="w-[250px] h-[150px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Wider Container"
+             class="w-full h-auto p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 250x150 | Image: Full Width</p>
+      </div>
+    </div>
+    <hr class="border-2 border-white my-4" />
+
+    <!--  Row 4 - Narrower Containers with Full Height Images  -->
+    <div class="w-fit h-fit mx-auto my-4 p-4 space-x-4 flex justify-center border-2 border-green-500">
+      <div class="w-[150px] h-[400px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Narrower Container"
+             class="w-auto h-full p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 150x400 | Image: Full Height</p>
+      </div>
+      <div class="w-[200px] h-[500px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Narrower Container"
+             class="w-auto h-full p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 200x500 | Image: Full Height</p>
+      </div>
+      <div class="w-[200px] h-[300px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Narrower Container"
+             class="w-auto h-full p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 200x300 | Image: Full Height</p>
+      </div>
+      <div class="w-[100px] h-[400px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Narrower Container"
+             class="w-auto h-full p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 100x400 | Image: Full Height</p>
+      </div>
+    </div>
+    <hr class="border-2 border-white my-4" />
+
+    <!--  Row 5 - Proportional Scaling  -->
+    <div class="w-fit h-fit mx-auto my-4 p-4 space-x-4 flex justify-center border-2 border-green-500">
+      <div class="w-[400px] h-auto p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Proportional Scaling"
+             class="w-full h-auto p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 400xAuto | Image: Full Width</p>
+      </div>
+      <div class="w-[auto] h-[300px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Proportional Scaling"
+             class="w-auto h-full p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: Auto x 300 | Image: Full Height</p>
+      </div>
+      <div class="w-[auto] h-[auto] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Proportional Scaling"
+             class="w-auto h-auto p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: Auto x Auto | Image: Auto</p>
+      </div>
+      <div class="w-[400px] h-[400px] p-0.5 border-2 border-cyan-500">
+        <img src="assets/unsorted/02-pizza-300x300.jpg" alt="Image - Proportional Scaling"
+             class="w-auto h-auto p-0.5 border-2 border-yellow-500"/>
+        <p class="text-white mt-2">Container: 400x400 | Image: Auto</p>
+      </div>
+    </div>
+    <hr class="border-2 border-white my-4" />
+
+  </section>
+
+
+
   <!--  Section 1 -   -->
   <section class="w-full h-fit bg-[#181A1B] border-2 border-gray-400">
 
