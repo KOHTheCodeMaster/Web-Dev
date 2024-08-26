@@ -20,6 +20,36 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 26th Aug 2K24 - 11:58 PM
+Commit: #217 - CSS Fundamentals - Box Model - Practice - Zero Content Width and Height Due to Excessive Padding
+
+Changes:
+- File: `demo-play-with-width-and-height.component.html`
+
+Extended Sections to Demonstrate CSS Box Model and Padding Impact:
+
+Additional Focus on Zero Content Width and Height Due to Excessive Padding:
+- Introduced new section to emphasize the impact of excessive padding on width and height.
+
+Section 1: Zero Content Width and Height due to Excessive Padding:
+- Added a container box with dimensions 500x500 px.
+- Inserted a text box within the container, having 300x300 px dimensions and 200px padding on all sides.
+- Detailed explanation included to illustrate:
+  - The behavior of the box model with large padding values.
+  - Parent-child overflow issues.
+  - Reduction in the content area caused by large padding.
+  - Displacement of content due to excessive padding.
+
+---
+
+Summary:
+- Extended `DemoPlayWithWidthAndHeightComponent` template to further demonstrate and practice CSS box model properties, specifically focusing on how excessive padding affects content dimensions.
+- Added new section with detailed explanations and examples to help understand the impact of large padding values on content visibility and layout structure.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 26th Aug 2K24 - 07:40 PM
 Commit: #216 - CSS Fundamentals - Box Model - Practice - Initial Structure for demonstrating CSS width and height properties
 
