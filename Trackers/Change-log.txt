@@ -20,6 +20,35 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 26th Aug 2K24 - 07:40 PM
+Commit: #216 - CSS Fundamentals - Box Model - Practice - Initial Structure for demonstrating CSS width and height properties
+
+Changes:
+- File: `demo-play-with-width-and-height.component.html`
+
+Established Basic Structure for Demonstrating CSS Width and Height Properties:
+
+Initial Focus on Understanding Width and Height:
+- Introduced foundational sections to begin practicing width and height properties.
+
+- Section 1: Basic Configuration of Boxes:
+  - Added initial set of boxes with various width and height configurations.
+  - Included basic scenarios like padding impact and element overflow as starting points.
+
+- Section 2: Introducing Padding Impact:
+  - Added initial containers and text boxes with varying padding to start exploring.
+
+---
+
+Summary:
+- Set up the initial structure in `DemoPlayWithWidthAndHeightComponent` template to begin demonstrating and practicing CSS width and height properties.
+- Structured layout includes foundational sections focusing on different aspects of element dimensions, such as padding and overflow.
+- Further practice and analysis will continue to refine and expand these demonstrations in upcoming sessions.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 25th Aug 2K24 - 11:12 PM
 Commit: #215 - Tailwind CSS - Practice - Handling Images - Added new components `DemoBoxModelComponent` and `DemoPlayWithWidthAndHeightComponent`
 
