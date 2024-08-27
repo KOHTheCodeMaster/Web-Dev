@@ -2,10 +2,10 @@
   <h2 class="w-fit h-fit mx-auto my-4 text-2xl text-center border-2 border-red-500">Understanding Width and Height</h2>
 
 
-  <!--  section 1 - Zero Content Width and Height due to Excessive Padding on Text Box  -->
+  <!--  section 1 - Impact of Excessive Padding on Content Width and Height of Text Box  -->
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Section 1 - Zero Content Width and Height due to Excessive Padding on Text Box
+      Section 1 - Impact of Excessive Padding on Content Width and Height of Text Box
     </h3>
 
     <div class="w-full h-auto mx-auto my-4 p-2 flex gap-2 border-2 border-orange-500">
@@ -19,41 +19,41 @@
       </div>
 
       <!-- Explanation Section -->
-      <div class="w-[1000px] h-auto mx-auto my-4 p-4 border-2 border-blue-500">
-        <h4 class="text-lg font-semibold mb-4">Understanding the Impact of Excessive Padding</h4>
+      <div class="w-[1000px] h-auto mx-auto px-4 py-8 flex flex-col border-2 border-blue-500">
+        <h4 class="mb-4 text-lg font-semibold">Understanding the Impact of Excessive Padding</h4>
 
         <ul class="list-disc ml-6 space-y-2">
           <li>
-            <strong>Box Model Behavior:</strong> Tailwind's `border-box` model includes padding and borders in the
-            element's total width. Large padding values reduce the available content space, potentially causing
-            overflow.
+            <strong>Box Model Behavior:</strong>
+            Tailwind's border-box model includes padding and borders within the element's total width. When padding is
+            large, it reduces the space available for content, potentially leading to overflow or content being squeezed
+            out.
           </li>
           <li>
-            <strong>Parent-Child Overflow:</strong> The parent container, with its fixed 500px width, can't fully
-            contain the text box's effective width of 700px (300px original width + 400px horizontal padding), leading
-            to layout
-            issues.
+            <strong>Parent-Child Overflow:</strong>
+            A fixed-width parent container, such as one with a width of 500px, may not be able to accommodate a text box
+            with an effective width of 700px (300px content width plus 400px padding). This mismatch can lead to layout
+            issues, as the content overflows beyond the parent's boundaries.
           </li>
           <li>
-            <strong>Content Area Reduction:</strong> The `px-[200px]` padding adds 400px of horizontal padding. With a
-            300px-wide text box, subtracting the padding from these dimensions leaves no room for the content, reducing
-            the content area to zero.
+            <strong>Content Area Reduction:</strong>
+            When padding increases, it occupies space within the total dimensions of the text box. Subtracting this
+            padding from the overall width is necessary to calculate the remaining space for the content. Large padding
+            values can reduce the content area to zero, leaving no room for the actual content.
           </li>
           <li>
-            <strong>Content Displacement:</strong> Due to the large padding, the content area is squeezed, making the
-            content nearly invisible or "pushed out," leaving only the padding and borders visible.
+            <strong>Content Displacement:</strong>
+            Large padding values can compress the content area, making it nearly invisible or pushing it out entirely.
+            This leaves only the padding and borders visible, as the content is displaced due to lack of space.
           </li>
 
         </ul>
 
         <p class="mt-4">
-          <strong>Summary:</strong> Large padding reduces the available content space because the total size remains
-          constant. If the padding consumes more space than available, the content area shrinks, and the content is
-          displaced, making it invisible or causing overflow.
-          <span class="block mt-1">
-            Since negative dimensions are not possible, the browser interprets this as zero, and the content is pushed
-            out, leaving only the padding and borders visible.
-          </span>
+          <strong>Summary:</strong>
+          Large padding consumes space within the fixed total dimensions, reducing the available content area. If
+          padding exceeds the available space, the content is either pushed out or causes overflow. In cases where the
+          content area becomes negative, the browser interprets it as zero, leading to the content being displaced.
         </p>
       </div>
 

@@ -20,6 +20,34 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 27th Aug 2K24 - 12:26 PM
+Commit: #218 - CSS Fundamentals - Box Model - Practice - Refinement of Text Explanations in `Section 1 - Impact of Excessive Padding`
+
+Changes:
+- File: `demo-play-with-width-and-height.component.html`
+
+Refined Text Content for Section Demonstrating Impact of Excessive Padding:
+
+Enhanced Explanation for Better Understanding:
+- Refined the explanatory text within Section 1 to provide clearer insights into the impact of excessive padding on content dimensions.
+
+Section 1: Impact of Excessive Padding on Content Width and Height:
+- Improved textual explanation to:
+  - Clarify the box model behavior with large padding values.
+  - Describe parent-child overflow scenarios in more detail.
+  - Elaborate on the reduction in content area with better descriptions.
+  - Provide more precise details on content displacement issues.
+
+---
+
+Summary:
+- Refined text content in `DemoPlayWithWidthAndHeightComponent` template to offer clearer and more detailed explanations.
+- Enhanced Section 1's explanations to better elucidate the effects of excessive padding on content width and height for improved comprehension.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 26th Aug 2K24 - 11:58 PM
 Commit: #217 - CSS Fundamentals - Box Model - Practice - Zero Content Width and Height Due to Excessive Padding
 
