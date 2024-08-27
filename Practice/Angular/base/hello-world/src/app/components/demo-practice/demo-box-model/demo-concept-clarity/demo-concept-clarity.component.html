@@ -1,0 +1,132 @@
+<div class="w-[2000px] h-fit mx-4 my-4 p-2 border-2 border-blue-500">
+  <h2 class="w-fit h-fit mx-auto my-4 text-2xl text-center border-2 border-red-500">
+    Ready To Dive Into Conceptual Understanding of the Layout Behavior
+  </h2>
+
+  <!--  section 1 - Impact of Excessive Padding on Content Width and Height of Text Box  -->
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Section 1 - Impact of Excessive Padding on Content Width and Height of Text Box
+    </h3>
+
+    <div class="w-full h-auto mx-auto my-4 p-2 flex gap-2 border-2 border-orange-500">
+
+      <!-- Container Box with 500x500 px dimensions -->
+      <div class="w-[500px] h-[500px] p-4 border-2 border-green-500">
+        <!-- Text Box with 300x300 px dimensions and 200px padding on all sides -->
+        <p class="w-[300px] h-[300px] px-[200px] border-2 border-red-500">
+          Container of 500x500 px - Text Box of 300x300 px with 200px Padding Horizontally
+        </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-auto mx-auto px-4 py-8 flex flex-col border-2 border-blue-500">
+        <h4 class="mb-4 text-lg font-semibold">Understanding the Impact of Excessive Padding</h4>
+
+        <ul class="list-disc ml-6 space-y-2">
+          <li>
+            <strong>Box Model Behavior:</strong>
+            Tailwind's border-box model includes padding and borders within the element's total width. When padding is
+            large, it reduces the space available for content, potentially leading to overflow or content being squeezed
+            out.
+          </li>
+          <li>
+            <strong>Parent-Child Overflow:</strong>
+            A fixed-width parent container, such as one with a width of 500px, may not be able to accommodate a text box
+            with an effective width of 700px (300px content width plus 400px padding). This mismatch can lead to layout
+            issues, as the content overflows beyond the parent's boundaries.
+          </li>
+          <li>
+            <strong>Content Area Reduction:</strong>
+            When padding increases, it occupies space within the total dimensions of the text box. Subtracting this
+            padding from the overall width is necessary to calculate the remaining space for the content. Large padding
+            values can reduce the content area to zero, leaving no room for the actual content.
+          </li>
+          <li>
+            <strong>Content Displacement:</strong>
+            Large padding values can compress the content area, making it nearly invisible or pushing it out entirely.
+            This leaves only the padding and borders visible, as the content is displaced due to lack of space.
+          </li>
+
+        </ul>
+
+        <p class="mt-4">
+          <strong>Summary:</strong>
+          Large padding consumes space within the fixed total dimensions, reducing the available content area. If
+          padding exceeds the available space, the content is either pushed out or causes overflow. In cases where the
+          content area becomes negative, the browser interprets it as zero, leading to the content being displaced.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Section 2 - Impact of Text Box Exceeding Container Height -->
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Section 2 - Impact of Text Box Exceeding Container Height
+    </h3>
+
+    <div class="w-full h-auto mx-auto my-4 p-2 flex gap-2 border-2 border-orange-500">
+
+      <!-- Container Box with 200x300 px dimensions and 16px padding -->
+      <div class="w-[200px] h-[300px]  border-2 border-green-500">
+        <!-- Text Box with 200x400 px dimensions and no padding -->
+        <p class="w-[150px] h-[400px] mx-auto border-2 border-red-500">
+          Container of 200x300 px with No Padding - Text Box of 150x400 px with No Padding - Text Box Exceeds
+          Container Height
+        </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-auto mx-auto px-4 py-8 flex flex-col border-2 border-blue-500">
+        <h4 class="mb-4 text-yellow-500 text-lg font-semibold">
+          Warning: The below Explanation Content is Invalid, Needs to be Updated with Correct Information
+        </h4>
+        <h4 class="mb-4 text-lg font-semibold">Understanding the Impact of Exceeding Container Height</h4>
+
+        <ul class="list-disc ml-6 space-y-2">
+          <li>
+            <strong>Box Model Behavior:</strong>
+            In CSS, the box model includes padding and borders within the element's total dimensions. When the content
+            (text box) height exceeds the container height, the padding reduces the effective height available, causing
+            content overflow.
+          </li>
+          <li>
+            <strong>Height Discrepancy:</strong>
+            The container has a height of 300px, but the text box inside it is 400px tall. This height discrepancy
+            results in the text box overflowing the container’s boundaries, leading to visual misalignment.
+          </li>
+          <li>
+            <strong>Overflow Consequences:</strong>
+            Since the text box is taller than the container, it extends beyond the bottom of the container. The `16px`
+            padding further contributes to this overflow, causing the text box to overlap the container’s bottom border,
+            disrupting the layout.
+          </li>
+          <li>
+            <strong>Content Misalignment:</strong>
+            The overflow of the text box results in content being misaligned within the container. This can lead to a
+            poor user experience, as the content may become unreadable or hidden from view.
+          </li>
+          <li>
+            <strong>Managing Overflow:</strong>
+            To manage overflow, you can reduce the content height or increase the container height. Alternatively, you
+            can use CSS properties like `overflow: hidden;` to prevent the overflow from being visible, although this
+            may hide important content.
+          </li>
+        </ul>
+
+        <p class="mt-4">
+          <strong>Summary:</strong>
+          When the height of a text box exceeds its container, padding and box model behavior must be carefully managed
+          to prevent overflow and misalignment. Understanding these CSS fundamentals is key to creating responsive and
+          visually consistent layouts.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</div>

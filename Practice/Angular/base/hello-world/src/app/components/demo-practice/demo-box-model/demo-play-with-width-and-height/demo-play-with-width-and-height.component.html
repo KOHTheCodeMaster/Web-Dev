@@ -1,59 +1,29 @@
-<div class="w-[2000px] h-[2000px] mx-4 my-4 p-2 border-2 border-blue-500">
-  <h2 class="w-fit h-fit mx-auto my-4 text-2xl text-center border-2 border-red-500">Understanding Width and Height</h2>
+<div class="w-[2000px] h-fit mx-4 my-4 p-2 border-2 border-blue-500">
+  <h2 class="w-fit h-fit mx-auto my-4 text-2xl text-center border-2 border-red-500">
+    Random Scenarios for Understanding the Layout Behavior
+  </h2>
 
-
-  <!--  section 1 - Impact of Excessive Padding on Content Width and Height of Text Box  -->
+  <!--  Section 1  -->
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Section 1 - Impact of Excessive Padding on Content Width and Height of Text Box
+      Scenarios for Conceptual Understanding of the Layout Behavior
     </h3>
 
-    <div class="w-full h-auto mx-auto my-4 p-2 flex gap-2 border-2 border-orange-500">
+    <!--  Row 1  -->
+    <div class="w-auto h-auto min-h-[400px] m-4 p-2 flex gap-4 border-2 border-orange-500">
 
-      <!-- Container Box with 500x500 px dimensions -->
-      <div class="w-[500px] h-[500px] p-4 border-2 border-green-500">
-        <!-- Text Box with 300x300 px dimensions and 200px padding on all sides -->
-        <p class="w-[300px] h-[300px] px-[200px] border-2 border-red-500">
-          Container of 500x500 px - Text Box of 300x300 px with 200px Padding Horizontally
-        </p>
+      <!--  Box 1 - Overflow Phenomenon - Text Content (Not the Box) Exceeds Container Height  -->
+      <div class="w-[200px] h-[200px] p-4 border-2 border-green-500">
+        <div class="p-2 border-2 border-red-500">
+          This is a long text that will overflow the container if it exceeds the set height.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
+        </div>
       </div>
 
-      <!-- Explanation Section -->
-      <div class="w-[1000px] h-auto mx-auto px-4 py-8 flex flex-col border-2 border-blue-500">
-        <h4 class="mb-4 text-lg font-semibold">Understanding the Impact of Excessive Padding</h4>
-
-        <ul class="list-disc ml-6 space-y-2">
-          <li>
-            <strong>Box Model Behavior:</strong>
-            Tailwind's border-box model includes padding and borders within the element's total width. When padding is
-            large, it reduces the space available for content, potentially leading to overflow or content being squeezed
-            out.
-          </li>
-          <li>
-            <strong>Parent-Child Overflow:</strong>
-            A fixed-width parent container, such as one with a width of 500px, may not be able to accommodate a text box
-            with an effective width of 700px (300px content width plus 400px padding). This mismatch can lead to layout
-            issues, as the content overflows beyond the parent's boundaries.
-          </li>
-          <li>
-            <strong>Content Area Reduction:</strong>
-            When padding increases, it occupies space within the total dimensions of the text box. Subtracting this
-            padding from the overall width is necessary to calculate the remaining space for the content. Large padding
-            values can reduce the content area to zero, leaving no room for the actual content.
-          </li>
-          <li>
-            <strong>Content Displacement:</strong>
-            Large padding values can compress the content area, making it nearly invisible or pushing it out entirely.
-            This leaves only the padding and borders visible, as the content is displaced due to lack of space.
-          </li>
-
-        </ul>
-
-        <p class="mt-4">
-          <strong>Summary:</strong>
-          Large padding consumes space within the fixed total dimensions, reducing the available content area. If
-          padding exceeds the available space, the content is either pushed out or causes overflow. In cases where the
-          content area becomes negative, the browser interprets it as zero, leading to the content being displaced.
+      <!--  Box 2 - Overflow - Text Box overflows and exceeds its Container Width  -->
+      <div class="w-[200px] h-[200px] p-4 border-2 border-green-500">
+        <p class="w-[300px] h-[100px] border-2 border-red-500">
+          Container of 200x200 px with 16px Padding - Text Box of 300x100 px with No Padding
         </p>
       </div>
 
@@ -65,9 +35,12 @@
   <!--  section 2  -->
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Section 2 - 5 Boxes with Different Width and Height
+      More Random Scenarios to Understand the Layout Behavior
     </h3>
 
+    <h4 class="w-fit h-fit mx-auto my-2 text-2xl text-center border-2 border-red-500">
+      Impact of Padding on Width and Height
+    </h4>
     <!--  Row 1 - 5 Boxes  -->
     <div class="w-auto h-auto m-4 p-2 flex gap-4 border-2 border-orange-500">
 
@@ -97,11 +70,16 @@
         </p>
       </div>
 
+    </div>
+
+    <!--  Row 2 - 5 Boxes  -->
+    <div class="w-auto h-auto mx-4 mt-32 p-2 flex gap-4 border-2 border-orange-500">
+
       <!--
           Box 4 - Overlapping Case - Text Box exceeds Container Width and
           Overlaps with other Containers as well as the borders of the parent containers
       -->
-      <div class="w-[400px] h-[400px] ml-[150px] p-4 border-2 border-green-500">
+      <div class="w-[400px] h-[400px] p-4 border-2 border-green-500">
         <p class="w-[900px] h-[300px] border-2 border-red-500">
           Container of 400x400 px with 16px Padding - Text Box of 900x300 px with No Padding -
           Overlapping Case - Text Box exceeds Container Width and -
@@ -118,18 +96,9 @@
       </div>
 
     </div>
-  </section>
 
-  <hr>
-
-  <!--  section 3  -->
-  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
-    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Section 3 - Impact of Padding on Width and Height
-    </h3>
-
-    <!--  Row 1 - 4 Text Boxes with Different Width and Height  -->
-    <div class="w-full h-auto mx-auto my-4 p-2 flex gap-2 border-2 border-orange-500">
+    <!--  Row 3 - 4 Text Boxes with Different Width and Height  -->
+    <div class="w-auto h-auto mx-4 my-4 p-2 flex gap-2 border-2 border-orange-500">
 
       <div class="w-[400px] h-[300px] p-4 border-2 border-green-500">
         <p class="w-[300px] h-[300px] border-2 border-red-500">
@@ -156,6 +125,7 @@
       </div>
 
     </div>
+
   </section>
 
 </div>
