@@ -143,10 +143,18 @@
   <!-- Scenario 4 -  -->
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Scenario 4 -
+      Scenario 4 - Overflow Case - Text Box exceeds Container Width & Height
     </h3>
 
     <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around  gap-2 border-2 border-orange-500">
+
+      <!-- Container Box with 200x200 px dimensions and 16px padding -->
+      <div class="w-[200px] h-[200px] p-4 border-2 border-green-500">
+        <!-- Text Box with 300x300 px dimensions and no padding -->
+        <p class="w-[300px] h-[300px] border-2 border-red-500">
+          Container of 200x200 px with 16px Padding - Text Box of 300x300 px with No Padding
+        </p>
+      </div>
 
       <!-- Explanation Section -->
       <div class="w-[1000px] h-[400px] px-4 flex flex-col border-2 border-blue-500">
@@ -157,9 +165,27 @@
         <ul class="mt-8 list-disc ml-6 space-y-2">
           <li>
             <strong>Scenario Description:</strong>
+            In this scenario, the container has a width and height of 200px each, with 16px padding. The text box inside
+            it has a width and height of 300px each but no padding. The width discrepancy causes the text box to
+            overflow the container’s boundaries, leading to visual misalignment. The 16px padding of the container
+            further contributes to this overflow, causing the text box to overlap the container’s borders and disrupt
+            the layout.
           </li>
           <li>
             <strong>Consequences:</strong>
+            Since the text box is wider and taller than the container, it extends beyond the container’s boundaries. The
+            width discrepancy causes the text box to overflow the container’s right edge, while the height discrepancy
+            causes it to overflow the bottom edge. The 16px padding of the container further contributes to this
+            overflow, causing the text box to overlap the container’s borders and disrupt the layout.
+          </li>
+          <li>
+            <strong>Doubt 1:</strong>
+            Is width discrepancy the only reason for the overflow, or does the height discrepancy also play a role in
+            causing the text box to exceed the container’s boundaries?
+            <br>
+            - Need to understand the width and height discrepancy and their individual impact on the overflow.
+            <br>
+            - Importance & Priority of width discrepancy over height discrepancy (and vice versa) in causing the overflow.
           </li>
         </ul>
 
@@ -170,7 +196,88 @@
 
   <hr>
 
-  <!--  section 2  -->
+  <!-- Scenario 5 - Impact of Padding leading to Overflow -->
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Scenario 5 - Impact of Padding leading to Overflow
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around  gap-2 border-2 border-orange-500">
+
+      <!--  Container Box with 300x300 px dimensions and 16px padding  -->
+      <div class="w-[300px] h-[300px] p-[50px] border-2 border-green-500">
+        <!--  Text Box with 300x300 px dimensions and no padding  -->
+        <p class="w-[300px] h-[300px] border-2 border-red-500">
+          Container of 300x300 px with 16px Padding - Text Box of 300x300 px with No Padding -
+          50px Padding of the Container leads to overflowing of the Text Box outside the Container
+        </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-[400px] px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          Explanation
+        </h4>
+
+        <ul class="mt-8 list-disc ml-6 space-y-2">
+          <li>
+            <strong>Scenario Description:</strong>
+            In this scenario, the container has a width and height of 300px each, with 50px padding. The text box inside
+            it has the same dimensions but no padding. The padding of the container reduces the available content area,
+            causing the text box to overflow the container boundaries.
+          </li>
+          <li>
+            <strong>Consequences:</strong>
+            Since the text box is the same size as the container but has no padding, it extends beyond the container’s
+            boundaries. The 50px padding of the container further contributes to this overflow, causing the text box to
+            overlap the container’s borders and disrupt the layout.
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Scenario 6 -  -->
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Scenario 6 -
+    </h3>
+    <div class="m-4 p-4 flex justify-around gap-2 border-2 border-orange-500">
+
+      <!--  Container Box with 300x300 px dimensions and 16px padding  -->
+      <div class="p-0.5 border-2 border-green-500">
+        <!--  Text Box with 300x300 px dimensions and no padding  -->
+        <p class="p-0.5 border-2 border-red-500">
+
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nemo qui rerum. Autem, cumque libero!
+        </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1500px] h-[400px] px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          Explanation
+        </h4>
+        <ul class="mt-8 list-disc ml-6 space-y-2">
+          <li>
+            <strong>Scenario Description:</strong>
+          </li>
+          <li>
+            <strong>Consequences:</strong>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <!--  Last Section - More Random Scenarios to Understand the Layout Behavior  -->
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
       More Random Scenarios to Understand the Layout Behavior
@@ -182,14 +289,7 @@
     <!--  Row 1 - 5 Boxes  -->
     <div class="w-auto h-auto m-4 p-2 flex gap-4 border-2 border-orange-500">
 
-      <!--  Box 1 - Basic Box  -->
-      <div class="w-[300px] h-[300px] p-4 border-2 border-green-500">
-        <p class="w-[200px] h-[200px] border-2 border-red-500">
-          Container of 300x300 px with 16px Padding - Text Box of 200x200 px with No Padding
-        </p>
-      </div>
-
-      <!--  Box 2 - Text Box Exceeds Container Height  -->
+      <!--  Box 1 - Text Box Exceeds Container Height  -->
       <div class="w-[200px] h-[300px] p-4 border-2 border-green-500">
         <p class="w-[200px] h-[400px] border-2 border-red-500">
           Container of 200x300 px with 16px Padding - Text Box of 200x400 px with No Padding -
@@ -198,13 +298,10 @@
         </p>
       </div>
 
-      <!--
-          Box 3 - Overlapping Case - Text Box exceeds Container Width & Height and Overlaps with Next Container
-          Note: why above container overlaps with the border of this one, margin left is required to avoid overlap
-      -->
-      <div class="w-[200px] h-[200px] ml-[50px] p-4 border-2 border-green-500">
+
+      <div class="w-[400px] h-[300px] ml-16 p-4 border-2 border-green-500">
         <p class="w-[300px] h-[300px] border-2 border-red-500">
-          Container of 200x200 px with 16px Padding - Text Box of 300x300 px with No Padding
+          Container - 400x300 px - Text Box - 300x300 px - Padding of 100px on all sides
         </p>
       </div>
 
@@ -216,6 +313,7 @@
       <!--
           Box 4 - Overlapping Case - Text Box exceeds Container Width and
           Overlaps with other Containers as well as the borders of the parent containers
+          Note: why margin left is required by neighbouring containers to avoid the side-effect of this overlap
       -->
       <div class="w-[400px] h-[400px] p-4 border-2 border-green-500">
         <p class="w-[900px] h-[300px] border-2 border-red-500">

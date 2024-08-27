@@ -20,6 +20,37 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 27th Aug 2K24 - 08:27 PM
+Commit: #221 - CSS Fundamentals - Box Model - Basic Restructure before Diving Deep into Concept Understanding
+
+Changes:
+- File: `demo-play-with-width-and-height.component.html`
+
+Basic Restructure Before Diving Deep into Concept Understanding:
+
+Enhanced Initial Structure:
+- Added more scenarios to `DemoPlayWithWidthAndHeightComponent` for basic interaction before deeper conceptual dives.
+
+Section: Basic Scenarios for Understanding:
+- Scenario 4: Overflow Case - Text Box Exceeds Container Width & Height
+- Scenario 5: Impact of Padding Leading to Overflow
+- Scenario 6: Placeholder for Future Use
+
+Section: More Random Scenarios to Understand the Layout Behavior:
+- Added a variety of box scenarios to align with the initial understanding.
+- Detailed explanations added to illustrate overflow and alignment issues caused by boxes exceeding their container dimensions.
+
+---
+
+Summary:
+- Basic restructure in `DemoPlayWithWidthAndHeightComponent` to facilitate initial exploration and understanding of layout behaviors.
+- Added detailed explanations and placeholder for future scenarios.
+- Enhanced initial setup to provide a foundation before diving deeper into concept understanding.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 27th Aug 2K24 - 05:18 PM
 Commit: #220 - CSS Fundamentals - Box Model - Improved Arrangement of Scenarios for Layout Behavior Understanding
 
