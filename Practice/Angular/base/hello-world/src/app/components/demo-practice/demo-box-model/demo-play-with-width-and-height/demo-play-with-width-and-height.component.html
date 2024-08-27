@@ -3,28 +3,166 @@
     Random Scenarios for Understanding the Layout Behavior
   </h2>
 
-  <!--  Section 1  -->
+  <!-- Scenario 1 -  -->
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Scenarios for Conceptual Understanding of the Layout Behavior
+      Scenario 1 - Long Text Content Overflowing the Containers Height
     </h3>
 
-    <!--  Row 1  -->
-    <div class="w-auto h-auto min-h-[400px] m-4 p-2 flex gap-4 border-2 border-orange-500">
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center gap-2 border-2 border-orange-500">
 
-      <!--  Box 1 - Overflow Phenomenon - Text Content (Not the Box) Exceeds Container Height  -->
+      <!-- Container Box with 200x200 px dimensions and 16px padding -->
       <div class="w-[200px] h-[200px] p-4 border-2 border-green-500">
-        <div class="p-2 border-2 border-red-500">
+        <!-- Text Box with no fixed dimensions and no padding -->
+        <div class="border-2 border-red-500">
           This is a long text that will overflow the container if it exceeds the set height.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
+          dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
         </div>
       </div>
 
-      <!--  Box 2 - Overflow - Text Box overflows and exceeds its Container Width  -->
-      <div class="w-[200px] h-[200px] p-4 border-2 border-green-500">
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-[400px] px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          Explanation
+        </h4>
+
+        <ul class="mt-8 list-disc ml-6 space-y-2">
+          <li>
+            <strong>Scenario Description:</strong>
+            In this scenario, the container has a width of 200px, height of 200px, and 16px padding. The text box inside
+            it has no fixed width or height. Since the text box has no fixed width, it expands to accommodate the text
+            content. Text content is too long and exceeds the container width, it overflows the container boundaries,
+            disrupting the layout.
+          </li>
+          <li><strong>Doubt 1: </strong>
+            How does Text Content is populated and using what strategy does the width or height is filled? What
+            are the rules based on which the text is populated in the given box or wrapping container?
+          </li>
+          <li><strong>Doubt 2: </strong>Why only height is overflowing and not width?</li>
+          <li>
+            <strong>Doubt 3:</strong>
+            Why the text content is overflowing over multiple parent containers and not just the immediate parent
+            container?
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Scenario 2 - Impact of Text Box Exceeding Container Width -->
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Scenario 2 - Text Box Exceeding Container Width
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center gap-2 border-2 border-orange-500">
+
+      <!-- Container Box with 200x200 px dimensions and 16px padding -->
+      <div class="w-[200px] h-[200px] p-0.5 border-2 border-green-500">
+        <!-- Text Box with 300x100 px dimensions and no padding -->
         <p class="w-[300px] h-[100px] border-2 border-red-500">
-          Container of 200x200 px with 16px Padding - Text Box of 300x100 px with No Padding
+          Container of 200x200 px with 2px Padding (for Readability) - Text Box of 300x100 px with No Padding -
+          Text Box Exceeds Container Width
         </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-[400px] px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          Explanation
+        </h4>
+
+        <ul class="mt-8 list-disc ml-6 space-y-2">
+          <li>
+            <strong>Scenario Description:</strong>
+            In this scenario, the container has a width of 200px, but the text box inside it is 300px wide. This width
+            discrepancy causes the text box to overflow the container’s boundaries, leading to visual misalignment.
+          </li>
+          <li>
+            <strong>Consequences:</strong>
+            Since the text box is wider than the container, it extends beyond the right edge of the container. This
+            overflow disrupts the layout and may cause alignment issues.
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Scenario 3 - Impact of Text Box Exceeding Container Height -->
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Scenario 3 - Text Box Exceeding Container Height
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around  gap-2 border-2 border-orange-500">
+
+      <!-- Container Box with 200x200 px dimensions and 16px padding -->
+      <div class="w-[200px] h-[200px] p-0.5 border-2 border-green-500">
+        <!-- Text Box with 100x300 px dimensions and no padding -->
+        <p class="w-[100px] h-[300px] border-2 border-red-500">
+          Container of 200x200 px with 2px Padding - Text Box of 100x300 px with No Padding -
+          Text Box Exceeds Container Height
+        </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-[400px] px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          Explanation
+        </h4>
+
+        <ul class="mt-8 list-disc ml-6 space-y-2">
+          <li>
+            <strong>Scenario Description:</strong>
+            In this scenario, the container has a width of 200px, but the text box inside it is 300px wide. This width
+            discrepancy causes the text box to overflow the container’s boundaries, leading to visual misalignment.
+          </li>
+          <li>
+            <strong>Consequences:</strong>
+            Since the text box is wider than the container, it extends beyond the right edge of the container. This
+            overflow disrupts the layout and may cause alignment issues.
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Scenario 4 -  -->
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Scenario 4 -
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around  gap-2 border-2 border-orange-500">
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-[400px] px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          Explanation
+        </h4>
+
+        <ul class="mt-8 list-disc ml-6 space-y-2">
+          <li>
+            <strong>Scenario Description:</strong>
+          </li>
+          <li>
+            <strong>Consequences:</strong>
+          </li>
+        </ul>
+
       </div>
 
     </div>
@@ -123,6 +261,21 @@
           Text Box - 300x300 px - Padding of 200px on all sides
         </p>
       </div>
+
+    </div>
+
+    <!--  Row 4 -   -->
+    <div class="w-auto h-auto mx-4 my-4 p-2 flex gap-2 border-2 border-orange-500">
+
+
+      <div class="w-64 h-32 p-4 border-2 border-blue-500 overflow-hidden">
+        <div class="text-box  p-2 border-2 border-red-500">
+          This is a long text that will overflow the container if it exceeds the set height.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
+          dapibus diam.
+        </div>
+      </div>
+
 
     </div>
 
