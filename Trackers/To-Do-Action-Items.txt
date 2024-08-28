@@ -1,0 +1,83 @@
+
+Time Stamp: 21st Jul 2K24 - 10:34 AM..!!
+
+Title: To-Do Action Items
+
+Category: General -> Task Management -> Pending Action Items
+
+Keywords: To-Do, Action Items, Pending, Tasks, SMD
+
+Purpose: Tracking the Pending To-Do Action Items and Tasks to be Completed.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. SMD on 'Child Container Overflow in CSS'
+-------------------------------------------
+
+Created Time Stamp:   28th Aug 2K24 - 12:11 PM
+Resolved Time Stamp:  N/A
+
+Status: IN-PROGRESS
+
+---
+
+Action Items:
+
+1. Text Content Overflow - Handling Long Text in Containers.
+    - Investigate the behavior of text content overflow in containers.
+    - Explore the impact of long text on container dimensions and layout.
+    - Create a guide on how to handle text content overflow effectively.
+    - Provide examples of CSS techniques to manage text overflow in containers.
+    - Document the best practices for handling long text in containers.
+    - Add the findings to the SMD on 'Child Container Overflow in CSS'.
+
+2. Impact on Neighboring Elements - Pushing vs Hiding vs Overlapping.
+    - Understand the impact of child container overflow on neighboring elements.
+    - Create a comprehensive example to demonstrate how neighboring elements are affected by overflow.
+    - Document the behavior of neighboring elements when the child container overflows.
+    - Explore all possible scenarios where neighboring elements are pushed, hidden, or overlapped due to overflow.
+    - Add the findings to the SMD on 'Child Container Overflow in CSS'.
+
+3. Root Cause Candidates - Identifying the Causes of Child Container Overflow.
+    - Identify the common root causes of child container overflow in CSS layouts.
+    - Document the factors that contribute to child container overflow issues.
+    - Create a checklist of potential root causes and their impact on the layout.
+    - Provide solutions or workarounds to address each root cause effectively.
+    - Add the root cause candidates to the SMD on 'Child Container Overflow in CSS'.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
+2. SMD on 'Deep Dive into Overflow Property in CSS'
+---------------------------------------------------
+
+Created Time Stamp:   28th Aug 2K24 - 09:08 PM
+Resolved Time Stamp:  N/A
+
+Status: IN-PROGRESS
+
+---
+
+Action Items:
+
+1. Use-Cases of Overflow Property: List down all possible use-cases of the overflow property in managing child container overflow.
+    - Explore the different values of the overflow property and their impact on child container overflow.
+    - Create a detailed explanation of each value of the overflow property with examples.
+    - Provide a practical guide on when to use each value of the overflow property based on the design requirements.
+    - Include the use-cases of the overflow property in the SMD on 'Deep Dive into Overflow Property in CSS'.
+
+2. Compare `overflow-hidden` vs `overflow-clip` Scenarios.
+    - Investigate the differences between `overflow-hidden` and `overflow-clip` in CSS.
+    - Create examples to demonstrate the scenarios where `overflow-hidden` and `overflow-clip` are used.
+    - Document the behavior of each property and how they affect child container overflow.
+    - Provide guidelines on when to use `overflow-hidden` and `overflow-clip` based on specific layout requirements.
+    - Add the comparison of `overflow-hidden` and `overflow-clip` to the SMD on 'Deep Dive into Overflow Property in CSS'.
+
+---
+
+----------------------------------------------------------------------------------------------------

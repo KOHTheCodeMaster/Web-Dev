@@ -1,0 +1,108 @@
+
+Time Stamp: 28th Aug 2K24 - 09:20 PM
+
+Title: BACKLOG - For Future Reference
+
+Category: Task Management -> Pending Action Items -> Backlog
+
+Keywords: Backlog, Future Reference, Pending, Tasks, SMD
+
+Purpose: Tracking the Pending Action Items and Tasks to be Completed in the Future.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+1. Exploring `border-box` vs `content-box` & `clearfix` in CSS
+
+Key Points:
+    - Border-box vs Content-box and its impact on child container overflow.
+    - `clearfix` understanding and its role in managing child container overflow.
+
+Details:
+    - Compare the box-sizing models - border-box and content-box, and their impact on child container overflow.
+    - Investigate the clearfix technique and its role in managing child container overflow.
+    - Create a detailed explanation of the box-sizing models and clearfix technique with examples.
+    - Provide a practical guide on when to use border-box, content-box, or clearfix based on the layout requirements.
+    - Add the findings to the SMD on 'Child Container Overflow in CSS'.
+
+---
+
+2. Handling Overflow with CSS Properties - Overflow, Display, Position, and Z-Index.
+
+Key Points:
+    - Understanding the role of CSS properties like overflow, display, position, and z-index in managing child container overflow.
+    - Examples of different CSS property combinations to manage child container overflow.
+    - Best practices for using these properties to avoid common overflow issues.
+
+Details:
+    - Investigate the role of CSS properties like overflow, display, position, and z-index in managing child container overflow.
+    - Create a guide on how to use these properties effectively to handle overflow scenarios.
+    - Provide examples of different CSS property combinations to manage child container overflow.
+    - Include the best practices for using these properties to avoid common overflow issues.
+    - Incorporate the CSS property handling techniques in the SMD on 'Child Container Overflow in CSS'.
+
+
+---
+
+3. SMD on 'Comma Operator in TypeScript' is PENDING!
+----------------------------------------------------
+
+Created Time Stamp:   21st Jul 2K24 - 10:35 AM
+Resolved Time Stamp:  N/A
+
+ToDo: Create a detailed Study Material Document (SMD) on the Comma Operator in TypeScript.
+Status: OPEN
+
+Description:
+1. The SMD should provide a clear explanation of the comma operator in TypeScript.
+2. It should include examples that demonstrate the use of the comma operator in different contexts.
+3. The document should highlight the benefits and potential pitfalls of using the comma operator.
+4. Practical scenarios or code snippets should be used to illustrate the concepts effectively.
+
+Notes for Reference:
+
+Example: - Use below example for reference in the SMD on 'Comma Operator in TypeScript'
+
+```typescript
+    // Check if the user is logged in - optimized implementation - Using !!, || & comma operators.
+    checkLogin(): Observable<boolean> {
+        /*
+            The loggedInUser$ observable emits the user object when the user logs in.
+            Using comma operator, the map operator first checks if the user is logged in, and returns true.
+            If the user is not logged in, the map operator navigates to the login page and returns false.
+            Note:
+            - !!user returns true if user is not null or undefined, otherwise it returns false.
+            - The || operator returns the first truthy value or the last value if no truthy value is found.
+            - The comma operator evaluates each expression from left to right and returns the value of the last expression.
+         */
+        return this.authService.loggedInUser$.pipe(
+            map(user => !!user || (this.router.navigate(['/login']), false))
+        );
+    }
+`
+
+- Explanation of the checkLogin function:
+1. The checkLogin function returns an Observable<boolean>.
+2. It uses the loggedInUser$ observable from the authService.
+3. The map operator is used to transform the emitted user value.
+4. The expression !!user converts the user object to a boolean value.
+5. If the user is falsy (null, undefined, etc.), it navigates to the login page.
+6. The comma operator is used to return false if the user is falsy.
+7. The final result is a boolean indicating whether the user is logged in.
+
+- Explanation of the usage of the comma operator in the expression ` !!user || (this.router.navigate(['/login']), false) ` with emphasis on !!, ||, and , operators:
+1. The expression !!user converts the user object to a boolean value.
+2. If the user is truthy (not null or undefined), the logical OR operator (||) short-circuits and returns true.
+3. If the user is falsy, the logical OR operator evaluates the second part of the expression.
+4. The comma operator (,) is used to separate multiple expressions within a single statement.
+5. In this case, the comma operator is used to execute two expressions sequentially.
+6. The first expression is this.router.navigate(['/login']), which navigates to the login page.
+7. The second expression is false, which is the value returned if the user is falsy.
+8. The overall result of the expression is false, indicating that the user is not logged in.
+9. This approach combines navigation logic with the check for a truthy user value.
+10. It ensures that the user is redirected to the login page if they are not logged in.
+
+----------------------------------------------------------------------------------------------------

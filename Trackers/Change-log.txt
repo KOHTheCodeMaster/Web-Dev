@@ -20,6 +20,38 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 28th Aug 2K24 - 10:17 PM
+Commit: #223 - SMD Refactoring - For Refinement of SMDs added Placeholders & Updated To-Do Action Items
+
+Changes:
+
+- File: `Notes/SMD/SMD - CSS/01 - SMD - Child Container Overflow.txt`
+  - Added a new subsection `2.3 Visual Breakdown` to provide a visual explanation of overflow scenarios.
+  - Updated Section 4 to explore other possibilities of child container overflow, including overflow with height and combination of width & height overflow.
+  - Renamed Section 5 to `Overflow Handling Strategies and Best Practices` and added new strategies for handling overflow.
+
+- File: `Notes/SMD/SMD - CSS/02 - SMD - Deep Dive into Overflow Property in CSS.txt`
+  - Updated Section 4 to `Exploring Use-Cases of Overflow Property` and added placeholders for various overflow property use-cases.
+  - Added new subsections for different overflow property values and their impact on child container overflow.
+
+- File: `Trackers/Backlog.txt`
+  - Updated the backlog to include new action items and detailed descriptions for future reference.
+  - Added new sections for exploring `border-box` vs `content-box` and `clearfix` in CSS, and handling overflow with CSS properties.
+
+- File: `Trackers/To-Do-Action-Items.txt`
+  - Updated the To-Do action items to reflect the latest changes and added new tasks for handling text content overflow, impact on neighboring elements, and identifying root causes of child container overflow.
+
+---
+
+Summary:
+- Refined text content in `DemoPlayWithWidthAndHeightComponent` template to offer clearer and more detailed explanations.
+- Enhanced Section 1's explanations to better elucidate the effects of excessive padding on content width and height for improved comprehension.
+- Extended `Notes/SMD/SMD - CSS/01 - SMD - Child Container Overflow.txt` to include visual breakdowns and additional overflow scenarios.
+- Updated `Notes/SMD/SMD - CSS/02 - SMD - Deep Dive into Overflow Property in CSS.txt` to explore various use-cases of the overflow property.
+- Updated backlog and To-Do action items to reflect new tasks and future reference items.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 28th Aug 2K24 - 02:25 PM
 Commit: #222 - [SMD] CSS Fundamentals - Box Model - Child Content Overflow & Deep Dive into Overflow Property in CSS Layouts
 

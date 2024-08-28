@@ -28,10 +28,14 @@ Table of Contents:
 3. Impact of overflow: visible on Parent-Child Relationships
     3.1 Default Behavior Impact
     3.2 Visual Representation
-4. Exploring Other Possibilities of Child Container Overflow
-    4.1 Overflow with Height
-    4.2 Combination of Width & Height Overflow
-    4.3 Comprehensive Demonstration Example
+4. Exploring Use-Cases of Overflow Property
+    4.1
+    4.2
+    ...
+    ...
+    ...
+    4.8
+    4.9 Comprehensive Demonstration Example
 5. Impact of Overflow on Neighboring Child Elements
     5.1 How Neighboring Elements Respond
     5.2 Addressing the Impact
@@ -148,52 +152,50 @@ Result:
 
 ----------------------------------------------------------------------------------------------------
 
-Section 4: Exploring Other Possibilities of Child Container Overflow
---------------------------------------------------------------------
+Section 4: Exploring Use-Cases of Overflow Property
+---------------------------------------------------
 
-4.1 Overflow with Height
-------------------------
-
-Scenario: A parent container has a fixed height, but the child container’s height exceeds this limit.
-
-Example:
-
-```html
-    <div class="w-[200px] h-[100px] border-2 border-green-500">
-      <p class="w-[180px] h-[150px] border-2 border-red-500">
-        The height of this text box exceeds the height of its container.
-      </p>
-    </div>
-```
-
-Root Cause Analysis:
-- Parent Constraint: The parent’s height is fixed, and the child’s height is greater, causing overflow.
-- Result: The child spills out vertically, potentially disrupting the layout below.
+4.1 Basic Usage & Default Behavior
+----------------------------------
 
 ---
 
-4.2 Combination of Width & Height Overflow
-------------------------------------------
-
-Scenario: Both width and height of the child container exceed the parent container’s dimensions.
-
-Example:
-
-```html
-    <div class="w-[200px] h-[100px] border-2 border-green-500">
-      <p class="w-[250px] h-[150px] border-2 border-red-500">
-        This text box exceeds both the width and height of its container.
-      </p>
-    </div>
-```
-
-Root Cause Analysis:
-- Parent Constraints: The parent’s width and height are both fixed, while the child’s dimensions exceed these limits.
-- Result: Overflow occurs in both directions, potentially disrupting both horizontal and vertical layout elements.
+4.2 Overflow: visible
+---------------------
 
 ---
 
-4.3 Comprehensive Demonstration Example
+4.3 Overflow: hidden
+--------------------
+
+---
+
+4.4 Overflow: clip
+------------------
+
+---
+
+4.5 Overflow: scroll
+--------------------
+
+---
+
+4.6 Overflow: auto
+------------------
+
+---
+
+4.7 Overflow: X & Y variations
+------------------------------
+
+---
+
+4.8 Overflow: visible vs hidden vs clip vs scroll vs auto
+---------------------------------------------------------
+
+---
+
+4.9 Comprehensive Demonstration Example
 ---------------------------------------
 
 Scenario: Let’s create a more complex example that includes different overflow scenarios:
