@@ -20,6 +20,35 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 28th Aug 2K24 - 02:25 PM
+Commit: #222 - [SMD] CSS Fundamentals - Box Model - Child Content Overflow & Deep Dive into Overflow Property in CSS Layouts
+
+Changes:
+- Files: `01 - SMD - Child Container Overflow.txt`, `02 - SMD - Deep Dive into Overflow Property in CSS.txt`
+
+Introduction and Deep Dive into Overflow Concepts:
+
+Detailed Examination of Child Content Overflow:
+- File: `01 - SMD - Child Container Overflow.txt`
+  - Added detailed explanations and scenarios demonstrating how child content can overflow its container.
+  - Included various examples to illustrate the effects of different sizes and padding on overflow behavior.
+
+Deep Dive into the Overflow Property in CSS:
+- File: `02 - SMD - Deep Dive into Overflow Property in CSS.txt`
+  - Comprehensive examination of the `overflow` property and its values (`visible`, `hidden`, `scroll`, `auto`).
+  - Detailed descriptions and examples to show how each overflow value impacts content rendering within a container.
+  - Explored different use cases and best practices for managing overflow in CSS layouts.
+
+---
+
+Summary:
+- Added in-depth content related to child container overflow and the overflow property in CSS to SMD files.
+- Provided thorough explanations and examples to help understand how child content can overflow its container and how to manage overflow properties effectively.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 27th Aug 2K24 - 08:27 PM
 Commit: #221 - CSS Fundamentals - Box Model - Basic Restructure before Diving Deep into Concept Understanding
 

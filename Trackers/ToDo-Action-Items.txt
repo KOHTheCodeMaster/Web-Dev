@@ -74,3 +74,78 @@ Example: - Use below example for reference in the SMD on 'Comma Operator in Type
 10. It ensures that the user is redirected to the login page if they are not logged in.
 
 ----------------------------------------------------------------------------------------------------
+
+2. SMD on 'Child Container Overflow in CSS' is PENDING!
+
+Created Time Stamp:   28th Aug 2K24 - 12:11 PM
+Resolved Time Stamp:  N/A
+
+ToDo: Create a detailed Study Material Document (SMD) on Child Container Overflow in CSS.
+Status: OPEN
+
+Description:
+1. The SMD should explain the concept of child container overflow in CSS layouts.
+2. It should cover the causes of overflow, the impact on layout, and best practices to manage overflow effectively.
+3. Include real-world analogies, examples, and practical tips for handling child container overflow.
+4. Address common issues related to child container overflow and provide solutions to mitigate them.
+
+---
+
+Notes for Reference:
+- Use the real-world analogy of a garden with flower beds and plants to explain child container overflow.
+- Include examples of layout issues caused by child container overflow and how they can be resolved.
+- Provide detailed explanations of the overflow property, dimensions, and alignment issues in CSS layouts.
+- Discuss the impact of child container overflow on visibility, alignment, and overall layout aesthetics.
+- Include best practices for managing child container overflow, such as using overflow properties and clearfix techniques.
+- Use practical examples to demonstrate how neighboring elements can be affected by child container overflow.
+- Address the importance of controlling overflow to maintain a consistent and visually appealing layout.
+- Provide a comprehensive guide on how to handle child container overflow effectively in CSS layouts.
+-  Create a detailed SMD on Child Container Overflow in CSS using response #023 and response #025 as references.
+
+---
+
+Pending Tasks:
+- Create a Detailed SMD: Develop a comprehensive Study Material Document on Child Container Overflow in CSS using Response #023 and Response #025 as references.
+- Text Content Overflow: Address the overflow scenarios related to text content exceeding container dimensions.
+- Impact on Neighboring Elements: Explain how child container overflow affects neighboring elements and the overall layout.
+- Overflow Property Usage: Discuss all possible usage & use-case of the overflow property in managing child container overflow.
+- Root Cause Candidates: Highlight all possible root causes of child container overflow and their impact on the layout.
+- Checklists & Best Practices: Include checklists and best practices for managing child container overflow effectively.
+
+
+- Practice Section: Develop practice exercises to reinforce the concepts of child container overflow in CSS layouts.
+    - Practice each example scenario of child container overflow separately.
+    - List down each & every example scenario of child container overflow along with detailed explanations.
+    - Only width overflow, only height overflow and combination of both in the examples.
+    - Text content overflow scenarios and their impact on the layout.
+    - Impact on neighboring elements due to child container overflow.
+    - Examples of the overflow property in managing child container overflow.
+        - Impact of overflow-visible as the default value on child and parent containers.
+        - overflow-visible, overflow-hidden, overflow-clip, overflow-scroll and overflow-auto use-cases.
+        - overflow-hidden vs overflow-clip scenarios and their differences.
+    - Address other possibilities of child container overflow and provide detailed root cause analysis.
+    - Create a Comprehensive Detailed Example: Demonstrate a comprehensive example covering all possible use-cases and scenarios.
+-
+
+---
+
+Pending Items:
+- `clearfix` understanding and its role in managing child container overflow.
+- Neighboring Elements Impact - Pushing vs Hiding vs Overlapping.
+- Border-box vs Content-box and its impact on child container overflow.
+-
+
+---
+
+
+Detailed Demonstration for 'Overflow Handling in CSS' is PENDING!
+
+Addressing the Impact
+
+Alignment Issues: Overflow can push neighboring elements out of their intended positions.
+Visibility: Neighboring elements might become partially or fully hidden if the overflow isn’t managed properly.
+Best Practice: Control overflow using overflow properties and consider using clearfix or other layout techniques to maintain alignment.
+
+Example to demonstrate how neighboring elements turn partially or fully hidden due to overflow.
+
+----------------------------------------------------------------------------------------------------
