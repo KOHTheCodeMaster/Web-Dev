@@ -30,8 +30,9 @@ Action Items:
 1. Text Content Overflow - Handling Long Text in Containers.
     - Investigate the behavior of text content overflow in containers.
     - Explore the impact of long text on container dimensions and layout.
-    - Create a guide on how to handle text content overflow effectively.
-    - Provide examples of CSS techniques to manage text overflow in containers.
+    - Provide examples of all possible scenarios where text content overflows the container.
+    - Create a guide on how to handle text content overflow effectively using techniques like ellipsis, wrapping, etc.
+    - Guide for HTML & CSS strategies to manage long text content overflow in containers.
     - Document the best practices for handling long text in containers.
     - Add the findings to the SMD on 'Child Container Overflow in CSS'.
 

@@ -20,6 +20,34 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 28th Aug 2K24 - 02:30 PM
+Commit: #224 - SMD - Text Content Overflow in CSS Layouts - Conceptual Understanding
+
+Changes:
+
+- File: `Notes/SMD/SMD - CSS/03 - SMD - Text Content Overflow.txt`
+  - Added new file with detailed content on text content overflow in CSS layouts.
+  - Included sections on introduction, root causes, impact, neighboring elements, box model role, special mentions from books, and summary.
+
+- File: `Notes/SMD/SMD - CSS/01 - SMD - Child Container Overflow.txt`
+  - Updated Table of Contents formatting for better readability.
+  - Removed Section 6: Conclusion.
+  - Renamed Section 7: Summary to Section 6: Summary.
+
+- File: `Trackers/To-Do-Action-Items.txt`
+  - Rephrased and updated the action items related to text content overflow in CSS layouts.
+
+- File: `unsorted/git-diff-files/Commit#224/git-diff-224-commit-28-Aug-2K24-02-26-pm.diff`
+  - Added new git diff file for commit #224.
+
+Summary:
+- Introduced a new SMD - Text Content Overflow - Comprehensive Details with Conceptual Understanding.
+- Improved readability of the Table of Contents in '01 - SMD - Child Container Overflow'.
+- Rephrased action items in To-Do-Action-Items.txt to provide clearer guidance on handling text content overflow.
+- Added a new git diff file to track changes made in commit #224.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 28th Aug 2K24 - 10:17 PM
 Commit: #223 - SMD Refactoring - For Refinement of SMDs added Placeholders & Updated To-Do Action Items
 
