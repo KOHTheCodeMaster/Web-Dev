@@ -19,6 +19,33 @@ Change Log:
 -----------
 
 ----------------------------------------------------------------------------------------------------
+Time Stamp: 30th Aug 2K24 - 05:11 PM
+Commit: #225 - SMD - Deep Dive into Overflow Property in CSS - Enhancements
+
+Changes:
+
+- File: `Notes/SMD/SMD - CSS/02 - SMD - Deep Dive into Overflow Property in CSS.txt`
+  - Updated Table of Contents to include new sections and subsections.
+  - Added detailed explanations for the `overflow` property, including syntax and values.
+  - Introduced a real-world analogy of window blinds to explain the concept of `overflow`.
+
+- File: `Notes/SMD/SMD - CSS/03 - SMD - Text Content Overflow.txt`
+  - New Sub-section Added - '2.4 Text Overflow in Flexbox' to explore text overflow scenarios in Flexbox layouts.
+  - New Section Added - 'Section 7: Typography and Text Overflow' for typography considerations in text overflow scenarios.
+
+- File: `unsorted/git-diff-files/Commit#224/git-diff-224-commit-28-Aug-2K24-02-30-pm.diff`
+  - Renamed to `unsorted/git-diff-files/Commit#224/git-diff-224-commit-30-Aug-2K24-02-30-pm.diff`.
+
+- File: `unsorted/git-diff-files/git-diff-225-commit-30-Aug-2K24-05-11-pm.diff`
+  - Added new git diff file for commit #225.
+
+Summary:
+- Enhanced the `Deep Dive into Overflow Property in CSS` document with including syntax and values along with a real-world analogy of window blinds.
+- Improved the `Text Content Overflow` document by adding new sections on Flexbox and typography-related overflow issues.
+- Renamed the git diff file for commit #224 to reflect the correct timestamp.
+- Added a new git diff file to track changes made in commit #225.
+
+----------------------------------------------------------------------------------------------------
 
 Time Stamp: 28th Aug 2K24 - 02:30 PM
 Commit: #224 - SMD - Text Content Overflow in CSS Layouts - Conceptual Understanding

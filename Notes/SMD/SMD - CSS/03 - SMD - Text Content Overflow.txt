@@ -27,6 +27,7 @@ Table of Contents:
     - 2.1 Fixed vs. Dynamic Dimensions
     - 2.2 Long Text Strings
     - 2.3 Nested Elements and Their Impact
+    - 2.4 Text Overflow in Flexbox
 
 3. Impact of Text Content Overflow
     - 3.1 Layout Disruption
@@ -137,6 +138,18 @@ Nested Elements Scenario:
 Example:
 - A card component with a fixed width might contain a title, image, and description.
 - If the description text is too long, it could overflow the card, disrupting the design.
+
+---
+
+2.4 Text Overflow in Flexbox
+----------------------------
+
+Flexbox layouts provide flexibility but can introduce text overflow issues, especially when flex items are forced to shrink or grow disproportionately.
+
+Managing Flexbox Overflow:
+- flex-shrink: Control how flex items shrink to fill available space without causing overflow & to prevent content from overflowing.
+- min-width: Set a minimum width for flex items to prevent them from becoming too small and causing overflow.
+- Nested Flexbox: Carefully manage nested flex containers to prevent overflow in child elements.
 
 ---
 
@@ -313,7 +326,60 @@ Key Takeaway:
 
 ---
 
-Section 7 - Summary of Short & Crisp Pointers:
+----------------------------------------------------------------------------------------------------
+
+Section 7: Typography and Text Overflow
+---------------------------------------
+
+7.1 Font Size and Line Height
+-----------------------------
+
+- The choice of font size and line height can significantly influence text overflow.
+- Larger fonts or tight line heights increase the risk of overflow, especially in confined spaces.
+
+Impact on Overflow:
+- Large Font Size: Increases the chance of overflow, especially in small containers.
+- Tight Line Height: Reduces the space between lines, potentially causing vertical overflow.
+
+Practical Considerations:
+- Headings: Use larger fonts with appropriate line height, ensuring they don’t overflow their containers.
+- Body Text: Balance font size and line height to maintain readability without causing overflow.
+
+---
+
+7.2 Letter Spacing and Word Spacing
+-----------------------------------
+
+Letter spacing and word spacing can affect how text fits within a container, influencing the likelihood of overflow.
+
+Impact on Overflow:
+- Increased Letter Spacing: May cause text to overflow horizontally.
+- Increased Word Spacing: Can push words to the next line, leading to unexpected wrapping or overflow.
+
+Practical Considerations:
+- Logos or Banners: Use controlled letter spacing to ensure text fits within the design constraints.
+- Text Blocks: Adjust word spacing carefully to avoid breaking the layout.
+
+---
+
+7.3 Text Alignment and Justification
+------------------------------------
+
+Text alignment and justification settings can lead to overflow, particularly in justified text blocks where the spacing is adjusted to fit the container width.
+
+Impact on Overflow:
+- Justified Text: Can cause uneven spacing, leading to unexpected overflow, especially with long words.
+- Right or Center Alignment: May cause overflow if the container size doesn’t accommodate the text length.
+
+Practical Considerations:
+- Paragraphs: Justification should be used with caution to avoid creating rivers of white space that can disrupt the layout.
+- Headings and Titles: Center-aligned text should be monitored for overflow, especially on responsive layouts.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
+Section 8 - Summary of Short & Crisp Pointers:
 ----------------------------------------------
 
 - Text Overflow Basics:
