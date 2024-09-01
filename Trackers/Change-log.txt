@@ -19,6 +19,26 @@ Change Log:
 -----------
 
 ----------------------------------------------------------------------------------------------------
+Time Stamp: 1st Sep 2K24 - 10:45 AM
+Commit: #226 - Exploring 'text-overflow' property, Container Overflow, and Neighboring Elements through Detailed Examples
+
+Changes:
+
+File: `Trackers/To-Do-Action-Items.txt`
+  - Added new task: Exploring 'text-overflow' property, Container Overflow, and Neighboring Elements through Detailed Examples.
+  - Detailed action items for examining the below scenarios:
+    - Examine scenarios of the `text-overflow` property in CSS.
+    - Explore causes of container overflow using 'overflow' property in CSS.
+    - Investigate scenarios of impacting neighboring elements due to text & container overflow.
+  - New Task to Document Simplified Guides For Absolute Beginners.
+    - Document simplified guides for beginners on managing container overflow, text overflow, and neighboring elements.
+    - Summarize key points and best practices for handling overflow scenarios effectively.
+
+Summary:
+- Added a new task to `Trackers/To-Do-Action-Items.txt` for exploring 'text-overflow' property, container overflow, and neighboring elements through detailed examples.
+- Included detailed action items for examining various scenarios and causes of overflow in CSS layouts.
+
+----------------------------------------------------------------------------------------------------
 Time Stamp: 30th Aug 2K24 - 05:11 PM
 Commit: #225 - SMD - Deep Dive into Overflow Property in CSS - Enhancements
 

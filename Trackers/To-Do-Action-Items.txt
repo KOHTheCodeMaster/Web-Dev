@@ -15,7 +15,54 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 ----------------------------------------------------------------------------------------------------
 
-1. SMD on 'Child Container Overflow in CSS'
+1. Exploring 'text-overflow' property, Container Overflow, and Neighboring Elements through Detailed Examples
+---------------------------------------------------
+
+Created Time Stamp:   1st Sep 2K24 - 10:45 AM
+Resolved Time Stamp:  N/A
+
+Status: IN-PROGRESS
+
+---
+
+Action Items:
+
+1. Examine All Possible Scenarios of 'text-overflow' Property in CSS.
+    - Investigate the different scenarios of text overflow in CSS.
+    - Create examples to demonstrate how text overflow affects the layout.
+    - Document the behavior of text overflow in various contexts.
+    - Provide solutions to handle text overflow effectively.
+    - Add the findings to the SMD on 'Child Container Overflow in CSS'.
+
+2. Explore All Possible Causes of Container Overflow in CSS.
+    - Investigate the various factors & all potential causes that contribute to container overflow in CSS.
+    - Provide examples to illustrate each cause of container overflow with a detailed explanation using 'overflow' property.
+    - Document the factors & causes of container overflow and their impact on the layout.
+    - Create a checklist of common causes of child container overflow and their solutions.
+    - Provide solutions to prevent or manage container overflow effectively.
+    - Add the causes of container overflow to the SMD on 'Child Container Overflow in CSS'.
+
+3. All Possible Scenarios of Neighboring Elements in CSS.
+    - Investigate the scenarios where neighboring elements are affected by child container overflow.
+    - Create examples to demonstrate how neighboring elements behave in different overflow scenarios.
+    - Document the impact of child container overflow on neighboring elements.
+    - Provide guidelines on managing neighboring elements in CSS layouts.
+    - Add the scenarios of neighboring elements to the SMD on 'Child Container Overflow in CSS'.
+
+---
+
+4. Document the Simplified Guides for Absolute Beginners without Overwhelming Information.
+    - Individual Simplified Drafts for Container Overflow, Text Overflow, and Neighboring Elements.
+    - Summarize the key points and best practices for managing container overflow, text overflow, and neighboring elements.
+    - Create simplified guides for each topic with actionable steps and examples.
+    - Provide quick reference guides for developers to handle overflow scenarios effectively.
+    - Include the simplified guides in the SMD on 'Child Container Overflow in CSS'.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
+2. SMD on 'Child Container Overflow in CSS'
 -------------------------------------------
 
 Created Time Stamp:   28th Aug 2K24 - 12:11 PM
@@ -54,7 +101,7 @@ Action Items:
 
 ----------------------------------------------------------------------------------------------------
 
-2. SMD on 'Deep Dive into Overflow Property in CSS'
+3. SMD on 'Deep Dive into Overflow Property in CSS'
 ---------------------------------------------------
 
 Created Time Stamp:   28th Aug 2K24 - 09:08 PM
