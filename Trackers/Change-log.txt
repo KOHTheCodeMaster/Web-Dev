@@ -19,6 +19,32 @@ Change Log:
 -----------
 
 ----------------------------------------------------------------------------------------------------
+
+Time Stamp: 3rd Sep 2K24 - 07:18 PM
+Commit: #228 - CSS Fundamentals - White Space - Added New Cases for 'white-space-collapse' Property in Demo Scenarios
+
+Changes:
+
+- File: `demo-scenarios-white-space-collapse.component.html`
+  - Changed the title from "Random Scenarios for Understanding the Layout Behavior" to "Demo Scenarios - White Space Collapse CSS Property".
+  - Updated the Scenario Title from "Scenario 1 - Understanding the Default Behavior of White Space Collapse CSS Property" to "Default Behavior of White Space Collapse CSS Property".
+  - Commented out the sections for "Scenario X - Empty Text Box Width Calculations" and "Scenario Y - Text Overflow due to No Word Break".
+  - Added new scenarios to demonstrate the behavior of the `white-space-collapse` CSS property:
+    - Case 1: Tabs: All tabs are converted to a single space.
+    - Case 2: Line Breaks: All line breaks are converted to a single space.
+    - Case 3: Spaces: Multiple spaces are reduced to one.
+    - Case 4: Leading / Trailing Spaces: Leading and trailing spaces are removed.
+    - Case 5: Sequence of Spaces in the Middle: Spaces in the middle of an element are collapsed into a single space.
+    - Case 6: Spaces Across Inline Elements: Spaces across inline elements are collapsed into a single space.
+    - Case 7: Uniform Text Display: Text content is displayed uniformly, in a single line.
+
+Summary:
+- Added new cases to demonstrate the behavior of the `white-space-collapse` CSS property in the demo-scenarios-white-space-collapse Component.
+- Updated the title and scenario descriptions for clarity and focus on the white space collapse scenarios.
+- Commented out sections that are not relevant to the current focus on white space collapse scenarios.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 3rd Sep 2K24 - 03:32 PM
 Commit: #227 - CSS Fundamentals - White Space - Exploring 'white-space-collapse' & 'text-overflow' Properties in CSS
 
@@ -40,8 +66,6 @@ Summary:
 - Created a new component `demo-scenarios-text-overflow` to experiment with the 'text-overflow' property in CSS.
 - Included default scenarios to demonstrate the impact of these properties on text content.
 - Updated the SMD on 'Text Overflow' to include 'Typography Considerations' in the Summary Section.
-
-----------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------
 Time Stamp: 1st Sep 2K24 - 10:45 AM

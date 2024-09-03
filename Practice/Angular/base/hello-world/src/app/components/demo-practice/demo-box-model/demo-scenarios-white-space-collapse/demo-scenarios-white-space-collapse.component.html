@@ -1,12 +1,12 @@
 <div class="w-[2000px] h-fit mx-auto my-4 border-2 border-blue-500">
   <h2 class="w-fit h-fit mx-auto my-4 text-2xl border-2 border-red-500">
-    Random Scenarios for Understanding the Layout Behavior
+    Demo Scenarios - White Space Collapse CSS Property
   </h2>
 
   <!-- Scenario 1 - Understanding the Default Behavior of White Space Collapse CSS Property -->
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Scenario 1 - Understanding the Default Behavior of White Space Collapse CSS Property
+      Default Behavior of White Space Collapse CSS Property
     </h3>
 
     <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
@@ -39,12 +39,12 @@
       </div>
 
       <!-- Explanation Section -->
-      <div class="w-[1000px] h-[700px] px-4 flex flex-col border-2 border-blue-500">
+      <div class="w-[1000px] h-auto px-4 flex flex-col border-2 border-blue-500">
         <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-          Explanation
+          `white-space-collapse: collapse;`
         </h4>
 
-        <div class="mt-8 space-y-4">
+        <div class="my-8 space-y-4">
           <p>
             <strong>Scenario Description:</strong>
             - The container is 200x200 pixels.
@@ -105,136 +105,407 @@
   <hr>
 
 
-  <hr class="mt-32">
-  <hr class="mt-8">
-  <hr class="mt-8">
+  <!-- ---------------------------------------------------------------------------------------------------- -->
 
-  <!-- Scenario X - Empty Text Box Width Calculations -->
+
+  <!-- Case 1 - Tabs: All tabs are converted to a single space -->
+
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Scenario X - Empty Text Box Width Calculations
+      Case 1 - Tabs: All tabs are converted to a single space
     </h3>
 
     <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
-
-      <!-- Container Box with 200x200 px dimensions  -->
-      <div class="w-[200px] h-[200px]">
-        <!-- Text Box with no fixed dimensions, no text content, 8px border (each side) and 8px padding (each side) -->
-        <div class="p-2 border-8 border-red-500">
-          <!-- No Text Content -->
-        </div>
+      <!-- Text Box with tab characters -->
+      <div class="p-2 border-8 border-red-500">
+        <p style="white-space-collapse: collapse;">
+          Word1                 Word2
+          <!-- Explanation: Tabs between words are collapsed into a single space -->
+        </p>
       </div>
 
       <!-- Explanation Section -->
-      <div class="w-[1000px] h-[700px] px-4 flex flex-col border-2 border-blue-500">
+      <div class="w-[1000px] h-auto px-4 flex flex-col border-2 border-blue-500">
         <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-          Explanation
+          `white-space-collapse: collapse;`
         </h4>
-
-        <div class="mt-8 space-y-4">
-          <p>
-            <strong>Scenario Description:</strong>
-            In this scenario, the container has a width of 200px & height of 200px.
-            The text box inside it has no fixed width or height, no text content, 8px border (each side) and 8px padding
-            (each side).
-            Since, Text Box is empty, the content area will have 0px height.
-            But due to the borders & padding, width of text content area will be based on the container's width, border,
-            and padding.
-
-          <p>
-            <strong>Calculations: </strong>
-            Container Width = 200px
-            Container Height = 200px
-
-            Text Box Height = 0px (No Content)
-            Text Box Width Calculations:
-            Border = 2x 8px (left & right) = 16px
-            Padding = 2x 8px (left & right) = 16px
-            Content Area = Container Width (200px) - Border (16px) - Padding (16px) = 168px
-            Text Box Width = Border (16px) + Padding (16px) + Content Area (168px) = 200px
-          </p>
-          <p>
-            <strong>Explanation: </strong>
-          </p>
-          <p>
-            <strong>Importance, Impact & Significance: </strong>
-          </p>
-          <p>
-            <strong>Important Note: </strong>
-            Although the text box has no content, the borders and padding will still be visible.
-          </p>
-          <p>
-            <strong>Real-world Analogy: </strong>
-          </p>
-          <p>
-            <strong>Summary: </strong>
-          </p>
+        <div class="my-8 space-y-4">
+          <p><strong>Scenario Description:</strong> The text box contains tab characters between words.</p>
+          <p><strong>Explanation:</strong> The `white-space-collapse: collapse;` property collapses all tabs into a
+            single space, ensuring that words are separated by only one space, regardless of how many tabs are used.</p>
+          <p><strong>Real-world Analogy:</strong> Imagine typing a paragraph on a typewriter where pressing the tab key
+            multiple times only inserts a single space. Similarly, this property ensures neat and consistent spacing
+            between words.</p>
         </div>
-
       </div>
-
     </div>
   </section>
 
   <hr>
 
-  <!-- Scenario Y - Text Overflow due to No Word Break -->
+  <!-- Case 2 - Line Breaks: All line breaks are converted to a single space -->
+
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Scenario Y - Text Overflow due to No Word Break
+      Case 2 - Line Breaks: All line breaks are converted to a single space
     </h3>
 
     <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
+      <!-- Text Box with line break characters -->
+      <div class="p-2 border-8 border-red-500">
+        <p style="white-space-collapse: collapse;">
+          Word1
 
-      <!-- Container Box with 200x200 px dimensions  -->
-      <div class="w-[200px] h-[200px]">
-        <!-- Text Box with no fixed dimensions and no padding -->
-        <div class="p-2 border-8 border-red-500">
-          1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7
-          12345678901234567890123456
-        </div>
+                    Word2
+
+
+                              Word3
+          <!-- Explanation: Line breaks are collapsed into a single space, resulting in a smooth flow of text in a single line -->
+        </p>
       </div>
 
       <!-- Explanation Section -->
-      <div class="w-[1000px] h-[700px] px-4 flex flex-col border-2 border-blue-500">
+      <div class="w-[1000px] h-auto px-4 flex flex-col border-2 border-blue-500">
         <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-          Explanation
+          `white-space-collapse: collapse;`
         </h4>
-
-        <div class="mt-8 space-y-4">
-          <p>
-            <strong>Scenario Description:</strong>
-            In this scenario, the container has a width of 200px & height of 200px.
-            The text box inside it has no fixed width or height, no text content, 8px border (each side) and 8px padding
-            (each side).
-            Since, Text Box is empty, the content area will have 0px height.
-            But due to the borders & padding, width of text content area will be based on the container's width, border,
-            and padding.
-
-            Container Width = 200px
-
-            Text Box Width Calculations:
-            Border = 2x 8px (left & right) = 16px
-            Padding = 2x 8px (left & right) = 16px
-            Content Area = Container Width (200px) - Border (16px) - Padding (16px) = 168px
-            Text Box Width = Border (16px) + Padding (16px) + Content Area (168px) = 200px
-
-            Important Note: Although the text box has no content, the borders and padding will still be visible.
-
-          <p><strong>Point 1: </strong>
-          </p>
-          <p><strong>Point 2: </strong></p>
-          <p>
-            <strong>Point 3:</strong>
-          </p>
+        <div class="my-8 space-y-4">
+          <p><strong>Scenario Description:</strong> The text box contains line breaks between words.</p>
+          <p><strong>Explanation:</strong> The `white-space-collapse: collapse;` property converts all line breaks into
+            a single space, making the text flow smoothly in a single line, without any breaks.</p>
+          <p><strong>Real-world Analogy:</strong> Imagine writing a letter where every time you press the Enter key to
+            create a new line, it simply moves the cursor one space to the right instead of creating a new line. This
+            property ensures that text flows seamlessly in one continuous line.</p>
         </div>
+      </div>
+    </div>
+  </section>
 
+
+  <hr>
+
+
+  <!-- Case 3 - Spaces: Multiple spaces are reduced to one -->
+
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Case 3 - Spaces: Multiple spaces are reduced to one
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
+      <!-- Text Box with multiple spaces -->
+      <div class="p-2 border-8 border-red-500">
+        <p style="white-space-collapse: collapse;">
+          Word1                   Word2
+          <!-- Explanation: Multiple spaces between words are collapsed into a single space -->
+        </p>
       </div>
 
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-auto px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          `white-space-collapse: collapse;`
+        </h4>
+        <div class="my-8 space-y-4">
+          <p><strong>Scenario Description:</strong> The text box contains multiple spaces between words.</p>
+          <p><strong>Explanation:</strong> The `white-space-collapse: collapse;` property reduces multiple spaces
+            between words to a single space, ensuring consistent and clean spacing.</p>
+          <p><strong>Real-world Analogy:</strong> Imagine pressing the spacebar multiple times while typing but only
+            seeing one space appear on the page. This property ensures that no matter how many spaces are added in the
+            HTML, they are displayed as a single space.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <hr>
+
+  <!-- Case 4 - Leading / Trailing Spaces: Leading and trailing spaces are removed -->
+
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Case 4 - Leading / Trailing Spaces: Leading and trailing spaces are removed
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
+      <!-- Text Box with leading/trailing spaces -->
+      <div class="p-2 border-8 border-red-500">
+        <p style="white-space-collapse: collapse;">
+                 Word1         Word2
+
+          <!-- Explanation: Leading and trailing spaces are removed -->
+        </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-auto px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          `white-space-collapse: collapse;`
+        </h4>
+        <div class="my-8 space-y-4">
+          <p><strong>Scenario Description:</strong> The text box contains leading spaces before the first word and
+            trailing spaces after the last word.</p>
+          <p><strong>Explanation:</strong> The `white-space-collapse: collapse;` property removes all leading and
+            trailing spaces, ensuring that the text is aligned and free of unnecessary gaps.</p>
+          <p><strong>Real-world Analogy:</strong> Imagine typing a sentence on a piece of paper and erasing any extra
+            spaces before the first word or after the last word. This property automatically cleans up your text,
+            removing unwanted spaces.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Case 5 - Sequence of Spaces in the Middle: Spaces in the middle of an element are collapsed into a single space -->
+
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Case 5 - Sequence of Spaces in the Middle: Spaces in the middle of an element are collapsed into a single space
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
+      <!-- Text Box with a sequence of spaces in the middle -->
+      <div class="p-2 border-8 border-red-500">
+        <p style="white-space-collapse: collapse;">
+          Word1                     Word2
+          <!-- Explanation: Any sequence of spaces in the middle of an element is collapsed into a single space -->
+        </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-auto px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          `white-space-collapse: collapse;`
+        </h4>
+        <div class="my-8 space-y-4">
+          <p><strong>Scenario Description:</strong> The text box contains multiple spaces in the middle of the text
+            content.</p>
+          <p><strong>Explanation:</strong> The `white-space-collapse: collapse;` property collapses any sequence of
+            spaces in the middle of an element into a single space, keeping the text clean and evenly spaced.</p>
+          <p><strong>Real-world Analogy:</strong> Think of a string of pearls where some pearls are spaced too far
+            apart, and then imagine someone gently pulling them together to close the gaps. This property brings the text
+            closer by collapsing unnecessary spaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Case 6 - Spaces Across Inline Elements: Spaces across inline elements are collapsed into a single space -->
+
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Case 6 - Spaces Across Inline Elements: Spaces across inline elements are collapsed into a single space
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
+      <!-- Text Box with spaces across inline elements -->
+      <div class="p-2 border-8 border-red-500">
+        <p style="white-space-collapse: collapse;">
+          <span>Word1         </span><span>      Word2</span> <span>      Word3    </span>
+          <!-- Explanation: Spaces across inline elements are collapsed into a single space -->
+        </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-auto px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          `white-space-collapse: collapse;`
+        </h4>
+        <div class="my-8 space-y-4">
+          <p><strong>Scenario Description:</strong> The text box contains spaces between words, even across separate
+            inline elements.</p>
+          <p><strong>Explanation:</strong> The `white-space-collapse: collapse;` property collapses spaces even when
+            they are across two separate inline elements, ensuring that the text remains clean and properly spaced.</p>
+          <p><strong>Real-world Analogy:</strong> Imagine a piece of paper where two separate lines of text are brought
+            closer together by removing any extra space between them. This property ensures that no unnecessary spaces
+            remain, even across different elements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Case 7 - Uniform Text Display: Text content is displayed uniformly, in a single line -->
+
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Case 7 - Uniform Text Display: Text content is displayed uniformly, in a single line
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
+      <!-- Text Box with various spaces, tabs, and line breaks -->
+      <div class="p-2 border-8 border-red-500">
+        <p style="white-space-collapse: collapse;">
+          Word1                  Word2
+
+
+                    Word3           Word4
+
+          <!-- Explanation: All extra spaces, tabs, and line breaks are collapsed into a single space, resulting in a clean and uniform text display -->
+        </p>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-auto px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          `white-space-collapse: collapse;`
+        </h4>
+        <div class="my-8 space-y-4">
+          <p><strong>Scenario Description:</strong> The text box contains various spaces, tabs, and line breaks.</p>
+          <p><strong>Explanation:</strong> The `white-space-collapse: collapse;` property ensures that all extra spaces,
+            tabs, and line breaks are collapsed into a single space, resulting in a clean, uniform display of the text
+            in a single line.</p>
+          <p><strong>Real-world Analogy:</strong> Think of a computer program that automatically cleans up a messy
+            document, removing all unnecessary gaps, tabs, and line breaks, so the text appears neat and aligned on the
+            page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ---------------------------------------------------------------------------------------------------- -->
+
+  <!--
+
+
+    <hr class="mt-32">
+    <hr class="mt-8">
+    <hr class="mt-8">
+
+    &lt;!&ndash; Scenario X - Empty Text Box Width Calculations &ndash;&gt;
+    <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+      <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+        Scenario X - Empty Text Box Width Calculations
+      </h3>
+
+      <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
+
+        &lt;!&ndash; Container Box with 200x200 px dimensions  &ndash;&gt;
+        <div class="w-[200px] h-[200px]">
+          &lt;!&ndash; Text Box with no fixed dimensions, no text content, 8px border (each side) and 8px padding (each side) &ndash;&gt;
+          <div class="p-2 border-8 border-red-500">
+            &lt;!&ndash; No Text Content &ndash;&gt;
+          </div>
+        </div>
+
+        &lt;!&ndash; Explanation Section &ndash;&gt;
+        <div class="w-[1000px] h-[700px] px-4 flex flex-col border-2 border-blue-500">
+          <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+            Explanation
+          </h4>
+
+          <div class="mt-8 space-y-4">
+            <p>
+              <strong>Scenario Description:</strong>
+              In this scenario, the container has a width of 200px & height of 200px.
+              The text box inside it has no fixed width or height, no text content, 8px border (each side) and 8px padding
+              (each side).
+              Since, Text Box is empty, the content area will have 0px height.
+              But due to the borders & padding, width of text content area will be based on the container's width, border,
+              and padding.
+
+            <p>
+              <strong>Calculations: </strong>
+              Container Width = 200px
+              Container Height = 200px
+
+              Text Box Height = 0px (No Content)
+              Text Box Width Calculations:
+              Border = 2x 8px (left & right) = 16px
+              Padding = 2x 8px (left & right) = 16px
+              Content Area = Container Width (200px) - Border (16px) - Padding (16px) = 168px
+              Text Box Width = Border (16px) + Padding (16px) + Content Area (168px) = 200px
+            </p>
+            <p>
+              <strong>Explanation: </strong>
+            </p>
+            <p>
+              <strong>Importance, Impact & Significance: </strong>
+            </p>
+            <p>
+              <strong>Important Note: </strong>
+              Although the text box has no content, the borders and padding will still be visible.
+            </p>
+            <p>
+              <strong>Real-world Analogy: </strong>
+            </p>
+            <p>
+              <strong>Summary: </strong>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <hr>
+
+    &lt;!&ndash; Scenario Y - Text Overflow due to No Word Break &ndash;&gt;
+    <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+      <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+        Scenario Y - Text Overflow due to No Word Break
+      </h3>
+
+      <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
+
+        &lt;!&ndash; Container Box with 200x200 px dimensions  &ndash;&gt;
+        <div class="w-[200px] h-[200px]">
+          &lt;!&ndash; Text Box with no fixed dimensions and no padding &ndash;&gt;
+          <div class="p-2 border-8 border-red-500">
+            1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7
+            12345678901234567890123456
+          </div>
+        </div>
+
+        &lt;!&ndash; Explanation Section &ndash;&gt;
+        <div class="w-[1000px] h-[700px] px-4 flex flex-col border-2 border-blue-500">
+          <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+            Explanation
+          </h4>
+
+          <div class="mt-8 space-y-4">
+            <p>
+              <strong>Scenario Description:</strong>
+              In this scenario, the container has a width of 200px & height of 200px.
+              The text box inside it has no fixed width or height, no text content, 8px border (each side) and 8px padding
+              (each side).
+              Since, Text Box is empty, the content area will have 0px height.
+              But due to the borders & padding, width of text content area will be based on the container's width, border,
+              and padding.
+
+              Container Width = 200px
+
+              Text Box Width Calculations:
+              Border = 2x 8px (left & right) = 16px
+              Padding = 2x 8px (left & right) = 16px
+              Content Area = Container Width (200px) - Border (16px) - Padding (16px) = 168px
+              Text Box Width = Border (16px) + Padding (16px) + Content Area (168px) = 200px
+
+              Important Note: Although the text box has no content, the borders and padding will still be visible.
+
+            <p><strong>Point 1: </strong>
+            </p>
+            <p><strong>Point 2: </strong></p>
+            <p>
+              <strong>Point 3:</strong>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <hr>
+  -->
 
 
 </div>
