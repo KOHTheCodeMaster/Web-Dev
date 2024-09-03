@@ -20,6 +20,32 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 3rd Sep 2K24 - 09:17 PM
+Commit: #229 - CSS Fundamentals - White Space - Added Comprehensive Example for 'white-space-collapse: preserve;' Property in Demo Scenarios
+
+Changes:
+
+- File: `demo-scenarios-white-space-collapse.component.html`
+  - Added a new section titled "Comprehensive Example - Understanding the Behavior of White Space Preserve CSS Property".
+  - Included a container box with 400x400 px dimensions and a text box with 8px border and padding.
+  - Demonstrated the behavior of `white-space-collapse: preserve;` with various cases:
+    - Case 1: Tabs - Preserve all tabs.
+    - Case 2: Line Breaks - Preserve line breaks.
+    - Case 3: Spaces - Preserve multiple spaces.
+    - Case 4: Leading/Trailing Spaces - Preserve leading and trailing spaces.
+    - Case 5: Sequence of Spaces - Preserve sequence of spaces in the middle of text.
+    - Case 6: Space Across Inline Elements - Preserve spaces across inline elements.
+    - Case 7: Uniform Text Appearance - Maintain uniform text appearance with preserved formatting.
+  - Added an explanation section detailing the behavior and practical use cases of `white-space-collapse: preserve;`.
+  - Included a Warning that `white-space-collapse: preserve;` is not a standard CSS property and should use `white-space: pre;` for similar behavior.
+
+Summary:
+- Added a comprehensive example to demonstrate the behavior of the `white-space-collapse: preserve;` property in the demo-scenarios-white-space-collapse Component.
+- Provided detailed explanations and practical use cases for preserving whitespace in text content.
+- Included a Warning that `white-space-collapse: preserve;` is not a standard CSS property and should use `white-space: pre;` for similar behavior.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 3rd Sep 2K24 - 07:18 PM
 Commit: #228 - CSS Fundamentals - White Space - Added New Cases for 'white-space-collapse' Property in Demo Scenarios
 

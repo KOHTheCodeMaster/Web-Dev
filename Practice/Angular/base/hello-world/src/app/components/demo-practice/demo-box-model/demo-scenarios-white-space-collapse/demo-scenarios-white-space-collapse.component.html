@@ -372,6 +372,142 @@
 
   <!-- ---------------------------------------------------------------------------------------------------- -->
 
+  <!-- Comprehensive Example - Understanding the Behavior of White Space Preserve CSS Property -->
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Comprehensive Example - Understanding the Behavior of White Space Preserve CSS Property
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 flex justify-around items-center border-2 border-orange-500">
+
+      <!-- Container Box with 400x400 px dimensions -->
+      <div class="w-[400px] h-[400px]">
+
+        <!-- Text Box with 8px border and padding, no fixed width or height -->
+        <div class="p-2 border-8 border-red-500">
+          <!-- White Space Preserve -->
+          <p style="white-space-collapse: preserve;">
+            <!-- Text Example: Spaces, tabs, and line breaks inside this text box -->
+            `white-space-collapse: preserve;`
+
+            <!-- Case 1: Tabs - Preserve all tabs -->
+            Text    with      Tabs        (Preserve)
+
+            <!-- Case 2: Line Breaks - Preserve line breaks -->
+            Line breaks preserved
+
+                      .
+
+
+            .                   .
+
+
+                      .
+
+            across different lines.
+
+            <!-- Case 3: Spaces - Preserve multiple spaces -->
+            Multiple      spaces      are      preserved.
+
+            <!-- Case 4: Leading/Trailing Spaces -->
+                Leading and trailing spaces       are also preserved
+
+            <!-- Case 5: Sequence of Spaces -->
+            Sequence     of     spaces     in the middle     of text     are preserved.
+
+            <!-- Case 6: Space Across Inline Elements -->
+            <span>Spaces       </span><span>across       inline</span> <span>   elements     are     preserved.</span>
+
+            <!-- Case 7: Uniform Text Appearance -->
+            The  text   maintains its
+                uniform     appearance with     preserved formatting.
+
+            <!-- Note: All spaces, tabs, and line breaks are preserved in the final output -->
+          </p>
+        </div>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-auto my-4 p-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          Explanation
+        </h4>
+
+        <p class="w-fit h-fit mx-auto mt-4 text-xl  text-yellow-500 border-2">
+          Warning: `white-space-collapse: preserve;` is not a Standard CSS property.
+          It is used here for illustrative purposes.
+          Alternatively, use `white-space: pre;` for similar behavior.
+        </p>
+
+        <div class="mt-8 space-y-4">
+          <p>
+            <strong>Scenario Description:</strong>
+            - The container is 400x400 pixels.
+            - The text box inside has no fixed size but has an 8px border and padding.
+            - The text content has spaces, tabs, and line breaks, which are preserved by the `white-space-collapse: preserve;` property.
+          </p>
+
+          <p>
+            <strong>Explanation:</strong>
+            - The `white-space-collapse: preserve;` property prevents the collapsing of spaces, tabs, and line breaks.
+            - This property ensures that all the spaces, tabs, and line breaks entered in the source code are maintained in the final output, allowing for precise formatting.
+          </p>
+
+          <p>
+            <strong>How It Works:</strong>
+            <br>
+            - Tabs: All tabs are preserved, maintaining consistent spacing between words or elements.
+            <br>
+            - Line Breaks: Line breaks are preserved, allowing text to flow naturally across lines without collapsing into a single line.
+            <br>
+            - Spaces: Multiple spaces are preserved, ensuring that the exact spacing is maintained as intended.
+            <br>
+            - Leading/Trailing Spaces: Spaces at the beginning and end of elements are preserved.
+            <br>
+            - Sequence of Spaces: Multiple spaces in the middle of an element are preserved, maintaining the intended spacing between words or elements.
+            <br>
+            - Spaces Across Inline Elements: Spaces between inline elements are preserved, ensuring consistent spacing in the layout.
+            <br>
+            - Uniform Text Appearance: The text appears exactly as intended, with all formatting preserved, ensuring a consistent and predictable layout.
+          </p>
+
+          <p>
+            <strong>Real-world Analogy:</strong>
+            - Imagine typing on a computer where every keypress, including spaces and line breaks, is recorded exactly as you typed it. The document looks exactly like your input, with no automatic corrections or changes to your formatting. This is how `white-space-collapse: preserve;` works—every detail in your text is kept intact, just as you intended.
+          </p>
+
+          <p>
+            <strong>Practical Use Cases:</strong>
+            <br>
+            <em>- Code Blocks:</em> In coding tutorials or documentation, preserving whitespace is essential. Code
+            often relies on indentation and line breaks for readability and correct interpretation.
+            <br>
+            <em>- Poetry and Prose:</em> Literary works often require specific spacing and formatting to convey
+            meaning, rhythm, and emphasis. Using white-space-collapse: preserve; ensures that the author’s intended
+            formatting is retained.
+            <br>
+            <em>- ASCII Art:</em> ASCII art, which uses characters to create images or designs, relies heavily on
+            precise spacing. Collapsing whitespace would distort the art, making preserve the ideal choice.
+          </p>
+
+          <p>
+            <strong>Summary:</strong>
+            <br>
+            - `white-space-collapse: preserve;` is a powerful tool for maintaining precise text formatting.
+            <br>
+            - This property ensures that all spaces, tabs, and line breaks are preserved in the final output, making it ideal for content that requires specific spacing and layout.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ---------------------------------------------------------------------------------------------------- -->
+
   <!--
 
 
