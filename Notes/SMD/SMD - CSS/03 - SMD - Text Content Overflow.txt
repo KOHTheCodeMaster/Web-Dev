@@ -406,6 +406,10 @@ Section 8 - Summary of Short & Crisp Pointers:
     - Padding and borders can exacerbate overflow.
     - Margins influence layout but don't directly cause overflow.
 
+- Typography Considerations:
+    - Font size, line height, letter spacing, and word spacing impact overflow.
+    - Text alignment and justification settings can lead to unexpected overflow.
+
 ---
 
 ----------------------------------------------------------------------------------------------------

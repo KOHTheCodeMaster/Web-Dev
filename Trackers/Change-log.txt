@@ -19,6 +19,31 @@ Change Log:
 -----------
 
 ----------------------------------------------------------------------------------------------------
+Time Stamp: 3rd Sep 2K24 - 03:32 PM
+Commit: #227 - CSS Fundamentals - White Space - Exploring 'white-space-collapse' & 'text-overflow' Properties in CSS
+
+Changes:
+
+File: HTML, CSS & TS files for `demo-scenarios-white-space-collapse` Component
+  - Added a new component to explore the 'white-space-collapse' property in CSS.
+  - Included the default scenario to demonstrate the impact of 'white-space-collapse' on text content.
+
+File: HTML, CSS & TS files for `demo-scenarios-text-overflow` Component
+  - Created a new component to experiment with the 'text-overflow' property in CSS.
+    - Added a scenario to illustrate the behavior of 'text-overflow' with default value.
+
+File: `03 - SMD - CSS - Text Overflow.txt`
+  - Updated the document to include 'Typography Considerations' in Summary Section.
+
+Summary:
+- Introduced a new component `demo-scenarios-white-space-collapse` to explore the 'white-space-collapse' property in CSS.
+- Created a new component `demo-scenarios-text-overflow` to experiment with the 'text-overflow' property in CSS.
+- Included default scenarios to demonstrate the impact of these properties on text content.
+- Updated the SMD on 'Text Overflow' to include 'Typography Considerations' in the Summary Section.
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
 Time Stamp: 1st Sep 2K24 - 10:45 AM
 Commit: #226 - Exploring 'text-overflow' property, Container Overflow, and Neighboring Elements through Detailed Examples
 
@@ -39,6 +64,7 @@ Summary:
 - Included detailed action items for examining various scenarios and causes of overflow in CSS layouts.
 
 ----------------------------------------------------------------------------------------------------
+
 Time Stamp: 30th Aug 2K24 - 05:11 PM
 Commit: #225 - SMD - Deep Dive into Overflow Property in CSS - Enhancements
 

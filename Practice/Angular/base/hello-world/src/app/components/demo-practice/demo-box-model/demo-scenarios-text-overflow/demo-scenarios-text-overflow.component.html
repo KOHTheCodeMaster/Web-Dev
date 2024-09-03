@@ -1,0 +1,56 @@
+<div class="w-[2000px] h-fit mx-auto my-4 border-2 border-blue-500">
+  <h2 class="w-fit h-fit mx-auto my-4 text-2xl border-2 border-red-500">
+    Random Scenarios for Understanding the Layout Behavior
+  </h2>
+
+  <!-- Scenario 1 -  -->
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Scenario 1 - Long Text Content Overflowing the Containers Height
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center gap-2 border-2 border-orange-500">
+
+      <!-- Container Box with 200x200 px dimensions and 16px padding -->
+      <div class="w-[200px] h-[200px] p-4 border-2 border-green-500">
+        <!-- Text Box with no fixed dimensions and no padding -->
+        <div class="border-2 border-red-500">
+          This is a long text that will overflow the container if it exceeds the set height.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
+          dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+        </div>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-[400px] px-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          Explanation
+        </h4>
+
+        <ul class="mt-8 list-disc ml-6 space-y-2">
+          <li>
+            <strong>Scenario Description:</strong>
+            In this scenario, the container has a width of 200px, height of 200px, and 16px padding. The text box inside
+            it has no fixed width or height. Since the text box has no fixed width or height, it will expand based on the
+            content. If the text content exceeds the container's height, it will overflow the container.
+          <li><strong>Doubt 1: </strong>
+            How does Text Content is populated and using what strategy does the width or height is filled? What
+            are the rules based on which the text is populated in the given box or wrapping container?
+          </li>
+          <li><strong>Doubt 2: </strong>Why only height is overflowing and not width?</li>
+          <li>
+            <strong>Doubt 3:</strong>
+            Why the text content is overflowing over multiple parent containers and not just the immediate parent
+            container?
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+
+</div>
