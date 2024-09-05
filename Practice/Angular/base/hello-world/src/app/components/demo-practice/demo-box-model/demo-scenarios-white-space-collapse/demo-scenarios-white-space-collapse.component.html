@@ -258,47 +258,11 @@
 
   <hr>
 
-  <!-- Case 5 - Sequence of Spaces in the Middle: Spaces in the middle of an element are collapsed into a single space -->
+  <!-- Case 5 - Spaces Across Inline Elements: Spaces across inline elements are collapsed into a single space -->
 
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Case 5 - Sequence of Spaces in the Middle: Spaces in the middle of an element are collapsed into a single space
-    </h3>
-
-    <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
-      <!-- Text Box with a sequence of spaces in the middle -->
-      <div class="p-2 border-8 border-red-500">
-        <p style="white-space-collapse: collapse;">
-          Word1                     Word2
-          <!-- Explanation: Any sequence of spaces in the middle of an element is collapsed into a single space -->
-        </p>
-      </div>
-
-      <!-- Explanation Section -->
-      <div class="w-[1000px] h-auto px-4 flex flex-col border-2 border-blue-500">
-        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-          `white-space-collapse: collapse;`
-        </h4>
-        <div class="my-8 space-y-4">
-          <p><strong>Scenario Description:</strong> The text box contains multiple spaces in the middle of the text
-            content.</p>
-          <p><strong>Explanation:</strong> The `white-space-collapse: collapse;` property collapses any sequence of
-            spaces in the middle of an element into a single space, keeping the text clean and evenly spaced.</p>
-          <p><strong>Real-world Analogy:</strong> Think of a string of pearls where some pearls are spaced too far
-            apart, and then imagine someone gently pulling them together to close the gaps. This property brings the text
-            closer by collapsing unnecessary spaces.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr>
-
-  <!-- Case 6 - Spaces Across Inline Elements: Spaces across inline elements are collapsed into a single space -->
-
-  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
-    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Case 6 - Spaces Across Inline Elements: Spaces across inline elements are collapsed into a single space
+      Case 5 - Spaces Across Inline Elements: Spaces across inline elements are collapsed into a single space
     </h3>
 
     <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
@@ -330,11 +294,11 @@
 
   <hr>
 
-  <!-- Case 7 - Uniform Text Display: Text content is displayed uniformly, in a single line -->
+  <!-- Case 6 - Uniform Text Display: Text content is displayed uniformly, in a single line -->
 
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
-      Case 7 - Uniform Text Display: Text content is displayed uniformly, in a single line
+      Case 6 - Uniform Text Display: Text content is displayed uniformly, in a single line
     </h3>
 
     <div class="w-auto h-auto mx-4 my-4 py-4 flex justify-around items-center border-2 border-orange-500">
@@ -503,6 +467,273 @@
 
     </div>
   </section>
+
+  <hr>
+
+  <!-- ---------------------------------------------------------------------------------------------------- -->
+
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Comprehensive Example - Exploring White Space Collapse Variants
+    </h3>
+
+    <div class="w-auto h-auto mx-4 my-4 flex justify-around items-center border-2 border-orange-500">
+
+      <!-- Container Box with 400x400 px dimensions -->
+      <div class="w-[600px] h-auto">
+
+        <!-- Text Box with various white-space-collapse properties -->
+        <div class="p-2 border-8 border-red-500">
+
+          <!-- 1. `white-space-collapse: collapse;` -->
+          <p style="white-space-collapse: collapse;">
+            <!-- Text Example: Spaces, tabs, and line breaks inside this text box -->
+            <strong>Demo `white-space-collapse: collapse;` CSS Property</strong>
+
+            <em>Case 1: Spaces & Tabs - Collapse All spaces & tabs</em>
+            Text    with         Spaces   &   Tabs          (Collapsed)          
+
+            <em>Case 2: Space & Tabs Across Inline Elements are Collapsed</em>
+            <span>Spaces  &   Tabs</span>    <span>across  inline  </span>  <span>  elements     are     collapsed.  </span>    
+
+
+            <em>Case 3: Line Breaks - collapse all line breaks</em>
+            Line
+                breaks
+                      collapsed
+                              including multiple breaks,
+                                            tabs and spaces
+                                                    across different lines.
+
+            <em>Case 4: Multiple Line Breaks along with Spaces and Tabs are collapsed</em>
+            .
+
+                          A
+
+
+                B         C          D
+
+
+                          E
+            .
+
+            <em>Case 5: Leading/Trailing Spaces are Collapsed</em>
+                  Leading and trailing spaces       are also collapsed                                                                                                                                              
+
+            <em>Note: All spaces, tabs, and line breaks are collapsed in the final output</em>
+          </p>
+
+          <hr class="my-4">
+          
+          <!-- 2. `white-space-collapse: preserve;` -->
+          <p style="white-space-collapse: preserve;">
+            <!-- Text Example: Spaces, tabs, and line breaks inside this text box -->
+            <strong>Demo `white-space-collapse: preserve;` CSS Property</strong>
+
+            <em>Case 1: Spaces & Tabs - Preserve All spaces & tabs</em>
+            Text    with         Spaces   &   Tabs          (Preserved)          
+
+            <em>Case 2: Space & Tabs Across Inline Elements are Preserved</em>
+            <span>Spaces  &   Tabs</span>    <span>across  inline  </span>  <span>  elements     are     preserved.  </span>    
+
+
+            <em>Case 3: Line Breaks - Preserve all line breaks</em>
+            Line
+                breaks
+                      preserved
+                              including multiple breaks,
+                                            tabs and spaces
+                                                    across different lines.
+
+            <em>Case 4: Multiple Line Breaks along with Spaces and Tabs are Preserved</em>
+            .
+
+                          A
+
+
+                B         C          D
+
+
+                          E
+            .
+
+            <em>Case 5: Leading/Trailing Spaces are Preserved</em>
+                  Leading and trailing spaces       are also preserved                                                                                                                                              
+
+            <em>Note: All spaces, tabs, and line breaks are preserved in the final output</em>
+          </p>
+
+          <hr class="my-4">
+          
+          <!-- 3. `white-space-collapse: preserve-breaks;` -->
+          <p style="white-space-collapse: preserve-breaks;">
+            <!-- Text Example: Spaces, tabs, and line breaks inside this text box -->
+            <strong>Demo `white-space-collapse: preserve-breaks;` CSS Property</strong>
+
+            <em>Case 1: Spaces & Tabs - Spaces are collapsed, tabs are converted to spaces</em>
+            Text     with    Spaces   &   Tabs             (Collapsed)      
+
+            <em>Case 2: Space & Tabs Across Inline Elements are Collapsed</em>
+            <span>Spaces  &   Tabs </span>  <span>  across  inline </span>  <span>  elements  are   collapsed.  </span> 
+
+            <em>Case 3: Line Breaks - Preserve all line breaks</em>
+            Line
+            breaks
+            preserved
+
+            <em>Case 4: Multiple Line Breaks but Spaces and Tabs are Collapsed</em>
+            .
+
+                      A
+
+
+            B         C          D
+
+
+                      E
+            .
+
+            <em>Case 5: Leading/Trailing Spaces are Removed</em>
+                   Leading and trailing spaces are removed               
+
+            <em>Note: Spaces are collapsed, tabs are converted to spaces, but line breaks are preserved in the final output</em>
+          </p>
+
+          <hr class="my-4">
+          
+          <!-- 4. `white-space-collapse: preserve-spaces;` -->
+          <p style="white-space-collapse: preserve-spaces;">
+            <!-- Text Example: Spaces, tabs, and line breaks inside this text box -->
+            <em class="text-yellow-500"><strong>Warning: </strong>`white-space-collapse: preserve-spaces;`
+              CSS property does not work even in CodePen.
+              It is used here for illustrative purposes. Alternatively, use `white-space` with `pre` or `pre-wrap`
+              for similar behavior.</em>
+            <br>
+            <strong>Demo `white-space-collapse: preserve-spaces;` CSS Property</strong>
+
+            <em>Case 1: Spaces & Tabs - Spaces are preserved, tabs are converted to spaces</em>
+            Text     with    Spaces   &   Tabs             (Preserved)
+
+            <em>Case 2: Space & Tabs Across Inline Elements are Preserved</em>
+            <span>Spaces  &   Tabs </span>  <span>  across  inline </span>  <span>  elements  are   preserved.  </span>
+
+            <em>Case 3: Line Breaks - Collapsed into a single space</em>
+            Line
+              breaks
+                collapsed
+                  into a single space
+
+            <em>Case 4: Multiple Line Breaks are Collapsed but Spaces and Tabs are Preserved</em>
+            .
+
+                      A
+
+
+            B         C          D
+
+
+                      E
+            .
+
+            <em>Case 5: Leading/Trailing Spaces are Preserved</em>
+                Leading and trailing spaces       are also preserved          
+
+            <em>Note: Spaces are preserved, tabs are converted to spaces, but line breaks are collapsed into a single space in the final output</em>
+          </p>
+
+          <hr class="my-4">
+          
+          <!-- 5. `white-space-collapse: break-spaces;` -->
+          <p style="white-space-collapse: break-spaces;">
+            <!-- Text Example: Spaces, tabs, and line breaks inside this text box -->
+            <strong>Demo `white-space-collapse: break-spaces;` CSS Property</strong>
+
+            <em>Case 1: Spaces & Tabs - Spaces are preserved, tabs are converted to spaces</em>
+            Text    with         Spaces   &   Tabs          (Preserved)
+
+            <em>Case 2: Space & Tabs Across Inline Elements are Preserved</em>
+            <span>Spaces  &   Tabs  </span><span>across  inline</span>   <span>   elements     are     preserved.</span>
+
+            <em>Case 3: Line Breaks - Collapsed into a single space</em>
+            Line
+              breaks
+                collapsed
+                  into a single space
+
+            <em>Case 4: Multiple Line Breaks along with Spaces and Tabs are Collapsed</em>
+
+            .
+
+                      A
+
+
+            B         C          D
+
+
+                      E
+            .
+
+
+            <em>Case 5: Leading/Trailing Spaces are Preserved</em>
+                    Leading and trailing spaces       are also preserved       
+
+            <em>Note: Spaces are preserved, tabs are converted to spaces, but line breaks are collapsed into a single space in the final output</em>
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Explanation Section -->
+      <div class="w-[1000px] h-auto my-4 p-4 flex flex-col border-2 border-blue-500">
+        <h4 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+          Explanation
+        </h4>
+
+        <p class="w-fit h-fit mx-auto mt-4 text-xl text-yellow-500 border-2">
+          Warning: `white-space-collapse: preserve-*;` properties are illustrative. Use `white-space: pre` or `pre-wrap` for supported behavior.
+        </p>
+
+        <div class="mt-8 space-y-4">
+          <p>
+            <strong>Scenario Description:</strong>
+            - Four different text blocks demonstrate how each variation handles spaces, tabs, and line breaks.
+            - The text box has an 8px border and padding, similar to a typical content container.
+          </p>
+
+          <p>
+            <strong>Explanation:</strong>
+            <br>
+            - <strong>Preserve: </strong>Maintains all whitespace exactly as written, including spaces, tabs, and line
+            breaks.
+            <br>
+            - <strong>Preserve-Breaks: </strong>Collapses spaces and tabs but preserves line breaks, suitable for code
+            where indentation is less critical but line separation is necessary.
+            <br>
+            - <strong>Preserve-Spaces: </strong>Retains spaces but collapses line breaks, useful in prose where word
+            spacing matters, but continuous lines are preferred.
+            <br>
+            - <strong>Break-Spaces: </strong>Keeps all spaces but breaks lines based on container size, ideal for
+            responsive text layouts that need controlled word wrapping.
+          </p>
+
+          <p>
+            <strong>Practical Use Cases:</strong>
+            - <strong>Preserve: </strong>Ideal for code formatting or ASCII art where exact spacing is critical.
+            - <strong>Preserve-Breaks: </strong>Works well for poetry or instructions that rely on line breaks.
+            - <strong>Preserve-Spaces: </strong>Useful for text-heavy applications like chat interfaces, content
+            blocks or prose.
+            - <strong>Break-Spaces: </strong>Applies to cases where word spacing is crucial but dynamic text flow is
+            needed, like in responsive web designs with word-level control.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ---------------------------------------------------------------------------------------------------- -->
 
   <hr>
 

@@ -20,6 +20,58 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 5th Sep 2K24 - 07:46 PM
+Commit: #230 - CSS Fundamentals - White Space - Added Comprehensive Example for 'white-space-collapse' Variants in Demo Scenarios
+
+Changes:
+
+- File: `demo-scenarios-white-space-collapse.component.html`
+  - Added a new section titled "Comprehensive Example - Exploring White Space Collapse Variants".
+  - Demonstrated the behavior of various `white-space-collapse` properties with different cases.
+  - Included a warning that `white-space-collapse: preserve-*;` properties are illustrative and recommended using `white-space: pre` or `pre-wrap` for supported behavior.
+
+  - 1. `white-space-collapse: collapse;`
+      - Case 1: Spaces & Tabs - Collapse all spaces & tabs.
+      - Case 2: Space & Tabs Across Inline Elements - Collapse spaces & tabs across inline elements.
+      - Case 3: Line Breaks - Collapse all line breaks.
+      - Case 4: Multiple Line Breaks - Collapse multiple line breaks along with spaces and tabs.
+      - Case 5: Leading/Trailing Spaces - Collapse leading and trailing spaces.
+
+  - 2. `white-space-collapse: preserve;`
+      - Case 1: Spaces & Tabs - Preserve all spaces & tabs.
+      - Case 2: Space & Tabs Across Inline Elements - Preserve spaces & tabs across inline elements.
+      - Case 3: Line Breaks - Preserve all line breaks.
+      - Case 4: Multiple Line Breaks - Preserve multiple line breaks along with spaces and tabs.
+      - Case 5: Leading/Trailing Spaces - Preserve leading and trailing spaces.
+
+  - 3. `white-space-collapse: preserve-breaks;`
+      - Case 1: Spaces & Tabs - Collapse spaces, convert tabs to spaces.
+      - Case 2: Space & Tabs Across Inline Elements - Collapse spaces & tabs across inline elements.
+      - Case 3: Line Breaks - Preserve all line breaks.
+      - Case 4: Multiple Line Breaks - Preserve multiple line breaks but collapse spaces and tabs.
+      - Case 5: Leading/Trailing Spaces - Remove leading and trailing spaces.
+
+  - 4. `white-space-collapse: preserve-spaces;`
+      - Case 1: Spaces & Tabs - Preserve spaces, convert tabs to spaces.
+      - Case 2: Space & Tabs Across Inline Elements - Preserve spaces & tabs across inline elements.
+      - Case 3: Line Breaks - Collapse line breaks into a single space.
+      - Case 4: Multiple Line Breaks - Collapse multiple line breaks but preserve spaces and tabs.
+      - Case 5: Leading/Trailing Spaces - Preserve leading and trailing spaces.
+
+  - 5. `white-space-collapse: break-spaces;`
+      - Case 1: Spaces & Tabs - Preserve spaces, convert tabs to spaces.
+      - Case 2: Space & Tabs Across Inline Elements - Preserve spaces & tabs across inline elements.
+      - Case 3: Line Breaks - Collapse line breaks into a single space.
+      - Case 4: Multiple Line Breaks - Collapse multiple line breaks along with spaces and tabs.
+      - Case 5: Leading/Trailing Spaces - Preserve leading and trailing spaces.
+
+Summary:
+- Added a comprehensive example to demonstrate the behavior of various `white-space-collapse` properties in the demo-scenarios-white-space-collapse Component.
+- Provided detailed explanations and practical use cases for each `white-space-collapse` variant.
+- Included a warning that `white-space-collapse: preserve-*;` properties are illustrative and recommended using `white-space: pre` or `pre-wrap` for supported behavior.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 3rd Sep 2K24 - 09:17 PM
 Commit: #229 - CSS Fundamentals - White Space - Added Comprehensive Example for 'white-space-collapse: preserve;' Property in Demo Scenarios
 
