@@ -12,6 +12,7 @@ import {
 import {
     DemoScenariosWhiteSpaceCollapseComponent
 } from "./demo-scenarios-white-space-collapse/demo-scenarios-white-space-collapse.component";
+import {DemoScenariosTextWrapComponent} from "./demo-scenarios-text-wrap/demo-scenarios-text-wrap.component";
 
 @Component({
   selector: 'app-demo-box-model',
@@ -21,7 +22,8 @@ import {
         DemoPlayWithWidthAndHeightComponent,
         DemoConceptClarityComponent,
         DemoScenariosTextOverflowComponent,
-        DemoScenariosWhiteSpaceCollapseComponent
+        DemoScenariosWhiteSpaceCollapseComponent,
+        DemoScenariosTextWrapComponent
     ],
   templateUrl: './demo-box-model.component.html',
   styleUrl: './demo-box-model.component.css'

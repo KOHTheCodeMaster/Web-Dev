@@ -20,6 +20,19 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 6th Sep 2K24 - 09:11 PM
+Commit: #231 - CSS Fundamentals - Text Wrap - Added New Component for Text Wrapping Behavior
+
+Changes:
+
+- File: demo-scenarios-text-wrap.component.html
+    - Added basic scenarios to demonstrate text wrapping behavior in fixed-width containers.
+
+Summary:
+- Added basic scenarios to demonstrate text wrapping behavior in fixed-width containers.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 5th Sep 2K24 - 07:46 PM
 Commit: #230 - CSS Fundamentals - White Space - Added Comprehensive Example for 'white-space-collapse' Variants in Demo Scenarios
 
