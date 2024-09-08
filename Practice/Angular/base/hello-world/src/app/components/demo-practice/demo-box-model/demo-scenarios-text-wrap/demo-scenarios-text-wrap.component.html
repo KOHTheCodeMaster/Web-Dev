@@ -1,8 +1,321 @@
 <div class="w-[2000px] h-fit mx-auto my-4 border-2 border-blue-500">
   <h2 class="w-fit h-fit mx-auto my-4 text-2xl border-2 border-red-500">
-    Demo Scenarios - Text Wrap CSS Property
+    Demo Scenarios - Text Wrapping - `text-wrap: wrap;` CSS Property
   </h2>
 
+  <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
+    <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
+      Scenario 1 - Analyze Default Behavior of Unicode Line Breaking Algorithm - `text-wrap: wrap;`
+    </h3>
+    <div class="w-[1000px] h-auto mx-auto my-4 py-4 flex flex-col gap-5 justify-evenly items-center border-2 border-orange-500">
+
+      <span class="text-xl border-b">Case 1 - Single Word fits within the container</span>
+      <span class="text-xl text-cyan-400 font-bold">"Word"</span>
+      <div class="w-[140px] h-auto font-mono text-6xl text-wrap border bg-gray-700">Word</div>
+      <ul class="p-2 border">
+        <li>Description: "Word" fits within the container</li>
+        <li>- The text "Word" is a single word.</li>
+        <li>- The word fits within the container and is displayed on the same line without any overflow.</li>
+      </ul>
+
+      <hr class="w-full h-1">
+
+      <span class="text-xl border-b">Case 2 - Single Word overflowing the container</span>
+      <span class="text-xl text-cyan-400 font-bold">"Word2"</span>
+      <div class="w-[140px] h-auto font-mono text-6xl text-wrap border bg-gray-700">Word2</div>
+      <ul class="p-2 border">
+        <li>Description: "Word" fits within the container, but the last character '2' overflows the container.</li>
+        <li>- The text "Word2" is a single word.</li>
+        <li>- '2' is the character that exceeds the container's boundary, leading to overflow.</li>
+        <li>- Since, '2' belongs to Non-breaking character class</li>
+        <li>- So, "Word2" does not split or wrap to next line and is displayed on the same line.</li>
+        <li>- Conclusion: "Word2" is displayed on the same line with '2' overflowing the container.</li>
+      </ul>
+
+      <hr class="w-full h-1">
+
+      <span class="text-xl border-b">Case 3 - Single Word overflowing the container</span>
+      <span class="text-xl text-cyan-400 font-bold">"LongWord1"</span>
+      <div class="w-[140px] h-auto font-mono text-6xl text-wrap border bg-gray-700">LongWord1</div>
+      <ul class="p-2 border">
+        <li>Description: "Long" fits within the container, but the remaining part "Word1" overflows the container.</li>
+        <li>- The text "LongWord1" is a single word.</li>
+        <li>- 'W' is the character that exceeds the container's boundary, leading to overflow.</li>
+        <li>- Since, 'W' belongs to Non-breaking character class.</li>
+        <li>- So, "LongWord1" does not split or wrap to next line and is displayed on the same line.</li>
+        <li>- Conclusion: "LongWord1" is displayed on the same line with 'W' causing the overflow.</li>
+      </ul>
+
+      <hr class="w-full h-1">
+
+      <span class="text-xl border-b">Case 4 - Multiple Spaces are Collapsed to Single Space</span>
+      <span class="text-xl text-cyan-400 font-bold">"A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC"</span>
+      <div class="w-[140px] h-auto font-mono text-6xl text-wrap border bg-gray-700">A      BC</div>
+      <ul class="p-2 border">
+        <li>Description: Multiple spaces are collapsed to a single space character.</li>
+        <li>- The text "A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC" consists of 3 parts.</li>
+        <li>- Part 1: "A" fits within the container.</li>
+        <li>- Part 2: 10 Space Characters are present between "A" and "BC".</li>
+        <li>- Part 3: "BC" at the end of the same line.</li>
+        <li>- CSS Implicitly applies `white-space: normal` or `white-space-collapse: collapse` by default to all elements.</li>
+        <li>- Due to this default behavior, multiple spaces are collapsed into a single space character.</li>
+        <li>- Multiple Spaces are removed from the DOM as well, and only a single space is retained.</li>
+        <li>- Conclusion: "A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BC" is displayed as "A BC" on
+          the same line.
+        </li>
+      </ul>
+
+      <hr class="w-full h-1">
+
+      <span class="text-xl border-b">Case 5 - Multiple Words separated by Space</span>
+      <span class="text-xl text-cyan-400 font-bold">"Word1 Word2 LongWord"</span>
+      <div class="w-[500px] h-auto font-mono text-6xl text-wrap border bg-gray-700">Word1 Word2 LongWord</div>
+      <ul class="p-2 border">
+        <li>Description: Multiple words separated by space.</li>
+        <li>- The container has a fixed width of 500px & the words are separated by space characters.</li>
+        <li>- The text "Word1 Word2 LongWord" consists of 3 words.</li>
+        <li>- Initial 2 words "Word1 Word2" fits within the container of width 500px and are displayed on the first line.</li>
+        <li>- But, the last word "LongWord" exceeds the container's boundary and overflows.</li>
+        <br>
+        <li>Let's analyze why "LongWord" wraps to the next line and does not overflow the container.</li>
+        <li>- "Lon" could easily fit within the first line of the container, but "gWord" would lead to overflow.</li>
+        <li>- Since, 'g' (Non-breaking character class) is the character that exceeds the container's boundary for the first line.</li>
+        <li>- And, the word "LongWord" occurs in the middle of the line, and does not start at the beginning of the line.</li>
+        <li>- So, the word "LongWord" wraps to the next line and does not overflow the container.</li>
+        <li>- If the word "LongWord" started at the beginning of the line, it would have overflowed the container.</li>
+        <li>- Consider the Case 6 for a similar scenario where a long word starts at the beginning of the line.</li>
+        <li>- Conclusion: "Word1 Word2" is displayed on the first line, and "LongWord" is wrapped to the next line.</li>
+      </ul>
+
+      <hr class="w-full h-1">
+
+      <span class="text-xl border-b">Case 6 - Overflow of Long Word starting at the 2nd line</span>
+      <span class="text-xl text-cyan-400 font-bold">"Word1 Word2 ABC LongWordWithoutAnySpace"</span>
+      <div class="w-[500px] h-auto font-mono text-6xl text-wrap border bg-gray-700">
+        Word1 Word2 ABC LongWordWithoutAnySpace
+      </div>
+      <ul class="p-2 border">
+        <li>Description: LongWordWithoutAnySpace wraps to the 2nd line and overflows the container without further
+          splitting into the 3rd line.</li>
+        <li>- The container has a fixed width of 500px & the words are separated by space characters.</li>
+        <li>- The text "Word1 Word2 ABC LongWordWithoutAnySpace" consists of 4 words.</li>
+        <li>
+          - Initial 3 words "Word1 Word2 ABC" fits within the container of width 500px and are displayed on the first
+          line.
+        </li>
+        <li>- ' ' (Space) after "ABC" is the character that exceeds the container's boundary for the first line.</li>
+        <li>
+          - Space is a natural break point, it allows the word "LongWordWithoutAnySpace" to wrap on to the next line.
+        </li>
+        <li>
+          - So, "LongWordWithoutAnySpace" wraps to the 2nd line and does not overflow the container at the end of the
+          first line.
+        </li>
+        <br>
+        <li>
+          Now let's analyze why "LongWordWithoutAnySpace" overflows the container in the 2nd line & doesn't split
+          further into 3rd line.
+        </li>
+        <li>- "LongWordWithoutAnySpace" starts at the beginning of the 2nd line.</li>
+        <li>- "LongWordWithout" fits within the container, but "AnySpace" overflows the container.</li>
+        <li>
+          - Although, 'A' (Non-breaking character class) is the character that exceeds the container's boundary for the
+          2nd line.
+        </li>
+        <li>- "LongWordWithoutAnySpace" does not further wrap or split in to the 3rd line, as it starts at the beginning
+          of the 2nd line.
+        </li>
+        <li>- It simply overflows the container at the end of the 2nd line and does not wrap to the 3rd line.</li>
+        <li>- Since, "LongWordWithoutAnySpace" is a single word starting at the beginning of the 2nd line.</li>
+        <li>
+          - It behaves the same way like in the Case 3 where a Single Word overflows the container without wrapping or
+          splitting to the next line.
+        </li>
+        <br>
+        <li>Conclusion:</li>
+        <li>- "Word1 Word2 ABC" is displayed on the first line,</li>
+        <li>
+          - "LongWordWithoutAnySpace" is wrapped to the 2nd line and overflows the container without further splitting
+          into the 3rd line.
+        </li>
+      </ul>
+
+      <hr class="w-full h-1">
+
+
+    </div>
+  </section>
+
+
+<!--
+
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+
+
+
+        <span>Case 6 - Text overflows the container</span>
+        <span>Text - "ABC "</span>
+        <span>Description: ABC fits within the container, ' ' space character occurs at the end,
+          So It's collapsed by `white-space: normal` implicit CSS Property.</span>
+        <div class="w-[140px] h-auto font-mono text-6xl text-wrap bg-gray-700">ABC </div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 7 - Text overflows the container</span>
+        <span>Description: ABCD fits within the container, but E overflows the container</span>
+        <div class="w-[140px] h-auto font-mono text-6xl text-wrap bg-gray-700">ABC D</div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 8 - Text overflows the container</span>
+        <span>Description: ABCD fits within the container, but E overflows the container</span>
+        <div class="w-[140px] h-auto font-mono text-6xl text-wrap bg-gray-700">ABCD </div>
+        <hr class="w-full h-1">
+
+
+
+
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+        <hr class="w-full h-1">
+
+
+
+
+
+        <span>Case 4 - Text overflows the container</span>
+        <span>Description: ABCD fits within the container, but E overflows the container</span>
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">VeryLongWord</div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 3 - Text ending with '-' overflows the container</span>
+        <span>
+          Description: ABCD fits within the container, but '-' overflows the container
+        </span>
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD-</div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 4 - Text Wraps after '-' hyphen.</span>
+        <span>
+          Description:<br>
+          '-' is the character that comes at the end of the line, so the text wraps after '-'.<br>
+          1. Text before '-' is kept on the first line as it fits within the container,<br>
+          2. '-' is also kept on the first line as it is last character that overflows the container,<br>
+          3. Remaining text is wrapped to the next line.<br>
+          Note: Height is ignored in context of Text Wrapping.
+        </span>
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD-EFG</div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 5 - Text Wraps after '-' including multiple '-'</span>
+        <span>
+          Description:<br>
+          Multiple '-' characters are present in the text, so the text wraps after the first '-'.<br>
+          1. Text before '-' is kept on the first line as it fits within the container,<br>
+          2. First occurrence of '-' is also retained as it is last character that overflows the container,<br>
+          3. Remaining text is wrapped to the next line.<br>
+        </span>
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD-&#45;&#45;EF</div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 6 - Text Wraps after ' ' space character.</span>
+        <span>
+          Description:<br>
+          Text wraps after ' ', remaining text is wrapped to the next line.<br>
+          1. Text before ' ' is kept on the first line as it fits within the container,<br>
+          2. ' ' is also kept on the first line as it is last character that overflows the container,<br>
+          3. Remaining text is wrapped to the next line.<br>
+        </span>
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD EFG</div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 7 - Text Wraps after ' ' space character, collapsing multiple spaces</span>
+        <span>
+          Description:<br>
+          Text wraps after ' ', remaining text is wrapped to the next line.<br>
+          1. Text before ' ' is kept on the first line as it fits within the container,<br>
+          2. ' ' is also kept on the first line as it is last character that overflows the container,<br>
+          3. Remaining text is wrapped to the next line.<br>
+          Note: Multiple ' ' space characters collapse into a single space character due to default `text-wrap: wrap`
+        </span>
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD     EFG</div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 8 - Text Wraps after '-' hyphen character - Special Case 1</span>
+        <span>
+          Description:<br>
+          Text wraps after '-', remaining text is wrapped to the next line.<br>
+          1. Text before '-' is kept on the first line as it fits within the container,<br>
+          2. '-' is also kept on the first line as it also fits within the container,<br>
+          3. 'B' is the last character that crosses the container boundary,<br>
+          4. So, including 'B' and remaining text is wrapped to the next line.<br>
+          Note: There is space for 'B' to fit in the first line, but it is wrapped to the next line.<br>
+          <strong>DOUBT - Why?</strong>
+        </span>
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">A -BC</div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 9 - Text Wraps after '-' hyphen character - Special Case 2</span>
+        <span>
+          Description:<br>
+          Text wraps after the 2nd occurrence of '-' and not the first one,<br>
+          1. Text before 2nd occurrence of '-' is kept on the first line despite the container overflow,<br>
+          2. 2nd '-' is also kept on the first line,<br>
+          3. Remaining text after 2nd '-' is wrapped to the next line.<br>
+          Note: Why is the text not wrapping after the first '-'?<br>
+          <strong>DOUBT - Why?</strong>
+        </span>
+        &lt;!&ndash; Why is the text not wrapping here? &ndash;&gt;
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABC-.DEF-GHI</div>
+        <hr class="w-full h-1">
+
+
+        <span>Case 10 - Text Wraps after '-' hyphen character - Special Case 2</span>
+        <span>
+          Description:<br>
+          Text wraps after the 2nd occurrence of '-' and not the first one,<br>
+          1. Text before 2nd occurrence of '-' is kept on the first line despite the container overflow,<br>
+          2. 2nd '-' is also kept on the first line,<br>
+          3. Remaining text after 2nd '-' is wrapped to the next line.<br>
+          Note: Why is the text not wrapping after the first '-'?<br>
+          <strong>DOUBT - Why?</strong>
+        </span>
+        &lt;!&ndash; Why is the text not wrapping here? &ndash;&gt;
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">A BCDEF</div>
+        <hr class="w-full h-1">
+
+        <span>Case 11 - Text Wraps after '-' hyphen character - Special Case 2</span>
+        <span>
+          Description:<br>
+          Text wraps after the 2nd occurrence of '-' and not the first one,<br>
+          1. Text before 2nd occurrence of '-' is kept on the first line despite the container overflow,<br>
+          2. 2nd '-' is also kept on the first line,<br>
+          3. Remaining text after 2nd '-' is wrapped to the next line.<br>
+          Note: Why is the text not wrapping after the first '-'?<br>
+          <strong>DOUBT - Why?</strong>
+        </span>
+        &lt;!&ndash; Why is the text not wrapping here? &ndash;&gt;
+        <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCDEFG</div>
+        <hr class="w-full h-1">
+  -->
+
+<!--
   <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">
     <h3 class="w-fit h-fit mx-auto text-2xl text-center border-2 border-red-500">
       text-wrap: wrap;
@@ -49,7 +362,7 @@
         2. First occurrence of '-' is also retained as it is last character that overflows the container,<br>
         3. Remaining text is wrapped to the next line.<br>
       </span>
-      <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD---EF</div>
+      <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD-&#45;&#45;EF</div>
       <hr class="w-full h-1">
 
 
@@ -61,7 +374,7 @@
         2. ' ' is also kept on the first line as it is last character that overflows the container,<br>
         3. Remaining text is wrapped to the next line.<br>
       </span>
-      <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD     EFG</div>
+      <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD EFG</div>
       <hr class="w-full h-1">
 
 
@@ -74,7 +387,7 @@
         3. Remaining text is wrapped to the next line.<br>
         Note: Multiple ' ' space characters collapse into a single space character due to default `text-wrap: wrap`
       </span>
-      <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD EFG</div>
+      <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCD     EFG</div>
       <hr class="w-full h-1">
 
 
@@ -103,15 +416,44 @@
         Note: Why is the text not wrapping after the first '-'?<br>
         <strong>DOUBT - Why?</strong>
       </span>
-      <!-- Why is the text not wrapping here? -->
+      &lt;!&ndash; Why is the text not wrapping here? &ndash;&gt;
       <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABC-.DEF-GHI</div>
+      <hr class="w-full h-1">
+
+
+      <span>Case 10 - Text Wraps after '-' hyphen character - Special Case 2</span>
+      <span>
+        Description:<br>
+        Text wraps after the 2nd occurrence of '-' and not the first one,<br>
+        1. Text before 2nd occurrence of '-' is kept on the first line despite the container overflow,<br>
+        2. 2nd '-' is also kept on the first line,<br>
+        3. Remaining text after 2nd '-' is wrapped to the next line.<br>
+        Note: Why is the text not wrapping after the first '-'?<br>
+        <strong>DOUBT - Why?</strong>
+      </span>
+      &lt;!&ndash; Why is the text not wrapping here? &ndash;&gt;
+      <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">A BCDEF</div>
+      <hr class="w-full h-1">
+
+      <span>Case 11 - Text Wraps after '-' hyphen character - Special Case 2</span>
+      <span>
+        Description:<br>
+        Text wraps after the 2nd occurrence of '-' and not the first one,<br>
+        1. Text before 2nd occurrence of '-' is kept on the first line despite the container overflow,<br>
+        2. 2nd '-' is also kept on the first line,<br>
+        3. Remaining text after 2nd '-' is wrapped to the next line.<br>
+        Note: Why is the text not wrapping after the first '-'?<br>
+        <strong>DOUBT - Why?</strong>
+      </span>
+      &lt;!&ndash; Why is the text not wrapping here? &ndash;&gt;
+      <div class="w-[140px] h-[120px] font-mono text-6xl text-wrap bg-gray-700">ABCDEFG</div>
       <hr class="w-full h-1">
 
     </div>
   </section>
+-->
 
-
-  <!--
+<!--
 
     &lt;!&ndash; Scenario 1 - text-wrap: wrap; &ndash;&gt;
     <section class="w-[1800px] h-auto mx-auto my-8 p-0.5 border-2 border-purple-500">

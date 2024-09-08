@@ -20,6 +20,29 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 7th Sep 2K24 - 12:39 PM
+Commit: #232 - CSS Fundamentals - Text Wrapping - Added Detailed Scenarios for understanding default behavior of Unicode Line Breaking Algorithm & `text-wrap: wrap;` CSS Property
+
+Changes:
+
+- File: `demo-scenarios-text-wrap.component.html`
+  - Added multiple sections to demonstrate the behavior of `text-wrap: wrap;` CSS property.
+  - Included various cases to analyze the default behavior of the Unicode Line Breaking Algorithm:
+    - Case 1: Single Word fits within the container.
+    - Case 2: Single Word overflowing the container.
+    - Case 3: Single Word overflowing the container with a long word.
+    - Case 4: Multiple Spaces are Collapsed to Single Space.
+    - Case 5: Multiple Words separated by Space.
+    - Case 6: Overflow of Long Word starting at the 2nd line.
+  - Added detailed descriptions and conclusions for each case to explain the text wrapping behavior.
+
+Summary:
+- Added detailed scenarios to demonstrate the behavior of the `text-wrap: wrap;` property in the demo-scenarios-text-wrap Component.
+- Analyzed various cases to understand the default behavior of the Unicode Line Breaking Algorithm.
+- Provided comprehensive examples and explanations for various text wrapping cases.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 6th Sep 2K24 - 09:11 PM
 Commit: #231 - CSS Fundamentals - Text Wrap - Added New Component for Text Wrapping Behavior
 
