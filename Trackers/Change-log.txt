@@ -20,6 +20,23 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 12th Sep 2K24 - 10:16 PM
+Commit: #236 - Tailwind CSS - Practice - Google Home Page - Improved Alignment, Search Box Icons, Language Options, Footer Layout
+
+Changes:
+
+- File: `Practice/Angular/base/hello-world/src/app/components/demo-practice/demo-google/demo-google.component.html`
+  - Adjusted the height of the main section & footer container for better alignment.
+  - Added SVG Icons for Search, Microphone & Lens buttons in the Search Box.
+  - Updated the layout of the language options section.
+  - Refined the footer layout with consistent text and spacing.
+
+Summary:
+- Improved alignment by adjusting the height of the main section and footer container.
+- Enhanced the search box with new SVG icons for Search, Microphone, and Lens buttons.
+- Updated the language options section layout for better spacing.
+- Refined the footer layout to ensure consistent text size and spacing.
+
 ----------------------------------------------------------------------------------------------------
 
 Time Stamp: 12th Sep 2K24 - 06:53 PM
