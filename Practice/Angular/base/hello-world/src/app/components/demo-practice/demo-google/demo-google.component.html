@@ -68,44 +68,72 @@
   </nav>
 
 
-  <section class="h-[800px] border-2 border-blue-500">
-    <h2>Google</h2>
-    <div>
-      <input type="text">
+  <section class="w-full border-2 border-blue-500">
+
+    <!-- Google Logo -->
+    <div class="h-[290px] flex justify-center items-end">
+      <img class="lnXdpd" alt="Google" height="92"
+           src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png"
+           width="272" data-csiid="msriZrn3E5bp1e8Pt4Xn0Q4_2" data-atf="1">
+      <!--
+        srcset="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png 1x, https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png 2x"
+      -->
     </div>
-    <div>
-      <button>Google Search</button>
-      <button>I'm Feeling Lucky</button>
+
+    <!-- Search Box and Buttons -->
+    <div class="h-[160px] pt-5 flex flex-col items-center">
+
+      <!-- Search Box -->
+      <div class="w-[584px] mt-1.5 pr-2 flex justify-center border border-[#5f6368] rounded-3xl">
+        <input type="text" class="py-[11px] bg-[#303134] text-[#e8e8e8] text-[16px] leading-[24px]">
+      </div>
+
+      <!-- Search Buttons -->
+      <div class="w-[584px] mt-[18px] mb-3 flex justify-center gap-3">
+        <button class="h-9 my-[11px] px-4 text-[15px] leading-[27px] bg-[#303135] rounded-[4px]">
+          Google Search
+        </button>
+        <button class="h-9 my-[11px] px-4 text-[15px] leading-[27px] bg-[#303135] border-[#e5e7eb] rounded-[4px]">
+          I'm Feeling Lucky
+        </button>
+      </div>
     </div>
-    <div>
-      <span>Google offered in:</span>
-      <a href="#">हिन्दी</a>
-      <a href="#">বাংলা</a>
-      <a href="#">తెలుగు</a>
-      <a href="#">मराठी</a>
-      <a href="#">தமிழ்</a>
-      <a href="#">ગુજરાતી</a>
-      <a href="#">ಕನ್ನಡ</a>
-      <a href="#">മലയാളം</a>
-      <a href="#">ਪੰਜਾਬੀ</a>
+
+    <div class="h-[360px]">
+
+      <div class="w-fit h-7 mx-auto text-[13px] leading-7 text-[#bfbfbf]">
+
+        <span>Google offered in:&nbsp;&nbsp;</span>
+        <a href="#" class="px-[3px] cursor-pointer text-[#99c3ff] hover:underline">हिन्दी</a>
+        <a href="#" class="px-[3px] cursor-pointer text-[#99c3ff] hover:underline">বাংলা</a>
+        <a href="#" class="px-[3px] cursor-pointer text-[#99c3ff] hover:underline">తెలుగు</a>
+        <a href="#" class="px-[3px] cursor-pointer text-[#99c3ff] hover:underline">मराठी</a>
+        <a href="#" class="px-[3px] cursor-pointer text-[#99c3ff] hover:underline">தமிழ்</a>
+        <a href="#" class="px-[3px] cursor-pointer text-[#99c3ff] hover:underline">ગુજરાતી</a>
+        <a href="#" class="px-[3px] cursor-pointer text-[#99c3ff] hover:underline">ಕನ್ನಡ</a>
+        <a href="#" class="px-[3px] cursor-pointer text-[#99c3ff] hover:underline">മലയാളം</a>
+        <a href="#" class="px-[3px] cursor-pointer text-[#99c3ff] hover:underline">ਪੰਜਾਬੀ</a>
+
+      </div>
+
     </div>
   </section>
 
-  <footer class="h-[100px] bg-[#171718] border-2 border-blue-300">
-    <div>
-      <span>India</span>
-    </div>
+  <footer class="bg-[#171718] border-2 border-blue-300">
+    <div class="px-[30px] py-[15px] text-sm border-b border-b-[#313336]">India</div>
 
-    <div>
-      <div>
-        <span>Advertising</span>
-        <span>Business</span>
-        <span>How Search works</span>
+    <div class="px-5 flex justify-between">
+      <div class="flex">
+        <a href="#" class="p-[15px] text-sm leading-4">Advertising</a>
+        <a href="#" class="p-[15px] text-sm">Business</a>
+        <a href="#" class="p-[15px] text-sm">How Search works</a>
       </div>
-      <div>
-        <span>Privacy</span>
-        <span>Terms</span>
-        <span>Settings</span>
+      <div class="px-5 flex justify-between">
+        <div class="flex">
+          <a href="#" class="p-[15px] text-sm leading-4">Privacy</a>
+          <a href="#" class="p-[15px] text-sm">Terms</a>
+          <a href="#" class="p-[15px] text-sm">Settings</a>
+        </div>
       </div>
     </div>
   </footer>
