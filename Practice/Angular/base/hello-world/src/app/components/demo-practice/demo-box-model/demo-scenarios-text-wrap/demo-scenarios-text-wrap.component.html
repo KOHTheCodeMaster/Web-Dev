@@ -142,6 +142,40 @@
 
       <hr class="w-full h-1">
 
+      <span class="text-xl border-b">Case 7 - Concept of Zero-width Space Character</span>
+      <span class="text-xl text-cyan-400 font-bold">"Word1 Word2 Word3"</span>
+      <div class="w-[375px] h-auto font-mono text-6xl text-wrap border bg-gray-700">Word1 Word2 Word3</div>
+      <ul class="p-2 border">
+        <li>Description: Space is the last character that causes the "Word3" to wrap to the next line.</li>
+        <li>- The container has a fixed width of 375px such that "Word1 Word2" fits within the container.</li>
+        <li>- The text "Word1 Word2 Word3" consists of 3 words.</li>
+        <li>- Initial 2 words "Word1 Word2" fits within the container of width 375px and are displayed on the first line.</li>
+        <li>- But, the space character ' ' after "Word2" is the character that exceeds the container's boundary.</li>
+        <li>- Space is a natural break point, it allows the word "Word3" to wrap on to the next line.</li>
+        <li>- So, "Word3" wraps to the next line and does not overflow the container.</li>
+        <br>
+        <li>Let's analyze the behavior of the space character ' ' as Break Point.
+        <li>- Doubt 1: What does it mean by "Space Character ' ' is Break-Before Character Class"?</li>
+        <li>- Is it moved to the next line along with "Word3" and not retained at the end of the first line?</li>
+        <li>- Does it make the text content to be like: Line 1 - "Word1 Word2" and Line 2 - " Word3"?</li>
+        <li>- And then due to `white-space: normal` or `white-space-collapse: collapse`, the leading space is removed from 2nd line?</li>
+        <br>
+        <li>- Doubt 2: Or does the space character ' ' is retained at the end of the first line?</li>
+        <li>- "Word1 Word2 " is displayed on the first line, with the space character ' ' retained as trailing space on first line?</li>
+        <li>- And then due to `white-space: normal` or `white-space-collapse: collapse`, the trailing space is removed from first line?</li>
+        <li>- And then "Word3" starts at the beginning of the 2nd line without any leading space?</li>
+        <br>
+        <li>- Doubt 3: Space Character ' ' is not rendered as a visible character, Why?</li>
+        <li>- So how does it cause the text to wrap to the next line?</li>
+        <li>- It's retained in the DOM element but why not rendered in the UI?</li>
+        <li>- The text is rendered as if the space character ' ' is not present at the end of the first line.</li>
+        <li>- Line 1: "Word1 Word2" and Line 2: "Word3" are displayed without any trailing or leading spaces.</li>
+        <li>- Why there's no trailing space at first line? & No leading space at second line?</li>
+        <br>
+        <li>- Conclusion: "Word1 Word2" is displayed on the first line, and "Word3" is wrapped to the next line.</li>
+      </ul>
+
+      <hr class="w-full h-1">
 
     </div>
   </section>

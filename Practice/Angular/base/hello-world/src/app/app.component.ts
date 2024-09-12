@@ -70,6 +70,7 @@ import {
 import {
     DemoHandlingImagesAndContainersComponent
 } from "./components/demo-practice/demo-box-model/demo-handling-images-and-containers/demo-handling-images-and-containers.component";
+import {DemoGoogleComponent} from "./components/demo-practice/demo-google/demo-google.component";
 
 @Component({
     selector: 'app-root',
@@ -105,7 +106,7 @@ import {
         DemoTheForestKitchenAndBarComponent,
         DemoBoxModelComponent,
         DemoPlayWithWidthAndHeightComponent,
-        DemoHandlingImagesAndContainersComponent,
+        DemoHandlingImagesAndContainersComponent, DemoGoogleComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

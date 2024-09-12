@@ -20,6 +20,34 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 12th Sep 2K24 - 04:01 PM
+Commit: #234 - Tailwind CSS - Practice - Google Home Page - Added Demo-Google Component - Navbar Completed and HTML Skeleton Added for Main Section & Footer - Added New Section for Zero-width Space Character in Text Wrapping Scenarios
+
+Changes:
+
+- File: `Practice/Angular/base/hello-world/src/app/components/demo-practice/demo-google/demo-google.component.html`
+  - Added a new component `Demo-Google` for designing the Google Home Page layout.
+  - Completed the Navbar section using Tailwind CSS classes.
+  - Added skeleton HTML for the Main Section and Footer, but they still need to be designed using Tailwind CSS.
+
+- File: `Practice/Angular/base/hello-world/src/app/components/demo-practice/demo-box-model/demo-scenarios-text-wrap/demo-scenarios-text-wrap.component.html`
+  - Added a new section titled "Case 7 - Concept of Zero-width Space Character".
+  - Outlined the effects and incidents visually.
+  - Detailed the behavior of the space character ' ' as a break point.
+  - Included doubts and questions regarding the behavior of the space character in text wrapping scenarios.
+  - Provided a conclusion that "Word1 Word2" is displayed on the first line, and "Word3" is wrapped to the next line.
+  - Need to note down the explanation for concept of the zero-width space character in text wrapping scenarios.
+
+Summary:
+- Added the `Demo-Google` component to design the Google Home Page layout, with the Navbar completed and skeleton HTML for the Main Section and Footer.
+- Added a new section in `demo-scenarios-text-wrap.component.html` to analyze the concept of the zero-width space character, including detailed descriptions and questions about its behavior in text wrapping.
+
+---
+
+This change log provides a clear and concise summary of the changes made in Commit #234, including the addition of the `Demo-Google` component and the new section on the zero-width space character.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 10th Sep 2K24 - 11:13 PM
 Commit: #233 - SMD Series - 'Web Dev for Absolute Beginners' - Episode 1 - 'Why Learn Web Dev?'
 
