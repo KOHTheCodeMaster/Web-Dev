@@ -20,6 +20,23 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 13th Sep 2K24 - 09:03 PM
+Commit: #237 - Tailwind CSS - Practice - Google Home Page - Updated Navbar & Footer Links with Underline on Hover, Added Standalone Google Home Page with Tailwind CSS
+
+Changes:
+
+- File: `Practice/Angular/base/hello-world/src/app/components/demo-practice/demo-google/demo-google.component.html`
+  - Updated Links in the Navbar & Footer sections to include underline on hover.
+
+- Files Path: `E:/KOH-Workspace/Dev-Zone/WebStorm-Projects/Frontend-Web-Dev/Practice/CSS/Tailwind CSS/playground/google-home-page`
+  - Added `index.html` file separately for the Google Home Page with Tailwind CSS without Angular.
+
+Summary:
+- Updated the Navbar and Footer sections in the `Demo-Google` component to include underlines on hover for links.
+- Added an `index.html` file separately for the Google Home Page with Tailwind CSS without Angular for standalone practice.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 12th Sep 2K24 - 10:16 PM
 Commit: #236 - Tailwind CSS - Practice - Google Home Page - Improved Alignment, Search Box Icons, Language Options, Footer Layout
 
