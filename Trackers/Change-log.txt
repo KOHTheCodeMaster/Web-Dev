@@ -20,6 +20,36 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 16th Sep 2K24 - 09:49 AM
+Commit: #238 - Tailwind CSS - Practice - Google Home Page -
+
+Certainly! Here is the updated change log entry for commit #238:
+
+---
+
+Time Stamp: 16th Sep 2K24 - 09:49 AM  
+Commit: #238 - Tailwind CSS - Practice - Google Home Page - Added New Components for HTML Fundamentals & Google Home Page
+
+Changes:
+
+- Added a new component `DemoHtmlFundamentals` to encapsulate the HTML fundamentals section.
+
+- Created a new component `DemoGoogleHomePage` to focus on rendering the Google Home Page layout and styles.
+    - This component focuses on rendering the Google Home Page layout and styles.
+    - Content of `demo-google.component.html` file was moved to this component to make it as a new standalone component.
+    - This change was made for separating the Google Home Page content into its own dedicated standalone component.
+
+- Updated `DemoGoogleComponent` Structure - It Now Acts as a Container for `DemoHtmlFundamentals` and `DemoGoogleHomePage` Components:
+
+
+Summary:
+- Added a new component `DemoHtmlFundamentals` to encapsulate the HTML fundamentals section.
+- Created a new component `DemoGoogleHomePage` to focus on rendering the Google Home Page layout and styles.
+- Moved the content of `demo-google.component.html` to the `demo-google-home-page.component.html` for separation.
+- Updated the structure of the `DemoGoogleComponent` to act as a container for `DemoHtmlFundamentals` and `DemoGoogleHomePage` components.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 13th Sep 2K24 - 09:03 PM
 Commit: #237 - Tailwind CSS - Practice - Google Home Page - Updated Navbar & Footer Links with Underline on Hover, Added Standalone Google Home Page with Tailwind CSS
 
@@ -28,7 +58,7 @@ Changes:
 - File: `Practice/Angular/base/hello-world/src/app/components/demo-practice/demo-google/demo-google.component.html`
   - Updated Links in the Navbar & Footer sections to include underline on hover.
 
-- Files Path: `E:/KOH-Workspace/Dev-Zone/WebStorm-Projects/Frontend-Web-Dev/Practice/CSS/Tailwind CSS/playground/google-home-page`
+- Files Path: `Practice/CSS/Tailwind CSS/playground/google-home-page`
   - Added `index.html` file separately for the Google Home Page with Tailwind CSS without Angular.
 
 Summary:
