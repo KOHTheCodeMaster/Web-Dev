@@ -106,7 +106,8 @@ import {DemoGoogleComponent} from "./components/demo-practice/demo-google/demo-g
         DemoTheForestKitchenAndBarComponent,
         DemoBoxModelComponent,
         DemoPlayWithWidthAndHeightComponent,
-        DemoHandlingImagesAndContainersComponent, DemoGoogleComponent,
+        DemoHandlingImagesAndContainersComponent,
+        DemoGoogleComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

@@ -20,14 +20,27 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 20th Sep 2K24 - 11:41 PM
+Commit: #239 - Tailwind CSS - Practice - Tic Tac Toe Game - Added Basic Structure for Game Board
+
+Changes:
+
+- Title: Tic Tac Toe Game - Added Basic Structure for Game Board
+- File: `Practice/Angular/base/hello-world/src/app/components/demo-practice/demo-tic-tac-toe/demo-tic-tac-toe.component.html`
+
+- Changes Made:
+  - Added the basic structure for the Tic Tac Toe game board using Tailwind CSS classes.
+  - Created a 3x3 grid using flexbox to represent the game board.
+  - Added Reset button.
+
+Summary:
+- Added the basic structure for the Tic Tac Toe game board using Tailwind CSS classes.
+- Created a 3x3 grid using flexbox to represent the game board.
+- Included a Reset button for restarting the game.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 16th Sep 2K24 - 09:49 AM
-Commit: #238 - Tailwind CSS - Practice - Google Home Page -
-
-Certainly! Here is the updated change log entry for commit #238:
-
----
-
-Time Stamp: 16th Sep 2K24 - 09:49 AM  
 Commit: #238 - Tailwind CSS - Practice - Google Home Page - Added New Components for HTML Fundamentals & Google Home Page
 
 Changes:
