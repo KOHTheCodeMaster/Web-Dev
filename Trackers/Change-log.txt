@@ -20,6 +20,29 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp: 21st Sep 2K24 - 10:14 PM
+Commit: #240 - New SMD Series - 'Web Fundamentals - House Analogy' - Section 1-5 Completed, 6 In Queue
+
+Changes:
+
+- File: `Notes/SMD/Web Fundamentals - House Analogy.txt`
+- Added New SMD Series - 'Web Fundamentals - House Analogy'.
+- Completed Section 1-5:
+    - Section 1: What is the Web?
+    - Section 2: What is a Website?
+    - Section 3: Web Terminology - House Analogy
+    - Section 4: Building a House vs Web Development
+    - Section 5: The Holy Trinity of Web Dev
+- Section 6: HTML - The Foundation of the House - In Queue for Future Content.
+
+
+Summary:
+- Created a new SMD series titled 'Web Fundamentals - House Analogy'.
+- Completed Section 1-5 covering various aspects of web development.
+- Section 6 on 'HTML - The Foundation of the House' is in the queue for future content.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 20th Sep 2K24 - 11:41 PM
 Commit: #239 - Tailwind CSS - Practice - Tic Tac Toe Game - Added Basic Structure for Game Board
 
