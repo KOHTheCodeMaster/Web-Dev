@@ -31,19 +31,8 @@ Table of Contents:
 9: Back-End Servers & DB - Facilities & Services
 10: Bare Bones to Beautiful Mansion
 11: Build a Hut - Simple HTML Page
-12: Cottage Stage - HTML + Basic CSS
-13: House Stage - HTML + CSS + Simple JavaScript
-14: Mansion Stage - Fully Functional Website
-15: Conclusion & Next Steps
-
----
-
-Status:
--------
-
-Section 1-3:   Completed & Refined
-Section 4-5:   Completed & Refined
-Section 6:     Next In Queue
+12: Summary
+13: Next Steps
 
 ---
 
@@ -438,25 +427,44 @@ Key Takeaway:
 
 ----------------------------------------------------------------------------------------------------
 
-Section 12: Cottage Stage - HTML + Basic CSS
+Section 12: Summary
+
+The Web as a Digital City:
+- The web is a vast digital city where each website is a building with its own purpose.
+- Navigating the web is like moving between buildings via interconnected pathways (hyperlinks).
+
+HTML - Structure and Content:
+- HTML is not just the skeleton of the website but also the content that fills it.
+- It creates the framework (walls, rooms) and places essential elements (text, images, and links) inside.
+- Think of it as constructing the house and arranging all the furniture before adding decor.
+
+CSS - Interior Design:
+- CSS brings the structure to life by styling and enhancing its visual appeal.
+- It’s like decorating your house—choosing the colors, layout, and overall design that make it welcoming and attractive.
+
+The Holy Trinity of Web Dev (HTML, CSS, JavaScript):
+- These three core technologies work together, much like a house’s structure, design, and utilities, to create fully functional and interactive web pages.
+
+From Hut to Mansion:
+- Every website starts as a simple structure (like a hut) and gradually evolves.
+- With more styling and functionality, it can grow into a dynamic, feature-rich web application (a digital mansion).
 
 ---
 
 ----------------------------------------------------------------------------------------------------
 
-Section 13: House Stage - HTML + CSS + Simple JavaScript
+Section 13: Next Steps
 
----
+Hands-On Learning with HTML & CSS:
+- The next steps will focus on deepening your understanding of HTML and CSS by working on a project-based approach.
+- This will involve building a simple webpage from scratch, applying the fundamental concepts in a practical way.
 
-----------------------------------------------------------------------------------------------------
+Build a Simple Landing Page:
+- The upcoming project will involve creating a simple landing page.
+- Structure content with HTML (headings, paragraphs, images, buttons).
+- Style and arrange content using CSS (colors, layouts, fonts).
 
-Section 14: Mansion Stage - Fully Functional Website
-
----
-
-----------------------------------------------------------------------------------------------------
-
-Section 15: Conclusion & Next Steps
+This hands-on project will reinforce your learning and give you the foundational skills needed to build more complex websites.
 
 ---
 
