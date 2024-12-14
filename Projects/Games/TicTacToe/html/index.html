@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <script src="../js/app.js" defer></script>
+</head>
+<body class="bg-black text-white">
+
+<main class="w-1/2 mx-auto mt-20 border">
+
+    <!-- Status Message -->
+    <div id="id-status-msg" class="w-fit mx-auto my-4 text-green-500 text-xl">
+        Welcome To Tic-Tac-Toe.
+        Click Any Button To Start The Game!
+    </div>
+
+    <!-- Game board - 3x3 Grid with Borders for Tic Tac Toe -->
+    <section class="w-fit h-fit mx-auto my-10 flex flex-col gap-1 bg-gray-400 text-5xl">
+
+        <div class="flex gap-1">
+            <button id="id-btn-cell-1" class="w-32 h-32 bg-black data-cell"></button>
+            <button id="id-btn-cell-2" class="w-32 h-32 bg-black data-cell"></button>
+            <button id="id-btn-cell-3" class="w-32 h-32 bg-black data-cell"></button>
+        </div>
+
+        <div class="flex gap-1">
+            <button id="id-btn-cell-4" class="w-32 h-32 bg-black data-cell"></button>
+            <button id="id-btn-cell-5" class="w-32 h-32 bg-black data-cell"></button>
+            <button id="id-btn-cell-6" class="w-32 h-32 bg-black data-cell"></button>
+        </div>
+
+        <div class="flex gap-1">
+            <button id="id-btn-cell-7" class="w-32 h-32 bg-black data-cell"></button>
+            <button id="id-btn-cell-8" class="w-32 h-32 bg-black data-cell"></button>
+            <button id="id-btn-cell-9" class="w-32 h-32 bg-black data-cell"></button>
+        </div>
+
+    </section>
+
+    <div class="w-[80%] mx-auto my-4 py-4 flex justify-between border">
+
+        <!-- Player Mode -->
+        <section class="w-[20%] ml-4 flex flex-col items-start gap-2 text-xl">
+            <button id="id-btn-single-player"
+                    class="opacity-50 hover:font-bold hover:text-white hover:opacity-100 cursor-pointer">Single Player
+            </button>
+            <button id="id-btn-double-player" class="font-bold cursor-pointer">Double Player</button>
+        </section>
+
+        <!-- Scoreboard -->
+        <section class="w-[60%] flex gap-10 justify-center">
+            <div id="id-div-player-1-score" class="w-fit  flex flex-col items-center gap-2 text-xl">
+                <span class="font-bold ">PLAYER 1 ( X )</span>
+                <span id="id-span-player-1-score" class="font-bold ">0</span>
+            </div>
+            <div id="id-div-tie-score" class="w-fit  flex flex-col items-center gap-2 text-xl">
+                <span class="opacity-50">TIE</span>
+                <span id="id-span-tie-score" class="opacity-50">0</span>
+            </div>
+            <div id="id-div-player-2-score" class="w-fit  flex flex-col items-center gap-2 text-xl">
+                <span class="opacity-50">PLAYER 2 ( O )</span>
+                <span id="id-span-player-2-score" class="opacity-50">0</span>
+            </div>
+        </section>
+
+        <!-- Game Settings -->
+        <section class="w-[20%] px-2 flex flex-col items-center gap-2 text-xl">
+            <button id="id-btn-restart" class="w-20  flex hover:font-bold cursor-pointer" onclick="restartGame()">
+                RESTART
+            </button>
+            <button id="id-btn-reset" class="w-20  flex hover:font-bold cursor-pointer" onclick="resetGame()">
+                RESET
+            </button>
+        </section>
+
+    </div>
+
+</main>
+
+</body>
+</html>

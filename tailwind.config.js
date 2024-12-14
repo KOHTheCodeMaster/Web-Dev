@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./Projects/TicTacToe/**/*.{html,css,js}"],
+  content: [
+    "./Practice/HTML/**/*.{html,css,js}",
+    "./Practice/CSS/**/*.{html,css,js}",
+    "./Projects/**/*.{html,css,js}",
+  ],
   theme: {
     extend: {},
   },

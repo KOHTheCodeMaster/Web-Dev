@@ -20,6 +20,40 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         14th Dec 2K24 - 11:15 PM
+Commit Message:     245 - Practice Projects - Tic Tac Toe Game - Added Game Logic for Player Moves & Win Conditions
+
+File Changes:
+
+1. app.js
+    - File Path: `Projects/Games/TicTacToe/js/app.js`
+    - Change Type: New File Added
+    - Priority: High
+    - Change Summary: Added game logic for player moves and win conditions.
+    - Explanation: Created a new file app.js to handle the game logic for player moves and win conditions in the Tic Tac Toe game.
+
+2. index.html
+    - File Path: `Projects/Games/TicTacToe/html/index.html`
+    - Change Type: Modified
+    - Priority: Medium
+    - Change Summary: Added id attributes to buttons and script tag for app.js file.
+    - Explanation: Updated the index.html file to include id attributes for buttons and a script tag to link the app.js file for game logic.
+
+
+ToDos:
+- Highlight the Winner on Scoreboard
+- Highlight the Player after each move
+- Highlight the Winning Combination on the Board
+
+
+Summary:
+- Added game logic for player moves and win conditions in the Tic Tac Toe game.
+- Created a new file app.js to handle the game logic.
+- Updated the index.html file to include id attributes for buttons and link the app.js file.
+- Added ToDos for future enhancements like highlighting the winner on the scoreboard and board.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp: 21st Sep 2K24 - 10:14 PM
 Commit: #240 - New SMD Series - 'Web Fundamentals - House Analogy' - Section 1-5 Completed, 6 In Queue
 
