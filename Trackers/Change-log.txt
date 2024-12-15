@@ -20,6 +20,40 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         15th Dec 2K24 - 01:56 PM
+Commit Message:     246 - Practice Projects - Tic Tac Toe Game - Game Ready to play with Basic Features
+
+File Changes:
+
+1. app.js
+    - File Path: `Projects/Games/TicTacToe/js/app.js`
+    - Change Type: Modified
+    - Priority: High
+    - Change Summary: Game Ready to play with Basic Features
+    - Explanation: Game logic implemented for player moves and win conditions. Game ready to play with basic features.
+
+2. index.html
+    - File Path: `Projects/Games/TicTacToe/html/index.html`
+    - Change Type: Modified
+    - Priority: Medium
+    - Change Summary: Removed Mode Selection Buttons to Simplify the Game for 2-Player Mode Only.
+    - Explanation: Simplified the game by removing the mode selection buttons to focus on the 2-player mode only.
+
+ToDos:
+- Highlight the Player after each move, Winner on Scoreboard, and Winning Combination on the Board
+- Fixed Restart Button Functionality
+- For now, the game is set for 2-player mode only.
+- Game is ready to play with basic features.
+
+
+Summary:
+- Added game logic for player moves and win conditions in the Tic Tac Toe game.
+- Created a new file app.js to handle the game logic.
+- Updated the index.html file to include id attributes for buttons and link the app.js file.
+- Added ToDos for future enhancements like highlighting the winner on the scoreboard and board.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         14th Dec 2K24 - 11:15 PM
 Commit Message:     245 - Practice Projects - Tic Tac Toe Game - Added Game Logic for Player Moves & Win Conditions
 

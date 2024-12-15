@@ -1,6 +1,7 @@
 let player1, player2, currentPlayer;
 let divStatusMsg;
-let gameStatus = 'ongoing';
+let gameStatus;
+let winningCells;
 
 class Player {
     constructor(name, symbol) {
@@ -18,8 +19,11 @@ function main() {
     player2 = new Player('Player 2', 'O');
     currentPlayer = player1;
 
+    gameStatus = 'ongoing';
+    winningCells = null;
     divStatusMsg = document.getElementById('id-status-msg');
-    updateStatusMsgByOption();
+
+    updateStatusMsgByOption();  //  Display initial status message
 
     cells = document.getElementsByClassName('data-cell');
     for (let cell of cells) cell.addEventListener('click', cellClick);
@@ -28,8 +32,8 @@ function main() {
 
 function updateStatusMsgByOption(option) {
 
-    if (option === 'player1') divStatusMsg.textContent = 'Turn: Player 1 (X)';
-    else if (option === 'player2') divStatusMsg.textContent = 'Turn: Player 2 (O)';
+    if (option === 'player1-turn') divStatusMsg.textContent = 'Turn: Player 1 (X)';
+    else if (option === 'player2-turn') divStatusMsg.textContent = 'Turn: Player 2 (O)';
     else if (option === 'player1-win') divStatusMsg.textContent = 'Winner: Player 1 (X)';
     else if (option === 'player2-win') divStatusMsg.textContent = 'Winner: Player 2 (O)';
     else if (option === 'tie') divStatusMsg.textContent = 'It\'s a Tie!';
@@ -45,68 +49,128 @@ function cellClick() {
         if (this.textContent !== '') return;    //  Check if cell is already filled
         this.textContent = currentPlayer.symbol;    //  Fill the cell with current player symbol
 
-        //  Check if current player has won
-        checkWin();
+        checkWin(); //  Update game status based on current player's move (win/tie/ongoing)
+        if (gameStatus !== 'win') checkTie();   //  If current player has not won, check if game is a tie
 
-        //  If current player has not won, check if game is a tie
-        if (gameStatus !== 'win') checkTie();
+        //  Based on game status, switch current player, update status message and scoreboard
+        if (gameStatus === 'ongoing') {
 
-        //  Check if by filling the current cell, current player has won or game is a tie
-        if (gameStatus === 'win') {
+            //  Game is still ongoing, switch current player, update status message and scoreboard focus
+            switchCurrentPlayer();  //  Switch Current Player
+            updateStatusMsgByOption(currentPlayer === player1 ? 'player1-turn' : 'player2-turn');
+            updatePlayerFocusOnScoreboard();
+
+        } else if (gameStatus === 'win') {
+
+            //  Highlight the Winning Combination on the Board
+            for (let cell of winningCells) cell.classList.add('text-green-500');
 
             //  Update Scoreboard & Status Message based on Winner
-            if (currentPlayer === player1) {
-                let spanPlayer1Score = document.getElementById('id-span-player-1-score');
-                spanPlayer1Score.textContent = parseInt(spanPlayer1Score.textContent) + 1;
-                updateStatusMsgByOption('player1-win');
-
-                //  ToDo:
-                //  Highlight the Winner on Scoreboard
-                // let divPlayer1Score = document.getElementById('id-div-player-1-score');
-                // divPlayer1Score.classList.toggle('bg-green-500');
-
-            } else {
-                let spanPlayer2Score = document.getElementById('id-span-player-2-score');
-                spanPlayer2Score.textContent = parseInt(spanPlayer2Score.textContent) + 1;
-                updateStatusMsgByOption('player2-win');
-
-                //  ToDo:
-                //  Highlight the Winner on Scoreboard
-                // let divPlayer2Score = document.getElementById('id-div-player-2-score');
-                // divPlayer2Score.classList.toggle('bg-red-500');
-            }
-
-            //  ToDo:
-            //  Highlight the Winning Combination on the Board
+            let winnerOption = currentPlayer === player1 ? 'player1-win' : 'player2-win';
+            updateStatusMsgByOption(winnerOption);
+            updateWinnerOnScoreboard(winnerOption);
 
         } else if (gameStatus === 'tie') {
-
-            //  Update Scoreboard & Status Message based on Tie
-            let spanTieScore = document.getElementById('id-span-tie-score');
-            spanTieScore.textContent = parseInt(spanTieScore.textContent) + 1;
+            //  If game is a tie, update status message and scoreboard
             updateStatusMsgByOption('tie');
-
-            // let divTieScore = document.getElementById('id-div-tie-score');
-            // divTieScore.style.backgroundColor = 'yellow';
-
-        } else switchCurrentPlayer();
+            updateWinnerOnScoreboard('tie');
+        }
 
     }
 
 }
 
+function updateWinnerOnScoreboard(option) {
+
+    //  Update Scoreboard based on Winner
+    if (option === 'player1-win') {
+
+        //  Increment Player 1 Score
+        let spanPlayer1Score = document.getElementById('id-span-player-1-score');
+        spanPlayer1Score.textContent = parseInt(spanPlayer1Score.textContent) + 1;
+
+        //  Mark Player 1 as Winner
+        document.getElementById('id-div-player-1-score').classList.add('text-green-500');
+
+    } else if (option === 'player2-win') {
+
+        //  Increment Player 2 Score
+        let spanPlayer2Score = document.getElementById('id-span-player-2-score');
+        spanPlayer2Score.textContent = parseInt(spanPlayer2Score.textContent) + 1;
+
+        //  Mark Player 2 as Winner
+        document.getElementById('id-div-player-2-score').classList.add('text-green-500');
+
+    } else if (option === 'tie') {
+
+        //  Increment Tie Score
+        let spanTieScore = document.getElementById('id-span-tie-score');
+        spanTieScore.textContent = parseInt(spanTieScore.textContent) + 1;
+
+        //  Mark Tie as Active
+        let divTieScore = document.getElementById('id-div-tie-score');
+        divTieScore.classList.add('font-bold');
+        divTieScore.classList.add('text-green-500');
+        if (divTieScore.classList.contains('opacity-50')) divTieScore.classList.remove('opacity-50');
+
+        //  Mark Player 1 as Inactive
+        let divPlayer1Score = document.getElementById('id-div-player-1-score');
+        if (divPlayer1Score.classList.contains('font-bold')) divPlayer1Score.classList.remove('font-bold');
+        if (!divPlayer1Score.classList.contains('opacity-50')) divPlayer1Score.classList.add('opacity-50');
+
+        //  Mark Player 2 as Inactive
+        let divPlayer2Score = document.getElementById('id-div-player-2-score');
+        if (divPlayer2Score.classList.contains('font-bold')) divPlayer2Score.classList.remove('font-bold');
+        if (!divPlayer2Score.classList.contains('opacity-50')) divPlayer2Score.classList.add('opacity-50');
+
+    }
+
+}
+
+function updatePlayerFocusOnScoreboard() {
+
+    //  Mark Player 1 as Active
+    document.getElementById('id-div-player-1-score').classList.toggle('font-bold');
+    document.getElementById('id-div-player-1-score').classList.toggle('opacity-50');
+
+    //  Mark Player 2 as Inactive
+    document.getElementById('id-div-player-2-score').classList.toggle('font-bold');
+    document.getElementById('id-div-player-2-score').classList.toggle('opacity-50');
+
+    /*
+        if (turn === 'player1-turn') {
+
+            //  Mark Player 1 as Active
+            document.getElementById('id-div-player-1-score').classList.toggle('font-bold');
+            document.getElementById('id-div-player-1-score').classList.toggle('opacity-50');
+
+            //  Mark Player 2 as Inactive
+            document.getElementById('id-div-player-1-score').classList.toggle('font-bold');
+            document.getElementById('id-div-player-2-score').classList.toggle('opacity-50');
+
+        } else if (turn === 'player2-turn') {
+
+            //  Mark Player 2 as Active
+            document.getElementById('id-div-player-2-score').classList.add('font-bold');
+            document.getElementById('id-div-player-2-score').classList.remove('opacity-50');
+
+            //  Mark Player 1 & Tie as Inactive
+            document.getElementById('id-div-player-1-score').classList.add('opacity-50');
+
+        }
+    */
+}
+
 function switchCurrentPlayer() {
     //  Toggle Current Player
     if (currentPlayer === player1) currentPlayer = player2;
-    else currentPlayer = player1;
-
-    //  Update Status Message to show current player's turn
-    updateStatusMsgByOption(currentPlayer === player1 ? 'player1' : 'player2');
+    else if (currentPlayer === player2) currentPlayer = player1;
 }
 
 function checkWin() {
 
-    let win = false;
+    winningCells = null;
+
     let cells = document.getElementsByClassName('data-cell');
 
     //  Check Rows for current player win
@@ -114,7 +178,7 @@ function checkWin() {
         if (cells[i].textContent === currentPlayer.symbol &&
             cells[i + 1].textContent === currentPlayer.symbol &&
             cells[i + 2].textContent === currentPlayer.symbol) {
-            win = true;
+            winningCells = [cells[i], cells[i + 1], cells[i + 2]];
             break;
         }
     }
@@ -124,7 +188,7 @@ function checkWin() {
         if (cells[i].textContent === currentPlayer.symbol &&
             cells[i + 3].textContent === currentPlayer.symbol &&
             cells[i + 6].textContent === currentPlayer.symbol) {
-            win = true;
+            winningCells = [cells[i], cells[i + 3], cells[i + 6]];
             break;
         }
     }
@@ -133,15 +197,15 @@ function checkWin() {
     if (cells[0].textContent === currentPlayer.symbol &&
         cells[4].textContent === currentPlayer.symbol &&
         cells[8].textContent === currentPlayer.symbol) {
-        win = true;
+        winningCells = [cells[0], cells[4], cells[8]];
     } else if (cells[2].textContent === currentPlayer.symbol &&
         cells[4].textContent === currentPlayer.symbol &&
         cells[6].textContent === currentPlayer.symbol) {
-        win = true;
+        winningCells = [cells[2], cells[4], cells[6]];
     }
 
     //  If current player has won, display win message and update end of game flag
-    if (win) gameStatus = 'win';
+    if (winningCells) gameStatus = 'win';
 
 }
 
@@ -165,10 +229,59 @@ function restartGame() {
 
     //  Clear the board
     let cells = document.getElementsByClassName('data-cell');
-    for (let cell of cells) cell.textContent = '';
+    for (let cell of cells) {
+        cell.textContent = '';
+        cell.classList.remove('text-green-500');
+    }
 
     gameStatus = 'ongoing';     //  Reset game status to ongoing
-    updateStatusMsgByOption();  //  Reset status message
+    switchCurrentPlayer();      //  Switch Current Player
+    updateStatusMsgByOption(currentPlayer === player1 ? 'player1-turn' : 'player2-turn');
+
+    resetScoreboardWinner();    //  Reset Scoreboard Winner Highlight
+    resetScoreboardFocus();     //  Reset Scoreboard Focus
+
+}
+
+function resetScoreboardFocus() {
+
+    let divPlayer1Score = document.getElementById('id-div-player-1-score');
+    let divPlayer2Score = document.getElementById('id-div-player-2-score');
+
+    if (currentPlayer === player1) {
+
+        //  Mark Player 1 as Active
+        if (!divPlayer1Score.classList.contains('font-bold')) divPlayer1Score.classList.add('font-bold');
+        if (divPlayer1Score.classList.contains('opacity-50')) divPlayer1Score.classList.remove('opacity-50');
+
+        //  Mark Player 2 as Inactive
+        if (divPlayer2Score.classList.contains('font-bold')) divPlayer2Score.classList.remove('font-bold');
+        if (!divPlayer2Score.classList.contains('opacity-50')) divPlayer2Score.classList.add('opacity-50');
+
+    } else if (currentPlayer === player2) {
+
+        //  Mark Player 2 as Active
+        if (!divPlayer2Score.classList.contains('font-bold')) divPlayer2Score.classList.add('font-bold');
+        if (divPlayer2Score.classList.contains('opacity-50')) divPlayer2Score.classList.remove('opacity-50');
+
+        //  Mark Player 1 as Inactive
+        if (divPlayer1Score.classList.contains('font-bold')) divPlayer1Score.classList.remove('font-bold');
+        if (!divPlayer1Score.classList.contains('opacity-50')) divPlayer1Score.classList.add('opacity-50');
+
+    }
+
+    //  Mark Tie as Inactive
+    document.getElementById('id-div-tie-score').classList.remove('font-bold');
+    document.getElementById('id-div-tie-score').classList.add('opacity-50');
+
+}
+
+function resetScoreboardWinner() {
+
+    //  Reset Scoreboard Winner Highlight
+    document.getElementById('id-div-player-1-score').classList.remove('text-green-500');
+    document.getElementById('id-div-player-2-score').classList.remove('text-green-500');
+    document.getElementById('id-div-tie-score').classList.remove('text-green-500');
 
 }
 
