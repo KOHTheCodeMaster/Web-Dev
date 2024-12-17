@@ -227,7 +227,7 @@ function checkTie() {
 
 function restartGame() {
 
-    //  Clear the board
+    //  Clear the gameBoard
     let cells = document.getElementsByClassName('data-cell');
     for (let cell of cells) {
         cell.textContent = '';

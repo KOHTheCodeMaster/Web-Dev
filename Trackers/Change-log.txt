@@ -20,6 +20,33 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         17th Dec 2K24 - 08:07 PM
+Commit Message:     247 - Practice Projects - Tic Tac Toe Game - v2 - Applied Some SOLID Principles & Clean Code
+
+1. Added v2 of the Tic Tac Toe game with improved code structure and readability.
+2. Applied SOLID principles and clean code practices to enhance the codebase.
+
+Files Added:
+- `Projects/Games/TicTacToe/v2-clean-code/html/index.html`                  -> HTML file for v2 of the game.
+- `Projects/Games/TicTacToe/v2-clean-code/css/input.css`                    -> Tailwind CSS input styling.
+- `Projects/Games/TicTacToe/v2-clean-code/css/input.css`                    -> Tailwind CSS output styling.
+- `Projects/Games/TicTacToe/v2-clean-code/js/app.js`                        -> Updated JavaScript file with improved code structure.
+- `Projects/Games/TicTacToe/v2-clean-code/js/game.js`                       -> Game logic implementation with SOLID principles.
+- `Projects/Games/TicTacToe/v2-clean-code/js/controller/MainController.js`  -> Main controller for game logic.
+- `Projects/Games/TicTacToe/v2-clean-code/js/handler/GameLogicHandler.js`   -> Game logic handler for player moves and win conditions.
+- `Projects/Games/TicTacToe/v2-clean-code/js/handler/UIHandler.js`          -> UI handler for updating the game board and player moves.
+- `Projects/Games/TicTacToe/v2-clean-code/js/model/Player.js`               -> Player model for storing player details.
+- `Projects/Games/TicTacToe/v2-clean-code/js/model/GameBoard.js`            -> Game board model for storing player moves.
+- `Projects/Games/TicTacToe/v2-clean-code/js/app.js`                        -> Main App for game initialization.
+
+Summary:
+- Added v2 of the Tic Tac Toe game with improved code structure and readability.
+- Applied SOLID principles and clean code practices to enhance the codebase.
+- Moved the HTML, CSS, and JavaScript files for the v1 version of the game inside the `v1-monolithic` directory.
+- Created a new directory `v2-clean-code` to house the updated version of the game with improved code quality.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         15th Dec 2K24 - 01:56 PM
 Commit Message:     246 - Practice Projects - Tic Tac Toe Game - Game Ready to play with Basic Features
 

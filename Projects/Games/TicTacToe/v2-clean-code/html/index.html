@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="../css/output.css">
-    <script src="../js/app.js" defer></script>
+    <script type="module" src="../js/app.js" defer></script>
 </head>
 <body class="bg-black text-white">
 
@@ -17,7 +17,7 @@
         Click Any Button To Start The Game!
     </div>
 
-    <!-- Game board - 3x3 Grid with Borders for Tic Tac Toe -->
+    <!-- Game gameBoard - 3x3 Grid with Borders for Tic Tac Toe -->
     <section class="w-fit h-fit mx-auto my-10 flex flex-col gap-1 bg-gray-400 text-5xl">
 
         <div class="flex gap-1">
@@ -68,10 +68,10 @@
 
         <!-- Game Settings -->
         <section class="w-[20%] px-2 flex flex-col items-center gap-2 text-xl">
-            <button id="id-btn-restart" class="w-20  flex hover:font-bold cursor-pointer" onclick="restartGame()">
+            <button id="id-btn-restart" class="w-20  flex hover:font-bold cursor-pointer">
                 RESTART
             </button>
-            <button id="id-btn-reset" class="w-20  flex hover:font-bold cursor-pointer" onclick="resetGame()">
+            <button id="id-btn-reset" class="w-20  flex hover:font-bold cursor-pointer">
                 RESET
             </button>
         </section>
