@@ -20,6 +20,30 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         21st Dec 2K24 - 08:07 PM
+Commit Message:     248 - Practice Projects - Tic Tac Toe Game - System Design - Phase 1
+
+Files Added:
+
+1. 01-basic-idea.txt
+    - File Path: `Projects/Games/TicTacToe/system-design/01-basic-idea.txt`
+    - Change Type: New File Added
+    - Priority: High
+    - Change Summary: Added basic idea of game states & actions for the Tic Tac Toe game.
+    - Explanation: Outlined the basic idea of game states & actions for the Tic Tac Toe game system design.
+
+2. 02-component-design.txt
+    - File Path: `Projects/Games/TicTacToe/system-design/02-component-design.txt`
+    - Change Type: New File Added
+    - Priority: High
+    - Change Summary: Added component design for the Tic Tac Toe game.
+    - Explanation: Created a component design document for the Tic Tac Toe game system design.
+
+Summary:
+- Added system design documents for the Tic Tac Toe game, including the basic idea of game states & actions and component design.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         17th Dec 2K24 - 08:07 PM
 Commit Message:     247 - Practice Projects - Tic Tac Toe Game - v2 - Applied Some SOLID Principles & Clean Code
 

@@ -1,0 +1,45 @@
+
+gameStatus: "ongoing", "win", "tie"
+
+currentPlayer: "P1", "P2"
+
+---
+
+gameStatus: "win"
+
+currentPlayer: "P1"
+
+restart() {
+ - update game status = "ongoing"
+ - toggle current player
+ - clear board
+}
+
+reset() {
+ - restart
+ - reset scoreboard
+ - set p1
+}
+
+chanceToggle() {
+ - change currentPlayer to P1/P2.
+}
+
+cell click() {
+ - draw symbol currentPlayer
+ - checkWin() ...
+ - checkTie() ...
+ - chance toggle
+}
+
+checkWin() {
+ - check all combinations
+  - If Any Row, Col, Diagonal matches
+    update status "win"
+}
+
+checkTie() {
+ - check if all cells are occupied
+}
+
+
