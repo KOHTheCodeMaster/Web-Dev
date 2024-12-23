@@ -20,6 +20,37 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         23rd Dec 2K24 - 12:09 PM
+Commit Message:     249 - Practice Projects - Tic Tac Toe Game - Angular Components & Services
+
+Overview:
+- Added Angular components and services to simulate the event-driven behavior of the Tic Tac Toe game.
+- Select Player & Game Status messages from dropdowns.
+- Update Player details & Game Status messages dynamically via services, event subscriptions, and component interactions.
+
+Files Added:
+
+Components:
+1. `TicTacToeGameComponent`
+2. `StatusMsgComponent`
+
+Services:
+1. `GameStateService`
+2. `StatusMsgService`
+
+Other Files:
+1. `Player` - Model for Player details
+2. `PlayerHelper` - Helper class for Player operations
+3. `GameStatus` - Enum for game status values
+4. `TicTacToeSymbol` - Enum for Tic Tac Toe symbols
+
+Summary:
+- Added Angular components and services to simulate the event-driven behavior of the Tic Tac Toe game.
+- Implemented the selection of Player & Game Status messages from dropdowns.
+- Updated Player details & Game Status messages dynamically via services, event subscriptions, and component interactions.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         21st Dec 2K24 - 08:07 PM
 Commit Message:     248 - Practice Projects - Tic Tac Toe Game - System Design - Phase 1
 
