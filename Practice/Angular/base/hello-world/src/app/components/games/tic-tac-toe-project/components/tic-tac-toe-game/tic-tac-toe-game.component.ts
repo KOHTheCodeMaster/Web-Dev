@@ -3,13 +3,14 @@ import {GameStatus} from "../../shared/model/game-status.enum";
 import {StatusMsgComponent} from "./status-msg/status-msg.component";
 import {GameStateService} from "../../services/game-state.service";
 import {Player} from "../../shared/model/player.model";
-import {StatusMsgService} from "../../services/status-msg.service";
+import {BoardComponent} from "./board/board.component";
 
 @Component({
     selector: 'app-tic-tac-toe-game',
     standalone: true,
     imports: [
-        StatusMsgComponent
+        StatusMsgComponent,
+        BoardComponent
     ],
     templateUrl: './tic-tac-toe-game.component.html',
     styleUrl: './tic-tac-toe-game.component.css'
@@ -18,7 +19,18 @@ export class TicTacToeGameComponent {
 
     protected readonly GameStatus = GameStatus;
 
-    constructor(private gameStateService: GameStateService, public statusMsgService: StatusMsgService) {
+    constructor(public gameStateService: GameStateService) {
+        console.log(this.gameStateService.getGameStatus$().getValue())
+
+    }
+
+    getCurrentGameStatus(): string {
+        let gameStatus: GameStatus = this.gameStateService.getGameStatus$().getValue();
+
+        if (gameStatus === GameStatus.IN_PROGRESS) return '1';
+        else if (gameStatus === GameStatus.WIN) return '2';
+        else if (gameStatus === GameStatus.TIE) return '3';
+        else return '0';
 
     }
 

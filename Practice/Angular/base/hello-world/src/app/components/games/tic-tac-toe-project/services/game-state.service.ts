@@ -22,6 +22,13 @@ export class GameStateService {
 
     }
 
+    switchCurrentPlayer() {
+        const currentPlayer = this.currentPlayer$.getValue();
+        const nextPlayer = this.players.find(player => player.id !== currentPlayer.id);
+        if (nextPlayer) this.currentPlayer$.next(nextPlayer);
+        else console.error('Next player not found. Current player Id: ' + currentPlayer.id);
+    }
+
     updateCurrentPlayerValue(selectedPlayerId: string) {
         const player = this.players.find(player => player.id === selectedPlayerId);
         if (player) this.currentPlayer$.next(player);
