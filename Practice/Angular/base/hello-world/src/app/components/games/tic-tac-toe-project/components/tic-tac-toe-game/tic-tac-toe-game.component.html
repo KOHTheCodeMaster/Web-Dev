@@ -2,27 +2,9 @@
 
   <app-status-msg></app-status-msg>
 
-  <!-- Dropdown with Player 1 & Player 2 values -->
-  <select class="w-1/2 mx-auto mt-4 p-2 bg-gray-800 text-white rounded-md shadow-md"
-          [value]="this.gameStateService.getCurrentPlayer$().getValue().id" (change)="selectPlayer($event)">
-    <option value="1">Player 1</option>
-    <option value="2">Player 2</option>
-  </select>
-
-  <!-- Dropdown with Game Status values -->
-  <select class="w-1/2 mx-auto mt-4 p-2 bg-gray-800 text-white rounded-md shadow-md"
-          [value]="this.getCurrentGameStatus()"
-          (change)="this.selectGameStatus($event)">
-    <option value="1">{{ GameStatus.IN_PROGRESS }}</option>
-    <option value="2">{{ GameStatus.WIN }}</option>
-    <option value="3">{{ GameStatus.TIE }}</option>
-  </select>
-
   <app-board></app-board>
 
-  <!--
-    <app-scoreboard></app-scoreboard>
-  -->
+  <app-scoreboard></app-scoreboard>
 
 </main>
 

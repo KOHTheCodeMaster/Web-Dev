@@ -4,7 +4,6 @@ import {TicTacToeSymbol} from "../../../shared/model/tic-tac-toe-symbol";
 import {GameStateService} from "../../../services/game-state.service";
 import {GameStatus} from "../../../shared/model/game-status.enum";
 import {NgForOf} from "@angular/common";
-import {ScoreService} from "../../../services/score.service";
 
 @Component({
     selector: 'app-board',
@@ -21,14 +20,14 @@ export class BoardComponent {
     cellValues: TicTacToeSymbol[];
     winningCells: boolean[];
 
-    constructor(private gameStateService: GameStateService, private scoreService: ScoreService) {
+    constructor(private gameStateService: GameStateService) {
         this.cellValues = new Array(9).fill(TicTacToeSymbol.EMPTY); // Initializes 3x3 grid as array of 9 empty cells
         this.winningCells = new Array(9).fill(false);
+
+        this.gameStateService.getClearBoardEvent$().subscribe(() => this.clearBoard());
     }
 
     handleCellClick(index: number): void {
-
-        console.log('Game Staus: ' + this.gameStateService.getGameStatus$().getValue());
 
         if (this.gameStateService.getGameStatus$().getValue() === GameStatus.IN_PROGRESS) {
 
@@ -43,28 +42,31 @@ export class BoardComponent {
             if (winningCombination) {
 
                 this.gameStateService.updateGameStatusValue(GameStatus.WIN);
+                this.gameStateService.updateCurrentPlayerScore();
+                this.gameStateService.updateWinner();
 
-                //  Highlight Winning Combination
+                //  Highlight Winning Cells
                 for (const cellIndex of winningCombination) this.winningCells[cellIndex] = true;
 
-                this.scoreService.updateScore(this.gameStateService.getCurrentPlayer$().getValue().symbol);
 
             } else if (this.checkTie()) {
 
                 this.gameStateService.updateGameStatusValue(GameStatus.TIE);
-                this.scoreService.updateScore('Tie');
+                this.gameStateService.updateTieScore();
+                this.gameStateService.resetTurns();
 
             } else this.gameStateService.switchCurrentPlayer();
 
         } else {
 
             //  If already Game Over then, reset the board and start a new game
-            this.resetBoard();
+            this.clearBoard();
             this.gameStateService.updateGameStatusValue(GameStatus.IN_PROGRESS);
             this.gameStateService.switchCurrentPlayer();
-            this.scoreService.resetScore();
+            this.gameStateService.resetWinners();
 
         }
+
     }
 
     checkWin(): number[] | null {
@@ -87,7 +89,7 @@ export class BoardComponent {
         return this.cellValues.every(cell => cell !== TicTacToeSymbol.EMPTY);
     }
 
-    resetBoard(): void {
+    clearBoard(): void {
         this.cellValues.fill(TicTacToeSymbol.EMPTY);
         this.winningCells.fill(false);
     }

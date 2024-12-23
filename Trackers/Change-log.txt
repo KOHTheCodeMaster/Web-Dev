@@ -20,6 +20,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         24th Dec 2K24 - 11:30 PM
+Commit Message:     251 - Practice Projects - Tic Tac Toe Game - Angular App Ready
+
+Quick Summary:
+- Added Scoreboard & Settings components to the Tic Tac Toe game.
+- Implemented clear board, restart game and reset score functionality.
+- Added styling for highlighting the turn indicator, winner & winning cells using ngClass and Tailwind CSS.
+- Game is now fully functional with player turns, win conditions, and score tracking.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         24th Dec 2K24 - 09:47 PM
 Commit Message:     250 - Practice Projects - Tic Tac Toe Game - Board & Cell Components - Angular
 
