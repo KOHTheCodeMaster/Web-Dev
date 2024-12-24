@@ -8,11 +8,20 @@ import {GameStateService} from "./game-state.service";
 })
 export class StatusMsgService {
 
-    private strStatusMsg: string;
+    private strStatusMsg!: string;
 
     constructor(private gameStateService: GameStateService) {
-        this.strStatusMsg = '';
+        this.initializeStrStatusMsg();
         this.initializeSubscriptions();
+    }
+
+    private initializeStrStatusMsg() {
+        // Fetch initial game state and current player
+        const initialPlayer: Player = this.gameStateService.getCurrentPlayer$().getValue();
+        const initialGameStatus: GameStatus = this.gameStateService.getGameStatus$().getValue();
+
+        // Initialize the message based on the initial state
+        this.updateStatusMsg(initialGameStatus, initialPlayer);
     }
 
     private initializeSubscriptions() {
@@ -30,9 +39,12 @@ export class StatusMsgService {
     }
 
     updateStatusMsg(gameStatus: GameStatus, currentPlayer: Player) {
-        if (gameStatus === GameStatus.IN_PROGRESS) this.strStatusMsg = `Turn: ${currentPlayer.name} (${currentPlayer.symbol})`;
-        else if (gameStatus === GameStatus.TIE) this.strStatusMsg = "It's a Tie!";
-        else if (gameStatus === GameStatus.WIN) this.strStatusMsg = `Winner: ${currentPlayer.name} (${currentPlayer.symbol})`;
+        const statusMessages = {
+            [GameStatus.IN_PROGRESS]: `Turn: ${currentPlayer.name} (${currentPlayer.symbol})`,
+            [GameStatus.TIE]: "It's a Tie!",
+            [GameStatus.WIN]: `Winner: ${currentPlayer.name} (${currentPlayer.symbol})`
+        };
+        this.strStatusMsg = statusMessages[gameStatus] || this.strStatusMsg;
     }
 
     getStrStatusMsg(): string {

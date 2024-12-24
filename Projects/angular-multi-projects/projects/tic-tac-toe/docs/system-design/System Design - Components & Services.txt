@@ -1,0 +1,362 @@
+
+Time Stamp: 25th Dec 2K24 - 12:24 AM..!!
+
+Title: System Design - Components & Services
+
+Category: System Design -> Components & Services -> Angular Tic-Tac-Toe Game
+
+Keywords: System Design, Components, Services, Angular, Frontend, Web Development, Game Development, Tic-Tac-Toe
+
+Purpose: To outline the system design of components and services for a Tic-Tac-Toe game in Angular.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+System Design - Components
+--------------------------
+
+List of Components:
+1. Settings Component
+2. Status Message Component
+3. Scoreboard Component
+4. Cell Component
+5. Board Component
+6. Tic-Tac-Toe Game Component
+
+---
+
+1. Settings Component
+---------------------
+
+Purpose:
+- The `SettingsComponent` provides UI controls for restarting and resetting the game through the `GameStateService`.
+- It ensures that the game can be restarted or reset based on the player's action.
+
+What is it?
+- `SettingsComponent` is a component that offers two buttons: one for restarting the game and another for resetting the game state.
+
+Why is it Needed?
+- It allows users to easily restart or reset the game from the UI, ensuring a smooth user experience in managing game states.
+
+What does it contain?
+- Dependencies: `GameStateService` for methods like `restartGame()` and `resetGame()`
+- Buttons: `RESTART` and `RESET` for game controls
+- Click event handling methods: `onRestartBtnClick()` and `onResetBtnClick()` to trigger game state changes
+- Interaction with `GameStateService` for game state management
+
+How Does it Work?
+1. Button Interaction:
+   - The component includes two buttons: `RESTART` and `RESET`.
+
+2. Click Event Handling:
+   - `onRestartBtnClick()`: Calls `gameStateService.restartGame()` to restart the game.
+   - `onResetBtnClick()`: Calls `gameStateService.resetGame()` to reset the game.
+
+3. Updating the Game:
+   - The game’s state is updated immediately upon clicking either of the buttons, allowing for quick action.
+
+---
+
+2. Status Message Component
+---------------------------
+
+Purpose:
+- The `StatusMsgComponent` displays a status message (e.g., game updates) provided by `StatusMsgService`.
+
+What is it?
+- `StatusMsgComponent` is a component that shows dynamic status messages based on the game's state.
+
+Why is it Needed?
+- Players need to know the current game status, such as whose turn it is, if there's a winner, or if it's a tie. This component ensures that this information is displayed clearly.
+
+What does it contain?
+- Dependency: `StatusMsgService` for fetching status messages dynamically using `getStrStatusMsg()`
+- UI: A div element to show the status message dynamically using Angular's interpolation `{{ }}`
+
+How Does it Work?
+1. Displaying Messages:
+   - The component fetches the status message through `getStrStatusMsg()` method of `StatusMsgService` and displays it in the template.
+
+2. Real-time Updates:
+    - The message is updated in real-time as the game progresses using Angular's interpolation data binding `{{ }}`.
+    - Players can see the latest status without manual refresh.
+
+---
+
+3. Scoreboard Component
+-----------------------
+
+Purpose:
+- The `ScoreboardComponent` displays the current score of the game, including the number of wins for each player.
+- It also contains a section for displaying `Restart` and `Reset` buttons (linked with `SettingsComponent`).
+
+What is it?
+- `ScoreboardComponent` is a component that shows the current score of the game and provides options for restarting or resetting the game.
+
+Why is it Needed?
+- Players want to track their progress and see who's winning.
+- This component provides a visual representation of the game's score.
+
+What does it contain?
+- Dependency: `GameStateService` for fetching the current scores
+- UI: Scoreboard layout showing the number of wins for each player & tie, along with `SettingsComponent` for game control buttons
+- Local Variables:
+  - Stores player scores, tie score, and gameStatus locally to simplify template usage.
+  - Initializes gameStatus to IN_PROGRESS and keeps it updated through a subscription to gameStateService.getGameStatus$().
+- Real-time Updates:
+  - Subscribes to gameStateService.getGameStatus$() to keep gameStatus in sync with the actual game state.
+  - Player scores are incremented via player.score++ and the tie score via gameStateService.tieScore++ whenever there is a score update.
+
+How Does it Work?
+1. Displaying Scores:
+   - The component fetches the scores from `GameStateService` and displays them in the template.
+
+2. Real-time Updates:
+    - The scores are updated in real-time as the game progresses, reflecting the current state of the game.
+
+3. Restart and Reset Options:
+    - The component includes buttons for restarting and resetting the game, which trigger the corresponding methods in `SettingsComponent`.
+
+---
+
+4. Cell Component
+-----------------
+
+Purpose:
+- Displays a Tic-Tac-Toe cell with a symbol and highlights the winning cell.
+- Emits a `cellClicked` event when the cell is clicked.
+
+What is it?
+- A component that shows a symbol in a game cell and handles click events.
+
+Why is it Needed?
+- Allows players to interact with the game grid by marking cells and highlights winning cells.
+
+What does it contain?
+- Input Properties:
+  - `ticTacToeSymbol`: The symbol for the cell (`'X'`, `'O'`, or `EMPTY`).
+  - `isWinningCell`: A boolean to highlight the winning cell.
+
+- Output Property:
+  - `cellClicked`: Emits when the cell is clicked.
+
+- UI: Button displaying the symbol, with conditional styling for winning cells.
+
+How Does it Work?
+1. Displays the symbol based on `ticTacToeSymbol`.
+2. Highlights winning cells using `ngClass` when `isWinningCell` is `true`.
+3. Emits an event (`cellClicked`) on click, notifying the parent component.
+
+---
+
+5. Board Component
+------------------
+
+Purpose:
+- Manages the game board, displaying a 3x3 grid of cells.
+- Handles cell clicks and checks for win/tie conditions.
+
+What is it?
+- A component that represents the Tic-Tac-Toe game board, consisting of cells that players can interact with.
+
+Why is it Needed?
+- Allows players to play the game by interacting with the board and keeps track of game progress (win/tie).
+
+What does it contain?
+- Dependency:
+  - `GameStateService`: Manages game state, current player, scores, and game status.
+  - `CellComponent`: Displays individual game cells.
+
+- UI:
+  - Displays a 3x3 grid of `app-cell` components.
+  - Uses a `*ngFor` loop to render the grid dynamically.
+
+- Local Variables:
+  - `cellValues`: Stores the state of each cell (`TicTacToeSymbol.EMPTY`, `'X'`, or `'O'`).
+  - `winningCells`: Tracks which cells are part of the winning combination.
+
+- Methods:
+  - `handleCellClick(index)`: Handles a click on a cell, updates the game state, checks for win/tie, and switches the player.
+  - `checkWin()`: Checks if there’s a winning combination.
+  - `checkTie()`: Checks if the game is tied.
+  - `clearBoard()`: Resets the board.
+
+How Does it Work?
+1. Display Grid:
+   - The grid is displayed using a `*ngFor` loop, rendering 3 rows of 3 cells (`app-cell`).
+
+2. Handling Cell Click:
+  - When the Game is In Progress:
+    - Skip move if the cell is already filled.
+    - Place the current player's symbol in the clicked cell.
+    - Check for win or tie:
+      - Win: Update the game status to `WIN`, highlight the winning cells, and update the winner's score.
+      - Tie: Update the game status to `TIE`, reset the turns.
+    - Switch to the next player after each move if the game is still in progress.
+
+  - When the Game is Over:
+    - Reset the board and start a new game by updating the game status to `IN_PROGRESS`.
+
+3. Check Win or Tie:
+   - After each move, the component checks for a win or tie condition:
+     - Win: If a winning combination is found, the `winningCells` array is updated to highlight the winning cells, and the game state is updated to `WIN`.
+     - Tie: If all cells are filled and no winner, the game state is updated to `TIE`.
+
+4. Reset Game:
+   - If the game is over (win/tie), the board is reset, and the game restarts.
+
+Key Points:
+- Input:
+  - cellValues: Holds the values for the game grid.
+  - winningCells: Tracks and highlights winning cells.
+
+- Output:
+  - Emits a cellClicked event, triggering a change in the game state.
+
+- Local Variables & Methods:
+  - `cellValues`: (Input) Holds current state of each cell.
+  - `winningCells`: (Input) Tracks the winning cells.
+  - `handleCellClick`: (Output) Updates the board and game state on cell click.
+  - `checkWin`: Identifies winning combinations.
+  - `checkTie`: Checks for a tie when all cells are filled.
+  - `clearBoard`: Resets the board for a new game.
+
+---
+
+6. Tic-Tac-Toe Game Component
+-----------------------------
+
+Purpose:
+- Combines three child components for the overall Tic-Tac-Toe game UI.
+- Displays the game status, board, and scoreboard.
+
+What is it?
+- A component that represents the entire Tic-Tac-Toe game, integrating three sub-components: `StatusMsgComponent`, `BoardComponent`, and `ScoreboardComponent`.
+
+Why is it Needed?
+- Provides the main structure for the game by assembling and organizing the individual components responsible for game status, board rendering, and score tracking.
+
+What does it contain?
+- Imports:
+  - `StatusMsgComponent`: Displays the current status of the game (e.g., who's turn it is or if someone has won).
+  - `BoardComponent`: Renders the game board, which is a 3x3 grid of cells.
+  - `ScoreboardComponent`: Displays the player's scores.
+
+- UI:
+  - Uses a `main` container to hold all three child components (`app-status-msg`, `app-board`, `app-scoreboard`) in a clean layout with Tailwind CSS.
+
+How Does it Work?
+1. Component Setup:
+   - The component is standalone and imports `StatusMsgComponent`, `BoardComponent`, and `ScoreboardComponent` to compose the full Tic-Tac-Toe game.
+
+2. Template Structure:
+   - The layout is wrapped in a `main` tag that centers the content on the page (`mx-auto` for centering, `w-1/2` for width, `mt-20` for top margin).
+   - Each child component is inserted within the `main` container, creating a clean and organized UI for the game.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
+System Design - Services
+------------------------
+
+List of Services:
+1. StatusMsgService
+2. GameStateService
+
+---
+
+1. StatusMsgService
+-------------------
+
+Purpose:
+- Manages and updates the game status message.
+- Reflects the current game state (in progress, win, or tie) and displays the current player's name and symbol.
+
+What is it?
+- An injectable service that updates and provides the current status message of the Tic-Tac-Toe game based on the game state and the current player.
+
+Why is it Needed?
+- Keeps track of the game status and updates the message dynamically as the game progresses, ensuring that the user always sees the correct game status (who's turn it is, whether there's a winner, or if the game is tied).
+
+What does it contain?
+- Dependency:
+  - `GameStateService`: Provides the current player and game status observables, which are used to update the game status message.
+
+- Methods:
+  - `initializeStrStatusMsg()`: Initializes the status message based on the initial game state and current player.
+  - `initializeSubscriptions()`: Subscribes to the game state and current player observables to update the status message when the game progresses.
+  - `updateStatusMsg(gameStatus, currentPlayer)`: Updates the game status message based on the current game state and player.
+  - `getStrStatusMsg()`: Returns the current status message.
+
+How Does it Work?
+1. Initialize Status Message:
+   - On initialization, the service fetches the current player and game status using the `GameStateService` and updates the status message.
+
+2. Subscriptions:
+   - Subscribes to the `currentPlayer$` and `gameStatus$` observables from the `GameStateService`. Whenever the game state or the current player changes, the service updates the status message accordingly.
+
+3. Updating Status Message:
+   - Based on the game state (`IN_PROGRESS`, `TIE`, `WIN`), the status message is updated to reflect the current game status and player.
+
+4. Accessing Status Message:
+    - The service provides a method `getStrStatusMsg()` to retrieve the current status message, which can be used by other components to display the game status.
+
+---
+
+2. GameStateService
+-------------------
+
+Purpose:
+- Manages the state of the game, including current player, game status, player scores, and game actions like switching players, resetting turns, and restarting the game.
+
+What is it?
+- An injectable service that keeps track of the game's state, including the current player, game status, score updates, and other game-related actions.
+
+Why is it Needed?
+- Centralizes game state management and provides a way to update and access the current state of the game, ensuring smooth transitions between game phases (e.g., player turns, win/tie conditions, and game resets).
+
+What does it contain?
+- Dependencies:
+  - `PlayerHelper`: Used to initialize the players and handle player-related actions.
+
+- Properties:
+  - `players`: List of `Player` objects representing the two players.
+  - `currentPlayer$`: BehaviorSubject that tracks the current player.
+  - `gameStatus$`: BehaviorSubject that tracks the current game status (in progress, win, tie).
+  - `clearBoardEvent$`: BehaviorSubject that signals when the board should be cleared (for game resets).
+  - `tieScore`: Tracks the number of tied games.
+
+- Methods:
+  - `switchCurrentPlayer()`: Switches the current player to the next player.
+  - `resetTurns()`: Resets the turn status of all players.
+  - `updateGameStatusValue(gameStatus)`: Updates the current game status.
+  - `updateCurrentPlayerScore()`: Increments the current player's score.
+  - `updateTieScore()`: Increments the tie score.
+  - `updateWinner()`: Marks the current player as the winner.
+  - `resetWinners()`: Resets the winner status of all players.
+  - `restartGame()`: Resets the game state, including switching players and resetting the game status.
+  - `resetGame()`: Resets the players' scores, tie score, and restarts the game.
+
+How Does it Work?
+1. Initial Setup:
+   - On initialization, the `players` array is populated using the `PlayerHelper` service. The `currentPlayer$` and `gameStatus$` are initialized to track the game state.
+
+2. Switching Players:
+   - The `switchCurrentPlayer()` method updates the `currentPlayer$` BehaviorSubject to switch between players after each move.
+
+3. Score and Winner Management:
+   - The service handles score increments and tracks winners using methods like `updateCurrentPlayerScore()`, `updateTieScore()`, and `updateWinner()`.
+
+4. Resetting and Restarting the Game:
+   - Methods like `resetTurns()`, `resetWinners()`, `restartGame()`, and `resetGame()` ensure that the game can be reset, restarted, or cleared after each round, preparing the system for a new game.
+
+5. Observable Data:
+   - `BehaviorSubject` and `Observable` are used to provide real-time game data updates. The game status, current player, and board clearing events are all observable.
+
+---
+
+----------------------------------------------------------------------------------------------------

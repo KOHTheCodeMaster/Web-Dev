@@ -20,6 +20,15 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         25th Dec 2K24 - 12:24 AM
+Commit Message:     253 - Angular Projects - Tic Tac Toe Game - System Design - Components & Services
+
+Quick Summary:
+- Added System Design document for the Tic Tac Toe game components and services.
+- Documented the component hierarchy, interactions, and services for the game.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         24th Dec 2K24 - 02:02 PM
 Commit Message:     252 - Projects - Angular Multi Projects - Tic Tac Toe Game
 

@@ -1,19 +1,20 @@
 import {Component} from '@angular/core';
 import {GameStateService} from "../../../services/game-state.service";
 import {Player} from "../../../shared/model/player.model";
-import {SettingsComponent} from "../settings/settings.component";
 import {GameStatus} from "../../../shared/model/game-status.enum";
 import {NgClass} from "@angular/common";
+import {SettingsComponent} from "./settings/settings.component";
 
 @Component({
-  selector: 'app-scoreboard',
-  standalone: true,
+    selector: 'app-scoreboard',
+    standalone: true,
     imports: [
         SettingsComponent,
-        NgClass
+        NgClass,
+        SettingsComponent
     ],
-  templateUrl: './scoreboard.component.html',
-  styleUrl: './scoreboard.component.css'
+    templateUrl: './scoreboard.component.html',
+    styleUrl: './scoreboard.component.css'
 })
 export class ScoreboardComponent {
 
@@ -24,16 +25,14 @@ export class ScoreboardComponent {
     tieScore: number;
 
     constructor(public gameStateService: GameStateService) {
+        // this.gameStatus = GameStatus.IN_PROGRESS;
         this.gameStatus = GameStatus.IN_PROGRESS;
         this.player1 = this.gameStateService.getPlayerList()[0];
         this.player2 = this.gameStateService.getPlayerList()[1];
         this.tieScore = this.gameStateService.getTieScore();
-    }
 
-    ngOnInit(): void {
-        this.gameStateService.getGameStatus$().subscribe(status => {
-            this.gameStatus = status;
-        });
+        //  Subscribe to the game status for live updates
+        this.gameStateService.getGameStatus$().subscribe(status => this.gameStatus = status);
     }
 
 }

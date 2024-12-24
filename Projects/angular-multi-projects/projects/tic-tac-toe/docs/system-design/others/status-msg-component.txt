@@ -1,0 +1,116 @@
+
+StatusMsgComponent: Minimalistic & Readable System Design Doc
+
+---
+
+Purpose
+The `StatusMsgComponent` displays a status message (e.g., game updates) provided by `StatusMsgService`.
+
+---
+
+Key Steps to Build This Component
+
+1. Define the Component
+
+- Selector: `app-status-msg` (for embedding in HTML).
+- Standalone: Declare as standalone for modularity and easy reuse.
+- Template & Styles: Use external files for structure and styling:
+  - `status-msg.component.html`
+  - `status-msg.component.css`
+
+```ts
+@Component({
+  selector: 'app-status-msg',
+  standalone: true,
+  templateUrl: './status-msg.component.html',
+  styleUrls: ['./status-msg.component.css']
+})
+```
+
+---
+
+2. Inject Dependencies
+
+- Inject `StatusMsgService` to fetch the status message.
+- Mark it `public` to enable template access.
+
+Why?
+Centralizing logic in the service keeps the component clean and focused on display.
+
+```ts
+constructor(public statusMsgService: StatusMsgService) {}
+```
+
+---
+
+3. Template Logic
+
+- Use Angular’s interpolation (`{{ }}`) to bind the message dynamically.
+- Fetch the message via `getStrStatusMsg()` in the service.
+
+```html
+<div id="id-status-msg" class="w-fit mx-auto my-4 text-green-500 text-xl">
+  {{ statusMsgService.getStrStatusMsg() }}
+</div>
+```
+
+Why?
+Dynamic binding ensures real-time updates in the view.
+
+---
+
+How It Works
+
+1. Fetch Data: The service (`getStrStatusMsg()`) supplies the message.
+2. Display Data: The component binds it dynamically to the view.
+3. Styling: Tailwind CSS handles alignment, spacing, and visuals.
+
+---
+
+Why This Approach?
+
+- Clarity: Logic (`StatusMsgService`) is separate from presentation (`StatusMsgComponent`).
+- Reusability: Standalone nature supports seamless integration elsewhere.
+- Reactiveness: Auto-updates whenever the service data changes.
+
+---
+
+Recreating the Component
+
+1. Import Required Modules:
+   ```ts
+   import { Component } from '@angular/core';
+   import { StatusMsgService } from '../../../services/status-msg.service';
+   ```
+
+2. Define Component Decorator:
+   ```ts
+   @Component({
+     selector: 'app-status-msg',
+     standalone: true,
+     templateUrl: './status-msg.component.html',
+     styleUrls: ['./status-msg.component.css']
+   })
+   ```
+
+3. Class Definition with Dependency Injection:
+   ```ts
+   export class StatusMsgComponent {
+     constructor(public statusMsgService: StatusMsgService) {}
+   }
+   ```
+
+4. Template File (`status-msg.component.html`):
+   ```html
+   <div id="id-status-msg" class="w-fit mx-auto my-4 text-green-500 text-xl">
+     {{ statusMsgService.getStrStatusMsg() }}
+   </div>
+   ```
+
+5. CSS File (`status-msg.component.css`):
+   Add design styles based on your requirements.
+
+---
+
+Conclusion
+This concise guide explains what to do, why it’s done, and how to implement the `StatusMsgComponent`. Follow these steps for a clean, functional, and reusable component.

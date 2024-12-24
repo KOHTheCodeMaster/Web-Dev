@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject} from "rxjs";
 import {Player} from "../shared/model/player.model";
 import {GameStatus} from "../shared/model/game-status.enum";
 import {PlayerHelper} from "../shared/utils/player-helper";
@@ -92,7 +92,7 @@ export class GameStateService {
         return this.gameStatus$;
     }
 
-    getClearBoardEvent$(): Observable<boolean> {
+    getClearBoardEvent$(): BehaviorSubject<boolean> {
         return this.clearBoardEvent$;
     }
 

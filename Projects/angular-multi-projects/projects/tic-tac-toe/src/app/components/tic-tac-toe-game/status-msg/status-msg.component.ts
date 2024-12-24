@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {StatusMsgService} from "../../../services/status-msg.service";
 
 @Component({
@@ -10,10 +10,7 @@ import {StatusMsgService} from "../../../services/status-msg.service";
 })
 export class StatusMsgComponent {
 
-    @Input() message: string;
-
     constructor(public statusMsgService: StatusMsgService) {
-        this.message = '';
     }
 
 }
