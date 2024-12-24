@@ -1,0 +1,291 @@
+Arkanoid Game Core Design
+
+---
+
+Global States:
+The global states are managed in the root GameComponent to maintain synchronization across child components.
+
+1. gameStatus: Represents the current state of the game.
+
+Possible values:
+- "ongoing": The game is active.
+- "win": The player has won.
+- "lose": The player has lost.
+
+
+2.
+
+
+
+---
+
+
+Component Structure:
+
+1. Score Component:
+-------------------
+
+Responsibilities:
+- Manages the player's score and High Score in the game.
+- Updates the score based on game events.
+
+Key Methods:
+
+1. updateScore(score): Updates the player's score.
+2. updateHighScore(score): Updates the high score.
+3. resetScore(): Resets the player's score.
+4. resetHighScore(): Resets the high score.
+
+Triggered By:
+- Game events like hitting a brick, losing a life, or completing a level.
+- User interaction to restart the game.
+
+Actions:
+- Update the player's score based on the event.
+- Update the high score if the current score exceeds the high score.
+- Reset the player's score on game over or reset.
+- Reset the high score on user interaction.
+
+
+2. Player Lives Component:
+-------------------
+
+Responsibilities:
+- Manages the player's lives in the game.
+- Updates the lives based on game events.
+
+Key Methods:
+1. updateLives(lives): Updates the player's lives.
+2. resetLives(): Resets the player's lives.
+
+
+Triggered By:
+- Game events like losing a life or completing a level.
+- User interaction to restart the game.
+
+Actions:
+- Update the player's lives based on the event.
+- Reset the player's lives on game over or reset.
+
+
+3. Game Controls Component:
+-------------------
+
+Responsibilities:
+- Provides controls to start, pause, and restart the game.
+- Handles user interactions for game controls.
+
+Key Methods:
+1. resumeGame(): Resumes the game.
+2. pauseGame(): Pauses the game.
+3. restartGame(): Restarts the game.
+
+Triggered By:
+- User interaction with the game controls.
+
+Actions:
+- Resume the game to continue gameplay.
+- Pause the game to stop the ball movement and interactions.
+- Restart the game by resetting the game state.
+
+
+4. Side Panel Component:
+-------------------
+
+Responsibilities:
+- Contains the score component, player lives component, and game controls component.
+- Provides options to restart the game or pause/resume.
+
+
+Key Methods:
+1. restartGame(): Restarts the game.
+2. pauseGame(): Pauses the game.
+3. resumeGame(): Resumes the game.
+
+
+Triggered By:
+- User interaction with the restart, pause, or resume buttons.
+- Game events like game over or level completion.
+
+Actions:
+- Restart the game by resetting the score, lives, and game state.
+- Pause the game to stop the ball movement and interactions.
+- Resume the game to continue the gameplay.
+
+
+5. Ball Component:
+-------------------
+
+Responsibilities:
+- Manages the ball movement and interactions.
+- Detects collisions with the paddle, bricks, and walls.
+
+Key Methods:
+1. moveBall(): Moves the ball based on its velocity.
+2. checkCollisions(): Detects collisions with the paddle, bricks, and walls.
+3. updateVelocity(): Updates the ball's velocity after collisions.
+4. resetBall(): Resets the ball position and velocity.
+5. launchBall(): Launches the ball at the start of the game.
+6. stopBall(): Stops the ball movement.
+7. updateBallPosition(): Updates the ball's position based on its velocity.
+
+
+
+1. GameComponent (Root Component):
+----------------------------------
+
+Responsibilities:
+
+Key Methods:
+
+1. restart(): Resets the game board and toggles the starting player.
+
+Triggered By:
+- User clicking the restart button: Direct UI interaction.
+- User clicking the reset button: invoked by reset() method after resetting the scores.
+
+Actions:
+- Clear board in BoardComponent.
+- gameStatus = "ongoing"
+- Toggle currentPlayer ("P1" ↔ "P2").
+
+
+2. reset(): Completely resets the game, including scores.
+
+Triggered By: User clicking the reset button.
+
+Actions:
+- Reset scores in ScoreboardComponent.
+- Calls restart() to reset the game states.
+
+
+3. switchPlayer(): Toggles the current player.
+
+Actions:
+- Toggles currentPlayer between "P1" and "P2".
+
+---
+
+2. BoardComponent
+-----------------
+
+Responsibilities:
+- Manages the state of the game board (3x3 grid).
+- Handles cell updates and checks for win/tie conditions.
+
+Key Methods:
+
+1. cellClick(row, col): Handles cell click events.
+
+Triggered By: User clicking on a cell.
+
+Actions:
+- Draws the current player’s symbol on the clicked cell.
+- Calls checkWin() to evaluate the game state.
+- Calls checkTie() to determine if the game is tied.
+- Calls chanceToggle() to switch the current player.
+
+
+2. checkWin(): Checks for a winning combination.
+
+Triggered By: cellClick() after each move.
+
+Actions:
+- Evaluates all possible winning combinations (rows, columns, diagonals).
+- If a winning combination is found, updates gameStatus = "win".
+
+
+3. checkTie(): Checks for a tie condition.
+
+Triggered By: cellClick() after each move.
+
+Actions:
+- Checks If all cells are occupied and no winner, updates gameStatus = "tie".
+
+
+3. CellComponent
+-----------------
+
+Responsibilities:
+- Represents a single cell in the grid.
+- Handles individual cell updates.
+
+Key Methods:
+
+renderSymbol(playerSymbol): Draws the symbol ("X" or "O") based on the currentPlayer.
+
+Triggered By: cellClick() in BoardComponent.
+
+Actions:
+- Displays the currentPlayer's symbol in the cell.
+
+
+---
+
+4. ScoreboardComponent
+----------------------
+
+Responsibilities:
+- Tracks and displays scores for both players.
+- Highlights the current player’s turn.
+- Highlights the winning player.
+- Provides a reset option for scores.
+- Updates scores based on game outcomes.
+
+Key Methods:
+
+updateWinner(winner): Increment the score & Highlight the winning player when gameStatus = "win".
+
+Triggered By: State change in gameStatus = "win"
+
+Actions:
+- Actively listens for gameStatus changes.
+- Increment the score for the current player (winner)
+- Highlight the winning player on the scoreboard.
+
+
+resetScore(): Resets all scores to zero.
+
+Triggered By: User clicking the reset button.
+
+Actions:
+- Resets all the scores to zero.
+
+
+indicateCurrentPlayerTurn(): Highlights the current player's turn on the scoreboard.
+
+Triggered By: State change in `currentPlayer`.
+
+Actions:
+- Actively listens for `currentPlayer` changes.
+- Update the UI to reflect the current player's turn.
+
+
+
+5. StatusMsgComponent
+----------------------
+
+Responsibilities:
+- Displays the current game status message.
+- Updates based on gameStatus and currentPlayer.
+
+Possible Values:
+- "Turn: Player 1 (X)"
+- "Turn: Player 2 (O)"
+- "Winner: Player 1 (X)"
+- "Winner: Player 2 (O)"
+- "It's a Tie!"
+
+Key Methods:
+
+updateStatusMessage(): Updates the displayed message based on gameStatus and currentPlayer.
+
+Triggered By: State change in gameStatus or currentPlayer.
+
+Actions:
+- Actively listens for changes in gameStatus and currentPlayer.
+- Dynamically updates the displayed message based on the `gameStatus` & `currentPlayer` states.
+- Reflects the current player's turn or the game outcome based on gameStatus.
+
+
+

@@ -1,0 +1,12 @@
+<!-- Game gameBoard - 3x3 Grid with Borders for Tic Tac Toe -->
+<section class="w-fit h-fit mx-auto my-10 flex flex-col gap-1 bg-gray-400 text-5xl">
+  <div class="flex gap-1" *ngFor="let row of [0, 1, 2]; let rowIndex = index">
+    <app-cell
+      class="w-32 h-32 bg-black"
+      *ngFor="let col of [0, 1, 2]; let colIndex = index"
+      [ticTacToeSymbol]="cellValues[rowIndex * 3 + colIndex]"
+      [isWinningCell]="winningCells[rowIndex * 3 + colIndex]"
+      (cellClicked)="handleCellClick(rowIndex * 3 + colIndex)">
+    </app-cell>
+  </div>
+</section>
