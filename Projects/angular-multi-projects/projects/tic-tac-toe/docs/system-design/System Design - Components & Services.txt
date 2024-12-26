@@ -28,6 +28,12 @@ List of Components:
 
 ---
 
+List of Services:
+1. StatusMsgService
+2. GameStateService
+
+---
+
 1. Settings Component
 ---------------------
 
@@ -262,12 +268,6 @@ How Does it Work?
 
 System Design - Services
 ------------------------
-
-List of Services:
-1. StatusMsgService
-2. GameStateService
-
----
 
 1. StatusMsgService
 -------------------

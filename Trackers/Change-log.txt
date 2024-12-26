@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         26th Dec 2K24 - 09:45 AM
+Commit Message:     255 - Angular Projects - Snake Game - Core Design & Component Hierarchy
+
+Quick Summary:
+- Added core design and component hierarchy for the Snake Game in Angular.
+- Using Cell Component, CellState Enum for handling the elements of the game board.
+- Implemented Game Board Component & GameBoard Service for rendering the game board.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         25th Dec 2K24 - 12:24 AM
 Commit Message:     253 - Angular Projects - Tic Tac Toe Game - System Design - Components & Services
 

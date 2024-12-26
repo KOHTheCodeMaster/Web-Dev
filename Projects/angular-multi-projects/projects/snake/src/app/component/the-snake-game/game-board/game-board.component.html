@@ -1,0 +1,11 @@
+<div class="w-full h-full flex justify-center items-center border border-yellow-500">
+
+    <div class="w-fit h-fit p-1 border">
+
+        <div class="flex" *ngFor="let cellRow of gameBoardService.getCellsGrid()">
+            <app-cell *ngFor="let cell of cellRow" [cellState]="cell.cellState"></app-cell>
+        </div>
+
+    </div>
+
+</div>

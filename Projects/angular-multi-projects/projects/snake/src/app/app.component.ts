@@ -1,13 +1,15 @@
 import {Component} from '@angular/core';
-import {DemoGoogleComponent} from "./components/demo-practice/demo-google/demo-google.component";
+import {TheSnakeGameComponent} from "./component/the-snake-game/the-snake-game.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [DemoGoogleComponent],
+    imports: [
+        TheSnakeGameComponent
+    ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
 export class AppComponent {
-    title: string = 'Frontend-Web-Dev';
+    title = 'snake';
 }

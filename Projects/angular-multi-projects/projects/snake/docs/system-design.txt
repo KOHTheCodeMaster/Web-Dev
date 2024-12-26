@@ -1,0 +1,28 @@
+
+Time Stamp: 25th Dec 2K24 - 09:31 AM..!!
+
+Title: System Design - Components & Services for Snake Game
+
+Category: System Design -> Components & Services -> Angular Snake Game
+
+Keywords: System Design, Snake Game, Angular, Game Development, Services, Components
+
+Purpose: To outline the system design of components and services for a Snake Game in Angular.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+---
+
+System Design - Components
+--------------------------
+
+List of Components:
+
+---
+
+System Design - Services
+List of Services:
+
+---

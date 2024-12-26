@@ -4,7 +4,7 @@ import {TicTacToeGameComponent} from "./components/tic-tac-toe-game/tic-tac-toe-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TicTacToeGameComponent, TicTacToeGameComponent],
+  imports: [TicTacToeGameComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
