@@ -3,11 +3,11 @@
     <!-- Play Area -->
     <div class="w-full h-[90%] ">
 
-<!--        <app-choose-level></app-choose-level>-->
+        <app-choose-level *ngIf="this.gameStatus === GameStatus.NOT_STARTED"></app-choose-level>
 
-<!--        <app-loading-screen></app-loading-screen>-->
+<!--        <app-loading-screen *ngIf="this.gameStatus === GameStatus.LOADING"></app-loading-screen>-->
 
-        <app-game-board></app-game-board>
+        <app-game-board *ngIf="this.gameStatus === GameStatus.IN_PROGRESS"></app-game-board>
 
     </div>
 

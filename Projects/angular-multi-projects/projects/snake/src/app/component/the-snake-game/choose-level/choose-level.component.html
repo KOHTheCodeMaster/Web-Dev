@@ -5,9 +5,12 @@
         <span class="text-3xl">Choose Level:</span>
 
         <div class="flex gap-6 text-4xl">
-            <button class="p-4 border rounded-xl hover:bg-gray-800 hover:text-green-500">Slug</button>
-            <button class="p-4 border rounded-xl hover:bg-gray-800 hover:text-green-500">Worm</button>
-            <button class="p-4 border rounded-xl hover:bg-gray-800 hover:text-green-500">Python</button>
+            <button class="p-4 border rounded-xl hover:bg-gray-800 hover:text-green-500"
+                    (click)="onLevelChange(Level.EASY)">Slug</button>
+            <button class="p-4 border rounded-xl hover:bg-gray-800 hover:text-green-500"
+                    (click)="onLevelChange(Level.MEDIUM)">Worm</button>
+            <button class="p-4 border rounded-xl hover:bg-gray-800 hover:text-green-500"
+                    (click)="onLevelChange(Level.HARD)">Python</button>
         </div>
     </div>
 </div>

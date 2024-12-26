@@ -15,7 +15,10 @@ import {GameBoardService} from "../../../service/game-board.service";
 })
 export class GameBoardComponent {
 
-    constructor(public gameBoardService: GameBoardService) {
+    constructor(public gameBoardService: GameBoardService,
+                ) {
+
+
     }
 
 }

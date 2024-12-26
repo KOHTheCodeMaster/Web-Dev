@@ -1,62 +1,67 @@
 import {Injectable} from '@angular/core';
 import {Cell} from "../shared/model/cell.model";
-import {CellState} from "../shared/model/cell-state.enum";
+import {SnakeService} from "./snake.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class GameBoardService {
 
-    cellsGrid!: Cell[][];
+    boardCells!: Cell[][];
     private rowSize: number = 10;
     private colSize: number = 10;
 
-    constructor() {
+    constructor(private snakeService: SnakeService) {
 
-        this.initCells();
+        this.initBoardEmptyCells();
+        this.renderSnake();
+
+        //  Listen to snake service for any changes in the snake
+        this.snakeService.getRefreshBoard$().subscribe(() => this.refreshBoard());
 
     }
 
-    initCells() {
+    initBoardEmptyCells() {
 
-        this.cellsGrid = [];
+        this.boardCells = [];
 
         for (let i = 0; i < this.rowSize; i++) {
-            this.cellsGrid[i] = [];
+            this.boardCells[i] = [];
             for (let j = 0; j < this.colSize; j++)
-                this.cellsGrid[i][j] = new Cell(i, j);
+                this.boardCells[i][j] = new Cell(i, j);
         }
 
-        this.initSnake();
-        this.initFood();
+        // this.initFood();
 
     }
 
-    initSnake() {
+    refreshBoard() {
 
-        let initialX = 5;
-        let initialY = 5;
-
-        this.cellsGrid[initialX][initialY].cellState = CellState.SNAKE_HEAD;
-        this.cellsGrid[initialX][initialY + 1].cellState = CellState.SNAKE_BODY;
-        this.cellsGrid[initialX][initialY + 2].cellState = CellState.SNAKE_BODY;
+        this.renderSnake();
 
     }
 
-    initFood() {
-        //  Randomly place food on any empty cell in the grid
-
-        let x: number;
-        let y: number;
-
-        do {
-            x = Math.floor(Math.random() * this.rowSize);
-            y = Math.floor(Math.random() * this.colSize);
-        } while (this.cellsGrid[x][y].cellState !== CellState.EMPTY);
-
-        this.cellsGrid[x][y].cellState = CellState.FOOD;
-
+    renderSnake() {
+        let snake = this.snakeService.getSnake();
+        this.boardCells[snake.head.x][snake.head.y].replaceCell(snake.getHead());
+        for (let cell of snake.bodyCells) this.boardCells[cell.x][cell.y].replaceCell(cell);
     }
+
+    /*
+        initFood() {
+            //  Randomly place food on any empty cell in the grid
+
+            let x: number;
+            let y: number;
+
+            do {
+                x = Math.floor(Math.random() * this.rowSize);
+                y = Math.floor(Math.random() * this.colSize);
+            } while (this.boardCells[x][y].getCellState() !== CellState.EMPTY);
+
+            this.boardCells[x][y].setCellState(CellState.FOOD);
+
+        }*/
 
     //  Getters
     //  -------
@@ -70,7 +75,7 @@ export class GameBoardService {
     }
 
     getCellsGrid(): Cell[][] {
-        return this.cellsGrid;
+        return this.boardCells;
     }
 
 }

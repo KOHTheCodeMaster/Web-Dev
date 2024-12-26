@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {CellState} from "../../../../shared/model/cell-state.enum";
 import {NgClass} from "@angular/common";
+import {Cell} from "../../../../shared/model/cell.model";
 
 @Component({
     selector: 'app-cell',
@@ -15,7 +16,7 @@ export class CellComponent {
 
     protected readonly CellState = CellState;
 
-    @Input() cellState!: CellState;
+    @Input() cell!: Cell;
 
     constructor() {
     }

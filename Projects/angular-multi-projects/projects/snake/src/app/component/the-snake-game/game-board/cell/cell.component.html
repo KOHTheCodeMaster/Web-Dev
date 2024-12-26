@@ -1,10 +1,11 @@
 <span
     [ngClass]="{
-        'bg-gray-600': cellState === CellState.EMPTY,
-        'bg-green-500': cellState === CellState.FOOD,
-        'bg-blue-500': cellState === CellState.SNAKE_BODY,
-        'bg-blue-700': cellState === CellState.SNAKE_HEAD
+        'bg-gray-600': cell.getCellState() === CellState.EMPTY,
+        'bg-green-500': cell.getCellState() === CellState.FOOD,
+        'bg-blue-500': cell.getCellState() === CellState.SNAKE_BODY,
+        'bg-blue-700': cell.getCellState() === CellState.SNAKE_HEAD
     }"
     class="w-8 h-8 m-0.5 flex justify-center items-center text-xl ">
-        {{ cellState === CellState.SNAKE_HEAD ? '<' : '' }}
+        {{ cell.getCellValue() }}
+    <!--        {{ cell.getCellState() === CellState.SNAKE_HEAD ? cell.getCellValue() : '' }}-->
 </span>

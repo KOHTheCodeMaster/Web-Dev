@@ -20,7 +20,40 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
-Time Stamp:         26th Dec 2K24 - 09:45 AM
+Time Stamp:         27th Dec 2K24 - 12:53 AM
+Commit Message:     257 - Angular Projects - Snake Game - Added Components & Service Implementations
+
+Overview:
+- Added Multiple Components & Services for the Snake Game.
+- Implemented the rendering of the game board and initial position of snake with the head.
+
+Components:
+- [Done] Choose Level Component for selecting the game difficulty level.
+- [Done] Loading Screen Component for displaying the countdown timer.
+- Initialized the Scoreboard Component for tracking the player's score and high score.
+- Implemented the Game Board Component for rendering the board grid cells.
+
+Service Implementation:
+- Implemented Snake Service for handling the snake's movement and position.
+- Implemented Score Service for tracking the player's score and high score.
+- Added Keyboard Input Service for listening to arrow key events for snake movement.
+- Implemented Game State Service for managing the game status & level.
+
+Enums & Models:
+- Added Snake Direction Enum for handling the snake's movement directions.
+- Added Level Enum for defining the game difficulty levels.
+- Implemented Snake Model for the snake's position and direction.
+
+
+Summary:
+- Added multiple components and services for the Snake Game.
+- Implemented the rendering of the game board and initial position of the snake with the head.
+- Services handle the snake's movement, score tracking, keyboard input, and game state management.
+- Enums and models are used to define directions, levels, and snake properties.
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp:         26th Dec 2K24 - 06:01 PM
 Commit Message:     256 - Angular Projects - Tic Tac Toe Game - System Design - v2
 
 Quick Summary:

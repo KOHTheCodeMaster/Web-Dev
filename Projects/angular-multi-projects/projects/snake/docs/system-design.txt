@@ -15,14 +15,249 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 ---
 
-System Design - Components
---------------------------
+
+
+UI Elements:
+------------
+
+1.
+2. Game Board: Grid layout to display the snake and food.
+3. Scoreboard: Displays the current score.
+4. Settings: Options to restart the game & reset scores.
+
+---
+
+System Design - Core Idea
+-------------------------
+
+Overview:
+
+- The Snake Game consists of a game board, a snake that moves around the board, food that the snake eats to grow, and a score that tracks the player's progress.
+- The screen is divided into 2 parts: Top (90% - Play Area) and Bottom (10% - Score).
+
+- Score Board: Display the current score, Difficulty Level, and High Score.
+
+- For Top Main portion, there will be 4 things that will be displayed:
+  - Choose Level (Easy, Medium, Hard) - This will be the launch screen.
+  - Loading Screen - This will be displayed after the level is selected and the game is loading.
+  - Game Board - This will be the main game area where the snake moves and eats food.
+  - Game Over Screen - This will be displayed when the game is over.
+
+1. Choose Level:
+- Title: "The Snake Game"
+- Text Label: "Choose Level:"
+- 3 Buttons: "Easy", "Medium", "Hard"
+- When a level is selected, the Loading Screen will be displayed.
+
+2. Loading Screen:
+- Display a Countdown Timer (3, 2, 1, Go!) before the game starts.
+- After the countdown, the Game Board will be displayed.
+
+3. Game Board:
+- Grid layout to display the snake and food.
+- Idk how to design & track the position of the grid, snake, and food.
+
+4. Game Over Screen:
+- When the Snake collides with the wall or itself, the Game Over Screen will be displayed.
+- Make the Game Board opacity 0.5 and display a "Game Over" message.
+- When the current score is higher than the high score, display a "New High Score" message.
+- When user clicks anywhere on the Game Over Screen, Restart the game and display the Choose Level screen.
+- Restart game states by resetting the current score to 0, snake to initial position, and food to a new position.
+
+---
+
+System Design - Entities
+------------------------
+
+List of Models:
+1. Snake Direction Enum
+2. Game Status Enum
+3. Snake Segment Interface
+4. Food Interface
+
+---
+
+List of Services:
+1. Game State Service
+2. Status Message Service
+
+---
 
 List of Components:
+1. App Component
+2. Snake Game Component
+3. Status Message Component
+4. Game Board Component
+5. Settings Component
+6. Scoreboard Component
 
 ---
 
-System Design - Services
-List of Services:
+Overview:
+- ...
 
 ---
+
+Models:
+-------
+
+1. Snake Direction Enum:
+- `UP`: Snake moves up.
+- `DOWN`: Snake moves down.
+- `LEFT`: Snake moves left.
+- `RIGHT`: Snake moves right.
+
+2. Game Status Enum:
+- `IN_PROGRESS`: Game is in progress.
+- `GAME_OVER`: Game is over.
+
+3. Snake Segment Interface:
+- `x`: X-coordinate of the segment.
+- `y`: Y-coordinate of the segment.
+
+4. Food Interface:
+- `x`: X-coordinate of the food.
+- `y`: Y-coordinate of the food.
+
+---
+
+Services:
+---------
+
+1. Status Message Service:
+--------------------------
+
+1. Dependency:
+- `GameStateService` to get the `gameStatus` values.
+
+2. Core Functionality:
+- `strStatusMsg`: String value to display the game status message.
+- `getStrStatusMsg()`: Getter method to return the `strStatusMsg` value.
+- `initializeStrStatusMsg()`: Initialize the `strStatusMsg` value based on the initial `gameStatus` value.
+
+- `initializeSubscriptions()`:
+  - Method to subscribe to the `gameStatus$` observable.
+  - Whenever there's a change in the `gameStatus`, call the `updateStatusMsg()` method.
+
+- `updateStatusMsg()`: Update the `strStatusMsg` based on the `gameStatus` value of the `GameStateService`.
+  - If `gameStatus` is `IN_PROGRESS`: `Game is in progress`
+  - If `gameStatus` is `GAME_OVER`: `Game Over`
+
+---
+
+2. Game State Service:
+----------------------
+
+1. Overview:
+- Manages the game state, snake movement, food placement, and game status.
+- Handles updating the snake's position, checking for collisions, and placing food.
+- Emits observables for changes in the game status and board updates.
+- Provides methods to update the game state based on the snake's actions.
+
+2. Core Functionality
+
+- Data Members:
+  - `snake`: Array of `SnakeSegment` objects representing the snake's body.
+  - `food`: `Food` object representing the food's position.
+  - `direction$`: BehaviorSubject to manage the snake's direction.
+  - `gameStatus$`: BehaviorSubject to track the current game status.
+  - `score`: A numeric value to track the current score.
+
+- Initialization:
+  - `constructor()`: Initializes `snake`, `food`, `direction$`, `gameStatus$`, and `score`.
+
+3. Methods
+
+Game State Management
+- `updateDirection(direction: SnakeDirection)`: Updates the snake's direction.
+- `moveSnake()`: Moves the snake based on the current direction.
+- `checkCollision()`: Checks if the snake has collided with itself or the walls.
+- `placeFood()`: Places food at a random position on the board.
+- `restartGame()`: Restarts the game with:
+  - Snake reset to initial position.
+  - Food placed at a new position.
+  - Game status reset to `IN_PROGRESS`.
+  - Score reset to 0.
+
+- `resetGame()`: Completely resets the game:
+  - Resets the snake, food, direction, game status, and score.
+
+Player & Score Management
+- `updateScore()`: Increments the score when the snake eats food.
+
+Getters
+- `getScore()`: Returns the current score.
+- `getSnake()`: Returns the snake's segments.
+- `getFood()`: Returns the food's position.
+- `getDirection$()`: Observable for the snake's direction.
+- `getGameStatus$()`: Observable for the game status.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
+1. Status Message:
+------------------
+
+1. Dependency:
+- Status Message Service for `strStatusMsg` to display the game status message in the UI.
+
+2. UI Element:
+- Simple `div` element to display the game status message as text based on the `strStatusMsg` from the service.
+- Dynamic text based on the `strStatusMsg` (In Progress, Game Over) from `StatusMsgService` using Angular interpolation.
+  `{{ this.statusMsgService.getStrStatusMsg() }}`
+
+---
+
+2. Game Board:
+--------------
+
+Overview:
+- Grid layout to display the snake and food.
+- The snake is represented by a series of `div` elements.
+- The food is represented by a single `div` element.
+- The board component handles the rendering of the snake and food based on their positions.
+
+1. Inputs:
+- `snake`: Array of `SnakeSegment` objects representing the snake's body.
+- `food`: `Food` object representing the food's position.
+
+2. Outputs:
+- None
+
+---
+
+3. Settings Component:
+----------------------
+
+UI:
+- Section containing two buttons: Restart and Reset.
+- Each button triggers a respective method in the component when clicked.
+
+Dependencies:
+- Game State Service to manage game state actions.
+
+Methods:
+- `onRestartBtnClick()`: Calls the `restartGame()` method from the Game State Service to restart the game.
+- `onResetBtnClick()`: Calls the `resetGame()` method from the Game State Service to reset the game.
+
+----------------------------------------------------------------------------------------------------
+
+4. Scoreboard Component:
+------------------------
+
+UI:
+- Section displaying the current score.
+- The score is displayed with dynamic styling based on the game status.
+
+Dependencies:
+- Game State Service to get the current score and game status.
+
+Data Members:
+- `gameStatus`: Current game status.
+- `score`: Current score.
+
+Methods:
+- None (relies on Game State Service for data and updates).
+
+----------------------------------------------------------------------------------------------------

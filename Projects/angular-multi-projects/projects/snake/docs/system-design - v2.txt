@@ -1,0 +1,274 @@
+
+Time Stamp: 25th Dec 2K24 - 09:31 AM..!!
+
+Title: System Design - Components & Services for Snake Game
+
+Category: System Design -> Components & Services -> Angular Snake Game
+
+Keywords: System Design, Snake Game, Angular, Game Development, Services, Components
+
+Purpose: To outline the system design of components and services for a Snake Game in Angular.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+---
+
+
+
+UI Elements:
+------------
+
+1. Choose Level: Buttons to select the difficulty level.
+2. Loading Screen: Countdown timer before the game starts.
+3. Game Board: Grid layout to display the snake and food.
+4. Game Over Screen: Displayed when the game is over.
+5. Scoreboard: Displays the current score, difficulty level, and high score.
+
+---
+
+System Design - Core Idea
+-------------------------
+
+Overview:
+
+- The Snake Game consists of a game board, a snake that moves around the board, food that the snake eats to grow, and a score that tracks the player's progress.
+- The screen is divided into 2 parts: Top (90% - Play Area) and Bottom (10% - Score).
+
+- Score Board: Display the current score, Difficulty Level, and High Score.
+
+- For Top Main portion, there will be 4 things that will be displayed:
+  - Choose Level (Easy, Medium, Hard) - This will be the launch screen.
+  - Loading Screen - This will be displayed after the level is selected and the game is loading.
+  - Game Board - This will be the main game area where the snake moves and eats food.
+  - Game Over Screen - This will be displayed when the game is over.
+
+1. Choose Level:
+- Title: "The Snake Game"
+- Text Label: "Choose Level:"
+- 3 Buttons: "Easy", "Medium", "Hard"
+- When a level is selected, the Loading Screen will be displayed.
+
+2. Loading Screen:
+- Display a Countdown Timer (3, 2, 1, Go!) before the game starts.
+- After the countdown, the Game Board will be displayed.
+
+3. Game Board:
+- Grid layout to display the snake and food.
+- Idk how to design & track the position of the grid, snake, and food.
+
+4. Game Over Screen:
+- When the Snake collides with the wall or itself, the Game Over Screen will be displayed.
+- Make the Game Board opacity 0.5 and display a "Game Over" message.
+- When the current score is higher than the high score, display a "New High Score" message.
+- When user clicks anywhere on the Game Over Screen, Restart the game and display the Choose Level screen.
+- Restart game states by resetting the current score to 0, snake to initial position, and food to a new position.
+
+---
+
+
+---
+
+System Design - Entities
+------------------------
+
+List of Models:
+1. Snake Direction Enum
+2. Game Status Enum
+3. Snake Segment Interface
+4. Food Interface
+
+---
+
+List of Services:
+1. Game Status Service
+2. Snake Service
+3. Food Service
+4. Score Service
+
+---
+
+List of Components:
+1. App Component
+2. Snake Game Component
+3. Game Board Component
+4. Choose Level Component
+5. Loading Screen Component
+6. Game Over Screen Component
+7. Scoreboard Component
+
+---
+
+Overview:
+- ...
+
+---
+
+Models:
+-------
+
+1. Snake Direction Enum:
+- `UP`: Snake moves up.
+- `DOWN`: Snake moves down.
+- `LEFT`: Snake moves left.
+- `RIGHT`: Snake moves right.
+
+2. Game Status Enum:
+- `IN_PROGRESS`: Game is in progress.
+- `PAUSED`: Game is paused.
+- `GAME_OVER`: Game is over.
+
+...
+...
+...
+
+---
+
+Services:
+---------
+
+1. Game Status Service:
+-----------------------
+
+1. Overview:
+- Manages the game status and emits changes.
+
+2. Core Functionality:
+- `gameStatus$`: BehaviorSubject to track the current game status.
+- `updateGameStatus(status: GameStatus)`: Updates the current game status.
+
+---
+
+2. Snake Service:
+-----------------
+
+1. Overview:
+- Manages the snake's position and movement.
+
+2. Core Functionality:
+- `snake`: Array of `SnakeSegment` objects representing the snake's body.
+- `direction$`: BehaviorSubject to manage the snake's direction.
+- `moveSnake()`: Moves the snake based on the current direction.
+- `growSnake()`: Adds a new segment to the snake's body.
+- `checkCollision()`: Checks if the snake has collided with itself or the walls.
+
+---
+
+3. Food Service:
+----------------
+
+1. Overview:
+- Manages the food's position.
+
+2. Core Functionality:
+- `food`: `Food` object representing the food's position.
+- `placeFood()`: Places food at a random position on the board.
+
+---
+
+4. Score Service:
+-----------------
+
+1. Overview:
+- Manages the score.
+
+2. Core Functionality:
+- `score`: A numeric value to track the current score.
+- `updateScore()`: Increments the score when the snake eats food.
+- `resetScore()`: Resets the score to 0.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
+1. Game Board:
+--------------
+
+Overview:
+- Grid layout to display the snake and food.
+- The snake is represented by a series of `div` elements.
+- The food is represented by a single `div` element.
+- The board component handles the rendering of the snake and food based on their positions.
+
+1. Inputs:
+- `snake`: Array of `SnakeSegment` objects representing the snake's body.
+- `food`: `Food` object representing the food's position.
+
+2. Outputs:
+- None
+
+3. Methods:
+- `renderBoard()`: Renders the snake and food on the board.
+- `updateBoard()`: Updates the board based on the snake's movement and food's position.
+
+---
+
+2. Choose Level Component:
+--------------------------
+
+UI:
+- Section containing a title and three buttons: Easy, Medium, Hard.
+- Each button triggers a respective method in the component when clicked.
+
+Dependencies:
+- Game Status Service to manage game state actions.
+
+Methods:
+- `onEasyBtnClick()`: Sets the game difficulty to Easy and starts the game.
+- `onMediumBtnClick()`: Sets the game difficulty to Medium and starts the game.
+- `onHardBtnClick()`: Sets the game difficulty to Hard and starts the game.
+
+---
+
+3. Loading Screen Component:
+----------------------------
+
+UI:
+- Section displaying a countdown timer (3, 2, 1, Go!) before the game starts.
+
+Dependencies:
+- None
+
+Methods:
+- `startCountdown()`: Starts the countdown timer and transitions to the game board when finished.
+
+---
+
+4. Game Over Screen Component:
+------------------------------
+
+UI:
+- Section displaying a "Game Over" message.
+- If the current score is higher than the high score, display a "New High Score" message.
+- When the user clicks anywhere on the Game Over Screen, restart the game and display the Choose Level screen.
+
+Dependencies:
+- Game Status Service to manage game state actions.
+
+Methods:
+- `onScreenClick()`: Resets the game state and displays the Choose Level screen.
+
+---
+
+5. Scoreboard Component:
+------------------------
+
+UI:
+- Section displaying the current score, difficulty level, and high score.
+- The score is displayed with dynamic styling based on the game status.
+
+Dependencies:
+- Score Service to get the current score.
+- Game Status Service to get the current game status.
+
+Data Members:
+- `gameStatus`: Current game status.
+- `score`: Current score.
+- `difficultyLevel`: Current difficulty level.
+- `highScore`: High score.
+
+Methods:
+- None (relies on Score Service and Game Status Service for data and updates).
+
+----------------------------------------------------------------------------------------------------
