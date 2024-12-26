@@ -21,6 +21,16 @@ Change Log:
 ----------------------------------------------------------------------------------------------------
 
 Time Stamp:         26th Dec 2K24 - 09:45 AM
+Commit Message:     256 - Angular Projects - Tic Tac Toe Game - System Design - v2
+
+Quick Summary:
+- Refactored Tic Tac Toe Game for better readability and consistency.
+- Prepared New System Design document (v2) for Tic-Tac-Toe Game.
+- Readable Design Doc includes List of Entities, Components, Services & Models for the game.
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp:         26th Dec 2K24 - 09:45 AM
 Commit Message:     255 - Angular Projects - Snake Game - Core Design & Component Hierarchy
 
 Quick Summary:

@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {Player} from "../shared/model/player.model";
 import {GameStatus} from "../shared/model/game-status.enum";
-import {PlayerHelper} from "../shared/utils/player-helper";
+import {TicTacToeSymbol} from "../shared/model/tic-tac-toe-symbol";
 
 @Injectable({
     providedIn: 'root'
@@ -17,11 +17,19 @@ export class GameStateService {
 
     constructor() {
         //  Initialize the data members
-        this.players = PlayerHelper.initializePlayers();
+        this.players = this.initializePlayers();
         this.currentPlayer$ = new BehaviorSubject<Player>(this.players[0]);
         this.gameStatus$ = new BehaviorSubject<GameStatus>(GameStatus.IN_PROGRESS);
         this.clearBoardEvent$ = new BehaviorSubject<boolean>(false);
         this.tieScore = 0;
+    }
+
+    initializePlayers(): Player[] {
+        let player1 = new Player('1', 'Player 1', TicTacToeSymbol.X);
+        player1.updateTurn(true);
+
+        let player2 = new Player('2', 'Player 2', TicTacToeSymbol.O);
+        return [player1, player2];
     }
 
     switchCurrentPlayer() {

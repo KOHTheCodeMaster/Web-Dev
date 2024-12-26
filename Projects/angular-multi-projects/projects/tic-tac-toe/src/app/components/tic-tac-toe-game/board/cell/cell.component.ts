@@ -17,8 +17,4 @@ export class CellComponent {
     @Input() isWinningCell: boolean = false;
     @Output() cellClicked = new EventEmitter<void>();
 
-    onCellClicked() {
-        this.cellClicked.emit();
-    }
-
 }

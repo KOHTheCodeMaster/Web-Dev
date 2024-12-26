@@ -1,0 +1,45 @@
+
+Time Stamp: 25th Dec 2K24 - 12:24 AM..!!
+
+Title: System Design - List of Entities
+
+Category: System Design -> Components & Services -> Angular Tic-Tac-Toe Game
+
+Keywords: System Design, Components, Services, Angular, Frontend, Web Development, Game Development, Tic-Tac-Toe
+
+Purpose: To outline the system design of components and services for a Tic-Tac-Toe game in Angular.
+
+Dev: K.O.H..!! (Harshit Gupta)
+
+GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
+
+----------------------------------------------------------------------------------------------------
+
+System Design - Entities
+------------------------
+
+List of Models:
+1. Tic Tac Toe Symbol Enum
+2. Game Status Enum
+3. Player Model Interface
+
+---
+
+List of Services:
+1. Game State Service
+2. Status Message Service
+
+---
+
+List of Components:
+1. App Component
+2. Tic-Tac-Toe Game Component
+3. Status Message Component
+4. Board Component
+5. Cell Component
+6. Settings Component
+7. Scoreboard Component
+
+---
+
+----------------------------------------------------------------------------------------------------

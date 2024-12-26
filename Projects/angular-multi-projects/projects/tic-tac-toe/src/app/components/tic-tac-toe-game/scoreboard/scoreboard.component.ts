@@ -3,15 +3,12 @@ import {GameStateService} from "../../../services/game-state.service";
 import {Player} from "../../../shared/model/player.model";
 import {GameStatus} from "../../../shared/model/game-status.enum";
 import {NgClass} from "@angular/common";
-import {SettingsComponent} from "./settings/settings.component";
 
 @Component({
     selector: 'app-scoreboard',
     standalone: true,
     imports: [
-        SettingsComponent,
-        NgClass,
-        SettingsComponent
+        NgClass
     ],
     templateUrl: './scoreboard.component.html',
     styleUrl: './scoreboard.component.css'
@@ -25,7 +22,6 @@ export class ScoreboardComponent {
     tieScore: number;
 
     constructor(public gameStateService: GameStateService) {
-        // this.gameStatus = GameStatus.IN_PROGRESS;
         this.gameStatus = GameStatus.IN_PROGRESS;
         this.player1 = this.gameStateService.getPlayerList()[0];
         this.player2 = this.gameStateService.getPlayerList()[1];

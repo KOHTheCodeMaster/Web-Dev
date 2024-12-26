@@ -1,10 +1,10 @@
-<div class="w-[80%] mx-auto my-4 py-4 flex justify-between border">
+<div class="my-4 p-4 flex justify-between border">
 
   <!-- [FUTURE SCOPE] - Player Mode -->
-  <section class="w-[20%] ml-4 flex flex-col items-start gap-2 text-xl"></section>
+<!--  <section class="w-[20%] ml-4 flex flex-col items-start gap-2 text-xl"></section>-->
 
   <!-- Scoreboard -->
-  <section class="w-[60%] flex gap-10 justify-center">
+  <section class="flex gap-10 justify-center">
     <div id="id-div-player-1-score"
          [ngClass]="{
             'font-bold': player1.hasTurn,
@@ -35,8 +35,5 @@
       <span id="id-span-player-2-score">{{ player2.score }}</span>
     </div>
   </section>
-
-  <!-- Game Settings -->
-  <app-settings class="w-[20%]"></app-settings>
 
 </div>
