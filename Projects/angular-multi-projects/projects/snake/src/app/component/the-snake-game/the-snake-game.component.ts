@@ -5,6 +5,7 @@ import {GameStateService} from "../../service/game-state.service";
 import {GameStatus} from "../../shared/model/game-status.enum";
 import {NgIf} from "@angular/common";
 import {GameBoardComponent} from "./game-board/game-board.component";
+import {GameOverComponent} from "./game-over/game-over.component";
 
 @Component({
     selector: 'app-the-snake-game',
@@ -13,11 +14,14 @@ import {GameBoardComponent} from "./game-board/game-board.component";
         ScoreboardComponent,
         ChooseLevelComponent,
         NgIf,
-        GameBoardComponent
+        GameBoardComponent,
+        GameOverComponent
     ],
     templateUrl: './the-snake-game.component.html',
 })
 export class TheSnakeGameComponent {
+
+    protected readonly GameStatus = GameStatus;
 
     gameStatus!: GameStatus;
 
@@ -29,5 +33,4 @@ export class TheSnakeGameComponent {
 
     }
 
-    protected readonly GameStatus = GameStatus;
 }

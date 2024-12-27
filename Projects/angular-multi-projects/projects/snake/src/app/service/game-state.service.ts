@@ -12,7 +12,7 @@ export class GameStateService {
     private level$: BehaviorSubject<Level>;
 
     constructor() {
-        this.gameStatus$ = new BehaviorSubject<GameStatus>(GameStatus.NOT_STARTED);
+        this.gameStatus$ = new BehaviorSubject<GameStatus>(GameStatus.SELECT_LEVEL);
         this.level$ = new BehaviorSubject<Level>(Level.EASY);
     }
 
@@ -23,7 +23,6 @@ export class GameStateService {
     updateGameStatus(gameStatus: GameStatus) {
         this.gameStatus$.next(gameStatus);
     }
-
 
     //  Getters
     //  -------

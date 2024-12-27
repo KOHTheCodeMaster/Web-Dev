@@ -20,6 +20,18 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         27th Dec 2K24 - 07:15 PM
+Commit Message:     259 - Angular Projects - Snake Game - Added Game Over Component, Restart Game Functionality & Prevent Opposite Direction Movement
+
+Quick Summary:
+
+1. Added the Game Over Component to display the game over message.
+2. Restart the game when game status is GAME_OVER & user clicks anywhere on the board.
+3. Refactored `NOT_STARTED` to `SELECT_LEVEL` for better game flow.
+4. Prevent the snake from moving in the opposite direction.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         27th Dec 2K24 - 05:04 PM
 Commit Message:     258 - Angular Projects - Snake Game - Added Snake Movement, Collision Detection & Keyboard Input Handling
 

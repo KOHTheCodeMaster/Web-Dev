@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {Cell} from "../shared/model/cell.model";
 import {SnakeService} from "./snake.service";
 import {CellState} from "../shared/model/cell-state.enum";
+import {GameStatus} from "../shared/model/game-status.enum";
+import {GameStateService} from "./game-state.service";
 
 @Injectable({
     providedIn: 'root'
@@ -12,13 +14,18 @@ export class GameBoardService {
     public static ROW_SIZE: number = 10;
     public static COL_SIZE: number = 10;
 
-    constructor(private snakeService: SnakeService) {
+    constructor(private snakeService: SnakeService,
+                private gameStateService: GameStateService) {
 
         this.initBoardEmptyCells();
-        this.renderSnake();
 
-        //  Listen to snake service for any changes in the snake
+        //  Listen to snake service for refresh board event to refresh the board
         this.snakeService.getRefreshBoard$().subscribe(() => this.refreshBoard());
+
+        //  Listen to game state service for game status change event to refresh the board when game is not started
+        this.gameStateService.getGameStatus().subscribe(gameStatus => {
+            if (gameStatus === GameStatus.SELECT_LEVEL) this.refreshBoard();
+        });
 
     }
 
@@ -32,6 +39,8 @@ export class GameBoardService {
                 this.boardCells[i][j] = new Cell(i, j);
         }
 
+        this.renderSnake();
+
         // this.initFood();
 
     }
@@ -39,7 +48,6 @@ export class GameBoardService {
     refreshBoard() {
 
         this.resetBoardCellsToEmpty();
-
         this.renderSnake();
 
     }

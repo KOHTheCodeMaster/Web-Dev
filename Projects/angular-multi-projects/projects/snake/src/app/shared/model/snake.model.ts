@@ -11,7 +11,7 @@ export class Snake {
     public isDead: boolean = false;
 
     constructor() {
-        this.size = 3;
+        this.size = 4;
         this.snakeDirection = SnakeDirection.RIGHT;
         this.initSnakeBodyCells();
         this.initHead();

@@ -1,13 +1,21 @@
-<div class="w-[500px] h-[500px] mx-auto mt-40 flex flex-col border">
+<div class="w-[500px] h-[500px]  mx-auto mt-40 flex flex-col border">
 
     <!-- Play Area -->
-    <div class="w-full h-[90%] ">
+    <div class="w-full h-[90%] relative">
 
-        <app-choose-level *ngIf="this.gameStatus === GameStatus.NOT_STARTED"></app-choose-level>
+        <app-choose-level *ngIf="this.gameStatus === GameStatus.SELECT_LEVEL"></app-choose-level>
 
 <!--        <app-loading-screen *ngIf="this.gameStatus === GameStatus.LOADING"></app-loading-screen>-->
 
-        <app-game-board *ngIf="this.gameStatus === GameStatus.IN_PROGRESS"></app-game-board>
+        <app-game-board
+            *ngIf="this.gameStatus === GameStatus.IN_PROGRESS || this.gameStatus === GameStatus.GAME_OVER">
+        </app-game-board>
+
+        <app-game-over
+            *ngIf="this.gameStatus === GameStatus.GAME_OVER"
+            class="w-full h-full absolute inset-0 flex justify-center items-center
+                   bg-black bg-opacity-50 text-white text-center">
+        </app-game-over>
 
     </div>
 

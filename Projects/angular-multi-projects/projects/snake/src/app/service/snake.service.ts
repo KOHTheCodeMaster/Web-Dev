@@ -20,26 +20,28 @@ export class SnakeService {
 
     constructor(private keyboardInputService: KeyboardInputService,
                 private gameStateService: GameStateService) {
+
         this.initializeSnake();
-        this.listenToKeyboardInputService();
+        this.initSubscriptions();
         this.refreshBoard$ = new Subject<void>();
+
     }
 
-    listenToKeyboardInputService() {
-
+    initSubscriptions() {
         this.gameStateService.getGameStatus().subscribe(gameStatus => {
-            if (gameStatus === GameStatus.IN_PROGRESS) {
-                this.keyboardInputSubscription = this.keyboardInputService.getKeyPress$().subscribe(key => this.handleKeyboardInputEvent(key));
-            } else {
-                //  Unsubscribe if subscription exists and game is not in progress
-                this.keyboardInputSubscription?.unsubscribe();
-            }
+            if (gameStatus === GameStatus.SELECT_LEVEL) this.initializeSnake();
+            else if (gameStatus === GameStatus.IN_PROGRESS) this.initializeKeyboardInputSubscription();
+            else this.keyboardInputSubscription?.unsubscribe();
         });
+    }
+
+    initializeKeyboardInputSubscription() {
+        this.keyboardInputSubscription = this.keyboardInputService.getKeyPress$()
+            .subscribe(key => this.handleKeyboardInputEvent(key));
     }
 
     handleKeyboardInputEvent(key: string) {
         key = key.toLowerCase();
-        console.log(key);
 
         if (key === 'w') this.move(SnakeDirection.UP);
         else if (key === 'd') this.move(SnakeDirection.RIGHT);
@@ -48,15 +50,13 @@ export class SnakeService {
     }
 
     initializeSnake() {
-
         this.snake = new Snake();
-        // this.moveHead();
-
-        console.log(this.snake);
-
     }
 
     move(snakeDirection: SnakeDirection) {
+
+        //  Prevent the snake from moving in the opposite direction
+        if (this.isMoveOppositeDirection(snakeDirection)) return;
 
         this.snake.setSnakeDirection(snakeDirection);
 
@@ -67,6 +67,15 @@ export class SnakeService {
 
         this.refreshBoard$.next();
 
+    }
+
+    isMoveOppositeDirection(snakeDirection: SnakeDirection): boolean {
+        //  Prevent the snake from moving in the opposite direction
+        if (this.snake.getSnakeDirection() === SnakeDirection.UP && snakeDirection === SnakeDirection.DOWN) return true;
+        else if (this.snake.getSnakeDirection() === SnakeDirection.RIGHT && snakeDirection === SnakeDirection.LEFT) return true;
+        else if (this.snake.getSnakeDirection() === SnakeDirection.DOWN && snakeDirection === SnakeDirection.UP) return true;
+        else if (this.snake.getSnakeDirection() === SnakeDirection.LEFT && snakeDirection === SnakeDirection.RIGHT) return true;
+        return false;
     }
 
     checkCollision() {
