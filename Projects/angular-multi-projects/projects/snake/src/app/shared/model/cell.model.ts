@@ -15,6 +15,11 @@ export class Cell {
         this.cellValue = cell.cellValue;
     }
 
+    clearCell() {
+        this.cellState = CellState.EMPTY;
+        this.cellValue = '';
+    }
+
     //  Getters
     //  -------
 

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Cell} from "../shared/model/cell.model";
 import {SnakeService} from "./snake.service";
-import {CellState} from "../shared/model/cell-state.enum";
 import {GameStatus} from "../shared/model/game-status.enum";
 import {GameStateService} from "./game-state.service";
+import {FoodService} from "./food.service";
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +15,7 @@ export class GameBoardService {
     public static COL_SIZE: number = 10;
 
     constructor(private snakeService: SnakeService,
+                private foodService: FoodService,
                 private gameStateService: GameStateService) {
 
         this.initBoardEmptyCells();
@@ -24,7 +25,10 @@ export class GameBoardService {
 
         //  Listen to game state service for game status change event to refresh the board when game is not started
         this.gameStateService.getGameStatus().subscribe(gameStatus => {
-            if (gameStatus === GameStatus.SELECT_LEVEL) this.refreshBoard();
+            if (gameStatus === GameStatus.SELECT_LEVEL) {
+                this.foodService.moveFoodToRandomPosition(this.boardCells);
+                this.refreshBoard();
+            }
         });
 
     }
@@ -41,7 +45,8 @@ export class GameBoardService {
 
         this.renderSnake();
 
-        // this.initFood();
+        this.foodService.moveFoodToRandomPosition(this.boardCells);
+        this.renderFood();
 
     }
 
@@ -50,12 +55,19 @@ export class GameBoardService {
         this.resetBoardCellsToEmpty();
         this.renderSnake();
 
+        this.renderFood();
+
+    }
+
+    renderFood() {
+        let food = this.foodService.getFood();
+        this.boardCells[food.x][food.y].replaceCell(food);
     }
 
     resetBoardCellsToEmpty() {
         for (let i = 0; i < GameBoardService.ROW_SIZE; i++)
             for (let j = 0; j < GameBoardService.COL_SIZE; j++)
-                this.boardCells[i][j].setCellState(CellState.EMPTY);
+                this.boardCells[i][j].clearCell();
     }
 
     renderSnake() {
@@ -94,7 +106,7 @@ export class GameBoardService {
         return GameBoardService.COL_SIZE;
     }
 
-    getCellsGrid(): Cell[][] {
+    getBoardCells(): Cell[][] {
         return this.boardCells;
     }
 
