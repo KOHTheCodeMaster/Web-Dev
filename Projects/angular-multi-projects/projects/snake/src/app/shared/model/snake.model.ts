@@ -5,9 +5,8 @@ import {CellState} from "./cell-state.enum";
 export class Snake {
 
     public size: number;
-    public bodyCells!: Cell[];  //  excluding the head
+    public bodyCells!: Cell[];  //  excludes the head
     public head!: Cell;
-    // public tail!: Cell;
     private snakeDirection: SnakeDirection;
     public isDead: boolean = false;
 
@@ -33,8 +32,8 @@ export class Snake {
     initHead() {
         this.head = new Cell(2, 4);
         this.head.setCellState(CellState.SNAKE_HEAD);
+        this.head.setCellValue(SnakeDirection.RIGHT);
     }
-
 
     //  Getters
     //  -------

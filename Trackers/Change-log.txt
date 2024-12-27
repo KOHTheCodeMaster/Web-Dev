@@ -20,6 +20,48 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         27th Dec 2K24 - 05:04 PM
+Commit Message:     258 - Angular Projects - Snake Game - Added Snake Movement, Collision Detection & Keyboard Input Handling
+
+File Changes:
+
+1. snake.service.ts
+    - File Path: `Projects/angular-multi-projects/projects/snake/src/app/service/snake.service.ts`
+    - Change Type: Modified
+    - Priority: High
+    - Change Summary:
+    - Explanation:
+        - Added `keyboardInputSubscription` to listen to Key events only when the game is in progress.
+        - Modified `listenToKeyboardInputService()` to unsubscribe & stop listening to key events when the `GameStatus` is changed & not 'IN_PROGRESS'.
+        - Refactored `moveSnake()` method to handle snake movement based on the direction.
+        - Methods Added: `handleKeyboardInputEvent()`, `moveSnakeBody()`, `moveHead()`, `checkCollision()`.
+
+2. game-board.service.ts
+    - File Path: `Projects/angular-multi-projects/projects/snake/src/app/service/game-board.service.ts`
+    - Change Type: Modified
+    - Priority: Medium
+    - Change Summary: Refactored ROW_SIZE & COL_SIZE , Added resetBoardCells() method, Render Snake only if not Dead.
+    - Explanation:
+        - Refactored ROW_SIZE & COL_SIZE to be public static constants.
+        - Added `resetBoardCells()` method to reset the board cells to CellState.EMPTY before rendering the snake.
+        - Render Snake only if the snake is not Dead to avoid any out of bounds errors.
+
+3. snake.model.ts
+    - File Path: `Projects/angular-multi-projects/projects/snake/src/app/shared/model/snake.model.ts`
+    - Change Type: Modified
+    - Priority: Low
+    - Change Summary:
+    - Explanation:
+        - Added `SnakeDirection.RIGHT` during `initHead()` method.
+
+
+Summary:
+- Modified `snake.service.ts` to handle keyboard input events, snake movement, and collision detection.
+- Refactored `game-board.service.ts` to reset board cells and render the snake only if it's not dead.
+- Updated `snake.model.ts` to initialize the snake's head direction.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         27th Dec 2K24 - 12:53 AM
 Commit Message:     257 - Angular Projects - Snake Game - Added Components & Service Implementations
 
