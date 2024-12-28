@@ -1,28 +1,50 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {Subject} from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
 export class ScoreService {
 
-    private currentScore$: BehaviorSubject<number>;
-    private highScore$: BehaviorSubject<number>;
+    private scoreUpdated$!: Subject<void>;
+    private currentScore: number;
+    private highScore: number;
+    private POINTS_PER_FOOD: number;
 
     constructor() {
-        this.currentScore$ = new BehaviorSubject(0);
-        this.highScore$ = new BehaviorSubject(0);
+        this.currentScore = 0;
+        this.highScore = 0;
+        this.POINTS_PER_FOOD = 1;
+
+        this.scoreUpdated$ = new Subject<void>();
+        this.scoreUpdated$.next();
+    }
+
+    updateScores() {
+        this.currentScore += this.POINTS_PER_FOOD;
+        if (this.currentScore > this.highScore) this.highScore = this.currentScore;
+
+        this.scoreUpdated$.next();
+    }
+
+    resetCurrentScore() {
+        this.currentScore = 0;
+        this.scoreUpdated$.next();
     }
 
     //  Getters
     //  -------
 
-    getCurrentScore$(): BehaviorSubject<number> {
-        return this.currentScore$;
+    getScoreUpdated$(): Subject<void> {
+        return this.scoreUpdated$;
     }
 
-    getHighScore$(): BehaviorSubject<number> {
-        return this.highScore$;
+    getCurrentScore(): number {
+        return this.currentScore;
+    }
+
+    getHighScore(): number {
+        return this.highScore;
     }
 
 }

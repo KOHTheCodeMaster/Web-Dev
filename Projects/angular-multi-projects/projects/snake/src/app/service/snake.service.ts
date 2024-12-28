@@ -9,6 +9,7 @@ import {GameStateService} from "./game-state.service";
 import {GameStatus} from "../shared/model/game-status.enum";
 import {GameBoardService} from "./game-board.service";
 import {FoodService} from "./food.service";
+import {ScoreService} from "./score.service";
 
 @Injectable({
     providedIn: 'root'
@@ -21,7 +22,8 @@ export class SnakeService {
 
     constructor(private keyboardInputService: KeyboardInputService,
                 private gameStateService: GameStateService,
-                private foodService: FoodService) {
+                private foodService: FoodService,
+                private scoreService: ScoreService) {
 
         this.initializeSnake();
         this.initSubscriptions();
@@ -155,6 +157,9 @@ export class SnakeService {
             this.foodService.getRefreshFood$().next();
             this.snake.size++;
             this.snake.foodConsumed = true;
+
+            //  Update current score
+            this.scoreService.updateScores();
         }
     }
 

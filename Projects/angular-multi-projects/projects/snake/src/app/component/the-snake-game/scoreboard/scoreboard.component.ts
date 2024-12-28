@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {GameStateService} from "../../../service/game-state.service";
 import {Level} from "../../../shared/model/level.enum";
 import {ScoreService} from "../../../service/score.service";
+import {GameStatus} from "../../../shared/model/game-status.enum";
 
 @Component({
     selector: 'app-scoreboard',
@@ -14,23 +15,24 @@ export class ScoreboardComponent {
 
     protected readonly Level = Level;
     level!: Level;
-    currentScore: number = 0;
-    highScore: number = 0;
+    currentScore!: number;
+    highScore!: number;
 
     constructor(private gameStateService: GameStateService, private scoreService: ScoreService) {
 
-        this.gameStateService.getLevel().subscribe(level => {
-            this.level = level;
+        this.gameStateService.getLevel().subscribe(level => this.level = level);
+
+        this.scoreService.getScoreUpdated$().subscribe(() => this.updateScores());
+
+        this.gameStateService.getGameStatus().subscribe(gameStatus => {
+            if (gameStatus === GameStatus.SELECT_LEVEL) this.scoreService.resetCurrentScore();
         });
 
-        this.scoreService.getCurrentScore$().subscribe(score => {
-            this.currentScore = score;
-        });
+    }
 
-        this.scoreService.getHighScore$().subscribe(score => {
-            this.highScore = score;
-        });
-
+    updateScores() {
+        this.currentScore = this.scoreService.getCurrentScore();
+        this.highScore = this.scoreService.getHighScore();
     }
 
 }

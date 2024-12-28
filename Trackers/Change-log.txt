@@ -20,6 +20,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         28th Dec 2K24 - 12:01 PM
+Commit Message:     262 - Angular Projects - Snake Game - Added Score Service
+
+Quick Summary:
+
+1. Added Score Service to track the player's score and high score.
+2. Implemented the logic to update the score when the snake eats the food.
+3. Updated the Scoreboard Component to display the player's score and high score.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         28th Dec 2K24 - 11:38 AM
 Commit Message:     261 - Angular Projects - Snake Game - Added Food Collision Detection
 
