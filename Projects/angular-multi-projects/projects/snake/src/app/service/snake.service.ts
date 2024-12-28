@@ -140,8 +140,6 @@ export class SnakeService {
         if (head.x < 0 || head.x >= GameBoardService.ROW_SIZE || head.y < 0 || head.y >= GameBoardService.COL_SIZE) {
             this.snake.isDead = true;
             this.gameStateService.updateGameStatus(GameStatus.GAME_OVER);
-            console.log('Game Over');
-            console.log(this.snake);
         }
     }
 
@@ -165,8 +163,11 @@ export class SnakeService {
 
         if (head.x === food.x && head.y === food.y) {
             this.foodService.getRefreshFood$().next();
-            this.snake.size++;
             this.snake.foodConsumed = true;
+
+            this.snake.size++;
+            if (this.snake.size === GameBoardService.ROW_SIZE * GameBoardService.COL_SIZE)
+                this.gameStateService.updateGameStatus(GameStatus.GAME_OVER);
 
             //  Update current score
             this.scoreService.updateScores();

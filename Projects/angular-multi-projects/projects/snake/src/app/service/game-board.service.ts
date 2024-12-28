@@ -79,35 +79,11 @@ export class GameBoardService {
 
         if (!snake.isDead) this.boardCells[snake.head.x][snake.head.y].replaceCell(snake.getHead());
 
-        console.log(snake);
+        // console.log(snake);
     }
-
-    /*
-        initFood() {
-            //  Randomly place food on any empty cell in the grid
-
-            let x: number;
-            let y: number;
-
-            do {
-                x = Math.floor(Math.random() * GameBoardService.rowSize);
-                y = Math.floor(Math.random() * GameBoardService.colSize);
-            } while (this.boardCells[x][y].getCellState() !== CellState.EMPTY);
-
-            this.boardCells[x][y].setCellState(CellState.FOOD);
-
-        }*/
 
     //  Getters
     //  -------
-
-    getRowSize(): number {
-        return GameBoardService.ROW_SIZE;
-    }
-
-    getColSize(): number {
-        return GameBoardService.COL_SIZE;
-    }
 
     getBoardCells(): Cell[][] {
         return this.boardCells;
