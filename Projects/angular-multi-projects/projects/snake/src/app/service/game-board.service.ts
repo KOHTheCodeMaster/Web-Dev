@@ -24,7 +24,7 @@ export class GameBoardService {
         this.snakeService.getRefreshBoard$().subscribe(() => this.refreshBoard());
 
         //  Listen to game state service for game status change event to refresh the board when game is not started
-        this.gameStateService.getGameStatus().subscribe(gameStatus => {
+        this.gameStateService.getGameStatus$().subscribe(gameStatus => {
             if (gameStatus === GameStatus.SELECT_LEVEL) {
                 this.foodService.moveFoodToRandomPosition(this.boardCells);
                 this.refreshBoard();

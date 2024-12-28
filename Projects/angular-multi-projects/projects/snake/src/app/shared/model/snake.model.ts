@@ -37,8 +37,9 @@ export class Snake {
         this.head.setCellValue(SnakeDirection.RIGHT);
     }
 
-    //  Getters
-    //  -------
+
+    //  Getters and Setters
+    //  -------------------
 
     getHead(): Cell {
         return this.head;
@@ -55,6 +56,5 @@ export class Snake {
     setSnakeDirection(snakeDirection: SnakeDirection) {
         this.snakeDirection = snakeDirection;
     }
-
 
 }

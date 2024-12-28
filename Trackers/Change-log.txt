@@ -20,6 +20,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         28th Dec 2K24 - 01:53 PM
+Commit Message:     263 - Angular Projects - Snake Game - Added Timer Service
+
+Quick Summary:
+
+1. Added Timer Service to handle the game timer.
+2. Implemented the logic to keep ticking the timer every second during the game status is IN_PROGRESS.
+3. Based on the Level selected, the timer speed will be adjusted.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         28th Dec 2K24 - 12:01 PM
 Commit Message:     262 - Angular Projects - Snake Game - Added Score Service
 

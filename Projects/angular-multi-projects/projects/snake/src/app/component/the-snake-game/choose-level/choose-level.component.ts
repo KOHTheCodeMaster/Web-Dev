@@ -17,7 +17,7 @@ export class ChooseLevelComponent {
     gameStatus!: GameStatus;
 
     constructor(private gameStateService: GameStateService) {
-        this.gameStateService.getGameStatus().subscribe(gameStatus => {
+        this.gameStateService.getGameStatus$().subscribe(gameStatus => {
             this.gameStatus = gameStatus;
         });
     }

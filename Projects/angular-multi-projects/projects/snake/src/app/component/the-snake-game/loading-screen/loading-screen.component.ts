@@ -15,7 +15,7 @@ export class LoadingScreenComponent {
 
     constructor(private gameStateService: GameStateService) {
 
-        this.gameStateService.getGameStatus().subscribe(gameStatus => {
+        this.gameStateService.getGameStatus$().subscribe(gameStatus => {
             if (gameStatus === GameStatus.LOADING) {
                 this.resetLoading();
             }

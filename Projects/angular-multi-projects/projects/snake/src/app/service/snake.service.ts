@@ -10,6 +10,7 @@ import {GameStatus} from "../shared/model/game-status.enum";
 import {GameBoardService} from "./game-board.service";
 import {FoodService} from "./food.service";
 import {ScoreService} from "./score.service";
+import {TimerService} from "./timer.service";
 
 @Injectable({
     providedIn: 'root'
@@ -23,7 +24,8 @@ export class SnakeService {
     constructor(private keyboardInputService: KeyboardInputService,
                 private gameStateService: GameStateService,
                 private foodService: FoodService,
-                private scoreService: ScoreService) {
+                private scoreService: ScoreService,
+                private timerService: TimerService) {
 
         this.initializeSnake();
         this.initSubscriptions();
@@ -32,11 +34,14 @@ export class SnakeService {
     }
 
     initSubscriptions() {
-        this.gameStateService.getGameStatus().subscribe(gameStatus => {
+        this.gameStateService.getGameStatus$().subscribe(gameStatus => {
             if (gameStatus === GameStatus.SELECT_LEVEL) this.initializeSnake();
             else if (gameStatus === GameStatus.IN_PROGRESS) this.initializeKeyboardInputSubscription();
             else this.keyboardInputSubscription?.unsubscribe();
         });
+
+        this.timerService.getTimer().subscribe(() => this.move(this.snake.getSnakeDirection()));
+
     }
 
     initializeKeyboardInputSubscription() {
@@ -62,7 +67,7 @@ export class SnakeService {
         //  Prevent the snake from moving in the opposite direction
         if (this.isMoveOppositeDirection(snakeDirection)) return;
 
-        this.snake.setSnakeDirection(snakeDirection);
+        this.updateSnakeDirectionAndHeadCellValue(snakeDirection);
 
         if (this.snake.foodConsumed) this.snake.foodConsumed = false;   //  Reset the flag
         else this.removeTail();
@@ -83,6 +88,11 @@ export class SnakeService {
         else if (this.snake.getSnakeDirection() === SnakeDirection.DOWN && snakeDirection === SnakeDirection.UP) return true;
         else if (this.snake.getSnakeDirection() === SnakeDirection.LEFT && snakeDirection === SnakeDirection.RIGHT) return true;
         return false;
+    }
+
+    updateSnakeDirectionAndHeadCellValue(snakeDirection: SnakeDirection) {
+        this.snake.setSnakeDirection(snakeDirection);
+        this.snake.head.setCellValue(snakeDirection);
     }
 
 

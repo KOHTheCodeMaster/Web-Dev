@@ -24,7 +24,7 @@ export class ScoreboardComponent {
 
         this.scoreService.getScoreUpdated$().subscribe(() => this.updateScores());
 
-        this.gameStateService.getGameStatus().subscribe(gameStatus => {
+        this.gameStateService.getGameStatus$().subscribe(gameStatus => {
             if (gameStatus === GameStatus.SELECT_LEVEL) this.scoreService.resetCurrentScore();
         });
 

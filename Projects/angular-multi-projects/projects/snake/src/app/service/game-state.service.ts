@@ -27,7 +27,7 @@ export class GameStateService {
     //  Getters
     //  -------
 
-    getGameStatus(): Observable<GameStatus> {
+    getGameStatus$(): Observable<GameStatus> {
         return this.gameStatus$.asObservable();
     }
 

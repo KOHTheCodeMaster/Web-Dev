@@ -27,7 +27,7 @@ export class TheSnakeGameComponent {
 
     constructor(gameStateService: GameStateService) {
 
-        gameStateService.getGameStatus().subscribe(gameStatus => {
+        gameStateService.getGameStatus$().subscribe(gameStatus => {
             this.gameStatus = gameStatus;
         });
 
