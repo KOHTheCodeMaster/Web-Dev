@@ -8,6 +8,7 @@ import {Cell} from "../shared/model/cell.model";
 import {GameStateService} from "./game-state.service";
 import {GameStatus} from "../shared/model/game-status.enum";
 import {GameBoardService} from "./game-board.service";
+import {FoodService} from "./food.service";
 
 @Injectable({
     providedIn: 'root'
@@ -19,7 +20,8 @@ export class SnakeService {
     private keyboardInputSubscription!: Subscription;
 
     constructor(private keyboardInputService: KeyboardInputService,
-                private gameStateService: GameStateService) {
+                private gameStateService: GameStateService,
+                private foodService: FoodService) {
 
         this.initializeSnake();
         this.initSubscriptions();
@@ -60,10 +62,13 @@ export class SnakeService {
 
         this.snake.setSnakeDirection(snakeDirection);
 
-        this.moveSnakeBody();
+        if (this.snake.foodConsumed) this.snake.foodConsumed = false;   //  Reset the flag
+        else this.removeTail();
+
+        this.addHeadToBody();
         this.moveHead();
 
-        this.checkCollision();
+        this.checkCollisions();
 
         this.refreshBoard$.next();
 
@@ -78,9 +83,43 @@ export class SnakeService {
         return false;
     }
 
-    checkCollision() {
+
+    removeTail() {
+        let tail = this.snake.getBodyCells().pop();
+        tail?.setCellState(CellState.EMPTY);
+    }
+
+    addHeadToBody() {
+        let newBodyCell = new Cell(this.snake.getHead().x, this.snake.getHead().y);
+        newBodyCell.setCellState(CellState.SNAKE_BODY);
+        this.snake.getBodyCells().unshift(newBodyCell);
+    }
+
+    moveHead() {
+
+        let head = this.snake.getHead();
+        let direction = this.snake.getSnakeDirection();
+
+        if (direction === SnakeDirection.UP) {
+            head.setCellValue(SnakeDirection.UP);
+            head.x--;
+        } else if (direction === SnakeDirection.RIGHT) {
+            head.setCellValue(SnakeDirection.RIGHT);
+            head.y++;
+        } else if (direction === SnakeDirection.DOWN) {
+            head.setCellValue(SnakeDirection.DOWN);
+            head.x++;
+        } else if (direction === SnakeDirection.LEFT) {
+            head.setCellValue(SnakeDirection.LEFT);
+            head.y--;
+        }
+
+    }
+
+    checkCollisions() {
         this.checkCollisionWithWall();
         this.checkCollisionWithSelf();
+        this.checkCollisionWithFood();
     }
 
     checkCollisionWithWall() {
@@ -108,56 +147,22 @@ export class SnakeService {
 
     }
 
-    moveSnakeBody() {
-
-        //  Remove the tail cell from the body
-        let tail = this.snake.getBodyCells().pop();
-        tail?.setCellState(CellState.EMPTY);
-
-        //  add new cell to the body based on the current head
-        this.addHeadCellToBody();
-
-    }
-
-    addHeadCellToBody() {
+    checkCollisionWithFood() {
         let head = this.snake.getHead();
-        let newCell = new Cell(head.x, head.y);
-        newCell.setCellState(CellState.SNAKE_BODY);
+        let food = this.foodService.getFood();
 
-        this.snake.getBodyCells().unshift(newCell);
-    }
-
-    moveHead() {
-
-        let head = this.snake.getHead();
-        let direction = this.snake.getSnakeDirection();
-
-        if (direction === SnakeDirection.UP) {
-            head.setCellValue(SnakeDirection.UP);
-            head.x--;
-        } else if (direction === SnakeDirection.RIGHT) {
-            head.setCellValue(SnakeDirection.RIGHT);
-            head.y++;
-        } else if (direction === SnakeDirection.DOWN) {
-            head.setCellValue(SnakeDirection.DOWN);
-            head.x++;
-        } else if (direction === SnakeDirection.LEFT) {
-            head.setCellValue(SnakeDirection.LEFT);
-            head.y--;
+        if (head.x === food.x && head.y === food.y) {
+            this.foodService.getRefreshFood$().next();
+            this.snake.size++;
+            this.snake.foodConsumed = true;
         }
-
     }
-
 
     //  Getters
     //  -------
 
     getSnake(): Snake {
         return this.snake;
-    }
-
-    getSnakeDirection(): SnakeDirection {
-        return this.snake.getSnakeDirection();
     }
 
     getRefreshBoard$(): Observable<void> {

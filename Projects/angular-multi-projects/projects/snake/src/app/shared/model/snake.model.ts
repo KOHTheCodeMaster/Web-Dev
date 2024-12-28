@@ -8,10 +8,12 @@ export class Snake {
     public bodyCells!: Cell[];  //  excludes the head
     public head!: Cell;
     private snakeDirection: SnakeDirection;
+    public foodConsumed: boolean;
     public isDead: boolean = false;
 
     constructor() {
         this.size = 4;
+        this.foodConsumed = false;
         this.snakeDirection = SnakeDirection.RIGHT;
         this.initSnakeBodyCells();
         this.initHead();

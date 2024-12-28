@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         28th Dec 2K24 - 11:38 AM
+Commit Message:     261 - Angular Projects - Snake Game - Added Food Collision Detection
+
+Quick Summary:
+
+1. Added Food Collision Detection to check if the snake has eaten the food.
+2. Trigger `refreshFood$` event when the snake eats the food to generate new food on the board.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         27th Dec 2K24 - 11:06 PM
 Commit Message:     260 - Angular Projects - Snake Game - Added Food Service & Updated Game Board Service
 

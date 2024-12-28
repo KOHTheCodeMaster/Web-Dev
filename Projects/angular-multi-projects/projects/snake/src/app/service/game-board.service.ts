@@ -31,6 +31,9 @@ export class GameBoardService {
             }
         });
 
+        //  Listen to food service for refresh food event to move food to random position
+        this.foodService.getRefreshFood$().subscribe(() => this.foodService.moveFoodToRandomPosition(this.boardCells));
+
     }
 
     initBoardEmptyCells() {
@@ -43,19 +46,19 @@ export class GameBoardService {
                 this.boardCells[i][j] = new Cell(i, j);
         }
 
-        this.renderSnake();
-
         this.foodService.moveFoodToRandomPosition(this.boardCells);
         this.renderFood();
+
+        this.renderSnake();
+
 
     }
 
     refreshBoard() {
 
         this.resetBoardCellsToEmpty();
-        this.renderSnake();
-
         this.renderFood();
+        this.renderSnake();
 
     }
 

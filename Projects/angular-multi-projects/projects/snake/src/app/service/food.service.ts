@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Cell} from "../shared/model/cell.model";
 import {CellState} from "../shared/model/cell-state.enum";
 import {GameBoardService} from "./game-board.service";
+import {Subject} from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -9,9 +10,11 @@ import {GameBoardService} from "./game-board.service";
 export class FoodService {
 
     private food!: Cell;
+    private refreshFood$!: Subject<void>;
 
     constructor() {
         this.initFood();
+        this.refreshFood$ = new Subject<void>();
     }
 
     private initFood() {
@@ -40,6 +43,10 @@ export class FoodService {
 
     getFood(): Cell {
         return this.food;
+    }
+
+    getRefreshFood$(): Subject<void> {
+        return this.refreshFood$;
     }
 
 }
