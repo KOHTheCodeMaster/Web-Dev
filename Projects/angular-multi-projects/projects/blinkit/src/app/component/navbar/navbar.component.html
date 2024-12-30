@@ -1,1 +1,44 @@
-<p>navbar works!</p>
+<nav class="w-full h-20 flex ">
+
+    <a class="w-[10%] px-8 flex items-center text-3xl border">
+        <img class="w-full h-full" src="/assets/icons/01-sample-icon.svg" alt="Logo">
+    </a>
+
+    <div class="w-[20%] px-8 flex flex-col justify-center border">
+        <span class="text-xl font-bold">Delivering in 11 minutes</span>
+        <div class="flex items-center">
+            <span class="text-gray-300 font-bold">WTP</span>
+            <span>-</span>
+            <div class="w-48 overflow-hidden text-ellipsis whitespace-nowrap">
+                434, A-2 Tower, WTP Jawahar Lal Nehru Marg, D-Block, Malviya Nagar, Jaipur
+            </div>
+            <span class="w-4 h-4 flex justify-center items-center bg-gray-600">
+<!--                <img src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">-->
+                <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+            </span>
+        </div>
+    </div>
+
+    <div class="w-[50%] my-2 flex items-center bg-gray-800 rounded-xl border">
+        <button class="w-10 h-10 flex justify-center items-center  rounded-xl border">?</button>
+        <input class="w-full h-10 my-2 px-1 bg-gray-800 text-white focus:outline-none" type="text"
+               placeholder="Search for fruits, vegetables, dairy products.">
+        <button class="w-10 h-10 flex justify-center items-center font-bold rounded-xl ">X</button>
+    </div>
+
+    <a class="w-[10%] px-8 flex gap-3 items-center text-2xl border">
+        <span>Account</span>
+        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+    </a>
+
+    <a class="w-[10%] px-8 flex items-center border">
+        <div class="px-2 flex gap-2 items-center rounded-lg border">
+            <span>Logo</span>
+            <div class="flex flex-col gap-0">
+                <span class="w-fit border">X Items</span>
+                <span class="w-fit border">₹ 0.00</span>
+            </div>
+        </div>
+    </a>
+
+</nav>

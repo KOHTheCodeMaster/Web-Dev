@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         30th Dec 2K24 - 07:51 AM
+Commit Message:     266 - Angular Projects - Blinkit - Nav Bar Component Design
+
+Quick Summary:
+
+1. Designed the Navigation Bar for the Blinkit website.
+2. Added the Logo, Address, Search bar, Account, and Cart.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         30th Dec 2K24 - 06:43 AM
 Commit Message:     265 - Angular Projects - Blinkit - Project Setup
 
