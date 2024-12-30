@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         30th Dec 2K24 - 06:43 AM
+Commit Message:     265 - Angular Projects - Blinkit - Project Setup
+
+Quick Summary:
+
+1. Created a new Angular project 'blinkit' for the clone of Blinkit website.
+2. Added initial project setup with tailwind CSS and basic components.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         28th Dec 2K24 - 02:00 PM
 Commit Message:     264 - Angular Projects - Snake Game - Game Completed & Ready To Play
 
