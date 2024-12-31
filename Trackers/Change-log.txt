@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         31st Dec 2K24 - 01:59 PM
+Commit Message:     267 - Quick Hands-on - Test Background Process API - Fetch Data & Display
+
+Quick Summary:
+
+1. Added a quick hands-on project to test the Background Process API.
+2. Fetched data from a mock API and displayed it on the screen.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         30th Dec 2K24 - 07:51 AM
 Commit Message:     266 - Angular Projects - Blinkit - Nav Bar Component Design
 

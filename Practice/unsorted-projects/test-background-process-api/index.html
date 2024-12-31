@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Background Process</title>
+    <link rel="stylesheet" href="./output.css">
+    <script src="./app.js"></script>
+</head>
+
+<!--<body class="bg-black text-white">-->
+<body class="bg-gray-900 text-gray-100 p-4">
+<div class="max-w-3xl mx-auto space-y-4">
+    <!-- Input Section -->
+    <div class="space-y-2">
+        <label for="inputText" class="block text-sm font-semibold">Input Text</label>
+        <input
+                type="text"
+                id="inputText"
+                class="w-full p-2 rounded bg-gray-800 text-gray-100 focus:outline-none focus:ring focus:ring-blue-500"
+                placeholder="Enter text here"
+        />
+        <div class="flex gap-4">
+            <button id="submitBtn1" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+                Submit
+            </button>
+            <button id="submitBtn2" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">
+                Submit (API)
+            </button>
+        </div>
+    </div>
+
+    <!-- Status Indicator -->
+    <div id="statusIndicator" class="text-sm font-semibold">Status: Ready</div>
+
+    <!-- Data Section -->
+    <div id="dataContainer" class="space-y-2"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+
+
+</html>

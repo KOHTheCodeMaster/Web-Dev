@@ -1,0 +1,23 @@
+/*
+
+Let's focus on frontend code for now and then we'll work on backend okay?
+
+So at frontend, I am using plain HTML, Tailwind CSS, vanilla JS with fetch.
+
+UI:
+1. Input Key - input field to enter the key
+2. Submit button - to process the key at backend
+3. Process Status Indicator - display the status of the process: "Processing In Background", "Process Completed", "Failed"
+4. Data - display the data using flexbox with columns: "S. No.", "Key", "Value", "Button (Change Color)"
+
+Functionality:
+1. User enters the key and clicks on submit button
+2. Process Status Indicator is updated to "Processing In Background"
+3. The key is sent to backend for processing
+4. UI is not blocked and user can continue to interact with the UI
+5. User can click on "Change Color" button to change the color of the row
+6. Once the processing done at backend in background, the Process Status Indicator is updated to "Process Completed"
+7. The data is updated in the Data section
+8. If the processing fails, the Process Status Indicator is updated to "Failed"
+
+*/
