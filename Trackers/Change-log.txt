@@ -20,6 +20,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         2nd Jan 2K25 - 07:43 AM
+Commit Message:     268 - Angular Projects - Blinkit - Nav Bar Component Design Refinements - Assets Folder Configuration
+
+Quick Summary:
+
+1. Refactored the Navigation Bar component for the Blinkit website.
+2. Configured `assets` folder for storing images and icons.
+3. Improved the design and layout of the Nav Bar with better logo alignment and spacing.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         31st Dec 2K24 - 01:59 PM
 Commit Message:     267 - Quick Hands-on - Test Background Process API - Fetch Data & Display
 

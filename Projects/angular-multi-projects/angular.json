@@ -291,6 +291,11 @@
               {
                 "glob": "**/*",
                 "input": "projects/blinkit/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/blinkit/src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [

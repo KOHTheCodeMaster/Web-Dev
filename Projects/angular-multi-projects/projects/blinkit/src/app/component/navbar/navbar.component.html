@@ -1,43 +1,54 @@
-<nav class="w-full h-20 flex ">
+<nav class="w-full h-20 flex">
 
-    <a class="w-[10%] px-8 flex items-center text-3xl border">
-        <img class="w-full h-full" src="/assets/icons/01-sample-icon.svg" alt="Logo">
+    <a class="w-48 px-8 py-4 flex items-center text-3xl">
+        <img class="w-full h-full border" src="/assets/icons/01-sample-icon.svg" alt="Logo">
     </a>
 
-    <div class="w-[20%] px-8 flex flex-col justify-center border">
-        <span class="text-xl font-bold">Delivering in 11 minutes</span>
-        <div class="flex items-center">
+    <div class="w-72 px-8 flex flex-col justify-center">
+        <span class="text-xl font-bold">Delivery in 11 minutes</span>
+        <div class="w-56 flex items-center">
             <span class="text-gray-300 font-bold">WTP</span>
             <span>-</span>
-            <div class="w-48 overflow-hidden text-ellipsis whitespace-nowrap">
+            <div class="w-40 overflow-hidden text-ellipsis whitespace-nowrap">
                 434, A-2 Tower, WTP Jawahar Lal Nehru Marg, D-Block, Malviya Nagar, Jaipur
             </div>
-            <span class="w-4 h-4 flex justify-center items-center bg-gray-600">
+            <span class="w-4 h-4 ml-auto flex justify-center items-center bg-gray-600">
 <!--                <img src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">-->
                 <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
             </span>
         </div>
     </div>
 
-    <div class="w-[50%] my-2 flex items-center bg-gray-800 rounded-xl border">
-        <button class="w-10 h-10 flex justify-center items-center  rounded-xl border">?</button>
+    <div class="w-[1150px] min-w-[800px] mx-auto my-2 px-2 flex gap-1 items-center bg-gray-800 rounded-xl">
+        <!--  Search Icon  -->
+        <button class="w-8 h-8 flex justify-center items-center  rounded-xl">
+            <img class="w-6 h-6" src="/assets/icons/01-sample-icon.svg" alt="search-icon">
+        </button>
         <input class="w-full h-10 my-2 px-1 bg-gray-800 text-white focus:outline-none" type="text"
                placeholder="Search for fruits, vegetables, dairy products.">
-        <button class="w-10 h-10 flex justify-center items-center font-bold rounded-xl ">X</button>
+        <!--  Clear Icon  -->
+        <button class="w-8 h-8 flex justify-center items-center  rounded-xl">
+            <img class="w-6 h-6" src="/assets/icons/01-sample-icon.svg" alt="clear-icon">
+        </button>
     </div>
 
-    <a class="w-[10%] px-8 flex gap-3 items-center text-2xl border">
+    <a class="w-48 ml-auto px-8 flex gap-3 items-center text-2xl">
         <span>Account</span>
         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
     </a>
 
-    <a class="w-[10%] px-8 flex items-center border">
-        <div class="px-2 flex gap-2 items-center rounded-lg border">
-            <span>Logo</span>
-            <div class="flex flex-col gap-0">
-                <span class="w-fit border">X Items</span>
-                <span class="w-fit border">₹ 0.00</span>
+    <a class="w-48 ml-auto px-8 py-2 flex items-center">
+        <div class="w-full h-full p-2 flex gap-2 items-center rounded-lg bg-green-700">
+            <div class="px-2 flex justify-center items-center gap-2">
+                <div class="w-8 h-8">
+                    <img class="w-full h-full" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+                </div>
+                <div class="flex flex-col gap-0 text-sm font-semibold">
+                    <span class="">X Items</span>
+                    <span class="">₹0.00</span>
+                </div>
             </div>
+
         </div>
     </a>
 
