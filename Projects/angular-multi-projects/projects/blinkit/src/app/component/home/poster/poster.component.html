@@ -1,1 +1,20 @@
-<p>poster works!</p>
+<div class="px-4 py-6">
+
+    <div class="w-full h-fit px-8 pt-6 flex rounded-xl border" (click)="handlePosterClick(1)">
+        <div class="w-[50%] flex flex-col ">
+            <span class="text-5xl text-white">Poster 1</span>
+            <span class="my-2 text-3xl text-white">Your favorite shop is now online</span>
+            <span class="w-fit h-fit my-4 px-2 py-1 rounded border">Shop Now</span>
+        </div>
+        <div class="w-[50%] flex justify-start items-end ">
+            <img class="w-[90%] h-32 border" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+        </div>
+    </div>
+
+    <div class="w-full h-fit my-4 px-8 py-6 flex gap-6 rounded-xl border">
+        <div class="w-80 h-48 flex justify-center items-center border text-3xl" (click)="handlePosterClick(2)">Poster 2</div>
+        <div class="w-80 h-48 flex justify-center items-center border text-3xl" (click)="handlePosterClick(3)">Poster 3</div>
+        <div class="w-80 h-48 flex justify-center items-center border text-3xl" (click)="handlePosterClick(4)">Poster 4</div>
+    </div>
+
+</div>

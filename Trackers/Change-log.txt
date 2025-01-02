@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         2nd Jan 2K25 - 08:22 AM
+Commit Message:     269 - Angular Projects - Blinkit - Poster Component Skeleton Design
+
+Quick Summary:
+
+1. Designed the skeleton structure for the Poster component of the Blinkit website.
+2. Added placeholders for the 4 posters.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         2nd Jan 2K25 - 07:43 AM
 Commit Message:     268 - Angular Projects - Blinkit - Nav Bar Component Design Refinements - Assets Folder Configuration
 
