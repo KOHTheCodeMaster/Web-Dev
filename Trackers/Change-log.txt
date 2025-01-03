@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         3rd Jan 2K25 - 10:54 AM
+Commit Message:     271 - Angular Projects - Blinkit - Skeleton Design - Product Slider Component
+
+Quick Summary:
+
+1. Designed the skeleton structure for the Product Slider component of the Blinkit website.
+2. Added ProductSliderService & CategoryGridService to fetch category & product data.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         3rd Jan 2K25 - 08:17 AM
 Commit Message:     270 - Angular Projects - Blinkit - Skeleton Design - Category Grid Component
 

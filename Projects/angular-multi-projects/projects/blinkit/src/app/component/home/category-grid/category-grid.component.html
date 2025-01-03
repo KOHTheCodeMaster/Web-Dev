@@ -1,14 +1,14 @@
-<div class="w-full h-full border">
+<div class="w-full border">
 
     <!--  Category Grid  -->
     <div class="m-4 flex flex-wrap gap-6 justify-center">
 
         <!--  Category Item  -->
         <div class="w-24 h-fit flex flex-col gap-2 justify-center items-center border"
-             (click)="handleCategoryItemClick(category.getCategoryId())"
+             (click)="handleCategoryItemClick(category.getId())"
              *ngFor="let category of categoryList">
             <img class="w-16 h-16" src="/assets/icons/01-sample-icon.svg" alt="category-icon">
-            <span class="text-xl text-center">{{ category.getCategoryName() }}</span>
+            <span class="text-xl text-center">{{ category.getName() }}</span>
         </div>
 
     </div>
