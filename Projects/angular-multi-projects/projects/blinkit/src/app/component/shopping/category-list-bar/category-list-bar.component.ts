@@ -1,23 +1,29 @@
 import {Component} from '@angular/core';
 import {Category} from "../../../shared/model/category.model";
 import {CategoryService} from "../../../service/category.service";
-import {NgForOf} from "@angular/common";
+import {NgClass, NgForOf} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
     selector: 'app-category-list-bar',
     standalone: true,
     imports: [
-        NgForOf
+        NgForOf,
+        RouterLink,
+        NgClass
     ],
     templateUrl: './category-list-bar.component.html',
     styleUrl: './category-list-bar.component.css'
 })
 export class CategoryListBarComponent {
+
+    categoryId!: number;
     visibleCategoryList: Category[] = [];
     hiddenCategoryList: Category[] = [];
 
     constructor(private categoryService: CategoryService) {
         this.initCategoryLists();
+        this.categoryService.getCategoryId$().subscribe(categoryId => this.categoryId = categoryId);
     }
 
     initCategoryLists() {
@@ -29,7 +35,9 @@ export class CategoryListBarComponent {
     }
 
     onCategoryBtnClick(category: Category) {
-        console.log('Category ID: ', category.getId());
+
+        this.categoryService.updateCategoryId(category.getId());
+
     }
 
 }

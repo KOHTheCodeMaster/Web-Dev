@@ -20,7 +20,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
-Time Stamp:         4th Jan 2K25 - 08:11 AM
+Time Stamp:         5th Jan 2K25 - 11:44 AM
+Commit Message:     274 - Angular Projects - Blinkit - Skeleton Design - Routing Setup & Re-designed Category List Bar / Sub Category Sidebar Components
+
+Quick Summary:
+
+1. Added routing setup for the Shopping component.
+2. Re-designed the Category List Bar and Sub Category Sidebar components for better active category highlighting and sub-category display.
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp:         5th Jan 2K25 - 08:11 AM
 Commit Message:     273 - Angular Projects - Blinkit - Skeleton Design - Shopping, Category List Bar & Sub Category Sidebar Components Added
 
 Quick Summary:

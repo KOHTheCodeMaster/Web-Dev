@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {Router} from "@angular/router";
+import {CategoryService} from "../../../service/category.service";
 
 @Component({
     selector: 'app-poster',
@@ -9,26 +11,15 @@ import {Component} from '@angular/core';
 })
 export class PosterComponent {
 
-    handlePosterClick(posterNumber: number) {
-
-        switch (posterNumber) {
-            case 1:
-                console.log('Poster 1 clicked');
-                break;
-            case 2:
-                console.log('Poster 2 clicked');
-                break;
-            case 3:
-                console.log('Poster 3 clicked');
-                break;
-            case 4:
-                console.log('Poster 4 clicked');
-                break;
-
-            default:
-                console.error('Poster not found');
-                break;
-        }
+    constructor(private router: Router,
+                private categoryService: CategoryService) {
 
     }
+
+    handlePosterClick(posterId: number) {
+        const categoryId = posterId;
+        this.router.navigate(['/shopping'], {queryParams: {categoryId: categoryId}});
+        this.categoryService.updateCategoryId(categoryId);
+    }
+
 }

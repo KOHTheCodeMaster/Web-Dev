@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {CategoryListBarComponent} from "./category-list-bar/category-list-bar.component";
 import {SubCategorySidebarComponent} from "./sub-category-sidebar/sub-category-sidebar.component";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
     selector: 'app-shopping',
@@ -14,8 +15,14 @@ import {SubCategorySidebarComponent} from "./sub-category-sidebar/sub-category-s
 })
 export class ShoppingComponent {
 
-    constructor() {
+    constructor(private router: Router, private route: ActivatedRoute) {
+        this.initializeQueryParams();
+    }
 
+    initializeQueryParams() {
+        //  Redirect to the first category if no category is selected
+        if (!this.route.snapshot.queryParams['categoryId'])
+            this.router.navigate(['/shopping'], {queryParams: {categoryId: 1}});
     }
 
 }
