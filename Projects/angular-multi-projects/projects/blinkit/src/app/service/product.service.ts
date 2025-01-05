@@ -5,7 +5,7 @@ import {Product} from "../shared/model/product.model";
 @Injectable({
     providedIn: 'root'
 })
-export class ProductSliderService {
+export class ProductService {
 
     private categoryList !: Category[];
     private categoryToproductListMap!: Map<number, Product[]>;

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Category} from "../../../shared/model/category.model";
-import {ProductSliderService} from "../../../service/product-slider.service";
+import {ProductService} from "../../../service/product.service";
 import {NgForOf} from "@angular/common";
 
 @Component({
@@ -16,7 +16,7 @@ export class ProductSliderComponent {
 
     categoryList: Category[];
 
-    constructor(public productSliderService: ProductSliderService) {
+    constructor(public productSliderService: ProductService) {
         this.categoryList = this.productSliderService.getCategoryList();
     }
 

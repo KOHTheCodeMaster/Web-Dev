@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Category} from "../../../shared/model/category.model";
 import {NgFor} from "@angular/common";
-import {CategoryGridService} from "../../../service/category-grid.service";
+import {CategoryService} from "../../../service/category.service";
 
 @Component({
   selector: 'app-category-grid',
@@ -14,7 +14,7 @@ export class CategoryGridComponent {
 
     categoryList!: Category[];
 
-    constructor(private CategoryGridService: CategoryGridService) {
+    constructor(private CategoryGridService: CategoryService) {
         this.categoryList = this.CategoryGridService.getCategoryList();
     }
 

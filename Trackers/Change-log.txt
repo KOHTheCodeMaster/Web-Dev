@@ -20,6 +20,15 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         4th Jan 2K25 - 08:11 AM
+Commit Message:     273 - Angular Projects - Blinkit - Skeleton Design - Shopping, Category List Bar & Sub Category Sidebar Components Added
+
+Quick Summary:
+
+1. Added the skeleton structure for the Shopping component with the Category List Bar and Sub Category Sidebar.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         3rd Jan 2K25 - 11:55 AM
 Commit Message:     272 - Angular Projects - Blinkit - Skeleton Design - Useful-Links-Categories & Footer Component
 

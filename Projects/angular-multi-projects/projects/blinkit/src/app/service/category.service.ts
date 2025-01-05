@@ -4,13 +4,15 @@ import {Category} from "../shared/model/category.model";
 @Injectable({
     providedIn: 'root'
 })
-export class CategoryGridService {
+export class CategoryService {
 
     private categoryList !: Category[];
+    private subCategoryList !: Category[];
 
     constructor() {
 
         this.initCategoryList();
+        this.initSubCategoryList();
 
     }
 
@@ -36,11 +38,25 @@ export class CategoryGridService {
         ];
     }
 
+    initSubCategoryList() {
+        this.subCategoryList = [
+            new Category(1, 'Milk'),
+            new Category(2, 'Bread & Pav'),
+            new Category(3, 'Eggs'),
+            new Category(4, 'Flakes & Kids Cereals'),
+            new Category(5, 'Muesli & Granola')
+        ];
+    }
+
     //  Getters
     //  -------
 
     getCategoryList(): Category[] {
         return this.categoryList;
+    }
+
+    getSubCategoryList(): Category[] {
+        return this.subCategoryList;
     }
 
 }
