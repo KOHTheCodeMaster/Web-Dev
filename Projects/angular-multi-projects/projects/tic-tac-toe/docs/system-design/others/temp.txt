@@ -1,3 +1,201 @@
 
-Dota 2   1087   M 3   Part 16   Sniper
+Vegetables & Fruits
+Dairy & Breakfast
+Munchies
+Cold Drinks & Juices
+Instant & Frozen Food
+Tea, Coffee & Health Drinks
+Bakery & Biscuits
 
+
+---
+
+
+1. Category: Vegetables & Fruits
+Sub Categories: Fresh Vegetables, Fresh Fruits, Mangoes & Melons, Seasonal, Exotics
+Products:
+  Fresh Vegetables	Price
+  1. Onion (Pyaz)	Rs.51
+  2. Ginger (Adrak)	Rs.21
+  3. Hybrid Tomato 500 g (Tamatar)	Rs.28
+  4. Green Chilli (100 g) (Hari Mirch)	Rs.10
+  5. Desi Tomato (Tamatar)	Rs.23
+  6. Potato - New Crop	Rs.37
+  7. English Cucumber (Kheera)	Rs.34
+  8. Red Carrot - 500 g (Gajar)	Rs.24
+  9. Lemon (Nimbu)	Rs.31
+  10. Green Capsicum (Shimla Mirch)	Rs.27
+
+
+  Fresh Fruits	Price
+  1. Banana (Kela)	Rs.37
+  2. Baby Banana	Rs.39
+  3. Tender Coconut (275+ ml) (Nariyal)	Rs.69
+  4. Strawberry	Rs.118
+  5. Brown Coconut (Nariyal)	Rs.55
+  6. Papaya (Papita)	Rs.95
+  7. Small Shimla Apple (Seb)	Rs.128
+  8. Guava (Amrud)	Rs.46
+  9. Green Grapes 500 g	Rs.150
+  10. Kinnow / Orange	Rs.42
+  This data was last updated on 1/6/2025
+
+
+  Mangoes & Melons	Price
+  1. Kiran Watermelon (Tarbuj)	Rs.90
+  2. Muskmelon (Kharbuja)	Rs.173
+  3. Sun Melon (Sarda)	Rs.154
+  This data was last updated on 1/6/2025
+
+  Seasonal Price List
+  Seasonal	Price
+  1. Broccoli	Rs.77
+  2. Thai Guava	Rs.55
+  3. Red Carrot - 500 g (Gajar)	Rs.24
+  4. Green Capsicum (Shimla Mirch)	Rs.27
+  5. Green Peas (Peeled)	Rs.87
+  6. Spinach (Palak)	Rs.18
+  7. Strawberry	Rs.118
+  8. Cauliflower (Phool Gobhi)	Rs.27
+  9. Green Peas (Matar)	Rs.32
+  10. Cabbage (Patta Gobhi)	Rs.16
+
+
+  Exotics	Price
+  1. Broccoli	Rs.77
+  2. Avocado - Tanzania 1 piece (150 - 200) g	Rs.103
+  3. Thai Ginger	Rs.84
+  4. Imported Blueberry	Rs.211
+  5. Green Kiwi	Rs.108
+  6. Thai Guava	Rs.55
+  7. Mini Orange	Rs.96
+  8. Dragon Fruit	Rs.94
+  9. Red Delicious Apple	Rs.134
+  10. Iceberg Lettuce	Rs.101
+  This data was last updated on 1/6/2025
+
+
+2. Category: Dairy & Breakfast
+Sub Categories: Milk, Bread & Pav, Eggs, Paneer & Tofu, Curd & Yogurt, Flakes & Kids Cereals
+
+
+3. Category: Munchies
+Sub Categories: Chips & Crisps, Rusks & Wafers, Energy Bars, Nachos, Bhujia & Mixtures
+
+
+
+4. Category: Cold Drinks & Juices
+Sub Categories: Beverages Gift Packs, Soft Drinks, Fruit Juices, Mango Drinks, Pure Juices
+
+
+
+5. Category: Instant & Frozen Food
+Sub Categories: Noodles, Frozen Veg Snacks, Frozen Non-Veg Snacks, Pasta, Instant Mixes
+
+
+6. Category: Tea, Coffee & Health Drinks
+Sub Categories: Tea, Coffee, Milk Drinks, Green & Flavoured Tea, Herbal Drinks
+
+
+7. Category: Bakery & Biscuits
+Sub Categories: Biscuit Gift Pack, Cookies, Cream Biscuits, Glucose & Marie, Healthy & Digestive
+
+---
+
+Above are the categories, subcategories.
+Below is the example of how I want to generate the products for each subcategory based on the category name.
+Please generate the products for each subcategory based on the category name.
+
+Note: Top 10 products for each subcategory with suitable prices and relevant data should be generated.
+
+---
+
+
+1. Dairy & Breakfast
+
+                case 'Dairy & Breakfast':
+
+                    subCategoryList.forEach(subCategory => {
+                        switch (subCategory.getName()) {
+
+                            case 'Milk':
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Saras Toned Fresh Milk', 26));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Taaza Toned Fresh Milk', 52));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Gold Full Cream Fresh Milk', 33));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Saras Gold Full Cream Fresh Milk', 33));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Moti Toned Milk (90 Days Shelf Life)', 33));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Gajar Halwa Combo', 50));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Taaza Toned Milk', 16));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Taaza Homogenised Toned Milk', 74));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Gold Milk', 80));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Lactose Free Milk', 25));
+                                break;
+
+                            case 'Bread & Pav':
+                                productList.push(new Product(subCategory.getId(), categoryId, 'The Health Factory Zero Maida Whole Wheat Bread', 58));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Harvest Gold Hearty Brown Bread', 55));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Harvest Gold Sandwich White Bread', 45));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'English Oven Zero Maida 100% Whole Wheat Bread', 55));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'The Health Factory Zero Maida Multigrain Bread', 59));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'English Oven Brown Bread', 55));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'English Oven Sandwich White Bread', 45));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'English Oven Zero Maida Multigrain Bread', 70));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'The Health Factory Zero Maida Bombay Pav', 35));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'English Oven Milk Bread', 50));
+                                break;
+
+                            case 'Eggs':
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Nature Good White Eggs (6 pieces)', 60));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'The Natural Fresh White Eggs - 10 pieces', 128));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Nature Good White Eggs (30 pieces)', 276));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'The Natural Fresh White Eggs - 30 pieces', 308));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Nature Good Brown Eggs', 79));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'The Natural Fresh White Eggs - 6 pieces', 80));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Eggoz Nutrition Protein Rich Brown Eggs (10 pieces)', 162));
+                                break;
+
+                            case 'Paneer & Tofu':
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Gowardhan Classic Block Paneer', 94));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Saras Paneer', 77));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Fresh Malai Paneer', 88));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Mother Dairy Paneer', 95));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Now Healthy Tofu (200 g)', 90));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Malai Paneer', 95));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Now Healthy Masala Tofu (150 g)', 99));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Morinaga Silken Extra Firm Tofu', 356));
+                                break;
+
+                            case 'Curd & Yogurt':
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Saras Curd', 16));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Masti Pouch Curd', 35));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Masti Curd', 23));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Masti Curd', 75));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Mother Dairy Classic Cup Curd', 50));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Mother Dairy Classic Curd', 75));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Mother Dairy Classic Curd', 25));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Amul Masti Cup Curd', 45));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'FruBon Curd', 29));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Mother Dairy Mishti Doi', 20));
+                                break;
+
+                            case 'Flakes & Kids Cereals':
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (375 g)', 135));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (700 g)', 260));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (1.2 kg)', 420));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (1.2 kg)', 420));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (375 g)', 135));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (700 g)', 260));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (1.2 kg)', 420));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (1.2 kg)', 420));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (375 g)', 135));
+                                productList.push(new Product(subCategory.getId(), categoryId, 'Kellogg\'s Chocos (700 g)', 260));
+                                break;
+
+                        }
+
+                    });
+                    break;
+
+---
+
+Generate method which has complete logic to generate the products for each subcategory based on the category name.

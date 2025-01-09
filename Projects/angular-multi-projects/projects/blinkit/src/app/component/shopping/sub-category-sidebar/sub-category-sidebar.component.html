@@ -1,19 +1,18 @@
 <div class="p-4">
     <h2 class="text-xl font-bold mb-4">Sub-Categories</h2>
     <div>
-        <a href="#" routerLink="/shopping" [queryParams]="{ subCategory: 0 }"
-           class="mb-2 block px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-gray-600 hover:text-blue-300
+        <a class="mb-2 block px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-gray-600 hover:text-blue-300
                   transition-colors duration-200"
            (click)="setSubCategoryId(0)"
            [ngClass]="{ 'bg-gray-500  border border-blue-500': subCategoryId === 0, }">
             All ({{ subCategoryList.length }})
         </a>
-        <a *ngFor="let category of subCategoryList" routerLink="/shopping" [queryParams]="{ subcategory: category.getId() }"
-           [ngClass]="{ 'bg-gray-500 border border-blue-500': subCategoryId === category.getId(), }"
-           (click)="setSubCategoryId(category.getId())"
+        <a *ngFor="let subCategory of subCategoryList"
+           [ngClass]="{ 'bg-gray-500 border border-blue-500': subCategoryId === subCategory.getId(), }"
+           (click)="setSubCategoryId(subCategory.getId())"
            class="mb-2 block px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-gray-600 hover:text-blue-300
                   transition-colors duration-200 ">
-            {{ category.getName() }}
+            {{ subCategory.getName() }}
         </a>
     </div>
 </div>

@@ -1,12 +1,12 @@
 export class Category {
 
+    private static lastCategoryId: number = 1;
+
     private id: number;
     private name: string;
-    // private categoryDescription: string;
-    // private categoryImage: string;
 
-    constructor(id: number, name: string) {
-        this.id = id;
+    constructor(name: string) {
+        this.id = Category.lastCategoryId++;
         this.name = name;
     }
 

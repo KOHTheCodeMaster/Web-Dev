@@ -16,8 +16,8 @@ export class ProductSliderComponent {
 
     categoryList: Category[];
 
-    constructor(public productSliderService: ProductService) {
-        this.categoryList = this.productSliderService.getCategoryList();
+    constructor(public productService: ProductService) {
+        this.categoryList = this.productService.getCategoryList();
     }
 
 }

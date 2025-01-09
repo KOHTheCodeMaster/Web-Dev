@@ -15,13 +15,13 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ShoppingComponent {
 
-    constructor(private router: Router, private route: ActivatedRoute) {
+    constructor(private router: Router, private activatedRoute: ActivatedRoute) {
         this.initializeQueryParams();
     }
 
     initializeQueryParams() {
         //  Redirect to the first category if no category is selected
-        if (!this.route.snapshot.queryParams['categoryId'])
+        if (!this.activatedRoute.snapshot.queryParams['categoryId'])
             this.router.navigate(['/shopping'], {queryParams: {categoryId: 1}});
     }
 

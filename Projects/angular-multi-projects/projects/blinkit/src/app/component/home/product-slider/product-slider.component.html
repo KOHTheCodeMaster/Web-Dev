@@ -4,7 +4,7 @@
          *ngFor="let category of categoryList">
 
         <!--  Category Name  -->
-        <div class="flex justify-between">
+        <div class="mt-4 flex justify-between">
             <span class="text-xl">{{ category.getName() }}</span>
             <span class="text-xl text-green-500">See All</span>
         </div>
@@ -14,9 +14,8 @@
 
             <!--  Product Item  -->
             <div class="w-48 h-48 flex flex-col items-center justify-center text-center border rounded-xl"
-                 *ngFor="let product of this.productSliderService.getProductListByCategoryId(category.getId())">
+                 *ngFor="let product of this.productService.getProductListByCategoryId(category.getId())">
                 <span class="text-sm font-semibold ">{{ product.getName() }}</span>
-                <!--                <span class=" mt-0 border">₹{{ product.getPrice() }}</span>-->
             </div>
         </div>
 

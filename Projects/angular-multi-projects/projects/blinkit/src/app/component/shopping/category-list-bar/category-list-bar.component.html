@@ -3,7 +3,7 @@
                   border rounded"
             routerLink="/shopping" [queryParams]="{ categoryId: category.getId() }"
             [ngClass]="{
-                'bg-blue-500 text-blue-300 border-blue-500': categoryId === category.getId(),
+                'bg-blue-500 text-blue-300 border-blue-500': this.categoryId === category.getId(),
             }"
             (click)="onCategoryBtnClick(category)"
             *ngFor="let category of this.visibleCategoryList">

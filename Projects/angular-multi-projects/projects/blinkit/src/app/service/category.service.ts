@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Category} from "../shared/model/category.model";
 import {BehaviorSubject, Observable} from "rxjs";
+import {SubCategory} from "../shared/model/sub-category.model";
 
 @Injectable({
     providedIn: 'root'
@@ -8,16 +9,30 @@ import {BehaviorSubject, Observable} from "rxjs";
 export class CategoryService {
 
     private categoryList !: Category[];
-    private categoryToSubCategoryListMap !: Map<number, Category[]>;
+    private categoryIdToSubCategoryListMap !: Map<number, SubCategory[]>;
     private categoryId$!: BehaviorSubject<number>;
     private subCategoryId$!: BehaviorSubject<number>;
 
     constructor() {
 
         this.initCategoryList();
-        this.initCategoryMap();
 
         this.initDataMembers();
+
+        this.initCategoryMap();
+
+    }
+
+    private initCategoryList() {
+        this.categoryList = [
+            new Category('Vegetables & Fruits'),
+            new Category('Dairy & Breakfast'),
+            new Category('Munchies'),
+            new Category('Cold Drinks & Juices'),
+            new Category('Instant & Frozen Food'),
+            new Category('Tea, Coffee & Health Drinks'),
+            new Category('Bakery & Biscuits')
+        ];
 
     }
 
@@ -28,6 +43,98 @@ export class CategoryService {
 
     }
 
+    private initCategoryMap() {
+
+        this.categoryIdToSubCategoryListMap = new Map<number, SubCategory []>();
+        for (let category of this.categoryList)
+            this.categoryIdToSubCategoryListMap.set(category.getId(), this.generateSubCategoryList(category));
+
+    }
+
+    private generateSubCategoryList(category: Category): SubCategory[] {
+
+        let subCategoryList: SubCategory[];
+
+        switch (category.getName()) {
+            case 'Vegetables & Fruits':
+                subCategoryList = [
+                    new SubCategory(category.getId(), 'Fresh Vegetables'),
+                    new SubCategory(category.getId(), 'Fresh Fruits'),
+                    new SubCategory(category.getId(), 'Mangoes & Melons'),
+                    new SubCategory(category.getId(), 'Seasonal'),
+                    new SubCategory(category.getId(), 'Exotics')
+                ];
+                break;
+
+            case 'Dairy & Breakfast':
+                subCategoryList = [
+                    new SubCategory(category.getId(), 'Milk'),
+                    new SubCategory(category.getId(), 'Bread & Pav'),
+                    new SubCategory(category.getId(), 'Eggs'),
+                    new SubCategory(category.getId(), 'Flakes & Kids Cereals'),
+                    new SubCategory(category.getId(), 'Muesli & Granola')
+                ];
+                break;
+
+            case 'Munchies':
+                subCategoryList = [
+                    new SubCategory(category.getId(), 'Chips & Crisps'),
+                    new SubCategory(category.getId(), 'Rusks & Wafers'),
+                    new SubCategory(category.getId(), 'Energy Bars'),
+                    new SubCategory(category.getId(), 'Nachos'),
+                    new SubCategory(category.getId(), 'Bhujia & Mixtures')
+                ];
+                break;
+
+            case 'Cold Drinks & Juices':
+                subCategoryList = [
+                    new SubCategory(category.getId(), 'Beverages Gift Packs'),
+                    new SubCategory(category.getId(), 'Soft Drinks'),
+                    new SubCategory(category.getId(), 'Fruit Juices'),
+                    new SubCategory(category.getId(), 'Mango Drinks'),
+                    new SubCategory(category.getId(), 'Pure Juices')
+                ];
+                break;
+
+            case 'Instant & Frozen Food':
+                subCategoryList = [
+                    new SubCategory(category.getId(), 'Noodles'),
+                    new SubCategory(category.getId(), 'Frozen Veg Snacks'),
+                    new SubCategory(category.getId(), 'Frozen Non-Veg Snacks'),
+                    new SubCategory(category.getId(), 'Pasta'),
+                    new SubCategory(category.getId(), 'Instant Mixes')
+                ];
+                break;
+
+            case 'Tea, Coffee & Health Drinks':
+                subCategoryList = [
+                    new SubCategory(category.getId(), 'Tea'),
+                    new SubCategory(category.getId(), 'Coffee'),
+                    new SubCategory(category.getId(), 'Milk Drinks'),
+                    new SubCategory(category.getId(), 'Green & Flavoured Tea'),
+                    new SubCategory(category.getId(), 'Herbal Drinks')
+                ];
+                break;
+
+            case 'Bakery & Biscuits':
+                subCategoryList = [
+                    new SubCategory(category.getId(), 'Biscuit Gift Pack'),
+                    new SubCategory(category.getId(), 'Bread & Pav'),
+                    new SubCategory(category.getId(), 'Cookies'),
+                    new SubCategory(category.getId(), 'Cream Biscuits'),
+                    new SubCategory(category.getId(), 'Glucose & Marie')
+                ];
+                break;
+
+            default:
+                console.log('Invalid Category');
+                subCategoryList = [];
+                break;
+        }
+
+        return subCategoryList;
+    }
+
     updateCategoryId(categoryId: number) {
         this.categoryId$.next(categoryId);
     }
@@ -36,115 +143,19 @@ export class CategoryService {
         this.subCategoryId$.next(subCategoryId);
     }
 
-    initCategoryList() {
-        this.categoryList = [
-            new Category(1, 'Vegetables & Fruits'),
-            new Category(2, 'Dairy & Breakfast'),
-            new Category(3, 'Munchies'),
-            new Category(4, 'Cold Drinks & Juices'),
-            new Category(5, 'Instant & Frozen Food'),
-            new Category(6, 'Tea, Coffee & Health Drinks'),
-            new Category(7, 'Bakery & Biscuits')
-        ];
+    getCategoryById(categoryId: number): Category {
+        let category = this.categoryList.find(category => category.getId() === categoryId);
+
+        if (category === undefined) throw new Error(`Category with ID ${categoryId} not found.`);
+        return category;
     }
 
-    initCategoryMap() {
+    getSubCategoryListByCategoryId(categoryId: number): SubCategory[] {
+        let subCategoryList = this.categoryIdToSubCategoryListMap.get(categoryId);
 
-        this.categoryToSubCategoryListMap = new Map<number, Category[]>();
-
-        for (let category of this.categoryList)
-            this.categoryToSubCategoryListMap.set(category.getId(), this.generateSubCategoryList(category.getId()));
-
-    }
-
-    private generateSubCategoryList(categoryId: number): Category[] {
-        let subCategoryList: Category[];
-
-        switch (categoryId) {
-            case 1:
-                subCategoryList = [
-                    new Category(1, 'Fresh Vegetables'),
-                    new Category(2, 'Fresh Fruits'),
-                    new Category(3, 'Mangoes & Melons'),
-                    new Category(4, 'Seasonal'),
-                    new Category(5, 'Exotics')
-                ];
-                break;
-
-            case 2:
-                subCategoryList = [
-                    new Category(1, 'Milk'),
-                    new Category(2, 'Bread & Pav'),
-                    new Category(3, 'Eggs'),
-                    new Category(4, 'Flakes & Kids Cereals'),
-                    new Category(5, 'Muesli & Granola')
-                ];
-                break;
-
-            case 3:
-                subCategoryList = [
-                    new Category(1, 'Chips & Crisps'),
-                    new Category(2, 'Rusks & Wafers'),
-                    new Category(3, 'Energy Bars'),
-                    new Category(4, 'Nachos'),
-                    new Category(5, 'Bhujia & Mixtures')
-                ];
-                break;
-
-            case 4:
-                subCategoryList = [
-                    new Category(1, 'Beverages Gift Packs'),
-                    new Category(2, 'Soft Drinks'),
-                    new Category(3, 'Fruit Juices'),
-                    new Category(4, 'Mango Drinks'),
-                    new Category(5, 'Pure Juices')
-                ];
-                break;
-
-            case 5:
-                subCategoryList = [
-                    new Category(1, 'Noodles'),
-                    new Category(2, 'Frozen Veg Snacks'),
-                    new Category(3, 'Frozen Non-Veg Snacks'),
-                    new Category(4, 'Pasta'),
-                    new Category(5, 'Instant Mixes')
-                ];
-                break;
-
-            case 6:
-                subCategoryList = [
-                    new Category(1, 'Tea'),
-                    new Category(2, 'Coffee'),
-                    new Category(3, 'Milk Drinks'),
-                    new Category(4, 'Green & Flavoured Tea'),
-                    new Category(5, 'Herbal Drinks')
-                ];
-                break;
-
-            case 7:
-                subCategoryList = [
-                    new Category(1, 'Biscuit Gift Pack'),
-                    new Category(2, 'Bread & Pav'),
-                    new Category(3, 'Cookies'),
-                    new Category(4, 'Cream Biscuits'),
-                    new Category(5, 'Glucose & Marie')
-                ];
-                break;
-
-            default:
-                subCategoryList = [
-                    new Category(1, 'Milk'),
-                    new Category(2, 'Bread & Pav'),
-                    new Category(3, 'Eggs'),
-                    new Category(4, 'Flakes & Kids Cereals'),
-                    new Category(5, 'Muesli & Granola')
-                ];
-                break;
-        }
-
+        if (subCategoryList === undefined) throw new Error(`SubCategory list for Category ID ${categoryId} not found.`);
         return subCategoryList;
     }
-
 
     //  Getters
     //  -------
@@ -153,16 +164,16 @@ export class CategoryService {
         return this.categoryList;
     }
 
-    getSubCategoryList(categoryId: number): Category[] {
-        return this.categoryToSubCategoryListMap.get(parseInt(categoryId.toString())) || [];
-    }
-
     getCategoryId$(): Observable<number> {
         return this.categoryId$.asObservable();
     }
 
     getSubCategoryId$(): Observable<number> {
         return this.subCategoryId$.asObservable();
+    }
+
+    getCategoryIdToSubCategoryListMap(): Map<number, SubCategory[]> {
+        return this.categoryIdToSubCategoryListMap;
     }
 
 }
