@@ -2,13 +2,15 @@ import {Component} from '@angular/core';
 import {CategoryListBarComponent} from "./category-list-bar/category-list-bar.component";
 import {SubCategorySidebarComponent} from "./sub-category-sidebar/sub-category-sidebar.component";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ProductGridComponent} from "./product-grid/product-grid.component";
 
 @Component({
     selector: 'app-shopping',
     standalone: true,
     imports: [
         CategoryListBarComponent,
-        SubCategorySidebarComponent
+        SubCategorySidebarComponent,
+        ProductGridComponent
     ],
     templateUrl: './shopping.component.html',
     styleUrl: './shopping.component.css'
