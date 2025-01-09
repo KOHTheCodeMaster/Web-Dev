@@ -9,12 +9,12 @@ import {CategoryService} from "./category.service";
 export class ProductService {
 
     private categoryList !: Category[];
-    private productList!: Product[];
+    private allProductList!: Product[];
 
     constructor(private categoryService: CategoryService) {
 
         this.categoryList = this.categoryService.getCategoryList();
-        this.productList = this.generateProductList();
+        this.allProductList = this.generateProductList();
 
     }
 
@@ -276,12 +276,13 @@ export class ProductService {
     }
 
     public getProductListByCategoryId(categoryId: number): Product[] {
-        return this.productList.filter(product => product.getCategoryId() === categoryId);
+
+        //  Filter products by category id, Limit to 10 products
+        return this.allProductList
+            .filter(product => product.getCategoryId() === categoryId)
+            .slice(0, 10);
     }
 
-    public getProductListByCategoryIdAndSubCategoryId(categoryId: number, subCategoryId: number): Product[] {
-        return this.productList.filter(product => product.getCategoryId() === categoryId && product.getSubCategoryId() === subCategoryId);
-    }
 
     //  Getters
     //  -------
@@ -290,7 +291,8 @@ export class ProductService {
         return this.categoryList;
     }
 
-    getProductList() {
-        return this.productList;
+    public getAllProductList(): Product[] {
+        return this.allProductList;
     }
+
 }

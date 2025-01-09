@@ -3,7 +3,8 @@
     <div class="flex flex-wrap gap-4">
         <div *ngFor="let product of filteredProductsList"
              class="bg-gray-900 rounded-lg shadow-md overflow-hidden dark:bg-gray-700">
-            {{ product.getName() }}
+<!--            {{ product.getProduct().getName() }}-->
+            <app-product-card [product]="product"></app-product-card>
         </div>
     </div>
 </div>

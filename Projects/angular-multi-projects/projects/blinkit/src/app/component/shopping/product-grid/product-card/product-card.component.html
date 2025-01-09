@@ -1,0 +1,30 @@
+<div class="w-48 h-fit flex flex-col justify-center items-center">
+
+    <img src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon"
+         class="w-24 h-24 object-cover">
+    <div class="p-4">
+        <h2 class=" font-bold text-white">{{ product.getName() }}</h2>
+        <div class="flex gap-4 items-center justify-between mt-2">
+            <p class="text-lg font-semibold text-grey-100">
+                {{ product.getPrice() | currency:'INR':'symbol' }}
+            </p>
+            <div *ngIf="product.getQuantity() === 0; else quantityControls">
+                <button (click)="incrementQuantity()"
+                        class="px-2 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
+                    Add To Cart
+                </button>
+            </div>
+            <ng-template #quantityControls>
+                <div class="flex items-center">
+                    <button (click)="decrementQuantity()"
+                            class="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-700">-
+                    </button>
+                    <span class="mx-2">{{ product.getQuantity() }}</span>
+                    <button (click)="incrementQuantity()"
+                            class="px-2 py-1 bg-green-500 text-white rounded-md hover:bg-green-700">+
+                    </button>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         9th Jan 2K25 - 09:14 AM
+Commit Message:     277 - Angular Projects - Blinkit - Added Product Card Component - Updated Product Model & Service
+
+Quick Summary:
+
+1. Added Product Card Component to display product details in a card format.
+2. Updated the Product Model to include `quantity` and `subTotalPrice` fields.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         9th Jan 2K25 - 07:47 AM
 Commit Message:     276 - Angular Projects - Blinkit - Added Product Grid Component - Fixed Products List in Products Service
 
