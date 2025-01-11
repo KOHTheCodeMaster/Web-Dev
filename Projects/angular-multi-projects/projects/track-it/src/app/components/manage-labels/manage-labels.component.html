@@ -1,0 +1,60 @@
+<div class="w-full h-full flex justify-between">
+
+    <!--  Sidebar  -->
+    <app-sidebar class="w-1/5 h-screen"></app-sidebar>
+
+    <!-- Labels -->
+    <div class="w-4/5 h-full">
+        <main class="w-1/2 h-fit mx-auto px-1 py-4 border">
+
+            <div class="w-fit ml-6 mt-10 mb-4 text-3xl font-semibold">Manage Labels</div>
+
+            <!-- Labels -->
+            <div class="my-8">
+
+                <!-- Labels - Header -->
+                <div class="px-2 flex justify-between items-center">
+                    <div class="flex gap-2">
+                        <button><img src="/assets/icons/01-sample-icon.svg" alt="Add New Label Icon"></button>
+                        <span>Labels</span>
+                        <span>( {{ labelList.length }} )</span>
+                    </div>
+                    <div>
+                        <div class="ml-auto">
+                            <button><img src="/assets/icons/01-sample-icon.svg" alt="Add New Label Icon"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Labels - Items -->
+                <div id="id-label-list-container" class="ml-6 mt-2">
+
+                    <div *ngFor="let label of labelList" class="flex justify-between items-center py-2">
+                        <div class="flex gap-2 items-center">
+                            <button><img src="/assets/icons/01-sample-icon.svg" alt="Label Icon"></button>
+<!--                            <span>{{ label.getName() }}</span>-->
+                        </div>
+                        <div>
+                            <button><img src="/assets/icons/01-sample-icon.svg" alt="Edit Label Icon"></button>
+                            <button><img src="/assets/icons/01-sample-icon.svg" alt="Delete Label Icon"></button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Labels - Items -->
+                <div id="id-label-list-container2" class="ml-6 mt-2">
+                    <!-- Labels will be dynamically populated here using JavaScript -->
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+
+</div>
+
+
+

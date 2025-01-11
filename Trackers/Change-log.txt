@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         11th Jan 2K25 - 02:10 PM
+Commit Message:     278 - Angular Projects - Track It - Added Sidebar Component for Navigation
+
+Quick Summary:
+
+1. Project Setup for Track It - A Task Management Application.
+2. Added Sidebar Component for navigation and task management.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         9th Jan 2K25 - 09:14 AM
 Commit Message:     277 - Angular Projects - Blinkit - Added Product Card Component - Updated Product Model & Service
 
