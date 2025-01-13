@@ -20,7 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
-Time Stamp:         13th Jan 2K25 - 02:10 PM
+Time Stamp:         13th Jan 2K25 - 11:37 PM
+Commit Message:     281 - Angular Projects - Blinkit - Updated CategoryListBarComponent
+
+Quick Summary:
+
+1. Updated CategoryListBarComponent to display all 7 categories.
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp:         13th Jan 2K25 - 10:58 PM
 Commit Message:     280 - Angular Projects - Blinkit - Added `DataLoaderService` & JSON Files for Categories, Subcategories & Products Data
 
 Quick Summary:
@@ -30,7 +39,7 @@ Quick Summary:
 
 ----------------------------------------------------------------------------------------------------
 
-Time Stamp:         13th Jan 2K25 - 02:10 PM
+Time Stamp:         13th Jan 2K25 - 08:49 PM
 Commit Message:     279 - Angular Projects - Removed Track It - Moving it to its own repository
 
 Quick Summary:

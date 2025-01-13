@@ -3,6 +3,7 @@ import {Category} from "../../../shared/model/category.model";
 import {CategoryService} from "../../../service/category.service";
 import {NgClass, NgForOf} from "@angular/common";
 import {ActivatedRoute, RouterLink} from "@angular/router";
+import {DataLoaderService} from "../../../service/data-loader.service";
 
 @Component({
     selector: 'app-category-list-bar',
@@ -18,25 +19,38 @@ import {ActivatedRoute, RouterLink} from "@angular/router";
 export class CategoryListBarComponent {
 
     categoryId!: number;
-    visibleCategoryList: Category[] = [];
-    hiddenCategoryList: Category[] = [];
+    visibleCategoryList!: Category[];
+    hiddenCategoryList!: Category[];
     maxVisibleCategoryCount!: number;
 
     constructor(private categoryService: CategoryService,
+                private dataLoaderService: DataLoaderService,
                 private activatedRoute: ActivatedRoute) {
 
-        this.maxVisibleCategoryCount = 5;   // Number of categories to show inline
-        this.initCategoryLists();
+        this.initDataMembers();
 
+        this.initSubscriptions();
+
+    }
+
+    private initDataMembers() {
+        this.maxVisibleCategoryCount = 7;   // Number of categories to show inline
+        this.visibleCategoryList = [];
+        this.hiddenCategoryList = [];
+    }
+
+    private initSubscriptions() {
+
+        //  Update category lists when data is loaded
+        this.dataLoaderService.getDataLoaded$().subscribe(dataLoaded => dataLoaded ? this.initCategoryLists() : null);
+
+        //  Update category id when it changes
         this.categoryService.getCategoryId$().subscribe(categoryId => this.categoryId = categoryId);
 
+        //  Update category id when query parameter changes
         this.activatedRoute.queryParams.subscribe(params => {
-            if (params['categoryId']) {
-                let currentCategoryId: number = parseInt(params['categoryId']);
-                this.categoryService.updateCategoryId(currentCategoryId);
-            } else {
-                console.log('No Category Id');
-            }
+            if (params['categoryId']) this.categoryService.updateCategoryId(parseInt(params['categoryId']));
+            else console.log('No Category Id');
         });
 
     }
