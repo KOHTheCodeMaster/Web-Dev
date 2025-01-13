@@ -5,8 +5,8 @@ export class Category {
     private id: number;
     private name: string;
 
-    constructor(name: string) {
-        this.id = Category.lastCategoryId++;
+    constructor(name: string, id?: number) {
+        this.id = id ? id : Category.lastCategoryId++;
         this.name = name;
     }
 

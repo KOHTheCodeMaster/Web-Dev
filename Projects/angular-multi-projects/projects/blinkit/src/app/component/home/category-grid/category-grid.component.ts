@@ -3,21 +3,35 @@ import {Category} from "../../../shared/model/category.model";
 import {NgFor} from "@angular/common";
 import {CategoryService} from "../../../service/category.service";
 import {Router} from "@angular/router";
+import {DataLoaderService} from "../../../service/data-loader.service";
 
 @Component({
-  selector: 'app-category-grid',
-  standalone: true,
-  imports: [NgFor],
-  templateUrl: './category-grid.component.html',
-  styleUrl: './category-grid.component.css'
+    selector: 'app-category-grid',
+    standalone: true,
+    imports: [NgFor],
+    templateUrl: './category-grid.component.html',
+    styleUrl: './category-grid.component.css'
 })
 export class CategoryGridComponent {
 
     categoryList!: Category[];
 
     constructor(private categoryService: CategoryService,
+                private dataLoaderService: DataLoaderService,
                 private router: Router) {
-        this.categoryList = this.categoryService.getCategoryList();
+
+        this.categoryList = [];
+
+        this.initSubscriptions();
+
+    }
+
+    private initSubscriptions() {
+
+        this.dataLoaderService.getDataLoaded$().subscribe(dataLoaded => {
+            if (dataLoaded) this.categoryList = this.categoryService.getCategoryList();
+        });
+
     }
 
     handleCategoryItemClick(categoryId: number) {
@@ -25,5 +39,4 @@ export class CategoryGridComponent {
         this.router.navigate(['/shopping'], {queryParams: {categoryId: categoryId}});
         this.categoryService.updateCategoryId(categoryId);
     }
-
 }

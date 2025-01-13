@@ -21,6 +21,16 @@ Change Log:
 ----------------------------------------------------------------------------------------------------
 
 Time Stamp:         13th Jan 2K25 - 02:10 PM
+Commit Message:     280 - Angular Projects - Blinkit - Added `DataLoaderService` & JSON Files for Categories, Subcategories & Products Data
+
+Quick Summary:
+
+1. Added JSON files for Categories, Subcategories, and Products data.
+2. Added `DataLoaderService` to fetch data from JSON files.
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp:         13th Jan 2K25 - 02:10 PM
 Commit Message:     279 - Angular Projects - Removed Track It - Moving it to its own repository
 
 Quick Summary:

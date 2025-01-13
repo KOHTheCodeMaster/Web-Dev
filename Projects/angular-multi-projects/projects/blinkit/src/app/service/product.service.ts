@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Category} from "../shared/model/category.model";
 import {Product} from "../shared/model/product.model";
 import {CategoryService} from "./category.service";
+import {DataLoaderService} from "./data-loader.service";
 
 @Injectable({
     providedIn: 'root'
@@ -11,10 +12,26 @@ export class ProductService {
     private categoryList !: Category[];
     private allProductList!: Product[];
 
-    constructor(private categoryService: CategoryService) {
+    constructor(private categoryService: CategoryService,
+                private dataLoaderService: DataLoaderService) {
 
-        this.categoryList = this.categoryService.getCategoryList();
-        this.allProductList = this.generateProductList();
+        this.allProductList = [];
+
+        this.initSubscriptions();
+
+    }
+
+    private initSubscriptions() {
+
+        this.dataLoaderService.getDataLoaded$().subscribe(dataLoaded => {
+
+            //  Initialize Product List
+            if (dataLoaded) {
+                this.allProductList = this.dataLoaderService.getDataList('products').map(product =>
+                    new Product(product['categoryId'], product['subCategoryId'], product['name'], product['price']));
+            }
+
+        });
 
     }
 

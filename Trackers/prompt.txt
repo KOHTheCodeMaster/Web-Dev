@@ -1,0 +1,503 @@
+
+Category: Vegetables & Fruits
+-----------------------------
+
+Fresh Vegetables	Price
+1. Onion (Pyaz)	Rs.51
+2. Potato - New Crop	Rs.37
+3. English Cucumber (Kheera)	Rs.37
+4. Lemon (Nimbu)	Rs.33
+5. Green Capsicum (Shimla Mirch)	Rs.33
+6. Green Peas (Matar)	Rs.33
+7. Cabbage (Patta Gobhi)	Rs.19
+8. Button Mushroom	Rs.54
+9. Garlic (Lehsun)	Rs.100
+10. Lady Finger (Bhindi)	Rs.42
+
+
+
+Fresh Fruits	Price
+1. Tender Coconut (275+ ml) (Nariyal)	Rs.72
+2. Brown Coconut (Nariyal)	Rs.64
+3. Papaya (Papita)	Rs.96
+4. Guava (Amrud)	Rs.46
+5. Kinnow Orange	Rs.42
+6. Small Shimla Apple (Seb)	Rs.145
+7. Green Grapes 500 g	Rs.150
+8. Pomegranate - Medium (500g - 700 g) (Anaar)	Rs.151
+9. Shimla Apple Regular	Rs.140
+10. Pomegranate - Large	Rs.198
+
+
+
+Mangoes & Melons	Price
+1. Muskmelon (Kharbuja)	Rs.161
+2. Kiran Watermelon (Tarbuj)	Rs.90
+3. Sun Melon (Sarda)	Rs.154
+
+
+
+Seasonal	Price
+1. Broccoli	Rs.108
+2. Thai Guava	Rs.54
+3. Green Capsicum (Shimla Mirch)	Rs.33
+4. Green Peas (Peeled)	Rs.85
+5. Green Peas (Matar)	Rs.33
+6. Cabbage (Patta Gobhi)	Rs.19
+7. Sugarcane Cubes	Rs.42
+8. Guava (Amrud)	Rs.46
+9. Kinnow Orange	Rs.42
+10. Small Shimla Apple (Seb)	Rs.145
+
+
+Exotics	Price
+1. Avocado - Tanzania 1 piece (150 - 200) g	Rs.110
+2. Broccoli	Rs.108
+3. Green Kiwi	Rs.93
+4. Thai Guava	Rs.54
+5. Mini Orange	Rs.96
+6. Red Delicious Apple	Rs.134
+7. Baby Corn - Packet	Rs.48
+8. Fresh Rosemary	Rs.39
+9. Pink Lady Apple 2 pieces (300 - 400) g	Rs.148
+10. Green Zucchini	Rs.58
+
+
+---
+
+Category: Dairy & Bakery
+-----------------------------
+
+
+Milk	Price
+1. Amul Taaza Toned Fresh Milk	Rs.26
+2. Amul Moti Toned Milk (90 Days Shelf Life)	Rs.33
+3. Amul Taaza Homogenised Toned Milk	Rs.74
+4. Amul Taaza Toned Milk	Rs.16
+5. Amul Gold Milk	Rs.80
+6. Amul Lactose Free Milk	Rs.25
+7. Yakult Probiotic Drink	Rs.90
+8. Mother Dairy FIT Life Homogenized Double Toned Milk (450 ml)	Rs.33
+9. Nestle a+ Toned Milk	Rs.101
+10. Mother Dairy Toned Milk	Rs.74
+
+
+Bread & Pav Price List
+Bread & Pav	Price
+1. Harvest Gold Hearty Brown Bread	Rs.55
+2. Harvest Gold Sandwich White Bread	Rs.45
+3. English Oven Zero Maida 100% Whole Wheat Bread	Rs.55
+4. English Oven Brown Bread	Rs.55
+5. English Oven Sandwich White Bread	Rs.45
+6. English Oven Zero Maida Multigrain Bread	Rs.70
+7. English Oven Milk Bread	Rs.50
+8. Harvest Gold White Bread	Rs.55
+9. English Oven Zero Maida Whole Wheat Bread	Rs.60
+10. Harvest Gold Bunjoy Tutti Frutti Sweet Bun	Rs.20
+
+
+Eggs Price List
+Eggs	Price
+1. Nature Good White Eggs (6 pieces)	Rs.57
+2. The Natural Fresh White Eggs - 10 pieces	Rs.128
+3. Nature Good White Eggs (30 pieces)	Rs.259
+4. Nature Good Brown Eggs	Rs.85
+5. The Natural Fresh White Eggs - 30 pieces	Rs.308
+6. The Natural Fresh White Eggs - 6 pieces	Rs.80
+7. Eggoz Nutrition Protein Rich Brown Eggs (10 pieces)	Rs.161
+
+
+Flakes & Kids Cereals Price List
+Flakes & Kids Cereals	Price
+1. Kellogg's Real Almond Honey Corn Flakes	Rs.369
+2. Kellogg's Multigrain Chocos Variety Pack	Rs.64
+3. Kellogg's Corn Flakes with Immuno Nutrients	Rs.120
+4. Kellogg's Corn Flakes Original	Rs.195
+5. Kellogg's Multigrain Chocos Moons & Stars	Rs.458
+6. Kellogg's Double Chocolaty Fills Chocos (Crunchy Outside, Creamy Inside)	Rs.192
+7. Kellogg's Corn Flakes Original	Rs.387
+8. Hide & Seek Fills Cereal	Rs.94
+9. Kellogg's Real Almond Honey Corn Flakes	Rs.94
+10. Kellogg's Froot Loops - Crunchy Multigrain Cereal	Rs.195
+
+
+Muesli & Granola Price List
+Muesli & Granola	Price
+1. Kellogg's Muesli Nuts Delight, Breakfast Cereal	Rs.426
+2. Kellogg's Muesli Fruit, Nut & Seeds	Rs.187
+3. Kellogg's Muesli Fruit, Nut & Seeds	Rs.385
+4. Yoga Bar Dark Chocolate + Cranberry & Fruit + Nuts & Seeds Muesli	Rs.99
+5. Bagrry's Crunchy Muesli 30% Fruit & Nut with Cranberries	Rs.396
+6. MuscleBlaze High Protein Dark Chocolate & Cranberry Muesli	Rs.273
+7. Yoga Bar Fruits + Nuts & Seeds Muesli	Rs.312
+8. Yoga Bar Dark Chocolate & Cranberry Muesli	Rs.396
+9. Bagrry's Crunchy Muesli With Almonds, Raisins & Honey	Rs.410
+10. True Elements Muesli with Real Fruits, Nuts & Seeds	Rs.400
+
+
+---
+
+Category: Munchies
+-----------------------------
+
+
+Chips & Crisps Price List
+Chips & Crisps	Price
+1. Cornitos Crusties Korean Chilli Puffs	Rs.45
+2. Uncle Chipps Spicy Treat Flavour Potato Chips	Rs.20
+3. Kurkure Masala Munch Crisps - Pack of 3	Rs.54
+4. Lay's India's Magic Masala Potato Chips	Rs.30
+5. Lay's West Indies Hot n Sweet Chilli Flavour Potato Chips	Rs.20
+6. Lay's American Style Cream & Onion Potato Chips	Rs.30
+7. Kurkure Puffcorn Yummy Cheese Puffs - Pack of 3	Rs.54
+8. Lay's Chile Limon Flavour Potato Chips	Rs.20
+9. Lay's Crispz Herb & Onion Potato Chips	Rs.20
+10. Bingo Tedhe Medhe Masala Tadka Crisps - Pack of 3	Rs.40
+
+
+Rusks & Wafers Price List
+Rusks & Wafers	Price
+1. Parle Real Elaichi Premium Rusk	Rs.47
+2. Britannia Toastea Premium Bake Rusk (250 g)	Rs.47
+3. Parle Premium Real Elaichi Rusk	Rs.147
+4. Britannia Treat Rich Crème Chocolate Flavoured Wafers	Rs.27
+5. English Oven Extra Crunchy Premium Rusk	Rs.67
+6. Dukes Waffy Chocolate Wafers	Rs.27
+7. Britannia Treat Rich Creme Orange Flavoured Wafers	Rs.27
+8. Dukes Waffy Choco Wafer Roll	Rs.98
+9. Dukes Waffy Orange Wafers	Rs.27
+10. Dukes Waffy Vanilla Wafers	Rs.27
+
+
+Energy Bars Price List
+Energy Bars	Price
+1. Yoga Bar Daily 10g Protein Bar (Assorted)	Rs.301
+2. Yoga Bar Chocolate Chunk Nut Multigrain Protein Bar (35 g)	Rs.38
+3. Yoga Bar 10 g Dark Chocolate & Cranberry Protein Bar	Rs.58
+4. RiteBite Max Protein Daily Choco Almond Protein Bar - Pack of 2	Rs.140
+5. Yoga Bar Nuts & Seeds Multigrain Energy Protein Bar	Rs.38
+6. RiteBite Max Protein Daily Choco Berry Protein Bar - Pack of 3	Rs.205
+7. Yoga Bar Blueberry Pie Breakfast Protein Bar	Rs.45
+8. RiteBite Max Protein Daily Protein Bar (Assorted)	Rs.388
+9. RiteBite Max Protein Bar (Peanut Butter)	Rs.119
+10. RiteBite Choco Delite 4g Protein Bar	Rs.43
+
+
+Nachos Price List
+Nachos	Price
+1. Cornitos Tomato Mexicana Nachos Crisps - Pack of 2	Rs.173
+2. Doritos Dinamita Sizzling Hot Nachos Crips	Rs.26
+3. Cornitos Nachos Crisps & Dip Combo	Rs.68
+4. Doritos Cheese Nachos - Pack of 2	Rs.135
+5. Cornitos Sweet Chilli Nachos Crisps - Pack of 2	Rs.173
+6. Cornitos Cheese & Herbs Nachos	Rs.57
+7. Doritos Sweet Chilli Flavour Nachos - Pack of 2	Rs.80
+8. Bingo Mad Angles Pizza Nachos - Pack of 3	Rs.57
+9. Cornitos Sea Salt Nachos - Pack of 2	Rs.173
+10. Doritos Cheese Nachos	Rs.45
+This data was last updated on 1/13/2025
+
+
+Bhujia & Mixtures Price List
+Bhujia & Mixtures	Price
+1. Bikaji Bhujia	Rs.113
+2. Bikaji Mobile Chowpati Bhelpuri	Rs.40
+3. Bikano Bikaneri Bhujia	Rs.60
+4. Bikaji Kuch Kuch All In One Mixture Namkeen	Rs.60
+5. Bikaji Bikaneri Bhujia	Rs.283
+6. Bikano Aloo Bhujia	Rs.55
+7. Bikaji Tana Tan Aloo Bhujia	Rs.113
+8. Bikaji All in One Kuch Kuch Mixture Namkeen	Rs.317
+9. Bikano Navratan Mixture Namkeen	Rs.55
+10. Let's Try Namkeen Combo	Rs.86
+
+
+---
+
+Category: Cold Drinks & Juices
+-----------------------------
+
+
+Beverages Gift Packs	Price
+1. Coolberg Non Alcoholic Beer (Assorted)	Rs.547
+2. Real Greetings Festive Juice Gift Pack - Free Real Fruit Power 180 ml	Rs.208
+3. Real Greetings Beverage Gift Pack - with 2 units of Real Fruit Power 180ml Free	Rs.324
+4. Blue Tokai Starter Coffee Gift Pack	Rs.999
+5. Chaayos Festive Tea Gift Box	Rs.549
+
+
+Soft Drinks Price List
+Soft Drinks	Price
+1. Thums Up Soft Drink (750 ml)	Rs.40
+2. Coca-Cola Soft Drink (750 ml) - Pack of 2	Rs.79
+3. Sprite Lime Flavored Soft Drink 750 ml	Rs.40
+4. 7UP Nimbooz with Lemon Juice	Rs.20
+5. Coca-Cola Diet Coke Soft Drink	Rs.40
+6. Coca-Cola Soft Drink	Rs.96
+7. Coca-Cola Zero Sugar Soft Drink Can	Rs.40
+8. Limca Lemon 'N' Lime Soft Drink 750 ml	Rs.40
+9. Coca-Cola Soft Drink (300 ml)	Rs.40
+10. paper boat Zero Lemon Lime Flavoured Sparkling Drink	Rs.59
+
+
+Fruit Juices	Price
+1. paper boat Swing Lush Lychee Juice - Pack of 2	Rs.81
+2. Appy Apple Juice	Rs.10
+3. Real Fruit Power Cranberry Juice	Rs.130
+4. Real Fruit Power Mixed Fruit Juice 1 l	Rs.120
+5. paper boat Nata De Coco Lychee Juice	Rs.39
+6. Real Fruit Power Orange Juice	Rs.120
+7. paper boat Swing Yummy Guava Juice	Rs.42
+8. Real Fruit Power Pineapple Juice	Rs.120
+9. Fresca Litchi Juice	Rs.113
+10. paper boat Chilli Guava Fruit Juice	Rs.34
+
+
+Mango Drinks	Price
+1. Frooti Mango Drink	Rs.10
+2. Maaza Mango Drink 600 ml	Rs.40
+3. paper boat Aamras Mango Drink	Rs.34
+4. Maaza Mango Drink 1.2 l	Rs.73
+5. Slice Mango Drink (1.75 l)	Rs.93
+6. Real Alphonso Nectar Mango Mango Drink	Rs.102
+7. Frooti Mango Drink (1.8 l)	Rs.99
+8. paper boat Aam Panna Mango Drink	Rs.34
+9. Raw Pressery Alphonso Mango Mango Drink	Rs.243
+10. paper boat Aamras/ Mango Drink	Rs.143
+
+
+Pure Juices Price List
+Pure Juices	Price
+1. Real Activ Cranberry Juice	Rs.123
+2. Real Activ Apple Juice	Rs.113
+3. Real Activ Orange Juice	Rs.145
+4. Real Activ Fibre+ Multi Fruit Juice	Rs.119
+5. Real Activ Mixed Fruit Juice	Rs.145
+6. Raw Pressery Valencia Orange Juice	Rs.388
+7. Raw Pressery Valencia Orange Juice	Rs.150
+8. Real Activ Pomegranate Juice	Rs.180
+9. Raw Pressery Pomegranate Juice (250 ml)	Rs.150
+10. Raw Pressery Sugarcane Juice	Rs.79
+
+
+---
+
+Category: Instant & Frozen Food
+-----------------------------
+
+
+Noodles	Price
+1. Maggi Masala - 2 Minutes Instant Noodles	Rs.60
+2. Maggi 2 - Minute Instant Noodles (Pack of 12)	Rs.165
+3. Maggi Masala 2 Minutes Instant Noodles	Rs.114
+4. Maggi Nutri-Licious Masala Veg Atta Instant Noodles	Rs.101
+5. Maggi Cuppa Masala Cup Noodles	Rs.45
+6. Sunfeast Yippee Magic Masala Instant Instant Noodles (240 g)	Rs.51
+7. Yu 100% Whole Wheat Noodles	Rs.43
+8. Maggi Spicy Garlic Instant Noodles	Rs.70
+9. Wai Wai Ready To Eat Veg Masala Flavoured Noodles	Rs.86
+10. Tops Plain Hakka Noodles	Rs.54
+
+
+
+Frozen Veg Snacks	Price
+1. McCain French Fries (Frozen)	Rs.103
+2. McCain Smiles (Frozen)	Rs.140
+3. McCain French Fries (Frozen) 1.25 kg	Rs.262
+4. McCain Aloo Tikki (Frozen)	Rs.94
+5. McCain Potato Cheese Nuggets Shotz (Frozen)	Rs.170
+6. McCain Chilli Garlic Potato Bites Nuggets (Frozen)	Rs.194
+7. HyFun Veggie Stix Fingers	Rs.90
+8. McCain Veg Burger Patty (Frozen)	Rs.109
+9. SPT Frozen Soya Chaap	Rs.94
+10. McCain Variety Pack Frozen Snack	Rs.165
+
+
+Frozen Non-Veg Snacks	Price
+1. ITC Master Chef Chicken Seekh Kebab (Frozen)	Rs.329
+2. Meatzza Hot & Spicy Chicken Seekh Kebab (Frozen)	Rs.285
+3. ITC Master Chef Crunchy Chicken Nuggets (Frozen)	Rs.280
+4. Prasuma Original Chicken Momos (Frozen)	Rs.306
+5. ITC Master Chef Desi Style Chicken Burger Patty (Frozen)	Rs.177
+6. Godrej Yummiez Lucknowi Chicken Seekh Kebab (Frozen)	Rs.279
+7. Wow! Momo Darjeeling Chicken Momos (Frozen)	Rs.165
+8. Meatzza Chicken Nuggets (Frozen)	Rs.290
+9. Prasuma Pork Sausage	Rs.230
+10. Godrej Yummiez Chicken Nuggets	Rs.309
+
+
+
+Pasta	Price
+1. Yu 100% Whole Wheat Spaghetti Pasta	Rs.136
+2. Maggi Cheese Macaroni Instant Pasta - Buy 3 Get 1 Free	Rs.105
+3. Bambino Macaroni Durum Wheat Elbow Pasta (400 g)	Rs.58
+4. Maggi Masala Penne Instant Pasta - Buy 3 Get 1 Free	Rs.105
+5. Yu Cheese Sauce Instant Wheat Pasta (Penne)	Rs.90
+6. Maggi Cheesy Tomato Twist Instant Pasta - Buy 3 Get 1 Free	Rs.105
+7. Bambino Macaroni Durum Wheat Elbow Pasta	Rs.107
+8. Disano Penne Pasta (100 % Durum Wheat)	Rs.82
+9. Disano Fusilli Pasta (100 % Durum Wheat)	Rs.82
+10. Sunfeast Yipee Instant Pasta Treat - Masala	Rs.30
+
+Instant Mixes Price List
+Instant Mixes	Price
+1. MTR Rava Idli Breakfast Mix	Rs.225
+2. MTR 3 Minute Poha Breakfast Mix	Rs.27
+3. MTR Khaman Dhokla- Instant Mix	Rs.95
+4. MTR Dosa Breakfast Mix	Rs.130
+5. Ching's Secret Schezwan Fried Rice Masala Instant Mix - 5 Single Use Pouches	Rs.57
+6. MTR 3 Minute Veggie Upma Breakfast Mix	Rs.27
+7. MTR Rice Idli Breakfast Mix	Rs.135
+8. MTR 3 Minute Khatta Meetha Poha Breakfast Mix	Rs.27
+9. MTR Upma Breakfast Mix	Rs.55
+10. MTR Sambhar Instant Mix	Rs.105
+
+
+---
+
+Category: Tea & Coffee
+-----------------------------
+
+
+Tea	Price
+1. Brooke Bond Taaza Tea 250 g	Rs.60
+2. Brooke Bond Red Label Tea	Rs.45
+3. Wagh Bakri Premium Tea (250 g)	Rs.150
+4. Tata Tea Agni Special Blend Tea	Rs.60
+5. Tata Tea Premium Tea	Rs.140
+6. Brooke Bond Taj Mahal Tea 250 g	Rs.180
+7. Tata Tea Gold	Rs.297
+8. Brooke Bond Taj Mahal Tea	Rs.65
+9. Tata Tea Agni Elaichi Tea Leaves	Rs.85
+10. Tata Tea Agni Special Blend Tea	Rs.120
+
+
+Coffee	Price
+1. BRU Instant Coffee	Rs.510
+2. Nescafe Classic Instant Coffee Powder - 100% Pure Coffee	Rs.110
+3. Nescafe Classic - Instant Coffee Powder - 100% Pure Coffee	Rs.230
+4. BRU Instant Coffee 50 g	Rs.145
+5. BRU Instant Coffee (100 g)	Rs.255
+6. Bevzilla Assorted Premium Instant Coffee	Rs.209
+7. Tata Coffee Grand Classic- Instant Coffee	Rs.113
+8. Nescafe Classic 100% Pure Instant Coffee Powder (90 g)	Rs.420
+9. Nescafe Classic Instant Coffee Powder - 100% Pure Coffee	Rs.870
+10. Nescafe Gold Premium Freeze Dried Instant Coffee	Rs.650
+
+
+Milk Drinks	Price
+1. Complan Royale Chocolate Drink Mix (1 kg)	Rs.604
+2. Bournvita Chocolate Drink Mix (Pouch)	Rs.232
+3. Bournvita Chocolate Drink Mix (Jar)	Rs.247
+4. Bournvita Chocolate Drink Mix (Pouch)	Rs.420
+5. Complan Royale Chocolate Drink Mix (500 g)	Rs.320
+6. PediaSure Premium Chocolate Drink Mix (Refill)	Rs.727
+7. Horlicks Chocolate Delight Drink Mix	Rs.249
+8. Horlicks Classic Malt Drink Mix	Rs.432
+9. Protinex Diabetes Care Drink Mix Creamy Vanilla	Rs.660
+10. Horlicks Classic Malt Drink Mix Jar	Rs.294
+
+
+Green & Flavoured Tea Price List
+Green & Flavoured Tea	Price
+1. Girnar Detox Desi Kahwa Green Tea Bags	Rs.100
+2. Lipton Honey Lemon Green Tea Bags (25 units)	Rs.158
+3. Tetley Lemon & Honey Green Tea Bags	Rs.135
+4. Wagh Bakri Instant Tea Premix (Elaichi + Ginger + Masala)	Rs.150
+5. Organic India Lemon Ginger Tulsi Green Tea Bags	Rs.200
+6. Organic India Tulsi Classic Green Tea Bags	Rs.200
+7. Tetley Ginger, Mint & Lemon Green Tea Bags (Immune with added Vitamin C)	Rs.489
+8. Lipton Lemon Zest Green Tea Bags	Rs.154
+9. Lipton Loose Green Tea	Rs.170
+10. Organic India Tulsi Honey Lemon Green Tea Bags	Rs.200
+
+
+
+Herbal Drinks	Price
+1. Patanjali Amla Herbal Juice	Rs.140
+2. Patanjali Aloe Vera with Fibre Herbal Juice	Rs.210
+3. Dabur Jamun Neem Karela Health Juice	Rs.268
+4. Kapiva Wild Amla Cold Pressed Juice - Pack of 2	Rs.479
+5. Patanjali Giloy Herbal Juice	Rs.90
+6. Kapiva Thar Aloe Vera Herbal Juice	Rs.251
+7. Kapiva Ayurveda Triphala Laxative Herbal Juice	Rs.249
+8. Zandu Amla + 5 Herbs Health Juice	Rs.212
+9. Dabur Amla Immunity Booster Herbal Juice	Rs.209
+10. Dabur Giloy Neem with Tulsi Immunity Booster Herbal Juice	Rs.224
+
+
+---
+
+Category: Bakery & Sweets
+
+
+Biscuit Gift Pack	Price
+1. Open Secret Chocolate Nutty Biscuits Gift Pack (Assorted)	Rs.293
+2. Britannia Shubhkamnaye Meetha Namkeen Delights Biscuits Gift Pack (380.5 g)	Rs.120
+3. McVitie's Festivities Assorted Biscuits Gift Pack	Rs.187
+4. McVitie's Festivities Assorted Biscuits Gift Pack	Rs.134
+5. Harvest Gold Chocolate Layer Cake Gift Box	Rs.200
+6. Britannia Shubhkamnaye Choco Delights Biscuits Gift Pack	Rs.300
+7. Open Secret Diwali Chocolate Gift Hamper with Lights and Card	Rs.553
+8. Open Secret Assorted Protein Cookies Gift Pack - Choco Almonds, White Choco Cashews & Peanut Butter	Rs.97
+9. Unibic Assorted Cookies - Pack of 6	Rs.170
+10. Cremica Danish Butter Cookies Gift Pack	Rs.99
+
+
+Bread & Pav Price List
+Bread & Pav	Price
+1. Harvest Gold Hearty Brown Bread	Rs.55
+2. Harvest Gold Sandwich White Bread	Rs.45
+3. English Oven Zero Maida 100% Whole Wheat Bread	Rs.55
+4. English Oven Brown Bread	Rs.55
+5. English Oven Sandwich White Bread	Rs.45
+6. English Oven Zero Maida Multigrain Bread	Rs.70
+7. English Oven Milk Bread	Rs.50
+8. Harvest Gold White Bread	Rs.55
+9. English Oven Zero Maida Whole Wheat Bread	Rs.60
+10. Harvest Gold Bunjoy Tutti Frutti Sweet Bun	Rs.20
+This data was last updated on 1/13/2025
+
+
+Cookies	Price
+1. Hide & Seek Chocolate Chip Cookies	Rs.45
+2. Hide & Seek Chocolate Chip Cookies (100 g)	Rs.29
+3. Britannia Good Day Cashew Biscuit	Rs.44
+4. Hide & Seek Chocolate Chip Cookies (Milano Collections)	Rs.63
+5. Britannia Good Day Pista Badam Biscuit	Rs.53
+6. Cadbury Chocobakes Choco Chip Cookies	Rs.64
+7. Patanjali Whole Wheat Nariyal Biscuit	Rs.30
+8. Parle Milano Chocolate Chip Biscuit	Rs.40
+9. Hide & Seek Milano Center Filled Biscuits (Choco & Hazelnut)	Rs.51
+10. Britannia Good Day Butter Biscuit	Rs.101
+
+
+
+Cream Biscuits	Price
+1. Cadbury Oreo Vanilla Flavour Crème Sandwich Biscuit Jumbo Pack	Rs.128
+2. Britannia Treat Jim Jam Sandwich Cream Biscuits	Rs.39
+3. Sunfeast Bourbon Dark Fantasy Biscuit	Rs.18
+4. Sunfeast Dark Fantasy Biscuit - Choco Fills Cookies	Rs.38
+5. Cadbury Oreo Vanilla Flavour Crème Sandwich Biscuit	Rs.38
+6. Britannia Milk Bikis Milk Sandwich Cream Biscuits	Rs.53
+7. Britannia The Original Bourbon Creme Biscuit With Chocolate	Rs.40
+8. Sunfeast Dark Fantasy Choco Fills Biscuit (230 g)	Rs.99
+9. Malkist Cheese Flavoured Cracker Biscuit - Family Pack	Rs.54
+10. Cadbury Oreo Vanilla Flavour Crème Sandwich Biscuit Family Pack	Rs.73
+
+
+Glucose & Marie	Price
+1. Britannia Marie Gold Marie Biscuits (208 g)	Rs.44
+2. Parle-G Glucose Biscuit	Rs.25
+3. Parle-G Original Gluco Biscuit	Rs.91
+4. Parle-G Gold Biscuit	Rs.30
+5. Parle-G Gold Glucose Biscuit 1 kg	Rs.135
+6. Britannia Marie Gold Marie Biscuits	Rs.130
+7. Parle Marie Biscuits	Rs.40
+8. Parle Marie Biscuits	Rs.97
+9. Britannia Milk Bikis Biscuit	Rs.86
+10. Sunfeast Glucose Plus Biscuit	Rs.98
+
+
+---
+

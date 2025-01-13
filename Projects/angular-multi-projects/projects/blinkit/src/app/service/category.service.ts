@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Category} from "../shared/model/category.model";
 import {BehaviorSubject, Observable} from "rxjs";
 import {SubCategory} from "../shared/model/sub-category.model";
+import {DataLoaderService} from "./data-loader.service";
 
 @Injectable({
     providedIn: 'root'
@@ -9,17 +10,50 @@ import {SubCategory} from "../shared/model/sub-category.model";
 export class CategoryService {
 
     private categoryList !: Category[];
+    private subCategoryList !: SubCategory[];
     private categoryIdToSubCategoryListMap !: Map<number, SubCategory[]>;
     private categoryId$!: BehaviorSubject<number>;
     private subCategoryId$!: BehaviorSubject<number>;
 
-    constructor() {
-
-        this.initCategoryList();
+    constructor(private dataLoaderService: DataLoaderService) {
 
         this.initDataMembers();
 
-        this.initCategoryMap();
+        this.initSubscriptions();
+
+        // this.initCategoryList();
+
+        // this.initCategoryMap();
+
+    }
+
+    private initSubscriptions() {
+
+        this.dataLoaderService.getDataLoaded$().subscribe((dataLoaded: boolean) => {
+
+            console.log('CategoryService - initSubscriptions() method - dataLoaded: ', dataLoaded);
+
+            if (dataLoaded) {
+
+                //  Initialize Category List
+                this.categoryList = this.dataLoaderService.getDataList('categories').map(category => new Category(category['name'], category['id']));
+
+                //  Initialize SubCategory List
+                this.subCategoryList = this.dataLoaderService.getDataList('subcategories').map(subcategory => new SubCategory(subcategory['categoryId'], subcategory['name'], subcategory['id']));
+
+                //  Initialize Category to SubCategory Map
+                this.categoryIdToSubCategoryListMap = new Map<number, SubCategory[]>();
+
+                for (let category of this.categoryList) {
+                    let filteredSubCategoryList: SubCategory[] = this.subCategoryList
+                        .filter(subcategory => subcategory.getCategoryId() === category.getId());
+
+                    this.categoryIdToSubCategoryListMap.set(category.getId(), filteredSubCategoryList);
+                }
+
+            }
+
+        });
 
     }
 
@@ -40,6 +74,9 @@ export class CategoryService {
 
         this.categoryId$ = new BehaviorSubject<number>(1);
         this.subCategoryId$ = new BehaviorSubject<number>(0);
+
+        this.categoryList = [];
+        this.categoryIdToSubCategoryListMap = new Map<number, SubCategory[]>();
 
     }
 
@@ -158,10 +195,15 @@ export class CategoryService {
     }
 
     //  Getters
+
     //  -------
 
     getCategoryList(): Category[] {
         return this.categoryList;
+    }
+
+    getSUbCategoryList(): SubCategory[] {
+        return this.subCategoryList;
     }
 
     getCategoryId$(): Observable<number> {

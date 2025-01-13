@@ -6,8 +6,8 @@ export class SubCategory {
     private categoryId: number;
     private name: string;
 
-    constructor(categoryId: number, name: string) {
-        this.id = SubCategory.lastSubCategoryId++;
+    constructor(categoryId: number, name: string, id?: number) {
+        this.id = id ? id : SubCategory.lastSubCategoryId++;
         this.categoryId = categoryId;
         this.name = name;
     }

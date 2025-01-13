@@ -1,0 +1,32 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Vegetables & Fruits"
+        },
+        {
+            "id": 2,
+            "name": "Dairy & Breakfast"
+        },
+        {
+            "id": 3,
+            "name": "Munchies"
+        },
+        {
+            "id": 4,
+            "name": "Cold Drinks & Juices"
+        },
+        {
+            "id": 5,
+            "name": "Instant & Frozen Food"
+        },
+        {
+            "id": 6,
+            "name": "Tea, Coffee & Health Drinks"
+        },
+        {
+            "id": 7,
+            "name": "Bakery & Biscuits"
+        }
+    ]
+}
