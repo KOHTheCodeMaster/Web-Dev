@@ -20,6 +20,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         13th Jan 2K25 - 02:10 PM
+Commit Message:     279 - Angular Projects - Removed Track It - Moving it to its own repository
+
+Quick Summary:
+
+1. Removed Track It project from the Angular Multi Projects workspace.
+2. Moving Track It to its own repository for better organization and management.
+    URL: https://www.github.com/kohthecodemaster/trackit
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         11th Jan 2K25 - 02:10 PM
 Commit Message:     278 - Angular Projects - Track It - Added Sidebar Component for Navigation
 
