@@ -20,6 +20,15 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         18th Mar 2K25 - 08:42 AM
+Commit Message:     283 - Angular Projects - Blinkit - Fixed Sub Category Description & Top 10 Products Price List Sections
+
+Quick Summary:
+
+1. Fixed the Sub Category Description & Top 10 Products Price List Sections to use the correct subcategory.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         18th Mar 2K25 - 07:07 AM
 Commit Message:     282 - Angular Projects - Blinkit - Updated Shopping Component
 

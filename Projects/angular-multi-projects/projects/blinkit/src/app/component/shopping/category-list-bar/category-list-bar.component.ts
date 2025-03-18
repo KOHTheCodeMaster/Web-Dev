@@ -20,7 +20,7 @@ export class CategoryListBarComponent {
 
     categoryId!: number;
     visibleCategoryList!: Category[];
-    hiddenCategoryList!: Category[];
+    // hiddenCategoryList!: Category[];
     maxVisibleCategoryCount!: number;
 
     constructor(private categoryService: CategoryService,
@@ -36,7 +36,7 @@ export class CategoryListBarComponent {
     private initDataMembers() {
         this.maxVisibleCategoryCount = 7;   // Number of categories to show inline
         this.visibleCategoryList = [];
-        this.hiddenCategoryList = [];
+        // this.hiddenCategoryList = [];
     }
 
     private initSubscriptions() {
@@ -58,8 +58,9 @@ export class CategoryListBarComponent {
     initCategoryLists() {
         let categoryList: Category[] = this.categoryService.getCategoryList();
 
-        this.visibleCategoryList = categoryList.slice(0, this.maxVisibleCategoryCount);
-        this.hiddenCategoryList = categoryList.slice(this.maxVisibleCategoryCount);
+        this.visibleCategoryList = categoryList;
+        // this.visibleCategoryList = categoryList.slice(0, this.maxVisibleCategoryCount);
+        // this.hiddenCategoryList = categoryList.slice(this.maxVisibleCategoryCount);
     }
 
     onCategoryBtnClick(category: Category) {

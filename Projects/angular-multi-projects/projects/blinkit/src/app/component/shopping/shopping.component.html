@@ -1,52 +1,51 @@
-<main class="w-[63%] h-full mx-auto dark:bg-gray-800 dark:text-white sticky  border">
+<main class="w-[63%] h-full mx-auto dark:bg-gray-900 dark:text-gray-100 sticky border border-gray-700">
 
     <app-category-list-bar></app-category-list-bar>
 
-    <div class="flex gap-4 border">
-        <app-sub-category-sidebar class="w-[20%] border"></app-sub-category-sidebar>
-        <app-product-grid class="w-[80%] "></app-product-grid>
+    <div class="flex gap-4 border border-gray-700">
+        <app-sub-category-sidebar class="w-[20%] border border-gray-700"></app-sub-category-sidebar>
+        <app-product-grid class="w-[80%]"></app-product-grid>
     </div>
 
-    <!--  Category Description  -->
-    <div>
-        <span>{{ "Category Name" }}</span>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis distinctio nostrum odit ullam? Dolorem
-            eaque, eligendi, esse facere facilis fugit itaque iure nam nostrum odio sapiente sequi! Commodi, sunt,
-            voluptatibus.
+    <!-- Category Description (Improved Dark Mode UI) -->
+    <div class="my-8 p-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800 text-gray-200">
+        <h2 class="text-3xl font-bold text-blue-400">{{ subCategory.getName() }}</h2>
+        <p class="text-gray-400 mt-2 leading-relaxed">
+            Discover the best quality <span class="text-blue-300">{{ subCategory.getName() }}</span> at unbeatable prices.
+            Our products are sourced fresh and delivered quickly to your doorstep, ensuring you get the best experience.
+            Shop now and enjoy a seamless online shopping experience!
         </p>
     </div>
 
-    <!--  Top 10 Products Price List  -->
-    <div class="flex gap-4 border">
-        <div>
-            <span>Buy {{ "Category Name" }} at Online grocery store in india</span>
-            <p>
-                Are you super fond of online shopping because you hate crowded supermarkets? Now you don't need to be
-                worry as Blinkit is delivering Fresh Vegetables at your doorstep superfast with easy returns for your
-                complete peace of mind.
-                Get Fresh Vegetables delivered to your home in minutes. you can check Fresh Vegetables price before
-                buying.
-            </p>
-            <p>
-                We deliver Fresh Vegetables at Delhi, Gurgaon, Kolkata, Lucknow, Mumbai, Bengaluru, Ahmedabad, Noida,
-                Ghaziabad, Faridabad, Hyderabad, Jaipur, Pune, Chennai, Chandigarh, Ludhiana, Vadodara, Meerut, Kanpur,
-                Panchkula, Kharar, Amritsar, Bhopal, Indore, Zirakpur, Jalandhar, Dehradun, Agra, Mohali, Goa, Patiala,
-                Sonipat, Bhiwadi, Kota, Rohtak, Bahadurgarh, Haridwar, Bathinda, Kochi, Jodhpur
-            </p>
-        </div>
-        <div>
-            <span>{{ "Category Name" }} - Price List (Top 10)</span>
-            <!--
-                            {Category Name}                 Price
-                    1.      {Product Name}                  ₹{Product Price}
-                    2.      {Product Name}                  ₹{Product Price}
-                    ...
-                    10.     {Product Name}                  ₹{Product Price}
-            -->
+    <!-- Top 10 Products Price List (Enhanced UI) -->
+    <div class="flex flex-col lg:flex-row gap-6 my-8">
 
-            <!-- This data was last updated on 3/18/2025 -->
+        <!-- Left Section -->
+        <div class="lg:w-[65%] p-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800 text-gray-200">
+            <h3 class="text-2xl font-semibold text-blue-400">Shop {{ subCategory.getName() }} Online</h3>
+            <p class="text-gray-400 mt-4 leading-relaxed">
+                Love online shopping? Avoid the hassle of crowded stores by ordering your
+                <span class="text-blue-300">{{ subCategory.getName() }}</span> online. We ensure super-fast doorstep
+                delivery with easy returns, making shopping a breeze!
+            </p>
+            <p class="text-gray-400 mt-4">
+                Get your favorite {{ subCategory.getName() }} in cities across India, including Delhi, Mumbai, Bengaluru,
+                Hyderabad, Pune, and more. Check prices before purchasing and enjoy the best deals!
+            </p>
         </div>
+
+        <!-- Right Section: Product Price List -->
+        <div class="lg:w-[35%] p-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800 text-gray-200">
+            <h3 class="text-xl font-semibold text-blue-400">{{ subCategory.getName() }} - Price List (Top 10)</h3>
+            <ul class="mt-4 space-y-3">
+                <li class="flex justify-between items-center py-2 px-3 bg-gray-700 rounded-lg shadow-md"
+                    *ngFor="let product of top10ProductList; let i = index">
+                    <span class="text-gray-300">{{ i + 1 }}. {{ product.getName() }}</span>
+                    <span class="text-lg font-bold text-green-400">₹{{ product.getPrice() }}</span>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
     <app-useful-links-and-categories></app-useful-links-and-categories>

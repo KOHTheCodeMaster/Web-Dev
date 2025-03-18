@@ -300,6 +300,12 @@ export class ProductService {
             .slice(0, 10);
     }
 
+    public getProductListBySubCategoryId(subCategoryId: number): Product[] {
+
+        //  Filter products by sub category id, Limit to 10 products
+        return this.allProductList.filter(product => product.getSubCategoryId() === subCategoryId)
+    }
+
 
     //  Getters
     //  -------

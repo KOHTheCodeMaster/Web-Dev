@@ -187,7 +187,15 @@ export class CategoryService {
         return category;
     }
 
+    getSubCategoryById(subCategoryId: number) {
+        let subCategory = this.subCategoryList.find(subCategory => subCategory.getId() === subCategoryId);
+
+        if (subCategory === undefined) throw new Error(`SubCategory with ID ${subCategoryId} not found.`);
+        return subCategory;
+    }
+
     getSubCategoryListByCategoryId(categoryId: number): SubCategory[] {
+        console.log('categoryIdToSubCategoryListMap', this.categoryIdToSubCategoryListMap);
         let subCategoryList = this.categoryIdToSubCategoryListMap.get(categoryId);
 
         if (subCategoryList === undefined) throw new Error(`SubCategory list for Category ID ${categoryId} not found.`);
@@ -202,7 +210,7 @@ export class CategoryService {
         return this.categoryList;
     }
 
-    getSUbCategoryList(): SubCategory[] {
+    getSubCategoryList(): SubCategory[] {
         return this.subCategoryList;
     }
 
