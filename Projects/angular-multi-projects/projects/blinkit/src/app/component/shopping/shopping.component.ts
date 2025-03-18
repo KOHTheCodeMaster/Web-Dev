@@ -3,6 +3,8 @@ import {CategoryListBarComponent} from "./category-list-bar/category-list-bar.co
 import {SubCategorySidebarComponent} from "./sub-category-sidebar/sub-category-sidebar.component";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProductGridComponent} from "./product-grid/product-grid.component";
+import {FooterComponent} from "../footer/footer.component";
+import {UsefulLinksAndCategoriesComponent} from "../useful-links-and-categories/useful-links-and-categories.component";
 
 @Component({
     selector: 'app-shopping',
@@ -10,7 +12,9 @@ import {ProductGridComponent} from "./product-grid/product-grid.component";
     imports: [
         CategoryListBarComponent,
         SubCategorySidebarComponent,
-        ProductGridComponent
+        ProductGridComponent,
+        FooterComponent,
+        UsefulLinksAndCategoriesComponent
     ],
     templateUrl: './shopping.component.html',
     styleUrl: './shopping.component.css'

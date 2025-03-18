@@ -39,4 +39,5 @@ export class CategoryGridComponent {
         this.router.navigate(['/shopping'], {queryParams: {categoryId: categoryId}});
         this.categoryService.updateCategoryId(categoryId);
     }
+
 }

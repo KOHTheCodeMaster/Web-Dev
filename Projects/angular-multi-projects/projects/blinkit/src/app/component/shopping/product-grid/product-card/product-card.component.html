@@ -11,17 +11,17 @@
             <div *ngIf="product.getQuantity() === 0; else quantityControls">
                 <button (click)="incrementQuantity()"
                         class="px-2 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
-                    Add To Cart
+                    Add
                 </button>
             </div>
             <ng-template #quantityControls>
                 <div class="flex items-center">
                     <button (click)="decrementQuantity()"
-                            class="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-700">-
+                            class="px-2 py-2 bg-red-500 text-white rounded-md hover:bg-red-700">-
                     </button>
                     <span class="mx-2">{{ product.getQuantity() }}</span>
                     <button (click)="incrementQuantity()"
-                            class="px-2 py-1 bg-green-500 text-white rounded-md hover:bg-green-700">+
+                            class="px-2 py-2 bg-green-500 text-white rounded-md hover:bg-green-700">+
                     </button>
                 </div>
             </ng-template>
