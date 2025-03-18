@@ -1,6 +1,5 @@
 <div class="m-4 flex gap-4">
-    <button class="p-2 bg-gray-700 text-white bg-gray-800 hover:bg-gray-600 hover:text-blue-300
-                  border rounded"
+    <button class="p-2 bg-gray-800 text-gray-200 border border-gray-700 rounded hover:bg-gray-700 hover:text-blue-300"
             routerLink="/shopping" [queryParams]="{ categoryId: category.getId() }"
             [ngClass]="{
                 'bg-blue-500 text-blue-300 border-blue-500': this.categoryId === category.getId(),

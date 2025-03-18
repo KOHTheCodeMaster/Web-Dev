@@ -1,16 +1,16 @@
 <div class="p-4">
-    <h2 class="text-xl font-bold mb-4">Sub-Categories</h2>
+    <h2 class="text-xl font-bold mb-4 text-gray-200">Sub-Categories</h2>
     <div>
-        <a class="mb-2 block px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-gray-600 hover:text-blue-300
+        <a class="mb-2 block px-4 py-2 rounded-md bg-gray-800 text-gray-200 hover:bg-gray-700 hover:text-blue-300
                   transition-colors duration-200"
            (click)="setSubCategoryId(0)"
-           [ngClass]="{ 'bg-gray-500  border border-blue-500': subCategoryId === 0, }">
+           [ngClass]="{ 'bg-blue-500 text-blue-300 border border-blue-500': subCategoryId === 0, }">
             All ({{ subCategoryList.length }})
         </a>
         <a *ngFor="let subCategory of subCategoryList"
-           [ngClass]="{ 'bg-gray-500 border border-blue-500': subCategoryId === subCategory.getId(), }"
+           [ngClass]="{ 'bg-blue-500 text-blue-300 border border-blue-500': subCategoryId === subCategory.getId(), }"
            (click)="setSubCategoryId(subCategory.getId())"
-           class="mb-2 block px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-gray-600 hover:text-blue-300
+           class="mb-2 block px-4 py-2 rounded-md bg-gray-800 text-gray-200 hover:bg-gray-700 hover:text-blue-300
                   transition-colors duration-200 ">
             {{ subCategory.getName() }}
         </a>

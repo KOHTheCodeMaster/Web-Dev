@@ -1,29 +1,52 @@
-<div class="w-48 h-fit flex flex-col justify-center items-center">
+<div class="w-52 bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer flex flex-col">
+    <!-- Product Image -->
+    <div class="relative w-full h-40 bg-gray-700 flex items-center justify-center">
+        <img src="/assets/icons/01-sample-icon.svg" alt="Product Image"
+             class="w-28 h-28 object-cover">
+    </div>
 
-    <img src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon"
-         class="w-24 h-24 object-cover">
-    <div class="p-4">
-        <h2 class=" font-bold text-white">{{ product.getName() }}</h2>
-        <div class="flex gap-4 items-center justify-between mt-2">
-            <p class="text-lg font-semibold text-grey-100">
+    <!-- Product Info -->
+    <div class="p-4 flex flex-col flex-grow">
+        <!-- Product Name (Wrapped in full) -->
+        <h2 class="text-white text-base font-semibold leading-tight break-words">
+            {{ product.getName() }}
+        </h2>
+
+        <!-- Spacer to push the Price & Add section to the bottom -->
+        <div class="mt-auto"></div>
+
+        <!-- Price & Add/Quantity Section (Aligned at bottom uniformly) -->
+        <div class="flex justify-between items-center mt-3">
+            <p class="text-white font-bold text-lg">
                 {{ product.getPrice() | currency:'INR':'symbol' }}
             </p>
-            <div *ngIf="product.getQuantity() === 0; else quantityControls">
-                <button (click)="incrementQuantity()"
-                        class="px-2 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
-                    Add
-                </button>
-            </div>
-            <ng-template #quantityControls>
-                <div class="flex items-center">
+            <ng-container *ngIf="product.getQuantity() > 0; else addButton">
+                <!-- Quantity Control: Integrated unit with smart hover effect -->
+                <div class="relative group w-24 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
+                    <!-- Always visible quantity -->
+                    <span class="text-white font-medium">{{ product.getQuantity() }}</span>
+                    <!-- Minus Button: Appears on hover -->
                     <button (click)="decrementQuantity()"
-                            class="px-2 py-2 bg-red-500 text-white rounded-md hover:bg-red-700">-
+                            class="absolute left-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                        </svg>
                     </button>
-                    <span class="mx-2">{{ product.getQuantity() }}</span>
+                    <!-- Plus Button: Appears on hover -->
                     <button (click)="incrementQuantity()"
-                            class="px-2 py-2 bg-green-500 text-white rounded-md hover:bg-green-700">+
+                            class="absolute right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
                     </button>
                 </div>
+            </ng-container>
+            <ng-template #addButton>
+                <!-- "Add" Button when quantity is zero -->
+                <button (click)="incrementQuantity()"
+                        class="px-4 py-1 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-all focus:outline-none">
+                    Add
+                </button>
             </ng-template>
         </div>
     </div>
