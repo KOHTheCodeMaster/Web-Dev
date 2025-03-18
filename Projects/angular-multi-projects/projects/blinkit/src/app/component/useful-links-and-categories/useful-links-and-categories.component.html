@@ -38,7 +38,8 @@
         </div>
     </div>
 
-    <!--  Categories  -->
+<!--
+    &lt;!&ndash;  Categories  &ndash;&gt;
     <div class="w-[800px]  items-center ">
         <div class="flex gap-4 items-center">
             <span class="text-xl">Categories</span>
@@ -98,6 +99,26 @@
                 <span class="flex-1"></span>
             </div>
 
+        </div>
+
+    </div>
+
+-->
+
+    <!-- Dynamic Categories -->
+    <div class="w-[800px] items-center">
+        <div class="flex gap-4 items-center">
+            <span class="text-xl">Categories</span>
+            <span class="text-green-500">See All</span>
+        </div>
+
+        <!-- Updated Category Grid (3 per row) -->
+        <div class="mt-4 grid grid-cols-3 gap-4">
+            <div class="p-2 flex justify-center items-center border border-gray-700 rounded-md hover:cursor-pointer"
+                 (click)="navigateToCategory(category.getId())"
+                 *ngFor="let category of categoryList">
+                <span class="text-gray-300">{{ category.getName() }}</span>
+            </div>
         </div>
 
     </div>

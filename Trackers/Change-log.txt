@@ -20,6 +20,19 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         18th Mar 2K25 - 09:50 AM
+Commit Message:     285 - Angular Projects - Blinkit - Fixed Useful Links & Categories Component - Cosmetic Changes in Category List Bar & Shopping Component
+
+Quick Summary:
+
+1. Fix `UsefulLinksAndCategoriesComponent` to display the correct category list and make it interactive.
+
+2. Fixed the Category List Bar Component to highlight the active category.
+
+3. Updated the width of "Top 10 Products Price List" Section in the Shopping Component.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         18th Mar 2K25 - 09:09 AM
 Commit Message:     284 - Angular Projects - Blinkit - Re-designed All Components for Dark Mode
 
