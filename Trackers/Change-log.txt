@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         19th Mar 2K25 - 08:49 AM
+Commit Message:     287 - Angular Projects - Blinkit - Sort Functionality in Shopping Component
+
+Quick Summary:
+
+1. Added Sort Functionality to the Product List in the Shopping Component.
+    - Users can now sort products by Featured (Default), Price (Low-High), Price (High-Low), and Name (A-Z).
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         19th Mar 2K25 - 08:23 AM
 Commit Message:     286 - AI Tools - Prompt - Added New Prompt for Full Stack Expert Role
 
