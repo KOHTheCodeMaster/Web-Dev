@@ -9,13 +9,15 @@ export class Product {
     private price: number;
     private quantity: number;
     private subtotalPrice: number;
+    private unitLabel: string;
 
-    constructor(categoryId: number, subCategoryId: number, name: string, price: number, quantity?: number) {
+    constructor(categoryId: number, subCategoryId: number, name: string, price: number, unitLabel: string, quantity?: number) {
         this.id = Product.lastProductId++;
         this.categoryId = categoryId;
         this.subCategoryId = subCategoryId;
         this.name = name;
         this.price = price;
+        this.unitLabel = unitLabel;
         this.quantity = quantity || 0
         this.subtotalPrice = this.price * this.quantity;
     }
@@ -62,6 +64,10 @@ export class Product {
 
     public getSubtotalPrice(): number {
         return this.subtotalPrice;
+    }
+
+    public getUnitLabel(): string {
+        return this.unitLabel;
     }
 
 }

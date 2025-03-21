@@ -5,1176 +5,1344 @@
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "Onion (Pyaz)",
-            "price": 51
+            "price": 51,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 2,
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "Potato - New Crop",
-            "price": 37
+            "price": 37,
+            "unitLabel": "500 g"
         },
         {
             "id": 3,
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "English Cucumber (Kheera)",
-            "price": 37
+            "price": 37,
+            "unitLabel": "(500-600) g"
         },
         {
             "id": 4,
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "Lemon (Nimbu)",
-            "price": 33
+            "price": 33,
+            "unitLabel": "500 g"
         },
         {
             "id": 5,
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "Green Capsicum (Shimla Mirch)",
-            "price": 33
+            "price": 33,
+            "unitLabel": "500 g"
         },
         {
             "id": 6,
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "Green Peas (Matar)",
-            "price": 33
+            "price": 33,
+            "unitLabel": "500 g"
         },
         {
             "id": 7,
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "Cabbage (Patta Gobhi)",
-            "price": 19
+            "price": 19,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 8,
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "Button Mushroom",
-            "price": 54
+            "price": 54,
+            "unitLabel": "200 g"
         },
         {
             "id": 9,
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "Garlic (Lehsun)",
-            "price": 100
+            "price": 100,
+            "unitLabel": "250 g"
         },
         {
             "id": 10,
             "categoryId": 1,
             "subCategoryId": 1,
             "name": "Lady Finger (Bhindi)",
-            "price": 42
+            "price": 42,
+            "unitLabel": "500 g"
         },
         {
             "id": 11,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Tender Coconut (275+ ml) (Nariyal)",
-            "price": 72
+            "price": 72,
+            "unitLabel": "1 piece (275+ ml)"
         },
         {
             "id": 12,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Brown Coconut (Nariyal)",
-            "price": 64
+            "price": 64,
+            "unitLabel": "1 piece"
         },
         {
             "id": 13,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Papaya (Papita)",
-            "price": 96
+            "price": 96,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 14,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Guava (Amrud)",
-            "price": 46
+            "price": 46,
+            "unitLabel": "500 g"
         },
         {
             "id": 15,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Kinnow Orange",
-            "price": 42
+            "price": 42,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 16,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Small Shimla Apple (Seb)",
-            "price": 145
+            "price": 145,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 17,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Green Grapes 500 g",
-            "price": 150
+            "price": 150,
+            "unitLabel": "500 g"
         },
         {
             "id": 18,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Pomegranate - Medium (500g - 700 g) (Anaar)",
-            "price": 151
+            "price": 151,
+            "unitLabel": "(500-700) g"
         },
         {
             "id": 19,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Shimla Apple Regular",
-            "price": 140
+            "price": 140,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 20,
             "categoryId": 1,
             "subCategoryId": 2,
             "name": "Pomegranate - Large",
-            "price": 198
+            "price": 198,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 21,
             "categoryId": 1,
             "subCategoryId": 3,
             "name": "Muskmelon (Kharbuja)",
-            "price": 161
+            "price": 161,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 22,
             "categoryId": 1,
             "subCategoryId": 3,
             "name": "Kiran Watermelon (Tarbuj)",
-            "price": 90
+            "price": 90,
+            "unitLabel": "2 Kg"
         },
         {
             "id": 23,
             "categoryId": 1,
             "subCategoryId": 3,
             "name": "Sun Melon (Sarda)",
-            "price": 154
+            "price": 154,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 24,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Broccoli",
-            "price": 108
+            "price": 108,
+            "unitLabel": "500 g"
         },
         {
             "id": 25,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Thai Guava",
-            "price": 54
+            "price": 54,
+            "unitLabel": "500 g"
         },
         {
             "id": 26,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Green Capsicum (Shimla Mirch)",
-            "price": 33
+            "price": 33,
+            "unitLabel": "500 g"
         },
         {
             "id": 27,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Green Peas (Peeled)",
-            "price": 85
+            "price": 85,
+            "unitLabel": "250 g"
         },
         {
             "id": 28,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Green Peas (Matar)",
-            "price": 33
+            "price": 33,
+            "unitLabel": "500 g"
         },
         {
             "id": 29,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Cabbage (Patta Gobhi)",
-            "price": 19
+            "price": 19,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 30,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Sugarcane Cubes",
-            "price": 42
+            "price": 42,
+            "unitLabel": "500 g"
         },
         {
             "id": 31,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Guava (Amrud)",
-            "price": 46
+            "price": 46,
+            "unitLabel": "500 g"
         },
         {
             "id": 32,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Kinnow Orange",
-            "price": 42
+            "price": 42,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 33,
             "categoryId": 1,
             "subCategoryId": 4,
             "name": "Small Shimla Apple (Seb)",
-            "price": 145
+            "price": 145,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 34,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Avocado - Tanzania 1 piece (150 - 200) g",
-            "price": 110
+            "price": 110,
+            "unitLabel": "1 piece (150-200) g"
         },
         {
             "id": 35,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Broccoli",
-            "price": 108
+            "price": 108,
+            "unitLabel": "500 g"
         },
         {
             "id": 36,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Green Kiwi",
-            "price": 93
+            "price": 93,
+            "unitLabel": "3 pieces"
         },
         {
             "id": 37,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Thai Guava",
-            "price": 54
+            "price": 54,
+            "unitLabel": "500 g"
         },
         {
             "id": 38,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Mini Orange",
-            "price": 96
+            "price": 96,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 39,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Red Delicious Apple",
-            "price": 134
+            "price": 134,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 40,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Baby Corn - Packet",
-            "price": 48
+            "price": 48,
+            "unitLabel": "200 g"
         },
         {
             "id": 41,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Fresh Rosemary",
-            "price": 39
+            "price": 39,
+            "unitLabel": "50 g"
         },
         {
             "id": 42,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Pink Lady Apple 2 pieces (300 - 400) g",
-            "price": 148
+            "price": 148,
+            "unitLabel": "2 pieces (300-400) g"
         },
         {
             "id": 43,
             "categoryId": 1,
             "subCategoryId": 5,
             "name": "Green Zucchini",
-            "price": 58
+            "price": 58,
+            "unitLabel": "500 g"
         },
         {
             "id": 44,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Amul Taaza Toned Fresh Milk",
-            "price": 26
+            "price": 26,
+            "unitLabel": "500 ml"
         },
         {
             "id": 45,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Amul Moti Toned Milk (90 Days Shelf Life)",
-            "price": 33
+            "price": 33,
+            "unitLabel": "500 ml"
         },
         {
             "id": 46,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Amul Taaza Homogenised Toned Milk",
-            "price": 74
+            "price": 74,
+            "unitLabel": "1 Ltr"
         },
         {
             "id": 47,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Amul Taaza Toned Milk",
-            "price": 16
+            "price": 16,
+            "unitLabel": "250 ml"
         },
         {
             "id": 48,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Amul Gold Milk",
-            "price": 80
+            "price": 80,
+            "unitLabel": "1 Ltr"
         },
         {
             "id": 49,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Amul Lactose Free Milk",
-            "price": 25
+            "price": 25,
+            "unitLabel": "200 ml"
         },
         {
             "id": 50,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Yakult Probiotic Drink",
-            "price": 90
+            "price": 90,
+            "unitLabel": "5 x 65 ml"
         },
         {
             "id": 51,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Mother Dairy FIT Life Homogenized Double Toned Milk (450 ml)",
-            "price": 33
+            "price": 33,
+            "unitLabel": "450 ml"
         },
         {
             "id": 52,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Nestle a+ Toned Milk",
-            "price": 101
+            "price": 101,
+            "unitLabel": "1 Ltr"
         },
         {
             "id": 53,
             "categoryId": 2,
             "subCategoryId": 6,
             "name": "Mother Dairy Toned Milk",
-            "price": 74
+            "price": 74,
+            "unitLabel": "1 Ltr"
         },
         {
             "id": 54,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "Harvest Gold Hearty Brown Bread",
-            "price": 55
+            "price": 55,
+            "unitLabel": "400 g"
         },
         {
             "id": 55,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "Harvest Gold Sandwich White Bread",
-            "price": 45
+            "price": 45,
+            "unitLabel": "400 g"
         },
         {
             "id": 56,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "English Oven Zero Maida 100% Whole Wheat Bread",
-            "price": 55
+            "price": 55,
+            "unitLabel": "400 g"
         },
         {
             "id": 57,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "English Oven Brown Bread",
-            "price": 55
+            "price": 55,
+            "unitLabel": "400 g"
         },
         {
             "id": 58,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "English Oven Sandwich White Bread",
-            "price": 45
+            "price": 45,
+            "unitLabel": "400 g"
         },
         {
             "id": 59,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "English Oven Zero Maida Multigrain Bread",
-            "price": 70
+            "price": 70,
+            "unitLabel": "400 g"
         },
         {
             "id": 60,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "English Oven Milk Bread",
-            "price": 50
+            "price": 50,
+            "unitLabel": "400 g"
         },
         {
             "id": 61,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "Harvest Gold White Bread",
-            "price": 55
+            "price": 55,
+            "unitLabel": "400 g"
         },
         {
             "id": 62,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "English Oven Zero Maida Whole Wheat Bread",
-            "price": 60
+            "price": 60,
+            "unitLabel": "400 g"
         },
         {
             "id": 63,
             "categoryId": 2,
             "subCategoryId": 7,
             "name": "Harvest Gold Bunjoy Tutti Frutti Sweet Bun",
-            "price": 20
+            "price": 20,
+            "unitLabel": "1 pack (6 pieces)"
         },
         {
             "id": 64,
             "categoryId": 2,
             "subCategoryId": 8,
             "name": "Nature Good White Eggs (6 pieces)",
-            "price": 57
+            "price": 57,
+            "unitLabel": "6 pieces"
         },
         {
             "id": 65,
             "categoryId": 2,
             "subCategoryId": 8,
             "name": "The Natural Fresh White Eggs - 10 pieces",
-            "price": 128
+            "price": 128,
+            "unitLabel": "10 pieces"
         },
         {
             "id": 66,
             "categoryId": 2,
             "subCategoryId": 8,
             "name": "Nature Good White Eggs (30 pieces)",
-            "price": 259
+            "price": 259,
+            "unitLabel": "30 pieces"
         },
         {
             "id": 67,
             "categoryId": 2,
             "subCategoryId": 8,
             "name": "Nature Good Brown Eggs",
-            "price": 85
+            "price": 85,
+            "unitLabel": "6 pieces"
         },
         {
             "id": 68,
             "categoryId": 2,
             "subCategoryId": 8,
             "name": "The Natural Fresh White Eggs - 30 pieces",
-            "price": 308
+            "price": 308,
+            "unitLabel": "30 pieces"
         },
         {
             "id": 69,
             "categoryId": 2,
             "subCategoryId": 8,
             "name": "The Natural Fresh White Eggs - 6 pieces",
-            "price": 80
+            "price": 80,
+            "unitLabel": "6 pieces"
         },
         {
             "id": 70,
             "categoryId": 2,
             "subCategoryId": 8,
             "name": "Eggoz Nutrition Protein Rich Brown Eggs (10 pieces)",
-            "price": 161
+            "price": 161,
+            "unitLabel": "10 pieces"
         },
         {
             "id": 71,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Kellogg's Real Almond Honey Corn Flakes",
-            "price": 369
+            "price": 369,
+            "unitLabel": "500 g"
         },
         {
             "id": 72,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Kellogg's Multigrain Chocos Variety Pack",
-            "price": 64
+            "price": 64,
+            "unitLabel": "120 g"
         },
         {
             "id": 73,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Kellogg's Corn Flakes with Immuno Nutrients",
-            "price": 120
+            "price": 120,
+            "unitLabel": "250 g"
         },
         {
             "id": 74,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Kellogg's Corn Flakes Original",
-            "price": 195
+            "price": 195,
+            "unitLabel": "475 g"
         },
         {
             "id": 75,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Kellogg's Multigrain Chocos Moons & Stars",
-            "price": 458
+            "price": 458,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 76,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Kellogg's Double Chocolaty Fills Chocos (Crunchy Outside, Creamy Inside)",
-            "price": 192
+            "price": 192,
+            "unitLabel": "250 g"
         },
         {
             "id": 77,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Kellogg's Corn Flakes Original",
-            "price": 387
+            "price": 387,
+            "unitLabel": "875 g"
         },
         {
             "id": 78,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Hide & Seek Fills Cereal",
-            "price": 94
+            "price": 94,
+            "unitLabel": "150 g"
         },
         {
             "id": 79,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Kellogg's Real Almond Honey Corn Flakes",
-            "price": 94
+            "price": 94,
+            "unitLabel": "150 g"
         },
         {
             "id": 80,
             "categoryId": 2,
             "subCategoryId": 9,
             "name": "Kellogg's Froot Loops - Crunchy Multigrain Cereal",
-            "price": 195
+            "price": 195,
+            "unitLabel": "285 g"
         },
         {
             "id": 81,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "Kellogg's Muesli Nuts Delight, Breakfast Cereal",
-            "price": 426
+            "price": 426,
+            "unitLabel": "750 g"
         },
         {
             "id": 82,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "Kellogg's Muesli Fruit, Nut & Seeds",
-            "price": 187
+            "price": 187,
+            "unitLabel": "250 g"
         },
         {
             "id": 83,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "Kellogg's Muesli Fruit, Nut & Seeds",
-            "price": 385
+            "price": 385,
+            "unitLabel": "500 g"
         },
         {
             "id": 84,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "Yoga Bar Dark Chocolate + Cranberry & Fruit + Nuts & Seeds Muesli",
-            "price": 99
+            "price": 99,
+            "unitLabel": "200 g"
         },
         {
             "id": 85,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "Bagrry's Crunchy Muesli 30% Fruit & Nut with Cranberries",
-            "price": 396
+            "price": 396,
+            "unitLabel": "500 g"
         },
         {
             "id": 86,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "MuscleBlaze High Protein Dark Chocolate & Cranberry Muesli",
-            "price": 273
+            "price": 273,
+            "unitLabel": "400 g"
         },
         {
             "id": 87,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "Yoga Bar Fruits + Nuts & Seeds Muesli",
-            "price": 312
+            "price": 312,
+            "unitLabel": "400 g"
         },
         {
             "id": 88,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "Yoga Bar Dark Chocolate & Cranberry Muesli",
-            "price": 396
+            "price": 396,
+            "unitLabel": "700 g"
         },
         {
             "id": 89,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "Bagrry's Crunchy Muesli With Almonds, Raisins & Honey",
-            "price": 410
+            "price": 410,
+            "unitLabel": "500 g"
         },
         {
             "id": 90,
             "categoryId": 2,
             "subCategoryId": 10,
             "name": "True Elements Muesli with Real Fruits, Nuts & Seeds",
-            "price": 400
+            "price": 400,
+            "unitLabel": "500 g"
         },
         {
             "id": 91,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Cornitos Crusties Korean Chilli Puffs",
-            "price": 45
+            "price": 45,
+            "unitLabel": "60 g"
         },
         {
             "id": 92,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Uncle Chipps Spicy Treat Flavour Potato Chips",
-            "price": 20
+            "price": 20,
+            "unitLabel": "48 g"
         },
         {
             "id": 93,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Kurkure Masala Munch Crisps - Pack of 3",
-            "price": 54
+            "price": 54,
+            "unitLabel": "3 x 90 g"
         },
         {
             "id": 94,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Lay's India's Magic Masala Potato Chips",
-            "price": 30
+            "price": 30,
+            "unitLabel": "78 g"
         },
         {
             "id": 95,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Lay's West Indies Hot n Sweet Chilli Flavour Potato Chips",
-            "price": 20
+            "price": 20,
+            "unitLabel": "52 g"
         },
         {
             "id": 96,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Lay's American Style Cream & Onion Potato Chips",
-            "price": 30
+            "price": 30,
+            "unitLabel": "78 g"
         },
         {
             "id": 97,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Kurkure Puffcorn Yummy Cheese Puffs - Pack of 3",
-            "price": 54
+            "price": 54,
+            "unitLabel": "3 x 60 g"
         },
         {
             "id": 98,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Lay's Chile Limon Flavour Potato Chips",
-            "price": 20
+            "price": 20,
+            "unitLabel": "52 g"
         },
         {
             "id": 99,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Lay's Crispz Herb & Onion Potato Chips",
-            "price": 20
+            "price": 20,
+            "unitLabel": "52 g"
         },
         {
             "id": 100,
             "categoryId": 3,
             "subCategoryId": 11,
             "name": "Bingo Tedhe Medhe Masala Tadka Crisps - Pack of 3",
-            "price": 40
+            "price": 40,
+            "unitLabel": "3 x 70 g"
         },
         {
             "id": 101,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "Parle Real Elaichi Premium Rusk",
-            "price": 47
+            "price": 47,
+            "unitLabel": "200 g"
         },
         {
             "id": 102,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "Britannia Toastea Premium Bake Rusk (250 g)",
-            "price": 47
+            "price": 47,
+            "unitLabel": "250 g"
         },
         {
             "id": 103,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "Parle Premium Real Elaichi Rusk",
-            "price": 147
+            "price": 147,
+            "unitLabel": "600 g"
         },
         {
             "id": 104,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "Britannia Treat Rich Crème Chocolate Flavoured Wafers",
-            "price": 27
+            "price": 27,
+            "unitLabel": "75 g"
         },
         {
             "id": 105,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "English Oven Extra Crunchy Premium Rusk",
-            "price": 67
+            "price": 67,
+            "unitLabel": "300 g"
         },
         {
             "id": 106,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "Dukes Waffy Chocolate Wafers",
-            "price": 27
+            "price": 27,
+            "unitLabel": "75 g"
         },
         {
             "id": 107,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "Britannia Treat Rich Creme Orange Flavoured Wafers",
-            "price": 27
+            "price": 27,
+            "unitLabel": "75 g"
         },
         {
             "id": 108,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "Dukes Waffy Choco Wafer Roll",
-            "price": 98
+            "price": 98,
+            "unitLabel": "250 g"
         },
         {
             "id": 109,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "Dukes Waffy Orange Wafers",
-            "price": 27
+            "price": 27,
+            "unitLabel": "75 g"
         },
         {
             "id": 110,
             "categoryId": 3,
             "subCategoryId": 12,
             "name": "Dukes Waffy Vanilla Wafers",
-            "price": 27
+            "price": 27,
+            "unitLabel": "75 g"
         },
         {
             "id": 111,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "Yoga Bar Daily 10g Protein Bar (Assorted)",
-            "price": 301
+            "price": 301,
+            "unitLabel": "6 x 50 g"
         },
         {
             "id": 112,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "Yoga Bar Chocolate Chunk Nut Multigrain Protein Bar (35 g)",
-            "price": 38
+            "price": 38,
+            "unitLabel": "35 g"
         },
         {
             "id": 113,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "Yoga Bar 10 g Dark Chocolate & Cranberry Protein Bar",
-            "price": 58
+            "price": 58,
+            "unitLabel": "60 g"
         },
         {
             "id": 114,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "RiteBite Max Protein Daily Choco Almond Protein Bar - Pack of 2",
-            "price": 140
+            "price": 140,
+            "unitLabel": "2 x 50 g"
         },
         {
             "id": 115,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "Yoga Bar Nuts & Seeds Multigrain Energy Protein Bar",
-            "price": 38
+            "price": 38,
+            "unitLabel": "35 g"
         },
         {
             "id": 116,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "RiteBite Max Protein Daily Choco Berry Protein Bar - Pack of 3",
-            "price": 205
+            "price": 205,
+            "unitLabel": "3 x 50 g"
         },
         {
             "id": 117,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "Yoga Bar Blueberry Pie Breakfast Protein Bar",
-            "price": 45
+            "price": 45,
+            "unitLabel": "50 g"
         },
         {
             "id": 118,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "RiteBite Max Protein Daily Protein Bar (Assorted)",
-            "price": 388
+            "price": 388,
+            "unitLabel": "6 x 50 g"
         },
         {
             "id": 119,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "RiteBite Max Protein Bar (Peanut Butter)",
-            "price": 119
+            "price": 119,
+            "unitLabel": "70 g"
         },
         {
             "id": 120,
             "categoryId": 3,
             "subCategoryId": 13,
             "name": "RiteBite Choco Delite 4g Protein Bar",
-            "price": 43
+            "price": 43,
+            "unitLabel": "40 g"
         },
         {
             "id": 121,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Cornitos Tomato Mexicana Nachos Crisps - Pack of 2",
-            "price": 173
+            "price": 173,
+            "unitLabel": "2 x 150 g"
         },
         {
             "id": 122,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Doritos Dinamita Sizzling Hot Nachos Crips",
-            "price": 26
+            "price": 26,
+            "unitLabel": "50 g"
         },
         {
             "id": 123,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Cornitos Nachos Crisps & Dip Combo",
-            "price": 68
+            "price": 68,
+            "unitLabel": "150 g + 50 g"
         },
         {
             "id": 124,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Doritos Cheese Nachos - Pack of 2",
-            "price": 135
+            "price": 135,
+            "unitLabel": "2 x 100 g"
         },
         {
             "id": 125,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Cornitos Sweet Chilli Nachos Crisps - Pack of 2",
-            "price": 173
+            "price": 173,
+            "unitLabel": "2 x 150 g"
         },
         {
             "id": 126,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Cornitos Cheese & Herbs Nachos",
-            "price": 57
+            "price": 57,
+            "unitLabel": "150 g"
         },
         {
             "id": 127,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Doritos Sweet Chilli Flavour Nachos - Pack of 2",
-            "price": 80
+            "price": 80,
+            "unitLabel": "2 x 70 g"
         },
         {
             "id": 128,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Bingo Mad Angles Pizza Nachos - Pack of 3",
-            "price": 57
+            "price": 57,
+            "unitLabel": "3 x 65 g"
         },
         {
             "id": 129,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Cornitos Sea Salt Nachos - Pack of 2",
-            "price": 173
+            "price": 173,
+            "unitLabel": "2 x 150 g"
         },
         {
             "id": 130,
             "categoryId": 3,
             "subCategoryId": 14,
             "name": "Doritos Cheese Nachos",
-            "price": 45
+            "price": 45,
+            "unitLabel": "100 g"
         },
         {
             "id": 131,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Bikaji Bhujia",
-            "price": 113
+            "price": 113,
+            "unitLabel": "400 g"
         },
         {
             "id": 132,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Bikaji Mobile Chowpati Bhelpuri",
-            "price": 40
+            "price": 40,
+            "unitLabel": "150 g"
         },
         {
             "id": 133,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Bikano Bikaneri Bhujia",
-            "price": 60
+            "price": 60,
+            "unitLabel": "200 g"
         },
         {
             "id": 134,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Bikaji Kuch Kuch All In One Mixture Namkeen",
-            "price": 60
+            "price": 60,
+            "unitLabel": "200 g"
         },
         {
             "id": 135,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Bikaji Bikaneri Bhujia",
-            "price": 283
+            "price": 283,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 136,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Bikano Aloo Bhujia",
-            "price": 55
+            "price": 55,
+            "unitLabel": "200 g"
         },
         {
             "id": 137,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Bikaji Tana Tan Aloo Bhujia",
-            "price": 113
+            "price": 113,
+            "unitLabel": "400 g"
         },
         {
             "id": 138,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Bikaji All in One Kuch Kuch Mixture Namkeen",
-            "price": 317
+            "price": 317,
+            "unitLabel": "1 Kg"
         },
         {
             "id": 139,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Bikano Navratan Mixture Namkeen",
-            "price": 55
+            "price": 55,
+            "unitLabel": "200 g"
         },
         {
             "id": 140,
             "categoryId": 3,
             "subCategoryId": 15,
             "name": "Let's Try Namkeen Combo",
-            "price": 86
+            "price": 86,
+            "unitLabel": "3 x 100 g"
         },
         {
             "id": 141,
             "categoryId": 4,
             "subCategoryId": 16,
             "name": "Coolberg Non Alcoholic Beer (Assorted)",
-            "price": 547
+            "price": 547,
+            "unitLabel": "6 x 330 ml"
         },
         {
             "id": 142,
             "categoryId": 4,
             "subCategoryId": 16,
             "name": "Real Greetings Festive Juice Gift Pack - Free Real Fruit Power 180 ml",
-            "price": 208
+            "price": 208,
+            "unitLabel": "4 x 180 ml"
         },
         {
             "id": 143,
             "categoryId": 4,
             "subCategoryId": 16,
             "name": "Real Greetings Beverage Gift Pack - with 2 units of Real Fruit Power 180ml Free",
-            "price": 324
+            "price": 324,
+            "unitLabel": "6 x 180 ml"
         },
         {
             "id": 144,
             "categoryId": 4,
             "subCategoryId": 16,
             "name": "Blue Tokai Starter Coffee Gift Pack",
-            "price": 999
+            "price": 999,
+            "unitLabel": "3 x 250 g"
         },
         {
             "id": 145,
             "categoryId": 4,
             "subCategoryId": 16,
             "name": "Chaayos Festive Tea Gift Box",
-            "price": 549
+            "price": 549,
+            "unitLabel": "3 x 100 g"
         },
         {
             "id": 146,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "Thums Up Soft Drink (750 ml)",
-            "price": 40
+            "price": 40,
+            "unitLabel": "750 ml"
         },
         {
             "id": 147,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "Coca-Cola Soft Drink (750 ml) - Pack of 2",
-            "price": 79
+            "price": 79,
+            "unitLabel": "2 x 750 ml"
         },
         {
             "id": 148,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "Sprite Lime Flavored Soft Drink 750 ml",
-            "price": 40
+            "price": 40,
+            "unitLabel": "750 ml"
         },
         {
             "id": 149,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "7UP Nimbooz with Lemon Juice",
-            "price": 20
+            "price": 20,
+            "unitLabel": "250 ml"
         },
         {
             "id": 150,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "Coca-Cola Diet Coke Soft Drink",
-            "price": 40
+            "price": 40,
+            "unitLabel": "300 ml"
         },
         {
             "id": 151,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "Coca-Cola Soft Drink",
-            "price": 96
+            "price": 96,
+            "unitLabel": "1.25 Ltr"
         },
         {
             "id": 152,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "Coca-Cola Zero Sugar Soft Drink Can",
-            "price": 40
+            "price": 40,
+            "unitLabel": "300 ml"
         },
         {
             "id": 153,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "Limca Lemon 'N' Lime Soft Drink 750 ml",
-            "price": 40
+            "price": 40,
+            "unitLabel": "750 ml"
         },
         {
             "id": 154,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "Coca-Cola Soft Drink (300 ml)",
-            "price": 40
+            "price": 40,
+            "unitLabel": "300 ml"
         },
         {
             "id": 155,
             "categoryId": 4,
             "subCategoryId": 17,
             "name": "paper boat Zero Lemon Lime Flavoured Sparkling Drink",
-            "price": 59
+            "price": 59,
+            "unitLabel": "300 ml"
         },
         {
             "id": 156,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "paper boat Swing Lush Lychee Juice - Pack of 2",
-            "price": 81
+            "price": 81,
+            "unitLabel": "2 x 250 ml"
         },
         {
             "id": 157,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "Appy Apple Juice",
-            "price": 10
+            "price": 10,
+            "unitLabel": "200 ml"
         },
         {
             "id": 158,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "Real Fruit Power Cranberry Juice",
-            "price": 130
+            "price": 130,
+            "unitLabel": "1 Ltr"
         },
         {
             "id": 159,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "Real Fruit Power Mixed Fruit Juice 1 l",
-            "price": 120
+            "price": 120,
+            "unitLabel": "1 Ltr"
         },
         {
             "id": 160,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "paper boat Nata De Coco Lychee Juice",
-            "price": 39
+            "price": 39,
+            "unitLabel": "250 ml"
         },
         {
             "id": 161,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "Real Fruit Power Orange Juice",
-            "price": 120
+            "price": 120,
+            "unitLabel": "1 Ltr"
         },
         {
             "id": 162,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "paper boat Swing Yummy Guava Juice",
-            "price": 42
+            "price": 42,
+            "unitLabel": "250 ml"
         },
         {
             "id": 163,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "Real Fruit Power Pineapple Juice",
-            "price": 120
+            "price": 120,
+            "unitLabel": "1 Ltr"
         },
         {
             "id": 164,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "Fresca Litchi Juice",
-            "price": 113
+            "price": 113,
+            "unitLabel": "1 Ltr"
         },
         {
             "id": 165,
             "categoryId": 4,
             "subCategoryId": 18,
             "name": "paper boat Chilli Guava Fruit Juice",
-            "price": 34
+            "price": 34,
+            "unitLabel": "250 ml"
         },
         {
             "id": 166,
             "categoryId": 4,
             "subCategoryId": 19,
             "name": "Frooti Mango Drink",
-            "price": 10
+            "price": 10,
+            "unitLabel": "160 ml"
         },
         {
             "id": 167,
             "categoryId": 4,
             "subCategoryId": 19,
             "name": "Maaza Mango Drink 600 ml",
-            "price": 40
+            "price": 40,
+            "unitLabel": "600 ml"
         },
         {
             "id": 168,
             "categoryId": 4,
             "subCategoryId": 19,
             "name": "paper boat Aamras Mango Drink",
-            "price": 34
+            "price": 34,
+            "unitLabel": "250 ml"
         },
         {
             "id": 169,

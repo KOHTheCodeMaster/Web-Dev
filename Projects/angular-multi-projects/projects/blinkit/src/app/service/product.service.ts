@@ -28,13 +28,18 @@ export class ProductService {
             //  Initialize Product List
             if (dataLoaded) {
                 this.allProductList = this.dataLoaderService.getDataList('products').map(product =>
-                    new Product(product['categoryId'], product['subCategoryId'], product['name'], product['price']));
+                    new Product(product['categoryId'],
+                        product['subCategoryId'],
+                        product['name'],
+                        product['price'],
+                        product['unitLabel']));
             }
 
         });
 
     }
 
+/*
     generateProductList() {
 
         let productList: Product[] = [];
@@ -291,6 +296,7 @@ export class ProductService {
         return productList;
 
     }
+*/
 
     public getProductListByCategoryId(categoryId: number): Product[] {
 

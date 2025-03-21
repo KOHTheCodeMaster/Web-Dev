@@ -20,6 +20,15 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         19th Mar 2K25 -
+Commit Message:     288 - Angular Projects - Blinkit - Added `unitLabel` to Product Card Component
+
+Quick Summary:
+
+1. Added `unitLabel` field to the Product model to display the unit of the product.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         19th Mar 2K25 - 08:49 AM
 Commit Message:     287 - Angular Projects - Blinkit - Sort Functionality in Shopping Component
 
