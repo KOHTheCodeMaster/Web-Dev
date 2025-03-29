@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         29th Mar 2K25 - 11:00 PM
+Commit Message:     289 - Angular Projects - Blinkit - Added Product Slider Card Component & Fixed Category List
+
+Quick Summary:
+
+1. Fixed the Category List in the Product Slider Component to display the correct categories.
+2. Added Product Slider Card Component to display the product slider cards. (Design is pending)
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         19th Mar 2K25 -
 Commit Message:     288 - Angular Projects - Blinkit - Added `unitLabel` to Product Card Component
 

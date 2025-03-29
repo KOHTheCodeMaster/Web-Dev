@@ -31,7 +31,7 @@ export class CategoryService {
 
         this.dataLoaderService.getDataLoaded$().subscribe((dataLoaded: boolean) => {
 
-            console.log('CategoryService - initSubscriptions() method - dataLoaded: ', dataLoaded);
+            // console.log('CategoryService - initSubscriptions() method - dataLoaded: ', dataLoaded);
 
             if (dataLoaded) {
 

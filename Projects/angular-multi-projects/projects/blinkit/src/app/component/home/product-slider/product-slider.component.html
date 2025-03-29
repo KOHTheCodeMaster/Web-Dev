@@ -1,12 +1,12 @@
 <div class="m-2 flex flex-col gap-4 ">
 
-    <div class="flex flex-col gap-4 "
-         *ngFor="let category of categoryList">
+    <div class="flex flex-col gap-4 " *ngFor="let category of categoryList">
 
         <!--  Category Name  -->
         <div class="mt-4 flex justify-between">
             <span class="text-xl">{{ category.getName() }}</span>
-            <span class="text-xl text-green-500">See All</span>
+            <button class="text-xl text-green-500" (click)="navigateToShoppingByCategory(category.getId())">See All
+            </button>
         </div>
 
         <!--  Product Slider  -->
@@ -15,7 +15,8 @@
             <!--  Product Item  -->
             <div class="w-48 h-48 flex flex-col items-center justify-center text-center border rounded-xl"
                  *ngFor="let product of this.productService.getProductListByCategoryId(category.getId())">
-                <span class="text-sm font-semibold ">{{ product.getName() }}</span>
+                                <span class="text-sm font-semibold ">{{ product.getName() }}</span>
+<!--                <app-product-slider-card [product]="product"></app-product-slider-card>-->
             </div>
         </div>
 
