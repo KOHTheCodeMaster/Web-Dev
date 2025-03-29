@@ -10,14 +10,41 @@
         </div>
 
         <!--  Product Slider  -->
-        <div class="mx-4 flex gap-6 ">
+        <div class="mx-4 relative">
 
-            <!--  Product Item  -->
-            <div class="w-48 h-48 flex flex-col items-center justify-center text-center border rounded-xl"
-                 *ngFor="let product of this.productService.getProductListByCategoryId(category.getId())">
-                                <span class="text-sm font-semibold ">{{ product.getName() }}</span>
-<!--                <app-product-slider-card [product]="product"></app-product-slider-card>-->
+            <!-- Left Navigation Button -->
+            <button
+                *ngIf="shouldShowLeftButton(category.getId())"
+                (click)="scrollLeft(category.getId())"
+                class="absolute -left-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-md rounded-full p-2 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+
+            <!-- Product List Container -->
+            <div
+                [id]="'slider-' + category.getId()"
+                class="flex gap-6 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none]"
+                [ngClass]="{'[&::-webkit-scrollbar]:hidden': true}"
+                (scroll)="onSliderScroll($event, category.getId())">
+
+                <div
+                    *ngFor="let product of this.productService.getProductListByCategoryId(category.getId())"
+                    class="flex-shrink-0">
+                    <app-product-slider-card [product]="product"></app-product-slider-card>
+                </div>
             </div>
+
+            <!-- Right Navigation Button -->
+            <button
+                *ngIf="shouldShowRightButton(category.getId())"
+                (click)="scrollRight(category.getId())"
+                class="absolute -right-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-md rounded-full p-2 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
         </div>
 
     </div>

@@ -57,6 +57,7 @@ export class CategoryService {
 
     }
 
+/*
     private initCategoryList() {
         this.categoryList = [
             new Category('Vegetables & Fruits'),
@@ -69,6 +70,7 @@ export class CategoryService {
         ];
 
     }
+*/
 
     private initDataMembers() {
 
@@ -80,6 +82,7 @@ export class CategoryService {
 
     }
 
+/*
     private initCategoryMap() {
 
         this.categoryIdToSubCategoryListMap = new Map<number, SubCategory []>();
@@ -87,7 +90,9 @@ export class CategoryService {
             this.categoryIdToSubCategoryListMap.set(category.getId(), this.generateSubCategoryList(category));
 
     }
+*/
 
+/*
     private generateSubCategoryList(category: Category): SubCategory[] {
 
         let subCategoryList: SubCategory[];
@@ -171,6 +176,7 @@ export class CategoryService {
 
         return subCategoryList;
     }
+*/
 
     updateCategoryId(categoryId: number) {
         this.categoryId$.next(categoryId);
@@ -195,7 +201,7 @@ export class CategoryService {
     }
 
     getSubCategoryListByCategoryId(categoryId: number): SubCategory[] {
-        console.log('categoryIdToSubCategoryListMap', this.categoryIdToSubCategoryListMap);
+        // console.log('categoryIdToSubCategoryListMap', this.categoryIdToSubCategoryListMap);
         let subCategoryList = this.categoryIdToSubCategoryListMap.get(categoryId);
 
         if (subCategoryList === undefined) throw new Error(`SubCategory list for Category ID ${categoryId} not found.`);

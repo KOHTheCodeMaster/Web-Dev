@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         29th Mar 2K25 - 11:49 PM
+Commit Message:     290 - Angular Projects - Blinkit - Added Left & Right Scroll Buttons to Product Slider Component
+
+Quick Summary:
+
+1. Added Left & Right Scroll Buttons to the Product Slider Component.
+2. Implemented functionality to scroll the product slider left and right using the buttons.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         29th Mar 2K25 - 11:00 PM
 Commit Message:     289 - Angular Projects - Blinkit - Added Product Slider Card Component & Fixed Category List
 
