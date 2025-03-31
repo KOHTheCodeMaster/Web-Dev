@@ -20,6 +20,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         31st Mar 2K25 - 01:33 PM
+Commit Message:     291 - Java Projects - G-Mart - Project Setup - CRUD Operations for Categories
+
+Quick Summary:
+
+1. Project Setup for G-Mart - A Grocery Shopping Application (Blinkit Clone).
+2. Implemented CRUD operations for Categories.
+3. Configured SQLite database for storing data.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         29th Mar 2K25 - 11:49 PM
 Commit Message:     290 - Angular Projects - Blinkit - Added Left & Right Scroll Buttons to Product Slider Component
 
