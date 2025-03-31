@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         31st Mar 2K25 - 01:44 PM
+Commit Message:     292 - Angular Projects - Refactored 'Blinkit' to 'G-Mart' Project
+
+Quick Summary:
+
+1. Refactored the 'Blinkit' project to 'G-Mart' for better alignment with the project name.
+2. Updated all references to 'Blinkit' in the codebase to 'G-Mart'.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         31st Mar 2K25 - 01:33 PM
 Commit Message:     291 - Java Projects - G-Mart - Project Setup - CRUD Operations for Categories
 

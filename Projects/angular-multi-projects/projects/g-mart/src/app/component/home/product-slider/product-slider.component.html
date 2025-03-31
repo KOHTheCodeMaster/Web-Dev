@@ -2,7 +2,7 @@
 
     <div class="flex flex-col gap-4 " *ngFor="let category of categoryList">
 
-        <!--  Category Name  -->
+        <!--  Category Name & See All  -->
         <div class="mt-4 flex justify-between">
             <span class="text-xl">{{ category.getName() }}</span>
             <button class="text-xl text-green-500" (click)="navigateToShoppingByCategory(category.getId())">See All
@@ -16,9 +16,11 @@
             <button
                 *ngIf="shouldShowLeftButton(category.getId())"
                 (click)="scrollLeft(category.getId())"
-                class="absolute -left-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-md rounded-full p-2 transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                class="absolute -left-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white
+                        shadow-md rounded-full p-2 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
             </button>
 
@@ -26,8 +28,7 @@
             <div
                 [id]="'slider-' + category.getId()"
                 class="flex gap-6 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none]"
-                [ngClass]="{'[&::-webkit-scrollbar]:hidden': true}"
-                (scroll)="onSliderScroll($event, category.getId())">
+                [ngClass]="{'[&::-webkit-scrollbar]:hidden': true}">
 
                 <div
                     *ngFor="let product of this.productService.getProductListByCategoryId(category.getId())"
@@ -40,9 +41,11 @@
             <button
                 *ngIf="shouldShowRightButton(category.getId())"
                 (click)="scrollRight(category.getId())"
-                class="absolute -right-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-md rounded-full p-2 transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                class="absolute -right-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white
+                        shadow-md rounded-full p-2 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
             </button>
         </div>

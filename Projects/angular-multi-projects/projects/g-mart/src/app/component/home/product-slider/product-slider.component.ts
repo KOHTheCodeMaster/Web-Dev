@@ -147,24 +147,4 @@ export class ProductSliderComponent {
         }
     }
 
-    onSliderScroll(event: Event, categoryId: number) {
-        // This method is now mainly for manual scrolling
-        const slider = event.target as HTMLElement;
-        const state = this.sliderStates.get(categoryId);
-
-        if (slider && state) {
-            const itemWidth = this.getItemWidth();
-            const currentScrollPosition = slider.scrollLeft;
-
-            // Calculate current page based on scroll position
-            const estimatedPage = Math.round(currentScrollPosition / (state.itemsPerPage * itemWidth));
-
-            if (estimatedPage !== state.currentPage) {
-                state.currentPage = Math.min(estimatedPage, state.totalPages - 1);
-                state.canScrollLeft = state.currentPage > 0;
-                state.canScrollRight = state.currentPage < state.totalPages - 1;
-                this.sliderStates.set(categoryId, state);
-            }
-        }
-    }
 }

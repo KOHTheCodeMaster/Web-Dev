@@ -270,36 +270,36 @@
         }
       }
     },
-    "blinkit": {
+    "g-mart": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/blinkit",
-      "sourceRoot": "projects/blinkit/src",
+      "root": "projects/g-mart",
+      "sourceRoot": "projects/g-mart/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/blinkit",
-            "index": "projects/blinkit/src/index.html",
-            "browser": "projects/blinkit/src/main.ts",
+            "outputPath": "dist/g-mart",
+            "index": "projects/g-mart/src/index.html",
+            "browser": "projects/g-mart/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/blinkit/tsconfig.app.json",
+            "tsConfig": "projects/g-mart/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/blinkit/public"
+                "input": "projects/g-mart/public"
               },
               {
                 "glob": "**/*",
-                "input": "projects/blinkit/src/assets",
+                "input": "projects/g-mart/src/assets",
                 "output": "/assets"
               }
             ],
             "styles": [
-              "projects/blinkit/src/styles.css"
+              "projects/g-mart/src/styles.css"
             ],
             "scripts": []
           },
@@ -331,10 +331,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "blinkit:build:production"
+              "buildTarget": "g-mart:build:production"
             },
             "development": {
-              "buildTarget": "blinkit:build:development"
+              "buildTarget": "g-mart:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -349,15 +349,15 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/blinkit/tsconfig.spec.json",
+            "tsConfig": "projects/g-mart/tsconfig.spec.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/blinkit/public"
+                "input": "projects/g-mart/public"
               }
             ],
             "styles": [
-              "projects/blinkit/src/styles.css"
+              "projects/g-mart/src/styles.css"
             ],
             "scripts": []
           }
