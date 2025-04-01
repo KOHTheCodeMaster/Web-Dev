@@ -1,0 +1,112 @@
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 174
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 175
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 176
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 177
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 178
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 179
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 180
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 181
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 182
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 183
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 184
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 185
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 186
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 187
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 188
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 189
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 190
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 191
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 192
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 193
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 194
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 195
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 196
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 197
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 198
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - This is a test log message. 199
+01-Apr-2025 21:32:10.094 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Sample log message of 20 KB created.
+----------------------------
+
+01-Apr-2025 21:33:08.607 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Application Starting...
+----------------------------
+
+01-Apr-2025 21:33:08.881 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 5616 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+01-Apr-2025 21:33:08.881 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+01-Apr-2025 21:33:09.298 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01-Apr-2025 21:33:09.343 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+01-Apr-2025 21:33:09.712 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+01-Apr-2025 21:33:09.723 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+01-Apr-2025 21:33:09.723 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+01-Apr-2025 21:33:09.723 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+01-Apr-2025 21:33:09.772 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+01-Apr-2025 21:33:09.772 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 859 ms
+01-Apr-2025 21:33:09.911 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+01-Apr-2025 21:33:10.073 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@9b23822
+01-Apr-2025 21:33:10.073 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+01-Apr-2025 21:33:10.118 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01-Apr-2025 21:33:10.147 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+01-Apr-2025 21:33:10.163 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+01-Apr-2025 21:33:10.378 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+01-Apr-2025 21:33:10.420 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.45.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+01-Apr-2025 21:33:10.874 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+01-Apr-2025 21:33:10.874 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-Apr-2025 21:33:11.141 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01-Apr-2025 21:33:11.565 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+01-Apr-2025 21:33:11.597 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+01-Apr-2025 21:33:11.597 INFO  com.github.kohthecodemaster.Main - Started Main in 2.943 seconds (process running for 3.293)
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Creating dummy data...
+----------------------------
+
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 0
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 1
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 2
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 3
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 4
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 5
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 6
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 7
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 8
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 9
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 10
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 11
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 12
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 13
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 14
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 15
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 16
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 17
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 18
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 19
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 20
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 21
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 22
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 23
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 24
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 25
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 26
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 27
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 28
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 29
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 30
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 31
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 32
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 33
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 34
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 35
+01-Apr-2025 21:33:11.612 INFO  com.github.kohthecodemaster.Main - This is a test log message. 36

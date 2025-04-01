@@ -1,0 +1,43 @@
+<configuration scan="true" scanPeriod="15 seconds">
+
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{dd-MMM-yyyy HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--
+                <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+                    <file>./projects/g-mart/logs/application.log</file>
+                    &lt;!&ndash;<append>false</append>&ndash;&gt;
+                    <encoder>
+                        <pattern>%d{dd-MMM-yyyy HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+                    </encoder>
+                </appender>
+    -->
+
+    <appender name="rollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./projects/g-mart/logs/application.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>./projects/g-mart/logs/application-%d{yyyy-MMM-dd} - %i.log</fileNamePattern>
+            <maxFileSize>10KB</maxFileSize>
+            <!-- Doubt: maxHistory tag is ignored for unknown reason.
+                <maxHistory>2</maxHistory>
+            -->
+        </rollingPolicy>
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./projects/g-mart/logs/application-%d{yyyy-MM-dd - HH:mm:ss.SSS}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>-->
+        <encoder>
+            <pattern>%d{dd-MMM-yyyy HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="consoleAppender"/>
+        <appender-ref ref="rollingFileAppender"/>
+        <!--<appender-ref ref="fileAppender"/>-->
+    </root>
+
+</configuration>

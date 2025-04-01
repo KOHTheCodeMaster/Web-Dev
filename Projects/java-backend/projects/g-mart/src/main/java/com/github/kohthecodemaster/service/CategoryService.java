@@ -22,22 +22,22 @@ public class CategoryService {
 
     public List<Category> getAllCategories() {
         List<Category> categoryList = categoryRepository.findAll();
-        log.debug("Fetched all categories: {}", categoryList);
+        log.info("Fetched all categories: {}", categoryList);
         return categoryList;
     }
 
     public Optional<Category> getCategoryById(Long id) {
-        log.debug("Fetching category with ID: {}", id);
+        log.info("Fetching category with ID: {}", id);
 
         Optional<Category> result = categoryRepository.findById(id);
-        if (result.isPresent()) log.debug("Category found: {}", result.get());
+        if (result.isPresent()) log.info("Category found: {}", result.get());
         else log.warn("Category with ID {} not found", id);
         return result;
     }
 
     public Category saveCategory(Category category) {
         Category newCategory = categoryRepository.save(category);
-        log.debug("Saved new category: {}", newCategory);
+        log.info("Saved new category: {}", newCategory);
         return newCategory;
     }
 
@@ -48,7 +48,7 @@ public class CategoryService {
         }
 
         categoryRepository.deleteById(id);
-        log.debug("Deleted category with ID: {}", id);
+        log.info("Deleted category with ID: {}", id);
         return true;
     }
 }

@@ -20,6 +20,18 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         1st Apr 2K25 - 09:36 PM
+Commit Message:     293 - Java Projects - G-Mart - Added Logger - logback SLF4J Configuration
+
+Quick Summary:
+
+1. Added Logger to the G-Mart project using SLF4J and logback.
+2. Configured logback for logging in the application.
+3. Updated the logging configuration file to set the logging level and appenders.
+4. Rolling file appender is used to log messages to a file.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         31st Mar 2K25 - 01:44 PM
 Commit Message:     292 - Angular Projects - Refactored 'Blinkit' to 'G-Mart' Project
 
