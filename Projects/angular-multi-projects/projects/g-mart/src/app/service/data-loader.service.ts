@@ -32,10 +32,10 @@ export class DataLoaderService {
 
         this.nameToJsonFilePathMap = new Map<string, string>();
 
-        this.nameToJsonFilePathMap.set('products', '/assets/json/products.json');
-        this.nameToJsonFilePathMap.set('categories', '/assets/json/categories.json');
-        this.nameToJsonFilePathMap.set('subcategories', '/assets/json/subcategories.json');
-        this.nameToJsonFilePathMap.set('users', '/assets/json/users.json');
+        this.nameToJsonFilePathMap.set('product', '/assets/json/product.json');
+        this.nameToJsonFilePathMap.set('category', '/assets/json/category.json');
+        this.nameToJsonFilePathMap.set('subcategory', '/assets/json/subcategory.json');
+        this.nameToJsonFilePathMap.set('user', '/assets/json/user.json');
 
     }
 
@@ -54,12 +54,17 @@ export class DataLoaderService {
 
         this.nameToJsonDataMap = new Map<string, []>();
 
-/*
-        for (const [name, jsonFilePath] of this.nameToJsonFilePathMap.entries()) {
-            const dataList = await this.loadDataListFromJsonFile(jsonFilePath, name);
-            this.nameToJsonDataMap.set(name, dataList);
-        }
-*/
+        // const categoryList = await this.loadDataListFromJsonFile('/assets/json/category.json', 'category');
+        // this.nameToJsonDataMap.set('category', categoryList);
+
+        // const subcategoryList = await this.loadDataListFromJsonFile('/assets/json/subcategory.json', 'subcategory');
+        // this.nameToJsonDataMap.set('subcategory', subcategoryList);
+
+        // const productList = await this.loadDataListFromJsonFile('/assets/json/products.json', 'products');
+        // this.nameToJsonDataMap.set('products', productList);
+
+        // const userList = await this.loadDataListFromJsonFile('/assets/json/user.json', 'user');
+        // this.nameToJsonDataMap.set('user', userList);
 
     }
 
@@ -72,7 +77,7 @@ export class DataLoaderService {
             .then(response => response.json())
             .then(jsonResponse => {
 
-                let tempList = jsonResponse[name];
+                let tempList = jsonResponse[this.getJsonKeyForName(name)];
 
                 if (tempList && tempList.length > 0)
                     dataList = tempList as [];
@@ -83,12 +88,20 @@ export class DataLoaderService {
 
     }
 
+    getJsonKeyForName(name: string): string {
+        if (name === 'product') return 'products';
+        else if (name === 'category') return 'categories';
+        else if (name === 'subcategory') return 'subcategories';
+        else if (name === 'user') return 'users';
+        else return '';
+    }
+
     getDataLoaded$(): Observable<boolean> {
         return this.dataLoaded$;
     }
 
-    getDataList(name: string): any[] {
-        return this.nameToJsonDataMap.has(name) ? this.nameToJsonDataMap.get(name) as any[] : [];
+    getDataList(name: string): [] {
+        return this.nameToJsonDataMap.has(name) ? this.nameToJsonDataMap.get(name) as [] : [];
     }
 
 }

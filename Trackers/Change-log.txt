@@ -22,6 +22,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         2nd Apr 2K25 - 07:45 PM
+Commit Message:     295 - Angular Projects - G-Mart - Refactored JSON Keys for Loading Data
+
+Quick Summary:
+
+1. Refactored JSON keys for categories, subcategories, and products to match the database schema.
+   - Updated JSON files to ensure consistency with the database structure.
+   - "products" -> "product"; "categories" -> "category"; "subcategories" -> "subcategory"; "users" -> "user".
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         2nd Apr 2K25 - 06:36 PM
 Commit Message:     294 - Java Projects - G-Mart - Add SQL scripts for category, subcategory, and product
 
