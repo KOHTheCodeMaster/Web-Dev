@@ -65,7 +65,7 @@ export class ProductSliderComponent {
 
             if (slider) {
                 const containerWidth = slider.clientWidth;
-                const itemWidth = this.getItemWidth();  // Width of each product card + gap
+                const itemWidth = this.getFixedItemWidth();  // Width of each product card + gap
                 const itemsPerPage = Math.floor(containerWidth / itemWidth);
                 const productCount = this.productService.getProductListByCategoryId(categoryId).length;
                 const totalPages = Math.ceil(productCount / itemsPerPage);
@@ -81,10 +81,10 @@ export class ProductSliderComponent {
         });
     }
 
-    private getItemWidth(): number {
+    private getFixedItemWidth(): number {
         // Get width of a product card (default 208px = w-52 = 13rem = 208px)
-        // Plus gap (1.5rem = 24px)
-        return 232; // 208px + 24px
+        // Plus gap-6 (1.5rem = 24px)
+        return 232; // 208px + 24px = 232px
     }
 
     shouldShowLeftButton(categoryId: number): boolean {
@@ -105,7 +105,7 @@ export class ProductSliderComponent {
             state.currentPage--;
 
             // Calculate exact scroll position for this page
-            const itemWidth = this.getItemWidth();
+            const itemWidth = this.getFixedItemWidth();
             const scrollPosition = state.currentPage * state.itemsPerPage * itemWidth;
 
             // Scroll to exact position
@@ -131,7 +131,7 @@ export class ProductSliderComponent {
             state.currentPage++;
 
             // Calculate exact scroll position for this page
-            const itemWidth = this.getItemWidth();
+            const itemWidth = this.getFixedItemWidth();
             const scrollPosition = state.currentPage * state.itemsPerPage * itemWidth;
 
             // Scroll to exact position

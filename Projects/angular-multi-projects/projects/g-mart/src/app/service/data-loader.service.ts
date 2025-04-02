@@ -21,9 +21,10 @@ export class DataLoaderService {
 
         this.dataLoaded$ = new BehaviorSubject<boolean>(false);
 
-        this.initNameToJsonFilePathMap()
+        this.initNameToJsonFilePathMap();
 
         await this.initNameToJsonDataMap();
+        // await this.initNameToJsonDataMapFromDB();
 
     }
 
@@ -46,6 +47,19 @@ export class DataLoaderService {
             const dataList = await this.loadDataListFromJsonFile(jsonFilePath, name);
             this.nameToJsonDataMap.set(name, dataList);
         }
+
+    }
+
+    private async initNameToJsonDataMapFromDB() {
+
+        this.nameToJsonDataMap = new Map<string, []>();
+
+/*
+        for (const [name, jsonFilePath] of this.nameToJsonFilePathMap.entries()) {
+            const dataList = await this.loadDataListFromJsonFile(jsonFilePath, name);
+            this.nameToJsonDataMap.set(name, dataList);
+        }
+*/
 
     }
 

@@ -20,6 +20,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+----------------------------------------------------------------------------------------------------
+
+Time Stamp:         2nd Apr 2K25 - 06:36 PM
+Commit Message:     294 - Java Projects - G-Mart - Add SQL scripts for category, subcategory, and product
+
+Quick Summary:
+
+1. Added SQL scripts to create tables for categories, subcategories, and products in the SQLite database.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         1st Apr 2K25 - 09:36 PM
 Commit Message:     293 - Java Projects - G-Mart - Added Logger - logback SLF4J Configuration
 
