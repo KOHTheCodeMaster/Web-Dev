@@ -20,6 +20,21 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         6th Apr 2K25 - 12:43 PM
+Commit Message:     296 - G-Mart - Refactored Models to include objects instead of ids
+
+Quick Summary:
+
+1. Refactored models to include objects instead of ids for categories, subcategories, and products.
+   - Updated the models to use objects for better data representation and manipulation.
+   - Ensured that the models are consistent with the database schema.
+
+2. Updated the services to handle the new model structure.
+    - Refactored the services to work with the new model structure.
+
+3. Commented out the quantity and subTotalPrice fields in the Product model.
+    - These fields will be added later when the cart functionality is implemented.
+
 ----------------------------------------------------------------------------------------------------
 
 Time Stamp:         2nd Apr 2K25 - 07:45 PM

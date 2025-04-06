@@ -3,13 +3,13 @@
     <div>
         <a class="mb-2 block px-4 py-2 rounded-md bg-gray-800 text-gray-200 hover:bg-gray-700 hover:text-blue-300
                   transition-colors duration-200"
-           (click)="setSubCategoryId(0)"
+           (click)="setSubcategoryId(0)"
            [ngClass]="{ 'bg-blue-500 text-blue-300 border border-blue-500': subCategoryId === 0, }">
             All ({{ subCategoryList.length }})
         </a>
         <a *ngFor="let subCategory of subCategoryList"
            [ngClass]="{ 'bg-blue-500 text-blue-300 border border-blue-500': subCategoryId === subCategory.getId(), }"
-           (click)="setSubCategoryId(subCategory.getId())"
+           (click)="setSubcategoryId(subCategory.getId())"
            class="mb-2 block px-4 py-2 rounded-md bg-gray-800 text-gray-200 hover:bg-gray-700 hover:text-blue-300
                   transition-colors duration-200 ">
             {{ subCategory.getName() }}

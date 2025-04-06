@@ -19,8 +19,8 @@
     <appender name="rollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>./projects/g-mart/logs/application.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>./projects/g-mart/logs/application-%d{yyyy-MMM-dd} - %i.log</fileNamePattern>
-            <maxFileSize>10KB</maxFileSize>
+            <fileNamePattern>./projects/g-mart/logs/history/application-%d{yyyy-MMM-dd} - %i.log</fileNamePattern>
+            <maxFileSize>1MB</maxFileSize>
             <!-- Doubt: maxHistory tag is ignored for unknown reason.
                 <maxHistory>2</maxHistory>
             -->

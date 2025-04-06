@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Category} from "../shared/model/category.model";
 import {BehaviorSubject, Observable} from "rxjs";
-import {SubCategory} from "../shared/model/sub-category.model";
 import {DataLoaderService} from "./data-loader.service";
+import {Subcategory} from "../shared/model/subcategory.model";
 
 @Injectable({
     providedIn: 'root'
@@ -10,8 +10,8 @@ import {DataLoaderService} from "./data-loader.service";
 export class CategoryService {
 
     private categoryList !: Category[];
-    private subCategoryList !: SubCategory[];
-    private categoryIdToSubCategoryListMap !: Map<number, SubCategory[]>;
+    private subCategoryList !: Subcategory[];
+    private categoryIdToSubcategoryListMap !: Map<number, Subcategory[]>;
     private categoryId$!: BehaviorSubject<number>;
     private subCategoryId$!: BehaviorSubject<number>;
 
@@ -36,21 +36,24 @@ export class CategoryService {
             if (dataLoaded) {
 
                 //  Initialize Category List
-                this.categoryList = this.dataLoaderService.getDataList('category').map(category => new Category(category['name'], category['id']));
+                this.categoryList = this.dataLoaderService.getDataList('category').map(category => new Category(category['id'], category['name']));
 
-                console.log('Category List:', this.dataLoaderService.getDataList('category'));
+                // console.log('Category List:', this.dataLoaderService.getDataList('category'));
 
-                //  Initialize SubCategory List
-                this.subCategoryList = this.dataLoaderService.getDataList('subcategory').map(subcategory => new SubCategory(subcategory['categoryId'], subcategory['name'], subcategory['id']));
+                //  Initialize Subcategory List
+                this.subCategoryList = this.dataLoaderService.getDataList('subcategory')
+                    .map(subcategory => new Subcategory(subcategory['id'],
+                        subcategory['name'],
+                        new Category(subcategory['category']['id'], subcategory['category']['name'])));
 
-                //  Initialize Category to SubCategory Map
-                this.categoryIdToSubCategoryListMap = new Map<number, SubCategory[]>();
+                //  Initialize Category to Subcategory Map
+                this.categoryIdToSubcategoryListMap = new Map<number, Subcategory[]>();
 
                 for (let category of this.categoryList) {
-                    let filteredSubCategoryList: SubCategory[] = this.subCategoryList
-                        .filter(subcategory => subcategory.getCategoryId() === category.getId());
+                    let filteredSubcategoryList: Subcategory[] = this.subCategoryList
+                        .filter(subcategory => subcategory.getCategory().getId() === category.getId());
 
-                    this.categoryIdToSubCategoryListMap.set(category.getId(), filteredSubCategoryList);
+                    this.categoryIdToSubcategoryListMap.set(category.getId(), filteredSubcategoryList);
                 }
 
             }
@@ -59,20 +62,20 @@ export class CategoryService {
 
     }
 
-/*
-    private initCategoryList() {
-        this.categoryList = [
-            new Category('Vegetables & Fruits'),
-            new Category('Dairy & Breakfast'),
-            new Category('Munchies'),
-            new Category('Cold Drinks & Juices'),
-            new Category('Instant & Frozen Food'),
-            new Category('Tea, Coffee & Health Drinks'),
-            new Category('Bakery & Biscuits')
-        ];
+    /*
+        private initCategoryList() {
+            this.categoryList = [
+                new Category('Vegetables & Fruits'),
+                new Category('Dairy & Breakfast'),
+                new Category('Munchies'),
+                new Category('Cold Drinks & Juices'),
+                new Category('Instant & Frozen Food'),
+                new Category('Tea, Coffee & Health Drinks'),
+                new Category('Bakery & Biscuits')
+            ];
 
-    }
-*/
+        }
+    */
 
     private initDataMembers() {
 
@@ -80,111 +83,25 @@ export class CategoryService {
         this.subCategoryId$ = new BehaviorSubject<number>(0);
 
         this.categoryList = [];
-        this.categoryIdToSubCategoryListMap = new Map<number, SubCategory[]>();
+        this.categoryIdToSubcategoryListMap = new Map<number, Subcategory[]>();
 
     }
 
-/*
-    private initCategoryMap() {
+    /*
+        private initCategoryMap() {
 
-        this.categoryIdToSubCategoryListMap = new Map<number, SubCategory []>();
-        for (let category of this.categoryList)
-            this.categoryIdToSubCategoryListMap.set(category.getId(), this.generateSubCategoryList(category));
+            this.categoryIdToSubcategoryListMap = new Map<number, Subcategory []>();
+            for (let category of this.categoryList)
+                this.categoryIdToSubcategoryListMap.set(category.getId(), this.generateSubcategoryList(category));
 
-    }
-*/
-
-/*
-    private generateSubCategoryList(category: Category): SubCategory[] {
-
-        let subCategoryList: SubCategory[];
-
-        switch (category.getName()) {
-            case 'Vegetables & Fruits':
-                subCategoryList = [
-                    new SubCategory(category.getId(), 'Fresh Vegetables'),
-                    new SubCategory(category.getId(), 'Fresh Fruits'),
-                    new SubCategory(category.getId(), 'Mangoes & Melons'),
-                    new SubCategory(category.getId(), 'Seasonal'),
-                    new SubCategory(category.getId(), 'Exotics')
-                ];
-                break;
-
-            case 'Dairy & Breakfast':
-                subCategoryList = [
-                    new SubCategory(category.getId(), 'Milk'),
-                    new SubCategory(category.getId(), 'Bread & Pav'),
-                    new SubCategory(category.getId(), 'Eggs'),
-                    new SubCategory(category.getId(), 'Flakes & Kids Cereals'),
-                    new SubCategory(category.getId(), 'Muesli & Granola')
-                ];
-                break;
-
-            case 'Munchies':
-                subCategoryList = [
-                    new SubCategory(category.getId(), 'Chips & Crisps'),
-                    new SubCategory(category.getId(), 'Rusks & Wafers'),
-                    new SubCategory(category.getId(), 'Energy Bars'),
-                    new SubCategory(category.getId(), 'Nachos'),
-                    new SubCategory(category.getId(), 'Bhujia & Mixtures')
-                ];
-                break;
-
-            case 'Cold Drinks & Juices':
-                subCategoryList = [
-                    new SubCategory(category.getId(), 'Beverages Gift Packs'),
-                    new SubCategory(category.getId(), 'Soft Drinks'),
-                    new SubCategory(category.getId(), 'Fruit Juices'),
-                    new SubCategory(category.getId(), 'Mango Drinks'),
-                    new SubCategory(category.getId(), 'Pure Juices')
-                ];
-                break;
-
-            case 'Instant & Frozen Food':
-                subCategoryList = [
-                    new SubCategory(category.getId(), 'Noodles'),
-                    new SubCategory(category.getId(), 'Frozen Veg Snacks'),
-                    new SubCategory(category.getId(), 'Frozen Non-Veg Snacks'),
-                    new SubCategory(category.getId(), 'Pasta'),
-                    new SubCategory(category.getId(), 'Instant Mixes')
-                ];
-                break;
-
-            case 'Tea, Coffee & Health Drinks':
-                subCategoryList = [
-                    new SubCategory(category.getId(), 'Tea'),
-                    new SubCategory(category.getId(), 'Coffee'),
-                    new SubCategory(category.getId(), 'Milk Drinks'),
-                    new SubCategory(category.getId(), 'Green & Flavoured Tea'),
-                    new SubCategory(category.getId(), 'Herbal Drinks')
-                ];
-                break;
-
-            case 'Bakery & Biscuits':
-                subCategoryList = [
-                    new SubCategory(category.getId(), 'Biscuit Gift Pack'),
-                    new SubCategory(category.getId(), 'Bread & Pav'),
-                    new SubCategory(category.getId(), 'Cookies'),
-                    new SubCategory(category.getId(), 'Cream Biscuits'),
-                    new SubCategory(category.getId(), 'Glucose & Marie')
-                ];
-                break;
-
-            default:
-                console.log('Invalid Category');
-                subCategoryList = [];
-                break;
         }
-
-        return subCategoryList;
-    }
-*/
+    */
 
     updateCategoryId(categoryId: number) {
         this.categoryId$.next(categoryId);
     }
 
-    updateSubCategoryId(subCategoryId: number) {
+    updateSubcategoryId(subCategoryId: number) {
         this.subCategoryId$.next(subCategoryId);
     }
 
@@ -195,18 +112,18 @@ export class CategoryService {
         return category;
     }
 
-    getSubCategoryById(subCategoryId: number) {
+    getSubcategoryById(subCategoryId: number) {
         let subCategory = this.subCategoryList.find(subCategory => subCategory.getId() === subCategoryId);
 
-        if (subCategory === undefined) throw new Error(`SubCategory with ID ${subCategoryId} not found.`);
+        if (subCategory === undefined) throw new Error(`Subcategory with ID ${subCategoryId} not found.`);
         return subCategory;
     }
 
-    getSubCategoryListByCategoryId(categoryId: number): SubCategory[] {
-        // console.log('categoryIdToSubCategoryListMap', this.categoryIdToSubCategoryListMap);
-        let subCategoryList = this.categoryIdToSubCategoryListMap.get(categoryId);
+    getSubcategoryListByCategoryId(categoryId: number): Subcategory[] {
+        // console.log('categoryIdToSubcategoryListMap', this.categoryIdToSubcategoryListMap);
+        let subCategoryList = this.categoryIdToSubcategoryListMap.get(categoryId);
 
-        if (subCategoryList === undefined) throw new Error(`SubCategory list for Category ID ${categoryId} not found.`);
+        if (subCategoryList === undefined) throw new Error(`Subcategory list for Category ID ${categoryId} not found.`);
         return subCategoryList;
     }
 
@@ -218,7 +135,7 @@ export class CategoryService {
         return this.categoryList;
     }
 
-    getSubCategoryList(): SubCategory[] {
+    getSubcategoryList(): Subcategory[] {
         return this.subCategoryList;
     }
 
@@ -226,12 +143,12 @@ export class CategoryService {
         return this.categoryId$.asObservable();
     }
 
-    getSubCategoryId$(): Observable<number> {
+    getSubcategoryId$(): Observable<number> {
         return this.subCategoryId$.asObservable();
     }
 
-    getCategoryIdToSubCategoryListMap(): Map<number, SubCategory[]> {
-        return this.categoryIdToSubCategoryListMap;
+    getCategoryIdToSubcategoryListMap(): Map<number, Subcategory[]> {
+        return this.categoryIdToSubcategoryListMap;
     }
 
 }

@@ -1,22 +1,22 @@
 package com.github.kohthecodemaster.entity;
 
 import com.google.gson.GsonBuilder;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity(name = "CATEGORY")
-@Table(name = "CATEGORY")
+@Entity(name = "SUBCATEGORY")
+@Table(name = "SUBCATEGORY")
 @Data
-public class Category {
+public class Subcategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     @Override
     public String toString() {

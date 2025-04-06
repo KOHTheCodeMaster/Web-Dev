@@ -7,6 +7,7 @@ import {BehaviorSubject, Observable} from "rxjs";
 })
 export class DataLoaderService {
 
+    private readonly BASE_API_URL: string = 'http://localhost:8081/g-mart/api';
     private dataLoaded$!: BehaviorSubject<boolean>;
     private nameToJsonFilePathMap!: Map<string, string>;
     private nameToJsonDataMap!: Map<string, any[]>;
@@ -23,8 +24,8 @@ export class DataLoaderService {
 
         this.initNameToJsonFilePathMap();
 
-        await this.initNameToJsonDataMap();
-        // await this.initNameToJsonDataMapFromDB();
+        // await this.initNameToJsonDataMap();
+        await this.initNameToJsonDataMapFromDB();
 
     }
 
@@ -54,16 +55,16 @@ export class DataLoaderService {
 
         this.nameToJsonDataMap = new Map<string, []>();
 
-        // const categoryList = await this.loadDataListFromJsonFile('/assets/json/category.json', 'category');
-        // this.nameToJsonDataMap.set('category', categoryList);
+        const categoryList = await this.loadDataListFromDB(this.BASE_API_URL + '/category/all');
+        this.nameToJsonDataMap.set('category', categoryList);
 
-        // const subcategoryList = await this.loadDataListFromJsonFile('/assets/json/subcategory.json', 'subcategory');
-        // this.nameToJsonDataMap.set('subcategory', subcategoryList);
+        const subcategoryList = await this.loadDataListFromDB(this.BASE_API_URL + '/subcategory/all');
+        this.nameToJsonDataMap.set('subcategory', subcategoryList);
 
-        // const productList = await this.loadDataListFromJsonFile('/assets/json/products.json', 'products');
-        // this.nameToJsonDataMap.set('products', productList);
+        const productList = await this.loadDataListFromDB(this.BASE_API_URL + '/product/all');
+        this.nameToJsonDataMap.set('product', productList);
 
-        // const userList = await this.loadDataListFromJsonFile('/assets/json/user.json', 'user');
+        // const userList = await this.loadDataListFromDB(this.BASE_API_URL + '/user');
         // this.nameToJsonDataMap.set('user', userList);
 
     }
@@ -102,6 +103,19 @@ export class DataLoaderService {
 
     getDataList(name: string): [] {
         return this.nameToJsonDataMap.has(name) ? this.nameToJsonDataMap.get(name) as [] : [];
+    }
+
+    private async loadDataListFromDB(url: string): Promise<any[]> {
+        let dataList: [] = [];
+
+        await fetch(url)
+            .then(response => response.json())
+            .then(jsonResponse => {
+                let tempList = jsonResponse;
+                if (tempList && tempList.length > 0) dataList = tempList as [];
+            });
+
+        return dataList;
     }
 
 }

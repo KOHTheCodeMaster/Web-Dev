@@ -16,11 +16,11 @@ export class ProductSliderCardComponent {
     }
 
     incrementQuantity() {
-        this.product.incrementQuantity();
+        // this.product.incrementQuantity();
     }
 
     decrementQuantity() {
-        this.product.decrementQuantity();
+        // this.product.decrementQuantity();
     }
 
 }

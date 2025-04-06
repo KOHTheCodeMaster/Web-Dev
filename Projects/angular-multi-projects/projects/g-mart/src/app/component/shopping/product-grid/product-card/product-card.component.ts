@@ -17,11 +17,12 @@ export class ProductCardComponent {
     }
 
     incrementQuantity() {
-        this.product.incrementQuantity();
+        // this.product.incrementQuantity();
+
     }
 
     decrementQuantity() {
-        this.product.decrementQuantity();
+        // this.product.decrementQuantity();
     }
 
 }

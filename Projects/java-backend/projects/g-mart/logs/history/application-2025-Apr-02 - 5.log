@@ -1,0 +1,300 @@
+02-Apr-2025 19:21:10.210 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-Apr-2025 19:21:10.249 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 1 JPA repository interface.
+02-Apr-2025 19:21:10.640 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+02-Apr-2025 19:21:10.653 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+02-Apr-2025 19:21:10.653 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+02-Apr-2025 19:21:10.653 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+02-Apr-2025 19:21:10.704 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+02-Apr-2025 19:21:10.704 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1116 ms
+02-Apr-2025 19:21:10.836 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-Apr-2025 19:21:11.024 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@6a6c7f42
+02-Apr-2025 19:21:11.026 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-Apr-2025 19:21:11.070 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-Apr-2025 19:21:11.115 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+02-Apr-2025 19:21:11.129 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-Apr-2025 19:21:11.360 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-Apr-2025 19:21:11.411 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.45.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+02-Apr-2025 19:21:11.886 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-Apr-2025 19:21:11.888 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-Apr-2025 19:21:12.089 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-Apr-2025 19:21:12.549 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+02-Apr-2025 19:21:12.594 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+02-Apr-2025 19:21:12.600 INFO  com.github.kohthecodemaster.Main - Started Main in 3.373 seconds (process running for 3.782)
+02-Apr-2025 19:51:19.709 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+02-Apr-2025 19:51:19.709 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+02-Apr-2025 19:51:19.709 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+02-Apr-2025 19:51:19.753 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Long is not present]
+02-Apr-2025 19:51:25.826 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Long is not present]
+02-Apr-2025 19:52:14.695 INFO  c.g.k.c.CategoryControllerDemo - Test Application Response: Test Passed. Application is up and running.
+02-Apr-2025 19:52:14.785 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}]
+02-Apr-2025 19:52:14.794 INFO  c.g.k.c.CategoryControllerDemo - All Categories:
+[
+  {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  {
+    "id": 3,
+    "name": "Munchies"
+  },
+  {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  {
+    "id": 6,
+    "name": "Tea, Coffee \u0026 Health Drinks"
+  },
+  {
+    "id": 7,
+    "name": "Bakery \u0026 Biscuits"
+  },
+  {
+    "id": 8,
+    "name": "Dummy Category 1"
+  }
+]
+02-Apr-2025 19:52:14.801 INFO  c.g.k.service.CategoryService - Fetching category with ID: 4
+02-Apr-2025 19:52:14.807 INFO  c.g.k.service.CategoryService - Category found: {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}
+02-Apr-2025 19:52:14.808 INFO  c.g.k.c.CategoryControllerDemo - Category by ID (4):
+{
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}
+02-Apr-2025 19:52:14.945 INFO  c.g.k.service.CategoryService - Saved new category: {
+  "id": 11,
+  "name": "Dummy Category 1"
+}
+02-Apr-2025 19:52:14.980 INFO  c.g.k.c.CategoryControllerDemo - Created Category:
+{
+  "id": 11,
+  "name": "Dummy Category 1"
+}
+02-Apr-2025 19:52:15.202 WARN  c.g.k.service.CategoryService - Category with ID 10 not found for deletion
+02-Apr-2025 19:52:46.215 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Long is not present]
+02-Apr-2025 19:53:00.745 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+02-Apr-2025 19:53:07.621 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+
+
+
+
+02-Apr-2025 19:53:19.520 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+02-Apr-2025 19:54:02.258 INFO  c.g.k.c.CategoryControllerDemo - Test Application Response: Test Passed. Application is up and running.
+02-Apr-2025 19:54:02.262 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+02-Apr-2025 19:54:02.262 INFO  c.g.k.c.CategoryControllerDemo - All Categories:
+[
+  {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  {
+    "id": 3,
+    "name": "Munchies"
+  },
+  {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  {
+    "id": 6,
+    "name": "Tea, Coffee \u0026 Health Drinks"
+  },
+  {
+    "id": 7,
+    "name": "Bakery \u0026 Biscuits"
+  },
+  {
+    "id": 8,
+    "name": "Dummy Category 1"
+  },
+  {
+    "id": 11,
+    "name": "Dummy Category 1"
+  }
+]
+02-Apr-2025 19:54:02.262 INFO  c.g.k.service.CategoryService - Fetching category with ID: 4
+02-Apr-2025 19:54:02.267 INFO  c.g.k.service.CategoryService - Category found: {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}
+02-Apr-2025 19:54:02.267 INFO  c.g.k.c.CategoryControllerDemo - Category by ID (4):
+{
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}
+02-Apr-2025 19:54:08.678 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Application Starting...
+----------------------------
+
+02-Apr-2025 19:54:08.678 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Creating dummy data...
+----------------------------
+
+02-Apr-2025 19:54:08.678 INFO  com.github.kohthecodemaster.Main - This is a test log message. 0
+02-Apr-2025 19:54:08.678 INFO  com.github.kohthecodemaster.Main - This is a test log message. 1
+02-Apr-2025 19:54:08.678 INFO  com.github.kohthecodemaster.Main - This is a test log message. 2
+02-Apr-2025 19:54:08.678 INFO  com.github.kohthecodemaster.Main - This is a test log message. 3
+02-Apr-2025 19:54:08.678 INFO  com.github.kohthecodemaster.Main - This is a test log message. 4
+02-Apr-2025 19:54:08.678 INFO  com.github.kohthecodemaster.Main - This is a test log message. 5

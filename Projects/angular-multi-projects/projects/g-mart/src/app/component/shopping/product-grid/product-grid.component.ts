@@ -39,7 +39,7 @@ export class ProductGridComponent {
             this.filterProducts();
         });
 
-        this.categoryService.getSubCategoryId$().subscribe(subCategoryId => {
+        this.categoryService.getSubcategoryId$().subscribe(subCategoryId => {
             this.subCategoryId = subCategoryId;
             this.filterProducts();
         });
@@ -51,10 +51,10 @@ export class ProductGridComponent {
             this.baseFilteredProductsList = [...this.allProductsList];
         } else if (this.categoryId !== 0 && this.subCategoryId === 0) {
             this.baseFilteredProductsList = this.allProductsList.filter(product =>
-                product.getCategoryId() === this.categoryId);
+                product.getCategory().getId() === this.categoryId);
         } else {
             this.baseFilteredProductsList = this.allProductsList.filter(product =>
-                product.getCategoryId() === this.categoryId && product.getSubCategoryId() === this.subCategoryId);
+                product.getCategory().getId() === this.categoryId && product.getSubcategory().getId() === this.subCategoryId);
         }
 
         this.applySort();

@@ -22,7 +22,7 @@ public class CategoryService {
 
     public List<Category> getAllCategories() {
         List<Category> categoryList = categoryRepository.findAll();
-        log.info("Fetched all categories: {}", categoryList);
+//        log.info("Fetched all categories: {}", categoryList);
         return categoryList;
     }
 

@@ -9,9 +9,9 @@
 
     <!-- Category Description (Improved Dark Mode UI) -->
     <div class="my-8 p-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800 text-gray-200">
-        <h2 class="text-3xl font-bold text-blue-400">{{ subCategory.getName() }}</h2>
+        <h2 class="text-3xl font-bold text-blue-400">{{ subcategory.getName() }}</h2>
         <p class="text-gray-400 mt-2 leading-relaxed">
-            Discover the best quality <span class="text-blue-300">{{ subCategory.getName() }}</span> at unbeatable prices.
+            Discover the best quality <span class="text-blue-300">{{ subcategory.getName() }}</span> at unbeatable prices.
             Our products are sourced fresh and delivered quickly to your doorstep, ensuring you get the best experience.
             Shop now and enjoy a seamless online shopping experience!
         </p>
@@ -22,21 +22,21 @@
 
         <!-- Left Section -->
         <div class="lg:w-[30%] p-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800 text-gray-200">
-            <h3 class="text-2xl font-semibold text-blue-400">Shop {{ subCategory.getName() }} Online</h3>
+            <h3 class="text-2xl font-semibold text-blue-400">Shop {{ subcategory.getName() }} Online</h3>
             <p class="text-gray-400 mt-4 leading-relaxed">
                 Love online shopping? Avoid the hassle of crowded stores by ordering your
-                <span class="text-blue-300">{{ subCategory.getName() }}</span> online. We ensure super-fast doorstep
+                <span class="text-blue-300">{{ subcategory.getName() }}</span> online. We ensure super-fast doorstep
                 delivery with easy returns, making shopping a breeze!
             </p>
             <p class="text-gray-400 mt-4">
-                Get your favorite {{ subCategory.getName() }} in cities across India, including Delhi, Mumbai, Bengaluru,
+                Get your favorite {{ subcategory.getName() }} in cities across India, including Delhi, Mumbai, Bengaluru,
                 Hyderabad, Pune, and more. Check prices before purchasing and enjoy the best deals!
             </p>
         </div>
 
         <!-- Right Section: Product Price List -->
         <div class="lg:w-[70%] p-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800 text-gray-200">
-            <h3 class="text-xl font-semibold text-blue-400">{{ subCategory.getName() }} - Price List (Top 10)</h3>
+            <h3 class="text-xl font-semibold text-blue-400">{{ subcategory.getName() }} - Price List (Top 10)</h3>
             <ul class="mt-4 space-y-3">
                 <li class="flex justify-between items-center py-2 px-3 bg-gray-700 rounded-lg shadow-md"
                     *ngFor="let product of top10ProductList; let i = index">

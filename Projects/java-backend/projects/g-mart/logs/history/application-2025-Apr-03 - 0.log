@@ -1,0 +1,1316 @@
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Application Starting...
+----------------------------
+
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Creating dummy data...
+----------------------------
+
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 0
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 1
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 2
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 3
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 4
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 5
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 6
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 7
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 8
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 9
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 10
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 11
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 12
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 13
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 14
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 15
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 16
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 17
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 18
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 19
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 20
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 21
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 22
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 23
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 24
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 25
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 26
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 27
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 28
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 29
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 30
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 31
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 32
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 33
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 34
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 35
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 36
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 37
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 38
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 39
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 40
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 41
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 42
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 43
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 44
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 45
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 46
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 47
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 48
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 49
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 50
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 51
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 52
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 53
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 54
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 55
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 56
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 57
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 58
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 59
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 60
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 61
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 62
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 63
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 64
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 65
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 66
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 67
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 68
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 69
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 70
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 71
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 72
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 73
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 74
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 75
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 76
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 77
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 78
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 79
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 80
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 81
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 82
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 83
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 84
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 85
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 86
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 87
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 88
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 89
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 90
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 91
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 92
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 93
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 94
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 95
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 96
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 97
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 98
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 99
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 100
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 101
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 102
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 103
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 104
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 105
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 106
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 107
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 108
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 109
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 110
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 111
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 112
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 113
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 114
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 115
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 116
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 117
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 118
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 119
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 120
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 121
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 122
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 123
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 124
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 125
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 126
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 127
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 128
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 129
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 130
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 131
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 132
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 133
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 134
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 135
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 136
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 137
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 138
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 139
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 140
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 141
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 142
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 143
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 144
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 145
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 146
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 147
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 148
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 149
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 150
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 151
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 152
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 153
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 154
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 155
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 156
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 157
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 158
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 159
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 160
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 161
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 162
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 163
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 164
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 165
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 166
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 167
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 168
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 169
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 170
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 171
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 172
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 173
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 174
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 175
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 176
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 177
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 178
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 179
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 180
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 181
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 182
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 183
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 184
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 185
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 186
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 187
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 188
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 189
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 190
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 191
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 192
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 193
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 194
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 195
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 196
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 197
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 198
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - This is a test log message. 199
+03-Apr-2025 18:35:36.860 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Sample log message of 20 KB created.
+----------------------------
+
+03-Apr-2025 18:35:37.205 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 23392 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+03-Apr-2025 18:35:37.476 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+03-Apr-2025 18:35:38.063 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Apr-2025 18:35:38.095 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+03-Apr-2025 18:35:38.533 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+03-Apr-2025 18:35:38.537 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+03-Apr-2025 18:35:38.537 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+03-Apr-2025 18:35:38.537 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+03-Apr-2025 18:35:38.578 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03-Apr-2025 18:35:38.578 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1039 ms
+03-Apr-2025 18:35:38.748 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+03-Apr-2025 18:35:38.909 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@79476a4e
+03-Apr-2025 18:35:38.909 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+03-Apr-2025 18:35:39.007 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Apr-2025 18:35:39.054 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+03-Apr-2025 18:35:39.085 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+03-Apr-2025 18:35:39.327 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+03-Apr-2025 18:35:39.380 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.45.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+03-Apr-2025 18:35:39.898 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+03-Apr-2025 18:35:39.900 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Apr-2025 18:35:40.103 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Apr-2025 18:35:40.431 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+03-Apr-2025 18:35:40.451 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+03-Apr-2025 18:35:40.462 INFO  com.github.kohthecodemaster.Main - Started Main in 3.523 seconds (process running for 3.964)
+03-Apr-2025 18:35:50.151 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03-Apr-2025 18:35:50.152 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+03-Apr-2025 18:35:50.153 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+03-Apr-2025 18:35:50.286 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Application Starting...
+----------------------------
+
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Creating dummy data...
+----------------------------
+
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 0
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 1
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 2
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 3
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 4
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 5
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 6
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 7
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 8
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 9
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 10
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 11
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 12
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 13
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 14
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 15
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 16
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 17
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 18
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 19
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 20
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 21
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 22
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 23
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 24
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 25
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 26
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 27
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 28
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 29
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 30
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 31
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 32
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 33
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 34
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 35
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 36
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 37
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 38
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 39
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 40
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 41
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 42
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 43
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 44
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 45
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 46
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 47
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 48
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 49
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 50
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 51
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 52
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 53
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 54
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 55
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 56
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 57
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 58
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 59
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 60
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 61
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 62
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 63
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 64
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 65
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 66
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 67
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 68
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 69
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 70
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 71
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 72
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 73
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 74
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 75
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 76
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 77
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 78
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 79
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 80
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 81
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 82
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 83
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 84
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 85
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 86
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 87
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 88
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 89
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 90
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 91
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 92
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 93
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 94
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 95
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 96
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 97
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 98
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 99
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 100
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 101
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 102
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 103
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 104
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 105
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 106
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 107
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 108
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 109
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 110
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 111
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 112
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 113
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 114
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 115
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 116
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 117
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 118
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 119
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 120
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 121
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 122
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 123
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 124
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 125
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 126
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 127
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 128
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 129
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 130
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 131
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 132
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 133
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 134
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 135
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 136
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 137
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 138
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 139
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 140
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 141
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 142
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 143
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 144
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 145
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 146
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 147
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 148
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 149
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 150
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 151
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 152
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 153
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 154
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 155
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 156
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 157
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 158
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 159
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 160
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 161
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 162
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 163
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 164
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 165
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 166
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 167
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 168
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 169
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 170
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 171
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 172
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 173
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 174
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 175
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 176
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 177
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 178
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 179
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 180
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 181
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 182
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 183
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 184
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 185
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 186
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 187
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 188
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 189
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 190
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 191
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 192
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 193
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 194
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 195
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 196
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 197
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 198
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - This is a test log message. 199
+03-Apr-2025 18:58:20.068 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Sample log message of 20 KB created.
+----------------------------
+
+03-Apr-2025 18:58:20.415 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 20892 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+03-Apr-2025 18:58:20.415 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+03-Apr-2025 18:58:20.907 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Apr-2025 18:58:20.940 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+03-Apr-2025 18:58:21.337 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+03-Apr-2025 18:58:21.353 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+03-Apr-2025 18:58:21.353 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+03-Apr-2025 18:58:21.353 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+03-Apr-2025 18:58:21.400 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03-Apr-2025 18:58:21.400 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 948 ms
+03-Apr-2025 18:58:21.589 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+03-Apr-2025 18:58:21.728 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@9b23822
+03-Apr-2025 18:58:21.728 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+03-Apr-2025 18:58:21.791 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Apr-2025 18:58:21.839 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+03-Apr-2025 18:58:21.855 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+03-Apr-2025 18:58:22.096 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+03-Apr-2025 18:58:22.160 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.45.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+03-Apr-2025 18:58:22.635 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+03-Apr-2025 18:58:22.635 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Apr-2025 18:58:22.896 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Apr-2025 18:58:23.293 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+03-Apr-2025 18:58:23.330 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+03-Apr-2025 18:58:23.336 INFO  com.github.kohthecodemaster.Main - Started Main in 3.189 seconds (process running for 3.597)
+03-Apr-2025 19:01:56.683 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03-Apr-2025 19:01:56.683 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+03-Apr-2025 19:01:56.699 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+03-Apr-2025 19:01:57.522 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 19:02:33.436 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 19:02:33.820 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 19:03:16.618 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 19:03:16.786 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 19:05:54.650 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 19:05:55.098 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Application Starting...
+----------------------------
+
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Creating dummy data...
+----------------------------
+
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 0
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 1
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 2
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 3
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 4
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 5
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 6
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 7
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 8
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 9
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 10
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 11
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 12
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 13
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 14
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 15
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 16
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 17
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 18
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 19
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 20
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 21
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 22
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 23
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 24
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 25
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 26
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 27
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 28
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 29
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 30
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 31
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 32
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 33
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 34
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 35
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 36
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 37
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 38
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 39
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 40
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 41
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 42
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 43
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 44
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 45
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 46
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 47
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 48
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 49
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 50
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 51
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 52
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 53
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 54
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 55
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 56
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 57
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 58
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 59
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 60
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 61
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 62
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 63
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 64
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 65
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 66
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 67
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 68
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 69
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 70
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 71
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 72
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 73
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 74
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 75
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 76
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 77
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 78
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 79
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 80
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 81
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 82
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 83
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 84
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 85
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 86
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 87
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 88
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 89
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 90
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 91
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 92
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 93
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 94
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 95
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 96
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 97
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 98
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 99
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 100
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 101
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 102
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 103
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 104
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 105
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 106
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 107
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 108
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 109
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 110
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 111
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 112
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 113
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 114
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 115
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 116
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 117
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 118
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 119
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 120
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 121
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 122
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 123
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 124
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 125
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 126
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 127
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 128
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 129
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 130
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 131
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 132
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 133
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 134
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 135
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 136
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 137
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 138
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 139
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 140
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 141
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 142
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 143
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 144
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 145
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 146
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 147
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 148
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 149
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 150
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 151
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 152
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 153
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 154
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 155
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 156
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 157
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 158
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 159
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 160
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 161
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 162
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 163
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 164
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 165
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 166
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 167
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 168
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 169
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 170
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 171
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 172
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 173
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 174
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 175
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 176
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 177
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 178
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 179
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 180
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 181
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 182
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 183
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 184
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 185
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 186
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 187
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 188
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 189
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 190
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 191
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 192
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 193
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 194
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 195
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 196
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 197
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 198
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - This is a test log message. 199
+03-Apr-2025 19:06:11.571 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Sample log message of 20 KB created.
+----------------------------
+
+03-Apr-2025 19:06:11.848 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 32728 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+03-Apr-2025 19:06:11.848 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+03-Apr-2025 19:06:12.299 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Apr-2025 19:06:12.347 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+03-Apr-2025 19:06:12.733 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+03-Apr-2025 19:06:12.741 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+03-Apr-2025 19:06:12.741 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+03-Apr-2025 19:06:12.741 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+03-Apr-2025 19:06:12.773 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03-Apr-2025 19:06:12.773 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 878 ms
+03-Apr-2025 19:06:12.921 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+03-Apr-2025 19:06:13.086 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@3281dfc2
+03-Apr-2025 19:06:13.086 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+03-Apr-2025 19:06:13.157 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Apr-2025 19:06:13.205 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+03-Apr-2025 19:06:13.221 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+03-Apr-2025 19:06:13.418 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+03-Apr-2025 19:06:13.465 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.45.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+03-Apr-2025 19:06:13.915 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+03-Apr-2025 19:06:13.915 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Apr-2025 19:06:14.089 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Apr-2025 19:06:14.482 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+03-Apr-2025 19:06:14.498 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+03-Apr-2025 19:06:14.514 INFO  com.github.kohthecodemaster.Main - Started Main in 2.895 seconds (process running for 3.25)
+03-Apr-2025 19:06:16.536 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03-Apr-2025 19:06:16.536 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+03-Apr-2025 19:06:16.538 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+03-Apr-2025 19:06:16.673 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Application Starting...
+----------------------------
+
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Creating dummy data...
+----------------------------
+
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 0
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 1
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 2
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 3
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 4
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 5
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 6
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 7
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 8
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 9
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 10
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 11
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 12
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 13
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 14
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 15
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 16
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 17
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 18
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 19
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 20
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 21
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 22
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 23
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 24
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 25
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 26
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 27
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 28
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 29
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 30
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 31
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 32
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 33
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 34
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 35
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 36
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 37
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 38
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 39
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 40
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 41
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 42
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 43
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 44
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 45
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 46
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 47
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 48
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 49
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 50
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 51
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 52
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 53
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 54
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 55
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 56
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 57
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 58
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 59
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 60
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 61
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 62
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 63
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 64
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 65
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 66
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 67
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 68
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 69
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 70
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 71
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 72
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 73
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 74
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 75
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 76
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 77
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 78
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 79
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 80
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 81
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 82
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 83
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 84
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 85
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 86
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 87
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 88
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 89
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 90
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 91
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 92
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 93
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 94
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 95
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 96
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 97
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 98
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 99
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 100
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 101
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 102
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 103
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 104
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 105
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 106
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 107
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 108
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 109
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 110
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 111
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 112
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 113
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 114
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 115
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 116
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 117
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 118
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 119
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 120
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 121
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 122
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 123
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 124
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 125
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 126
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 127
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 128
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 129
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 130
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 131
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 132
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 133
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 134
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 135
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 136
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 137
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 138
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 139
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 140
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 141
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 142
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 143
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 144
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 145
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 146
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 147
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 148
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 149
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 150
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 151
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 152
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 153
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 154
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 155
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 156
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 157
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 158
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 159
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 160
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 161
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 162
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 163
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 164
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 165
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 166
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 167
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 168
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 169
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 170
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 171
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 172
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 173
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 174
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 175
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 176
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 177
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 178
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 179
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 180
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 181
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 182
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 183
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 184
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 185
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 186
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 187
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 188
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 189
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 190
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 191
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 192
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 193
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 194
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 195
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 196
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 197
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 198
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - This is a test log message. 199
+03-Apr-2025 19:08:28.660 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Sample log message of 20 KB created.
+----------------------------
+
+03-Apr-2025 19:08:28.973 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 9560 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+03-Apr-2025 19:08:28.973 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+03-Apr-2025 19:08:29.549 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03-Apr-2025 19:08:29.591 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+03-Apr-2025 19:08:30.039 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+03-Apr-2025 19:08:30.047 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+03-Apr-2025 19:08:30.047 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+03-Apr-2025 19:08:30.047 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+03-Apr-2025 19:08:30.094 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03-Apr-2025 19:08:30.094 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1080 ms
+03-Apr-2025 19:08:30.219 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+03-Apr-2025 19:08:30.376 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@3ad8717d
+03-Apr-2025 19:08:30.376 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+03-Apr-2025 19:08:30.435 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+03-Apr-2025 19:08:30.470 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+03-Apr-2025 19:08:30.490 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+03-Apr-2025 19:08:30.699 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+03-Apr-2025 19:08:30.747 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.45.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+03-Apr-2025 19:08:31.177 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+03-Apr-2025 19:08:31.177 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-Apr-2025 19:08:31.382 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03-Apr-2025 19:08:31.745 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+03-Apr-2025 19:08:31.765 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+03-Apr-2025 19:08:31.765 INFO  com.github.kohthecodemaster.Main - Started Main in 3.034 seconds (process running for 3.463)
+03-Apr-2025 19:08:33.343 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03-Apr-2025 19:08:33.343 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+03-Apr-2025 19:08:33.344 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+03-Apr-2025 19:08:33.496 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]
+03-Apr-2025 19:11:05.783 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]

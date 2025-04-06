@@ -1,0 +1,111 @@
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 157
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 158
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 159
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 160
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 161
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 162
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 163
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 164
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 165
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 166
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 167
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 168
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 169
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 170
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 171
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 172
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 173
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 174
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 175
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 176
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 177
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 178
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 179
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 180
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 181
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 182
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 183
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 184
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 185
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 186
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 187
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 188
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 189
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 190
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 191
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 192
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 193
+02-Apr-2025 19:57:43.942 INFO  com.github.kohthecodemaster.Main - This is a test log message. 194
+02-Apr-2025 19:57:43.948 INFO  com.github.kohthecodemaster.Main - This is a test log message. 195
+02-Apr-2025 19:57:43.948 INFO  com.github.kohthecodemaster.Main - This is a test log message. 196
+02-Apr-2025 19:57:43.948 INFO  com.github.kohthecodemaster.Main - This is a test log message. 197
+02-Apr-2025 19:57:43.948 INFO  com.github.kohthecodemaster.Main - This is a test log message. 198
+02-Apr-2025 19:57:43.948 INFO  com.github.kohthecodemaster.Main - This is a test log message. 199
+02-Apr-2025 19:57:43.948 INFO  com.github.kohthecodemaster.Main - 
+
+---------------------------
+Sample log message of 20 KB created.
+----------------------------
+
+02-Apr-2025 19:57:44.229 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 28244 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+02-Apr-2025 19:57:44.229 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+02-Apr-2025 19:57:44.718 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-Apr-2025 19:57:44.763 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+02-Apr-2025 19:57:45.198 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+02-Apr-2025 19:57:45.218 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+02-Apr-2025 19:57:45.222 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+02-Apr-2025 19:57:45.222 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+02-Apr-2025 19:57:45.278 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+02-Apr-2025 19:57:45.278 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1000 ms
+02-Apr-2025 19:57:45.428 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-Apr-2025 19:57:45.550 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@746c411c
+02-Apr-2025 19:57:45.550 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-Apr-2025 19:57:45.588 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-Apr-2025 19:57:45.614 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+02-Apr-2025 19:57:45.630 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-Apr-2025 19:57:45.834 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-Apr-2025 19:57:45.881 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.45.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+02-Apr-2025 19:57:46.323 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-Apr-2025 19:57:46.323 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-Apr-2025 19:57:46.498 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-Apr-2025 19:57:46.941 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+02-Apr-2025 19:57:46.978 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+02-Apr-2025 19:57:46.983 INFO  com.github.kohthecodemaster.Main - Started Main in 2.985 seconds (process running for 3.342)
+02-Apr-2025 19:58:32.123 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+02-Apr-2025 19:58:32.123 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+02-Apr-2025 19:58:32.128 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+02-Apr-2025 19:58:32.253 INFO  c.g.k.service.CategoryService - Fetched all categories: [{
+  "id": 1,
+  "name": "Vegetables \u0026 Fruits"
+}, {
+  "id": 2,
+  "name": "Dairy \u0026 Breakfast"
+}, {
+  "id": 3,
+  "name": "Munchies"
+}, {
+  "id": 4,
+  "name": "Cold Drinks \u0026 Juices"
+}, {
+  "id": 5,
+  "name": "Instant \u0026 Frozen Food"
+}, {
+  "id": 6,
+  "name": "Tea, Coffee \u0026 Health Drinks"
+}, {
+  "id": 7,
+  "name": "Bakery \u0026 Biscuits"
+}, {
+  "id": 8,
+  "name": "Dummy Category 1"
+}, {
+  "id": 11,
+  "name": "Dummy Category 1"
+}]

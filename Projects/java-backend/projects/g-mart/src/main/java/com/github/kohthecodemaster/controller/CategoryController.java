@@ -13,8 +13,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/g-mart/api/category")
 @Slf4j
+//@CrossOrigin(origins = "http://localhost:4200") // Allow only specific frontend
 public class CategoryController {
 
     private static final Gson gson = new Gson().newBuilder().setPrettyPrinting().create();
@@ -31,13 +32,13 @@ public class CategoryController {
 
     //  --------------------------  Get Category APIs  --------------------------
 
-    @GetMapping("/all-category")
+    @GetMapping("/all")
     public ResponseEntity<String> getAllCategories() {
         List<Category> categories = categoryService.getAllCategories();
         return ResponseEntity.ok(gson.toJson(categories));
     }
 
-    @GetMapping("/category/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<String> getCategoryById(@PathVariable Long id) {
         Optional<Category> category = categoryService.getCategoryById(id);
         return category.map(value -> ResponseEntity.ok(gson.toJson(value)))
@@ -45,7 +46,7 @@ public class CategoryController {
                         .body("Category with id (" + id + ") not found"));
     }
 
-    @GetMapping("/category")
+    @GetMapping()
     public ResponseEntity<String> getCategoryByIdUsingReqParam(@RequestParam(value = "id") Long id) {
         Optional<Category> category = categoryService.getCategoryById(id);
         return category.map(value -> ResponseEntity.ok(gson.toJson(value)))
@@ -55,7 +56,7 @@ public class CategoryController {
 
     //  --------------------------  Delete Category APIs  --------------------------
 
-    @DeleteMapping("/category/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCategory(@PathVariable Long id) {
         boolean isCategoryDeleted = categoryService.deleteCategory(id);
 
@@ -65,7 +66,7 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(responseMessage);
     }
 
-    @DeleteMapping("/category")
+    @DeleteMapping()
     public ResponseEntity<String> deleteCategoryByIdUsingReqParam(@RequestParam(value = "id") Long id) {
         boolean isCategoryDeleted = categoryService.deleteCategory(id);
 
@@ -77,7 +78,7 @@ public class CategoryController {
 
     //  --------------------------  Create Category APIs  --------------------------
 
-    @PostMapping("/category")
+    @PostMapping()
     public ResponseEntity<Category> createCategory(@RequestBody Category category) {
         return ResponseEntity.ok(categoryService.saveCategory(category));
     }

@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {CategoryListBarComponent} from "./category-list-bar/category-list-bar.component";
-import {SubCategorySidebarComponent} from "./sub-category-sidebar/sub-category-sidebar.component";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProductGridComponent} from "./product-grid/product-grid.component";
 import {FooterComponent} from "../footer/footer.component";
@@ -8,15 +7,16 @@ import {UsefulLinksAndCategoriesComponent} from "../useful-links-and-categories/
 import {CategoryService} from '../../service/category.service';
 import {ProductService} from "../../service/product.service";
 import {Product} from "../../shared/model/product.model";
-import {SubCategory} from "../../shared/model/sub-category.model";
 import {NgFor} from "@angular/common";
+import {Subcategory} from "../../shared/model/subcategory.model";
+import {SubcategorySidebarComponent} from "./sub-category-sidebar/sub-category-sidebar.component";
 
 @Component({
     selector: 'app-shopping',
     standalone: true,
     imports: [
         CategoryListBarComponent,
-        SubCategorySidebarComponent,
+        SubcategorySidebarComponent,
         ProductGridComponent,
         FooterComponent,
         UsefulLinksAndCategoriesComponent,
@@ -28,7 +28,7 @@ import {NgFor} from "@angular/common";
 export class ShoppingComponent {
 
     categoryId!: number;
-    subCategory!: SubCategory;
+    subcategory!: Subcategory;
     top10ProductList!: Product[];
 
     constructor(private router: Router,
@@ -57,15 +57,15 @@ export class ShoppingComponent {
 
         this.categoryService.getCategoryId$().subscribe(categoryId => {
             if (categoryId) {
-                this.subCategory = this.categoryService.getSubCategoryListByCategoryId(categoryId)[0];
-                this.top10ProductList = this.productService.getProductListBySubCategoryId(this.subCategory.getId());
+                this.subcategory = this.categoryService.getSubcategoryListByCategoryId(categoryId)[0];
+                this.top10ProductList = this.productService.getProductListBySubcategoryId(this.subcategory.getId());
             }
         });
 
-        this.categoryService.getSubCategoryId$().subscribe(subCategoryId => {
+        this.categoryService.getSubcategoryId$().subscribe(subCategoryId => {
             if (subCategoryId === 0) return;
-            this.subCategory = this.categoryService.getSubCategoryById(subCategoryId);
-            this.top10ProductList = this.productService.getProductListBySubCategoryId(subCategoryId);
+            this.subcategory = this.categoryService.getSubcategoryById(subCategoryId);
+            this.top10ProductList = this.productService.getProductListBySubcategoryId(subCategoryId);
         });
 
     }

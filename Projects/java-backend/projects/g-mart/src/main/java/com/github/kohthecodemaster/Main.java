@@ -3,17 +3,21 @@ package com.github.kohthecodemaster;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 @Slf4j
+//@CrossOrigin(origins = "http://localhost:4200") // Allow only specific frontend
 public class Main {
 
     public static void main(String[] args) {
+
         log.info("\n\n---------------------------\nApplication Starting...\n----------------------------\n");
         System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
-        test1();
+//        test1();
 
         SpringApplication.run(Main.class);
+
     }
 
     public static void test1() {

@@ -27,8 +27,8 @@ public class CategoryControllerDemo {
         long categoryId = 4;
         getCategoryById(categoryId);
 
-        Category createdCategory = createCategory("Dummy Category 1");
-        deleteCategory(10L);
+//        Category createdCategory = createCategory("Dummy Category 1");
+//        deleteCategory(10L);
 
     }
 
