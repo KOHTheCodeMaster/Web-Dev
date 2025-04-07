@@ -35,7 +35,6 @@ export class CategoryGridComponent {
     }
 
     handleCategoryItemClick(categoryId: number) {
-        console.log('Category Id: ' + categoryId);
         this.router.navigate(['/shopping'], {queryParams: {categoryId: categoryId}});
         this.categoryService.updateCategoryId(categoryId);
     }

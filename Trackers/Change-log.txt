@@ -20,6 +20,22 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         7th Apr 2K25 - 09:56 PM
+Commit Message:     297 - G-Mart - Added ProductUnitLabel Entity, Refactored Product Model & DB Table Schema
+
+Quick Summary:
+
+1. Added `ProductUnitLabel` entity to represent the unit of measurement for products.
+   - This entity will help in better representation of product units in the application.
+
+2. Refactored the Product model to include the `ProductUnitLabel` entity along with the `ProductUnitValue` field.
+   - This change will allow for better handling of product units in the application.
+
+3. Changed `PRODUCT` DB Table Schema to include `ProductUnitLabel` and `ProductUnitValue` fields.
+   - This change will ensure that the database schema is consistent with the updated Product model.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         6th Apr 2K25 - 12:43 PM
 Commit Message:     296 - G-Mart - Refactored Models to include objects instead of ids
 

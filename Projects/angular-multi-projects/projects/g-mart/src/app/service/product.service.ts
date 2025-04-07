@@ -3,6 +3,7 @@ import {Category} from "../shared/model/category.model";
 import {Product} from "../shared/model/product.model";
 import {DataLoaderService} from "./data-loader.service";
 import {Subcategory} from "../shared/model/subcategory.model";
+import {ProductUnitLabel} from "../shared/model/product-unit-label.modal";
 
 @Injectable({
     providedIn: 'root'
@@ -29,7 +30,8 @@ export class ProductService {
                     new Product(product['id'],
                         product['name'],
                         product['price'],
-                        product['unitLabel'],
+                        product['productUnitValue'],
+                        new ProductUnitLabel(product['productUnitLabel']['id'], product['productUnitLabel']['label']),
                         new Category(product['category']['id'], product['category']['name']),
                         new Subcategory(product['subcategory']['id'],
                             product['subcategory']['name'],

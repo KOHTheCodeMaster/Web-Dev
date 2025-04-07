@@ -9,7 +9,9 @@
     <div class="p-4 flex flex-col flex-grow">
         <!-- Product Name (Wrapped in full) -->
         <h2 class="text-white text-base font-semibold leading-tight break-words">{{ product.getName() }}</h2>
-        <span class="mt-2 text-gray-400 text-sm font-medium">{{ product.getUnitLabel() }}</span>
+        <span class="mt-2 text-gray-400 text-sm font-medium">
+            {{ product.getProductUnitValue() }} {{ product.getProductUnitLabel() }}
+        </span>
 
         <!-- Spacer to push the Price & Add section to the bottom -->
         <div class="mt-auto"></div>
