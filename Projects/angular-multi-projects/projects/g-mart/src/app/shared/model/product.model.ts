@@ -7,8 +7,6 @@ export class Product {
     private readonly id: number;
     private readonly name: string;
     private readonly price: number;
-    // private readonly quantity: number;
-    // private readonly subtotalPrice: number;
     private readonly productUnitValue: number;
     private readonly productUnitLabel: ProductUnitLabel;
     private readonly category: Category;
@@ -28,23 +26,7 @@ export class Product {
         this.productUnitLabel = productUnitLabel;
         this.category = category;
         this.subCategory = subcategory;
-        // this.quantity = quantity || 0
-        // this.subtotalPrice = this.price * this.quantity;
     }
-
-/*
-    incrementQuantity() {
-        this.quantity++;
-        this.subtotalPrice = this.price * this.quantity;
-    }
-
-    decrementQuantity() {
-        if (this.quantity > 0) {
-            this.quantity--;
-            this.subtotalPrice = this.price * this.quantity;
-        }
-    }
-*/
 
 
     //  Getters
@@ -68,10 +50,6 @@ export class Product {
 
     public getPrice(): number {
         return this.price;
-    }
-
-    public getQuantity(): number {
-        return 0;
     }
 
     public getProductUnitValue(): number {

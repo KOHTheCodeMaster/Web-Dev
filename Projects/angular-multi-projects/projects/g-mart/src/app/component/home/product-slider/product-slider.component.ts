@@ -1,21 +1,16 @@
 import {Component} from '@angular/core';
 import {Category} from "../../../shared/model/category.model";
 import {ProductService} from "../../../service/product.service";
-import {NgClass, NgForOf, NgIf} from "@angular/common";
+import {NgClass, NgFor, NgIf} from "@angular/common";
 import {CategoryService} from "../../../service/category.service";
 import {DataLoaderService} from "../../../service/data-loader.service";
 import {Router} from "@angular/router";
-import {ProductSliderCardComponent} from "./product-slider-card/product-slider-card.component";
+import {ProductCardComponent} from "../../shopping/product-grid/product-card/product-card.component";
 
 @Component({
     selector: 'app-product-slider',
     standalone: true,
-    imports: [
-        NgForOf,
-        NgIf,
-        NgClass,
-        ProductSliderCardComponent
-    ],
+    imports: [NgFor, NgIf, NgClass, ProductCardComponent],
     templateUrl: './product-slider.component.html',
     styleUrl: './product-slider.component.css'
 })

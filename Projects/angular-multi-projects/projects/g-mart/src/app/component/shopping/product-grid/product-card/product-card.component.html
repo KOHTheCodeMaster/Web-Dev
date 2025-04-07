@@ -8,9 +8,9 @@
     <!-- Product Info -->
     <div class="p-4 flex flex-col flex-grow">
         <!-- Product Name (Wrapped in full) -->
-        <h2 class="text-white text-base font-semibold leading-tight break-words">{{ product.getName() }}</h2>
+        <h2 class="text-white text-base font-semibold leading-tight break-words">{{ cartItem.getProduct().getName() }}</h2>
         <span class="mt-2 text-gray-400 text-sm font-medium">
-            {{ product.getProductUnitValue() }} {{ product.getProductUnitLabel() }}
+            {{ cartItem.getProduct().getProductUnitValue() }} {{ cartItem.getProduct().getProductUnitLabel() }}
         </span>
 
         <!-- Spacer to push the Price & Add section to the bottom -->
@@ -19,13 +19,13 @@
         <!-- Price & Add/Quantity Section (Aligned at bottom uniformly) -->
         <div class="flex justify-between items-center mt-3">
             <p class="text-white font-bold text-lg">
-                {{ product.getPrice() | currency:'INR':'symbol' }}
+                {{ cartItem.getProduct().getPrice() | currency:'INR':'symbol' }}
             </p>
-            <ng-container *ngIf="product.getQuantity() > 0; else addButton">
+            <ng-container *ngIf="cartItem.getQuantity() > 0; else addButton">
                 <!-- Quantity Control: Integrated unit with smart hover effect -->
                 <div class="relative group w-24 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
                     <!-- Always visible quantity -->
-                    <span class="text-white font-medium">{{ product.getQuantity() }}</span>
+                    <span class="text-white font-medium">{{ cartItem.getQuantity() }}</span>
                     <!-- Minus Button: Appears on hover -->
                     <button (click)="decrementQuantity()"
                             class="absolute left-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200
@@ -48,7 +48,7 @@
             </ng-container>
             <ng-template #addButton>
                 <!-- "Add" Button when quantity is zero -->
-                <button (click)="incrementQuantity()"
+                <button (click)="addToCart()"
                         class="px-4 py-1 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600
                         transition-all focus:outline-none">
                     Add

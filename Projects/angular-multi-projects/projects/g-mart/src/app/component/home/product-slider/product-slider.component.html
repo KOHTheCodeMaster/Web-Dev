@@ -33,7 +33,7 @@
                 <div
                     *ngFor="let product of this.productService.getProductListByCategoryId(category.getId())"
                     class="flex-shrink-0">
-                    <app-product-slider-card [product]="product"></app-product-slider-card>
+                    <app-product-card [product]="product"></app-product-card>
                 </div>
             </div>
 

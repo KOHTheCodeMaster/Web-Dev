@@ -20,6 +20,22 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         7th Apr 2K25 - 11:28 PM
+Commit Message:     298 - G-Mart - Angular - Implemented Shopping Cart Functionality, Refactored Product Card Component
+
+Quick Summary:
+
+1. Implemented `CartItem` and `ShoppingCart` models to manage the shopping cart functionality.
+   - The `CartItem` model represents an item in the cart, including product details, quantity & subtotal price.
+   - The `ShoppingCart` model manages the list of items in the cart and provides methods for adding, removing, and updating items.
+
+2. Refactored the 'ProductGridCard' component to 'ProductCard' component as they are now the same.
+   - The Product Card component now uses the `CartItem` model to display product details and allows users to add items to the cart.
+   - Removed 'ProductSliderCardComponent' as it was redundant and not needed anymore.
+
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         7th Apr 2K25 - 09:56 PM
 Commit Message:     297 - G-Mart - Added ProductUnitLabel Entity, Refactored Product Model & DB Table Schema
 
