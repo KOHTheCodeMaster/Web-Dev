@@ -20,6 +20,21 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         8th Apr 2K25 - 12:36 PM
+Commit Message:     299 - G-Mart - Angular - Refactored Shopping Cart & Added it to Navbar Component
+
+Quick Summary:
+
+1. Refactored the Shopping Cart logic to sync total price and item count.
+    - Refactored the 'totalQty' to 'itemCount' for better clarity.
+    - Optimized the methods for adding, removing, and updating items in the cart.
+    - Ensured that the cart updates correctly when items are added or removed.
+
+2. Added Shopping Cart to the Navbar component.
+    - The Navbar now displays the total item count and total price of items in the cart.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         7th Apr 2K25 - 11:28 PM
 Commit Message:     298 - G-Mart - Angular - Implemented Shopping Cart Functionality, Refactored Product Card Component
 
@@ -32,7 +47,6 @@ Quick Summary:
 2. Refactored the 'ProductGridCard' component to 'ProductCard' component as they are now the same.
    - The Product Card component now uses the `CartItem` model to display product details and allows users to add items to the cart.
    - Removed 'ProductSliderCardComponent' as it was redundant and not needed anymore.
-
 
 ----------------------------------------------------------------------------------------------------
 

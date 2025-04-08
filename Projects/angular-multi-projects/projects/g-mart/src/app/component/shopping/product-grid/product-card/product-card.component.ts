@@ -31,21 +31,17 @@ export class ProductCardComponent implements OnChanges {
     }
 
     addToCart() {
-        this.cartItem.incrementQuantity();
         this.shoppingCart.addCartItem(this.cartItem);
     }
 
     incrementQuantity() {
-        this.cartItem.incrementQuantity();
-        this.shoppingCart.updateCartItem(this.cartItem);
+        this.shoppingCart.incrementCartItem(this.cartItem);
     }
 
     decrementQuantity() {
-        this.cartItem.decrementQuantity();
-
-        //  Remove item from cart if quantity is 0, otherwise update the cart item
-        if (this.cartItem.getQuantity() === 0) this.shoppingCart.removeCartItem(this.cartItem);
-        else this.shoppingCart.updateCartItem(this.cartItem);
+        //  Remove item from cart if quantity is 1, otherwise decrement quantity
+        if (this.cartItem.getQuantity() === 1) this.shoppingCart.removeCartItem(this.cartItem);
+        else if (this.cartItem.getQuantity() > 1) this.shoppingCart.decrementCartItem(this.cartItem);
     }
 
 }

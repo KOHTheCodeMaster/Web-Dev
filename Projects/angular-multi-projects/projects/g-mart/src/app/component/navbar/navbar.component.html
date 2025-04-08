@@ -1,9 +1,11 @@
 <nav class="w-full h-20 flex">
 
+    <!--  Logo  -->
     <a class="w-48 px-8 py-4 flex items-center text-3xl" routerLink="/">
         <img class="w-full h-full border" src="/assets/icons/01-sample-icon.svg" alt="Logo">
     </a>
 
+    <!--  Delivery Location  -->
     <div class="w-72 px-8 flex flex-col justify-center">
         <span class="text-xl font-bold">Delivery in 11 minutes</span>
         <div class="w-56 flex items-center">
@@ -18,6 +20,7 @@
         </div>
     </div>
 
+    <!--  Search Bar  -->
     <div class="w-[1150px] min-w-[800px] mx-auto my-2 px-2 flex gap-1 items-center bg-gray-800 rounded-xl">
         <!--  Search Icon  -->
         <button class="w-8 h-8 flex justify-center items-center  rounded-xl">
@@ -31,23 +34,29 @@
         </button>
     </div>
 
+    <!--  Account  -->
     <a class="w-48 ml-auto px-8 flex gap-3 items-center text-2xl">
         <span>Account</span>
         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
     </a>
 
+    <!--  Shopping Cart  -->
     <a class="w-48 ml-auto px-8 py-2 flex items-center">
         <div class="w-full h-full p-2 flex gap-2 items-center rounded-lg bg-green-700">
             <div class="px-2 flex justify-center items-center gap-2">
                 <div class="w-8 h-8">
                     <img class="w-full h-full" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
                 </div>
-                <div class="flex flex-col gap-0 text-sm font-semibold">
-                    <span class="">X Items</span>
-                    <span class="">₹0.00</span>
+                <div *ngIf="shoppingCart.getItemCount() > 0; else emptyCart"
+                     (click)="openShoppingCart()"
+                     class="flex flex-col gap-0 text-sm font-semibold">
+                    <span class="">{{ shoppingCart.getItemCount() }} Items</span>
+                    <span class="">₹{{ shoppingCart.getTotalPrice() }}</span>
                 </div>
+                <ng-template #emptyCart>
+                    <span class="">Empty Cart</span>
+                </ng-template>
             </div>
-
         </div>
     </a>
 
