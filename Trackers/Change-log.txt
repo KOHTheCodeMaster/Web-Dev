@@ -20,6 +20,22 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         14h Apr 2K25 - 08:47 PM
+Commit Message:     300 - G-Mart - Angular - Added Shopping Cart Component to Navbar, Refactored Shopping Cart Logic
+
+Quick Summary:
+
+1. Added Shopping Cart Component to the Navbar.
+    - The Shopping Cart component now displays the total item count and total price of items in the cart.
+    - The Navbar component has been updated to include the Shopping Cart icon and item count.
+    - It has a Right Panel that opens when the cart icon is clicked, displaying the cart items and total price.
+
+2. Refactored the Shopping Cart logic to update the cart visibility.
+    - The Shopping Cart component now uses a service to manage the cart state and visibility.
+    - The cart visibility is toggled when the cart icon is clicked.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         8th Apr 2K25 - 12:36 PM
 Commit Message:     299 - G-Mart - Angular - Refactored Shopping Cart & Added it to Navbar Component
 

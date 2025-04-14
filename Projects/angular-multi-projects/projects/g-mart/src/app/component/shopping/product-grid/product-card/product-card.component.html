@@ -21,6 +21,7 @@
             <p class="text-white font-bold text-lg">
                 {{ cartItem.getProduct().getPrice() | currency:'INR':'symbol' }}
             </p>
+            <!-- Quantity Toggle -->
             <ng-container *ngIf="cartItem.getQuantity() > 0; else addButton">
                 <!-- Quantity Control: Integrated unit with smart hover effect -->
                 <div class="relative group w-24 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
@@ -46,8 +47,8 @@
                     </button>
                 </div>
             </ng-container>
+            <!--  Add To Cart - "Add" Button when quantity is zero  -->
             <ng-template #addButton>
-                <!-- "Add" Button when quantity is zero -->
                 <button (click)="addToCart()"
                         class="px-4 py-1 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600
                         transition-all focus:outline-none">

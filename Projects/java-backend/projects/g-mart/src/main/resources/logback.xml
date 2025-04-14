@@ -20,7 +20,7 @@
         <file>./projects/g-mart/logs/application.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>./projects/g-mart/logs/history/application-%d{yyyy-MMM-dd} - %i.log</fileNamePattern>
-            <maxFileSize>1MB</maxFileSize>
+            <maxFileSize>10MB</maxFileSize>
             <!-- Doubt: maxHistory tag is ignored for unknown reason.
                 <maxHistory>2</maxHistory>
             -->
