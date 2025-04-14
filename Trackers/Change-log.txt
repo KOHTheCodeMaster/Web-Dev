@@ -20,6 +20,21 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         14h Apr 2K25 - 10:31 PM
+Commit Message:     301 - G-Mart - Angular - Refactored Shopping Cart Component and Added Backdrop
+
+Quick Summary:
+
+1. Refactored the Shopping Cart component to improve structure and styling.
+    - Improved the structure of the Shopping Cart component for better readability and maintainability.
+    - Updated the styling of the Shopping Cart component to match the overall design of the application.
+
+2. Added Backdrop to the Shopping Cart component.
+    - Implemented a backdrop that appears when the Shopping Cart is open, providing a better user experience.
+    - The backdrop closes the Shopping Cart when clicked outside of it.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         14h Apr 2K25 - 08:47 PM
 Commit Message:     300 - G-Mart - Angular - Added Shopping Cart Component to Navbar, Refactored Shopping Cart Logic
 

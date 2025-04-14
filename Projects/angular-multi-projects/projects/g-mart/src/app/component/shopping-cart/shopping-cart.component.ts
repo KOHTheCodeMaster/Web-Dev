@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {ShoppingCart} from "../../shared/model/shopping-cart.model";
-import {ShoppingCartService} from "../../service/shopping-cart.service";
-import {NgClass, NgFor, NgIf} from "@angular/common";
-import {CartItem} from "../../shared/model/cart-item.model";
+import {ShoppingCart} from '../../shared/model/shopping-cart.model';
+import {ShoppingCartService} from '../../service/shopping-cart.service';
+import {NgClass, NgFor, NgIf} from '@angular/common';
+import {CartItem} from '../../shared/model/cart-item.model';
 
 @Component({
     selector: 'app-shopping-cart',
@@ -38,6 +38,10 @@ export class ShoppingCartComponent {
         //  Remove item from cart if quantity is 1, otherwise decrement quantity
         if (cartItem.getQuantity() === 1) this.shoppingCart.removeCartItem(cartItem);
         else if (cartItem.getQuantity() > 1) this.shoppingCart.decrementCartItem(cartItem);
+    }
+
+    incrementQuantity(cartItem: CartItem) {
+        this.shoppingCart.incrementCartItem(cartItem); // Assuming this method handles stock checks
     }
 
 }
