@@ -1,0 +1,34 @@
+<ng-container *ngIf="getPopupType$() | async as type">
+    <div *ngIf="type !== 'none'"
+         class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+        <div class="bg-zinc-900 rounded-lg p-6 w-96 text-white shadow-2xl border border-zinc-700">
+
+            <ng-container [ngSwitch]="type">
+
+                <div *ngSwitchCase="'delivery'">
+                    <h3 class="text-lg font-semibold mb-2 text-blue-400">Delivery Charge</h3>
+                    <p class="text-sm text-gray-300">₹30 for orders below ₹199</p>
+                    <p class="text-sm text-gray-300">₹0 for orders above ₹199</p>
+                </div>
+
+                <div *ngSwitchCase="'handling'">
+                    <h3 class="text-lg font-semibold mb-2 text-yellow-400">Handling Charge</h3>
+                    <p class="text-sm text-gray-300">₹20 applied to all orders for packaging</p>
+                </div>
+
+                <div *ngSwitchCase="'smallCart'">
+                    <h3 class="text-lg font-semibold mb-2 text-red-400">Small Cart Fee</h3>
+                    <p class="text-sm text-gray-300">₹10 extra for cart below ₹100</p>
+                </div>
+
+                <!-- Add more cases here if needed -->
+
+            </ng-container>
+
+            <button (click)="infoPopupService.closePopup()"
+                    class="mt-5 w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all">
+                Sounds good
+            </button>
+        </div>
+    </div>
+</ng-container>

@@ -20,6 +20,20 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         22nd Apr 2K25 - 12:11 AM
+Commit Message:     302 - G-Mart - Angular - Add Info Popup Service and Component
+
+Quick Summary:
+
+1. Added Info Popup Service to manage the display of information popups in the application.
+    - The service provides methods to show and hide popups with different popups messages.
+    - List of Popups: Delivery Charge, Handling Charge, Small Cart Charge, High Demand Surge Charge
+
+2. Added Info Popup Component to display information messages.
+    - The component is designed to be reusable as a modal popup and can be directly used in any component.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         14h Apr 2K25 - 10:31 PM
 Commit Message:     301 - G-Mart - Angular - Refactored Shopping Cart Component and Added Backdrop
 

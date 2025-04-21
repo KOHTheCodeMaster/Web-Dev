@@ -23,6 +23,7 @@
 <!-- Backdrop -->
 <div *ngIf="isShoppingCartOpen" class="fixed inset-0 bg-black bg-opacity-50 z-40" (click)="closeShoppingCart()"></div>
 
+<app-info-popup-host></app-info-popup-host>
 
 <!-- Right Panel Cart -->
 <div class="fixed top-0 right-0 h-full w-1/5 bg-gray-900 text-white shadow-xl transition-transform
@@ -46,12 +47,14 @@
         <!-- Delivery and Products Section (Single Bubble) -->
         <div class="m-2 p-2 bg-gray-800 border-b border-gray-700 rounded-lg">
             <!-- Delivery Info -->
-            <div class="flex items-center gap-2 mb-4 px-2">
-                <div class="w-5 h-5">
-                    <svg class="w-full h-full text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
+            <div class="mb-6 px-2 flex items-center gap-2">
+                <div class="w-12 h-12 flex justify-center items-center bg-gray-700 rounded-lg">
+                    <div class="w-8 h-8">
+                        <svg class="w-full h-full text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
                 </div>
                 <div>
                     <span class="text-sm font-semibold">Delivery in 30 minutes</span>
@@ -99,31 +102,75 @@
 
         <!-- Bill Details Section -->
         <div class="m-2 p-2 bg-gray-800 border-b border-gray-700 rounded-lg">
-            <h3 class="text-sm font-semibold mb-2 px-2">Bill details</h3>
-            <div class="space-y-2 text-sm px-2">
+            <h3 class="mb-2 px-2 text-sm font-semibold">Bill details</h3>
+            <div class="px-2 space-y-2 text-sm">
                 <div class="flex justify-between">
-                    <span>Subtotal <span class="text-gray-400 text-xs">Saved ₹0</span></span>
+                    <div class="flex gap-2 items-center">
+                        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
+                        <span>Subtotal</span>
+                        <!-- Toggle Dropdown Btn -->
+                        <button class="text-xs text-gray-400 hover:text-cyan-400 focus:outline-none" (click)="toggleSubtotalDropdown()">
+                            <span>v</span>
+                        </button>
+                        <span class="text-green-400 text-xs">Saved ₹0</span>
+                    </div>
                     <span>₹{{ shoppingCart.getTotalPrice() }}</span>
                 </div>
+
+                <!-- Subtotal Dropdown Active -->
+                <div *ngIf="isSubtotalDropdownOpen" class="ml-4 text-gray-400">
+                    <div class="flex justify-between">
+                        <span>MRP</span>
+                        <span>₹{{ shoppingCart.getTotalPrice() + 10 }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Feeding India donation</span>
+                        <span>₹1</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Product Discount</span>
+                        <span class="text-red-400">-₹10</span>
+                    </div>
+                </div>
+
                 <div class="flex justify-between">
-                    <span>Delivery charge <svg class="w-4 h-4 inline text-cyan-400" fill="none" viewBox="0 0 24 24"
-                                               stroke="currentColor"><path stroke-linecap="round"
-                                                                           stroke-linejoin="round" stroke-width="2"
-                                                                           d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/></svg></span>
+                    <div class="flex gap-2 items-center">
+                        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
+                        <span>Delivery charge</span>
+                        <button (click)="openInfoPopupForDeliveryCharge()">
+                            <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
+                            </svg>
+                        </button>
+
+                    </div>
                     <span>₹30</span> <!-- Placeholder; update with actual logic -->
                 </div>
                 <div class="flex justify-between">
-                    <span>Handling charge <svg class="w-4 h-4 inline text-cyan-400" fill="none" viewBox="0 0 24 24"
-                                               stroke="currentColor"><path stroke-linecap="round"
-                                                                           stroke-linejoin="round" stroke-width="2"
-                                                                           d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/></svg></span>
+                    <div class="flex gap-2 items-center">
+                        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
+                        <span>Handling charge</span>
+                        <button (click)="openInfoPopupForHandlingCharge()">
+                            <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
+                            </svg>
+                        </button>
+                    </div>
                     <span>₹9</span> <!-- Placeholder; update with actual logic -->
                 </div>
                 <div class="flex justify-between">
-                    <span>Small cart charge <svg class="w-4 h-4 inline text-cyan-400" fill="none" viewBox="0 0 24 24"
-                                                 stroke="currentColor"><path stroke-linecap="round"
-                                                                             stroke-linejoin="round" stroke-width="2"
-                                                                             d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/></svg></span>
+                    <div class="flex gap-2 items-center">
+                        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
+                        <span>Small cart charge</span>
+                        <button (click)="openInfoPopupForSmallCartCharge()">
+                            <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
+                            </svg>
+                        </button>
+                    </div>
                     <span>₹20</span> <!-- Placeholder; update with actual logic -->
                 </div>
                 <div class="flex justify-between font-semibold mt-2 border-t border-gray-700 pt-2">
