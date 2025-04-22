@@ -50,7 +50,8 @@
             <div class="mb-6 px-2 flex items-center gap-2">
                 <div class="w-12 h-12 flex justify-center items-center bg-gray-700 rounded-lg">
                     <div class="w-8 h-8">
-                        <svg class="w-full h-full text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-full h-full text-cyan-400" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
@@ -73,8 +74,9 @@
                                 {{ cartItem.getProduct().getProductUnitLabel() }}</p>
                             <div class="flex items-center gap-2">
                                 <span class="text-sm font-semibold">₹{{ cartItem.getProduct().getPrice() }}</span>
-                                <span
-                                    class="text-gray-400 line-through">₹{{ cartItem.getProduct().getPrice() + 10 }}</span>
+                                <span class="text-gray-400 line-through">
+                                    ₹{{ cartItem.getProduct().getPrice() + 10 }}
+                                </span>
                                 <!-- Placeholder for original price -->
                             </div>
                         </div>
@@ -109,8 +111,35 @@
                         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
                         <span>Subtotal</span>
                         <!-- Toggle Dropdown Btn -->
-                        <button class="text-xs text-gray-400 hover:text-cyan-400 focus:outline-none" (click)="toggleSubtotalDropdown()">
-                            <span>v</span>
+                        <button class="text-xs text-gray-400 hover:text-cyan-400 focus:outline-none"
+                                (click)="toggleSubtotalDropdown()">
+                            <!--<span>v</span>-->
+
+                            <ng-container *ngIf="!isSubtotalDropdownOpen; else closeIcon;">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     class="w-4 h-4 inline-block"
+                                     fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </ng-container>
+                            <ng-template #closeIcon>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     class="w-4 h-4 inline-block"
+                                     fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          stroke-width="2"
+                                          d="M5 15l7-7 7 7"/>
+                                </svg>
+                            </ng-template>
+
                         </button>
                         <span class="text-green-400 text-xs">Saved ₹0</span>
                     </div>
@@ -137,7 +166,7 @@
                     <div class="flex gap-2 items-center">
                         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
                         <span>Delivery charge</span>
-                        <button (click)="openInfoPopupForDeliveryCharge()">
+                        <button (click)="openInfoPopup(InfoPopupType.DELIVERY)">
                             <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
@@ -151,7 +180,7 @@
                     <div class="flex gap-2 items-center">
                         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
                         <span>Handling charge</span>
-                        <button (click)="openInfoPopupForHandlingCharge()">
+                        <button (click)="openInfoPopup(InfoPopupType.HANDLING)">
                             <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
@@ -163,8 +192,8 @@
                 <div class="flex justify-between">
                     <div class="flex gap-2 items-center">
                         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
-                        <span>Small cart charge</span>
-                        <button (click)="openInfoPopupForSmallCartCharge()">
+                        <span>Small cart fee</span>
+                        <button (click)="openInfoPopup(InfoPopupType.SMALL_CART)">
                             <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
@@ -173,10 +202,29 @@
                     </div>
                     <span>₹20</span> <!-- Placeholder; update with actual logic -->
                 </div>
+                <div class="flex justify-between">
+                    <div class="flex gap-2 items-center">
+                        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
+                        <span>High demand surge charge</span>
+                        <button (click)="openInfoPopup(InfoPopupType.HIGH_DEMAND_SURGE)">
+                            <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <span>₹20</span> <!-- Placeholder; update with actual logic -->
+                </div>
+                <div class="flex justify-between">
+                    <div class="flex gap-2 items-center">
+                        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
+                        <span>Tip for your delivery partner</span>
+                    </div>
+                    <span>₹20</span> <!-- Placeholder; update with actual logic -->
+                </div>
                 <div class="flex justify-between font-semibold mt-2 border-t border-gray-700 pt-2">
                     <span>Grand total</span>
                     <span>₹{{ shoppingCart.getTotalPrice() + 59 }}</span>
-                    <!-- Placeholder for grand total (total + 30 + 9 + 20) -->
                 </div>
             </div>
             <p class="text-xs text-cyan-400 mt-2 px-2">Shop for ₹102 more to save ₹30 on delivery charge</p>
@@ -188,14 +236,18 @@
                 <div class="w-5 h-5">
                     <svg class="w-full h-full text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0
+                              00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                     </svg>
                 </div>
                 <div class="flex-1">
                     <p class="text-sm font-medium">Feeding India donation</p>
-                    <p class="text-xs text-gray-400">Working towards a malnutrition free India. <a href="#"
-                                                                                                   class="underline text-cyan-400">read
-                        more</a></p>
+                    <p class="text-xs text-gray-400">
+                        Working towards a malnutrition free India.
+                        <button class="underline text-cyan-400" (click)="openInfoPopup(InfoPopupType.FEED_INDIA)">
+                            read more
+                        </button>
+                    </p>
                 </div>
                 <label class="flex items-center gap-1">
                     <input type="checkbox" class="form-checkbox h-4 w-4 text-cyan-400" checked>
@@ -221,7 +273,8 @@
                             <svg class="w-full h-full text-cyan-400" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827
+                                      0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
@@ -236,13 +289,19 @@
             </div>
 
             <!-- Total and Proceed to Pay Section -->
-            <div
-                class="m-4 px-4 py-2 flex justify-between items-center bg-green-700 cursor-pointer border-t border-cyan-700 rounded-lg">
+            <div class="m-4 px-4 py-2 flex justify-between items-center bg-green-700 cursor-pointer
+                        border-t border-cyan-700 rounded-lg">
                 <div class="flex flex-col">
                     <span class="text-lg font-semibold">₹{{ shoppingCart.getTotalPrice() + 59 }}</span>
                     <span class="text-sm">TOTAL</span>
                 </div>
-                <span class="text-lg font-semibold">Proceed To Pay</span>
+                <div>
+                    <span class="text-lg ">Proceed To Pay</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mb-0.5 inline-block" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>

@@ -20,6 +20,22 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         22nd Apr 2K25 - 01:49 PM
+Commit Message:     303 - G-Mart - Angular - Refactor Info Popup Component & Added 'FEED_INDIA' Type
+
+Quick Summary:
+
+1. Refactored Info Popup Component to improve code structure and readability.
+    - Updated the component to use 'infoPopupType' variable instead of observable.
+    - Initialized it with 'NONE' type to set the default state.
+
+2. Added 'FEED_INDIA' type to the Info Popup Type.
+    - This type will be used to display information related to the 'Feed India' initiative.
+
+3. Updated svg icons for subtotal dropdown open/close states as well as Proceed To Pay button.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         22nd Apr 2K25 - 12:11 AM
 Commit Message:     302 - G-Mart - Angular - Add Info Popup Service and Component
 

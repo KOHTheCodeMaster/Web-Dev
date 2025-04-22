@@ -15,6 +15,7 @@ import {InfoPopupType} from "../../shared/model/InfoPopupType";
 })
 export class ShoppingCartComponent {
 
+    protected readonly InfoPopupType = InfoPopupType;
     isShoppingCartOpen = false;
     shoppingCart: ShoppingCart;
 
@@ -50,21 +51,15 @@ export class ShoppingCartComponent {
         this.shoppingCart.incrementCartItem(cartItem); // Assuming this method handles stock checks
     }
 
-    openInfoPopupForDeliveryCharge() {
-        this.infoPopupHostService.openPopup(InfoPopupType.DELIVERY);
+    openInfoPopup(infoPopupType: InfoPopupType) {
+        this.infoPopupHostService.openPopup(infoPopupType);
     }
 
-    openInfoPopupForHandlingCharge() {
-        this.infoPopupHostService.openPopup(InfoPopupType.HANDLING);
-    }
-
-    openInfoPopupForSmallCartCharge() {
-        this.infoPopupHostService.openPopup(InfoPopupType.SMALL_CART);
-    }
-
+/*
     closeInfoPopupForDeliveryCharge() {
         this.infoPopupHostService.closePopup();
     }
+*/
 
     toggleSubtotalDropdown() {
         this.isSubtotalDropdownOpen = !this.isSubtotalDropdownOpen;

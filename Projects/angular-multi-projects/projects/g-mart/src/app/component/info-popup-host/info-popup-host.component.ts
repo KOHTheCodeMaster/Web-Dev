@@ -1,14 +1,12 @@
 import {Component} from '@angular/core';
 import {InfoPopupService} from "../../service/info-popup.service";
-import {Observable} from "rxjs";
 import {InfoPopupType} from "../../shared/model/InfoPopupType";
-import {AsyncPipe, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
+import {NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 
 @Component({
     selector: 'app-info-popup-host',
     standalone: true,
     imports: [
-        AsyncPipe,
         NgSwitch,
         NgSwitchCase,
         NgIf
@@ -17,17 +15,23 @@ import {AsyncPipe, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 })
 export class InfoPopupHostComponent {
 
-    private popupType$: Observable<InfoPopupType>;
+    protected readonly InfoPopupType = InfoPopupType;
+    private infoPopupType: InfoPopupType = InfoPopupType.NONE;
 
     constructor(public infoPopupService: InfoPopupService) {
-        this.popupType$ = infoPopupService.getPopupType$();
+        this.initSubscriptions();
     }
+
+    private initSubscriptions() {
+        this.infoPopupService.getPopupType$().subscribe(infoPopupType => this.infoPopupType = infoPopupType);
+    }
+
 
     //  Getters
     //  -------
 
-    public getPopupType$(): Observable<InfoPopupType> {
-        return this.popupType$;
+    public getInfoPopupType(): InfoPopupType {
+        return this.infoPopupType;
     }
 
 }

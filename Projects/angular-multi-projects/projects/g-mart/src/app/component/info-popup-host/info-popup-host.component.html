@@ -1,24 +1,35 @@
-<ng-container *ngIf="getPopupType$() | async as type">
-    <div *ngIf="type !== 'none'"
-         class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-        <div class="bg-zinc-900 rounded-lg p-6 w-96 text-white shadow-2xl border border-zinc-700">
+<ng-container *ngIf="getInfoPopupType()">
+    <div *ngIf="getInfoPopupType() !== 'none'" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+        <div class="bg-zinc-900 rounded-lg px-6 pt-6 pb-4 text-white shadow-2xl border border-zinc-700">
 
-            <ng-container [ngSwitch]="type">
+            <ng-container [ngSwitch]="getInfoPopupType()">
 
-                <div *ngSwitchCase="'delivery'">
+                <div *ngSwitchCase="InfoPopupType.DELIVERY" class="w-96 space-y-2">
                     <h3 class="text-lg font-semibold mb-2 text-blue-400">Delivery Charge</h3>
                     <p class="text-sm text-gray-300">₹30 for orders below ₹199</p>
                     <p class="text-sm text-gray-300">₹0 for orders above ₹199</p>
                 </div>
 
-                <div *ngSwitchCase="'handling'">
+                <div *ngSwitchCase="InfoPopupType.HANDLING" class="w-96 space-y-2">
                     <h3 class="text-lg font-semibold mb-2 text-yellow-400">Handling Charge</h3>
                     <p class="text-sm text-gray-300">₹20 applied to all orders for packaging</p>
                 </div>
 
-                <div *ngSwitchCase="'smallCart'">
+                <div *ngSwitchCase="InfoPopupType.SMALL_CART" class="w-96 space-y-2">
                     <h3 class="text-lg font-semibold mb-2 text-red-400">Small Cart Fee</h3>
                     <p class="text-sm text-gray-300">₹10 extra for cart below ₹100</p>
+                </div>
+
+                <div *ngSwitchCase="InfoPopupType.HIGH_DEMAND_SURGE" class="w-96 space-y-2">
+                    <h3 class="text-lg font-semibold mb-2 text-red-400">High Demand Surge Charge</h3>
+                    <p class="text-sm text-gray-300">₹10 extra for cart below ₹100</p>
+                </div>
+
+                <div *ngSwitchCase="InfoPopupType.FEED_INDIA" class="w-[800px] space-y-2 text-center">
+                    <h3 class="text-lg font-semibold mb-2 text-red-400">Daily Feeding Program</h3>
+                    <p class="text-sm text-gray-300">
+                        Working towards a malnutrition-free India. Feeding India is a not-for-profit organisation, working to solve hunger, malnutrition and food wastage in India. Your contribution will help us serve regular meals to marginalized communities across India. All donations made by Indian taxpayers are eligible for tax deduction under Section 80G of the Income Tax Act, 1961 Please refer the link https://www.feedingindia.org/terms/donor for detailed terms & conditions
+                    </p>
                 </div>
 
                 <!-- Add more cases here if needed -->
@@ -26,7 +37,7 @@
             </ng-container>
 
             <button (click)="infoPopupService.closePopup()"
-                    class="mt-5 w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all">
+                    class="mt-5 w-full px-4 text-[#56f06f] font-semibold rounded-lg transition-all">
                 Sounds good
             </button>
         </div>
