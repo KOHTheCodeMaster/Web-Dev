@@ -6,8 +6,7 @@ import {ShoppingCartComponent} from "../shopping-cart/shopping-cart.component";
     selector: 'app-navbar',
     standalone: true,
     imports: [RouterLink, ShoppingCartComponent],
-    templateUrl: './navbar.component.html',
-    styleUrl: './navbar.component.css'
+    templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
 

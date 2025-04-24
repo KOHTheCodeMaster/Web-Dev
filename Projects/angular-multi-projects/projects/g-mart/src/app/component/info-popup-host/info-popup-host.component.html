@@ -1,6 +1,10 @@
 <ng-container *ngIf="getInfoPopupType()">
-    <div *ngIf="getInfoPopupType() !== 'none'" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-        <div class="bg-zinc-900 rounded-lg px-6 pt-6 pb-4 text-white shadow-2xl border border-zinc-700">
+    <div *ngIf="getInfoPopupType() !== InfoPopupType.NONE"
+         (click)="infoPopupService.closePopup()"
+         class="fixed inset-0 z-[60] flex items-center justify-center bg-black bg-opacity-60">
+
+        <div (click)="$event.stopPropagation()"
+             class="bg-zinc-900 rounded-lg px-6 pt-6 pb-4 text-white shadow-2xl border border-zinc-700">
 
             <ng-container [ngSwitch]="getInfoPopupType()">
 
@@ -28,18 +32,20 @@
                 <div *ngSwitchCase="InfoPopupType.FEED_INDIA" class="w-[800px] space-y-2 text-center">
                     <h3 class="text-lg font-semibold mb-2 text-red-400">Daily Feeding Program</h3>
                     <p class="text-sm text-gray-300">
-                        Working towards a malnutrition-free India. Feeding India is a not-for-profit organisation, working to solve hunger, malnutrition and food wastage in India. Your contribution will help us serve regular meals to marginalized communities across India. All donations made by Indian taxpayers are eligible for tax deduction under Section 80G of the Income Tax Act, 1961 Please refer the link https://www.feedingindia.org/terms/donor for detailed terms & conditions
+                        Working towards a malnutrition-free India. Feeding India is a not-for-profit organisation,
+                        working to solve hunger, malnutrition and food wastage in India. Your contribution will help us
+                        serve regular meals to marginalized communities across India. All donations made by Indian
+                        taxpayers are eligible for tax deduction under Section 80G of the Income Tax Act, 1961 Please
+                        refer the link https://www.feedingindia.org/terms/donor for detailed terms & conditions
                     </p>
                 </div>
-
                 <!-- Add more cases here if needed -->
-
             </ng-container>
-
             <button (click)="infoPopupService.closePopup()"
                     class="mt-5 w-full px-4 text-[#56f06f] font-semibold rounded-lg transition-all">
                 Sounds good
             </button>
         </div>
+
     </div>
 </ng-container>

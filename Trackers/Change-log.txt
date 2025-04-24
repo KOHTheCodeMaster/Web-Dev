@@ -20,6 +20,21 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         23rd Apr 2K25 - 01:08 PM
+Commit Message:     304 - G-Mart - Angular - Added Scrollbar to Shopping Cart & Fixed Backdrop Issue in Info Popup
+
+Quick Summary:
+
+1. Added Scrollbar to Shopping Cart Component.
+    - Implemented using `flex-1 overflow-y-auto` classes for the cart items container.
+    - Scrollbar will appear when the cart items exceed the visible area.
+
+2. Fixed backdrop issue in Info Popup Component.
+    - Ensured that the backdrop is displayed correctly when the Info Popup is open.
+    - It will close the popup when clicked outside of it but not when clicked inside of the popup itself.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         22nd Apr 2K25 - 01:49 PM
 Commit Message:     303 - G-Mart - Angular - Refactor Info Popup Component & Added 'FEED_INDIA' Type
 
