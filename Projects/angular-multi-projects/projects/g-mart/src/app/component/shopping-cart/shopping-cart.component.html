@@ -44,7 +44,7 @@
             <div class="m-2 p-2 bg-gray-800 border-gray-700 rounded-lg">
                 <div class="flex justify-between items-center px-2">
                     <span class="text-sm font-medium text-cyan-400">Your total savings</span>
-                    <span class="text-sm font-medium">₹0</span> <!-- Placeholder; update with actual savings logic -->
+                    <span class="text-sm font-medium">₹{{ shoppingCart.getTotalDiscount() }}</span>
                 </div>
             </div>
 
@@ -77,11 +77,12 @@
                                 <p class="text-sm text-gray-400">{{ cartItem.getProduct().getProductUnitValue() }}
                                     {{ cartItem.getProduct().getProductUnitLabel() }}</p>
                                 <div class="flex items-center gap-2">
-                                    <span class="text-sm font-semibold">₹{{ cartItem.getProduct().getPrice() }}</span>
+                                    <span class="text-sm font-semibold">
+                                        ₹{{ cartItem.getSubTotalPrice() }}
+                                    </span>
                                     <span class="text-gray-400 line-through">
-                                    ₹{{ cartItem.getProduct().getPrice() + 10 }}
-                                </span>
-                                    <!-- Placeholder for original price -->
+                                        ₹{{ cartItem.getProduct().getPrice() * cartItem.getQuantity() }}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -145,42 +146,37 @@
                                 </ng-template>
 
                             </button>
-                            <span class="text-green-400 text-xs">Saved ₹0</span>
+                            <span class="text-green-400 text-xs">Saved ₹{{ shoppingCart.getTotalDiscount() }}</span>
                         </div>
-                        <span>₹{{ shoppingCart.getTotalPrice() }}</span>
+                        <div class="flex items-center gap-1">
+                            <span class="text-gray-400 line-through">₹{{ shoppingCart.getTotalMRP() }}</span>
+                            <span>₹
+                                {{
+                                    shoppingCart.getMultipleChargesModel().getIsFeedIndiaChargeApplied()
+                                        ? shoppingCart.getSubTotalPrice() + MultipleChargesModel.FEED_INDIA_DONATION_CHARGE
+                                        : shoppingCart.getSubTotalPrice()
+                                }}
+                            </span>
+                        </div>
+                        <!--                        <span>₹{{ shoppingCart.getSubTotalPrice() }}</span>-->
                     </div>
 
                     <!-- Subtotal Dropdown Active -->
                     <div *ngIf="isSubtotalDropdownOpen" class="ml-4 text-gray-400">
                         <div class="flex justify-between">
                             <span>MRP</span>
-                            <span>₹{{ shoppingCart.getTotalPrice() + 10 }}</span>
+                            <span>₹{{ shoppingCart.getTotalMRP() }}</span>
                         </div>
-                        <div class="flex justify-between">
+                        <div *ngIf="isFeedingIndiaChecked" class="flex justify-between">
                             <span>Feeding India donation</span>
                             <span>₹1</span>
                         </div>
                         <div class="flex justify-between">
                             <span>Product Discount</span>
-                            <span class="text-red-400">-₹10</span>
+                            <span class="text-green-400">-₹{{ shoppingCart.getTotalDiscount() }}</span>
                         </div>
                     </div>
 
-                    <div class="flex justify-between">
-                        <div class="flex gap-2 items-center">
-                            <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
-                            <span>Delivery charge</span>
-                            <button (click)="openInfoPopup(InfoPopupType.DELIVERY)">
-                                <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
-                                </svg>
-                            </button>
-
-                        </div>
-                        <span>₹30</span> <!-- Placeholder; update with actual logic -->
-                    </div>
                     <div class="flex justify-between">
                         <div class="flex gap-2 items-center">
                             <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
@@ -193,9 +189,26 @@
                                 </svg>
                             </button>
                         </div>
-                        <span>₹9</span> <!-- Placeholder; update with actual logic -->
+                        <span>₹{{ MultipleChargesModel.HANDLING_CHARGE }}</span>
                     </div>
-                    <div class="flex justify-between">
+                    <div *ngIf="this.shoppingCart.getMultipleChargesModel().getIsDeliveryChargeApplied()"
+                         class="flex justify-between">
+                        <div class="flex gap-2 items-center">
+                            <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
+                            <span>Delivery charge</span>
+                            <button (click)="openInfoPopup(InfoPopupType.DELIVERY)">
+                                <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
+                                </svg>
+                            </button>
+
+                        </div>
+                        <span>₹{{ MultipleChargesModel.DELIVERY_CHARGE }}</span>
+                    </div>
+                    <div *ngIf="this.shoppingCart.getMultipleChargesModel().getIsSmallCartChargeApplied()"
+                         class="flex justify-between">
                         <div class="flex gap-2 items-center">
                             <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
                             <span>Small cart fee</span>
@@ -207,9 +220,10 @@
                                 </svg>
                             </button>
                         </div>
-                        <span>₹20</span> <!-- Placeholder; update with actual logic -->
+                        <span>₹{{ MultipleChargesModel.SMALL_CART_CHARGE }}</span>
                     </div>
-                    <div class="flex justify-between">
+                    <div *ngIf="this.shoppingCart.getMultipleChargesModel().getIsHighDemandSurgeChargeApplied()"
+                         class="flex justify-between">
                         <div class="flex gap-2 items-center">
                             <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
                             <span>High demand surge charge</span>
@@ -221,21 +235,38 @@
                                 </svg>
                             </button>
                         </div>
-                        <span>₹20</span> <!-- Placeholder; update with actual logic -->
+                        <span>₹{{ MultipleChargesModel.HIGH_DEMAND_SURGE_CHARGE }}</span>
                     </div>
-                    <div class="flex justify-between">
+                    <div *ngIf="this.shoppingCart.getMultipleChargesModel().getIsTipApplied()"
+                         class="flex justify-between">
                         <div class="flex gap-2 items-center">
                             <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
                             <span>Tip for your delivery partner</span>
                         </div>
-                        <span>₹20</span> <!-- Placeholder; update with actual logic -->
+                        <span>₹10</span> <!-- Placeholder; update with actual logic -->
                     </div>
                     <div class="flex justify-between font-semibold mt-2 border-t border-gray-700 pt-2">
                         <span>Grand total</span>
-                        <span>₹{{ shoppingCart.getTotalPrice() + 59 }}</span>
+                        <span>₹{{ shoppingCart.getTotalPrice() }}</span>
                     </div>
                 </div>
-                <p class="text-xs text-cyan-400 mt-2 px-2">Shop for ₹102 more to save ₹30 on delivery charge</p>
+                <p *ngIf="shoppingCart.getMultipleChargesModel().getIsDeliveryChargeApplied()"
+                   class="text-xs text-cyan-400 mt-2 px-2">
+                    Shop for ₹{{ MultipleChargesModel.THRESHOLD_FOR_DELIVERY_CHARGE - shoppingCart.getSubTotalPrice() }}
+                    or more to save ₹{{ MultipleChargesModel.DELIVERY_CHARGE }} on delivery charge
+                </p>
+                <hr class="mt-2 border-gray-700">
+                <!-- Total Savings Section -->
+                <div class="px-2 pt-1 bg-gray-800 border-gray-700 rounded-lg">
+                    <div class="flex justify-between items-center text-sm font-medium text-cyan-400">
+                        <span>Your total savings</span>
+                        <span>₹{{ shoppingCart.getTotalDiscount() }}</span>
+                    </div>
+                </div>
+                <div class="px-2 pt-1 flex justify-between items-center bg-gray-800 border-gray-700 rounded-lg">
+                    <span class="text-xs text-cyan-400">No surge charge for orders above
+                        ₹{{ MultipleChargesModel.THRESHOLD_FOR_HIGH_DEMAND_SURGE_CHARGE }}</span>
+                </div>
             </div>
 
             <!-- Feeding India Donation Section -->
@@ -258,14 +289,16 @@
                         </p>
                     </div>
                     <label class="flex items-center gap-1">
-                        <input type="checkbox" class="form-checkbox h-4 w-4 text-cyan-400" checked>
-                        <span class="text-xs">₹1</span>
+                        <input type="checkbox"
+                               (click)="toggleFeedingIndiaDonation($event)"
+                               class="form-checkbox h-4 w-4 text-cyan-400">
+                        <span class="text-xs">₹{{ MultipleChargesModel.FEED_INDIA_DONATION_CHARGE }}</span>
                     </label>
                 </div>
             </div>
 
             <!-- Cancellation Policy Section -->
-            <div class="m-2 p-2 bg-gray-800 border-b border-gray-700 rounded-lg">
+            <div class="m-2 mb-4 p-2 bg-gray-800 border-b border-gray-700 rounded-lg">
                 <h3 class="text-sm font-semibold mb-2 px-2">Cancellation Policy</h3>
                 <p class="text-xs text-gray-400 px-2">Orders cannot be cancelled once packed for delivery. In case of
                     unexpected delays, a refund will be provided, if applicable.</p>
@@ -302,7 +335,7 @@
             <div class="m-4 px-4 py-2 flex justify-between items-center bg-green-700 cursor-pointer
                         border-t border-cyan-700 rounded-lg">
                 <div class="flex flex-col">
-                    <span class="text-lg font-semibold">₹{{ shoppingCart.getTotalPrice() + 59 }}</span>
+                    <span class="text-lg font-semibold">₹{{ shoppingCart.getTotalPrice() }}</span>
                     <span class="text-sm">TOTAL</span>
                 </div>
                 <div>

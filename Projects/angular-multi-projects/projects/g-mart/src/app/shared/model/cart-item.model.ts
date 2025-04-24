@@ -16,13 +16,13 @@ export class CartItem {
 
     incrementQuantity() {
         this.quantity++;
-        this.subTotalPrice = this.product.getPrice() * this.quantity;
+        this.subTotalPrice = (this.product.getPrice() - this.product.getDiscount()) * this.quantity;
     }
 
     decrementQuantity() {
         if (this.quantity > 0) {
             this.quantity--;
-            this.subTotalPrice = this.product.getPrice() * this.quantity;
+            this.subTotalPrice = (this.product.getPrice() - this.product.getDiscount()) * this.quantity;
         }
     }
 

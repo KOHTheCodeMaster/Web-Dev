@@ -7,6 +7,7 @@ export class Product {
     private readonly id: number;
     private readonly name: string;
     private readonly price: number;
+    private readonly discount: number;
     private readonly productUnitValue: number;
     private readonly productUnitLabel: ProductUnitLabel;
     private readonly category: Category;
@@ -15,6 +16,7 @@ export class Product {
     constructor(id: number,
                 name: string,
                 price: number,
+                discount: number,
                 productUnitValue: number,
                 productUnitLabel: ProductUnitLabel,
                 category: Category,
@@ -22,6 +24,7 @@ export class Product {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.discount = Math.floor(discount);
         this.productUnitValue = productUnitValue;
         this.productUnitLabel = productUnitLabel;
         this.category = category;
@@ -58,6 +61,10 @@ export class Product {
 
     public getProductUnitLabel(): ProductUnitLabel {
         return this.productUnitLabel;
+    }
+
+    public getDiscount(): number {
+        return this.discount;
     }
 
 }

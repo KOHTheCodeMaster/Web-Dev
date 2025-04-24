@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {ShoppingCart} from "../shared/model/shopping-cart.model";
 import {BehaviorSubject, Observable} from "rxjs";
+import {MultipleChargesManagerService} from "./multiple-charges-manager.service";
 
 @Injectable({
     providedIn: 'root'
@@ -10,9 +11,12 @@ export class ShoppingCartService {
     private shoppingCart: ShoppingCart;
     private cartVisibility$: BehaviorSubject<boolean>;
 
-    constructor() {
-        this.shoppingCart = new ShoppingCart();     //  Initialize empty shopping cart
-        this.cartVisibility$ = new BehaviorSubject<boolean>(false);   //  Initialize cart visibility to false
+    constructor(multipleShoppingCartService: MultipleChargesManagerService) {
+        //  Initialize empty shopping cart
+        this.shoppingCart = new ShoppingCart(multipleShoppingCartService.getMultipleChargesModel());
+
+        //  Initialize cart visibility to false
+        this.cartVisibility$ = new BehaviorSubject<boolean>(false);
     }
 
     updateShoppingCartVisibility(visible: boolean) {

@@ -20,6 +20,33 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         25th Apr 2K25 - 12:48 AM
+Commit Message:     305 - G-Mart - Angular - Big Commit - Added Multiple Charges Model & Service - More Refactoring
+
+Quick Summary:
+
+1. Added Multiple Charges Model & Service.
+    - Created a new model to represent different charges (Delivery, Handling, Small Cart, High Demand Surge).
+    - Implemented a service to ensure a single instance of the charges model is used across the application.
+
+2. Refactored Shopping Cart Component to use the new Charges Model.
+    - Updated the Shopping Cart component to use the new Charges model for displaying charges.
+    - Ensured that the subtotal, total, and other calculations are done using the new model.
+
+3. Added MRP & Discount to Product Model.
+    - Updated the Product model to include MRP (Maximum Retail Price) and Discount fields.
+    - Discount field is hardcoded to 10% of the MRP price for now.
+    - These fields will be used to display the MRP and Discount information on the shopping cart component.
+
+4. Added 'isFeedingIndiaChecked' field and Toggle Feed India Donation Checkbox.
+    - Implemented a toggle functionality for the Feed India Donation checkbox.
+    - When checked, it will add a donation amount to the total price in the shopping cart.
+
+5. Close Shopping Cart when no items are present after decreasing quantity.
+    - Implemented a functionality to close the shopping cart when there are no items present in the cart.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         23rd Apr 2K25 - 01:08 PM
 Commit Message:     304 - G-Mart - Angular - Added Scrollbar to Shopping Cart & Fixed Backdrop Issue in Info Popup
 

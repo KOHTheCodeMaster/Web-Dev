@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {InfoPopupService} from "../../service/info-popup.service";
 import {InfoPopupType} from "../../shared/model/InfoPopupType";
 import {NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
+import {MultipleChargesModel} from "../../shared/model/multiple-charges.model";
 
 @Component({
     selector: 'app-info-popup-host',
@@ -15,6 +16,7 @@ import {NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 })
 export class InfoPopupHostComponent {
 
+    protected readonly MultipleChargesModel = MultipleChargesModel;
     protected readonly InfoPopupType = InfoPopupType;
     private infoPopupType: InfoPopupType = InfoPopupType.NONE;
 

@@ -30,6 +30,8 @@ export class ProductService {
                     new Product(product['id'],
                         product['name'],
                         product['price'],
+                        product['price'] * 0.1, //  discount is hardcoded to 10% for now
+                        //product['discount'],
                         product['productUnitValue'],
                         new ProductUnitLabel(product['productUnitLabel']['id'], product['productUnitLabel']['label']),
                         new Category(product['category']['id'], product['category']['name']),

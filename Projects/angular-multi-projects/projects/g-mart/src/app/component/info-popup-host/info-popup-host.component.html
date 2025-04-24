@@ -19,14 +19,19 @@
                     <p class="text-sm text-gray-300">₹20 applied to all orders for packaging</p>
                 </div>
 
-                <div *ngSwitchCase="InfoPopupType.SMALL_CART" class="w-96 space-y-2">
+                <div *ngSwitchCase="InfoPopupType.SMALL_CART" class="w-fit space-y-2">
                     <h3 class="text-lg font-semibold mb-2 text-red-400">Small Cart Fee</h3>
-                    <p class="text-sm text-gray-300">₹10 extra for cart below ₹100</p>
+                    <p class="text-sm text-gray-300">
+                        Please add more items to avoid this charge. We're charging a fee for orders below
+                        ₹{{ MultipleChargesModel.THRESHOLD_FOR_SMALL_CART }} to
+                        continue servicing your small requirements
+                    </p>
                 </div>
 
                 <div *ngSwitchCase="InfoPopupType.HIGH_DEMAND_SURGE" class="w-96 space-y-2">
                     <h3 class="text-lg font-semibold mb-2 text-red-400">High Demand Surge Charge</h3>
-                    <p class="text-sm text-gray-300">₹10 extra for cart below ₹100</p>
+                    <p class="text-sm text-gray-300">No surge charge for orders above
+                        ₹{{ MultipleChargesModel.THRESHOLD_FOR_HIGH_DEMAND_SURGE_CHARGE }}</p>
                 </div>
 
                 <div *ngSwitchCase="InfoPopupType.FEED_INDIA" class="w-[800px] space-y-2 text-center">
