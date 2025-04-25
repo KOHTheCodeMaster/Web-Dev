@@ -20,6 +20,18 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         25th Apr 2K25 - 04:46 PM
+Commit Message:     306 - G-Mart - Angular - Added Tip Functionality to Shopping Cart Component
+
+Quick Summary:
+
+1. Added Tip Functionality to Shopping Cart Component.
+    - Implemented a tip input field in the Shopping Cart component.
+    - Added functionality to apply a tip value to the total price in the cart.
+    - Created a method to check if a tip is applied and update the total price accordingly.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         25th Apr 2K25 - 12:48 AM
 Commit Message:     305 - G-Mart - Angular - Big Commit - Added Multiple Charges Model & Service - More Refactoring
 

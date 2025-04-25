@@ -42,8 +42,8 @@
 
             <!-- Total Savings Section -->
             <div class="m-2 p-2 bg-gray-800 border-gray-700 rounded-lg">
-                <div class="flex justify-between items-center px-2">
-                    <span class="text-sm font-medium text-cyan-400">Your total savings</span>
+                <div class="flex justify-between items-center px-2 text-cyan-400">
+                    <span class="text-sm font-medium">Your total savings</span>
                     <span class="text-sm font-medium">₹{{ shoppingCart.getTotalDiscount() }}</span>
                 </div>
             </div>
@@ -243,7 +243,7 @@
                             <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="cart-icon">
                             <span>Tip for your delivery partner</span>
                         </div>
-                        <span>₹10</span> <!-- Placeholder; update with actual logic -->
+                        <span>₹{{ shoppingCart.getTipAmount() }}</span>
                     </div>
                     <div class="flex justify-between font-semibold mt-2 border-t border-gray-700 pt-2">
                         <span>Grand total</span>
@@ -295,6 +295,111 @@
                         <span class="text-xs">₹{{ MultipleChargesModel.FEED_INDIA_DONATION_CHARGE }}</span>
                     </label>
                 </div>
+            </div>
+
+            <!-- Tip your delivery partner Section -->
+            <div class="m-2 px-4 py-2 bg-gray-800 border-b border-gray-700 rounded-lg">
+                <div class="flex">
+                    <p class="text-sm font-medium">Tip your delivery partner</p>
+                    <div *ngIf="shoppingCart.getMultipleChargesModel().getIsTipApplied()"
+                         class="ml-auto flex items-center gap-2 text-sm">
+                        <span class="text-gray-400">₹{{ shoppingCart.getTipAmount() }}</span>
+                        <button (click)="addTip(0)" class="text-green-400">Clear</button>
+                    </div>
+                </div>
+                <p class="mt-1 text-xs text-gray-400">
+                    Your kindness means a lot! 100% of your tip will go directly to your delivery partner.
+                </p>
+                <!--
+                                <div class="text-gray-400">
+                                    <button class="p-2 flex justify-center items-center gap-2 bg-gray-700 rounded-lg hover:bg-gray-600
+                                                    focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+                                        (click)="addTip(20)">
+                                        <span>emoticon</span>
+                                        <span class="">₹20</span>
+                                    </button>
+                                </div>
+                -->
+
+                <div *ngIf="!isCustomTipOpened" class="py-2 flex gap-2 ">
+                    <!-- Tip Option 1 -->
+                    <button (click)="addTip(20)"
+                            [ngClass]="{'border-green-500 bg-green-900 hover:bg-green-900': shoppingCart.getTipAmount() === 20}"
+                            class="flex items-center gap-2 p-2 rounded-xl border border-gray-700 text-white text-sm
+                                hover:bg-gray-800 transition">
+                        <span class="text-xl">😄</span>
+                        <span>₹20</span>
+                    </button>
+
+                    <!-- Tip Option 2 -->
+                    <button (click)="addTip(30)"
+                            [ngClass]="{'border-green-500 bg-green-900 hover:bg-green-900': shoppingCart.getTipAmount() === 30}"
+                            class="flex items-center gap-2 p-2 rounded-xl border border-gray-700 text-white text-sm
+                                hover:bg-gray-800 transition">
+                        <span class="text-xl">🤩</span>
+                        <span>₹30</span>
+                    </button>
+
+                    <!-- Tip Option 3 -->
+                    <button (click)="addTip(50)"
+                            [ngClass]="{'border-green-500 bg-green-900 hover:bg-green-900': shoppingCart.getTipAmount() === 50}"
+                            class="flex items-center gap-2 p-2 rounded-xl border border-gray-700 text-white text-sm
+                            hover:bg-gray-800 transition">
+                        <span class="text-xl">😍</span>
+                        <span>₹50</span>
+                    </button>
+
+                    <!-- Custom Tip Option -->
+                    <button (click)="isCustomTipOpened = true"
+                            [ngClass]="{'border-green-500 bg-green-900 hover:bg-green-900': checkIsCustomTipApplied()}"
+                            class="flex items-center gap-2 p-2 rounded-xl border border-gray-700 text-white text-sm
+                                hover:bg-gray-800 transition">
+                        <span class="text-xl">👏</span>
+                        <span>Custom</span>
+                    </button>
+                </div>
+
+                <div *ngIf="isCustomTipOpened" class="flex items-start gap-3 bg-[#1f1f1f] text-white text-sm">
+                    <!-- Custom Button -->
+                    <button
+                        class="flex flex-col items-center justify-center px-2 rounded-xl border border-green-500
+                                bg-green-900 text-white min-w-[90px]">
+                        <span class="text-xl">👏</span>
+                        <span>Custom</span>
+                    </button>
+
+                    <!-- Input + Error + Action -->
+                    <div class="flex flex-col gap-1">
+                        <!-- Input + Action -->
+                        <div class="w-full flex items-center gap-3">
+                            <!-- Number Input -->
+                            <input type="number" min="0" max="3000"
+                                   [ngModel]="customTipValue"
+                                   (ngModelChange)="customTipValue = Math.floor($event)"
+                                   class="bg-black text-white px-3 py-1 rounded border border-gray-700
+                                            focus:outline-none focus:ring-1 focus:ring-green-500 w-[100px]">
+
+                            <!-- Action Button -->
+                            <!-- For Error Case -->
+                            <span *ngIf="customTipValue < 10 || customTipValue > 3000"
+                                  (click)="isCustomTipOpened = false"
+                                  class="ml-auto text-gray-400 cursor-pointer hover:underline">Close</span>
+
+                            <!-- For Valid Input -->
+                            <span *ngIf="customTipValue >= 10 && customTipValue <= 3000"
+                                  (click)="addTip(customTipValue)"
+                                  class="ml-auto text-green-500 cursor-pointer hover:underline">Add</span>
+                        </div>
+
+                        <!-- Error Message -->
+                        <p *ngIf="customTipValue < 10"
+                           class="text-xs text-red-500">Tip amount should be greater than ₹10</p>
+                        <p *ngIf="customTipValue > 3000"
+                           class="text-xs text-red-500">Tip amount should be less than ₹3000</p>
+                    </div>
+                </div>
+
+
             </div>
 
             <!-- Cancellation Policy Section -->

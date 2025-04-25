@@ -61,52 +61,11 @@ export class ShoppingCart {
             this.multipleChargesModel.setIsHighDemandSurgeChargeApplied(true);
         } else this.multipleChargesModel.setIsHighDemandSurgeChargeApplied(false);
 
-        //  tip amount is applied only if manually selected
-        // if (this.multipleChargesModel.getIsTipApplied()) extraChargesAmount += this.tipAmount;
+        //  tip amount is applied only if manually opted-in
+        if (this.multipleChargesModel.getIsTipApplied()) extraChargesAmount += this.tipAmount;
 
         return extraChargesAmount;
     }
-
-    /*
-        private updateTotalPriceWithCharges() {
-
-            this.totalPrice = this.subTotalPrice;   //  reset total price to sub-total price
-
-            //  handling charge is always applied
-            this.totalPrice += MultipleChargesModel.HANDLING_CHARGE;
-            this.multipleChargesModel.setIsHandlingChargeApplied(true);
-
-            //  delivery charge is applied only if total price is less than threshold
-            if (this.totalPrice < MultipleChargesModel.THRESHOLD_FOR_DELIVERY_CHARGE) {
-                this.totalPrice += MultipleChargesModel.DELIVERY_CHARGE;
-                this.multipleChargesModel.setIsDeliveryChargeApplied(true);
-            } else {
-                this.totalPrice -= MultipleChargesModel.DELIVERY_CHARGE;
-                this.multipleChargesModel.setIsDeliveryChargeApplied(false);
-            }
-
-            //  small cart charge is applied only if total price is less than threshold
-            if (this.totalPrice < MultipleChargesModel.THRESHOLD_FOR_SMALL_CART) {
-                this.totalPrice += MultipleChargesModel.SMALL_CART_CHARGE;
-                this.multipleChargesModel.setIsSmallCartChargeApplied(true);
-            } else {
-                this.totalPrice -= MultipleChargesModel.SMALL_CART_CHARGE;
-                this.multipleChargesModel.setIsSmallCartChargeApplied(false);
-            }
-
-        }
-    */
-
-    /*
-        updateCartItem(cartItem: CartItem) {
-            const index = this.cartItems.indexOf(cartItem);
-            if (index > -1) {
-                this.cartItems[index] = cartItem;
-                this.itemCount = this.cartItems.reduce((acc, item) => acc + item.getQuantity(), 0);
-                this.totalPrice = this.cartItems.reduce((acc, item) => acc + item.getSubTotalPrice(), 0);
-            } else console.log("L0G - Error - Cart item not found in shopping cart.\nCartItem: ", cartItem);
-        }
-    */
 
     incrementCartItem(cartItem: CartItem) {
         cartItem.incrementQuantity();
@@ -114,9 +73,7 @@ export class ShoppingCart {
         this.totalMRP += cartItem.getProduct().getPrice();
         this.totalDiscount += cartItem.getProduct().getDiscount();
         this.subTotalPrice = this.totalMRP - this.totalDiscount;
-        let extraChargesAmount = this.calculateExtraCharges();
-        this.totalPrice = this.subTotalPrice + extraChargesAmount;  //  update total price
-
+        this.reCalcTotalPrice();
     }
 
     decrementCartItem(cartItem: CartItem) {
@@ -125,8 +82,11 @@ export class ShoppingCart {
         this.totalMRP -= cartItem.getProduct().getPrice();
         this.totalDiscount -= cartItem.getProduct().getDiscount();
         this.subTotalPrice = this.totalMRP - this.totalDiscount;
-        let extraChargesAmount = this.calculateExtraCharges();
-        this.totalPrice = this.subTotalPrice + extraChargesAmount;  //  update total price
+        this.reCalcTotalPrice();
+    }
+
+    reCalcTotalPrice() {
+        this.totalPrice = this.subTotalPrice + this.calculateExtraCharges();
     }
 
     removeCartItem(cartItem: CartItem) {
@@ -137,35 +97,15 @@ export class ShoppingCart {
         } else console.log("L0G - Error - Cart item not found in shopping cart.\nCartItem: ", cartItem);
     }
 
-    clearCart() {
-        this.cartItems = [];
-        this.itemCount = 0;
-        this.totalPrice = 0;
-    }
-
     toggleFeedIndiaDonation(isFeedingIndiaChecked: boolean) {
         if (isFeedingIndiaChecked) {
-            // this.subTotalPrice += MultipleChargesModel.FEED_INDIA_DONATION_CHARGE;
             this.totalPrice += MultipleChargesModel.FEED_INDIA_DONATION_CHARGE;
             this.multipleChargesModel.setIsFeedIndiaChargeApplied(true);
         } else {
-            // this.subTotalPrice -= MultipleChargesModel.FEED_INDIA_DONATION_CHARGE;
             this.totalPrice -= MultipleChargesModel.FEED_INDIA_DONATION_CHARGE;
             this.multipleChargesModel.setIsFeedIndiaChargeApplied(false);
         }
     }
-
-    /*
-        toggleHighDemandSurgeCharge(isHighDemandSurgeChargeApplied: boolean) {
-            if (isHighDemandSurgeChargeApplied) {
-                this.totalPrice += MultipleChargesModel.HIGH_DEMAND_SURGE_CHARGE;
-                this.multipleChargesModel.setIsHighDemandSurgeChargeApplied(true);
-            } else {
-                this.totalPrice -= MultipleChargesModel.HIGH_DEMAND_SURGE_CHARGE;
-                this.multipleChargesModel.setIsHighDemandSurgeChargeApplied(false);
-            }
-        }
-    */
 
     //  Getters & Setters
     //  -----------------

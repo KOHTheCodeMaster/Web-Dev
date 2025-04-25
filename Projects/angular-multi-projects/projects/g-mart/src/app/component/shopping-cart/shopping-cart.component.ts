@@ -19,12 +19,15 @@ export class ShoppingCartComponent {
 
     protected readonly MultipleChargesModel = MultipleChargesModel;
     protected readonly InfoPopupType = InfoPopupType;
+    protected readonly Math = Math;
 
     isShoppingCartOpen = false;
     shoppingCart: ShoppingCart;
 
     isFeedingIndiaChecked = false;
     isSubtotalDropdownOpen = false;
+    isCustomTipOpened: boolean = false;
+    customTipValue: number = 0;
 
     constructor(private shoppingCartService: ShoppingCartService,
                 private infoPopupHostService: InfoPopupService) {
@@ -62,12 +65,6 @@ export class ShoppingCartComponent {
         this.infoPopupHostService.openPopup(infoPopupType);
     }
 
-/*
-    closeInfoPopupForDeliveryCharge() {
-        this.infoPopupHostService.closePopup();
-    }
-*/
-
     toggleSubtotalDropdown() {
         this.isSubtotalDropdownOpen = !this.isSubtotalDropdownOpen;
     }
@@ -75,6 +72,20 @@ export class ShoppingCartComponent {
     toggleFeedingIndiaDonation($event: MouseEvent) {
         this.isFeedingIndiaChecked = ($event.target as HTMLInputElement).checked;
         this.shoppingCart.toggleFeedIndiaDonation(this.isFeedingIndiaChecked);
+    }
+
+    addTip(tipAmount: number) {
+        this.shoppingCart.setTipAmount(Math.floor(tipAmount));
+        this.shoppingCart.getMultipleChargesModel().setIsTipApplied(tipAmount !== 0);
+        this.shoppingCart.reCalcTotalPrice();
+        this.isCustomTipOpened = false; // Close custom tip input after adding
+    }
+
+    checkIsCustomTipApplied() {
+        return this.shoppingCart.getTipAmount() > 0 &&
+            this.shoppingCart.getTipAmount() !== 20 &&
+            this.shoppingCart.getTipAmount() !== 30 &&
+            this.shoppingCart.getTipAmount() !== 50;
     }
 
 }
