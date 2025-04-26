@@ -20,6 +20,20 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         26th Apr 2K25 - 10:29 PM
+Commit Message:     307 - G-Mart - Angular - Components Added for My Account, Orders, Addresses
+
+Quick Summary:
+
+1. Added My Account Component.
+    - Implemented the My Account component to display popup for my orders & saved addresses dialog.
+
+2. Added Orders & Addresses Components.
+    - Created Orders & Addresses component to display the list of orders as well as saved addresses.
+    - Empty Skeleton design is implemented for both components.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         25th Apr 2K25 - 04:46 PM
 Commit Message:     306 - G-Mart - Angular - Added Tip Functionality to Shopping Cart Component
 

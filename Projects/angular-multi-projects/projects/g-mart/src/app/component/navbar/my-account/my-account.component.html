@@ -1,0 +1,27 @@
+<!-- Account Button + Popup Wrapper -->
+<div (click)="toggleMyAccountPopup()" class="relative w-full h-full flex justify-center items-center cursor-pointer">
+    <!-- Account Button -->
+    <div class="relative w-fit px-4 flex gap-3 items-center text-2xl">
+        <span>Account</span>
+        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+    </div>
+
+    <!-- Popup -->
+    <div *ngIf="isMyAccountPopupOpened"
+         class="absolute top-full right-0 w-full bg-gray-900 text-white text-sm rounded-b-lg shadow-lg border border-gray-700">
+        <ul class="flex flex-col">
+            <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="goToMyOrders()">My Orders</li>
+            <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="goToSavedAddresses()">Saved Addresses</li>
+            <!--<li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="logout()">Logout</li>-->
+        </ul>
+    </div>
+
+    <!-- Backdrop -->
+    <!--
+        <div *ngIf="isMyAccountPopupOpened"
+             class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm z-40"
+             (click)="closeMyAccountPopup()">
+        </div>
+    -->
+
+</div>

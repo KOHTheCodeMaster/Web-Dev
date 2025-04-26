@@ -10,8 +10,7 @@ import {Subcategory} from "../../../shared/model/subcategory.model";
         NgForOf,
         NgClass
     ],
-    templateUrl: './sub-category-sidebar.component.html',
-    styleUrl: './sub-category-sidebar.component.css'
+    templateUrl: './sub-category-sidebar.component.html'
 })
 export class SubcategorySidebarComponent {
 

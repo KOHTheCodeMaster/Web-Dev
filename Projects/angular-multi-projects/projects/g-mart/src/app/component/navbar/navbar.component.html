@@ -1,4 +1,4 @@
-<nav class="w-full h-20 flex">
+<nav class="w-full h-20 flex bg-gray-900 border-b border-gray-800 sticky top-0 z-[50] ">
 
     <!--  Logo  -->
     <a class="w-48 px-8 py-4 flex items-center text-3xl" routerLink="/">
@@ -34,11 +34,8 @@
         </button>
     </div>
 
-    <!--  Account  -->
-    <a class="w-48 ml-auto px-8 flex gap-3 items-center text-2xl">
-        <span>Account</span>
-        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
-    </a>
+    <!--  My Account  -->
+    <app-my-account class="w-fit ml-auto flex gap-3 items-center text-2xl"></app-my-account>
 
     <!--  Shopping Cart  -->
     <app-shopping-cart class="w-48 ml-auto px-8 py-2"></app-shopping-cart>
