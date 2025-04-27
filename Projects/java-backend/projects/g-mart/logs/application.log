@@ -1,27 +1,27 @@
-26-Apr-2025 20:42:46.223 INFO  com.github.kohthecodemaster.Main - 
+27-Apr-2025 20:25:14.139 INFO  com.github.kohthecodemaster.Main - 
 
 ---------------------------
 Application Starting...
 ----------------------------
 
-26-Apr-2025 20:42:46.521 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 32492 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
-26-Apr-2025 20:42:46.521 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
-26-Apr-2025 20:42:47.206 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-26-Apr-2025 20:42:47.254 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
-26-Apr-2025 20:42:47.755 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-26-Apr-2025 20:42:47.761 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-26-Apr-2025 20:42:47.777 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-26-Apr-2025 20:42:47.777 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-26-Apr-2025 20:42:47.824 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-26-Apr-2025 20:42:47.824 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1258 ms
-26-Apr-2025 20:42:47.966 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-26-Apr-2025 20:42:48.124 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@1c240cf2
-26-Apr-2025 20:42:48.124 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-26-Apr-2025 20:42:48.156 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-26-Apr-2025 20:42:48.207 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
-26-Apr-2025 20:42:48.231 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-26-Apr-2025 20:42:48.456 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-26-Apr-2025 20:42:48.520 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+27-Apr-2025 20:25:14.428 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 16280 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+27-Apr-2025 20:25:14.428 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+27-Apr-2025 20:25:15.075 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+27-Apr-2025 20:25:15.122 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+27-Apr-2025 20:25:15.664 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+27-Apr-2025 20:25:15.676 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+27-Apr-2025 20:25:15.681 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+27-Apr-2025 20:25:15.681 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+27-Apr-2025 20:25:15.742 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+27-Apr-2025 20:25:15.742 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1262 ms
+27-Apr-2025 20:25:15.882 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+27-Apr-2025 20:25:16.024 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@58f2466c
+27-Apr-2025 20:25:16.030 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+27-Apr-2025 20:25:16.124 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+27-Apr-2025 20:25:16.189 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+27-Apr-2025 20:25:16.212 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+27-Apr-2025 20:25:16.460 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+27-Apr-2025 20:25:16.530 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 3.45.1
@@ -29,12 +29,12 @@ Application Starting...
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-26-Apr-2025 20:42:49.040 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-26-Apr-2025 20:42:49.040 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-26-Apr-2025 20:42:49.300 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-26-Apr-2025 20:42:49.835 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-26-Apr-2025 20:42:49.866 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-26-Apr-2025 20:42:49.882 INFO  com.github.kohthecodemaster.Main - Started Main in 3.611 seconds (process running for 7.758)
-26-Apr-2025 20:45:08.533 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-26-Apr-2025 20:45:08.535 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-26-Apr-2025 20:45:08.540 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+27-Apr-2025 20:25:17.089 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+27-Apr-2025 20:25:17.089 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+27-Apr-2025 20:25:17.295 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+27-Apr-2025 20:25:17.737 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+27-Apr-2025 20:25:17.761 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+27-Apr-2025 20:25:17.767 INFO  com.github.kohthecodemaster.Main - Started Main in 3.581 seconds (process running for 7.486)
+27-Apr-2025 22:10:14.991 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+27-Apr-2025 22:10:14.992 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+27-Apr-2025 22:10:14.993 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms

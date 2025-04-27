@@ -20,6 +20,22 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         27th Apr 2K25 - 11:51 PM
+Commit Message:     308 - G-Mart - Angular - Added Address Model along with Edit & Delete Popup Functionality
+
+Quick Summary:
+
+1. Added Address Model.
+    - Created a new model to represent the address details for the user.
+
+2. Added Edit & Delete Popup Functionality.
+    - Implemented the functionality to edit and delete addresses from the saved addresses list.
+    - Created a popup dialog for confirming the deletion of an address.
+    - Popup disappearing behavior for the delete confirmation dialog is as follows:
+        - It will be closed when clicked on cancel button or outside the popup, but not when clicked inside the popup.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         26th Apr 2K25 - 10:29 PM
 Commit Message:     307 - G-Mart - Angular - Components Added for My Account, Orders, Addresses
 
