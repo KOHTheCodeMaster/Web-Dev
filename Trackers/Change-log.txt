@@ -20,6 +20,15 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         29th Apr 2K25 - 09:51 AM
+Commit Message:     309 - G-Mart - Angular - My Account Popup - Removed on Outside Click
+
+Quick Summary:
+
+1. Updated My Account Popup to be removed when clicked outside of it.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         27th Apr 2K25 - 11:51 PM
 Commit Message:     308 - G-Mart - Angular - Added Address Model along with Edit & Delete Popup Functionality
 
