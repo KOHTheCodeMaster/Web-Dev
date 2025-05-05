@@ -1,9 +1,9 @@
-import {BehaviorSubject} from "rxjs";
 import {Component, ElementRef, OnDestroy, Renderer2, ViewChild} from '@angular/core';
 import {Router, RouterLink} from "@angular/router";
 import {AsyncPipe, NgFor, NgForOf, NgIf} from '@angular/common';
 import {Address} from "../../shared/model/address.model";
 import {EditAddressDialogComponent} from "./edit-address-dialog/edit-address-dialog.component";
+import {AddressService} from "../../service/address.service";
 
 @Component({
     selector: 'app-addresses',
@@ -18,40 +18,14 @@ export class AddressesComponent implements OnDestroy {
     private editDialogClickListener: (() => void) | undefined;
     @ViewChild('deleteAddressPopup') deleteAddressPopupElement!: ElementRef;
     @ViewChild('editAddressDialog') editAddressDialogElement!: ElementRef;
-    isEditDialogOpened$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     constructor(private router: Router,
-                private renderer: Renderer2) {
+                private renderer: Renderer2,
+                protected addressService: AddressService) {
 
-        this.initAddressList();
+        this.addressList = this.addressService.getAddressList();
         this.initSubscriptions();
 
-    }
-
-    private initAddressList() {
-
-        this.addressList = [];
-
-        this.addressList.push(new Address(
-            1,
-            "Mall",
-            'GT Central',
-            0,
-            "Malviya Nagar, Jaipur",
-            "WTP",
-            "John Doe",
-            1234567890,
-            ""));
-        this.addressList.push(new Address(
-            2,
-            "Work",
-            'Plot-001',
-            1,
-            "Mansarovar",
-            "Isckon Temple",
-            "Jane Doe",
-            9876543210,
-            ""));
     }
 
     initSubscriptions() {
@@ -76,55 +50,52 @@ export class AddressesComponent implements OnDestroy {
             });
         });
 
-        this.isEditDialogOpened$.subscribe(isEditDialogOpened => {
+        this.addressService.getIsEditDialogOpened$().subscribe(isEditDialogOpened => {
             if (isEditDialogOpened) {
-                console.log("Edit dialog opened");
                 this.removeEditDialogClickListener(); // Remove any existing listener
                 this.editDialogClickListener = this.renderer.listen('document', 'click', (event: Event) => {
                     const popupElement = this.editAddressDialogElement?.nativeElement;
-                    console.log("Click event detected");
                     if (popupElement && !popupElement.contains(event.target)) {
                         this.removeEditDialogClickListener();
-                        console.log("Click event detected and handled");
-                        this.isEditDialogOpened$.next(false);
+                        this.addressService.updateIsEditDialogOpenedValue(false);
                     }
                 });
             } else {
                 // If the popup is closed, remove the click listener to avoid memory leaks
                 this.removeEditDialogClickListener();
-                console.log("Edit dialog closed");
             }
         });
 
     }
 
     openEditAndDeletePopup(address: Address) {
-        // Close other popups
+        //  Close the other edit and delete popups
         this.addressList
             .filter(addressItem => addressItem !== address)
             .forEach(addressItem => addressItem.updateIsEditAndDeletePopupOpenedValue(false));
 
-        // Toggle current popup
+        //  Toggle the clicked address's edit and delete popup
         address.toggleEditAndDeletePopup();
     }
 
+    handleEditBtnClick(address: Address) {
+        this.addressService.updateIsEditDialogOpenedValue(true);
+        address.updateIsEditAndDeletePopupOpenedValue(false);
+    }
+
     removeDeletePopupClickListener() {
-        console.log("Removing Delete Popup click listener");
         //  Remove the click listener if it exists to avoid memory leaks
         if (this.deletePopupClickListener) {
             this.deletePopupClickListener();
             this.deletePopupClickListener = undefined;
-            console.log("Click listener removed for delete popup");
         }
     }
 
     removeEditDialogClickListener() {
-        console.log("Removing Edit Dialog click listener");
         //  Remove the click listener if it exists to avoid memory leaks
         if (this.editDialogClickListener) {
             this.editDialogClickListener();
             this.editDialogClickListener = undefined;
-            console.log("Click listener removed for edit popup");
         }
     }
 

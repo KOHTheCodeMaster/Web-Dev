@@ -20,6 +20,18 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         5th May 2K25 - 09:35 PM
+Commit Message:     311 - G-Mart - Angular - Added Address Service to Manage Address List
+
+Quick Summary:
+
+1. Added Address Service.
+    - Created a new service to manage address-related operations.
+    - Implemented methods to initialize address list.
+    - Track the state of is edit address dialog open or closed.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         5th May 2K25 - 07:25 PM
 Commit Message:     310 - G-Mart - Angular - Edit Address Dialog - Closed when clicked outside
 

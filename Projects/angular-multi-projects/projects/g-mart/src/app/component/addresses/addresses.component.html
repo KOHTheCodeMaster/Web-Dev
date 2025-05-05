@@ -45,24 +45,10 @@
                              class="absolute w-24 top-2 right-full bg-gray-800 text-gray-200 rounded-lg
                                         shadow-lg border border-gray-700">
                             <div class="flex flex-col">
-                                <div (click)="this.isEditDialogOpened$.next(true)"
+                                <div (click)="handleEditBtnClick(address);"
                                      class="px-4 py-2 border-b border-b-gray-700 hover:bg-gray-700 cursor-pointer">
                                     <span>Edit</span>
-
-                                    <!-- Edit Address Popup -->
-                                    <div #editAddressDialog
-                                         *ngIf="isEditDialogOpened$.getValue()">
-                                        <app-edit-address-dialog
-                                            [address]="address"
-                                            (click)="$event.stopPropagation()"
-                                            (close)="isEditDialogOpened$.next(false)"
-                                            class="absolute z-10 top-full right-0 mt-2 w-96 h-fit bg-gray-800 text-gray-200
-                                                rounded-lg shadow-lg border border-gray-700 cursor-default">
-                                        </app-edit-address-dialog>
-                                    </div>
-
                                 </div>
-
 
                                 <div (click)="address.toggleDeleteConfirmationPopup()"
                                      class="relative px-4 py-2 border-b border-b-gray-700 hover:bg-gray-700 cursor-pointer">
@@ -89,6 +75,18 @@
 
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Edit Address Popup -->
+                        <div #editAddressDialog
+                             *ngIf="this.addressService.getIsEditDialogOpened$() | async">
+                            <app-edit-address-dialog
+                                [address]="address"
+                                (click)="$event.stopPropagation()"
+                                (close)="this.addressService.updateIsEditDialogOpenedValue(false)"
+                                class="absolute z-10 top-full right-0 mt-2 w-96 h-fit bg-gray-800 text-gray-200
+                                                rounded-lg shadow-lg border border-gray-700 cursor-default">
+                            </app-edit-address-dialog>
                         </div>
 
                     </div>

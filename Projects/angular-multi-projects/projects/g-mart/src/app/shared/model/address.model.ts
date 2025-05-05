@@ -39,6 +39,7 @@ export class Address {
         const currentState = this.isEditAndDeletePopupOpened$.getValue();
         this.updateIsEditAndDeletePopupOpenedValue(!currentState);
 
+        //  Close the delete confirmation popup if it is open
         // this.isDeleteConfirmationPopupOpened &&= false;
         this.updateIsDeleteConfirmationPopupOpenedValue(false);
     }
