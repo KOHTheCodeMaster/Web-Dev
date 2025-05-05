@@ -44,10 +44,26 @@
                         <div *ngIf="address.getIsEditAndDeletePopupOpened$() | async"
                              class="absolute w-24 top-2 right-full bg-gray-800 text-gray-200 rounded-lg
                                         shadow-lg border border-gray-700">
-                            <ul class="flex flex-col">
-                                <li class="px-4 py-2 border-b border-b-gray-700 hover:bg-gray-700 cursor-pointer">
-                                    Edit
-                                </li>
+                            <div class="flex flex-col">
+                                <div (click)="this.isEditDialogOpened$.next(true)"
+                                     class="px-4 py-2 border-b border-b-gray-700 hover:bg-gray-700 cursor-pointer">
+                                    <span>Edit</span>
+
+                                    <!-- Edit Address Popup -->
+                                    <div #editAddressDialog
+                                         *ngIf="isEditDialogOpened$.getValue()">
+                                        <app-edit-address-dialog
+                                            [address]="address"
+                                            (click)="$event.stopPropagation()"
+                                            (close)="isEditDialogOpened$.next(false)"
+                                            class="absolute z-10 top-full right-0 mt-2 w-96 h-fit bg-gray-800 text-gray-200
+                                                rounded-lg shadow-lg border border-gray-700 cursor-default">
+                                        </app-edit-address-dialog>
+                                    </div>
+
+                                </div>
+
+
                                 <div (click)="address.toggleDeleteConfirmationPopup()"
                                      class="relative px-4 py-2 border-b border-b-gray-700 hover:bg-gray-700 cursor-pointer">
                                     <span>Delete</span>
@@ -72,7 +88,7 @@
                                     </div>
 
                                 </div>
-                            </ul>
+                            </div>
                         </div>
 
                     </div>

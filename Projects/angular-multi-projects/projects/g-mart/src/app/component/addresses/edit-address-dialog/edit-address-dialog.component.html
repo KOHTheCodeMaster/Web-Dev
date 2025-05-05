@@ -1,0 +1,62 @@
+<!-- Backdrop with click-outside detection -->
+<div id="backdrop"
+     class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center"
+     (click)="onBackdropClick($event)">
+
+    <!-- Dialog Box -->
+    <div class="bg-gray-900 text-white rounded-xl w-full max-w-md shadow-lg relative"
+         (click)="$event.stopPropagation()">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center p-4 border-b border-gray-700">
+            <h2 class="text-lg font-semibold">Enter complete address</h2>
+            <button class="text-gray-400 hover:text-red-500 text-2xl" (click)="close.emit()">&times;</button>
+        </div>
+
+        <!-- Body -->
+        <div class="p-4 space-y-4">
+            <!-- Label -->
+            <div class="flex items-center gap-2">
+                <div class="bg-green-600 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                    <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+                    {{ address.getLabel() }}
+                </div>
+                <input [(ngModel)]="address['label']"
+                       placeholder="Label"
+                       class="bg-transparent border-b border-gray-600 outline-none text-white w-full text-sm"/>
+            </div>
+
+            <!-- House No -->
+            <input [(ngModel)]="address['houseNumberOrName']"
+                   placeholder="Flat / House no / Building name *"
+                   class="w-full bg-gray-800 px-3 py-2 rounded-md placeholder-gray-400 text-sm"/>
+
+            <!-- Floor -->
+            <input [(ngModel)]="address['floor']"
+                   placeholder="Floor (optional)"
+                   type="number"
+                   class="w-full bg-gray-800 px-3 py-2 rounded-md placeholder-gray-400 text-sm"/>
+
+            <!-- Area -->
+            <input [(ngModel)]="address['locality']"
+                   placeholder="Area / Sector / Locality *"
+                   class="w-full bg-gray-800 px-3 py-2 rounded-md placeholder-gray-400 text-sm font-medium"/>
+
+            <!-- Landmark -->
+            <input [(ngModel)]="address['landmark']"
+                   placeholder="Nearby landmark (optional)"
+                   class="w-full bg-gray-800 px-3 py-2 rounded-md placeholder-gray-400 text-sm"/>
+
+            <!-- Receiver Name -->
+            <input [(ngModel)]="address['receiverName']"
+                   placeholder="Full name"
+                   class="w-full bg-gray-800 px-3 py-2 rounded-md placeholder-gray-400 text-sm"/>
+
+            <!-- Phone -->
+            <input [(ngModel)]="address['mobNumber']"
+                   type="tel"
+                   placeholder="Phone Number"
+                   class="w-full bg-gray-800 px-3 py-2 rounded-md placeholder-gray-400 text-sm"/>
+        </div>
+    </div>
+</div>

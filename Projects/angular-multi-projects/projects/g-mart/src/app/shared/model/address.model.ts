@@ -48,6 +48,14 @@ export class Address {
         this.isDeleteConfirmationPopupOpened$.next(!currentState);
     }
 
+    public updateIsEditAndDeletePopupOpenedValue(isEditAndDeletePopupOpened: boolean): void {
+        this.isEditAndDeletePopupOpened$.next(isEditAndDeletePopupOpened);
+    }
+
+    public updateIsDeleteConfirmationPopupOpenedValue(isDeleteConfirmationPopupOpened: boolean): void {
+        this.isDeleteConfirmationPopupOpened$.next(isDeleteConfirmationPopupOpened);
+    }
+
     handleDeleteAddress($event: MouseEvent) {
         $event.stopPropagation();
         this.toggleDeleteConfirmationPopup();
@@ -102,18 +110,8 @@ export class Address {
         return this.isEditAndDeletePopupOpened$;
     }
 
-    public updateIsEditAndDeletePopupOpenedValue(isEditAndDeletePopupOpened: boolean): void {
-        this.isEditAndDeletePopupOpened$.next(isEditAndDeletePopupOpened);
-    }
-
     public getIsDeleteConfirmationPopupOpened$(): Observable<boolean> {
         return this.isDeleteConfirmationPopupOpened$;
     }
-
-    public updateIsDeleteConfirmationPopupOpenedValue(isDeleteConfirmationPopupOpened: boolean): void {
-        this.isDeleteConfirmationPopupOpened$.next(isDeleteConfirmationPopupOpened);
-    }
-
-
 
 }

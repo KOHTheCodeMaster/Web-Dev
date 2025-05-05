@@ -20,6 +20,17 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         5th May 2K25 - 07:25 PM
+Commit Message:     310 - G-Mart - Angular - Edit Address Dialog - Closed when clicked outside
+
+Quick Summary:
+
+1. Added Edit-Address-Dialog Component
+    - Created a new component for editing addresses.
+    - Dialog will close when clicked outside of it.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         29th Apr 2K25 - 09:51 AM
 Commit Message:     309 - G-Mart - Angular - My Account Popup - Removed on Outside Click
 
