@@ -13,11 +13,13 @@ import {AddressService} from "../../service/address.service";
 })
 export class AddressesComponent implements OnDestroy {
 
+    isEditDialogOpened: boolean = false;
+    selectedAddress!: Address;
     addressList: Address[] = [];
     private deletePopupClickListener: (() => void) | undefined;
     private editDialogClickListener: (() => void) | undefined;
-    @ViewChild('deleteAddressPopup') deleteAddressPopupElement!: ElementRef;
-    @ViewChild('editAddressDialog') editAddressDialogElement!: ElementRef;
+    @ViewChild('deleteAddressPopup', {static: false}) deleteAddressPopupElement!: ElementRef;
+    @ViewChild('editAddressDialog', {static: false}) editAddressDialogElement!: ElementRef;
 
     constructor(private router: Router,
                 private renderer: Renderer2,
@@ -50,7 +52,12 @@ export class AddressesComponent implements OnDestroy {
             });
         });
 
+        //  Subscribe to selected address value changes
+        this.addressService.getSelectedAddress$().subscribe(address => this.selectedAddress = address);
+
+        //  Subscribe to isEditDialogOpened value changes
         this.addressService.getIsEditDialogOpened$().subscribe(isEditDialogOpened => {
+            this.isEditDialogOpened = isEditDialogOpened;
             if (isEditDialogOpened) {
                 this.removeEditDialogClickListener(); // Remove any existing listener
                 this.editDialogClickListener = this.renderer.listen('document', 'click', (event: Event) => {
@@ -79,6 +86,7 @@ export class AddressesComponent implements OnDestroy {
     }
 
     handleEditBtnClick(address: Address) {
+        this.addressService.updateSelectedAddress(address);
         this.addressService.updateIsEditDialogOpenedValue(true);
         address.updateIsEditAndDeletePopupOpenedValue(false);
     }

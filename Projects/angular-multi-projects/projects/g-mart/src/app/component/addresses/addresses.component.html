@@ -76,22 +76,22 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Edit Address Popup -->
-                        <div #editAddressDialog
-                             *ngIf="this.addressService.getIsEditDialogOpened$() | async">
-                            <app-edit-address-dialog
-                                [address]="address"
-                                (click)="$event.stopPropagation()"
-                                (close)="this.addressService.updateIsEditDialogOpenedValue(false)"
-                                class="absolute z-10 top-full right-0 mt-2 w-96 h-fit bg-gray-800 text-gray-200
-                                                rounded-lg shadow-lg border border-gray-700 cursor-default">
-                            </app-edit-address-dialog>
-                        </div>
-
                     </div>
                 </div>
                 <!-- Add more addresses as needed -->
+            </div>
+
+
+            <!-- Edit Address Popup -->
+            <div #editAddressDialog
+                 *ngIf="this.isEditDialogOpened">
+                <app-edit-address-dialog
+                    [address]="this.selectedAddress"
+                    (click)="$event.stopPropagation()"
+                    (closeDialog)="this.addressService.updateIsEditDialogOpenedValue(false)"
+                    class="absolute z-10 top-full right-0 mt-2 w-96 h-fit bg-gray-800 text-gray-200
+                                                rounded-lg shadow-lg border border-gray-700 cursor-default">
+                </app-edit-address-dialog>
             </div>
 
         </div>

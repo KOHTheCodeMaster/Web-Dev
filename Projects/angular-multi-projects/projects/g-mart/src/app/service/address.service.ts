@@ -8,6 +8,7 @@ import {Address} from "../shared/model/address.model";
 export class AddressService {
 
     private readonly isEditDialogOpened$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    private selectedAddress$: BehaviorSubject<Address> = new BehaviorSubject<Address>(this.createEmptyAddress());
     addressList: Address[] = [];
 
     constructor() {
@@ -23,7 +24,7 @@ export class AddressService {
 
         this.addressList.push(new Address(
             1,
-            "Mall",
+            "Home",
             'GT Central',
             0,
             "Malviya Nagar, Jaipur",
@@ -43,8 +44,25 @@ export class AddressService {
             ""));
     }
 
+    createEmptyAddress(): Address {
+        return new Address(
+            0,
+            "",
+            "",
+            0,
+            "",
+            "",
+            "",
+            0,
+            "");
+    }
+
     updateIsEditDialogOpenedValue(flag: boolean) {
         this.isEditDialogOpened$.next(flag);
+    }
+
+    updateSelectedAddress(address: Address) {
+        this.selectedAddress$.next(address);
     }
 
 
@@ -57,6 +75,10 @@ export class AddressService {
 
     getIsEditDialogOpened$(): Observable<boolean> {
         return this.isEditDialogOpened$.asObservable();
+    }
+
+    getSelectedAddress$(): Observable<Address> {
+        return this.selectedAddress$.asObservable();
     }
 
 }

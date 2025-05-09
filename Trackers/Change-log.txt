@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         9th May 2K25 - 07:51 PM
+Commit Message:     313 - G-Mart - Angular - Added `selectedAddress$` to Edit Address Component
+
+Quick Summary:
+
+1. Added Selected Address to Edit Address Component.
+    - Selected Address is updated when the user clicks on the Edit Address button.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         9th May 2K25 - 10:19 AM
 Commit Message:     312 - G-Mart - Angular - Fetch data from Local JSON Files
 
