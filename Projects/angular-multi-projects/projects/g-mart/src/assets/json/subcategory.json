@@ -1,179 +1,282 @@
-{
-    "subcategories": [
-        {
+[
+    {
+        "id": 1,
+        "name": "Fresh Vegetables",
+        "category": {
             "id": 1,
-            "categoryId": 1,
-            "name": "Fresh Vegetables"
-        },
-        {
-            "id": 2,
-            "categoryId": 1,
-            "name": "Fresh Fruits"
-        },
-        {
-            "id": 3,
-            "categoryId": 1,
-            "name": "Mangoes & Melons"
-        },
-        {
-            "id": 4,
-            "categoryId": 1,
-            "name": "Seasonal"
-        },
-        {
-            "id": 5,
-            "categoryId": 1,
-            "name": "Exotics"
-        },
-        {
-            "id": 6,
-            "categoryId": 2,
-            "name": "Milk"
-        },
-        {
-            "id": 7,
-            "categoryId": 2,
-            "name": "Bread & Pav"
-        },
-        {
-            "id": 8,
-            "categoryId": 2,
-            "name": "Eggs"
-        },
-        {
-            "id": 9,
-            "categoryId": 2,
-            "name": "Flakes & Kids Cereals"
-        },
-        {
-            "id": 10,
-            "categoryId": 2,
-            "name": "Muesli & Granola"
-        },
-        {
-            "id": 11,
-            "categoryId": 3,
-            "name": "Chips & Crisps"
-        },
-        {
-            "id": 12,
-            "categoryId": 3,
-            "name": "Rusks & Wafers"
-        },
-        {
-            "id": 13,
-            "categoryId": 3,
-            "name": "Energy Bars"
-        },
-        {
-            "id": 14,
-            "categoryId": 3,
-            "name": "Nachos"
-        },
-        {
-            "id": 15,
-            "categoryId": 3,
-            "name": "Bhujia & Mixtures"
-        },
-        {
-            "id": 16,
-            "categoryId": 4,
-            "name": "Beverages Gift Packs"
-        },
-        {
-            "id": 17,
-            "categoryId": 4,
-            "name": "Soft Drinks"
-        },
-        {
-            "id": 18,
-            "categoryId": 4,
-            "name": "Fruit Juices"
-        },
-        {
-            "id": 19,
-            "categoryId": 4,
-            "name": "Mango Drinks"
-        },
-        {
-            "id": 20,
-            "categoryId": 4,
-            "name": "Pure Juices"
-        },
-        {
-            "id": 21,
-            "categoryId": 5,
-            "name": "Noodles"
-        },
-        {
-            "id": 22,
-            "categoryId": 5,
-            "name": "Frozen Veg Snacks"
-        },
-        {
-            "id": 23,
-            "categoryId": 5,
-            "name": "Frozen Non-Veg Snacks"
-        },
-        {
-            "id": 24,
-            "categoryId": 5,
-            "name": "Pasta"
-        },
-        {
-            "id": 25,
-            "categoryId": 5,
-            "name": "Instant Mixes"
-        },
-        {
-            "id": 26,
-            "categoryId": 6,
-            "name": "Tea"
-        },
-        {
-            "id": 27,
-            "categoryId": 6,
-            "name": "Coffee"
-        },
-        {
-            "id": 28,
-            "categoryId": 6,
-            "name": "Milk Drinks"
-        },
-        {
-            "id": 29,
-            "categoryId": 6,
-            "name": "Green & Flavoured Tea"
-        },
-        {
-            "id": 30,
-            "categoryId": 6,
-            "name": "Herbal Drinks"
-        },
-        {
-            "id": 31,
-            "categoryId": 7,
-            "name": "Biscuit Gift Pack"
-        },
-        {
-            "id": 32,
-            "categoryId": 7,
-            "name": "Bread & Pav"
-        },
-        {
-            "id": 33,
-            "categoryId": 7,
-            "name": "Cookies"
-        },
-        {
-            "id": 34,
-            "categoryId": 7,
-            "name": "Cream Biscuits"
-        },
-        {
-            "id": 35,
-            "categoryId": 7,
-            "name": "Glucose & Marie"
+            "name": "Vegetables & Fruits"
         }
-    ]
-}
+    },
+    {
+        "id": 2,
+        "name": "Fresh Fruits",
+        "category": {
+            "id": 1,
+            "name": "Vegetables & Fruits"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Mangoes & Melons",
+        "category": {
+            "id": 1,
+            "name": "Vegetables & Fruits"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Seasonal",
+        "category": {
+            "id": 1,
+            "name": "Vegetables & Fruits"
+        }
+    },
+    {
+        "id": 5,
+        "name": "Exotics",
+        "category": {
+            "id": 1,
+            "name": "Vegetables & Fruits"
+        }
+    },
+    {
+        "id": 6,
+        "name": "Milk",
+        "category": {
+            "id": 2,
+            "name": "Dairy & Breakfast"
+        }
+    },
+    {
+        "id": 7,
+        "name": "Bread & Pav",
+        "category": {
+            "id": 2,
+            "name": "Dairy & Breakfast"
+        }
+    },
+    {
+        "id": 8,
+        "name": "Eggs",
+        "category": {
+            "id": 2,
+            "name": "Dairy & Breakfast"
+        }
+    },
+    {
+        "id": 9,
+        "name": "Flakes & Kids Cereals",
+        "category": {
+            "id": 2,
+            "name": "Dairy & Breakfast"
+        }
+    },
+    {
+        "id": 10,
+        "name": "Muesli & Granola",
+        "category": {
+            "id": 2,
+            "name": "Dairy & Breakfast"
+        }
+    },
+    {
+        "id": 11,
+        "name": "Chips & Crisps",
+        "category": {
+            "id": 3,
+            "name": "Munchies"
+        }
+    },
+    {
+        "id": 12,
+        "name": "Rusks & Wafers",
+        "category": {
+            "id": 3,
+            "name": "Munchies"
+        }
+    },
+    {
+        "id": 13,
+        "name": "Energy Bars",
+        "category": {
+            "id": 3,
+            "name": "Munchies"
+        }
+    },
+    {
+        "id": 14,
+        "name": "Nachos",
+        "category": {
+            "id": 3,
+            "name": "Munchies"
+        }
+    },
+    {
+        "id": 15,
+        "name": "Bhujia & Mixtures",
+        "category": {
+            "id": 3,
+            "name": "Munchies"
+        }
+    },
+    {
+        "id": 16,
+        "name": "Beverages Gift Packs",
+        "category": {
+            "id": 4,
+            "name": "Cold Drinks & Juices"
+        }
+    },
+    {
+        "id": 17,
+        "name": "Soft Drinks",
+        "category": {
+            "id": 4,
+            "name": "Cold Drinks & Juices"
+        }
+    },
+    {
+        "id": 18,
+        "name": "Fruit Juices",
+        "category": {
+            "id": 4,
+            "name": "Cold Drinks & Juices"
+        }
+    },
+    {
+        "id": 19,
+        "name": "Mango Drinks",
+        "category": {
+            "id": 4,
+            "name": "Cold Drinks & Juices"
+        }
+    },
+    {
+        "id": 20,
+        "name": "Pure Juices",
+        "category": {
+            "id": 4,
+            "name": "Cold Drinks & Juices"
+        }
+    },
+    {
+        "id": 21,
+        "name": "Noodles",
+        "category": {
+            "id": 5,
+            "name": "Instant & Frozen Food"
+        }
+    },
+    {
+        "id": 22,
+        "name": "Frozen Veg Snacks",
+        "category": {
+            "id": 5,
+            "name": "Instant & Frozen Food"
+        }
+    },
+    {
+        "id": 23,
+        "name": "Frozen Non-Veg Snacks",
+        "category": {
+            "id": 5,
+            "name": "Instant & Frozen Food"
+        }
+    },
+    {
+        "id": 24,
+        "name": "Pasta",
+        "category": {
+            "id": 5,
+            "name": "Instant & Frozen Food"
+        }
+    },
+    {
+        "id": 25,
+        "name": "Instant Mixes",
+        "category": {
+            "id": 5,
+            "name": "Instant & Frozen Food"
+        }
+    },
+    {
+        "id": 26,
+        "name": "Tea",
+        "category": {
+            "id": 6,
+            "name": "Tea, Coffee & Health Drinks"
+        }
+    },
+    {
+        "id": 27,
+        "name": "Coffee",
+        "category": {
+            "id": 6,
+            "name": "Tea, Coffee & Health Drinks"
+        }
+    },
+    {
+        "id": 28,
+        "name": "Milk Drinks",
+        "category": {
+            "id": 6,
+            "name": "Tea, Coffee & Health Drinks"
+        }
+    },
+    {
+        "id": 29,
+        "name": "Green & Flavoured Tea",
+        "category": {
+            "id": 6,
+            "name": "Tea, Coffee & Health Drinks"
+        }
+    },
+    {
+        "id": 30,
+        "name": "Herbal Drinks",
+        "category": {
+            "id": 6,
+            "name": "Tea, Coffee & Health Drinks"
+        }
+    },
+    {
+        "id": 31,
+        "name": "Biscuit Gift Pack",
+        "category": {
+            "id": 7,
+            "name": "Bakery & Biscuits"
+        }
+    },
+    {
+        "id": 32,
+        "name": "Bread & Pav",
+        "category": {
+            "id": 7,
+            "name": "Bakery & Biscuits"
+        }
+    },
+    {
+        "id": 33,
+        "name": "Cookies",
+        "category": {
+            "id": 7,
+            "name": "Bakery & Biscuits"
+        }
+    },
+    {
+        "id": 34,
+        "name": "Cream Biscuits",
+        "category": {
+            "id": 7,
+            "name": "Bakery & Biscuits"
+        }
+    },
+    {
+        "id": 35,
+        "name": "Glucose & Marie",
+        "category": {
+            "id": 7,
+            "name": "Bakery & Biscuits"
+        }
+    }
+]

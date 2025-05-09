@@ -24,8 +24,8 @@ export class DataLoaderService {
 
         this.initNameToJsonFilePathMap();
 
-        // await this.initNameToJsonDataMap();
-        await this.initNameToJsonDataMapFromDB();
+        await this.initNameToJsonDataMap();
+        // await this.initNameToJsonDataMapFromDB();
 
     }
 
@@ -45,7 +45,7 @@ export class DataLoaderService {
         this.nameToJsonDataMap = new Map<string, []>();
 
         for (const [name, jsonFilePath] of this.nameToJsonFilePathMap.entries()) {
-            const dataList = await this.loadDataListFromJsonFile(jsonFilePath, name);
+            const dataList = await this.loadDataListFromJsonFile(jsonFilePath);
             this.nameToJsonDataMap.set(name, dataList);
         }
 
@@ -69,7 +69,23 @@ export class DataLoaderService {
 
     }
 
-    async loadDataListFromJsonFile(jsonFilePath: string, name: string): Promise<any[]> {
+    async loadDataListFromJsonFile(jsonFilePath: string): Promise<any[]> {
+
+        let dataList: [] = [];
+
+        //  Fetch Data from JSON File
+        await fetch(jsonFilePath)
+            .then(response => response.json())
+            .then(jsonResponse => {
+                let tempList = jsonResponse;
+                if (tempList && tempList.length > 0) dataList = tempList as [];
+            });
+
+        return dataList;
+
+    }
+
+    async loadDataListFromJsonFileWithNameKey(jsonFilePath: string, name: string): Promise<any[]> {
 
         let dataList: [] = [];
 

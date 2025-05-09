@@ -20,4 +20,9 @@ export class EditAddressDialogComponent {
         if (target.id === 'backdrop') this.close.emit();
     }
 
+    handleSaveBtnClick() {
+        // Emit save event with the updated address
+        this.close.emit();
+    }
+
 }

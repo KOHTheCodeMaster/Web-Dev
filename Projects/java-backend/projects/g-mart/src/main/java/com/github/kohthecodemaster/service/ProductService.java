@@ -22,7 +22,7 @@ public class ProductService {
 
     public List<Product> getAllProducts() {
         List<Product> productList = productRepository.findAll();
-//        log.info("Fetched all products: {}", productList);
+//        log.info("Fetched all products: \n" + productList);
         return productList;
     }
 

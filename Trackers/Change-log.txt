@@ -20,6 +20,19 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         9th May 2K25 - 10:19 AM
+Commit Message:     312 - G-Mart - Angular - Fetch data from Local JSON Files
+
+Quick Summary:
+
+1. Updated Data Loader Service.
+    - Updated data loader service to fetch data from local JSON files.
+    - Temporarily disabled backend server data loading.
+
+2. Added Save button to Edit Address Component.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         5th May 2K25 - 09:35 PM
 Commit Message:     311 - G-Mart - Angular - Added Address Service to Manage Address List
 

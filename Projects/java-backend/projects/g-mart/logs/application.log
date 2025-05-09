@@ -1,27 +1,27 @@
-05-May-2025 18:12:30.651 INFO  com.github.kohthecodemaster.Main - 
+09-May-2025 09:51:23.538 INFO  com.github.kohthecodemaster.Main -
 
 ---------------------------
 Application Starting...
 ----------------------------
 
-05-May-2025 18:12:30.970 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 17536 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
-05-May-2025 18:12:30.970 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
-05-May-2025 18:12:31.700 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-05-May-2025 18:12:31.748 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
-05-May-2025 18:12:32.289 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-05-May-2025 18:12:32.304 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-05-May-2025 18:12:32.304 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-05-May-2025 18:12:32.304 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-05-May-2025 18:12:32.352 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-05-May-2025 18:12:32.352 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1335 ms
-05-May-2025 18:12:32.493 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-05-May-2025 18:12:32.666 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@f2276c9
-05-May-2025 18:12:32.666 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-05-May-2025 18:12:32.779 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-05-May-2025 18:12:32.823 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
-05-May-2025 18:12:32.854 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-05-May-2025 18:12:33.109 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-05-May-2025 18:12:33.171 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+09-May-2025 09:51:23.831 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 28276 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+09-May-2025 09:51:23.831 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+09-May-2025 09:51:24.415 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+09-May-2025 09:51:24.462 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 3 JPA repository interfaces.
+09-May-2025 09:51:24.930 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+09-May-2025 09:51:24.940 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+09-May-2025 09:51:24.940 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+09-May-2025 09:51:24.940 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+09-May-2025 09:51:24.987 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09-May-2025 09:51:24.987 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1118 ms
+09-May-2025 09:51:25.113 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09-May-2025 09:51:25.254 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@3caafa67
+09-May-2025 09:51:25.269 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09-May-2025 09:51:25.336 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+09-May-2025 09:51:25.379 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+09-May-2025 09:51:25.411 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+09-May-2025 09:51:25.670 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+09-May-2025 09:51:25.730 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 3.45.1
@@ -29,39 +29,39 @@ Application Starting...
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-05-May-2025 18:12:33.708 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-05-May-2025 18:12:33.708 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-05-May-2025 18:12:33.977 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-05-May-2025 18:12:34.416 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-05-May-2025 18:12:34.448 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-05-May-2025 18:12:34.448 INFO  com.github.kohthecodemaster.Main - Started Main in 3.75 seconds (process running for 8.072)
-05-May-2025 18:12:45.721 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-05-May-2025 18:12:45.721 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-05-May-2025 18:12:45.722 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-05-May-2025 21:10:12.393 INFO  com.github.kohthecodemaster.Main - 
+09-May-2025 09:51:26.282 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+09-May-2025 09:51:26.282 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+09-May-2025 09:51:26.539 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+09-May-2025 09:51:26.871 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+09-May-2025 09:51:26.891 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+09-May-2025 09:51:26.902 INFO  com.github.kohthecodemaster.Main - Started Main in 3.319 seconds (process running for 6.957)
+09-May-2025 09:51:36.226 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09-May-2025 09:51:36.226 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+09-May-2025 09:51:36.227 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+09-May-2025 09:57:50.483 INFO  com.github.kohthecodemaster.Main -
 
 ---------------------------
 Application Starting...
 ----------------------------
 
-05-May-2025 21:10:12.738 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 9584 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
-05-May-2025 21:10:12.738 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
-05-May-2025 21:10:13.671 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-05-May-2025 21:10:13.715 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 3 JPA repository interfaces.
-05-May-2025 21:10:14.445 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-05-May-2025 21:10:14.457 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-05-May-2025 21:10:14.457 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-05-May-2025 21:10:14.457 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-05-May-2025 21:10:14.575 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-05-May-2025 21:10:14.575 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1788 ms
-05-May-2025 21:10:14.718 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-05-May-2025 21:10:14.861 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@58f2466c
-05-May-2025 21:10:14.861 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-05-May-2025 21:10:14.924 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-05-May-2025 21:10:14.972 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
-05-May-2025 21:10:15.004 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-05-May-2025 21:10:15.242 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-05-May-2025 21:10:15.321 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+09-May-2025 09:57:50.752 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 29028 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+09-May-2025 09:57:50.752 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+09-May-2025 09:57:51.215 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+09-May-2025 09:57:51.246 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+09-May-2025 09:57:51.778 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+09-May-2025 09:57:51.790 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+09-May-2025 09:57:51.790 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+09-May-2025 09:57:51.790 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+09-May-2025 09:57:51.837 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09-May-2025 09:57:51.837 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1037 ms
+09-May-2025 09:57:52.026 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09-May-2025 09:57:52.169 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@3caafa67
+09-May-2025 09:57:52.169 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09-May-2025 09:57:52.215 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+09-May-2025 09:57:52.246 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+09-May-2025 09:57:52.278 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+09-May-2025 09:57:52.507 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+09-May-2025 09:57:52.562 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 3.45.1
@@ -69,9 +69,4275 @@ Application Starting...
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-05-May-2025 21:10:15.940 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-05-May-2025 21:10:15.940 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-05-May-2025 21:10:16.473 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-05-May-2025 21:10:17.433 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-05-May-2025 21:10:17.449 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-05-May-2025 21:10:17.476 INFO  com.github.kohthecodemaster.Main - Started Main in 4.989 seconds (process running for 9.498)
+09-May-2025 09:57:53.076 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+09-May-2025 09:57:53.076 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+09-May-2025 09:57:53.330 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+09-May-2025 09:57:53.849 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+09-May-2025 09:57:53.865 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+09-May-2025 09:57:53.865 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+09-May-2025 09:57:53.865 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09-May-2025 09:57:53.865 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+09-May-2025 09:57:53.881 INFO  o.s.b.a.l.ConditionEvaluationReportLogger -
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+09-May-2025 09:57:53.928 ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+09-May-2025 09:58:04.897 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+09-May-2025 09:58:05.416 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+09-May-2025 09:58:05.416 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+09-May-2025 09:58:05.416 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09-May-2025 09:58:05.416 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+09-May-2025 09:58:16.485 INFO  com.github.kohthecodemaster.Main -
+
+---------------------------
+Application Starting...
+----------------------------
+
+09-May-2025 09:58:16.782 INFO  com.github.kohthecodemaster.Main - Starting Main using Java 21.0.1 with PID 26048 (E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend\projects\g-mart\build\classes\java\main started by kingo in E:\KOH-Workspace\Dev-Zone\WebStorm-Projects\Frontend-Web-Dev\Projects\java-backend)
+09-May-2025 09:58:16.782 INFO  com.github.kohthecodemaster.Main - No active profile set, falling back to 1 default profile: "default"
+09-May-2025 09:58:17.241 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+09-May-2025 09:58:17.289 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+09-May-2025 09:58:17.749 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+09-May-2025 09:58:17.765 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+09-May-2025 09:58:17.765 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+09-May-2025 09:58:17.765 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+09-May-2025 09:58:17.812 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09-May-2025 09:58:17.812 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 977 ms
+09-May-2025 09:58:17.970 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09-May-2025 09:58:18.111 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@5809fa26
+09-May-2025 09:58:18.127 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09-May-2025 09:58:18.166 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+09-May-2025 09:58:18.198 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+09-May-2025 09:58:18.214 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+09-May-2025 09:58:18.435 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+09-May-2025 09:58:18.482 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.45.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+09-May-2025 09:58:19.011 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+09-May-2025 09:58:19.011 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+09-May-2025 09:58:19.237 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+09-May-2025 09:58:19.731 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+09-May-2025 09:58:19.778 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+09-May-2025 09:58:19.778 INFO  com.github.kohthecodemaster.Main - Started Main in 3.229 seconds (process running for 3.58)
+09-May-2025 09:58:32.148 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09-May-2025 09:58:32.149 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+09-May-2025 09:58:32.149 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+09-May-2025 09:58:32.355 INFO  c.g.k.service.ProductService - Fetched all products:
+[{
+  "id": 1,
+  "name": "Onion (Pyaz)",
+  "price": 51.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 2,
+  "name": "Potato - New Crop",
+  "price": 37.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 3,
+  "name": "English Cucumber (Kheera) (500-600) g",
+  "price": 37.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 4,
+  "name": "Lemon (Nimbu)",
+  "price": 33.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 5,
+  "name": "Green Capsicum (Shimla Mirch)",
+  "price": 33.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 6,
+  "name": "Green Peas (Matar)",
+  "price": 33.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 7,
+  "name": "Cabbage (Patta Gobhi)",
+  "price": 19.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 8,
+  "name": "Button Mushroom",
+  "price": 54.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 9,
+  "name": "Garlic (Lehsun)",
+  "price": 100.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 10,
+  "name": "Lady Finger (Bhindi)",
+  "price": 42.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 1,
+    "name": "Fresh Vegetables",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 11,
+  "name": "Tender Coconut (Nariyal) (275+ ml)",
+  "price": 72.0,
+  "productUnitValue": 275.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 12,
+  "name": "Brown Coconut (Nariyal)",
+  "price": 64.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 13,
+  "name": "Papaya (Papita)",
+  "price": 96.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 14,
+  "name": "Guava (Amrud)",
+  "price": 46.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 15,
+  "name": "Kinnow Orange",
+  "price": 42.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 16,
+  "name": "Small Shimla Apple (Seb)",
+  "price": 145.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 17,
+  "name": "Green Grapes 500 g",
+  "price": 150.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 18,
+  "name": "Pomegranate - Medium (500-700) g (Anaar)",
+  "price": 151.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 19,
+  "name": "Shimla Apple Regular",
+  "price": 140.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 20,
+  "name": "Pomegranate - Large",
+  "price": 198.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 2,
+    "name": "Fresh Fruits",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 21,
+  "name": "Muskmelon (Kharbuja)",
+  "price": 161.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 3,
+    "name": "Mangoes \u0026 Melons",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 22,
+  "name": "Kiran Watermelon (Tarbuj)",
+  "price": 90.0,
+  "productUnitValue": 2.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 3,
+    "name": "Mangoes \u0026 Melons",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 23,
+  "name": "Sun Melon (Sarda)",
+  "price": 154.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 3,
+    "name": "Mangoes \u0026 Melons",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 24,
+  "name": "Broccoli",
+  "price": 108.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 25,
+  "name": "Thai Guava",
+  "price": 54.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 26,
+  "name": "Green Capsicum (Shimla Mirch)",
+  "price": 33.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 27,
+  "name": "Green Peas (Peeled)",
+  "price": 85.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 28,
+  "name": "Green Peas (Matar)",
+  "price": 33.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 29,
+  "name": "Cabbage (Patta Gobhi)",
+  "price": 19.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 30,
+  "name": "Sugarcane Cubes",
+  "price": 42.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 31,
+  "name": "Guava (Amrud)",
+  "price": 46.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 32,
+  "name": "Kinnow Orange",
+  "price": 42.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 33,
+  "name": "Small Shimla Apple (Seb)",
+  "price": 145.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 34,
+  "name": "Avocado - Tanzania (150-200) g",
+  "price": 110.0,
+  "productUnitValue": 150.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 35,
+  "name": "Broccoli",
+  "price": 108.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 36,
+  "name": "Green Kiwi",
+  "price": 93.0,
+  "productUnitValue": 3.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 37,
+  "name": "Thai Guava",
+  "price": 54.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 38,
+  "name": "Mini Orange",
+  "price": 96.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 39,
+  "name": "Red Delicious Apple",
+  "price": 134.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 40,
+  "name": "Baby Corn - Packet",
+  "price": 48.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 41,
+  "name": "Fresh Rosemary",
+  "price": 39.0,
+  "productUnitValue": 50.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 42,
+  "name": "Pink Lady Apple (300-400) g",
+  "price": 148.0,
+  "productUnitValue": 300.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 43,
+  "name": "Green Zucchini",
+  "price": 58.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 1,
+    "name": "Vegetables \u0026 Fruits"
+  },
+  "subcategory": {
+    "id": 5,
+    "name": "Exotics",
+    "category": {
+      "id": 1,
+      "name": "Vegetables \u0026 Fruits"
+    }
+  }
+}, {
+  "id": 44,
+  "name": "Amul Taaza Toned Fresh Milk",
+  "price": 26.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 45,
+  "name": "Amul Moti Toned Milk (90 Days Shelf Life)",
+  "price": 33.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 46,
+  "name": "Amul Taaza Homogenised Toned Milk",
+  "price": 74.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 47,
+  "name": "Amul Taaza Toned Milk",
+  "price": 16.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 48,
+  "name": "Amul Gold Milk",
+  "price": 80.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 49,
+  "name": "Amul Lactose Free Milk",
+  "price": 25.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 50,
+  "name": "Yakult Probiotic Drink (5 x 65) ml",
+  "price": 90.0,
+  "productUnitValue": 65.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 51,
+  "name": "Mother Dairy FIT Life Homogenized Double Toned Milk",
+  "price": 33.0,
+  "productUnitValue": 450.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 52,
+  "name": "Nestle a+ Toned Milk",
+  "price": 101.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 53,
+  "name": "Mother Dairy Toned Milk",
+  "price": 74.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 6,
+    "name": "Milk",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 54,
+  "name": "Harvest Gold Hearty Brown Bread",
+  "price": 55.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 55,
+  "name": "Harvest Gold Sandwich White Bread",
+  "price": 45.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 56,
+  "name": "English Oven Zero Maida 100% Whole Wheat Bread",
+  "price": 55.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 57,
+  "name": "English Oven Brown Bread",
+  "price": 55.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 58,
+  "name": "English Oven Sandwich White Bread",
+  "price": 45.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 59,
+  "name": "English Oven Zero Maida Multigrain Bread",
+  "price": 70.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 60,
+  "name": "English Oven Milk Bread",
+  "price": 50.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 61,
+  "name": "Harvest Gold White Bread",
+  "price": 55.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 62,
+  "name": "English Oven Zero Maida Whole Wheat Bread",
+  "price": 60.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 63,
+  "name": "Harvest Gold Bunjoy Tutti Frutti Sweet Bun",
+  "price": 20.0,
+  "productUnitValue": 6.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 7,
+    "name": "Bread \u0026 Pav",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 64,
+  "name": "Nature Good White Eggs",
+  "price": 57.0,
+  "productUnitValue": 6.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 8,
+    "name": "Eggs",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 65,
+  "name": "The Natural Fresh White Eggs",
+  "price": 128.0,
+  "productUnitValue": 10.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 8,
+    "name": "Eggs",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 66,
+  "name": "Nature Good White Eggs",
+  "price": 259.0,
+  "productUnitValue": 30.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 8,
+    "name": "Eggs",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 67,
+  "name": "Nature Good Brown Eggs",
+  "price": 85.0,
+  "productUnitValue": 6.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 8,
+    "name": "Eggs",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 68,
+  "name": "The Natural Fresh White Eggs",
+  "price": 308.0,
+  "productUnitValue": 30.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 8,
+    "name": "Eggs",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 69,
+  "name": "The Natural Fresh White Eggs",
+  "price": 80.0,
+  "productUnitValue": 6.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 8,
+    "name": "Eggs",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 70,
+  "name": "Eggoz Nutrition Protein Rich Brown Eggs",
+  "price": 161.0,
+  "productUnitValue": 10.0,
+  "productUnitLabel": {
+    "id": 5,
+    "label": "pieces"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 8,
+    "name": "Eggs",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 71,
+  "name": "Kellogg\u0027s Real Almond Honey Corn Flakes",
+  "price": 369.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 72,
+  "name": "Kellogg\u0027s Multigrain Chocos Variety Pack",
+  "price": 64.0,
+  "productUnitValue": 120.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 73,
+  "name": "Kellogg\u0027s Corn Flakes with Immuno Nutrients",
+  "price": 120.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 74,
+  "name": "Kellogg\u0027s Corn Flakes Original",
+  "price": 195.0,
+  "productUnitValue": 475.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 75,
+  "name": "Kellogg\u0027s Multigrain Chocos Moons \u0026 Stars",
+  "price": 458.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 76,
+  "name": "Kellogg\u0027s Double Chocolaty Fills Chocos (Crunchy Outside, Creamy Inside)",
+  "price": 192.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 77,
+  "name": "Kellogg\u0027s Corn Flakes Original",
+  "price": 387.0,
+  "productUnitValue": 875.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 78,
+  "name": "Hide \u0026 Seek Fills Cereal",
+  "price": 94.0,
+  "productUnitValue": 150.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 79,
+  "name": "Kellogg\u0027s Real Almond Honey Corn Flakes",
+  "price": 94.0,
+  "productUnitValue": 150.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 80,
+  "name": "Kellogg\u0027s Froot Loops - Crunchy Multigrain Cereal",
+  "price": 195.0,
+  "productUnitValue": 285.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 9,
+    "name": "Flakes \u0026 Kids Cereals",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 81,
+  "name": "Kellogg\u0027s Muesli Nuts Delight, Breakfast Cereal",
+  "price": 426.0,
+  "productUnitValue": 750.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 82,
+  "name": "Kellogg\u0027s Muesli Fruit, Nut \u0026 Seeds",
+  "price": 187.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 83,
+  "name": "Kellogg\u0027s Muesli Fruit, Nut \u0026 Seeds",
+  "price": 385.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 84,
+  "name": "Yoga Bar Dark Chocolate + Cranberry \u0026 Fruit + Nuts \u0026 Seeds Muesli",
+  "price": 99.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 85,
+  "name": "Bagrry\u0027s Crunchy Muesli 30% Fruit \u0026 Nut with Cranberries",
+  "price": 396.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 86,
+  "name": "MuscleBlaze High Protein Dark Chocolate \u0026 Cranberry Muesli",
+  "price": 273.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 87,
+  "name": "Yoga Bar Fruits + Nuts \u0026 Seeds Muesli",
+  "price": 312.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 88,
+  "name": "Yoga Bar Dark Chocolate \u0026 Cranberry Muesli",
+  "price": 396.0,
+  "productUnitValue": 700.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 89,
+  "name": "Bagrry\u0027s Crunchy Muesli With Almonds, Raisins \u0026 Honey",
+  "price": 410.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 90,
+  "name": "True Elements Muesli with Real Fruits, Nuts \u0026 Seeds",
+  "price": 400.0,
+  "productUnitValue": 500.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 2,
+    "name": "Dairy \u0026 Breakfast"
+  },
+  "subcategory": {
+    "id": 10,
+    "name": "Muesli \u0026 Granola",
+    "category": {
+      "id": 2,
+      "name": "Dairy \u0026 Breakfast"
+    }
+  }
+}, {
+  "id": 91,
+  "name": "Cornitos Crusties Korean Chilli Puffs",
+  "price": 45.0,
+  "productUnitValue": 60.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 92,
+  "name": "Uncle Chipps Spicy Treat Flavour Potato Chips",
+  "price": 20.0,
+  "productUnitValue": 48.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 93,
+  "name": "Kurkure Masala Munch Crisps (3 x 90) g",
+  "price": 54.0,
+  "productUnitValue": 90.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 94,
+  "name": "Lay\u0027s India\u0027s Magic Masala Potato Chips",
+  "price": 30.0,
+  "productUnitValue": 78.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 95,
+  "name": "Lay\u0027s West Indies Hot n Sweet Chilli Flavour Potato Chips",
+  "price": 20.0,
+  "productUnitValue": 52.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 96,
+  "name": "Lay\u0027s American Style Cream \u0026 Onion Potato Chips",
+  "price": 30.0,
+  "productUnitValue": 78.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 97,
+  "name": "Kurkure Puffcorn Yummy Cheese Puffs (3 x 60) g",
+  "price": 54.0,
+  "productUnitValue": 60.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 98,
+  "name": "Lay\u0027s Chile Limon Flavour Potato Chips",
+  "price": 20.0,
+  "productUnitValue": 52.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 99,
+  "name": "Lay\u0027s Crispz Herb \u0026 Onion Potato Chips",
+  "price": 20.0,
+  "productUnitValue": 52.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 100,
+  "name": "Bingo Tedhe Medhe Masala Tadka Crisps (3 x 70) g",
+  "price": 40.0,
+  "productUnitValue": 70.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 11,
+    "name": "Chips \u0026 Crisps",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 101,
+  "name": "Parle Real Elaichi Premium Rusk",
+  "price": 47.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 102,
+  "name": "Britannia Toastea Premium Bake Rusk",
+  "price": 47.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 103,
+  "name": "Parle Premium Real Elaichi Rusk",
+  "price": 147.0,
+  "productUnitValue": 600.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 104,
+  "name": "Britannia Treat Rich Crème Chocolate Flavoured Wafers",
+  "price": 27.0,
+  "productUnitValue": 75.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 105,
+  "name": "English Oven Extra Crunchy Premium Rusk",
+  "price": 67.0,
+  "productUnitValue": 300.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 106,
+  "name": "Dukes Waffy Chocolate Wafers",
+  "price": 27.0,
+  "productUnitValue": 75.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 107,
+  "name": "Britannia Treat Rich Creme Orange Flavoured Wafers",
+  "price": 27.0,
+  "productUnitValue": 75.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 108,
+  "name": "Dukes Waffy Choco Wafer Roll",
+  "price": 98.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 109,
+  "name": "Dukes Waffy Orange Wafers",
+  "price": 27.0,
+  "productUnitValue": 75.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 110,
+  "name": "Dukes Waffy Vanilla Wafers",
+  "price": 27.0,
+  "productUnitValue": 75.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 12,
+    "name": "Rusks \u0026 Wafers",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 111,
+  "name": "Yoga Bar Daily 10g Protein Bar (6 x 50) g",
+  "price": 301.0,
+  "productUnitValue": 50.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 112,
+  "name": "Yoga Bar Chocolate Chunk Nut Multigrain Protein Bar",
+  "price": 38.0,
+  "productUnitValue": 35.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 113,
+  "name": "Yoga Bar 10g Dark Chocolate \u0026 Cranberry Protein Bar",
+  "price": 58.0,
+  "productUnitValue": 60.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 114,
+  "name": "RiteBite Max Protein Daily Choco Almond Protein Bar (2 x 50) g",
+  "price": 140.0,
+  "productUnitValue": 50.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 115,
+  "name": "Yoga Bar Nuts \u0026 Seeds Multigrain Energy Protein Bar",
+  "price": 38.0,
+  "productUnitValue": 35.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 116,
+  "name": "RiteBite Max Protein Daily Choco Berry Protein Bar (3 x 50) g",
+  "price": 205.0,
+  "productUnitValue": 50.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 117,
+  "name": "Yoga Bar Blueberry Pie Breakfast Protein Bar",
+  "price": 45.0,
+  "productUnitValue": 50.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 118,
+  "name": "RiteBite Max Protein Daily Protein Bar (Assorted) (6 x 50) g",
+  "price": 388.0,
+  "productUnitValue": 50.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 119,
+  "name": "RiteBite Max Protein Bar (Peanut Butter)",
+  "price": 119.0,
+  "productUnitValue": 70.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 120,
+  "name": "RiteBite Choco Delite 4g Protein Bar",
+  "price": 43.0,
+  "productUnitValue": 40.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 13,
+    "name": "Energy Bars",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 121,
+  "name": "Cornitos Tomato Mexicana Nachos Crisps (2 x 150) g",
+  "price": 173.0,
+  "productUnitValue": 150.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 122,
+  "name": "Doritos Dinamita Sizzling Hot Nachos Crisps",
+  "price": 26.0,
+  "productUnitValue": 50.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 123,
+  "name": "Cornitos Nachos Crisps \u0026 Dip Combo (150 g + 50 g)",
+  "price": 68.0,
+  "productUnitValue": 150.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 124,
+  "name": "Doritos Cheese Nachos (2 x 100) g",
+  "price": 135.0,
+  "productUnitValue": 100.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 125,
+  "name": "Cornitos Sweet Chilli Nachos Crisps (2 x 150) g",
+  "price": 173.0,
+  "productUnitValue": 150.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 126,
+  "name": "Cornitos Cheese \u0026 Herbs Nachos",
+  "price": 57.0,
+  "productUnitValue": 150.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 127,
+  "name": "Doritos Sweet Chilli Flavour Nachos (2 x 70) g",
+  "price": 80.0,
+  "productUnitValue": 70.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 128,
+  "name": "Bingo Mad Angles Pizza Nachos (3 x 65) g",
+  "price": 57.0,
+  "productUnitValue": 65.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 129,
+  "name": "Cornitos Sea Salt Nachos (2 x 150) g",
+  "price": 173.0,
+  "productUnitValue": 150.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 130,
+  "name": "Doritos Cheese Nachos",
+  "price": 45.0,
+  "productUnitValue": 100.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 14,
+    "name": "Nachos",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 131,
+  "name": "Bikaji Bhujia",
+  "price": 113.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 132,
+  "name": "Bikaji Mobile Chowpati Bhelpuri",
+  "price": 40.0,
+  "productUnitValue": 150.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 133,
+  "name": "Bikano Bikaneri Bhujia",
+  "price": 60.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 134,
+  "name": "Bikaji Kuch Kuch All In One Mixture Namkeen",
+  "price": 60.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 135,
+  "name": "Bikaji Bikaneri Bhujia",
+  "price": 283.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 136,
+  "name": "Bikano Aloo Bhujia",
+  "price": 55.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 137,
+  "name": "Bikaji Tana Tan Aloo Bhujia",
+  "price": 113.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 138,
+  "name": "Bikaji All in One Kuch Kuch Mixture Namkeen",
+  "price": 317.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 139,
+  "name": "Bikano Navratan Mixture Namkeen",
+  "price": 55.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 140,
+  "name": "Let\u0027s Try Namkeen Combo (3 x 100) g",
+  "price": 86.0,
+  "productUnitValue": 100.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 3,
+    "name": "Munchies"
+  },
+  "subcategory": {
+    "id": 15,
+    "name": "Bhujia \u0026 Mixtures",
+    "category": {
+      "id": 3,
+      "name": "Munchies"
+    }
+  }
+}, {
+  "id": 141,
+  "name": "Coolberg Non Alcoholic Beer (Assorted) (6 x 330) ml",
+  "price": 547.0,
+  "productUnitValue": 330.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 16,
+    "name": "Beverages Gift Packs",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 142,
+  "name": "Real Greetings Festive Juice Gift Pack - Free Real Fruit Power 180 ml (4 x 180) ml",
+  "price": 208.0,
+  "productUnitValue": 180.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 16,
+    "name": "Beverages Gift Packs",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 143,
+  "name": "Real Greetings Beverage Gift Pack - with 2 units of Real Fruit Power 180ml Free (6 x 180) ml",
+  "price": 324.0,
+  "productUnitValue": 180.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 16,
+    "name": "Beverages Gift Packs",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 144,
+  "name": "Blue Tokai Starter Coffee Gift Pack (3 x 250) g",
+  "price": 999.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 16,
+    "name": "Beverages Gift Packs",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 145,
+  "name": "Chaayos Festive Tea Gift Box (3 x 100) g",
+  "price": 549.0,
+  "productUnitValue": 100.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 16,
+    "name": "Beverages Gift Packs",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 146,
+  "name": "Thums Up Soft Drink",
+  "price": 40.0,
+  "productUnitValue": 750.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 147,
+  "name": "Coca-Cola Soft Drink (2 x 750) ml",
+  "price": 79.0,
+  "productUnitValue": 750.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 148,
+  "name": "Sprite Lime Flavored Soft Drink",
+  "price": 40.0,
+  "productUnitValue": 750.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 149,
+  "name": "7UP Nimbooz with Lemon Juice",
+  "price": 20.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 150,
+  "name": "Coca-Cola Diet Coke Soft Drink",
+  "price": 40.0,
+  "productUnitValue": 300.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 151,
+  "name": "Coca-Cola Soft Drink",
+  "price": 96.0,
+  "productUnitValue": 1.25,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 152,
+  "name": "Coca-Cola Zero Sugar Soft Drink Can",
+  "price": 40.0,
+  "productUnitValue": 300.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 153,
+  "name": "Limca Lemon \u0027N\u0027 Lime Soft Drink",
+  "price": 40.0,
+  "productUnitValue": 750.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 154,
+  "name": "Coca-Cola Soft Drink",
+  "price": 40.0,
+  "productUnitValue": 300.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 155,
+  "name": "paper boat Zero Lemon Lime Flavoured Sparkling Drink",
+  "price": 59.0,
+  "productUnitValue": 300.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 17,
+    "name": "Soft Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 156,
+  "name": "paper boat Swing Lush Lychee Juice (2 x 250) ml",
+  "price": 81.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 157,
+  "name": "Appy Apple Juice",
+  "price": 10.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 158,
+  "name": "Real Fruit Power Cranberry Juice",
+  "price": 130.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 159,
+  "name": "Real Fruit Power Mixed Fruit Juice",
+  "price": 120.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 160,
+  "name": "paper boat Nata De Coco Lychee Juice",
+  "price": 39.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 161,
+  "name": "Real Fruit Power Orange Juice",
+  "price": 120.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 162,
+  "name": "paper boat Swing Yummy Guava Juice",
+  "price": 42.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 163,
+  "name": "Real Fruit Power Pineapple Juice",
+  "price": 120.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 164,
+  "name": "Fresca Litchi Juice",
+  "price": 113.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 165,
+  "name": "paper boat Chilli Guava Fruit Juice",
+  "price": 34.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 18,
+    "name": "Fruit Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 166,
+  "name": "Frooti Mango Drink",
+  "price": 10.0,
+  "productUnitValue": 160.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 167,
+  "name": "Maaza Mango Drink",
+  "price": 40.0,
+  "productUnitValue": 600.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 168,
+  "name": "paper boat Aamras Mango Drink",
+  "price": 34.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 169,
+  "name": "Maaza Mango Drink",
+  "price": 73.0,
+  "productUnitValue": 1.2,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 170,
+  "name": "Slice Mango Drink",
+  "price": 93.0,
+  "productUnitValue": 1.75,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 171,
+  "name": "Real Alphonso Nectar Mango Drink",
+  "price": 102.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 172,
+  "name": "Frooti Mango Drink",
+  "price": 99.0,
+  "productUnitValue": 1.8,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 173,
+  "name": "paper boat Aam Panna Mango Drink",
+  "price": 34.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 174,
+  "name": "Raw Pressery Alphonso Mango Drink",
+  "price": 243.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 175,
+  "name": "paper boat Aamras/ Mango Drink",
+  "price": 143.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 19,
+    "name": "Mango Drinks",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 176,
+  "name": "Real Activ Cranberry Juice",
+  "price": 123.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 177,
+  "name": "Real Activ Apple Juice",
+  "price": 113.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 178,
+  "name": "Real Activ Orange Juice",
+  "price": 145.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 179,
+  "name": "Real Activ Fibre+ Multi Fruit Juice",
+  "price": 119.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 180,
+  "name": "Real Activ Mixed Fruit Juice",
+  "price": 145.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 181,
+  "name": "Raw Pressery Valencia Orange Juice",
+  "price": 388.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 182,
+  "name": "Raw Pressery Valencia Orange Juice",
+  "price": 150.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 183,
+  "name": "Real Activ Pomegranate Juice",
+  "price": 180.0,
+  "productUnitValue": 1.0,
+  "productUnitLabel": {
+    "id": 4,
+    "label": "Ltr"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 184,
+  "name": "Raw Pressery Pomegranate Juice",
+  "price": 150.0,
+  "productUnitValue": 250.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 185,
+  "name": "Raw Pressery Sugarcane Juice",
+  "price": 79.0,
+  "productUnitValue": 330.0,
+  "productUnitLabel": {
+    "id": 3,
+    "label": "ml"
+  },
+  "category": {
+    "id": 4,
+    "name": "Cold Drinks \u0026 Juices"
+  },
+  "subcategory": {
+    "id": 20,
+    "name": "Pure Juices",
+    "category": {
+      "id": 4,
+      "name": "Cold Drinks \u0026 Juices"
+    }
+  }
+}, {
+  "id": 186,
+  "name": "Maggi Masala - 2 Minutes Instant Noodles",
+  "price": 60.0,
+  "productUnitValue": 280.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 187,
+  "name": "Maggi 2 - Minute Instant Noodles (12 x 70) g",
+  "price": 165.0,
+  "productUnitValue": 70.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 188,
+  "name": "Maggi Masala 2 Minutes Instant Noodles",
+  "price": 114.0,
+  "productUnitValue": 420.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 189,
+  "name": "Maggi Nutri-Licious Masala Veg Atta Instant Noodles",
+  "price": 101.0,
+  "productUnitValue": 320.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 190,
+  "name": "Maggi Cuppa Masala Cup Noodles",
+  "price": 45.0,
+  "productUnitValue": 70.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 191,
+  "name": "Sunfeast Yippee Magic Masala Instant Noodles",
+  "price": 51.0,
+  "productUnitValue": 240.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 192,
+  "name": "Yu 100% Whole Wheat Noodles",
+  "price": 43.0,
+  "productUnitValue": 180.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 193,
+  "name": "Maggi Spicy Garlic Instant Noodles",
+  "price": 70.0,
+  "productUnitValue": 240.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 194,
+  "name": "Wai Wai Ready To Eat Veg Masala Flavoured Noodles",
+  "price": 86.0,
+  "productUnitValue": 200.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 195,
+  "name": "Tops Plain Hakka Noodles",
+  "price": 54.0,
+  "productUnitValue": 300.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 21,
+    "name": "Noodles",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 196,
+  "name": "McCain French Fries (Frozen)",
+  "price": 103.0,
+  "productUnitValue": 420.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 22,
+    "name": "Frozen Veg Snacks",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 197,
+  "name": "McCain Smiles (Frozen)",
+  "price": 140.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 22,
+    "name": "Frozen Veg Snacks",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 198,
+  "name": "McCain French Fries (Frozen)",
+  "price": 262.0,
+  "productUnitValue": 1.25,
+  "productUnitLabel": {
+    "id": 2,
+    "label": "Kg"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 22,
+    "name": "Frozen Veg Snacks",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 199,
+  "name": "McCain Aloo Tikki (Frozen)",
+  "price": 94.0,
+  "productUnitValue": 400.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 22,
+    "name": "Frozen Veg Snacks",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}, {
+  "id": 200,
+  "name": "McCain Potato Cheese Nuggets Shotz (Frozen)",
+  "price": 170.0,
+  "productUnitValue": 300.0,
+  "productUnitLabel": {
+    "id": 1,
+    "label": "g"
+  },
+  "category": {
+    "id": 5,
+    "name": "Instant \u0026 Frozen Food"
+  },
+  "subcategory": {
+    "id": 22,
+    "name": "Frozen Veg Snacks",
+    "category": {
+      "id": 5,
+      "name": "Instant \u0026 Frozen Food"
+    }
+  }
+}]
