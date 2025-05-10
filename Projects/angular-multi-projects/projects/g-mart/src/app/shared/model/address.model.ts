@@ -35,6 +35,32 @@ export class Address {
         this.googleMapsExtras = googleMapsExtras;
     }
 
+    clone(): Address {
+        return new Address(
+            this.id,
+            this.label,
+            this.houseNumberOrName,
+            this.floor,
+            this.locality,
+            this.landmark,
+            this.receiverName,
+            this.mobNumber,
+            this.googleMapsExtras);
+    }
+
+    copyFrom(tempAddress: Address) {
+        if (tempAddress) {
+            this.label = tempAddress.getLabel();
+            this.houseNumberOrName = tempAddress.getHouseNumber();
+            this.floor = tempAddress.getFloor();
+            this.locality = tempAddress.getLocality();
+            this.landmark = tempAddress.getLandmark();
+            this.receiverName = tempAddress.getReceiverName();
+            this.mobNumber = tempAddress.getMobNumber();
+            this.googleMapsExtras = tempAddress.getGoogleMapsExtras();
+        }
+    }
+
     toggleEditAndDeletePopup(): void {
         const currentState = this.isEditAndDeletePopupOpened$.getValue();
         this.updateIsEditAndDeletePopupOpenedValue(!currentState);
@@ -67,6 +93,12 @@ export class Address {
                 ${this.floor ? 'Floor ' + this.floor + ', ' : ''}${this.locality}, ${this.landmark}`;
     }
 
+    isCustomLabel(): boolean {
+        return this.label.toLocaleLowerCase() !== 'home' &&
+            this.label.toLocaleLowerCase() !== 'work' &&
+            this.label.toLocaleLowerCase() !== '';
+    }
+
 
     //  Getters
     //  -------
@@ -79,32 +111,64 @@ export class Address {
         return this.label;
     }
 
+    public setLabel(label: string): void {
+        this.label = label;
+    }
+
     public getHouseNumber(): string {
         return this.houseNumberOrName;
+    }
+
+    public setHouseNumber(houseNumberOrName: string): void {
+        this.houseNumberOrName = houseNumberOrName;
     }
 
     public getFloor(): number {
         return this.floor;
     }
 
+    public setFloor(floor: number): void {
+        this.floor = floor;
+    }
+
     public getLocality(): string {
         return this.locality;
+    }
+
+    public setLocality(locality: string): void {
+        this.locality = locality;
     }
 
     public getLandmark(): string {
         return this.landmark;
     }
 
+    public setLandmark(landmark: string): void {
+        this.landmark = landmark;
+    }
+
     public getReceiverName(): string {
         return this.receiverName;
+    }
+
+    public setReceiverName(receiverName: string): void {
+        this.receiverName = receiverName;
     }
 
     public getMobNumber(): number {
         return this.mobNumber;
     }
 
+    public setMobNumber(mobNumber: number): void {
+        this.mobNumber = mobNumber;
+    }
+
     public getGoogleMapsExtras(): string {
         return this.googleMapsExtras;
+    }
+
+    public setGoogleMapsExtras(googleMapsExtras: string): void {
+        this.googleMapsExtras = googleMapsExtras;
     }
 
     public getIsEditAndDeletePopupOpened$(): Observable<boolean> {

@@ -17,34 +17,47 @@
             <!-- Label -->
             <div class="space-y-1">
                 <span class="text-xs">Save address as *</span>
-                <div class="flex gap-2 items-center">
-                    <button class="p-2 flex gap-2 items-center rounded-md"
+                <div *ngIf="!tempAddress?.isCustomLabel();" class="flex gap-2 items-center">
+                    <button (click)="handleLabelBtnClick('home')"
+                            class="p-2 flex gap-2 items-center rounded-md"
                             [ngClass]="{
-                            'border-2 border-green-700' : address.getLabel().toLocaleLowerCase() === 'home',
-                            'border border-gray-700' : address.getLabel().toLocaleLowerCase() !== 'home'
+                            'border-2 border-green-700' : tempAddress != null && tempAddress.getLabel().toLocaleLowerCase() === 'home',
+                            'border border-gray-700' : tempAddress != null && tempAddress.getLabel().toLocaleLowerCase() !== 'home'
                             }">
                         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
                         <span>Home</span>
                     </button>
 
-                    <button class="p-2 flex gap-2 items-center rounded-md"
+                    <button (click)="handleLabelBtnClick('work')"
+                            class="p-2 flex gap-2 items-center rounded-md"
                             [ngClass]="{
-                            'border-2 border-green-700' : address.getLabel().toLocaleLowerCase() === 'work',
-                            'border border-gray-700' : address.getLabel().toLocaleLowerCase() !== 'work'
+                            'border-2 border-green-700' : tempAddress != null && tempAddress.getLabel().toLocaleLowerCase() === 'work',
+                            'border border-gray-700' : tempAddress != null && tempAddress.getLabel().toLocaleLowerCase() !== 'work'
                             }">
                         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
                         <span>Work</span>
                     </button>
 
-                    <button class="p-2 flex gap-2 items-center rounded-md"
-                            [ngClass]="{
-                            'border-2 border-green-700' : address.getLabel().toLocaleLowerCase() === 'other',
-                            'border border-gray-700' : address.getLabel().toLocaleLowerCase() !== 'other'
-                            }">
+                    <button (click)="handleLabelBtnClick('other')"
+                            class="p-2 flex gap-2 items-center rounded-md border border-gray-700">
                         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
                         <span>Other</span>
                     </button>
                 </div>
+
+                <!-- When Label is neither Home nor Work i.e. Other -->
+                <div *ngIf="tempAddress?.isCustomLabel()" class="flex gap-2 ">
+                    <button (click)="handleLabelBtnClick('')"
+                            class="p-2 flex gap-2 items-center rounded-md border-2 border-green-700">
+                        <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+                        <span>Other</span>
+                    </button>
+                    <input type="text"
+                           [(ngModel)]="strCustomLabelInput"
+                           placeholder="Label"
+                           class="w-[50%] bg-transparent border-b border-gray-600 outline-none text-white text-sm"/>
+                </div>
+
             </div>
 
             <!--

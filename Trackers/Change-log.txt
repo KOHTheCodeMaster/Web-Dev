@@ -20,6 +20,21 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         11th May 2K25 - 01:04 AM
+Commit Message:     314 - G-Mart - Angular - Added Label Buttons in Edit Address Component
+
+Quick Summary:
+
+1. Added Label Buttons in Edit Address Component.
+    - Implemented buttons for the address label (Home, Work, Other).
+    - User can select the address label by clicking on the respective label button.
+
+2. Custom Label Functionality.
+    - Added functionality to allow users to enter a custom label for the address.
+    - The custom label will be saved when the user clicks on the Save button.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         9th May 2K25 - 07:51 PM
 Commit Message:     313 - G-Mart - Angular - Added `selectedAddress$` to Edit Address Component
 
