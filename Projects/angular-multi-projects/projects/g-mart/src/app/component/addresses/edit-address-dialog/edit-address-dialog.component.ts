@@ -54,7 +54,7 @@ export class EditAddressDialogComponent {
 
     handleLabelBtnClick(label: string): void {
         //  Toggle the label if it is already set to the same value
-        if (this.tempAddress?.getLabel().toLocaleLowerCase() === label) label = '';
+        if (this.tempAddress?.getLabel() === label) label = '';
 
         //  Update the address label
         this.tempAddress?.setLabel(label);

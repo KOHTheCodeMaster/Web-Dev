@@ -94,9 +94,9 @@ export class Address {
     }
 
     isCustomLabel(): boolean {
-        return this.label.toLocaleLowerCase() !== 'home' &&
-            this.label.toLocaleLowerCase() !== 'work' &&
-            this.label.toLocaleLowerCase() !== '';
+        return this.label !== 'Home' &&
+            this.label !== 'Work' &&
+            this.label !== '';
     }
 
 

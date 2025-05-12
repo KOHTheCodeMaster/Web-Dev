@@ -1,0 +1,195 @@
+
+```
+<!-- Floating Label Input -->
+<div class="relative w-full">
+    <input [(ngModel)]="tempAddress!['landmark']"
+           type="text"
+           id="landmark"
+           placeholder=" "
+           class="peer w-full px-3 py-2 bg-gray-800 text-sm text-white rounded-md border
+        border-gray-600 placeholder-transparent focus:outline-none focus:border-cyan-400 focus:ring-0"/>
+
+    <label for="landmark"
+           class="absolute left-3 top-2.5 text-sm text-gray-400 bg-gray-800 px-1
+            transition-all duration-200 pointer-events-none
+            peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-sm
+             peer-placeholder-shown:text-gray-400 peer-focus:px-1
+            peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-400 peer-focus:bg-gray-900
+            peer-[&:not(:focus):not(:placeholder-shown)]:-top-2
+            peer-[&:not(:focus):not(:placeholder-shown)]:text-xs
+            peer-[&:not(:focus):not(:placeholder-shown)]:text-white
+            peer-[&:not(:focus):not(:placeholder-shown)]:bg-gray-900
+            peer-[&:not(:focus):not(:placeholder-shown)]:px-1">
+        Nearby landmark (optional)
+    </label>
+</div>
+```
+
+
+```
+<!-- Floating Label Input -->
+<div class="relative w-full">
+    <input [(ngModel)]="tempAddress!['landmark']"
+           type="text"
+           id="landmark"
+           placeholder=""
+           class="peer w-full px-3 py-2 bg-gray-800 text-sm text-white rounded-md border
+        border-gray-600 placeholder-transparent focus:outline-none focus:border-cyan-400 focus:ring-0"/>
+
+    <label for="landmark"
+           class="absolute px-1 left-3 top-2.5 text-sm text-gray-400 bg-gray-800
+            transition-all duration-200 pointer-events-none
+            peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-sm
+             peer-placeholder-shown:text-gray-400
+
+             <!-- when input is focused -->
+             peer-focus:px-1 peer-focus:-top-2 peer-focus:text-xs
+            peer-focus:text-cyan-400 peer-focus:bg-gray-900
+
+            <!-- when peer is not focused and placeholder is not shown -->
+            peer-[&:not(:focus):not(:placeholder-shown)]:-top-2
+            peer-[&:not(:focus):not(:placeholder-shown)]:text-xs
+            peer-[&:not(:focus):not(:placeholder-shown)]:text-white
+            peer-[&:not(:focus):not(:placeholder-shown)]:bg-gray-900
+            peer-[&:not(:focus):not(:placeholder-shown)]:px-1">
+        Nearby landmark (optional)
+    </label>
+</div>
+```
+---
+
+Please find below some of the doubts I have regarding the above code snippet:
+Note: I could be wrong about some of the points, but I am trying to understand the core fundamentals of Tailwind CSS.
+
+1. What if we remove `placeholder` attribute from the input element?
+
+If you remove the placeholder attribute from the input element, the floating label behavior will break. Here’s why:
+
+The peer-placeholder-shown class in Tailwind CSS relies on the placeholder attribute to detect when the input is empty. This class applies styles to the label (the "peer") when the input’s placeholder is visible, which happens when no text is entered.
+In your code, peer-placeholder-shown:top-2.5 keeps the label positioned inside the input (at top-2.5) when the input is empty. Without the placeholder attribute, the placeholder isn’t "shown," so this style never activates.
+As a result, the label won’t move down into the input when it’s empty—it’ll likely stay stuck above the input.
+Key Takeaway: The placeholder attribute is essential for triggering the empty-state behavior of the floating label, even if it’s just an empty string (placeholder="").
+
+---
+
+2. Why do we need the placeholder attribute in the input element when we have a label?
+
+You might wonder why we need a placeholder when the label already provides the text. The placeholder attribute here isn’t about displaying a hint—it’s about controlling the label’s behavior:
+
+In a traditional input, the placeholder shows hint text when the input is empty. In this floating label design, the label itself acts as the "placeholder" visually, moving inside the input when it’s empty.
+However, Tailwind’s peer-placeholder-shown class needs the placeholder attribute to detect whether the input is empty or filled. Without it, CSS can’t tell the difference, and the label won’t move correctly.
+Even with placeholder="" (an empty string), it still works because the attribute’s presence—not its content—enables this detection.
+Key Takeaway: The placeholder attribute is a technical requirement for the peer-placeholder-shown logic, not a display feature.
+
+---
+
+3. What is the purpose of using 'placeholder-transparent' in the input element?
+
+The placeholder-transparent class ensures a clean UI by hiding any potential placeholder text:
+
+In your code, the placeholder attribute is empty (placeholder=""), so no text shows up. However, some browsers might still render a faint placeholder or cause unexpected styling quirks if the attribute is present.
+placeholder-transparent sets the placeholder text color to transparent, making it completely invisible.
+This prevents any overlap or visual conflict between the placeholder and the label, which sits inside the input when empty.
+Key Takeaway: It’s a safeguard to keep the placeholder text hidden, ensuring only the label is visible for a polished look.
+
+---
+
+4. When removed placeholder attribute and 'placeholder-transparent' class,
+    The label stays at the top of the input and does not move down when the input is empty.
+
+This happens because removing the placeholder attribute breaks the empty-state detection:
+
+The peer-placeholder-shown:top-2.5 class is what moves the label inside the input (to top-2.5) when the input is empty. It only works if the placeholder is "shown," which requires the placeholder attribute.
+Without it, peer-placeholder-shown never triggers, so the label doesn’t get the instruction to move down.
+Instead, the label stays in its "filled" or "focused" position (e.g., -top-2 from the peer-[&:not(:focus):not(:placeholder-shown)]:-top-2 rule), even when the input is empty.
+Removing placeholder-transparent doesn’t affect this—it just controls visibility, not positioning.
+Key Takeaway: The placeholder attribute is critical for the label to return to its "inside" position when the input is empty.
+
+---
+
+5. Why do we use `focus:ring-0` class? Is it not the default value?
+    I tried removing it, but I don't see any difference.
+
+The focus:ring-0 class removes the focus ring, and here’s why it’s included:
+
+By default, browsers add a focus outline to inputs for accessibility. Tailwind CSS might also apply a subtle ring (a box-shadow-like effect) when an input is focused, depending on your configuration.
+In your code, focus:outline-none removes the browser’s default outline, and focus:ring-0 ensures no additional ring is added by Tailwind.
+If you don’t see a difference when removing it, it could be because your Tailwind setup doesn’t add a ring by default, or the ring is too subtle to notice in your design (e.g., with bg-gray-800).
+Including focus:ring-0 is a best practice to ensure consistent behavior across browsers and Tailwind configurations, keeping the focus style clean (relying only on focus:border-cyan-400).
+Key Takeaway: It’s a defensive measure to prevent unwanted focus rings, ensuring your custom focus styles take precedence.
+
+---
+
+6. What if we have multiple peers or multiple labels which we want to display differently?
+    How can we configure or style multiple inputs with multiple labels or other elements with custom styles?
+
+To style multiple inputs and labels differently, you can isolate peer relationships and apply custom styles:
+
+How peer Works: The peer class targets sibling elements. In your code, the input (peer) affects the label that follows it using classes like peer-focus: or peer-placeholder-shown:.
+Multiple Inputs: To avoid conflicts, wrap each input-label pair in its own div with relative. This keeps peer relationships separate.
+
+For more complex cases, use custom classes (e.g., peer-first, peer-second) and target them with peer-first-focus: or similar.
+Key Takeaway: Wrap each pair in a container and use unique classes or variants for custom styling flexibility.
+
+---
+
+7. I noticed we're tweaking left and top values relative to the parent div container,
+    I want the label to sit in the vertical center of the input field, just like `flex items-center` would do,
+    Same when sitting on top, I don't want hard-coded 2.5 or 3 values, I want precision and flexibility
+
+
+For this, we'll consider the below code snippet with py-10 and border-[10px] for input to easily visualize the center alignment using translate-y calculations for each state:
+
+```
+<!-- Floating Label Input -->
+<div class="relative w-full h-32">
+    <input [(ngModel)]="tempAddress!['landmark']"
+           type="text"
+           id="landmark"
+           placeholder=""
+           class="peer w-full h-full px-3 py-10 bg-gray-800 text-sm text-white rounded-md border-[10px]
+                  border-gray-600 placeholder-transparent focus:outline-none focus:border-cyan-400
+                  focus:ring-0"/>
+
+    <label for="landmark"
+           class="absolute w-fit h-fit left-3 text-[24px] text-gray-400 bg-gray-800
+                  transition-all duration-200 pointer-events-none border
+                  peer-placeholder-shown:text-[24px] peer-placeholder-shown:text-gray-400
+                  peer-placeholder-shown:top-1/2
+                  peer-placeholder-shown:-translate-y-[calc(50%)]
+                  peer-focus:top-0
+                  peer-focus:-translate-y-[calc(50%_-5px)]
+                  peer-focus:text-[24px]
+                  peer-focus:text-cyan-400 peer-focus:bg-gray-600
+                  peer-focus:p-0
+                  peer-[&:not(:focus):not(:placeholder-shown)]:top-0
+                  peer-[&:not(:focus):not(:placeholder-shown)]:-translate-y-[calc(50%_-5px)]
+                  peer-[&:not(:focus):not(:placeholder-shown)]:text-[24px]
+                  peer-[&:not(:focus):not(:placeholder-shown)]:text-white
+                  peer-[&:not(:focus):not(:placeholder-shown)]:bg-gray-600
+                  peer-[&:not(:focus):not(:placeholder-shown)]:p-0">
+        Nearby landmark (optional)
+    </label>
+</div>
+```
+
+Centering Inside the Input:
+- top-1/2 -translate-y-1/2:
+    - Centers the label vertically inside the input when empty.
+    - This positions the label at 50% of the input’s height and shifts it up by half its own height, perfectly centering it vertically.
+
+- Input Empty State:
+    - Tailwind CSS Classes: 'peer-placeholder-shown:top-1/2', 'peer-placeholder-shown:-translate-y-1/2':
+    - When the input is empty, the label moves to the center of the input (top-1/2) and shifts up by half its height (-translate-y-[calc(50%)]), ensuring it’s perfectly centered.
+
+- Input Focused State:
+    - Tailwind CSS Classes: 'peer-focus:top-0', 'peer-focus:-translate-y-[calc(50%_-5px)]':
+    - When the input is focused, the label moves to the top (top-0) and shifts up by half its height (-translate-y-[calc(50%_-5px)]), ensuring it’s positioned correctly above the input.
+    - Note: 5px is an arbitrary value (half of the input border height) to vertically center the label between input top border.
+
+- Input Filled State:
+    - Tailwind CSS Classes: 'peer-[&:not(:focus):not(:placeholder-shown)]:top-0', 'peer-[&:not(:focus):not(:placeholder-shown)]:-translate-y-[calc(50%_-5px)]':
+    - Same as the focused state, ensuring the label stays above the input when it’s filled, centered vertically around the top border.
+
+---
+
