@@ -20,6 +20,20 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         13th May 2K25 - 12:34 AM
+Commit Message:     316 - G-Mart - Angular - Floating Label Design in Edit Address Component
+
+Quick Summary:
+
+1. Floating Label Design in Edit Address Component.
+    - All input fields in the Edit Address component now have a floating label design.
+    - The label will float above the input field when the user focuses on it or enters text.
+
+2. Converted 'floor' from number to string.
+    - The 'floor' field in the address model is now a string instead of a number.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         12th May 2K25 - 11:45 PM
 Commit Message:     315 - G-Mart - Angular - Exploring Floating Label Design
 

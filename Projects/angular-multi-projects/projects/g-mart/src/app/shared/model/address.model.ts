@@ -5,7 +5,7 @@ export class Address {
     private readonly id: number;
     private label: string;
     private houseNumberOrName: string;
-    private floor: number;
+    private floor: string;
     private locality: string;
     private landmark: string;
     private receiverName: string;
@@ -18,7 +18,7 @@ export class Address {
     constructor(id: number,
                 label: string,
                 houseNumberOrName: string,
-                floor: number,
+                floor: string,
                 locality: string,
                 landmark: string,
                 receiverName: string,
@@ -123,11 +123,11 @@ export class Address {
         this.houseNumberOrName = houseNumberOrName;
     }
 
-    public getFloor(): number {
+    public getFloor(): string {
         return this.floor;
     }
 
-    public setFloor(floor: number): void {
+    public setFloor(floor: string): void {
         this.floor = floor;
     }
 
