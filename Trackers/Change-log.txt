@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         13th May 2K25 - 10:21 AM
+Commit Message:     317 - G-Mart - Angular - Added Template-Driven Form Validation in Edit Address Component
+
+Quick Summary:
+
+1. Added template-driven form validation for Mobile Number in Edit Address Component.
+    - The mobile number field is now required and must match a specific pattern (10 digits).
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         13th May 2K25 - 12:34 AM
 Commit Message:     316 - G-Mart - Angular - Floating Label Design in Edit Address Component
 
