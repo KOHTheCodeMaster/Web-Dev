@@ -1,4 +1,4 @@
-import {Component, EventEmitter, input, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {CommonModule, NgClass} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {Address} from '../../../shared/model/address.model';
@@ -60,5 +60,4 @@ export class EditAddressDialogComponent {
         this.tempAddress?.setLabel(label);
     }
 
-    protected readonly input = input;
 }

@@ -20,6 +20,15 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         14th May 2K25 - 07:35 PM
+Commit Message:     318 - G-Mart - Angular - Added Required Fields Validations in Edit Address Component
+
+Quick Summary:
+
+1. Enhanced Edit Address Component with Required Fields and Dynamic Validations for various input fields.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         13th May 2K25 - 10:21 AM
 Commit Message:     317 - G-Mart - Angular - Added Template-Driven Form Validation in Edit Address Component
 

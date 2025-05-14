@@ -19,6 +19,7 @@
             <div class="flex flex-col gap-2">
                 <span class="text-xs">Save address as *</span>
                 <div *ngIf="!tempAddress?.isCustomLabel();" class="flex gap-2 items-center">
+                    <!-- Label - Home Button -->
                     <button (click)="handleLabelBtnClick('Home')"
                             class="p-2 flex gap-2 items-center rounded-md border"
                             [ngClass]="{
@@ -29,6 +30,7 @@
                         <span>Home</span>
                     </button>
 
+                    <!-- Label - Work Button -->
                     <button (click)="handleLabelBtnClick('Work')"
                             class="p-2 flex gap-2 items-center rounded-md border"
                             [ngClass]="{
@@ -39,6 +41,7 @@
                         <span>Work</span>
                     </button>
 
+                    <!-- Label - Other Button -->
                     <button (click)="handleLabelBtnClick('Other')"
                             class="p-2 flex gap-2 items-center rounded-md border border-gray-700">
                         <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
@@ -60,19 +63,24 @@
                            class="w-[50%] bg-transparent border-b border-gray-600 outline-none text-white text-sm
                             focus:border-cyan-400"/>
                 </div>
-
             </div>
 
             <!-- House No -->
             <div class="relative w-full mt-5">
                 <input [(ngModel)]="tempAddress!['houseNumberOrName']"
-                       name="houseNoOrName"
+                       name="houseNumberOrName"
                        type="text"
-                       id="idHouseNoOrName"
+                       id="idHouseNumberOrName"
+                       required
                        placeholder=""
                        class="peer w-full px-3 py-2 bg-gray-900 text-sm text-white
                         border border-gray-600 rounded-md placeholder-transparent
-                        focus:outline-none focus:border-cyan-400 focus:ring-0"/>
+                        focus:outline-none focus:border-cyan-400 focus:ring-0"
+                       [ngClass]="addressForm.controls['houseNumberOrName'] ? {
+                             'border-red-500 focus:border-red-500': addressForm.controls['houseNumberOrName'].dirty
+                                && addressForm.controls['houseNumberOrName'].invalid,
+                             'border-cyan-400': addressForm.controls['houseNumberOrName'].touched && addressForm.controls['houseNumberOrName'].valid
+                           } : null"/>
 
                 <label for="idHouseNoOrName"
                        class="absolute left-3 px-1
@@ -123,10 +131,16 @@
                        name="locality"
                        type="text"
                        id="idLocality"
+                       required
                        placeholder=""
                        class="peer w-full px-3 py-2 bg-gray-900 text-sm text-white
                         border border-gray-600 rounded-md placeholder-transparent
-                        focus:outline-none focus:border-cyan-400 focus:ring-0"/>
+                        focus:outline-none focus:border-cyan-400 focus:ring-0"
+                       [ngClass]="addressForm.controls['locality'] ? {
+                             'border-red-500 focus:border-red-500': addressForm.controls['locality'].dirty
+                                && addressForm.controls['locality'].invalid,
+                             'border-cyan-400': addressForm.controls['locality'].touched && addressForm.controls['locality'].valid
+                           } : null"/>
 
                 <label for="idLocality"
                        class="absolute left-3 px-1
@@ -180,10 +194,16 @@
                            name="receiverName"
                            type="text"
                            id="idReceiverName"
+                           required
                            placeholder=""
                            class="peer w-full px-3 py-2 bg-gray-900 text-sm text-white
                             border border-gray-600 rounded-md placeholder-transparent
-                            focus:outline-none focus:border-cyan-400 focus:ring-0"/>
+                            focus:outline-none focus:border-cyan-400 focus:ring-0"
+                           [ngClass]="addressForm.controls['receiverName'] ? {
+                             'border-red-500 focus:border-red-500': addressForm.controls['receiverName'].dirty
+                                && addressForm.controls['receiverName'].invalid,
+                             'border-cyan-400': addressForm.controls['receiverName'].touched && addressForm.controls['receiverName'].valid
+                           } : null"/>
 
                     <label for="idReceiverName"
                            class="absolute left-3 px-1
