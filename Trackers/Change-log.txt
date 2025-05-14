@@ -20,6 +20,16 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         14th May 2K25 - 08:30 PM
+Commit Message:     319 - G-Mart - Angular - Added Required Field Validation to Address Label
+
+Quick Summary:
+
+1. Added Required Field Validation to Address Label.
+    - The address label field is now required and must be filled out before saving the address.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         14th May 2K25 - 07:35 PM
 Commit Message:     318 - G-Mart - Angular - Added Required Fields Validations in Edit Address Component
 

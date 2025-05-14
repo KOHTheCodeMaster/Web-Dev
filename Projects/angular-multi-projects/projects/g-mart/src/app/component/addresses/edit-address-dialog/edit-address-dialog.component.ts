@@ -14,7 +14,7 @@ export class EditAddressDialogComponent {
     @Input({required: true}) address!: Address;
     @Output() closeDialog: EventEmitter<void> = new EventEmitter<void>();
     tempAddress: Address | null = null;
-    strCustomLabelInput: string | null = null;
+    strCustomLabelInput: string = '';
 
     constructor() {
     }
@@ -26,7 +26,7 @@ export class EditAddressDialogComponent {
         //  Initialize with the custom label value of the tempAddress
         this.strCustomLabelInput = this.tempAddress?.isCustomLabel()
             ? this.tempAddress?.getLabel()
-            : null;
+            : '';
     }
 
     // Emit close when clicking backdrop
