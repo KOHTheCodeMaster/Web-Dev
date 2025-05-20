@@ -1,0 +1,150 @@
+<main class="w-[50%] h-full mx-auto bg-gray-900 text-gray-100 sticky ">
+
+    <div class="flex justify-between">
+        <!--        <app-sub-category-sidebar class="w-[20%] border border-gray-700"></app-sub-category-sidebar>-->
+
+        <div class="w-[25%] ">
+            <div class="p-8 text-center text-xl font-bold text-gray-200 ">Username</div>
+            <div>
+                <a routerLink="/addresses"
+                   class="p-4 flex gap-2 items-center bg-gray-800 text-gray-200 cursor-pointer
+                            hover:bg-gray-700 hover:text-blue-300">
+                    <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+                    <span>My Addresses</span>
+                </a>
+                <a routerLink="/orders"
+                   class="p-4 flex gap-2 items-center cursor-pointer bg-gray-700 text-blue-300">
+                    <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+                    <span>My Orders</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="w-[75%] p-8 pr-12 flex flex-col gap-4 border">
+
+            <div>
+                <a class="p-4 border rounded" routerLink="/orders">
+                    <span><-</span>
+                </a>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="mt-4 flex flex-col">
+                <span class="font-semibold text-xl">Order summary</span>
+                <span>Arrived at {{ order.formatDate(order.getDateArrivedAt()) }}</span>
+                <a class="flex items-center gap-2 cursor-pointer text-green-500">
+                    <span>Download Invoice</span>
+                    <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="download-icon">
+                </a>
+            </div>
+            <div class="ml-4 flex flex-col gap-3">
+                <span>{{ order.getShoppingCart().getItemCount() }} items in this order</span>
+                <div *ngFor="let itemCart of order.getShoppingCart().getCartItems()"
+                     class="w-full h-20 flex items-center gap-3 ">
+                    <div class="w-20 h-20 flex justify-center items-center  rounded-lg">
+                        <img class="w-20 h-20" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+                    </div>
+                    <div class="w-full flex flex-col justify-center gap-2">
+                        <span>{{ itemCart.getProduct().getName() }}</span>
+                        <div class="w-full flex justify-between text-xs">
+                            <span>
+                                {{ itemCart.getProduct().getProductUnitValue() }}
+                                {{ itemCart.getProduct().getProductUnitLabel() }}
+                                x {{ itemCart.getQuantity() }}
+                            </span>
+                            <span>₹{{ itemCart.getSubTotalPrice() }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-[4px] border-gray-700">
+
+            <!-- Bill Details -->
+            <div class="ml-4 flex flex-col gap-3">
+                <span class="text-xl">Bill details</span>
+                <div class="flex flex-col gap-2 text-sm">
+                    <div class="flex justify-between">
+                        <span>MRP</span>
+                        <span>₹{{ order.getShoppingCart().getTotalMRP() }}</span>
+                    </div>
+                    <div class="flex justify-between text-cyan-400">
+                        <span>Product discount</span>
+                        <span>-₹{{ order.getShoppingCart().getTotalDiscount() }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Item total</span>
+                        <span>₹{{ order.getShoppingCart().getSubTotalPrice() }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Handling charge</span>
+                        <span>
+                            {{
+                                order.getShoppingCart().getMultipleChargesModel().getIsHandlingChargeApplied()
+                                    ? '₹' + MultipleChargesModel.HANDLING_CHARGE : 'FREE'
+                            }}
+                        </span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Delivery charge</span>
+                        <span>
+                            {{
+                                order.getShoppingCart().getMultipleChargesModel().getIsDeliveryChargeApplied()
+                                    ? '₹' + MultipleChargesModel.DELIVERY_CHARGE : 'FREE'
+                            }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-semibold">Bill total</span>
+                        <span>₹{{ order.getShoppingCart().getTotalPrice() }}</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-[4px] border-gray-700">
+
+            <!-- Order Details -->
+            <div class="ml-4 flex flex-col gap-4">
+                <span class="text-xl">Order details</span>
+                <div class="flex flex-col gap-4 text-sm">
+                    <div class="flex flex-col justify-center">
+                        <span>Order id</span>
+                        <div class="flex gap-2 items-center cursor-pointer">
+                            <span>{{ order.getId() }}</span>
+                            <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="copy-icon">
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span>Payment</span>
+                        <span>{{ order.getPaymentMode() }}</span>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span>Deliver to</span>
+                        <span>{{ order.getDeliverToAddress().getFullAddress() }}</span>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span>Order placed</span>
+                        <span>{{ order.formatDate(order.getDatePlacedOn()) }}</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-[4px] border-gray-700">
+
+
+            <!-- Order Details -->
+            <div class="ml-4 flex flex-col gap-6">
+                <span>Need help with your order?</span>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 flex justify-center items-center">
+                        <img class="w-10 h-10" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+                    </div>
+                    <div class="ml-3 flex flex-col">
+                        <span>Chat with us</span>
+                        <span class="text-xs">About any issues related to your order</span>
+                    </div>
+                    <span class="ml-auto text-cyan-500 text-xl">></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>

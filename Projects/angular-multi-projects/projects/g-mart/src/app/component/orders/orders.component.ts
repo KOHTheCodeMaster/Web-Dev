@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router, RouterLink} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {Order} from "../../shared/model/order.model";
 import {OrderService} from "../../service/order.service";
 import {NgForOf, NgIf, SlicePipe} from "@angular/common";
@@ -14,7 +14,8 @@ export class OrdersComponent {
 
     orderList: Order[] = [];
 
-    constructor(private router: Router,
+    constructor(public router: Router,
+                public route: ActivatedRoute,
                 private orderService: OrderService) {
 
         this.orderList = this.orderService.getOrderList();

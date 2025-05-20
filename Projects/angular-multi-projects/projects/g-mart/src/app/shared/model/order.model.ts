@@ -5,8 +5,8 @@ export class Order {
 
     private readonly id: number;
     private strOrderArrivedIn: string;
-    private strOrderArrivedAt: string;
-    private strOrderPlacedOn: string;
+    private dateArrivedAt: Date;
+    private datePlacedOn: Date;
     private orderDate: Date;
     private paymentMode: string;
     private deliverToAddress: Address;
@@ -15,24 +15,25 @@ export class Order {
 
     constructor(id: number,
                 strOrderArrivedIn: string,
-                strOrderArrivedAt: string,
-                strOrderPlacedOn: string,
+                dateArrivedAt: Date,
+                datePlacedOn: Date,
                 orderDate: Date,
                 paymentMode: string,
                 deliverToAddress: Address,
                 shoppingCart: ShoppingCart) {
         this.id = id;
         this.strOrderArrivedIn = strOrderArrivedIn;
-        this.strOrderArrivedAt = strOrderArrivedAt;
-        this.strOrderPlacedOn = strOrderPlacedOn;
+        this.dateArrivedAt = dateArrivedAt;
+        this.datePlacedOn = datePlacedOn;
         this.orderDate = orderDate;
         this.paymentMode = paymentMode;
         this.deliverToAddress = deliverToAddress;
         this.shoppingCart = shoppingCart;
     }
 
-    formatOrderDate(): string {
-        let strOrderDate = '';
+    formatDate(date: Date) {
+
+        let strFormattedDate;
 
         //  Desired format: "21 Apr, 6:07 pm"
         const options: Intl.DateTimeFormatOptions = {
@@ -44,21 +45,20 @@ export class Order {
             hour12: true
         };
         const dateFormatter = new Intl.DateTimeFormat('en-IN', options);
-        const dateParts = dateFormatter.formatToParts(this.orderDate);
+        const dateParts = dateFormatter.formatToParts(date);
         const day = dateParts.find(part => part.type === 'day')?.value;
         const month = dateParts.find(part => part.type === 'month')?.value;
         const year = dateParts.find(part => part.type === 'year')?.value;
         const hour = dateParts.find(part => part.type === 'hour')?.value;
         const minute = dateParts.find(part => part.type === 'minute')?.value;
-        const second = dateParts.find(part => part.type === 'second')?.value;
+        // const second = dateParts.find(part => part.type === 'second')?.value;
         const ampm = dateParts.find(part => part.type === 'dayPeriod')?.value;
 
         //  Format the date string
-        strOrderDate = `${day} ${month} ${year}, ${hour}:${minute} ${ampm}`;
+        strFormattedDate = `${day} ${month} ${year}, ${hour}:${minute} ${ampm}`;
 
-        return strOrderDate;
+        return strFormattedDate;
     }
-
 
 
     //  Getters & Setters
@@ -76,20 +76,20 @@ export class Order {
         this.strOrderArrivedIn = strOrderArrivedIn;
     }
 
-    public getStrOrderArrivedAt(): string {
-        return this.strOrderArrivedAt;
+    public getDateArrivedAt(): Date {
+        return this.dateArrivedAt;
     }
 
-    public setStrOrderArrivedAt(strOrderArrivedAt: string): void {
-        this.strOrderArrivedAt = strOrderArrivedAt;
+    public setDateArrivedAt(dateArrivedAt: Date): void {
+        this.dateArrivedAt = dateArrivedAt;
     }
 
-    public getStrOrderPlacedOn(): string {
-        return this.strOrderPlacedOn;
+    public getDatePlacedOn(): Date {
+        return this.datePlacedOn;
     }
 
-    public setStrOrderPlacedOn(strOrderPlacedOn: string): void {
-        this.strOrderPlacedOn = strOrderPlacedOn;
+    public setDatePlacedOn(datePlacedOn: Date): void {
+        this.datePlacedOn = datePlacedOn;
     }
 
     public getOrderDate(): Date {

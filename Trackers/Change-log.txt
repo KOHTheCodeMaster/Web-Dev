@@ -20,6 +20,26 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         20th May 2K25 - 11:33 PM
+Commit Message:     322 - G-Mart - Angular - OrdersDetails Component - Added Order Details Component & Route
+
+Quick Summary:
+
+1. Added `OrderDetails` Component for route `/orders/:orderId`
+    - Implemented a new component to display detailed information about a specific order.
+    - The component fetches order details based on the `orderId` route parameter.
+    - Added `/orders/:orderId` route for the `OrderDetails` component in the `app.routes`.
+
+2. Added `routerLink` to the `OrdersComponent` for each order
+    - Each order in the list now has a link that navigates to the `OrderDetails` component.
+    - This allows users to click on an order and view its details by passing the `orderId` as a route parameter.
+
+3. Refactored data type from string to date for `dateArrivedAt` & `datePlacedOn` fields in the `Order` model
+    - Updated the `Order` model to use the `Date` type for `dateArrivedAt` and `datePlacedOn` fields.
+    - Added `formatDate()` method to format the given date for display purposes.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         20th May 2K25 - 07:19 PM
 Commit Message:     321 - G-Mart - Angular - OrdersComponent - Enhanced Cart Item Display in Order List
 

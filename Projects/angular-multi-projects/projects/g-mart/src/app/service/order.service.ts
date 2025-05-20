@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Order} from "../shared/model/order.model";
-import {MultipleChargesModel} from "../shared/model/multiple-charges.model";
 import {Address} from "../shared/model/address.model";
 import {ShoppingCart} from "../shared/model/shopping-cart.model";
 import {MultipleChargesManagerService} from "./multiple-charges-manager.service";
@@ -16,8 +15,8 @@ export class OrderService {
     private orderList: Order[] = [];
 
     constructor(public dataLoaderService: DataLoaderService,
-        public productService: ProductService,
-        public multipleChargesManagerService: MultipleChargesManagerService) {
+                public productService: ProductService,
+                public multipleChargesManagerService: MultipleChargesManagerService) {
 
         this.dataLoaderService.getDataLoaded$().subscribe((dataLoaded: boolean) => {
             if (dataLoaded) {
@@ -29,24 +28,24 @@ export class OrderService {
     }
 
     private initOrderList() {
-        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 6));
-        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 3));
-        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 4));
-        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 5));
-        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 6));
-        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 7));
+        this.orderList.push(this.createDummyOrder(6));
+        this.orderList.push(this.createDummyOrder(3));
+        this.orderList.push(this.createDummyOrder(4));
+        this.orderList.push(this.createDummyOrder(5));
+        this.orderList.push(this.createDummyOrder(6));
+        this.orderList.push(this.createDummyOrder(7));
     }
 
-    createDummyOrder(multipleChargesModel: MultipleChargesModel, itemCount: number) : Order {
+    createDummyOrder(itemCount: number): Order {
         let tempOrder: Order = new Order(
             1,
             '9 minutes',
-            '2:09 PM',
-            '2:00 PM',
+            new Date(),
+            new Date(),
             new Date(),
             'Cash on Delivery',
             new Address(1, 'Home', '123 Main St', '', 'City', 'Landmark', 'John Doe', 1234567890, ''),
-            new ShoppingCart(multipleChargesModel)
+            new ShoppingCart(this.multipleChargesManagerService.getMultipleChargesModel())
         );
 
         for (let i = 0; i < itemCount; i++)
@@ -55,12 +54,16 @@ export class OrderService {
         return tempOrder;
     }
 
+    getOrderById(orderId: string): Order | undefined {
+        return this.orderList.find((order: Order) => order.getId() === Number(orderId));
+    }
+
+
     //  Getters
     //  -------
 
     public getOrderList(): Order[] {
         return this.orderList;
     }
-
 
 }
