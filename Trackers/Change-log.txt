@@ -20,6 +20,22 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         20th May 2K25 - 02:27 PM
+Commit Message:     320 - G-Mart - Angular - OrdersComponent - Added Order Service to Initialize Order List
+
+Quick Summary:
+
+1. Updated `OrdersComponent` to display a list of orders.
+    - Added `Order` model to represent order details.
+
+2. Added `OrderService` to initialize orderList.
+    - Using Dummy data for now, will be replaced with actual data later.
+
+3. Designed the HTML template for `OrdersComponent` to display key order details such as
+    arrival time, total price, order date, and images of items in each order.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         14th May 2K25 - 08:30 PM
 Commit Message:     319 - G-Mart - Angular - Added Required Field Validation to Address Label
 

@@ -3,7 +3,7 @@
     <div class="flex justify-between">
         <!--        <app-sub-category-sidebar class="w-[20%] border border-gray-700"></app-sub-category-sidebar>-->
 
-        <div class="w-[20%] ">
+        <div class="w-[25%] ">
             <div class="p-8 text-center text-xl font-bold text-gray-200 ">Username</div>
             <div>
                 <a routerLink="/addresses"
@@ -21,8 +21,27 @@
             </div>
         </div>
 
-        <div class="w-[80%] border"></div>
-
+        <div class="w-[75%] p-4 border">
+            <div *ngFor="let order of orderList"
+                 class="p-4 flex flex-col gap-4 bg-gray-800 border border-gray-700 rounded-md">
+                <div class="flex items-center">
+                    <img class="w-12 h-12" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+                    <div class="ml-3 flex flex-col text-gray-200">
+                        <span class="font-semibold text-lg">Arrived in {{ order.getStrOrderArrivedIn() }}</span>
+                        <span class="text-gray-400 text-sm">
+                            ₹{{ order.getShoppingCart().getTotalPrice() }} • {{ order.formatOrderDate() }}
+                        </span>
+                    </div>
+                    <span class="ml-auto">-></span>
+                </div>
+                <div class="flex gap-2 ">
+                    <div *ngFor="let cartItem of order.getShoppingCart().getCartItems()"
+                         class="w-1/5 h-20 py-2 flex justify-center items-center bg-gray-700 border border-gray-400 rounded">
+                        <img class="w-1/2 h-full" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 

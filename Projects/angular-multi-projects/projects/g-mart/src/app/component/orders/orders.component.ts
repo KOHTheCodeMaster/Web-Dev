@@ -1,18 +1,23 @@
 import {Component} from '@angular/core';
-import {Category} from "../../shared/model/category.model";
 import {Router, RouterLink} from "@angular/router";
+import {Order} from "../../shared/model/order.model";
+import {OrderService} from "../../service/order.service";
+import {NgForOf} from "@angular/common";
 
 @Component({
     selector: 'app-orders',
     standalone: true,
-    imports: [RouterLink],
+    imports: [RouterLink, NgForOf],
     templateUrl: './orders.component.html'
 })
 export class OrdersComponent {
 
-    categoryList: Category[] = [];
+    orderList: Order[] = [];
 
-    constructor(private router: Router) {
+    constructor(private router: Router,
+                private orderService: OrderService) {
+
+        this.orderList = this.orderService.getOrderList();
 
     }
 
