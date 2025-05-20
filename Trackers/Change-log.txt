@@ -20,6 +20,31 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         20th May 2K25 - 07:19 PM
+Commit Message:     321 - G-Mart - Angular - OrdersComponent - Enhanced Cart Item Display in Order List
+
+Quick Summary:
+
+1. Enhanced Cart Item Display in OrdersComponent.
+    - For each order, if there are 5 or fewer cart items, show all item images.
+    - If there are more than 5 items:
+        - Show images for the first 4 items.
+        - The 5th slot displays a `+N` badge, where `N` is the count of remaining items.
+    - Achieved using `*ngIf`/`ng-template` and the `SlicePipe` for slicing the array.
+    - Result:
+        - Always a maximum of 5 visual slots per order—either all images (≤5 items) or 4 images plus a `+N` indicator (>5 items).
+        - This keeps the UI clean and readable, even for large orders.
+
+---
+
+Summary:
+- Improved the UI of the Orders page by conditionally rendering cart items.
+- For orders with many items, it now shows the first four items and a summary count for the rest.
+
+---
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         20th May 2K25 - 02:27 PM
 Commit Message:     320 - G-Mart - Angular - OrdersComponent - Added Order Service to Initialize Order List
 

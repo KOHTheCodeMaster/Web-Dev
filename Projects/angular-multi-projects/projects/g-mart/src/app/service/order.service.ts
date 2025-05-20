@@ -29,10 +29,15 @@ export class OrderService {
     }
 
     private initOrderList() {
-        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel()));
+        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 6));
+        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 3));
+        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 4));
+        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 5));
+        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 6));
+        this.orderList.push(this.createDummyOrder(this.multipleChargesManagerService.getMultipleChargesModel(), 7));
     }
 
-    createDummyOrder(multipleChargesModel: MultipleChargesModel) : Order {
+    createDummyOrder(multipleChargesModel: MultipleChargesModel, itemCount: number) : Order {
         let tempOrder: Order = new Order(
             1,
             '9 minutes',
@@ -44,10 +49,8 @@ export class OrderService {
             new ShoppingCart(multipleChargesModel)
         );
 
-        let cartItem1: CartItem = new CartItem(this.productService.getAllProductList()[0], 3);
-        let cartItem2: CartItem = new CartItem(this.productService.getAllProductList()[1], 5);
-        tempOrder.getShoppingCart().addCartItem(cartItem1);
-        tempOrder.getShoppingCart().addCartItem(cartItem2);
+        for (let i = 0; i < itemCount; i++)
+            tempOrder.getShoppingCart().addCartItem(new CartItem(this.productService.getAllProductList()[1], 5));
 
         return tempOrder;
     }

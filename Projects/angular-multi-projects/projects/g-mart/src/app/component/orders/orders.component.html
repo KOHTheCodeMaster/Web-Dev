@@ -13,15 +13,14 @@
                     <span>My Addresses</span>
                 </a>
                 <a routerLink="/orders"
-                    class="p-4 flex gap-2 items-center cursor-pointer
-                            bg-gray-700 text-blue-300">
+                   class="p-4 flex gap-2 items-center cursor-pointer bg-gray-700 text-blue-300">
                     <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
                     <span>My Orders</span>
                 </a>
             </div>
         </div>
 
-        <div class="w-[75%] p-4 border">
+        <div class="w-[75%] p-4 flex flex-col gap-4 border">
             <div *ngFor="let order of orderList"
                  class="p-4 flex flex-col gap-4 bg-gray-800 border border-gray-700 rounded-md">
                 <div class="flex items-center">
@@ -34,11 +33,26 @@
                     </div>
                     <span class="ml-auto">-></span>
                 </div>
-                <div class="flex gap-2 ">
-                    <div *ngFor="let cartItem of order.getShoppingCart().getCartItems()"
-                         class="w-1/5 h-20 py-2 flex justify-center items-center bg-gray-700 border border-gray-400 rounded">
-                        <img class="w-1/2 h-full" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
-                    </div>
+                <div class="flex gap-2">
+                    <ng-container *ngIf="order.getShoppingCart().getCartItems().length <= 5; else moreItems">
+                        <div *ngFor="let cartItem of order.getShoppingCart().getCartItems()"
+                             class="w-1/5 h-20 py-2 flex justify-center items-center bg-gray-700 border border-gray-400 rounded">
+                            <img class="w-1/2 h-full" src="/assets/icons/01-sample-icon.svg"
+                                 alt="{{cartItem.getProduct().getName()}}">
+                        </div>
+                    </ng-container>
+                    <ng-template #moreItems>
+                        <!-- iterate only till first 5 elements -->
+                        <div *ngFor="let cartItem of order.getShoppingCart().getCartItems() | slice:0:4;"
+                             class="w-1/5 h-20 py-2 flex justify-center items-center bg-gray-700 border border-gray-400 rounded">
+                            <img class="w-1/2 h-full" src="/assets/icons/01-sample-icon.svg"
+                                 alt="{{cartItem.getProduct().getName()}}">
+                        </div>
+                        <div
+                            class="w-1/5 h-20 py-2 flex justify-center items-center bg-gray-700 border border-gray-400 rounded">
+                            <span class="text-2xl">+{{ order.getShoppingCart().getCartItems().length - 4 }}</span>
+                        </div>
+                    </ng-template>
                 </div>
             </div>
         </div>
