@@ -4,6 +4,7 @@ import {Address} from "./address.model";
 export class Order {
 
     private readonly id: number;
+    private orderNumber: number;
     private strOrderArrivedIn: string;
     private dateArrivedAt: Date;
     private datePlacedOn: Date;
@@ -14,6 +15,7 @@ export class Order {
 
 
     constructor(id: number,
+                orderNumber: number,
                 strOrderArrivedIn: string,
                 dateArrivedAt: Date,
                 datePlacedOn: Date,
@@ -22,6 +24,7 @@ export class Order {
                 deliverToAddress: Address,
                 shoppingCart: ShoppingCart) {
         this.id = id;
+        this.orderNumber = orderNumber;
         this.strOrderArrivedIn = strOrderArrivedIn;
         this.dateArrivedAt = dateArrivedAt;
         this.datePlacedOn = datePlacedOn;
@@ -66,6 +69,14 @@ export class Order {
 
     public getId(): number {
         return this.id;
+    }
+
+    public getOrderNumber(): number {
+        return this.orderNumber;
+    }
+
+    public setOrderNumber(orderNumber: number): void {
+        this.orderNumber = orderNumber;
     }
 
     public getStrOrderArrivedIn(): string {

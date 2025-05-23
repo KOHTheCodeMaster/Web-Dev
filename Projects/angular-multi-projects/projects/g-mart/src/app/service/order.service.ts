@@ -13,6 +13,7 @@ import {DataLoaderService} from "./data-loader.service";
 export class OrderService {
 
     private orderList: Order[] = [];
+    private lastOrderNumber: number = 1000;
 
     constructor(public dataLoaderService: DataLoaderService,
                 public productService: ProductService,
@@ -39,6 +40,7 @@ export class OrderService {
     createDummyOrder(itemCount: number): Order {
         let tempOrder: Order = new Order(
             1,
+            this.lastOrderNumber++,
             '9 minutes',
             new Date(),
             new Date(),
@@ -54,8 +56,32 @@ export class OrderService {
         return tempOrder;
     }
 
+    createNewOrder(shoppingCart: ShoppingCart, selectedAddress: Address): Order {
+        let newOrder: Order = new Order(
+            this.orderList.length + 1,
+            this.lastOrderNumber++,
+            '10 minutes',
+            new Date(),
+            new Date(),
+            new Date(),
+            'Cash on Delivery',
+            selectedAddress,
+            shoppingCart
+        );
+
+        //  Add the new order to the order list
+        this.orderList.push(newOrder);
+
+        return newOrder;
+    }
+
     getOrderById(orderId: string): Order | undefined {
         return this.orderList.find((order: Order) => order.getId() === Number(orderId));
+    }
+
+    getOrderByOrderNumber(orderNumber: number): Order | undefined {
+        if (orderNumber === undefined || orderNumber === null) return undefined;
+        return this.orderList.find((order: Order) => order.getOrderNumber() === orderNumber);
     }
 
 

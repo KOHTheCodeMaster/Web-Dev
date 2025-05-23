@@ -8,6 +8,7 @@ import {InfoPopupService} from "../../service/info-popup.service";
 import {InfoPopupType} from "../../shared/model/InfoPopupType";
 import {FormsModule} from "@angular/forms";
 import {MultipleChargesModel} from "../../shared/model/multiple-charges.model";
+import {CheckoutService} from "../../service/checkout.service";
 
 @Component({
     selector: 'app-shopping-cart',
@@ -30,7 +31,8 @@ export class ShoppingCartComponent {
     customTipValue: number = 0;
 
     constructor(private shoppingCartService: ShoppingCartService,
-                private infoPopupHostService: InfoPopupService) {
+                private infoPopupHostService: InfoPopupService,
+                private checkoutService: CheckoutService) {
         this.shoppingCartService.getCartVisibility$().subscribe(visible => this.isShoppingCartOpen = visible);
         this.shoppingCart = this.shoppingCartService.getShoppingCart();
     }
@@ -46,7 +48,7 @@ export class ShoppingCartComponent {
 
     toggleShoppingCart() {
         this.isShoppingCartOpen = !this.isShoppingCartOpen;
-        console.log(`Shopping cart is ${this.isShoppingCartOpen ? 'open' : 'closed'}`);
+        // console.log(`Shopping cart is ${this.isShoppingCartOpen ? 'open' : 'closed'}`);
     }
 
     decrementQuantity(cartItem: CartItem) {
@@ -86,6 +88,16 @@ export class ShoppingCartComponent {
             this.shoppingCart.getTipAmount() !== 20 &&
             this.shoppingCart.getTipAmount() !== 30 &&
             this.shoppingCart.getTipAmount() !== 50;
+    }
+
+    proceedToPay() {
+        if (this.shoppingCart.getItemCount() === 0) {
+            console.log("L0G - Error - Shopping cart is empty.");
+            return;
+        }
+
+        this.checkoutService.checkout();
+        this.closeShoppingCart();
     }
 
 }

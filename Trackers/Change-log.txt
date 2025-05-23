@@ -1,4 +1,3 @@
-
 Time Stamp: 22nd Aug 2K24 - 01:02 PM..!!
 
 Title: Change Log for Commit History
@@ -17,6 +16,36 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 Change Log:
 -----------
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp:         23rd May 2K25 - 09:48 AM
+Commit Message:     323 - G-Mart - Angular - Checkout - Added Checkout Service to Handle Order Creation
+
+Quick Summary:
+
+1. Added `CheckoutService` to handle the checkout process and order creation
+    - Implemented a new service to process the checkout flow when user clicks "Proceed to Pay"
+    - The service creates a new order from the shopping cart and selected address
+    - After creating an order, clears the shopping cart and redirects to the Order Details page
+
+2. Enhanced `Order` Model with Order Number field
+    - Added `orderNumber` field to track orders with a unique identifier
+    - Changed route param from `orderId` to `orderNumber` in app routes
+    - Updated references in components to use `orderNumber` instead of `id`
+
+3. Improved Shopping Cart Component
+    - Enhanced empty cart display with better styling and user experience
+    - Added "Proceed to Pay" button functionality to trigger the checkout process
+    - Fixed cursor styles to show "not-allowed" for empty cart
+
+4. Updated Shopping Cart Service
+    - Added method to create a new empty shopping cart after checkout
+    - Fixed accessibility of MultipleChargesManagerService for proper initialization
+
+5. Enhanced Address Service
+    - Modified `getSelectedAddress$()` to return the BehaviorSubject directly for getValue() access
+    - This allows the checkout service to retrieve the current selected address value
 
 ----------------------------------------------------------------------------------------------------
 

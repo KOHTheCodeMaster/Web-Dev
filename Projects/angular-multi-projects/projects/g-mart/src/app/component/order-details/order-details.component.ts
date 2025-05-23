@@ -13,6 +13,7 @@ import {MultipleChargesModel} from "../../shared/model/multiple-charges.model";
 })
 export class OrderDetailsComponent {
 
+    protected readonly formatDate = formatDate;
     protected readonly MultipleChargesModel = MultipleChargesModel;
     order!: Order;
 
@@ -26,8 +27,8 @@ export class OrderDetailsComponent {
 
     private initOrder() {
 
-        let orderId = this.route.snapshot.paramMap.get('orderId');
-        let tempOrder = this.orderService.getOrderById(orderId ? orderId : '');
+        let orderNumber: number = Number(this.route.snapshot.paramMap.get('orderNumber'));
+        let tempOrder = this.orderService.getOrderByOrderNumber(orderNumber ? orderNumber : -1);
         if (tempOrder) this.order = tempOrder;
         else {
             this.order = this.orderService.createDummyOrder(0);
@@ -36,5 +37,4 @@ export class OrderDetailsComponent {
 
     }
 
-    protected readonly formatDate = formatDate;
 }

@@ -77,8 +77,8 @@ export class AddressService {
         return this.isEditDialogOpened$.asObservable();
     }
 
-    getSelectedAddress$(): Observable<Address> {
-        return this.selectedAddress$.asObservable();
+    getSelectedAddress$(): BehaviorSubject<Address> {
+        return this.selectedAddress$;
     }
 
 }

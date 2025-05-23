@@ -107,6 +107,19 @@ export class ShoppingCart {
         }
     }
 
+    /*
+        reset() {
+            this.cartItems = [];
+            this.itemCount = 0;
+            this.totalMRP = 0;
+            this.totalDiscount = 0;
+            this.subTotalPrice = 0;
+            this.totalPrice = 0;
+            this.multipleChargesModel.reset();
+        }
+    */
+
+
     //  Getters & Setters
     //  -----------------
 

@@ -8,7 +8,7 @@ import {OrderDetailsComponent} from "./component/order-details/order-details.com
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'shopping', component: ShoppingComponent},
-    {path: 'orders/:orderId', component: OrderDetailsComponent},
+    {path: 'orders/:orderNumber', component: OrderDetailsComponent},
     {path: 'orders', component: OrdersComponent},
     /*
         {

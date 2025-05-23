@@ -13,12 +13,25 @@ export class MultipleChargesModel {
     private isDeliveryChargeApplied: boolean = true;
     private isSmallCartChargeApplied: boolean = true;
     private isHighDemandSurgeChargeApplied: boolean = false;
-    private checkHighDemandSurgeChargeFlag: boolean = false;
+    private checkHighDemandSurgeChargeFlag: boolean = true;
     private isFeedIndiaChargeApplied: boolean = false;
     private isTipApplied: boolean = false;
 
     constructor() {
     }
+
+    /*
+        reset() {
+            this.isHandlingChargeApplied = true;
+            this.isDeliveryChargeApplied = true;
+            this.isSmallCartChargeApplied = true;
+            this.isHighDemandSurgeChargeApplied = false;
+            this.checkHighDemandSurgeChargeFlag = true;
+            this.isFeedIndiaChargeApplied = false;
+            this.isTipApplied = false;
+        }
+    */
+
 
     //  Getters & Setters
     //  -----------------

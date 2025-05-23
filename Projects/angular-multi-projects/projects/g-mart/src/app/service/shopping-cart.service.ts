@@ -11,7 +11,7 @@ export class ShoppingCartService {
     private shoppingCart: ShoppingCart;
     private cartVisibility$: BehaviorSubject<boolean>;
 
-    constructor(multipleShoppingCartService: MultipleChargesManagerService) {
+    constructor(private multipleShoppingCartService: MultipleChargesManagerService) {
         //  Initialize empty shopping cart
         this.shoppingCart = new ShoppingCart(multipleShoppingCartService.getMultipleChargesModel());
 
@@ -32,6 +32,10 @@ export class ShoppingCartService {
 
     public getCartVisibility$(): Observable<boolean> {
         return this.cartVisibility$.asObservable();
+    }
+
+    createNewEmptyShoppingCart() {
+        this.shoppingCart = new ShoppingCart(this.multipleShoppingCartService.getMultipleChargesModel());
     }
 
 }
