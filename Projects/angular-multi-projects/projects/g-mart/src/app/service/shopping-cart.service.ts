@@ -8,12 +8,12 @@ import {MultipleChargesManagerService} from "./multiple-charges-manager.service"
 })
 export class ShoppingCartService {
 
-    private shoppingCart: ShoppingCart;
+    private readonly shoppingCart$: BehaviorSubject<ShoppingCart>;
     private cartVisibility$: BehaviorSubject<boolean>;
 
     constructor(private multipleShoppingCartService: MultipleChargesManagerService) {
         //  Initialize empty shopping cart
-        this.shoppingCart = new ShoppingCart(multipleShoppingCartService.getMultipleChargesModel());
+        this.shoppingCart$ = new BehaviorSubject(new ShoppingCart(multipleShoppingCartService.getMultipleChargesModel()));
 
         //  Initialize cart visibility to false
         this.cartVisibility$ = new BehaviorSubject<boolean>(false);
@@ -23,19 +23,20 @@ export class ShoppingCartService {
         this.cartVisibility$.next(visible);
     }
 
+    updateShoppingCart(shoppingCart: ShoppingCart) {
+        this.shoppingCart$.next(shoppingCart);
+    }
+
+
     //  Getters
     //  -------
 
-    public getShoppingCart(): ShoppingCart {
-        return this.shoppingCart;
+    public getShoppingCart$(): BehaviorSubject<ShoppingCart> {
+        return this.shoppingCart$;
     }
 
     public getCartVisibility$(): Observable<boolean> {
         return this.cartVisibility$.asObservable();
-    }
-
-    createNewEmptyShoppingCart() {
-        this.shoppingCart = new ShoppingCart(this.multipleShoppingCartService.getMultipleChargesModel());
     }
 
 }

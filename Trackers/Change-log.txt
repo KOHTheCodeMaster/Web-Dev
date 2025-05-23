@@ -1,3 +1,4 @@
+
 Time Stamp: 22nd Aug 2K24 - 01:02 PM..!!
 
 Title: Change Log for Commit History
@@ -16,6 +17,38 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 Change Log:
 -----------
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp:         23rd May 2K25 - 09:59 PM
+Commit Message:     324 - G-Mart - Angular - Enhanced Order Details and Shopping Cart Features
+
+Quick Summary:
+
+1. Improved OrderDetails Component UI & Display
+    - Added hover effect with underline for "Download Invoice" link
+    - Enhanced Order Number display with better cursor styling
+    - Displayed strikethrough MRP and discount pricing for cart items
+    - Added conditional display for additional charges (Small Cart, High Demand, Tip)
+
+2. Optimized CartItem Model & Shopping Cart Logic
+    - Added totalMRP and totalDiscount fields to CartItem for better price tracking
+    - Implemented updateTotalValues() method to recalculate prices when quantity changes
+    - Added new addCartItemWithQty() method to add items with specific quantities
+
+3. Refactored Shopping Cart Service to use Observable Pattern
+    - Changed from direct object reference to BehaviorSubject<ShoppingCart>
+    - Implemented getShoppingCart$() method returning an observable for reactive updates
+    - Added updateShoppingCart() method to push new shopping cart state
+    - This change was made to ensure that the shopping cart is updated reactively across components after checkout
+
+4. Enhanced Product Card Component
+    - Improved quantity control UI with better hover states and layout
+    - Fixed width issues in quantity controls for consistent display
+
+5. Fixed CheckoutService Dependencies
+    - Added MultipleChargesManagerService to handle charges during checkout
+    - Optimized checkout flow by creating new empty shopping cart after order creation
 
 ----------------------------------------------------------------------------------------------------
 

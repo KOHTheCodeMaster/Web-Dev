@@ -29,12 +29,12 @@ export class OrderService {
     }
 
     private initOrderList() {
-        this.orderList.push(this.createDummyOrder(6));
-        this.orderList.push(this.createDummyOrder(3));
-        this.orderList.push(this.createDummyOrder(4));
-        this.orderList.push(this.createDummyOrder(5));
-        this.orderList.push(this.createDummyOrder(6));
-        this.orderList.push(this.createDummyOrder(7));
+        this.orderList.push(this.createDummyOrder(2));
+        // this.orderList.push(this.createDummyOrder(6));
+        // this.orderList.push(this.createDummyOrder(4));
+        // this.orderList.push(this.createDummyOrder(5));
+        // this.orderList.push(this.createDummyOrder(6));
+        // this.orderList.push(this.createDummyOrder(7));
     }
 
     createDummyOrder(itemCount: number): Order {
@@ -51,7 +51,7 @@ export class OrderService {
         );
 
         for (let i = 0; i < itemCount; i++)
-            tempOrder.getShoppingCart().addCartItem(new CartItem(this.productService.getAllProductList()[1], 5));
+            tempOrder.getShoppingCart().addCartItemWithQty(new CartItem(this.productService.getAllProductList()[i],5));
 
         return tempOrder;
     }

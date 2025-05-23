@@ -32,7 +32,8 @@
             <div class="mt-4 flex flex-col">
                 <span class="font-semibold text-xl">Order summary</span>
                 <span>Arrived at {{ order.formatDate(order.getDateArrivedAt()) }}</span>
-                <a class="flex items-center gap-2 cursor-pointer text-green-500">
+                <a class="w-fit flex items-center gap-2 cursor-pointer text-green-500 hover:underline">
+                    <!-- When hover add underline -->
                     <span>Download Invoice</span>
                     <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="download-icon">
                 </a>
@@ -52,7 +53,10 @@
                                 {{ itemCart.getProduct().getProductUnitLabel() }}
                                 x {{ itemCart.getQuantity() }}
                             </span>
-                            <span>₹{{ itemCart.getSubTotalPrice() }}</span>
+                            <div class="flex gap-2">
+                                <span class="line-through text-gray-400">₹{{ itemCart.getTotalMRP() }}</span>
+                                <span>₹{{ itemCart.getSubTotalPrice() }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,7 +67,7 @@
             <div class="ml-4 flex flex-col gap-3">
                 <span class="text-xl">Bill details</span>
                 <div class="flex flex-col gap-2 text-sm">
-                    <div class="flex justify-between">
+                    <div class="flex justify-between text-gray-400">
                         <span>MRP</span>
                         <span>₹{{ order.getShoppingCart().getTotalMRP() }}</span>
                     </div>
@@ -92,6 +96,21 @@
                                     ? '₹' + MultipleChargesModel.DELIVERY_CHARGE : 'FREE'
                             }}</span>
                     </div>
+                    <div *ngIf="order.getShoppingCart().getMultipleChargesModel().getIsSmallCartChargeApplied()"
+                         class="flex justify-between">
+                        <span>Small cart charge</span>
+                        <span>{{ '₹' + MultipleChargesModel.SMALL_CART_CHARGE }}</span>
+                    </div>
+                    <div *ngIf="order.getShoppingCart().getMultipleChargesModel().getIsHighDemandSurgeChargeApplied()"
+                         class="flex justify-between">
+                        <span>High demand surge charge</span>
+                        <span>{{ '₹' + MultipleChargesModel.HIGH_DEMAND_SURGE_CHARGE }}</span>
+                    </div>
+                    <div *ngIf="order.getShoppingCart().getMultipleChargesModel().getIsTipApplied()"
+                         class="flex justify-between">
+                        <span>Tip</span>
+                        <span>{{ '₹' + order.getShoppingCart().getTipAmount() }}</span>
+                    </div>
                     <div class="flex justify-between">
                         <span class="font-semibold">Bill total</span>
                         <span>₹{{ order.getShoppingCart().getTotalPrice() }}</span>
@@ -106,7 +125,7 @@
                 <div class="flex flex-col gap-4 text-sm">
                     <div class="flex flex-col justify-center">
                         <span>Order Number</span>
-                        <div class="flex gap-2 items-center cursor-pointer">
+                        <div class="w-fit pr-2 flex gap-2 items-center cursor-pointer">
                             <span>{{ order.getOrderNumber() }}</span>
                             <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="copy-icon">
                         </div>

@@ -16,25 +16,28 @@ export class ProductCardComponent implements OnChanges {
 
     @Input({required: true}) product!: Product;
     cartItem!: CartItem;
-    shoppingCart: ShoppingCart;
+    shoppingCart!: ShoppingCart;
 
     constructor(private shoppingCartService: ShoppingCartService) {
-        this.shoppingCart = this.shoppingCartService.getShoppingCart();
+        this.shoppingCartService.getShoppingCart$().subscribe(shoppingCart => this.shoppingCart = shoppingCart);
     }
 
     ngOnChanges(changes: SimpleChanges) {
+        //  ToDo: Need to understand the reason for why this method is required?
         if (changes['product'] && this.product) {
             // let shoppingCart = this.shoppingCartService.getShoppingCart();
             let cartItem = this.shoppingCart.getCartItemByProductId(this.product.getId());
-            this.cartItem = cartItem ? cartItem : new CartItem(this.product);
+            this.cartItem = cartItem ? cartItem : new CartItem(this.product, 0);
         }
     }
 
     addToCart() {
+        this.cartItem.incrementQuantity();
         this.shoppingCart.addCartItem(this.cartItem);
     }
 
     incrementQuantity() {
+        this.cartItem.incrementQuantity();
         this.shoppingCart.incrementCartItem(this.cartItem);
     }
 

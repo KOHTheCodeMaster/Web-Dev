@@ -10,7 +10,7 @@ export class MultipleChargesManagerService {
 
     constructor() {
         this.multipleChargesModel = new MultipleChargesModel();
-        this.multipleChargesModel.setCheckHighDemandSurgeChargeFlag(true);
+        this.multipleChargesModel.setCheckHighDemandSurgeChargeFlag(false);
     }
 
     //  Getters

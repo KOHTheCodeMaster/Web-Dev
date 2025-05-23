@@ -6,6 +6,7 @@ import {AddressService} from "./address.service";
 import {Address} from "../shared/model/address.model";
 import {Order} from "../shared/model/order.model";
 import {Router} from "@angular/router";
+import {MultipleChargesManagerService} from "./multiple-charges-manager.service";
 
 @Injectable({
     providedIn: 'root'
@@ -15,28 +16,24 @@ export class CheckoutService {
     constructor(private shoppingCartService: ShoppingCartService,
                 private addressService: AddressService,
                 private orderService: OrderService,
+                private multipleChargesManagerService: MultipleChargesManagerService,
                 private router: Router) {
 
     }
 
     checkout() {
 
-        let shoppingCart: ShoppingCart = this.shoppingCartService.getShoppingCart();
+        let shoppingCart: ShoppingCart = this.shoppingCartService.getShoppingCart$().getValue();
         let selectedAddress: Address = this.addressService.getSelectedAddress$().getValue();
         let newOrder: Order = this.orderService.createNewOrder(shoppingCart, selectedAddress);
 
-        //  Clear the shopping cart
-        this.shoppingCartService.createNewEmptyShoppingCart();
+        //  Reset the shopping cart to new empty shopping cart
+        let newEmptyShoppingCart: ShoppingCart = new ShoppingCart(this.multipleChargesManagerService.getMultipleChargesModel());
+        this.shoppingCartService.updateShoppingCart(newEmptyShoppingCart);
 
         //  Redirect to `/orders/orderNumber` page
-        // this.router.navigate(['/orders', newOrder.getOrderNumber()]);
         this.router.navigateByUrl('/orders/' + newOrder.getOrderNumber());
 
     }
-
-
-    //  Getters
-    //  -------
-
 
 }

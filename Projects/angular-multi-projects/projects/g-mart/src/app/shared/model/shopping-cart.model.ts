@@ -35,40 +35,13 @@ export class ShoppingCart {
         this.incrementCartItem(cartItem);
     }
 
-    private calculateExtraCharges() {
-        let extraChargesAmount = 0;
-
-        //  handling charge is always applied
-        extraChargesAmount += MultipleChargesModel.HANDLING_CHARGE;
-        this.multipleChargesModel.setIsHandlingChargeApplied(true);
-
-        //  delivery charge is applied only if cart sub-total price is less than threshold
-        if (this.subTotalPrice < MultipleChargesModel.THRESHOLD_FOR_DELIVERY_CHARGE) {
-            extraChargesAmount += MultipleChargesModel.DELIVERY_CHARGE;
-            this.multipleChargesModel.setIsDeliveryChargeApplied(true);
-        } else this.multipleChargesModel.setIsDeliveryChargeApplied(false);
-
-        //  small cart charge is applied only if total price is less than threshold
-        if (this.subTotalPrice < MultipleChargesModel.THRESHOLD_FOR_SMALL_CART) {
-            extraChargesAmount += MultipleChargesModel.SMALL_CART_CHARGE;
-            this.multipleChargesModel.setIsSmallCartChargeApplied(true);
-        } else this.multipleChargesModel.setIsSmallCartChargeApplied(false);
-
-        //  high demand surge charge is applied only if flag is set and sub-total price is less than threshold
-        if (this.multipleChargesModel.getCheckHighDemandSurgeChargeFlag() &&
-            this.subTotalPrice < MultipleChargesModel.THRESHOLD_FOR_HIGH_DEMAND_SURGE_CHARGE) {
-            extraChargesAmount += MultipleChargesModel.HIGH_DEMAND_SURGE_CHARGE;
-            this.multipleChargesModel.setIsHighDemandSurgeChargeApplied(true);
-        } else this.multipleChargesModel.setIsHighDemandSurgeChargeApplied(false);
-
-        //  tip amount is applied only if manually opted-in
-        if (this.multipleChargesModel.getIsTipApplied()) extraChargesAmount += this.tipAmount;
-
-        return extraChargesAmount;
+    addCartItemWithQty(cartItem: CartItem) {
+        this.cartItems.push(cartItem);
+        for (let i = 0; i < cartItem.getQuantity(); i++) this.incrementCartItem(cartItem);
+        console.log(cartItem);
     }
 
     incrementCartItem(cartItem: CartItem) {
-        cartItem.incrementQuantity();
         this.itemCount += 1;
         this.totalMRP += cartItem.getProduct().getPrice();
         this.totalDiscount += cartItem.getProduct().getDiscount();
@@ -107,6 +80,10 @@ export class ShoppingCart {
         }
     }
 
+    public getCartItems(): CartItem[] {
+        return this.cartItems;
+    }
+
     /*
         reset() {
             this.cartItems = [];
@@ -122,10 +99,6 @@ export class ShoppingCart {
 
     //  Getters & Setters
     //  -----------------
-
-    public getCartItems(): CartItem[] {
-        return this.cartItems;
-    }
 
     public setCartItems(cartItems: CartItem[]): void {
         this.cartItems = cartItems;
@@ -181,6 +154,38 @@ export class ShoppingCart {
 
     public getMultipleChargesModel(): MultipleChargesModel {
         return this.multipleChargesModel;
+    }
+
+    private calculateExtraCharges() {
+        let extraChargesAmount = 0;
+
+        //  handling charge is always applied
+        extraChargesAmount += MultipleChargesModel.HANDLING_CHARGE;
+        this.multipleChargesModel.setIsHandlingChargeApplied(true);
+
+        //  delivery charge is applied only if cart sub-total price is less than threshold
+        if (this.subTotalPrice < MultipleChargesModel.THRESHOLD_FOR_DELIVERY_CHARGE) {
+            extraChargesAmount += MultipleChargesModel.DELIVERY_CHARGE;
+            this.multipleChargesModel.setIsDeliveryChargeApplied(true);
+        } else this.multipleChargesModel.setIsDeliveryChargeApplied(false);
+
+        //  small cart charge is applied only if total price is less than threshold
+        if (this.subTotalPrice < MultipleChargesModel.THRESHOLD_FOR_SMALL_CART) {
+            extraChargesAmount += MultipleChargesModel.SMALL_CART_CHARGE;
+            this.multipleChargesModel.setIsSmallCartChargeApplied(true);
+        } else this.multipleChargesModel.setIsSmallCartChargeApplied(false);
+
+        //  high demand surge charge is applied only if flag is set and sub-total price is less than threshold
+        if (this.multipleChargesModel.getCheckHighDemandSurgeChargeFlag() &&
+            this.subTotalPrice < MultipleChargesModel.THRESHOLD_FOR_HIGH_DEMAND_SURGE_CHARGE) {
+            extraChargesAmount += MultipleChargesModel.HIGH_DEMAND_SURGE_CHARGE;
+            this.multipleChargesModel.setIsHighDemandSurgeChargeApplied(true);
+        } else this.multipleChargesModel.setIsHighDemandSurgeChargeApplied(false);
+
+        //  tip amount is applied only if manually opted-in
+        if (this.multipleChargesModel.getIsTipApplied()) extraChargesAmount += this.tipAmount;
+
+        return extraChargesAmount;
     }
 
 }

@@ -23,7 +23,7 @@ export class ShoppingCartComponent {
     protected readonly Math = Math;
 
     isShoppingCartOpen = false;
-    shoppingCart: ShoppingCart;
+    shoppingCart!: ShoppingCart;
 
     isFeedingIndiaChecked = false;
     isSubtotalDropdownOpen = false;
@@ -33,8 +33,11 @@ export class ShoppingCartComponent {
     constructor(private shoppingCartService: ShoppingCartService,
                 private infoPopupHostService: InfoPopupService,
                 private checkoutService: CheckoutService) {
+
         this.shoppingCartService.getCartVisibility$().subscribe(visible => this.isShoppingCartOpen = visible);
-        this.shoppingCart = this.shoppingCartService.getShoppingCart();
+
+        this.shoppingCartService.getShoppingCart$().subscribe(shoppingCart => this.shoppingCart = shoppingCart);
+
     }
 
     openShoppingCart() {
@@ -60,6 +63,7 @@ export class ShoppingCartComponent {
     }
 
     incrementQuantity(cartItem: CartItem) {
+        cartItem.incrementQuantity();
         this.shoppingCart.incrementCartItem(cartItem); // Assuming this method handles stock checks
     }
 
@@ -77,7 +81,7 @@ export class ShoppingCartComponent {
     }
 
     addTip(tipAmount: number) {
-        this.shoppingCart.setTipAmount(Math.floor(tipAmount));
+        this.shoppingCart.setTipAmount(Math.floor(tipAmount));  //  ToDo: Refactor setTipAmount from cart to MCM
         this.shoppingCart.getMultipleChargesModel().setIsTipApplied(tipAmount !== 0);
         this.shoppingCart.reCalcTotalPrice();
         this.isCustomTipOpened = false; // Close custom tip input after adding
