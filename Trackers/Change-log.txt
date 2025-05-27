@@ -20,6 +20,33 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         28th May 2K25 - 01:18 AM
+Commit Message:     325 - G-Mart - Angular - Added New Delivery Location Component & Refactored Navbar
+
+Quick Summary:
+
+1. Added New Delivery Location Component
+    - Created standalone component for handling delivery address selection
+    - Implemented popup for selecting from saved addresses
+    - Added delete confirmation dialog for address removal
+    - Included functionality to handle edge cases when selected address is deleted
+
+2. Refactored Navbar Component for Better Structure
+    - Moved address display logic from Navbar to Delivery Location component
+    - Updated imports in Navbar component to include new Delivery Location component
+
+3. Enhanced Address Service Functionality
+    - Added initDefaultAddress() method to initialize a default address
+
+4. Improved Address Model Display Logic
+    - Enhanced getFullAddress() method to handle empty fields gracefully
+    - Added conditional display for address parts in the UI
+
+5. Fixed My Account Component Navigation
+    - Removed unnecessary popup flag updates during navigation to orders and addresses pages
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         23rd May 2K25 - 09:59 PM
 Commit Message:     324 - G-Mart - Angular - Enhanced Order Details and Shopping Cart Features
 

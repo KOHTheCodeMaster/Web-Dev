@@ -89,8 +89,19 @@ export class Address {
     }
 
     getFullAddress(): string {
-        return `${this.houseNumberOrName},
-                ${this.floor ? 'Floor ' + this.floor + ', ' : ''}${this.locality}, ${this.landmark}`;
+
+        let fullAddress: string = '';
+
+        if (this.houseNumberOrName) fullAddress = this.houseNumberOrName + ', ';
+        if (this.floor) fullAddress += this.floor + ', ';
+        if (this.locality) fullAddress += this.locality + ', ';
+        if (this.landmark) fullAddress += this.landmark + ', ';
+
+        //  Remove last comma and space if it exists
+        if (fullAddress.endsWith(', ')) fullAddress = fullAddress.slice(0, -2);
+
+        return fullAddress;
+
     }
 
     isCustomLabel(): boolean {

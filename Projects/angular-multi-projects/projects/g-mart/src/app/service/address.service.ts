@@ -8,7 +8,7 @@ import {Address} from "../shared/model/address.model";
 export class AddressService {
 
     private readonly isEditDialogOpened$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-    private selectedAddress$: BehaviorSubject<Address> = new BehaviorSubject<Address>(this.createEmptyAddress());
+    private selectedAddress$: BehaviorSubject<Address> = new BehaviorSubject<Address>(this.initDefaultAddress());
     addressList: Address[] = [];
 
     constructor() {
@@ -16,6 +16,19 @@ export class AddressService {
         //  Initialize the address list
         this.initAddressList();
 
+    }
+
+    private initDefaultAddress(): Address {
+        return new Address(
+            0,
+            "",
+            "",
+            "",
+            "Jaipur, Rajasthan",
+            "",
+            "",
+            0,
+            "");
     }
 
     private initAddressList() {
@@ -42,19 +55,6 @@ export class AddressService {
             "Jane Doe",
             9876543210,
             ""));
-    }
-
-    createEmptyAddress(): Address {
-        return new Address(
-            0,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            0,
-            "");
     }
 
     updateIsEditDialogOpenedValue(flag: boolean) {

@@ -1,0 +1,59 @@
+<div *ngIf="address" (click)="toggleSelectAddressPopup()"
+     class="flex flex-col justify-center cursor-pointer" >
+    <span class="text-xl font-bold text-white">Delivery in 11 minutes</span>
+    <div class="w-56 flex items-center">
+        <ng-container *ngIf="address.getLabel();">
+            <span class="text-gray-300 font-bold">{{ address.getLabel() }}</span>
+            <span class="text-gray-400">-</span>
+        </ng-container>
+        <div class="w-40 overflow-hidden text-ellipsis whitespace-nowrap text-gray-200">
+            {{ address.getFullAddress() }}
+        </div>
+        <span class="w-4 h-4 ml-auto flex justify-center items-center bg-gray-600">
+            <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+        </span>
+    </div>
+</div>
+
+<!-- Backdrop for select address popup -->
+<div *ngIf="isSelectAddressPopupOpened" class="fixed inset-0 bg-black bg-opacity-40 z-40" (click)="closeAllPopups()"></div>
+
+<div *ngIf="isSelectAddressPopupOpened"
+     class="absolute left-36 top-full w-[400px] bg-gray-900 text-white rounded-lg shadow-lg p-4 border border-gray-700 z-50">
+    <div class="font-bold text-lg mb-2 text-white">Select Delivery Address</div>
+    <div class="flex flex-col gap-2 max-h-80 overflow-y-auto">
+        <div *ngFor="let addr of addressList"
+             (click)="selectAddress(addr)"
+             class="border border-gray-700 rounded p-2 flex items-center gap-2 hover:bg-gray-800 cursor-pointer transition"
+             [class.bg-gray-800]="address?.getId() === addr.getId()">
+            <div class="flex-1">
+                <div class="font-semibold text-gray-100">{{ addr.getLabel() }}</div>
+                <div class="text-xs text-gray-400">{{ addr.getFullAddress() }}</div>
+            </div>
+            <button (click)="openEditDialog(addr, $event)" class="p-1 hover:bg-gray-700 rounded" title="Edit">
+                <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+            </button>
+            <button (click)="confirmDelete(addr, $event)" class="p-1 hover:bg-gray-700 rounded" title="Delete">
+                <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+            </button>
+        </div>
+    </div>
+    <button class="mt-4 w-full py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
+            (click)="closeAllPopups()">Close</button>
+</div>
+<!-- Select Address Popup -->
+
+<!-- Delete Confirmation Popup -->
+<div *ngIf="addressToDelete" class="fixed inset-0 z-50 flex items-center justify-center">
+    <div class="fixed inset-0 bg-black bg-opacity-50" (click)="closeDeletePopup()"></div>
+    <div class="relative bg-gray-900 rounded-lg shadow-lg p-6 w-80 border border-gray-700 z-10">
+        <div class="font-bold mb-2 text-white">Delete Address?</div>
+        <div class="mb-4 text-sm text-gray-300">
+            Are you sure you want to delete address "<b>{{ addressToDelete.getLabel() }}</b>"?
+        </div>
+        <div class="flex justify-end gap-2">
+            <button class="px-4 py-1 rounded bg-gray-700 text-gray-200 hover:bg-gray-600" (click)="closeDeletePopup()">Cancel</button>
+            <button class="px-4 py-1 rounded bg-red-600 text-white hover:bg-red-700" (click)="deleteAddress()">Delete</button>
+        </div>
+    </div>
+</div>

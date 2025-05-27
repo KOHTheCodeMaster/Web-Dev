@@ -42,12 +42,10 @@ export class MyAccountComponent {
     }
 
     goToMyOrders() {
-        this.updateMyAccountPopupFlag(false);
         this.router.navigate(['/orders']);
     }
 
     goToSavedAddresses() {
-        this.updateMyAccountPopupFlag(false);
         this.router.navigate(['/addresses']);
     }
 
