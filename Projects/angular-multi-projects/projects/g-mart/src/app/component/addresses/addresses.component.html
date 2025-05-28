@@ -86,7 +86,7 @@
             <div #editAddressDialog
                  *ngIf="this.isEditDialogOpened">
                 <app-edit-address-dialog
-                    [address]="this.selectedAddress"
+                    [address]="this.addressForEdit"
                     (click)="$event.stopPropagation()"
                     (closeDialog)="this.addressService.updateIsEditDialogOpenedValue(false)"
                     class="absolute z-10 top-full right-0 mt-2 w-96 h-fit bg-gray-800 text-gray-200

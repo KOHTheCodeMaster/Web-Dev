@@ -14,7 +14,7 @@ import {AddressService} from "../../service/address.service";
 export class AddressesComponent implements OnDestroy {
 
     isEditDialogOpened: boolean = false;
-    selectedAddress!: Address;
+    addressForEdit: Address | null = null;
     addressList: Address[] = [];
     private deletePopupClickListener: (() => void) | undefined;
     private editDialogClickListener: (() => void) | undefined;
@@ -53,7 +53,9 @@ export class AddressesComponent implements OnDestroy {
         });
 
         //  Subscribe to selected address value changes
-        this.addressService.getSelectedAddress$().subscribe(address => this.selectedAddress = address);
+        this.addressService.getAddressForEdit$().subscribe(address => {
+            this.addressForEdit = address;
+        });
 
         //  Subscribe to isEditDialogOpened value changes
         this.addressService.getIsEditDialogOpened$().subscribe(isEditDialogOpened => {
@@ -86,7 +88,7 @@ export class AddressesComponent implements OnDestroy {
     }
 
     handleEditBtnClick(address: Address) {
-        this.addressService.updateSelectedAddress(address);
+        this.addressService.updateAddressForEdit(address);
         this.addressService.updateIsEditDialogOpenedValue(true);
         address.updateIsEditAndDeletePopupOpenedValue(false);
     }

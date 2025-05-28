@@ -1,13 +1,14 @@
-<div *ngIf="address" (click)="toggleSelectAddressPopup()"
-     class="flex flex-col justify-center cursor-pointer" >
+<div *ngIf="selectedAddress" (click)="toggleSelectAddressPopup()"
+     class="flex flex-col justify-center cursor-pointer">
     <span class="text-xl font-bold text-white">Delivery in 11 minutes</span>
     <div class="w-56 flex items-center">
-        <ng-container *ngIf="address.getLabel();">
-            <span class="text-gray-300 font-bold">{{ address.getLabel() }}</span>
+        <ng-container *ngIf="selectedAddress.getLabel();">
+            <!-- ToDo: Fix the character length threshold for long labels -->
+            <span class="text-gray-300 font-bold">{{ selectedAddress.getLabel() }}</span>
             <span class="text-gray-400">-</span>
         </ng-container>
         <div class="w-40 overflow-hidden text-ellipsis whitespace-nowrap text-gray-200">
-            {{ address.getFullAddress() }}
+            {{ selectedAddress.getFullAddress() }}
         </div>
         <span class="w-4 h-4 ml-auto flex justify-center items-center bg-gray-600">
             <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
@@ -16,32 +17,49 @@
 </div>
 
 <!-- Backdrop for select address popup -->
-<div *ngIf="isSelectAddressPopupOpened" class="fixed inset-0 bg-black bg-opacity-40 z-40" (click)="closeAllPopups()"></div>
+<div *ngIf="isSelectAddressPopupOpened" class="fixed inset-0 bg-black bg-opacity-40 z-40"
+     (click)="closeAllPopups()"></div>
 
+<!-- Select Address Popup -->
 <div *ngIf="isSelectAddressPopupOpened"
-     class="absolute left-36 top-full w-[400px] bg-gray-900 text-white rounded-lg shadow-lg p-4 border border-gray-700 z-50">
-    <div class="font-bold text-lg mb-2 text-white">Select Delivery Address</div>
-    <div class="flex flex-col gap-2 max-h-80 overflow-y-auto">
-        <div *ngFor="let addr of addressList"
-             (click)="selectAddress(addr)"
-             class="border border-gray-700 rounded p-2 flex items-center gap-2 hover:bg-gray-800 cursor-pointer transition"
-             [class.bg-gray-800]="address?.getId() === addr.getId()">
-            <div class="flex-1">
-                <div class="font-semibold text-gray-100">{{ addr.getLabel() }}</div>
-                <div class="text-xs text-gray-400">{{ addr.getFullAddress() }}</div>
+     class="absolute left-36 top-full w-[500px] bg-gray-900 text-white rounded-lg shadow-lg border border-gray-700 z-50">
+
+    <div class="p-6">
+        <div class="font-bold text-lg mb-2 text-white">Change Location</div>
+        <div class="flex gap-2 items-center">
+            <button class="p-2 bg-[#0a6920] rounded">Detect my location</button>
+            <div class="flex justify-center items-center">
+                <span class="w-2 h-[1px] border border-gray-700"></span>
+                <span class="p-2 flex justify-center items-center text-xs border border-gray-700 rounded-full">OR</span>
+                <span class="w-2 h-[1px] border border-gray-700"></span>
             </div>
-            <button (click)="openEditDialog(addr, $event)" class="p-1 hover:bg-gray-700 rounded" title="Edit">
+            <div>
+                <input type="text" class="w-[220px] p-2.5 bg-gray-800 outline-none rounded-lg border border-gray-600"
+                       placeholder="search delivery location">
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="addressList.length > 0" class="max-h-80 overflow-y-auto px-6 pb-6 flex flex-col gap-3">
+        <div class="font-bold text-lg text-white">Your saved addresses</div>
+        <div *ngFor="let address of addressList"
+             (click)="selectAddress(address)"
+             class="p-2 border border-gray-700 rounded flex items-center gap-2 hover:bg-gray-800 cursor-pointer transition"
+             [ngClass]="{ 'bg-gray-800 border-cyan-500' : this.selectedAddress?.getId() === address.getId() }">
+            <div class="flex-1">
+                <div class="font-semibold text-gray-100">{{ address.getLabel() }}</div>
+                <div class="text-xs text-gray-400">{{ address.getFullAddress() }}</div>
+            </div>
+            <button (click)="openEditDialog(address, $event)" class="p-1 hover:bg-gray-700 rounded" title="Edit">
                 <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
             </button>
-            <button (click)="confirmDelete(addr, $event)" class="p-1 hover:bg-gray-700 rounded" title="Delete">
+            <button (click)="confirmDelete(address, $event)" class="p-1 hover:bg-gray-700 rounded" title="Delete">
                 <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
             </button>
         </div>
     </div>
-    <button class="mt-4 w-full py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
-            (click)="closeAllPopups()">Close</button>
+
 </div>
-<!-- Select Address Popup -->
 
 <!-- Delete Confirmation Popup -->
 <div *ngIf="addressToDelete" class="fixed inset-0 z-50 flex items-center justify-center">
@@ -52,8 +70,23 @@
             Are you sure you want to delete address "<b>{{ addressToDelete.getLabel() }}</b>"?
         </div>
         <div class="flex justify-end gap-2">
-            <button class="px-4 py-1 rounded bg-gray-700 text-gray-200 hover:bg-gray-600" (click)="closeDeletePopup()">Cancel</button>
-            <button class="px-4 py-1 rounded bg-red-600 text-white hover:bg-red-700" (click)="deleteAddress()">Delete</button>
+            <button class="px-4 py-1 rounded bg-gray-700 text-gray-200 hover:bg-gray-600" (click)="closeDeletePopup()">
+                Cancel
+            </button>
+            <button class="px-4 py-1 rounded bg-red-600 text-white hover:bg-red-700" (click)="deleteAddress()">Delete
+            </button>
         </div>
     </div>
+</div>
+
+
+<!-- Edit Address Popup -->
+<div *ngIf="addressService.getIsEditDialogOpened$() | async" class="z-50">
+    <app-edit-address-dialog
+        [address]="this.addressForEdit"
+        (click)="$event.stopPropagation()"
+        (closeDialog)="this.addressService.updateIsEditDialogOpenedValue(false)"
+        class="absolute z-10 top-full right-0 mt-2 w-96 h-fit bg-gray-800 text-gray-200
+                rounded-lg shadow-lg border border-gray-700 cursor-default">
+    </app-edit-address-dialog>
 </div>

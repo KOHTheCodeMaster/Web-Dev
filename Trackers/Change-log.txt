@@ -20,6 +20,34 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         29th May 2K25 - 12:27 AM
+Commit Message:     326 - G-Mart - Angular - Address Management System Enhancements
+
+Quick Summary:
+
+1. Enhanced Address Management in Delivery Location Component
+   - Redesigned address selection popup with improved UI
+   - Added "Detect my location" button and search location input field
+   - Implemented visual indicators for selected addresses
+   - Added proper address editing capabilities directly from the delivery location component
+
+2. Improved Address Edit Dialog Integration
+   - Fixed address editing by implementing a dedicated addressForEdit property
+   - Added null safety checks throughout the address editing flow
+   - Updated property references from selectedAddress to addressForEdit for edit operations
+
+3. Expanded Address Service Functionality
+   - Added updateSelectedAddressToDefault() method to handle edge cases
+   - Created new addressForEdit$ BehaviorSubject to separate edit and selection concerns
+   - Added more sample addresses for testing purposes
+
+4. Enhanced Error Handling and UI Experience
+   - Added null safety checks in address-related components
+   - Improved event propagation control in popup dialogs
+   - Added proper UI feedback for selected addresses with border highlighting
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         28th May 2K25 - 01:18 AM
 Commit Message:     325 - G-Mart - Angular - Added New Delivery Location Component & Refactored Navbar
 

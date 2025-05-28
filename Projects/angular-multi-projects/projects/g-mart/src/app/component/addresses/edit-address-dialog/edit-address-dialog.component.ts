@@ -11,7 +11,7 @@ import {Address} from '../../../shared/model/address.model';
 })
 export class EditAddressDialogComponent {
 
-    @Input({required: true}) address!: Address;
+    @Input({required: true}) address!: Address | null;
     @Output() closeDialog: EventEmitter<void> = new EventEmitter<void>();
     tempAddress: Address | null = null;
     strCustomLabelInput: string = '';
@@ -22,6 +22,7 @@ export class EditAddressDialogComponent {
     ngOnInit() {
         //  Create Deep Copy of the address object
         this.tempAddress = this.address ? this.address.clone() : null;
+        console.log('this.tempAddress: ', this.tempAddress);
 
         //  Initialize with the custom label value of the tempAddress
         this.strCustomLabelInput = this.tempAddress?.isCustomLabel()
@@ -45,7 +46,7 @@ export class EditAddressDialogComponent {
             //  Check if the label is set to custom value then update the label accordingly
             if (this.tempAddress.isCustomLabel() && this.strCustomLabelInput) this.tempAddress.setLabel(this.strCustomLabelInput);
 
-            this.address.copyFrom(this.tempAddress);
+            if (this.address) this.address.copyFrom(this.tempAddress);
         }
 
         // Emit save event with the updated address
