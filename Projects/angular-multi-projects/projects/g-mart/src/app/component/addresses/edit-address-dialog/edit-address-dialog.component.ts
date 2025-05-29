@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {CommonModule, NgClass} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {Address} from '../../../shared/model/address.model';
+import {AddressService} from "../../../service/address.service";
 
 @Component({
     selector: 'app-edit-address-dialog',
@@ -16,7 +17,7 @@ export class EditAddressDialogComponent {
     tempAddress: Address | null = null;
     strCustomLabelInput: string = '';
 
-    constructor() {
+    constructor(private addressService: AddressService) {
     }
 
     ngOnInit() {
@@ -47,6 +48,8 @@ export class EditAddressDialogComponent {
             if (this.tempAddress.isCustomLabel() && this.strCustomLabelInput) this.tempAddress.setLabel(this.strCustomLabelInput);
 
             if (this.address) this.address.copyFrom(this.tempAddress);
+
+            if (this.address?.getId()) this.addressService.addNewAddress(this.address);
         }
 
         // Emit save event with the updated address

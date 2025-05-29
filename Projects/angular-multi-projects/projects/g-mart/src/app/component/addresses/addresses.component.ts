@@ -109,6 +109,17 @@ export class AddressesComponent implements OnDestroy {
         }
     }
 
+    addNewAddress() {
+        this.addressForEdit = this.addressService.createEmptyAddress();
+        this.addressService.updateIsEditDialogOpenedValue(true);
+        this.addressService.updateAddressForEdit(this.addressForEdit);
+    }
+
+    handleDeleteAddress(addressToBeDeleted: Address) {
+        this.addressService.deleteAddress(addressToBeDeleted);
+        addressToBeDeleted.toggleEditAndDeletePopup();  //  Close the delete confirmation and edit/delete popups
+    }
+
     ngOnDestroy() {
         //  Remove the click listener when the component is destroyed to avoid memory leaks
         this.removeDeletePopupClickListener();

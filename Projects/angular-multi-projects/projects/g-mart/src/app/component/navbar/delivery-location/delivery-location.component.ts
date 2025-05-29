@@ -49,12 +49,7 @@ export class DeliveryLocationComponent {
 
     deleteAddress() {
         if (this.addressToDelete) {
-            this.addressList = this.addressList.filter(a => a.getId() !== this.addressToDelete!.getId());
-            if (this.selectedAddress && this.selectedAddress.getId() === this.addressToDelete.getId()) {
-                // If deleted address is selected, select the first available
-                if (this.addressList.length > 0) this.addressService.updateSelectedAddress(this.addressList[0]);
-                else this.addressService.updateSelectedAddressToDefault();
-            }
+            this.addressService.deleteAddress(this.addressToDelete);
             this.addressToDelete = null;
         }
     }

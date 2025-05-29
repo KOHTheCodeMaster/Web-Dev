@@ -20,6 +20,34 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         29th May 2K25 - 11:19 PM
+Commit Message:     327 - G-Mart - Angular - Add New Address Feature & Centralized Address Deletion Logic
+
+Quick Summary:
+
+1. Implemented Add New Address Feature
+   - Added addNewAddress() method to AddressesComponent
+   - Connected "Add new address" button with click handler
+   - Created createEmptyAddress() method in AddressService
+
+2. Centralized Address Deletion Logic
+   - Moved deletion logic from individual components to AddressService
+   - Implemented deleteAddress() method in service layer
+   - Updated all components to use centralized deletion method
+   - Removed redundant handleDeleteAddress() from Address model class
+
+3. Enhanced Address Management in Service Layer
+   - Added addNewAddress() method to handle both adding and updating addresses
+   - Fixed default address ID initialization (changed from 0 to 1)
+   - Improved null safety and error handling for address operations
+
+4. Refactored Components for Better Code Organization
+   - Moved address manipulation logic from components to service layer
+   - Updated EditAddressDialogComponent to properly utilize the AddressService
+   - Improved event propagation for address management actions
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         29th May 2K25 - 12:27 AM
 Commit Message:     326 - G-Mart - Angular - Address Management System Enhancements
 

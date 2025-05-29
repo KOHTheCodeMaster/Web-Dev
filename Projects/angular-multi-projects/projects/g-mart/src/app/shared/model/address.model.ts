@@ -83,11 +83,6 @@ export class Address {
         this.isDeleteConfirmationPopupOpened$.next(isDeleteConfirmationPopupOpened);
     }
 
-    handleDeleteAddress($event: MouseEvent) {
-        $event.stopPropagation();
-        this.toggleDeleteConfirmationPopup();
-    }
-
     getFullAddress(): string {
 
         let fullAddress: string = '';

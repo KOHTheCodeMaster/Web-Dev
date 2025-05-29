@@ -21,7 +21,7 @@ export class AddressService {
 
     private initDefaultAddress(): Address {
         return new Address(
-            0,
+            1,
             "",
             "",
             "",
@@ -29,6 +29,19 @@ export class AddressService {
             "",
             "",
             0,
+            "");
+    }
+
+    public createEmptyAddress(): Address {
+        return new Address(
+            -1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            -1,
             "");
     }
 
@@ -118,6 +131,23 @@ export class AddressService {
         this.addressForEdit$.next(address);
     }
 
+    deleteAddress(addressToDelete: Address) {
+        const index = this.addressList.findIndex(address => address.getId() === addressToDelete.getId());
+        if (index !== -1) {
+            this.addressList.splice(index, 1);
+            // Optionally, reset the selected address if it was the one deleted
+            if (this.selectedAddress$.getValue().getId() === addressToDelete.getId()) this.updateSelectedAddressToDefault();
+        }
+    }
+
+    addNewAddress(newAddress: Address | null) {
+        if (newAddress) {
+            //  Check if the new address already exists
+            const existingAddress = this.addressList.find(address => address.getId() === newAddress.getId());
+            if (existingAddress) Object.assign(existingAddress, newAddress);    //  Update existing address
+            else this.addressList.push(newAddress);                             //  Add new address
+        } else console.error("AddressService: Attempted to add a null address.");
+    }
 
     //  Getters
     //  -------

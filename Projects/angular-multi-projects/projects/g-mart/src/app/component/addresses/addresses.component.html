@@ -23,7 +23,8 @@
 
             <div class="p-4 text-xl font-semibold text-gray-200">
                 <div>My addresses</div>
-                <button class="flex gap-2 items-center text-green-400">
+                <button (click)="addNewAddress()"
+                        class="flex gap-2 items-center text-green-400">
                     <span class="font-bold text-2xl">+</span>
                     <span>Add new address</span>
                 </button>
@@ -62,7 +63,7 @@
                                                 rounded-lg shadow-lg border border-gray-700 cursor-default">
                                         <p class="mt-2 px-4 py-2">Are you sure you want to delete this address?</p>
                                         <div class="px-4 py-2 flex gap-6 justify-center items-center text-white">
-                                            <button (click)="address.handleDeleteAddress($event)"
+                                            <button (click)="handleDeleteAddress(address)"
                                                     class="h-fit px-4 py-2 rounded-lg bg-red-500 cursor-pointer">
                                                 Delete
                                             </button>
