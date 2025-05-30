@@ -1,34 +1,61 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {User} from "../shared/model/User";
+import {DataLoaderService} from "./data-loader.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
 
-    currentUser$!: BehaviorSubject<User>;
+    loggedInUser$: BehaviorSubject<User | null>;
+    private users: User[] = [];
+    // private usersUrl: string = '/assets/json/user.json';
+    // private http: HttpClient = inject(HttpClient);
 
-    // private usersUrl: string = '/assets/users.json';
-    // private http!: HttpClient;
-
-    constructor() {
-        // this.http = inject(HttpClient);
-        this.currentUser$ = new BehaviorSubject<User>(this.generateGuestUser());
+    constructor(private dataLoaderService: DataLoaderService) {
+        this.loggedInUser$ = new BehaviorSubject<User | null>(null);
+        this.initUsers();
     }
 
-/*
-    getAllUsers(): Observable<User[]> {
-        return this.http.get<User[]>(this.usersUrl);
-    }
-*/
+    initUsers() {
 
-    generateGuestUser(): User {
-        return {id: 1001, username: 'guest', email: 'guest@abc.xyz', admin: false};
+        this.dataLoaderService.getDataLoaded$().subscribe(dataLoaded => {
+            //  Initialize Users
+            if (dataLoaded) {
+                this.users = this.dataLoaderService.getDataList('user').map(user => new User(
+                    user['id'],
+                    user['username'],
+                    user['password'],
+                    user['email'],
+                    user['isAdmin'] || false
+                ));
+            }
+        });
+
     }
 
-    getCurrentUser(): User {
-        return this.currentUser$.value;
+    getDummyUser(): User {
+        return new User(1, 'john', '123', 'john@abc.xyz', false);
+    }
+
+    updateLoggedInUser(user: User | null) {
+        this.loggedInUser$.next(user);
+    }
+
+    //  Getters & Setters
+    //  -----------------
+
+    getLoggedInUser$(): Observable<User | null> {
+        return this.loggedInUser$.asObservable();
+    }
+
+    getLoggedInUser(): User | null {
+        return this.loggedInUser$.getValue();
+    }
+
+    getUsers(): User[] {
+        return this.users;
     }
 
 }

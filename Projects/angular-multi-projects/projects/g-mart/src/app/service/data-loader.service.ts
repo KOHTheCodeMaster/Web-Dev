@@ -22,6 +22,9 @@ export class DataLoaderService {
 
         this.dataLoaded$ = new BehaviorSubject<boolean>(false);
 
+        //  Reset the post-login URL in localStorage to default home page
+        localStorage.setItem('postLoginUrl', '/');
+
         this.initNameToJsonFilePathMap();
 
         await this.initNameToJsonDataMap();

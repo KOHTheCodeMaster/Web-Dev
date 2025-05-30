@@ -1,4 +1,3 @@
-
 Time Stamp: 22nd Aug 2K24 - 01:02 PM..!!
 
 Title: Change Log for Commit History
@@ -17,6 +16,35 @@ GitHub: https://github.com/KOHTheCodeMaster/Frontend-Web-Dev/
 
 Change Log:
 -----------
+
+----------------------------------------------------------------------------------------------------
+
+Time Stamp:         30th May 2K25 - 10:49 AM
+Commit Message:     328 - G-Mart - Angular - Added Login Component & Authentication System
+
+Quick Summary:
+
+1. Added Authentication System
+   - Created AuthService for user authentication
+   - Implemented AuthGuardService to protect routes from unauthorized access
+   - Added route guards to secure orders and addresses pages
+
+2. Enhanced User Management
+   - Refactored User from interface to class with getters/setters
+   - Updated UserService with proper user initialization and management
+   - Added methods to track and update logged-in user status
+   - Created an observable pattern for user authentication state
+   - Loading user data from dataLoaderService on application startup
+
+3. Added Login Component & Integration with Routing
+   - Added new Login route for user authentication
+   - Modified Navbar to conditionally display login button or user account details
+   - Implemented post-login redirect to originally requested protected routes
+
+4. Updated API Configuration
+   - Added HttpClient provider to the application configuration
+   - Created sample users in user.json for testing the authentication system
+   - Modified data loading service to initialize post-login URL in local storage
 
 ----------------------------------------------------------------------------------------------------
 

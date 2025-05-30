@@ -40,7 +40,21 @@
     </div>
 
     <!--  My Account  -->
-    <app-my-account class="w-fit ml-auto flex gap-3 items-center text-2xl"></app-my-account>
+
+    <ng-container *ngIf="!!this.userService.getLoggedInUser(); else showLoginBtn">
+        <app-my-account class="w-fit ml-auto flex gap-3 items-center text-2xl"></app-my-account>
+    </ng-container>
+    <ng-template #showLoginBtn>
+        <!--<a routerLink="/login"
+           class="w-fit ml-auto px-8 py-2 text-gray-200 bg-gray-800 hover:bg-gray-700 rounded-lg">
+            Login
+        </a>-->
+        <!-- Account Button -->
+        <a routerLink="/login" class="relative w-fit px-4 flex gap-3 items-center text-2xl">
+            <span>Login</span>
+            <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
+        </a>
+    </ng-template>
 
     <!--  Shopping Cart  -->
     <app-shopping-cart class="w-48 ml-auto px-8 py-2"></app-shopping-cart>

@@ -1,3 +1,16 @@
-{
-    "users": []
-}
+[
+    {
+        "id": 1,
+        "username": "admin",
+        "password": "admin",
+        "email": "admin@gmart.xyz",
+        "isAdmin": true
+    },
+    {
+        "id": 2,
+        "username": "test1",
+        "password": "test1",
+        "email": "test1@gmart.xyz",
+        "isAdmin": false
+    }
+]

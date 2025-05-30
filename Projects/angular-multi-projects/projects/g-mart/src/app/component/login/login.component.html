@@ -1,0 +1,32 @@
+<div *ngIf="!isLoggedIn" class="h-full py-40 flex items-center justify-center bg-gray-950">
+    <div class="w-[400px] bg-gray-900 rounded-xl shadow-lg border border-gray-800 p-8 flex flex-col gap-6">
+        <div class="flex flex-col items-center gap-2">
+            <img class="w-16 h-16 rounded-full border border-gray-700"
+                 src="/assets/icons/01-sample-icon.svg"
+                 alt="?? Icon">
+            <span class="text-2xl font-bold text-gray-100">Welcome to G-Mart</span>
+            <span class="text-gray-400 text-sm">Sign in to continue</span>
+        </div>
+        <form (ngSubmit)="handleLogin()" class="flex flex-col gap-4">
+            <div>
+                <label class="block text-gray-300 mb-1">Username</label>
+                <input [(ngModel)]="username" name="username" required
+                       class="w-full p-2 rounded bg-gray-800 border border-gray-700 text-gray-100
+                                focus:outline-none focus:border-cyan-500"
+                       placeholder="Enter username">
+            </div>
+            <div>
+                <label class="block text-gray-300 mb-1">Password</label>
+                <input [(ngModel)]="password" name="password" type="password" required
+                       class="w-full p-2 rounded bg-gray-800 border border-gray-700 text-gray-100
+                                focus:outline-none focus:border-cyan-500"
+                       placeholder="Enter password">
+            </div>
+            <button type="submit"
+                    class="w-full py-2 rounded bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition">
+                Login
+            </button>
+            <div *ngIf="loginError" class="text-red-500 text-center text-sm">{{ loginError }}</div>
+        </form>
+    </div>
+</div>
