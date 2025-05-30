@@ -6,6 +6,8 @@ import {AddressesComponent} from "./component/addresses/addresses.component";
 import {OrderDetailsComponent} from "./component/order-details/order-details.component";
 import {LoginComponent} from "./component/login/login.component";
 import {AuthGuardService} from "./service/auth-guard.service";
+import {AdminDashboardComponent} from "./component/admin-dashboard/admin-dashboard.component";
+import {AdminGuardService} from "./service/admin-guard.service";
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -21,5 +23,7 @@ export const routes: Routes = [
     */
     {path: 'addresses', component: AddressesComponent, canActivate: [AuthGuardService]},
     {path: 'login', component: LoginComponent},
+    {path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuardService]},
+    {path: '**', redirectTo: '/', pathMatch: 'full'}    //  Add any other path to redirect to home
 
 ];

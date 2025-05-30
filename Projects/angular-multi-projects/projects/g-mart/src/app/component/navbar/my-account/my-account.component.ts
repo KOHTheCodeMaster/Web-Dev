@@ -1,6 +1,7 @@
 import {Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {NgIf} from '@angular/common';
+import {UserService} from "../../../service/user.service";
 
 @Component({
     selector: 'app-my-account',
@@ -15,7 +16,8 @@ export class MyAccountComponent {
     @ViewChild('myAccountPopup') myAccountPopup!: ElementRef;
 
     constructor(private router: Router,
-                private renderer: Renderer2) {
+                private renderer: Renderer2,
+                private userService: UserService) {
     }
 
     toggleMyAccountPopup() {
@@ -50,8 +52,9 @@ export class MyAccountComponent {
     }
 
     logout() {
-        console.log("Perform logout here...");
-        this.updateMyAccountPopupFlag(false);
+        this.toggleMyAccountPopup();
+        this.userService.updateLoggedInUser(null);
+        this.router.navigate(['/login']);
     }
 
     removeClickListener() {

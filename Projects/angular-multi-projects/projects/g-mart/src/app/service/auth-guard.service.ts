@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {UserService} from "./user.service";
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from "@angular/router";
-import {User} from "../shared/model/User";
+import {User} from "../shared/model/user";
 
 @Injectable({
     providedIn: 'root'
@@ -20,9 +20,14 @@ export class AuthGuardService implements CanActivate {
         let isAuthenticated = false;
         let loggedInUser: User | null = this.userService.getLoggedInUser();
 
-        if (loggedInUser !== null) isAuthenticated = true;
-        else {
-            this.userService.updateLoggedInUser(null); // Ensure logged-in user is set to null
+        if (loggedInUser !== null) {
+            isAuthenticated = true;
+
+            //  If the user is logged in, redirect to the /admin
+            if (loggedInUser.getIsAdmin()) this.router.navigateByUrl('/admin');
+
+        } else {
+            // this.userService.updateLoggedInUser(null); // Ensure logged-in user is set to null
 
             // Store the postLoginUrl in the local storage
             localStorage.setItem('postLoginUrl', postLoginUrl);

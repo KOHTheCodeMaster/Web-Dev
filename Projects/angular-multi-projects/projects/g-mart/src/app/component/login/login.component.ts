@@ -41,10 +41,17 @@ export class LoginComponent {
             });
     }
 
-    handleLogout() {
-        this.userService.updateLoggedInUser(null);
-        this.username = '';
-        this.password = '';
+    loginAsAdmin() {
+        this.username = 'admin';
+        this.password = 'admin';
+        localStorage.setItem("postLoginUrl", '/admin');
+        this.handleLogin();
+    }
+
+    loginAsTest() {
+        this.username = 'test';
+        this.password = 'test';
+        this.handleLogin();
     }
 
 }

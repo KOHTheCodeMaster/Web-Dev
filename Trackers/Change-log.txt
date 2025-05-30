@@ -19,6 +19,36 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         30th May 2K25 - 10:32 PM
+Commit Message:     329 - G-Mart - Angular - Added Admin Dashboard & Admin Authorization System
+
+Quick Summary:
+
+1. Implemented Admin Dashboard Interface
+   - Created new AdminDashboardComponent with comprehensive admin control panel
+   - Need to Re-design the dashboard with Clean, Readable & Tailwind CSS using Flexbox layout instead of <table>
+   - Added sections for Dashboard Home, Orders, Products, Users, and Settings
+   - Implemented dynamic stats display showing total orders, products, and users
+
+2. Enhanced Order Management for Admins
+   - Added status management functionality to change order status (Pending, Processing, Delivered, Cancelled)
+   - Created detailed order view popup with comprehensive order information
+   - Implemented search, pagination, and filter capabilities for orders list
+
+3. Added Admin Authorization System
+   - Implemented AdminGuardService to protect admin routes from unauthorized access
+   - Added status field to Order model with appropriate getters and setters
+   - Renamed User.ts to user.ts for consistent file naming conventions
+   - Updated Product model with setters and added clone functionality
+
+4. Improved User Experience & Navigation
+   - Added quick login buttons in Login component for testing admin and regular user access
+   - Implemented logout functionality in MyAccount component
+   - Added wildcard route to redirect invalid URLs to home page
+   - Updated sample user data for testing admin and regular user roles
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         30th May 2K25 - 10:49 AM
 Commit Message:     328 - G-Mart - Angular - Added Login Component & Authentication System
 

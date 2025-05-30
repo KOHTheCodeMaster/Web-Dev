@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
-import {User} from "../shared/model/User";
 import {DataLoaderService} from "./data-loader.service";
+import {User} from "../shared/model/user";
 
 @Injectable({
     providedIn: 'root'

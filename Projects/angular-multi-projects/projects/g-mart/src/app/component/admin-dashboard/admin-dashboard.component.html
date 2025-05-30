@@ -1,0 +1,319 @@
+<div class="min-h-screen bg-gray-950 text-gray-100">
+    <div class="w-full bg-gray-900 shadow border-b border-gray-800 px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <img src="/assets/icons/01-sample-icon.svg" class="w-10 h-10 rounded-full border border-gray-700"
+                 alt="Admin Icon">
+            <span class="text-2xl font-bold">G-Mart Admin Dashboard</span>
+        </div>
+        <div>
+            <a routerLink="/" class="text-cyan-400 hover:underline text-sm transition-colors duration-150">Back to
+                Store</a>
+        </div>
+    </div>
+    <div class="flex">
+        <!-- Sidebar Navigation -->
+        <nav class="w-64 bg-gray-900 border-r border-gray-800 min-h-[calc(100vh-64px)] p-6 flex flex-col gap-4">
+            <button (click)="activeSection = 'dashboard'"
+                    [ngClass]="{'bg-gray-800': activeSection === 'dashboard'}"
+                    class="block px-4 py-2 rounded hover:bg-gray-800 transition text-left w-full focus:outline-none">
+                Dashboard Home
+            </button>
+            <button (click)="activeSection = 'orders'"
+                    [ngClass]="{'bg-gray-800': activeSection === 'orders'}"
+                    class="block px-4 py-2 rounded hover:bg-gray-800 transition text-left w-full focus:outline-none">
+                Orders
+            </button>
+            <button (click)="activeSection = 'products'"
+                    [ngClass]="{'bg-gray-800': activeSection === 'products'}"
+                    class="block px-4 py-2 rounded hover:bg-gray-800 transition text-left w-full focus:outline-none">
+                Products
+            </button>
+            <button (click)="activeSection = 'users'"
+                    [ngClass]="{'bg-gray-800': activeSection === 'users'}"
+                    class="block px-4 py-2 rounded hover:bg-gray-800 transition text-left w-full focus:outline-none">
+                Users
+            </button>
+            <button (click)="activeSection = 'settings'"
+                    [ngClass]="{'bg-gray-800': activeSection === 'settings'}"
+                    class="block px-4 py-2 rounded hover:bg-gray-800 transition text-left w-full focus:outline-none">
+                Settings
+            </button>
+        </nav>
+        <!-- Main Content -->
+        <main class="flex-1 p-10">
+            <!-- Dashboard Home Section -->
+            <section *ngIf="activeSection === 'dashboard'">
+                <h2 class="text-xl font-semibold mb-6">Welcome, Admin!</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-800 flex flex-col items-center">
+                        <span class="text-4xl font-bold text-cyan-400 mb-2">{{ allOrders.length }}</span>
+                        <span class="text-gray-300">Total Orders</span>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-800 flex flex-col items-center">
+                        <span class="text-4xl font-bold text-cyan-400 mb-2">{{ allProducts.length }}</span>
+                        <span class="text-gray-300">Products Listed</span>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-800 flex flex-col items-center">
+                        <span class="text-4xl font-bold text-cyan-400 mb-2">34</span>
+                        <span class="text-gray-300">Registered Users</span>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <h3 class="text-lg font-semibold mb-4">Recent Orders</h3>
+                    <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
+                        <table class="w-full text-left">
+                            <thead>
+                            <tr class="text-gray-400 border-b border-gray-800">
+                                <th class="py-2">Order #</th>
+                                <th class="py-2">Customer</th>
+                                <th class="py-2">Date</th>
+                                <th class="py-2">Status</th>
+                                <th class="py-2">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let order of allOrders.slice(0,5)"
+                                class="border-b border-gray-800 hover:bg-gray-800 transition">
+                                <td class="py-2">#{{ order.getOrderNumber() }}</td>
+                                <td class="py-2">{{ order.getDeliverToAddress().getReceiverName() }}</td>
+                                <td class="py-2">{{ order.getOrderDate() | date:'yyyy-MM-dd' }}</td>
+                                <td class="py-2"><span class="px-2 py-1 rounded"
+                                                       [ngClass]="{
+                                        'bg-yellow-900 text-yellow-300': order.getStatus() === 'Pending',
+                                        'bg-blue-900 text-blue-300': order.getStatus() === 'Processing',
+                                        'bg-green-900 text-green-300': order.getStatus() === 'Delivered',
+                                        'bg-red-900 text-red-300': order.getStatus() === 'Cancelled'
+                                      }">{{ order.getStatus() }}</span>
+                                </td>
+                                <td class="py-2">{{ order.getShoppingCart().getTotalPrice() | currency: 'INR' : 'symbol' }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <!-- Orders Section -->
+            <section *ngIf="activeSection === 'orders'">
+                <h2 class="text-xl font-semibold mb-6">Manage Orders</h2>
+                <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+                    <input [(ngModel)]="orderSearchTerm"
+                           (input)="onOrderSearchChange()"
+                           class="p-2 rounded bg-gray-800 border border-gray-700 text-gray-100 focus:outline-none focus:border-cyan-500 w-full md:w-64"
+                           placeholder="Search orders...">
+                </div>
+
+                <!-- Orders List Header -->
+                <div class="flex bg-gray-800 p-3 rounded-t-md text-gray-400 font-semibold">
+                    <div class="w-1/6 px-2 py-1">Order #</div>
+                    <div class="w-2/6 px-2 py-1">Customer</div>
+                    <div class="w-1/6 px-2 py-1">Date</div>
+                    <div class="w-2/6 px-2 py-1">Status</div>
+                    <div class="w-1/6 px-2 py-1 text-right">Total</div>
+                    <div class="w-1/6 px-2 py-1 text-center">Actions</div>
+                </div>
+
+                <!-- Orders List Body -->
+                <div *ngIf="displayedOrders.length > 0; else noOrders"
+                     class="bg-gray-900 rounded-b-md border border-gray-800">
+                    <div *ngFor="let order of displayedOrders"
+                         class="flex items-center border-b border-gray-800 hover:bg-gray-850 transition last:border-b-0">
+                        <div class="w-1/6 px-2 py-3 text-sm">#{{ order.getOrderNumber() }}</div>
+                        <div class="w-2/6 px-2 py-3 text-sm">{{ order.getDeliverToAddress().getReceiverName() }}</div>
+                        <div class="w-1/6 px-2 py-3 text-sm">{{ order.getOrderDate() | date:'yyyy-MM-dd' }}</div>
+                        <div class="w-2/6 px-2 py-3 text-sm">
+                            <ng-container *ngIf="editingOrder !== order; else editStatus">
+                                <span class="px-2 py-1 rounded text-xs"
+                                      [ngClass]="{
+                                        'bg-yellow-900 text-yellow-300': order.getStatus() === 'Pending',
+                                        'bg-blue-900 text-blue-300': order.getStatus() === 'Processing',
+                                        'bg-green-900 text-green-300': order.getStatus() === 'Delivered',
+                                        'bg-red-900 text-red-300': order.getStatus() === 'Cancelled'
+                                      }">
+                                    {{ order.getStatus() }}
+                                </span>
+                                <button (click)="editOrderStatus(order)"
+                                        class="ml-2 px-2 py-1 rounded bg-gray-700 hover:bg-cyan-700 text-cyan-300 hover:text-white text-xs transition focus:outline-none">
+                                    Edit
+                                </button>
+                            </ng-container>
+                            <ng-template #editStatus>
+                                <div class="flex items-center">
+                                    <select [(ngModel)]="orderUpdateForm.status"
+                                            class="px-2 py-1 rounded bg-gray-700 border border-gray-600 text-cyan-300 text-xs focus:outline-none">
+                                        <option value="Pending">Pending</option>
+                                        <option value="Processing">Processing</option>
+                                        <option value="Delivered">Delivered</option>
+                                        <option value="Cancelled">Cancelled</option>
+                                    </select>
+                                    <button (click)="saveOrderStatus()"
+                                            class="ml-2 px-2 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-xs transition focus:outline-none">
+                                        Save
+                                    </button>
+                                    <button (click)="cancelEditOrder()"
+                                            class="ml-2 px-2 py-1 rounded bg-gray-600 hover:bg-gray-700 text-gray-300 text-xs transition focus:outline-none">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </ng-template>
+                        </div>
+                        <div class="w-1/6 px-2 py-3 text-sm text-right">{{
+                                order.getShoppingCart().getTotalPrice() |
+                                    currency: 'INR' : 'symbol'
+                            }}
+                        </div>
+                        <div class="w-1/6 px-2 py-3 text-sm text-center">
+                            <button (click)="selectedOrder = order; showOrderDetails = true"
+                                    class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-xs transition focus:outline-none">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <ng-template #noOrders>
+                    <div class="bg-gray-900 rounded-b-md border border-gray-800 p-6 text-center text-gray-500">
+                        No orders found.
+                    </div>
+                </ng-template>
+
+                <!-- Pagination -->
+                <div class="flex gap-2 mt-6 justify-center">
+                    <button *ngFor="let page of getPageNumbers(orderTotalPages)"
+                            (click)="changeOrderPage(page)"
+                            [ngClass]="{'bg-cyan-600 text-white': orderCurrentPage === page, 'bg-gray-800 text-gray-300 hover:bg-gray-700': orderCurrentPage !== page}"
+                            class="px-4 py-2 rounded transition focus:outline-none text-sm">
+                        {{ page }}
+                    </button>
+                </div>
+
+                <!-- Order Details Popup -->
+                <div *ngIf="showOrderDetails && selectedOrder"
+                     class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+                    <div class="bg-gray-900 rounded-lg shadow-xl w-full max-w-2xl">
+                        <div class="flex justify-between items-center p-5 border-b border-gray-800">
+                            <h3 class="text-xl font-semibold text-gray-100">Order
+                                #{{ selectedOrder.getOrderNumber() }}</h3>
+                            <button (click)="showOrderDetails = false; selectedOrder = null"
+                                    class="text-gray-400 hover:text-cyan-400 text-2xl focus:outline-none">&times;
+                            </button>
+                        </div>
+
+                        <div class="p-5">
+                            <!-- Order Summary -->
+                            <div class="flex flex-col gap-3 mb-6">
+                                <span class="font-semibold text-lg text-gray-200">Order Summary</span>
+                                <span class="text-sm text-gray-400">Arrived at {{
+                                        selectedOrder.formatDate(selectedOrder.getDateArrivedAt())
+                                    }}</span>
+                                <a class="w-fit flex items-center gap-2 text-cyan-400 hover:underline text-sm cursor-pointer">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                         viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M12 8v4l3 3m6 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Download Invoice
+                                </a>
+                            </div>
+
+                            <!-- Address & Status -->
+                            <div class="flex flex-col md:flex-row gap-6 mb-6">
+                                <div class="flex-1">
+                                    <div class="font-semibold text-gray-300 mb-1">Delivery Address</div>
+                                    <div class="text-gray-400 text-sm">
+                                        {{ selectedOrder.getDeliverToAddress().getFullAddress() }}<br>
+                                        <!--
+                                                                                {{ selectedOrder.getDeliverToAddress().getAddressLine1() }}<br>
+                                                                                {{ selectedOrder.getDeliverToAddress().getCity() }},
+                                                                                {{ selectedOrder.getDeliverToAddress().getState() }}<br>
+                                                                                {{ selectedOrder.getDeliverToAddress().getPincode() }}
+                                        -->
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-gray-300 mb-1">Order Status</div>
+                                    <span class="px-2 py-1 rounded text-xs"
+                                          [ngClass]="{
+                                            'bg-yellow-900 text-yellow-300': selectedOrder.getStatus() === 'Pending',
+                                            'bg-blue-900 text-blue-300': selectedOrder.getStatus() === 'Processing',
+                                            'bg-green-900 text-green-300': selectedOrder.getStatus() === 'Delivered',
+                                            'bg-red-900 text-red-300': selectedOrder.getStatus() === 'Cancelled'
+                                          }">
+                                        {{ selectedOrder.getStatus() }}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Products List -->
+                            <div>
+                                <div class="font-semibold text-gray-300 mb-2">Products</div>
+                                <div *ngFor="let item of selectedOrder.getShoppingCart().getCartItems()"
+                                     class="flex items-center gap-4 bg-gray-800 rounded p-3">
+                                    <img src="/assets/icons/01-sample-icon.svg"
+                                         class="w-14 h-14 rounded border border-gray-700 object-cover"
+                                         alt="dropdown-icon">
+                                    <div class="flex-1">
+                                        <div class="font-semibold text-gray-100">{{ item.getProduct().getName() }}</div>
+<!--                                        <div class="text-gray-400 text-xs">{{ item.getProduct().getBrand() }}</div>-->
+                                        <div class="text-gray-400 text-xs">Qty: {{ item.getQuantity() }}</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-gray-100 font-semibold">{{
+                                                item.getProduct().getPrice() |
+                                                    currency: 'INR' : 'symbol'
+                                            }}
+                                        </div>
+                                        <div *ngIf="item.getProduct().getPrice() > item.getProduct().getPrice()"
+                                             class="text-xs text-gray-400 line-through">
+                                            {{ item.getProduct().getPrice() | currency: 'INR' : 'symbol' }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Order Total -->
+                            <div class="flex justify-end mt-6">
+                                <div class="bg-gray-800 rounded p-4 w-full max-w-xs">
+                                    <div class="flex justify-between text-gray-300 mb-2">
+                                        <span>Subtotal</span>
+                                        <span>{{ selectedOrder.getShoppingCart().getSubTotalPrice() | currency: 'INR' : 'symbol' }}</span>
+                                    </div>
+                                    <div class="flex justify-between text-gray-300 mb-2">
+                                        <span>Delivery</span>
+                                        <span>{{
+                                                selectedOrder.getShoppingCart().getMultipleChargesModel().getIsDeliveryChargeApplied()
+                                                    ? '₹' + MultipleChargesModel.DELIVERY_CHARGE : 'FREE'
+                                            }}</span>
+                                    </div>
+                                    <div class="flex justify-between text-gray-100 font-bold text-lg">
+                                        <span>Total</span>
+                                        <span>{{ selectedOrder.getShoppingCart().getTotalPrice() | currency: 'INR' : 'symbol' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Products Section Placeholder -->
+            <section *ngIf="activeSection === 'products'">
+                <h2 class="text-xl font-semibold mb-6">Manage Products</h2>
+                <div class="bg-gray-900 rounded-lg border border-gray-800 p-10 text-center text-gray-500">
+                    Product management interface will be here.
+                </div>
+            </section>
+            <!-- Users Section Placeholder -->
+            <section *ngIf="activeSection === 'users'">
+                <h2 class="text-xl font-semibold mb-6">Manage Users</h2>
+                <div class="bg-gray-900 rounded-lg border border-gray-800 p-10 text-center text-gray-500">
+                    User management interface will be here.
+                </div>
+            </section>
+            <!-- Settings Section Placeholder -->
+            <section *ngIf="activeSection === 'settings'">
+                <h2 class="text-xl font-semibold mb-6">Admin Settings</h2>
+                <div class="bg-gray-900 rounded-lg border border-gray-800 p-10 text-center text-gray-500">
+                    Admin settings interface will be here.
+                </div>
+            </section>
+        </main>
+    </div>
+</div>

@@ -12,6 +12,7 @@ export class Order {
     private paymentMode: string;
     private deliverToAddress: Address;
     private shoppingCart: ShoppingCart;
+    private status: string; // Added status property
 
 
     constructor(id: number,
@@ -22,7 +23,8 @@ export class Order {
                 orderDate: Date,
                 paymentMode: string,
                 deliverToAddress: Address,
-                shoppingCart: ShoppingCart) {
+                shoppingCart: ShoppingCart,
+                status: string = 'Processing') { // Added status with default value
         this.id = id;
         this.orderNumber = orderNumber;
         this.strOrderArrivedIn = strOrderArrivedIn;
@@ -32,6 +34,7 @@ export class Order {
         this.paymentMode = paymentMode;
         this.deliverToAddress = deliverToAddress;
         this.shoppingCart = shoppingCart;
+        this.status = status; // Initialize status
     }
 
     formatDate(date: Date) {
@@ -133,6 +136,20 @@ export class Order {
 
     public setShoppingCart(shoppingCart: ShoppingCart): void {
         this.shoppingCart = shoppingCart;
+    }
+
+    // Getter and Setter for status
+    public getStatus(): string {
+        return this.status;
+    }
+
+    public setStatus(status: string): void {
+        this.status = status;
+    }
+
+    // Getter for customer details from address
+    public getCustomerDetails(): Address { // Assuming Address contains customer name
+        return this.deliverToAddress;
     }
 
 }

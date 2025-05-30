@@ -8,9 +8,9 @@
     },
     {
         "id": 2,
-        "username": "test1",
-        "password": "test1",
-        "email": "test1@gmart.xyz",
+        "username": "test",
+        "password": "test",
+        "email": "test@gmart.xyz",
         "isAdmin": false
     }
 ]
