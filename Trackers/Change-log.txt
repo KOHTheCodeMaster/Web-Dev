@@ -19,6 +19,34 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         31st May 2K25 - 11:50 PM
+Commit Message:     330 - G-Mart - Angular - Added Local Storage Service, Refactored Route Guards & Persistent Authentication
+
+Quick Summary:
+
+1. Route Guards Refactoring:
+   - Renamed files and classes to follow Angular best practices:
+     - `auth-guard.service.ts` → `auth.guard.ts` with class `AuthGuard`
+     - `admin-guard.service.ts` → `admin-access.guard.ts` with class `AdminAccessGuard`
+   - Created new `admin-redirect.guard.ts` to handle admin user redirection
+
+2. Persistent Authentication:
+   - Added `LocalStorageService` to manage browser storage operations
+   - Implemented user session persistence across page reloads
+   - Delegated storage responsibility away from UserService (Single Responsibility)
+
+3. Admin User Experience:
+   - Configured automatic redirection of admin users to admin dashboard
+   - Home and shopping routes now redirect admins via `AdminRedirectGuard`
+   - Protected routes preserved with `AuthGuard` and `AdminAccessGuard`
+
+4. UI Adjustments for Admin Users:
+   - Modified navbar to display "Admin Dashboard" text when admin is logged in
+   - Hidden shopping cart and delivery location components for admin users
+   - Added "Clear Data" option to admin account menu for easy data reset
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         30th May 2K25 - 10:32 PM
 Commit Message:     329 - G-Mart - Angular - Added Admin Dashboard & Admin Authorization System
 

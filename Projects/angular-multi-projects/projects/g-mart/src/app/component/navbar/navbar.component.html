@@ -7,7 +7,14 @@
 
 
     <!--  Delivery Location  -->
-    <app-delivery-location class="w-72 px-8 flex flex-col justify-center"></app-delivery-location>
+    <app-delivery-location *ngIf="!this.userService.isLoggedInAsAdmin(); else emptyBlockForDeliveryLocation"
+                           class="w-72 px-8 flex flex-col justify-center">
+    </app-delivery-location>
+    <ng-template #emptyBlockForDeliveryLocation>
+        <div class="w-72 px-8 flex flex-col justify-center cursor-default">
+            <span class="text-xl font-bold">Admin Dashboard</span>
+        </div>
+    </ng-template>
     <!--
         <div class="w-72 px-8 flex flex-col justify-center">
             <span class="text-xl font-bold">Delivery in 11 minutes</span>
@@ -57,6 +64,9 @@
     </ng-template>
 
     <!--  Shopping Cart  -->
-    <app-shopping-cart class="w-48 ml-auto px-8 py-2"></app-shopping-cart>
-
+    <app-shopping-cart *ngIf="!this.userService.isLoggedInAsAdmin(); else emptyBlockForCart"
+                       class="w-48 ml-auto px-8 py-2"></app-shopping-cart>
+    <ng-template #emptyBlockForCart>
+        <div class="w-48 ml-auto px-8 py-2"></div>
+    </ng-template>
 </nav>

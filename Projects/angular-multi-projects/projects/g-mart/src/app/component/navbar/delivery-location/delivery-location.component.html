@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div *ngIf="addressList.length > 0" class="max-h-80 overflow-y-auto px-6 pb-6 flex flex-col gap-3">
+    <div *ngIf="addressList.length > 0 && (this.userService.getLoggedInUser$() | async)" class="max-h-80 overflow-y-auto px-6 pb-6 flex flex-col gap-3">
         <div class="font-bold text-lg text-white">Your saved addresses</div>
         <div *ngFor="let address of addressList"
              (click)="selectAddress(address)"

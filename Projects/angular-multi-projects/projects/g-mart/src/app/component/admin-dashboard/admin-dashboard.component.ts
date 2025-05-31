@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, RouterLink} from "@angular/router";
+import {Router} from "@angular/router";
 import {CommonModule, NgIf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {ProductService} from "../../service/product.service";
@@ -11,7 +11,7 @@ import {MultipleChargesModel} from "../../shared/model/multiple-charges.model"; 
 @Component({
     selector: 'app-admin-dashboard',
     standalone: true,
-    imports: [NgIf, FormsModule, CommonModule, RouterLink],
+    imports: [NgIf, FormsModule, CommonModule],
     templateUrl: './admin-dashboard.component.html'
 })
 export class AdminDashboardComponent implements OnInit {
@@ -170,4 +170,5 @@ export class AdminDashboardComponent implements OnInit {
     get recentOrders(): Order[] {
         return this.allOrders.slice(0, 5);
     }
+
 }

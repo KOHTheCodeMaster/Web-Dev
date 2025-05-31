@@ -2,6 +2,7 @@ import {Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {NgIf} from '@angular/common';
 import {UserService} from "../../../service/user.service";
+import {LocalStorageService} from "../../../service/local-storage.service";
 
 @Component({
     selector: 'app-my-account',
@@ -17,7 +18,8 @@ export class MyAccountComponent {
 
     constructor(private router: Router,
                 private renderer: Renderer2,
-                private userService: UserService) {
+                protected userService: UserService,
+                private localStorageService: LocalStorageService) {
     }
 
     toggleMyAccountPopup() {
@@ -63,6 +65,11 @@ export class MyAccountComponent {
             this.clickListener();
             this.clickListener = undefined;
         }
+    }
+
+    clearLocalStorage() {
+        this.localStorageService.clearAll();
+        // this.logout();
     }
 
     ngOnDestroy() {

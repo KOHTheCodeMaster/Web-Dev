@@ -3,6 +3,7 @@ import {CommonModule, NgFor, NgIf} from '@angular/common';
 import {AddressService} from "../../../service/address.service";
 import {Address} from "../../../shared/model/address.model";
 import {EditAddressDialogComponent} from "../../addresses/edit-address-dialog/edit-address-dialog.component";
+import {UserService} from "../../../service/user.service";
 
 @Component({
     selector: 'app-delivery-location',
@@ -18,7 +19,8 @@ export class DeliveryLocationComponent {
     addressToDelete: Address | null = null;
     addressForEdit: Address | null = null;
 
-    constructor(public addressService: AddressService) {
+    constructor(public addressService: AddressService,
+                protected userService: UserService) {
 
         this.addressService.getSelectedAddress$().subscribe(address => this.selectedAddress = address);
         this.addressService.getAddressForEdit$().subscribe((address: Address | null) => this.addressForEdit = address);
