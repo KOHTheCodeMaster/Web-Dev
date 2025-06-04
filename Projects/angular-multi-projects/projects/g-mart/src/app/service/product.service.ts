@@ -51,7 +51,7 @@ export class ProductService {
         //  Filter products by category id, Limit to 10 products
         return this.allProductList
             .filter(product => product.getCategory().getId() === categoryId);
-            // .slice(0, 10);
+        // .slice(0, 10);
     }
 
     public getProductListBySubcategoryId(subCategoryId: number): Product[] {
@@ -59,6 +59,9 @@ export class ProductService {
         return this.allProductList.filter(product => product.getSubcategory().getId() === subCategoryId)
     }
 
+    public findProductById(id: number): Product | null{
+        return this.allProductList.find(product => product.getId() === id) || null;
+    }
 
     //  Getters
     //  -------

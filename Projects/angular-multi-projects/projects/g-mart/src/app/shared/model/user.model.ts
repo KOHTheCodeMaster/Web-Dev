@@ -1,17 +1,35 @@
+import {UserRole} from "./user-role";
+
 export class User {
 
     private id: number;
     private username: string;
     private password: string;
     private email: string;
-    private isAdmin: boolean;
+    private role: UserRole;
 
-    constructor(id: number, username: string, password: string, email: string, isAdmin: boolean) {
+    constructor(id: number, username: string, password: string, email: string, role: UserRole) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
-        this.isAdmin = isAdmin;
+        this.role = role;
+    }
+
+    public isAdmin(): boolean {
+        return this.role === UserRole.ADMIN;
+    }
+
+    public isLoggedInAsCustomerOrAdmin(): boolean {
+        return this.role === UserRole.CUSTOMER || this.role === UserRole.ADMIN;
+    }
+
+    public isCustomer(): boolean {
+        return this.role === UserRole.CUSTOMER;
+    }
+
+    public isGuest(): boolean {
+        return this.role === UserRole.GUEST;
     }
 
     //  Getters & Setters
@@ -49,12 +67,12 @@ export class User {
         this.email = email;
     }
 
-    public getIsAdmin(): boolean {
-        return this.isAdmin;
+    public getRole(): UserRole {
+        return this.role;
     }
 
-    public setIsAdmin(isAdmin: boolean): void {
-        this.isAdmin = isAdmin;
+    public setRole(role: UserRole): void {
+        this.role = role;
     }
 
 }

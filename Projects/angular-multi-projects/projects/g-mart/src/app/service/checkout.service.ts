@@ -25,14 +25,13 @@ export class CheckoutService {
 
         let shoppingCart: ShoppingCart = this.shoppingCartService.getShoppingCart$().getValue();
         let selectedAddress: Address = this.addressService.getSelectedAddress$().getValue();
-        let newOrder: Order = this.orderService.createNewOrder(shoppingCart, selectedAddress);
+        let newOrder: Order | null = this.orderService.createNewOrder(shoppingCart, selectedAddress);
 
         //  Reset the shopping cart to new empty shopping cart
-        let newEmptyShoppingCart: ShoppingCart = new ShoppingCart(this.multipleChargesManagerService.getMultipleChargesModel());
-        this.shoppingCartService.updateShoppingCart(newEmptyShoppingCart);
+        this.shoppingCartService.resetShoppingCart();
 
         //  Redirect to `/orders/orderNumber` page
-        this.router.navigateByUrl('/orders/' + newOrder.getOrderNumber());
+        this.router.navigateByUrl('/orders/' + newOrder?.getOrderNumber());
 
     }
 

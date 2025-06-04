@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {UserService} from "./user.service";
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from "@angular/router";
-import {User} from "../shared/model/user";
+import {User} from "../shared/model/user.model";
 
 @Injectable({
     providedIn: 'root'
@@ -18,17 +18,9 @@ export class AuthGuard implements CanActivate {
 
     checkLoggedInUser(postLoginUrl: string): boolean {
         let isAuthenticated = false;
-        let loggedInUser: User | null = this.userService.getLoggedInUser();
+        let loggedInUser: User = this.userService.getLoggedInUser();
 
-        if (loggedInUser !== null) {
-            isAuthenticated = true;
-
-            //  If the user is logged in, redirect to the /admin
-            if (loggedInUser.getIsAdmin()) this.router.navigateByUrl('/admin');
-
-        } else {
-            // this.userService.updateLoggedInUser(null); // Ensure logged-in user is set to null
-
+        if (loggedInUser.isGuest()) {
             // Store the postLoginUrl in the local storage
             localStorage.setItem('postLoginUrl', postLoginUrl);
             console.log('Post-login URL stored: ' + postLoginUrl);
@@ -36,6 +28,12 @@ export class AuthGuard implements CanActivate {
             //  Redirect to login page
             this.router.navigateByUrl('/login');
             console.warn(`Access denied. Please log in to continue. Redirecting to login page...`);
+        } else {
+            //  User is logged in, update the isAuthenticated flag
+            isAuthenticated = true;
+
+            //  If the logged-in user is an admin, redirect to the admin dashboard
+            if (loggedInUser.isAdmin()) this.router.navigateByUrl('/admin');
         }
 
         return isAuthenticated;

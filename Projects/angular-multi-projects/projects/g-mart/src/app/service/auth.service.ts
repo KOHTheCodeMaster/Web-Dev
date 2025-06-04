@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {User} from "../shared/model/user";
+import {User} from "../shared/model/user.model";
 import {UserService} from "./user.service";
 
 @Injectable({
@@ -21,12 +21,13 @@ export class AuthService {
         for (let user of users) {
             if (user.getUsername() === username && user.getPassword() === password) {
                 this.userService.updateLoggedInUser(user);
+                console.log('authenticated - user:', user);
                 isAuthenticated = true;
                 break;
             }
         }
 
-        if (!isAuthenticated) this.userService.updateLoggedInUser(null);
+        if (!isAuthenticated) this.userService.updateLoggedInUser(UserService.GUEST_USER);
         return isAuthenticated;
     }
 

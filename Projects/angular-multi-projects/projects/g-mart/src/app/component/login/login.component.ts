@@ -16,18 +16,23 @@ export class LoginComponent {
     username: string = '';
     password: string = '';
     loginError: string = '';
-    isLoggedIn: boolean = false;
+    // loggedInUser!: User;
 
     constructor(public router: Router,
                 public route: ActivatedRoute,
                 public userService: UserService,
                 public authService: AuthService) {
-        this.initSubscriptions();
+        // this.initSubscriptions();
     }
 
+/*
     initSubscriptions() {
-        this.userService.getLoggedInUser$().subscribe(loggedInUser => this.isLoggedIn = !!loggedInUser);
+        this.userService.getLoggedInUser$().subscribe(user => {
+            this.loggedInUser = user;
+            console.log('login component - this.loggedInUser: ', this.loggedInUser);
+        });
     }
+*/
 
     handleLogin() {
         this.loginError = '';

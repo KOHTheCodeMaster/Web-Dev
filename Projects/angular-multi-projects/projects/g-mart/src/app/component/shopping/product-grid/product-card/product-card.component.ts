@@ -34,17 +34,26 @@ export class ProductCardComponent implements OnChanges {
     addToCart() {
         this.cartItem.incrementQuantity();
         this.shoppingCart.addCartItem(this.cartItem);
+
+        //  Update local storage to persist cart state
+        this.shoppingCartService.persistUserShoppingCartsInLocalStorage(this.shoppingCart);
     }
 
     incrementQuantity() {
         this.cartItem.incrementQuantity();
         this.shoppingCart.incrementCartItem(this.cartItem);
+
+        //  Update local storage to persist cart state
+        this.shoppingCartService.persistUserShoppingCartsInLocalStorage(this.shoppingCart);
     }
 
     decrementQuantity() {
         //  Remove item from cart if quantity is 1, otherwise decrement quantity
         if (this.cartItem.getQuantity() === 1) this.shoppingCart.removeCartItem(this.cartItem);
         else if (this.cartItem.getQuantity() > 1) this.shoppingCart.decrementCartItem(this.cartItem);
+
+        //  Update local storage to persist cart state
+        this.shoppingCartService.persistUserShoppingCartsInLocalStorage(this.shoppingCart);
     }
 
 }

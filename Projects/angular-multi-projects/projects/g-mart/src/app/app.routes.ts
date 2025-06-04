@@ -17,7 +17,7 @@ export const routes: Routes = [
     {path: 'orders/:orderNumber', component: OrderDetailsComponent, canActivate: [AuthGuard]},
     {path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]},
     {path: 'addresses', component: AddressesComponent, canActivate: [AuthGuard]},
-    {path: 'login', component: LoginComponent},
+    {path: 'login', component: LoginComponent, canActivate: [AdminRedirectGuard]},
     {path: 'admin', component: AdminDashboardComponent, canActivate: [AdminAccessGuard]},
     {path: '**', redirectTo: '/', pathMatch: 'full'}
 

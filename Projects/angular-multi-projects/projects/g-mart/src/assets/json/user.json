@@ -1,16 +1,44 @@
 [
     {
         "id": 1,
-        "username": "admin",
-        "password": "admin",
-        "email": "admin@gmart.xyz",
-        "isAdmin": true
+        "username": "guest",
+        "password": "guest",
+        "email": "guest@gmart.xyz",
+        "role": "GUEST"
     },
     {
         "id": 2,
+        "username": "admin",
+        "password": "admin",
+        "email": "admin@gmart.xyz",
+        "role": "ADMIN"
+    },
+    {
+        "id": 3,
         "username": "test",
         "password": "test",
         "email": "test@gmart.xyz",
-        "isAdmin": false
+        "role": "CUSTOMER"
+    },
+    {
+        "id": 4,
+        "username": "u1",
+        "password": "p1",
+        "email": "user1@gmart.xyz",
+        "role": "CUSTOMER"
+    },
+    {
+        "id": 5,
+        "username": "u2",
+        "password": "p2",
+        "email": "user2@gmart.xyz",
+        "role": "CUSTOMER"
+    },
+    {
+        "id": 6,
+        "username": "u3",
+        "password": "p3",
+        "email": "user3@gmart.xyz",
+        "role": "CUSTOMER"
     }
 ]

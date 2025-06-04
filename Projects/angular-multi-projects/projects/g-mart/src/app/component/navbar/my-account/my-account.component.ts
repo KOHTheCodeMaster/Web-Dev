@@ -55,7 +55,7 @@ export class MyAccountComponent {
 
     logout() {
         this.toggleMyAccountPopup();
-        this.userService.updateLoggedInUser(null);
+        this.userService.updateLoggedInUser(UserService.GUEST_USER);
         this.router.navigate(['/login']);
     }
 

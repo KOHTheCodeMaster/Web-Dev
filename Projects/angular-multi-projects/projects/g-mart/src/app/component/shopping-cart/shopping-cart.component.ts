@@ -60,11 +60,17 @@ export class ShoppingCartComponent {
         else if (cartItem.getQuantity() > 1) this.shoppingCart.decrementCartItem(cartItem);
 
         if (this.shoppingCart.getItemCount() === 0) this.closeShoppingCart();
+
+        //  Update local storage to persist cart state
+        this.shoppingCartService.persistUserShoppingCartsInLocalStorage(this.shoppingCart);
     }
 
     incrementQuantity(cartItem: CartItem) {
         cartItem.incrementQuantity();
         this.shoppingCart.incrementCartItem(cartItem); // Assuming this method handles stock checks
+
+        //  Update local storage to persist cart state
+        this.shoppingCartService.persistUserShoppingCartsInLocalStorage(this.shoppingCart);
     }
 
     openInfoPopup(infoPopupType: InfoPopupType) {

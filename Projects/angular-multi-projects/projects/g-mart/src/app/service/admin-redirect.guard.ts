@@ -14,13 +14,11 @@ export class AdminRedirectGuard implements CanActivate {
         const loggedInUser = this.userService.getLoggedInUser();
 
         // If user is admin, redirect to admin dashboard
-        if (loggedInUser && loggedInUser.getIsAdmin()) {
+        if (loggedInUser && loggedInUser.isAdmin()) {
             this.router.navigateByUrl('/admin');
             return false; // Prevents navigation to the original route
         }
-
-        // Otherwise allow navigation to proceed
-        return true;
+        return true;    // Otherwise allow navigation to proceed
     }
 
 }

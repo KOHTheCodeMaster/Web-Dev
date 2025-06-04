@@ -10,12 +10,14 @@
     <div *ngIf="isMyAccountPopupOpened" #myAccountPopup
          class="absolute top-full right-0 w-full bg-gray-900 text-white text-sm rounded-b-lg shadow-lg border border-gray-700">
         <ul class="flex flex-col">
-            <li *ngIf="!this.userService.isLoggedInAsAdmin()"
-                class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="goToSavedAddresses()">Saved Addresses</li>
-            <li *ngIf="!this.userService.isLoggedInAsAdmin()"
-                class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="goToMyOrders()">My Orders</li>
-            <li *ngIf="this.userService.isLoggedInAsAdmin()"
-                class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="clearLocalStorage()">Clear Data</li>
+            <ng-container *ngIf="this.userService.getLoggedInUser().isCustomer()">
+                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="goToSavedAddresses()">Saved Addresses
+                </li>
+                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="goToMyOrders()">My Orders</li>
+            </ng-container>
+            <li *ngIf="this.userService.getLoggedInUser().isAdmin()"
+                class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="clearLocalStorage()">Clear Data
+            </li>
             <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="logout()">Logout</li>
             <!--<li class="px-4 py-2 hover:bg-gray-700 cursor-pointer" (click)="logout()">Logout</li>-->
         </ul>

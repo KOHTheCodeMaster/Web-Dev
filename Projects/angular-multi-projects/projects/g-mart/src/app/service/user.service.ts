@@ -1,49 +1,49 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
 import {DataLoaderService} from "./data-loader.service";
-import {User} from "../shared/model/user";
+import {User} from "../shared/model/user.model";
 import {LocalStorageService} from "./local-storage.service";
+import {UserRole} from "../shared/model/user-role";
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
 
-    loggedInUser$: BehaviorSubject<User | null>;
-    private loggedInAsAdmin: boolean = false;
+    private readonly KEY_LOGGED_IN_USER = 'LOGGED_IN_USER';
+    public static GUEST_USER: User;
+    private loggedInUser$: BehaviorSubject<User>;
     private users: User[] = [];
-    private readonly USER_STORAGE_KEY = 'loggedInUser';
 
     constructor(private dataLoaderService: DataLoaderService,
                 private storageService: LocalStorageService) {
+
+        //  Initialize Guest User
+        UserService.GUEST_USER = this.createGuestUser();
+
         // Try to load the user from storage on initialization
-        this.loggedInUser$ = new BehaviorSubject<User | null>(this.loadUserFromStorage());
+        this.loggedInUser$ = new BehaviorSubject<User>(this.loadUserFromStorage());
         this.initSubscriptions();
     }
 
     // Load user from storage using StorageService
-    private loadUserFromStorage(): User | null {
-        const userData = this.storageService.getItem<any>(this.USER_STORAGE_KEY);
+    private loadUserFromStorage(): User {
+        const userData = this.storageService.getItem<any>(this.KEY_LOGGED_IN_USER);
         if (userData) {
             return new User(
                 userData.id,
                 userData.username,
                 userData.password,
                 userData.email,
-                userData.isAdmin || false
+                userData.role
             );
+        } else {
+            //  If no user is found in storage, save and return the Guest User
+            this.storageService.setItem(this.KEY_LOGGED_IN_USER, UserService.GUEST_USER);
+            return UserService.GUEST_USER;
         }
-        return null;
     }
 
-    // Save user to storage using StorageService
-    private saveUserToStorage(user: User | null): void {
-        if (user) {
-            this.storageService.setItem(this.USER_STORAGE_KEY, user);
-        } else {
-            this.storageService.removeItem(this.USER_STORAGE_KEY);
-        }
-    }
 
     initSubscriptions() {
         this.dataLoaderService.getDataLoaded$().subscribe(dataLoaded => {
@@ -54,43 +54,42 @@ export class UserService {
                     user['username'],
                     user['password'],
                     user['email'],
-                    user['isAdmin'] || false
+                    user['role']
                 ));
+                this.users.push(UserService.GUEST_USER);
             }
         });
-
-        this.loggedInUser$.subscribe(user => this.loggedInAsAdmin = user ? user.getIsAdmin() : false);
     }
 
-    getDummyUser(): User {
-        return new User(1, 'john', '123', 'john@abc.xyz', false);
+    createGuestUser(): User {
+        return new User(1, 'guest', '', '', UserRole.GUEST);
     }
 
-    updateLoggedInUser(user: User | null) {
+    updateLoggedInUser(user: User) {
+        //  If `user` is null or undefined, set to Guest User
+        // user = user || UserService.GUEST_USER;
+        user = !!user ? user : UserService.GUEST_USER;
+
         // Update the user in the BehaviorSubject
         this.loggedInUser$.next(user);
 
-        // Persist using the StorageService
-        this.saveUserToStorage(user);
+        // Persist logged-in user to local storage
+        this.storageService.setItem(this.KEY_LOGGED_IN_USER, user);
     }
 
     //  Getters & Setters
     //  -----------------
 
-    getLoggedInUser$(): Observable<User | null> {
+    getLoggedInUser$(): Observable<User> {
         return this.loggedInUser$.asObservable();
     }
 
-    getLoggedInUser(): User | null {
+    getLoggedInUser(): User {
         return this.loggedInUser$.getValue();
     }
 
     getUsers(): User[] {
         return this.users;
-    }
-
-    isLoggedInAsAdmin(): boolean {
-        return this.loggedInAsAdmin;
     }
 
 }

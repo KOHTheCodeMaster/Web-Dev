@@ -19,6 +19,36 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         4th June 2K25 - 11:58 PM
+Commit Message:     331 - G-Mart - Angular - Major Update - Guest User, RBAC, Persistent User & Carts via Local Storage
+
+Quick Summary:
+
+1. Guest User & Role-Based Access Control (RBAC):
+   - Introduced `UserRole` enum (ADMIN, CUSTOMER, GUEST) replacing boolean `isAdmin`.
+   - Implemented `GUEST_USER` concept; `loggedInUser$` in `UserService` is never null, defaulting to Guest.
+   - Updated `User` model with role-based methods (`isAdmin()`, `isCustomer()`, `isGuest()`).
+   - Refactored `UserService` to manage and persist the current user (including Guest) in local storage.
+
+2. Persistent Shopping Carts:
+   - `ShoppingCartService` refactored to save/load user-specific shopping carts to/from local storage.
+   - Cart operations (add, increment qty, decrement qty, checkout) now persist changes.
+   - `LocalStorageService` is central to this persistence.
+
+3. Authentication & Authorization Overhaul:
+   - All route guards updated to use the new `UserRole` and guest user logic.
+   - Login component and `AuthService` now align with the guest user and role system.
+   - Logout now transitions the user to the `GUEST_USER` state.
+
+4. UI & Service Enhancements:
+   - Navbar, My Account, Delivery Location, and other UI components updated for new role system
+       (e.g., conditional display based on `user.isGuest()`, `user.isAdmin()`).
+   - `ProductService` added `findProductById()`.
+   - `DataLoaderService` now includes configuration for `order.json`.
+   - Checkout process updated to use `resetShoppingCart()` and handle potentially null orders.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         31st May 2K25 - 11:50 PM
 Commit Message:     330 - G-Mart - Angular - Added Local Storage Service, Refactored Route Guards & Persistent Authentication
 

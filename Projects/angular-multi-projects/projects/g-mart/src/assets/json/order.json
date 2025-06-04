@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "orderNumber": 1001,
+        "strOrderArrivedIn": "30 mins",
+        "dateArrivedAt": "2025-05-15T18:30:00.000Z",
+        "datePlacedOn": "2025-05-15T18:00:00.000Z",
+        "orderDate": "2025-05-15T18:00:00.000Z",
+        "paymentMode": "Online",
+        "items": [
+            {
+                "productId": 1,
+                "quantity": 2
+            },
+            {
+                "productId": 5,
+                "quantity": 1
+            },
+            {
+                "productId": 10,
+                "quantity": 3
+            }
+        ],
+        "status": "Shipped"
+    },
+    {
+        "id": 2,
+        "orderNumber": 1002,
+        "strOrderArrivedIn": "45 mins",
+        "dateArrivedAt": "2025-05-16T19:00:00.000Z",
+        "datePlacedOn": "2025-05-16T18:15:00.000Z",
+        "orderDate": "2025-05-16T18:15:00.000Z",
+        "paymentMode": "COD",
+        "items": [
+            {
+                "productId": 2,
+                "quantity": 1
+            },
+            {
+                "productId": 10,
+                "quantity": 3
+            }
+        ],
+        "status": "Processing"
+    }
+]

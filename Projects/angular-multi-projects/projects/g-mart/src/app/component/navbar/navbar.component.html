@@ -7,7 +7,7 @@
 
 
     <!--  Delivery Location  -->
-    <app-delivery-location *ngIf="!this.userService.isLoggedInAsAdmin(); else emptyBlockForDeliveryLocation"
+    <app-delivery-location *ngIf="!this.userService.getLoggedInUser().isAdmin(); else emptyBlockForDeliveryLocation"
                            class="w-72 px-8 flex flex-col justify-center">
     </app-delivery-location>
     <ng-template #emptyBlockForDeliveryLocation>
@@ -48,7 +48,8 @@
 
     <!--  My Account  -->
 
-    <ng-container *ngIf="!!this.userService.getLoggedInUser(); else showLoginBtn">
+<!--    <ng-container *ngIf="(userService.getLoggedInUser$() | async)?.isCustomer(); else showLoginBtn">-->
+    <ng-container *ngIf="!this.userService.getLoggedInUser().isGuest(); else showLoginBtn">
         <app-my-account class="w-fit ml-auto flex gap-3 items-center text-2xl"></app-my-account>
     </ng-container>
     <ng-template #showLoginBtn>
@@ -64,7 +65,7 @@
     </ng-template>
 
     <!--  Shopping Cart  -->
-    <app-shopping-cart *ngIf="!this.userService.isLoggedInAsAdmin(); else emptyBlockForCart"
+    <app-shopping-cart *ngIf="!this.userService.getLoggedInUser().isAdmin(); else emptyBlockForCart"
                        class="w-48 ml-auto px-8 py-2"></app-shopping-cart>
     <ng-template #emptyBlockForCart>
         <div class="w-48 ml-auto px-8 py-2"></div>

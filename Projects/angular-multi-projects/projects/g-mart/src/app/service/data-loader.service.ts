@@ -37,6 +37,7 @@ export class DataLoaderService {
         this.nameToJsonFilePathMap = new Map<string, string>();
 
         this.nameToJsonFilePathMap.set('product', '/assets/json/product.json');
+        this.nameToJsonFilePathMap.set('order', '/assets/json/order.json');
         this.nameToJsonFilePathMap.set('category', '/assets/json/category.json');
         this.nameToJsonFilePathMap.set('subcategory', '/assets/json/subcategory.json');
         this.nameToJsonFilePathMap.set('user', '/assets/json/user.json');
