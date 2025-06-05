@@ -15,7 +15,11 @@ export class LocalStorageService {
      */
     setItem(key: string, data: any): void {
         try {
-            localStorage.setItem(key, JSON.stringify(data));
+            //  If data is iterable, convert it to an object
+            if (data instanceof Map || data instanceof Set) data = Object.fromEntries(data);
+            // else if (Array.isArray(data)) data = {items: data}; // Wrap arrays in an object
+
+            localStorage.setItem(key, JSON.stringify(data, null, 2));
         } catch (error) {
             console.error('L0G - Error saving to localStorage', error);
         }

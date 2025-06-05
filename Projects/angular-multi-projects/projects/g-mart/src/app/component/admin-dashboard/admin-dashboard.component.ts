@@ -58,7 +58,7 @@ export class AdminDashboardComponent implements OnInit {
     }
 
     loadOrders(): void {
-        this.allOrders = this.orderService.getOrderList();
+        this.allOrders = this.orderService.getOrderList()!;
         this.updateDisplayedOrders();
     }
 

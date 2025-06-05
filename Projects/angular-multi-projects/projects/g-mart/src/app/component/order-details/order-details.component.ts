@@ -14,13 +14,15 @@ import {MultipleChargesModel} from "../../shared/model/multiple-charges.model";
 export class OrderDetailsComponent {
 
     protected readonly MultipleChargesModel = MultipleChargesModel;
-    order!: Order;
+    order: Order | null = null;
 
     constructor(public router: Router,
                 public route: ActivatedRoute,
                 public orderService: OrderService) {
 
-        this.initOrder();
+        this.orderService.getOrderList$().subscribe((orders: Order[] | null) => {
+            if (orders) this.initOrder();
+        });
 
     }
 

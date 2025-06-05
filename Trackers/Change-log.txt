@@ -19,6 +19,40 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         6th June 2K25 - 03:04 AM
+Commit Message:     332 - G-Mart - Angular - Refined Local Storage for Orders, Enhanced Reactivity
+
+Quick Summary:
+
+1. Reactive Services (OrderService, ShoppingCartService):
+   - Renamed internal maps to userIdToOrdersMap and userIdToShoppingCartMap for clarity.
+   - Enhanced local storage initialization for robust parsing, correctly handling nested CartItem and Product data.
+   - Subscriptions to userService.getLoggedInUser$() now dynamically update and persist user-specific order/cart data.
+   - OrderService now persists LAST_ORDER_NUMBER in local storage.
+   - Refactored `orderList$` to use `Order[] | null` for better reactivity and handling of initial null state.
+
+2. LocalStorageService Improvements:
+   - setItem now converts Map/Set to objects for reliable JSON stringification.
+   - Stored JSON is now pretty-printed for easier debugging.
+
+3. ShoppingCart Model Update:
+   - Constructor simplified; field values are now calculated internally, ensuring data integrity.
+
+4. Component Adaptations:
+    - OrderDetailsComponent:
+        - Uses *ngIf="order" for safe rendering;
+        - initialization logic now subscribes to orderService.getOrderList$() to handle asynchronous order data.
+        - This makes use of the initial null state of `orderList$` to avoid errors during rendering.
+    - OrdersComponent:
+        - Updated to use BehaviorSubject-based service methods, ensuring reactivity and handling of initial null states.
+        - This ensures that the components reactively update when the order list changes.
+
+5. Data Consistency:
+    - Corrected parsing in services to accurately reconstruct CartItem objects (including product details) from local storage.
+    - New orders now default strOrderArrivedIn to '10 minutes'.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         4th June 2K25 - 11:58 PM
 Commit Message:     331 - G-Mart - Angular - Major Update - Guest User, RBAC, Persistent User & Carts via Local Storage
 

@@ -20,11 +20,25 @@ export class ShoppingCart {
         this.multipleChargesModel = multipleChargesModel;
         this.cartItems = cartItems ? cartItems : [];                //  default to empty array if not provided
         this.itemCount = itemCount ? itemCount : 0;                 //  default to 0 if not provided
-        this.totalMRP = 0;                                          //  default to 0
-        this.totalDiscount = 0;                                     //  default to 0
         this.subTotalPrice = subTotalPrice ? subTotalPrice : 0;     //  default to 0 if not provided
         this.totalPrice = totalPrice ? totalPrice : 0;              //  default to 0 if not provided
+
+        this.initValues();
     }
+
+    private initValues() {
+        //  Calculate items count based on cart items
+        this.itemCount = this.cartItems.reduce((acc, cartItem) => acc + cartItem.getQuantity(), 0);
+
+        //  Calculate total MRP, total discount, sub-total price and total price
+        this.totalMRP = this.cartItems.reduce((acc, cartItem) => acc + cartItem.getProduct().getPrice() * cartItem.getQuantity(), 0);
+        this.totalDiscount = this.cartItems.reduce((acc, cartItem) => acc + cartItem.getProduct().getDiscount() * cartItem.getQuantity(), 0);
+        this.subTotalPrice = this.totalMRP - this.totalDiscount;
+
+        //  Calculate total price by adding extra charges
+        this.reCalcTotalPrice();
+    }
+
 
     getCartItemByProductId(id: number) {
         return this.cartItems.find(cartItem => cartItem.getProduct().getId() === id);
