@@ -19,6 +19,29 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         6th June 2K25 - 11:33 PM
+Commit Message:     333 - G-Mart - Angular - Admin Dashboard - Order Service Enhancement & Products Section UI
+
+Quick Summary:
+
+1. Admin Dashboard - Products Section UI & Functionality:
+   - Implemented a comprehensive product management interface in the Admin Dashboard.
+   - Features include product searching, sorting by name, category, subcategory, price, or stock (with ascending/descending options), and pagination.
+   - Added "Add New Product" button, "Edit" and "Delete" actions for each product. (currently UI only)
+   - Introduced "Edit Product" modal for modifying product details (name, price, stock) with cancel/save actions.
+   - Commented out the main admin dashboard header (title and "Back to Store" link) in the HTML for future layout adjustments.
+
+2. Admin Dashboard - Data Handling & Component Logic:
+    - Improved AdminDashboardComponent to clean up subscriptions using OnDestroy.
+    - Synchronized loading of product and order data with DataLoaderService to prevent issues with data readiness.
+    - Updated admin view for orders to fetch all orders across the system using a new service method (orderService.getAllOrders()).
+
+3. Order Service Enhancement:
+    - Added a new public method, getAllOrders(), to the OrderService.
+    - This method gathers orders from all users, providing a complete overview for administrative purposes.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         6th June 2K25 - 03:04 AM
 Commit Message:     332 - G-Mart - Angular - Refined Local Storage for Orders, Enhanced Reactivity
 

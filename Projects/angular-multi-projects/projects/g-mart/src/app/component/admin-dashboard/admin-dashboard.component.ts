@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {CommonModule, NgIf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
@@ -7,6 +7,8 @@ import {OrderService} from "../../service/order.service";
 import {Product} from "../../shared/model/product.model";
 import {Order} from "../../shared/model/order.model";
 import {MultipleChargesModel} from "../../shared/model/multiple-charges.model"; // Added import
+import {Subscription} from "rxjs";
+import {DataLoaderService} from "../../service/data-loader.service";
 
 @Component({
     selector: 'app-admin-dashboard',
@@ -14,7 +16,7 @@ import {MultipleChargesModel} from "../../shared/model/multiple-charges.model"; 
     imports: [NgIf, FormsModule, CommonModule],
     templateUrl: './admin-dashboard.component.html'
 })
-export class AdminDashboardComponent implements OnInit {
+export class AdminDashboardComponent implements OnInit, OnDestroy {
 
     // Products
     allProducts: Product[] = [];
@@ -24,7 +26,13 @@ export class AdminDashboardComponent implements OnInit {
     productItemsPerPage: number = 10;
     productTotalPages: number = 1;
     editingProduct: Product | null = null;
-    productUpdateForm: Product | null = null;
+    productUpdateForm: {
+        name: string;
+        price: number;
+        productUnitValue: number; /* add other editable fields */
+    } | null = null;
+    productSortColumn: string = 'name'; // Default sort column
+    productSortDirection: 'asc' | 'desc' = 'asc'; // Default sort direction
 
     // Orders
     allOrders: Order[] = [];
@@ -42,23 +50,37 @@ export class AdminDashboardComponent implements OnInit {
     selectedOrder: Order | null = null;
     protected readonly MultipleChargesModel = MultipleChargesModel; // Added for template access
 
+    private dataLoadedSubscription?: Subscription;
+
     constructor(public router: Router,
                 private productService: ProductService,
-                private orderService: OrderService) {
+                private orderService: OrderService,
+                private dataLoaderService: DataLoaderService) {
     }
 
     ngOnInit(): void {
-        this.loadProducts();
-        this.loadOrders();
+        // Wait for data to be loaded before initializing products and orders
+        this.dataLoadedSubscription = this.dataLoaderService.getDataLoaded$().subscribe((loaded: boolean) => {
+            if (loaded) {
+                this.loadProducts();
+                this.loadOrders();
+            }
+        });
+    }
+
+    ngOnDestroy(): void {
+        if (this.dataLoadedSubscription) this.dataLoadedSubscription.unsubscribe();
     }
 
     loadProducts(): void {
         this.allProducts = this.productService.getAllProductList();
+        this.sortProductsBy(this.productSortColumn, false); // Initial sort
         this.updateDisplayedProducts();
     }
 
     loadOrders(): void {
-        this.allOrders = this.orderService.getOrderList()!;
+        // Use all orders for admin dashboard
+        this.allOrders = this.orderService.getAllOrders() || [];
         this.updateDisplayedOrders();
     }
 
@@ -68,6 +90,42 @@ export class AdminDashboardComponent implements OnInit {
             product.getCategory().getName().toLowerCase().includes(this.productSearchTerm.toLowerCase()) ||
             product.getSubcategory().getName().toLowerCase().includes(this.productSearchTerm.toLowerCase())
         );
+
+        // Sorting logic
+        filteredProducts.sort((a, b) => {
+            let valA: any;
+            let valB: any;
+
+            switch (this.productSortColumn) {
+                case 'name':
+                    valA = a.getName().toLowerCase();
+                    valB = b.getName().toLowerCase();
+                    break;
+                case 'category':
+                    valA = a.getCategory().getName().toLowerCase();
+                    valB = b.getCategory().getName().toLowerCase();
+                    break;
+                case 'subcategory':
+                    valA = a.getSubcategory().getName().toLowerCase();
+                    valB = b.getSubcategory().getName().toLowerCase();
+                    break;
+                case 'price':
+                    valA = a.getPrice();
+                    valB = b.getPrice();
+                    break;
+                case 'stock': // Assuming stock is represented by productUnitValue for now
+                    valA = a.getProductUnitValue();
+                    valB = b.getProductUnitValue();
+                    break;
+                default:
+                    return 0;
+            }
+
+            if (valA < valB) return this.productSortDirection === 'asc' ? -1 : 1;
+            if (valA > valB) return this.productSortDirection === 'asc' ? 1 : -1;
+
+            return 0;
+        });
 
         this.productTotalPages = Math.ceil(filteredProducts.length / this.productItemsPerPage);
         const startIndex = (this.productCurrentPage - 1) * this.productItemsPerPage;
@@ -99,19 +157,39 @@ export class AdminDashboardComponent implements OnInit {
         this.updateDisplayedProducts();
     }
 
+    sortProductsBy(column: string, toggleDirection: boolean = true): void {
+        if (this.productSortColumn === column && toggleDirection) {
+            this.productSortDirection = this.productSortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            this.productSortColumn = column;
+            this.productSortDirection = 'asc';
+        }
+        this.updateDisplayedProducts();
+    }
+
     editProduct(product: Product): void {
         this.editingProduct = product;
-        this.productUpdateForm = Product.clone(product);
+        // Ensure all fields to edit are included here
+        this.productUpdateForm = {
+            name: product.getName(),
+            price: product.getPrice(),
+            productUnitValue: product.getProductUnitValue(),
+            // Initialize other fields from product if they are part of the form
+        };
     }
 
     saveProductChanges(): void {
         if (this.editingProduct && this.productUpdateForm) {
             const index = this.allProducts.findIndex(p => p.getId() === this.editingProduct!.getId());
             if (index !== -1) {
-                this.allProducts[index].setName(this.productUpdateForm.getName());
-                this.allProducts[index].setPrice(this.productUpdateForm.getPrice());
-                this.allProducts[index].setProductUnitValue(this.productUpdateForm.getProductUnitValue());
+                // Update only the fields present in productUpdateForm
+                this.allProducts[index].setName(this.productUpdateForm.name);
+                this.allProducts[index].setPrice(this.productUpdateForm.price);
+                this.allProducts[index].setProductUnitValue(this.productUpdateForm.productUnitValue);
+                // Potentially update other fields if they are in productUpdateForm
+                // e.g., this.allProducts[index].setDescription(this.productUpdateForm.description);
             }
+            // this.productService.updateProduct(this.allProducts[index]);
             this.updateDisplayedProducts();
             this.cancelEditProduct();
         }

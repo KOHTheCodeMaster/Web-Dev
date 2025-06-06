@@ -256,4 +256,8 @@ export class OrderService {
         return this.orderList$.getValue();
     }
 
+    public getAllOrders(): Order[] {
+        return Array.from(this.userIdToOrdersMap.values()).flat();
+    }
+
 }
