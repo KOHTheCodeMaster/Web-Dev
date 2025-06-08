@@ -19,6 +19,38 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         9th June 2K25 - 01:52 AM
+Commit Message:     334 - G-Mart - Angular - User Data Service & Refactoring
+
+Quick Summary:
+
+1. User Data Handling with `user-data.json`:
+   - Introduced new file: `user-data.json` to maintain user-specific data.
+   - Includes mappings for each userId with keys like: `defaultAddressId`, `addressIdList`, `ordersIdList`, and `shoppingCartId`.
+   - Created `UserDataService` to load `userDataMap` and expose method `getUserDataByUserId(userId)`.
+
+2. Address Management with `address.json`:
+   - Added `address.json` to initialize all addresses.
+   - Modified `AddressService` to:
+     - Load all addresses from file.
+     - Filter addresses by userId based on `user-data.json`.
+     - Add support for retrieving default address with `getDefaultAddress()`.
+
+3. DataLoader Service Update:
+   - Replaced old method `getDataList()` with `getDataLoaded()` in `DataLoaderService`.
+   - `getDataLoaded()` returns generic `any` to support both list and map-based data structures.
+   - Updated all service classes (`ProductService`, `OrderService`, etc.) to handle the correct casting after calling this method.
+
+4. Order Model Refactor:
+   - Removed `orderDate` field from `Order.model.ts` as it was redundant with `datePlacedOn` for storing order date information.
+
+5. `order.json` Structure Update:
+   - Changed from simple array format to a key-value map using `userId` as top-level key.
+   - Enables quicker lookups and organizes orders per user.
+   - Keeps it aligned with `user-data.json` structure for better consistency.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         6th June 2K25 - 11:33 PM
 Commit Message:     333 - G-Mart - Angular - Admin Dashboard - Order Service Enhancement & Products Section UI
 

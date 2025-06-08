@@ -24,7 +24,12 @@ export class CheckoutService {
     checkout() {
 
         let shoppingCart: ShoppingCart = this.shoppingCartService.getShoppingCart$().getValue();
-        let selectedAddress: Address = this.addressService.getSelectedAddress$().getValue();
+        let selectedAddress: Address | null = this.addressService.getSelectedAddress$().getValue();
+        if (!selectedAddress) {
+            console.warn('Checkout failed. No address selected.');
+            //  ToDo: Handle this scenario gracefully with validations to ensure this case never occurs.
+            return;
+        }
         let newOrder: Order | null = this.orderService.createNewOrder(shoppingCart, selectedAddress);
 
         //  Reset the shopping cart to new empty shopping cart

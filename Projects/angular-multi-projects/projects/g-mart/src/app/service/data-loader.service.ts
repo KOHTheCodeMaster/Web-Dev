@@ -8,9 +8,9 @@ import {BehaviorSubject, Observable} from "rxjs";
 export class DataLoaderService {
 
     private readonly BASE_API_URL: string = 'http://localhost:8081/g-mart/api';
-    private dataLoaded$!: BehaviorSubject<boolean>;
-    private nameToJsonFilePathMap!: Map<string, string>;
-    private nameToJsonDataMap!: Map<string, any[]>;
+    private dataLoaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    private readonly nameToJsonFilePathMap: Map<string, string> = new Map<string, string>();
+    private readonly nameToJsonDataMap: Map<string, any> = new Map<string, []>();
 
     constructor() {
 
@@ -20,7 +20,7 @@ export class DataLoaderService {
 
     private async initDataMembers() {
 
-        this.dataLoaded$ = new BehaviorSubject<boolean>(false);
+        this.dataLoaded$
 
         //  Reset the post-login URL in localStorage to default home page
         localStorage.setItem('postLoginUrl', '/');
@@ -34,30 +34,26 @@ export class DataLoaderService {
 
     private initNameToJsonFilePathMap() {
 
-        this.nameToJsonFilePathMap = new Map<string, string>();
-
-        this.nameToJsonFilePathMap.set('product', '/assets/json/product.json');
-        this.nameToJsonFilePathMap.set('order', '/assets/json/order.json');
         this.nameToJsonFilePathMap.set('category', '/assets/json/category.json');
         this.nameToJsonFilePathMap.set('subcategory', '/assets/json/subcategory.json');
+        this.nameToJsonFilePathMap.set('product', '/assets/json/product.json');
+        this.nameToJsonFilePathMap.set('address', '/assets/json/address.json');
+        // this.nameToJsonFilePathMap.set('order', '/assets/json/order.json');
         this.nameToJsonFilePathMap.set('user', '/assets/json/user.json');
+        this.nameToJsonFilePathMap.set('user-data', '/assets/json/user-data.json');
 
     }
 
     private async initNameToJsonDataMap() {
 
-        this.nameToJsonDataMap = new Map<string, []>();
-
         for (const [name, jsonFilePath] of this.nameToJsonFilePathMap.entries()) {
-            const dataList = await this.loadDataListFromJsonFile(jsonFilePath);
-            this.nameToJsonDataMap.set(name, dataList);
+            const dataLoaded: any = await this.loadDataFromJsonFile(jsonFilePath);
+            this.nameToJsonDataMap.set(name, dataLoaded);
         }
 
     }
 
     private async initNameToJsonDataMapFromDB() {
-
-        this.nameToJsonDataMap = new Map<string, []>();
 
         const categoryList = await this.loadDataListFromDB(this.BASE_API_URL + '/category/all');
         this.nameToJsonDataMap.set('category', categoryList);
@@ -73,19 +69,18 @@ export class DataLoaderService {
 
     }
 
-    async loadDataListFromJsonFile(jsonFilePath: string): Promise<any[]> {
+    async loadDataFromJsonFile(jsonFilePath: string): Promise<any> {
 
-        let dataList: [] = [];
+        let data: any = {};
 
         //  Fetch Data from JSON File
         await fetch(jsonFilePath)
             .then(response => response.json())
             .then(jsonResponse => {
-                let tempList = jsonResponse;
-                if (tempList && tempList.length > 0) dataList = tempList as [];
+                if (jsonResponse) data = jsonResponse;
             });
 
-        return dataList;
+        return data;
 
     }
 
@@ -121,8 +116,8 @@ export class DataLoaderService {
         return this.dataLoaded$;
     }
 
-    getDataList(name: string): [] {
-        return this.nameToJsonDataMap.has(name) ? this.nameToJsonDataMap.get(name) as [] : [];
+    getDataLoaded(name: string): any {
+        return this.nameToJsonDataMap.has(name) ? this.nameToJsonDataMap.get(name) : {};
     }
 
     private async loadDataListFromDB(url: string): Promise<any[]> {

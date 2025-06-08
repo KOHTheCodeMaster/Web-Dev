@@ -78,7 +78,7 @@
                                 class="border-b border-gray-800 hover:bg-gray-800 transition">
                                 <td class="py-2">#{{ order.getOrderNumber() }}</td>
                                 <td class="py-2">{{ order.getDeliverToAddress().getReceiverName() }}</td>
-                                <td class="py-2">{{ order.getOrderDate() | date:'yyyy-MM-dd' }}</td>
+                                <td class="py-2">{{ order.getDatePlacedOn() | date:'yyyy-MM-dd' }}</td>
                                 <td class="py-2"><span class="px-2 py-1 rounded"
                                                        [ngClass]="{
                                         'bg-yellow-900 text-yellow-300': order.getStatus() === 'Pending',
@@ -121,7 +121,7 @@
                          class="flex items-center border-b border-gray-800 hover:bg-gray-850 transition last:border-b-0">
                         <div class="w-1/6 px-2 py-3 text-sm">#{{ order.getOrderNumber() }}</div>
                         <div class="w-2/6 px-2 py-3 text-sm">{{ order.getDeliverToAddress().getReceiverName() }}</div>
-                        <div class="w-1/6 px-2 py-3 text-sm">{{ order.getOrderDate() | date:'yyyy-MM-dd' }}</div>
+                        <div class="w-1/6 px-2 py-3 text-sm">{{ order.getDatePlacedOn() | date:'yyyy-MM-dd' }}</div>
                         <div class="w-2/6 px-2 py-3 text-sm">
                             <ng-container *ngIf="editingOrder !== order; else editStatus">
                                 <span class="px-2 py-1 rounded text-xs"

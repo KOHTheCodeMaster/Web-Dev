@@ -14,7 +14,7 @@ import {UserService} from "../../../service/user.service";
 export class DeliveryLocationComponent {
 
     selectedAddress: Address | null = null;
-    addressList: Address[] = [];
+    addressList: Address[] | null = null;
     isSelectAddressPopupOpened = false;
     addressToDelete: Address | null = null;
     addressForEdit: Address | null = null;
@@ -22,9 +22,9 @@ export class DeliveryLocationComponent {
     constructor(public addressService: AddressService,
                 protected userService: UserService) {
 
+        this.addressService.getAddressList$().subscribe((addressList: Address[] | null) => this.addressList = addressList);
         this.addressService.getSelectedAddress$().subscribe(address => this.selectedAddress = address);
         this.addressService.getAddressForEdit$().subscribe((address: Address | null) => this.addressForEdit = address);
-        this.addressList = this.addressService.getAddressList();
 
     }
 

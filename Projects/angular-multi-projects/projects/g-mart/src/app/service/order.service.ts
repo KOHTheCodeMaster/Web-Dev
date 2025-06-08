@@ -28,12 +28,56 @@ export class OrderService {
 
         this.dataLoaderService.getDataLoaded$().subscribe((dataLoaded: boolean) => {
             if (dataLoaded) {
+                // this.initOrdersFromJson();
                 this.initUserOrders();
                 this.handleChangeUserSubscription();
                 this.initLastOrderNumber();
             }
         });
     }
+
+    /*
+        initOrdersFromJson() {
+            //  Load orders from JSON file
+            const userOrdersData = this.dataLoaderService.getDataLoaded('order');
+
+            if (userOrdersData && userOrdersData.length > 0) {
+
+                userOrdersData.forEach((orderData: any) => {
+                    const userId = orderData.userId;
+                    if (!this.userIdToOrdersMap.has(userId)) this.userIdToOrdersMap.set(userId, []);
+
+                    const items: CartItem[] = orderData.shoppingCart.cartItems.map((item: any) => {
+                        const product = this.productService.findProductById(item.product.id);
+                        return product ? new CartItem(product, item.quantity) : null;
+                    }).filter((item: CartItem | null) => item !== null) as CartItem[];
+
+                    const shoppingCart = new ShoppingCart(new MultipleChargesModel(), items);
+
+                    const order = new Order(
+                        Number(orderData.id),
+                        parseInt(orderData.orderNumber),
+                        orderData.strOrderArrivedIn,
+                        new Date(orderData.orderDate),
+                        new Date(orderData.orderDate),
+                        orderData.paymentMode,
+                        new Address(0, '', '', '', '', '', '', 0, ''),
+                        shoppingCart,
+                        orderData.status
+                    );
+
+                    this.userIdToOrdersMap.get(userId)?.push(order);
+
+                    // Update last order number if this order's number is greater
+                    if (order.getOrderNumber() > this.lastOrderNumber) {
+                        this.lastOrderNumber = order.getOrderNumber();
+                    }
+                });
+
+            }
+
+        }
+    */
 
     private initUserOrders() {
 
@@ -64,7 +108,6 @@ export class OrderService {
                             Number(orderData.id),
                             parseInt(orderData.orderNumber),
                             orderData.strOrderArrivedIn,
-                            new Date(orderData.orderDate),
                             new Date(orderData.orderDate),
                             new Date(orderData.orderDate),
                             orderData.paymentMode,
@@ -144,7 +187,6 @@ export class OrderService {
                     'N/A',
                     new Date(orderData.orderDate),
                     new Date(orderData.orderDate),
-                    new Date(orderData.orderDate),
                     'N/A',
                     new Address(0, '', '', '', '', '', '', 0, ''),
                     shoppingCart
@@ -207,7 +249,6 @@ export class OrderService {
             Math.floor(Math.random() * 10000),
             orderNumber,
             '10 minutes',
-            new Date(),
             new Date(),
             new Date(),
             'Cash on Delivery',

@@ -36,13 +36,10 @@ export class CategoryService {
             if (dataLoaded) {
 
                 //  Initialize Category List
-                this.categoryList = this.dataLoaderService.getDataList('category').map(category => new Category(category['id'], category['name']));
-
-                // console.log('Category List:', this.dataLoaderService.getDataList('category'));
+                this.categoryList = (this.dataLoaderService.getDataLoaded('category') as []).map(category => new Category(category['id'], category['name']));
 
                 //  Initialize Subcategory List
-                this.subCategoryList = this.dataLoaderService.getDataList('subcategory')
-                    .map(subcategory => new Subcategory(subcategory['id'],
+                this.subCategoryList = (this.dataLoaderService.getDataLoaded('subcategory') as []).map(subcategory => new Subcategory(subcategory['id'],
                         subcategory['name'],
                         new Category(subcategory['category']['id'], subcategory['category']['name'])));
 

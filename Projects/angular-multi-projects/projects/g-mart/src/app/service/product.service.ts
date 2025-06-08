@@ -26,7 +26,7 @@ export class ProductService {
 
             //  Initialize Product List
             if (dataLoaded) {
-                this.allProductList = this.dataLoaderService.getDataList('product').map(product =>
+                this.allProductList = (this.dataLoaderService.getDataLoaded('product') as []).map(product =>
                     new Product(product['id'],
                         product['name'],
                         product['price'],

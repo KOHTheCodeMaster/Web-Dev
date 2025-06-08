@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "label": "Home",
+        "houseNumberOrName": "123",
+        "floor": "1st Floor",
+        "locality": "Downtown",
+        "landmark": "Near Central Park",
+        "receiverName": "John Doe",
+        "mobNumber": 9876543210,
+        "googleMapsExtras": ""
+    },
+    {
+        "id": 2,
+        "label": "Office",
+        "houseNumberOrName": "456",
+        "floor": "3rd Floor",
+        "locality": "Business District",
+        "landmark": "Opposite City Hall",
+        "receiverName": "Jane Smith",
+        "mobNumber": 1234567890,
+        "googleMapsExtras": ""
+    },
+    {
+        "id": 3,
+        "label": "Other",
+        "houseNumberOrName": "789",
+        "floor": "Ground Floor",
+        "locality": "Suburban Area",
+        "landmark": "Next to Supermarket",
+        "receiverName": "Alice Johnson",
+        "mobNumber": 1122334455,
+        "googleMapsExtras": ""
+    },
+    {
+        "id": 4,
+        "label": "Vacation Home",
+        "houseNumberOrName": "101",
+        "floor": "2nd Floor",
+        "locality": "Beachside",
+        "landmark": "Near the Lighthouse",
+        "receiverName": "Bob Brown",
+        "mobNumber": 5566778899,
+        "googleMapsExtras": ""
+    },
+    {
+        "id": 5,
+        "label": "Relative's Place",
+        "houseNumberOrName": "202",
+        "floor": "1st Floor",
+        "locality": "Countryside",
+        "landmark": "Near the Old Mill",
+        "receiverName": "Charlie Green",
+        "mobNumber": 9988776655,
+        "googleMapsExtras": ""
+    },
+    {
+        "id": 6,
+        "label": "Friend's House",
+        "houseNumberOrName": "303",
+        "floor": "2nd Floor",
+        "locality": "Urban Area",
+        "landmark": "Next to the Library",
+        "receiverName": "David White",
+        "mobNumber": 1231231234,
+        "googleMapsExtras": ""
+    },
+    {
+        "id": 7,
+        "label": "Warehouse",
+        "houseNumberOrName": "404",
+        "floor": "Ground Floor",
+        "locality": "Industrial Zone",
+        "landmark": "Behind the Factory",
+        "receiverName": "Eve Black",
+        "mobNumber": 4321432143,
+        "googleMapsExtras": ""
+    },
+    {
+        "id": 8,
+        "label": "Delivery Hub",
+        "houseNumberOrName": "505",
+        "floor": "1st Floor",
+        "locality": "Logistics Park",
+        "landmark": "Near the Shipping Yard",
+        "receiverName": "Frank Blue",
+        "mobNumber": 5678567856,
+        "googleMapsExtras": ""
+    },
+    {
+        "id": 9,
+        "label": "Community Center",
+        "houseNumberOrName": "606",
+        "floor": "2nd Floor",
+        "locality": "Residential Area",
+        "landmark": "Next to the Park",
+        "receiverName": "Grace Yellow",
+        "mobNumber": 7890789078,
+        "googleMapsExtras": ""
+    },
+    {
+        "id": 10,
+        "label": "School",
+        "houseNumberOrName": "707",
+        "floor": "Ground Floor",
+        "locality": "Educational District",
+        "landmark": "Near the Playground",
+        "receiverName": "Hank Purple",
+        "mobNumber": 8907890789,
+        "googleMapsExtras": ""
+    }
+]

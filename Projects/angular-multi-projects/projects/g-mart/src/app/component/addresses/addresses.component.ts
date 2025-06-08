@@ -15,7 +15,7 @@ export class AddressesComponent implements OnDestroy {
 
     isEditDialogOpened: boolean = false;
     addressForEdit: Address | null = null;
-    addressList: Address[] = [];
+    addressList: Address[] | null = null;
     private deletePopupClickListener: (() => void) | undefined;
     private editDialogClickListener: (() => void) | undefined;
     @ViewChild('deleteAddressPopup', {static: false}) deleteAddressPopupElement!: ElementRef;
@@ -23,7 +23,8 @@ export class AddressesComponent implements OnDestroy {
 
     constructor(private router: Router,
                 private renderer: Renderer2,
-                protected addressService: AddressService) {
+                protected addressService: AddressService,
+                ) {
 
         this.addressList = this.addressService.getAddressList();
         this.initSubscriptions();
@@ -32,8 +33,10 @@ export class AddressesComponent implements OnDestroy {
 
     initSubscriptions() {
 
+        this.addressService.getAddressList$().subscribe((addressList: Address[] | null) => this.addressList = addressList);
+
         //  Subscribe to address isDeleteConfirmationPopupOpened value changes
-        this.addressList.forEach(address => {
+        this.addressList?.forEach(address => {
             address.getIsDeleteConfirmationPopupOpened$().subscribe(isDeleteConfirmationPopupOpened => {
                 // Handle click outside logic
                 if (isDeleteConfirmationPopupOpened) {
@@ -78,10 +81,12 @@ export class AddressesComponent implements OnDestroy {
     }
 
     openEditAndDeletePopup(address: Address) {
-        //  Close the other edit and delete popups
-        this.addressList
-            .filter(addressItem => addressItem !== address)
-            .forEach(addressItem => addressItem.updateIsEditAndDeletePopupOpenedValue(false));
+        if (this.addressList) {
+            //  Close the other edit and delete popups
+            this.addressList
+                .filter(addressItem => addressItem !== address)
+                .forEach(addressItem => addressItem.updateIsEditAndDeletePopupOpenedValue(false));
+        }
 
         //  Toggle the clicked address's edit and delete popup
         address.toggleEditAndDeletePopup();

@@ -1,6 +1,9 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
 import {Address} from "../shared/model/address.model";
+import {DataLoaderService} from "./data-loader.service";
+import {UserService} from "./user.service";
+import {UserDataService} from "./user-data.service";
 
 @Injectable({
     providedIn: 'root'
@@ -8,28 +11,63 @@ import {Address} from "../shared/model/address.model";
 export class AddressService {
 
     private readonly isEditDialogOpened$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-    private selectedAddress$: BehaviorSubject<Address> = new BehaviorSubject<Address>(this.initDefaultAddress());
+    private selectedAddress$: BehaviorSubject<Address | null> = new BehaviorSubject<Address | null>(null);
     private addressForEdit$: BehaviorSubject<Address | null> = new BehaviorSubject<Address | null>(null);
-    addressList: Address[] = [];
+    private addressList$: BehaviorSubject<Address[] | null> = new BehaviorSubject<Address[] | null>(null);
+    allAddressList: Address[] = [];
 
-    constructor() {
+    constructor(private dataLoaderService: DataLoaderService,
+                private userService: UserService,
+                private userDataService: UserDataService) {
 
         //  Initialize the address list
-        this.initAddressList();
+        this.initAddressLists();
 
     }
 
-    private initDefaultAddress(): Address {
-        return new Address(
-            1,
-            "",
-            "",
-            "",
-            "Jaipur, Rajasthan",
-            "",
-            "",
-            0,
-            "");
+    private initAddressLists() {
+        this.dataLoaderService.getDataLoaded$().subscribe((dataLoaded: boolean) => {
+            if (dataLoaded) {
+                //  Initialize Address List
+                this.allAddressList = (this.dataLoaderService.getDataLoaded('address') as []).map(address => new Address(
+                    Number(address['id']),
+                    address['label'],
+                    address['houseNumberOrName'],
+                    address['floor'],
+                    address['locality'],
+                    address['landmark'],
+                    address['receiverName'],
+                    Number(address['mobNumber']),
+                    address['googleMapsExtras']
+                ));
+
+                this.initChangeUserSubscription();
+            }
+        });
+    }
+
+    initChangeUserSubscription() {
+        this.userService.getLoggedInUser$().subscribe((user) => {
+            if (user) {
+                //  Get User Data Model
+                let userDataModel = this.userDataService.getUserDataByUserId(user.getId().toString());
+
+                if (userDataModel) {
+                    //  Prepare Address List from User's saved address IDs
+                    let addressList = this.prepareAddressListFromIds(userDataModel.getSavedAddressIdList());
+                    this.addressList$.next(addressList);
+                    // console.log('this.addressList: ', addressList);
+
+                    //  Set the default address if available
+                    if (addressList.length > 0 && userDataModel.getDefaultAddressId() !== -1) {
+                        const defaultAddress: Address | null = this.getAddressById(userDataModel.getDefaultAddressId());
+                        this.updateSelectedAddress(defaultAddress);
+                    } else {
+                        this.updateSelectedAddress(null); // No addresses available
+                    }
+                }
+            }
+        });
     }
 
     public createEmptyAddress(): Address {
@@ -45,86 +83,12 @@ export class AddressService {
             "");
     }
 
-    private initAddressList() {
-
-        this.addressList = [];
-
-        this.addressList.push(new Address(
-            1,
-            "Home",
-            'GT Central',
-            'Ground Floor',
-            "Malviya Nagar, Jaipur",
-            "WTP",
-            "John Doe",
-            1234567890,
-            ""));
-        this.addressList.push(new Address(
-            2,
-            "Work",
-            'Plot-001',
-            '1st',
-            "Mansarovar",
-            "Isckon Temple",
-            "Jane Doe",
-            9876543210,
-            ""));
-        this.addressList.push(new Address(
-            3,
-            "Other",
-            'GT Central',
-            '2nd Floor',
-            "Malviya Nagar, Jaipur",
-            "Near WTP",
-            "Alice Smith",
-            1122334455,
-            ""
-        ));
-        this.addressList.push(new Address(
-            4,
-            "Custom Label",
-            'Custom House',
-            '3rd Floor',
-            "Malviya Nagar, Jaipur",
-            "Near Custom Office",
-            "Bob Brown",
-            9988776655,
-            ""
-        ));
-        this.addressList.push(new Address(
-            5,
-            "Default Address",
-            'Default House',
-            'Ground Floor',
-            "Default Locality",
-            "Default Landmark",
-            "Default Person",
-            1234567890,
-            ""
-        ));
-        this.addressList.push(new Address(
-            6,
-            "Another Address",
-            'Another House',
-            '1st Floor',
-            "Another Locality",
-            "Another Landmark",
-            "Another Person",
-            9876543210,
-            ""
-        ));
-    }
-
     updateIsEditDialogOpenedValue(flag: boolean) {
         this.isEditDialogOpened$.next(flag);
     }
 
-    updateSelectedAddress(address: Address) {
+    updateSelectedAddress(address: Address | null) {
         this.selectedAddress$.next(address);
-    }
-
-    updateSelectedAddressToDefault() {
-        this.selectedAddress$.next(this.initDefaultAddress());
     }
 
     updateAddressForEdit(address: Address) {
@@ -132,35 +96,62 @@ export class AddressService {
     }
 
     deleteAddress(addressToDelete: Address) {
-        const index = this.addressList.findIndex(address => address.getId() === addressToDelete.getId());
+        let addressList: Address[] | null = this.addressList$.getValue();
+        if (!addressList) {
+            console.error("AddressService: Address list is null. Cannot delete address.");
+            return;
+        }
+        const index = addressList.findIndex(address => address.getId() === addressToDelete.getId());
         if (index !== -1) {
-            this.addressList.splice(index, 1);
+            addressList.splice(index, 1);
             // Optionally, reset the selected address if it was the one deleted
-            if (this.selectedAddress$.getValue().getId() === addressToDelete.getId()) this.updateSelectedAddressToDefault();
+            if (this.selectedAddress$.getValue()?.getId() === addressToDelete.getId()) this.updateSelectedAddress(null);
         }
     }
 
     addNewAddress(newAddress: Address | null) {
+        let addressList: Address[] | null = this.addressList$.getValue();
         if (newAddress) {
             //  Check if the new address already exists
-            const existingAddress = this.addressList.find(address => address.getId() === newAddress.getId());
+            const existingAddress = addressList?.find(address => address.getId() === newAddress.getId());
             if (existingAddress) Object.assign(existingAddress, newAddress);    //  Update existing address
-            else this.addressList.push(newAddress);                             //  Add new address
+            else addressList?.push(newAddress);                             //  Add new address
         } else console.error("AddressService: Attempted to add a null address.");
+    }
+
+    getAddressById(id: number): Address | null {
+        const address: Address | undefined = this.allAddressList.find(addr => addr.getId() === id);
+        return address ? address : null;
+        // return address ? address.clone() : null; // Return a clone to avoid direct mutation
+    }
+
+    prepareAddressListFromIds(addressIdList: number[]) {
+        let addressList: Address[] = [];
+        if (addressIdList && addressIdList.length > 0) {
+            addressIdList.forEach((addressId: number) => {
+                let address: Address | null = this.getAddressById(addressId);
+                if (address) addressList.push(address);
+            });
+        }
+        return addressList;
     }
 
     //  Getters
     //  -------
 
-    public getAddressList(): Address[] {
-        return this.addressList;
+    public getAddressList(): Address[] | null {
+        return this.addressList$.getValue();
+    }
+
+    public getAddressList$(): BehaviorSubject<Address[] | null> {
+        return this.addressList$;
     }
 
     getIsEditDialogOpened$(): Observable<boolean> {
         return this.isEditDialogOpened$.asObservable();
     }
 
-    getSelectedAddress$(): BehaviorSubject<Address> {
+    getSelectedAddress$(): BehaviorSubject<Address | null> {
         return this.selectedAddress$;
     }
 

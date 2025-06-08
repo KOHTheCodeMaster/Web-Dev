@@ -23,7 +23,6 @@ export class EditAddressDialogComponent {
     ngOnInit() {
         //  Create Deep Copy of the address object
         this.tempAddress = this.address ? this.address.clone() : null;
-        console.log('this.tempAddress: ', this.tempAddress);
 
         //  Initialize with the custom label value of the tempAddress
         this.strCustomLabelInput = this.tempAddress?.isCustomLabel()

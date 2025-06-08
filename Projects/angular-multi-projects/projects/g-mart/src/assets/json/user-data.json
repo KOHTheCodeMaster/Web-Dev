@@ -1,0 +1,62 @@
+{
+    "1": {
+        "userId": 1,
+        "savedAddressIdList": [],
+        "defaultAddressId": -1,
+        "ordersIdList": [],
+        "shoppingCartId": 1
+    },
+    "2": {
+        "userId": 2,
+        "savedAddressIdList": [
+            4,
+            5
+        ],
+        "defaultAddressId": 4,
+        "ordersIdList": [
+            3
+        ],
+        "shoppingCartId": 2
+    },
+    "3": {
+        "userId": 3,
+        "savedAddressIdList": [
+            1,
+            2,
+            3
+        ],
+        "defaultAddressId": 1,
+        "ordersIdList": [
+            1001,
+            1002
+        ],
+        "shoppingCartId": 3
+    },
+    "4": {
+        "userId": 4,
+        "savedAddressIdList": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "defaultAddressId": 7,
+        "ordersIdList": [
+            1003,
+            1004
+        ],
+        "shoppingCartId": 4
+    },
+    "5": {
+        "userId": 5,
+        "savedAddressIdList": [],
+        "ordersIdList": [],
+        "shoppingCartId": 5
+    },
+    "6": {
+        "userId": 6,
+        "savedAddressIdList": [],
+        "ordersIdList": [],
+        "shoppingCartId": 6
+    }
+}

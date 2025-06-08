@@ -44,12 +44,11 @@ export class UserService {
         }
     }
 
-
     initSubscriptions() {
         this.dataLoaderService.getDataLoaded$().subscribe(dataLoaded => {
             //  Initialize Users
             if (dataLoaded) {
-                this.users = this.dataLoaderService.getDataList('user').map(user => new User(
+                this.users = (this.dataLoaderService.getDataLoaded('user') as []).map(user => new User(
                     user['id'],
                     user['username'],
                     user['password'],

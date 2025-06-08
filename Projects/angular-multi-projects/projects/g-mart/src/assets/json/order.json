@@ -1,46 +1,51 @@
 [
     {
-        "id": 1,
-        "orderNumber": 1001,
-        "strOrderArrivedIn": "30 mins",
-        "dateArrivedAt": "2025-05-15T18:30:00.000Z",
-        "datePlacedOn": "2025-05-15T18:00:00.000Z",
-        "orderDate": "2025-05-15T18:00:00.000Z",
-        "paymentMode": "Online",
-        "items": [
-            {
-                "productId": 1,
-                "quantity": 2
-            },
-            {
-                "productId": 5,
-                "quantity": 1
-            },
-            {
-                "productId": 10,
-                "quantity": 3
-            }
-        ],
-        "status": "Shipped"
+        "orderId": 1001,
+        "orderNumber": 1000,
+        "strOrderArrivedIn": "10 minutes",
+        "dateArrivedAt": "2025-06-05T21:13:46.178Z",
+        "datePlacedOn": "2025-06-05T21:13:46.178Z",
+        "orderDate": "2025-06-05T21:13:46.178Z",
+        "paymentMode": "Cash on Delivery",
+        "deliverAddressId": 1,
+        "shoppingCartId": 1,
+        "status": "Pending"
     },
     {
-        "id": 2,
-        "orderNumber": 1002,
-        "strOrderArrivedIn": "45 mins",
-        "dateArrivedAt": "2025-05-16T19:00:00.000Z",
-        "datePlacedOn": "2025-05-16T18:15:00.000Z",
-        "orderDate": "2025-05-16T18:15:00.000Z",
-        "paymentMode": "COD",
-        "items": [
-            {
-                "productId": 2,
-                "quantity": 1
-            },
-            {
-                "productId": 10,
-                "quantity": 3
-            }
-        ],
-        "status": "Processing"
+        "id": 1002,
+        "orderNumber": 1001,
+        "strOrderArrivedIn": "10 minutes",
+        "dateArrivedAt": "2025-06-05T21:14:16.384Z",
+        "datePlacedOn": "2025-06-05T21:14:16.384Z",
+        "orderDate": "2025-06-05T21:14:16.384Z",
+        "paymentMode": "Cash on Delivery",
+        "deliverToAddress": 2,
+        "shoppingCart": 2,
+        "status": "Pending"
+    },
+    {
+        "id": 1003,
+        "orderNumber": 1003,
+        "strOrderArrivedIn": "10 minutes",
+        "dateArrivedAt": "2025-06-06T16:07:14.701Z",
+        "datePlacedOn": "2025-06-06T16:07:14.701Z",
+        "orderDate": "2025-06-06T16:07:14.701Z",
+        "paymentMode": "Cash on Delivery",
+        "deliverToAddress": 3,
+        "shoppingCart": 3,
+        "status": "Pending"
+    },
+    {
+        "id": 1004,
+        "orderNumber": 1004,
+        "strOrderArrivedIn": "10 minutes",
+        "dateArrivedAt": "2025-06-05T21:14:30.884Z",
+        "datePlacedOn": "2025-06-05T21:14:30.884Z",
+        "orderDate": "2025-06-05T21:14:30.884Z",
+        "paymentMode": "Cash on Delivery",
+        "deliverToAddress": 1,
+        "shoppingCart": 4,
+        "status": "Pending"
     }
 ]
+

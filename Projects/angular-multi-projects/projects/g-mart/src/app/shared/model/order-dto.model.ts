@@ -1,37 +1,36 @@
-import {ShoppingCart} from "./shopping-cart.model";
-import {Address} from "./address.model";
+export class OrderDto {
 
-export class Order {
-
-    private readonly id: number;
+    private readonly orderId: number;
     private orderNumber: number;
     private strOrderArrivedIn: string;
     private dateArrivedAt: Date;
     private datePlacedOn: Date;
+    private orderDate: Date;
     private paymentMode: string;
-    private deliverToAddress: Address;
-    private shoppingCart: ShoppingCart;
-    private status: string; // Added status property
-
+    private status: string;
+    private deliverToAddressId: number;
+    private shoppingCartId: number;
 
     constructor(id: number,
                 orderNumber: number,
                 strOrderArrivedIn: string,
                 dateArrivedAt: Date,
                 datePlacedOn: Date,
+                orderDate: Date,
                 paymentMode: string,
-                deliverToAddress: Address,
-                shoppingCart: ShoppingCart,
-                status: string = 'Processing') { // Added status with default value
-        this.id = id;
+                deliverToAddressId: number,
+                shoppingCartId: number,
+                status: string = 'Processing') {
+        this.orderId = id;
         this.orderNumber = orderNumber;
         this.strOrderArrivedIn = strOrderArrivedIn;
         this.dateArrivedAt = dateArrivedAt;
         this.datePlacedOn = datePlacedOn;
+        this.orderDate = orderDate;
         this.paymentMode = paymentMode;
-        this.deliverToAddress = deliverToAddress;
-        this.shoppingCart = shoppingCart;
-        this.status = status; // Initialize status
+        this.deliverToAddressId = deliverToAddressId;
+        this.shoppingCartId = shoppingCartId;
+        this.status = status;
     }
 
     formatDate(date: Date) {
@@ -68,7 +67,7 @@ export class Order {
     //  -----------------
 
     public getId(): number {
-        return this.id;
+        return this.orderId;
     }
 
     public getOrderNumber(): number {
@@ -103,6 +102,14 @@ export class Order {
         this.datePlacedOn = datePlacedOn;
     }
 
+    public getOrderDate(): Date {
+        return this.orderDate;
+    }
+
+    public setOrderDate(orderDate: Date): void {
+        this.orderDate = orderDate;
+    }
+
     public getPaymentMode(): string {
         return this.paymentMode;
     }
@@ -111,23 +118,6 @@ export class Order {
         this.paymentMode = paymentMode;
     }
 
-    public getDeliverToAddress(): Address {
-        return this.deliverToAddress;
-    }
-
-    public setDeliverToAddress(deliverToAddress: Address): void {
-        this.deliverToAddress = deliverToAddress;
-    }
-
-    public getShoppingCart(): ShoppingCart {
-        return this.shoppingCart;
-    }
-
-    public setShoppingCart(shoppingCart: ShoppingCart): void {
-        this.shoppingCart = shoppingCart;
-    }
-
-    // Getter and Setter for status
     public getStatus(): string {
         return this.status;
     }
@@ -136,9 +126,20 @@ export class Order {
         this.status = status;
     }
 
-    // Getter for customer details from address
-    public getCustomerDetails(): Address { // Assuming Address contains customer name
-        return this.deliverToAddress;
+    public getDeliverToAddressId(): number {
+        return this.deliverToAddressId;
+    }
+
+    public setDeliverToAddressId(deliverToAddressId: number): void {
+        this.deliverToAddressId = deliverToAddressId;
+    }
+
+    public getShoppingCartId(): number {
+        return this.shoppingCartId;
+    }
+
+    public setShoppingCartId(shoppingCartId: number): void {
+        this.shoppingCartId = shoppingCartId;
     }
 
 }
