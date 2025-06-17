@@ -19,6 +19,28 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         17th June 2K25 - 11:23 PM
+Commit Message:     335 - G-Mart - Angular - User Data Service & Refactoring
+
+Quick Summary:
+
+1.  `OrderService` Refinements:
+    - Integrated `AddressService` to correctly fetch and assign `deliveryAddress` during order initialization in `initUserOrders()`.
+    - Ensured accurate mapping of `dateArrivedAt` and `datePlacedOn` from `orderData` to the `Order` model.
+    - Added error handling for cases where a delivery address might not be found for an order.
+
+2.  `Address` Model Enhancement:
+    - Implemented a `toJSON()` method in `address.model.ts` to prevent potential circular structure errors
+        during local storage operations by serializing only essential address properties.
+
+3.  `OrdersComponent` Update:
+    - Added explicit typing `Order[] | null` for the `orders` parameter in the `getOrderList$()` subscription for better type safety.
+
+4.  `DataLoaderService` Cleanup:
+    - Removed an unused line (`this.dataLoaded$`).
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         9th June 2K25 - 01:52 AM
 Commit Message:     334 - G-Mart - Angular - User Data Service & Refactoring
 

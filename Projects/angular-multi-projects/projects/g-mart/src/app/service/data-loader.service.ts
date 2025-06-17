@@ -20,8 +20,6 @@ export class DataLoaderService {
 
     private async initDataMembers() {
 
-        this.dataLoaded$
-
         //  Reset the post-login URL in localStorage to default home page
         localStorage.setItem('postLoginUrl', '/');
 

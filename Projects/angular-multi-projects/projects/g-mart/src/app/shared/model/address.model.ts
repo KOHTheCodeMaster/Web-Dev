@@ -35,6 +35,27 @@ export class Address {
         this.googleMapsExtras = googleMapsExtras;
     }
 
+    /*
+    * Circular Structure Error in Local Storage:
+    * - The error occurs when trying to save userIdToOrdersMap to local storage because the
+    *   Order object contains circular references (likely due to RxJS BehaviorSubject in Address).
+    * - We’ll fix this by adding toJSON() method which will serialize only the necessary data.
+    * - Note: Unable to replicate the issue in the current code, but this is a good practice to avoid circular structure errors.
+    * */
+    toJSON(): any {
+        return {
+            id: this.id,
+            label: this.label,
+            houseNumberOrName: this.houseNumberOrName,
+            floor: this.floor,
+            locality: this.locality,
+            landmark: this.landmark,
+            receiverName: this.receiverName,
+            mobNumber: this.mobNumber,
+            googleMapsExtras: this.googleMapsExtras
+        };
+    }
+
     clone(): Address {
         return new Address(
             this.id,

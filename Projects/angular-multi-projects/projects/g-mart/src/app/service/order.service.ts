@@ -10,6 +10,7 @@ import {UserService} from "./user.service";
 import {LocalStorageService} from "./local-storage.service";
 import {MultipleChargesModel} from "../shared/model/multiple-charges.model";
 import {BehaviorSubject} from "rxjs";
+import {AddressService} from "./address.service";
 
 @Injectable({
     providedIn: 'root'
@@ -23,6 +24,7 @@ export class OrderService {
 
     constructor(public dataLoaderService: DataLoaderService,
                 public productService: ProductService,
+                private addressService: AddressService,
                 private userService: UserService,
                 private localStorageService: LocalStorageService) {
 
@@ -35,49 +37,6 @@ export class OrderService {
             }
         });
     }
-
-    /*
-        initOrdersFromJson() {
-            //  Load orders from JSON file
-            const userOrdersData = this.dataLoaderService.getDataLoaded('order');
-
-            if (userOrdersData && userOrdersData.length > 0) {
-
-                userOrdersData.forEach((orderData: any) => {
-                    const userId = orderData.userId;
-                    if (!this.userIdToOrdersMap.has(userId)) this.userIdToOrdersMap.set(userId, []);
-
-                    const items: CartItem[] = orderData.shoppingCart.cartItems.map((item: any) => {
-                        const product = this.productService.findProductById(item.product.id);
-                        return product ? new CartItem(product, item.quantity) : null;
-                    }).filter((item: CartItem | null) => item !== null) as CartItem[];
-
-                    const shoppingCart = new ShoppingCart(new MultipleChargesModel(), items);
-
-                    const order = new Order(
-                        Number(orderData.id),
-                        parseInt(orderData.orderNumber),
-                        orderData.strOrderArrivedIn,
-                        new Date(orderData.orderDate),
-                        new Date(orderData.orderDate),
-                        orderData.paymentMode,
-                        new Address(0, '', '', '', '', '', '', 0, ''),
-                        shoppingCart,
-                        orderData.status
-                    );
-
-                    this.userIdToOrdersMap.get(userId)?.push(order);
-
-                    // Update last order number if this order's number is greater
-                    if (order.getOrderNumber() > this.lastOrderNumber) {
-                        this.lastOrderNumber = order.getOrderNumber();
-                    }
-                });
-
-            }
-
-        }
-    */
 
     private initUserOrders() {
 
@@ -104,14 +63,22 @@ export class OrderService {
                             return product ? new CartItem(product, item.quantity) : null;
                         }).filter((item: CartItem | null) => item !== null) as CartItem[];
 
+                        let addressId = orderData.deliverToAddress.id || 0;
+                        let deliveryAddress: Address | null = this.addressService.getAddressById(addressId);
+                        if (!deliveryAddress) {
+                            let errMsg: string = 'Delivery address not found for order ID:' + orderData.id + ' with address ID: ' + addressId;
+                            console.warn(errMsg);
+                            throw new Error(errMsg);
+                        }
+
                         return new Order(
                             Number(orderData.id),
                             parseInt(orderData.orderNumber),
                             orderData.strOrderArrivedIn,
-                            new Date(orderData.orderDate),
-                            new Date(orderData.orderDate),
+                            new Date(orderData.dateArrivedAt),
+                            new Date(orderData.datePlacedOn),
                             orderData.paymentMode,
-                            new Address(0, '', '', '', '', '', '', 0, ''),
+                            deliveryAddress!,
                             new ShoppingCart(new MultipleChargesModel(), items),
                             orderData.status
                         );

@@ -18,7 +18,7 @@ export class OrdersComponent {
                 public route: ActivatedRoute,
                 private orderService: OrderService) {
 
-        this.orderService.getOrderList$().subscribe(orders => {
+        this.orderService.getOrderList$().subscribe((orders: Order[] | null) => {
             if (orders && orders.length > 0) this.orderList = orders;
         });
 
