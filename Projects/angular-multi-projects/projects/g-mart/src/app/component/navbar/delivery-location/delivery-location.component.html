@@ -40,10 +40,11 @@
         </div>
     </div>
 
-    <div *ngIf="addressList && addressList.length > 0 && this.userService.getLoggedInUser().isCustomer()" class="max-h-80 overflow-y-auto px-6 pb-6 flex flex-col gap-3">
+    <div *ngIf="addressList && addressList.length > 0 && this.userService.getLoggedInUser().isCustomer()"
+         class="max-h-80 overflow-y-auto px-6 pb-6 flex flex-col gap-3">
         <div class="font-bold text-lg text-white">Your saved addresses</div>
         <div *ngFor="let address of addressList"
-             (click)="selectAddress(address)"
+             (click)="updateSelectedAddress(address)"
              class="p-2 border border-gray-700 rounded flex items-center gap-2 hover:bg-gray-800 cursor-pointer transition"
              [ngClass]="{ 'bg-gray-800 border-cyan-500' : this.selectedAddress?.getId() === address.getId() }">
             <div class="flex-1">
@@ -53,7 +54,7 @@
             <button (click)="openEditDialog(address, $event)" class="p-1 hover:bg-gray-700 rounded" title="Edit">
                 <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
             </button>
-            <button (click)="confirmDelete(address, $event)" class="p-1 hover:bg-gray-700 rounded" title="Delete">
+            <button (click)="confirmDeleteDialog(address, $event)" class="p-1 hover:bg-gray-700 rounded" title="Delete">
                 <img class="w-4 h-4" src="/assets/icons/01-sample-icon.svg" alt="dropdown-icon">
             </button>
         </div>
@@ -81,11 +82,11 @@
 
 
 <!-- Edit Address Popup -->
-<div *ngIf="addressService.getIsEditDialogOpened$() | async" class="z-50">
+<div *ngIf="this.addressToEdit" class="z-50">
     <app-edit-address-dialog
-        [address]="this.addressForEdit"
+        [address]="this.addressToEdit"
         (click)="$event.stopPropagation()"
-        (closeDialog)="this.addressService.updateIsEditDialogOpenedValue(false)"
+        (closeDialog)="this.addressToEdit = null"
         class="absolute z-10 top-full right-0 mt-2 w-96 h-fit bg-gray-800 text-gray-200
                 rounded-lg shadow-lg border border-gray-700 cursor-default">
     </app-edit-address-dialog>

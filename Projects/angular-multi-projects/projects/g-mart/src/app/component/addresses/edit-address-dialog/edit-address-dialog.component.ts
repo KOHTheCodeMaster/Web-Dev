@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {CommonModule, NgClass} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {Address} from '../../../shared/model/address.model';
@@ -10,7 +10,7 @@ import {AddressService} from "../../../service/address.service";
     imports: [CommonModule, FormsModule, NgClass],
     templateUrl: './edit-address-dialog.component.html',
 })
-export class EditAddressDialogComponent {
+export class EditAddressDialogComponent implements OnInit, OnDestroy {
 
     @Input({required: true}) address!: Address | null;
     @Output() closeDialog: EventEmitter<void> = new EventEmitter<void>();
@@ -28,6 +28,17 @@ export class EditAddressDialogComponent {
         this.strCustomLabelInput = this.tempAddress?.isCustomLabel()
             ? this.tempAddress?.getLabel()
             : '';
+    }
+
+    ngOnDestroy(): void {
+        console.log('L0G - EditAddressDialogComponent - ngOnDestroy() called');
+        //  Reset the address for edit when the component is destroyed
+        // this.addressService.updateAddressForEdit(null);
+        // this.addressService.updateIsEditDialogOpenedValue(false);
+        this.address = null; // Clear the address input
+        this.tempAddress = null; // Clear the temporary address
+        this.strCustomLabelInput = ''; // Reset the custom label input
+        this.closeDialog.emit(); // Emit close dialog event
     }
 
     // Emit close when clicking backdrop

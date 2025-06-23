@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, Renderer2, ViewChild} from '@angular/core';
+import {Component, OnDestroy, Renderer2} from '@angular/core';
 import {Router, RouterLink} from "@angular/router";
 import {AsyncPipe, NgFor, NgForOf, NgIf} from '@angular/common';
 import {Address} from "../../shared/model/address.model";
@@ -13,18 +13,16 @@ import {AddressService} from "../../service/address.service";
 })
 export class AddressesComponent implements OnDestroy {
 
-    isEditDialogOpened: boolean = false;
     addressForEdit: Address | null = null;
     addressList: Address[] | null = null;
-    private deletePopupClickListener: (() => void) | undefined;
-    private editDialogClickListener: (() => void) | undefined;
-    @ViewChild('deleteAddressPopup', {static: false}) deleteAddressPopupElement!: ElementRef;
-    @ViewChild('editAddressDialog', {static: false}) editAddressDialogElement!: ElementRef;
+    // private deletePopupClickListener: (() => void) | undefined;
+    // private editDialogClickListener: (() => void) | undefined;
+    // @ViewChild('deleteAddressPopup', {static: false}) deleteAddressPopupElement!: ElementRef;
+    // @ViewChild('editAddressDialog', {static: false}) editAddressDialogElement!: ElementRef;
 
     constructor(private router: Router,
                 private renderer: Renderer2,
-                protected addressService: AddressService,
-                ) {
+                protected addressService: AddressService) {
 
         this.addressList = this.addressService.getAddressList();
         this.initSubscriptions();
@@ -35,6 +33,7 @@ export class AddressesComponent implements OnDestroy {
 
         this.addressService.getAddressList$().subscribe((addressList: Address[] | null) => this.addressList = addressList);
 
+/*
         //  Subscribe to address isDeleteConfirmationPopupOpened value changes
         this.addressList?.forEach(address => {
             address.getIsDeleteConfirmationPopupOpened$().subscribe(isDeleteConfirmationPopupOpened => {
@@ -54,12 +53,16 @@ export class AddressesComponent implements OnDestroy {
                 }
             });
         });
+*/
 
+/*
         //  Subscribe to selected address value changes
         this.addressService.getAddressForEdit$().subscribe(address => {
             this.addressForEdit = address;
         });
+*/
 
+/*
         //  Subscribe to isEditDialogOpened value changes
         this.addressService.getIsEditDialogOpened$().subscribe(isEditDialogOpened => {
             this.isEditDialogOpened = isEditDialogOpened;
@@ -77,6 +80,7 @@ export class AddressesComponent implements OnDestroy {
                 this.removeEditDialogClickListener();
             }
         });
+*/
 
     }
 
@@ -93,31 +97,34 @@ export class AddressesComponent implements OnDestroy {
     }
 
     handleEditBtnClick(address: Address) {
-        this.addressService.updateAddressForEdit(address);
-        this.addressService.updateIsEditDialogOpenedValue(true);
+        // this.addressService.updateAddressForEdit(address);
         address.updateIsEditAndDeletePopupOpenedValue(false);
+        // this.addressForEdit = address.clone();  //  Clone the address to avoid direct mutation - ToDo: Check this once
+        this.addressForEdit = address;
     }
 
     removeDeletePopupClickListener() {
         //  Remove the click listener if it exists to avoid memory leaks
+/*
         if (this.deletePopupClickListener) {
             this.deletePopupClickListener();
             this.deletePopupClickListener = undefined;
         }
+*/
     }
 
     removeEditDialogClickListener() {
         //  Remove the click listener if it exists to avoid memory leaks
+/*
         if (this.editDialogClickListener) {
             this.editDialogClickListener();
             this.editDialogClickListener = undefined;
         }
+*/
     }
 
     addNewAddress() {
         this.addressForEdit = this.addressService.createEmptyAddress();
-        this.addressService.updateIsEditDialogOpenedValue(true);
-        this.addressService.updateAddressForEdit(this.addressForEdit);
     }
 
     handleDeleteAddress(addressToBeDeleted: Address) {
@@ -127,8 +134,12 @@ export class AddressesComponent implements OnDestroy {
 
     ngOnDestroy() {
         //  Remove the click listener when the component is destroyed to avoid memory leaks
-        this.removeDeletePopupClickListener();
-        this.removeEditDialogClickListener();
+        // this.removeDeletePopupClickListener();
+        // this.removeEditDialogClickListener();
+    }
+
+    closeEditDialog() {
+        this.addressForEdit = null;
     }
 
 }

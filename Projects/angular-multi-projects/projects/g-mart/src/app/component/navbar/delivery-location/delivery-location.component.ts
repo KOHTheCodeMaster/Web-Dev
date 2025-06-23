@@ -17,34 +17,35 @@ export class DeliveryLocationComponent {
     addressList: Address[] | null = null;
     isSelectAddressPopupOpened = false;
     addressToDelete: Address | null = null;
-    addressForEdit: Address | null = null;
+    addressToEdit: Address | null = null;
 
     constructor(public addressService: AddressService,
                 protected userService: UserService) {
 
+        this.initSubscriptions();
+
+    }
+
+    initSubscriptions() {
         this.addressService.getAddressList$().subscribe((addressList: Address[] | null) => this.addressList = addressList);
         this.addressService.getSelectedAddress$().subscribe(address => this.selectedAddress = address);
-        this.addressService.getAddressForEdit$().subscribe((address: Address | null) => this.addressForEdit = address);
-
     }
 
     toggleSelectAddressPopup() {
         this.isSelectAddressPopupOpened = !this.isSelectAddressPopupOpened;
-        this.addressToDelete = null;
     }
 
-    selectAddress(addr: Address) {
-        this.addressService.updateSelectedAddress(addr);
+    updateSelectedAddress(address: Address) {
+        this.addressService.updateSelectedAddress(address);
         this.isSelectAddressPopupOpened = false;
     }
 
     openEditDialog(address: Address, event: MouseEvent) {
-        event.stopPropagation();    //  Prevent click event from propagating to the parent element that might close the popup
-        this.addressService.updateIsEditDialogOpenedValue(true);
-        this.addressService.updateAddressForEdit(address);
+        event.stopPropagation();    //  Prevent click event from propagating to the parent element which will close the popup
+        this.addressToEdit = address;
     }
 
-    confirmDelete(addr: Address, event: MouseEvent) {
+    confirmDeleteDialog(addr: Address, event: MouseEvent) {
         event.stopPropagation();
         this.addressToDelete = addr;
     }
@@ -54,6 +55,7 @@ export class DeliveryLocationComponent {
             this.addressService.deleteAddress(this.addressToDelete);
             this.addressToDelete = null;
         }
+        //  ToDo: else case should never run, but need to handle this properly with logs to track unknown errors.
     }
 
     closeDeletePopup() {
@@ -62,6 +64,7 @@ export class DeliveryLocationComponent {
 
     closeAllPopups() {
         this.isSelectAddressPopupOpened = false;
+        this.addressToEdit = null;
         this.addressToDelete = null;
     }
 

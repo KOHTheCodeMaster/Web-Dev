@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject} from "rxjs";
 import {Address} from "../shared/model/address.model";
 import {DataLoaderService} from "./data-loader.service";
 import {UserService} from "./user.service";
@@ -10,9 +10,7 @@ import {UserDataService} from "./user-data.service";
 })
 export class AddressService {
 
-    private readonly isEditDialogOpened$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     private selectedAddress$: BehaviorSubject<Address | null> = new BehaviorSubject<Address | null>(null);
-    private addressForEdit$: BehaviorSubject<Address | null> = new BehaviorSubject<Address | null>(null);
     private addressList$: BehaviorSubject<Address[] | null> = new BehaviorSubject<Address[] | null>(null);
     allAddressList: Address[] = [];
 
@@ -83,16 +81,8 @@ export class AddressService {
             "");
     }
 
-    updateIsEditDialogOpenedValue(flag: boolean) {
-        this.isEditDialogOpened$.next(flag);
-    }
-
     updateSelectedAddress(address: Address | null) {
         this.selectedAddress$.next(address);
-    }
-
-    updateAddressForEdit(address: Address) {
-        this.addressForEdit$.next(address);
     }
 
     deleteAddress(addressToDelete: Address) {
@@ -147,16 +137,9 @@ export class AddressService {
         return this.addressList$;
     }
 
-    getIsEditDialogOpened$(): Observable<boolean> {
-        return this.isEditDialogOpened$.asObservable();
-    }
-
     getSelectedAddress$(): BehaviorSubject<Address | null> {
         return this.selectedAddress$;
     }
 
-    getAddressForEdit$(): BehaviorSubject<Address | null> {
-        return this.addressForEdit$;
-    }
 
 }

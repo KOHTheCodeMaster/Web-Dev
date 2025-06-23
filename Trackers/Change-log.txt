@@ -19,6 +19,26 @@ Change Log:
 
 ----------------------------------------------------------------------------------------------------
 
+Time Stamp:         23rd June 2K25 - 11:11 PM
+Commit Message:     336 - G-Mart - Angular - Refactoring Address Management & Login Component
+
+Quick Summary:
+
+1.  Decoupled Address Components from Service State:
+    - Removed `isEditDialogOpened$` and `addressForEdit$` from `AddressService` to reduce state complexity.
+    - Components like `AddressesComponent` and `DeliveryLocationComponent` now manage their own UI state.
+    - This enhances component independence and simplifies the overall state management logic.
+
+2.  Refined Login Component:
+    - Added new buttons for simulating logins for different user roles (e.g., `User1`, `User2`).
+    - Replaced `loginAsTest()` with a more generic `simulateLogin(username, password)` method.
+    - These changes streamline testing and debugging by allowing for quick user switching.
+
+3.  Improved Component Lifecycle Management:
+    - Implemented `ngOnDestroy` in `EditAddressDialogComponent` to clean up resources and prevent memory leaks.
+
+----------------------------------------------------------------------------------------------------
+
 Time Stamp:         17th June 2K25 - 11:23 PM
 Commit Message:     335 - G-Mart - Angular - User Data Service & Refactoring
 
